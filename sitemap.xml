@@ -298,21 +298,6 @@
   </url>
   
   <url>
-    <loc>https://davidfrantz.github.io/authors/admin/</loc>
-    <lastmod>2019-09-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://davidfrantz.github.io/authors/</loc>
-    <lastmod>2019-09-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://davidfrantz.github.io/tutorials/jupyter/</loc>
-    <lastmod>2019-09-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://davidfrantz.github.io/presentation/pb006/</loc>
     <lastmod>2019-01-11T00:00:00+00:00</lastmod>
   </url>
@@ -334,6 +319,11 @@
   
   <url>
     <loc>https://davidfrantz.github.io/authors/andreas-rabe/</loc>
+    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://davidfrantz.github.io/authors/</loc>
     <lastmod>2019-01-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -823,26 +813,6 @@
   </url>
   
   <url>
-    <loc>https://davidfrantz.github.io/tags/academic/</loc>
-    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://davidfrantz.github.io/tutorials/getting-started/</loc>
-    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://davidfrantz.github.io/categories/</loc>
-    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://davidfrantz.github.io/categories/demo/</loc>
-    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://davidfrantz.github.io/presentation/pb041/</loc>
     <lastmod>2016-03-30T00:00:00+00:00</lastmod>
   </url>
@@ -1065,6 +1035,14 @@
   <url>
     <loc>https://davidfrantz.github.io/project/forestclim/</loc>
     <lastmod>2010-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://davidfrantz.github.io/authors/admin/</loc>
+  </url>
+  
+  <url>
+    <loc>https://davidfrantz.github.io/categories/</loc>
   </url>
   
 </urlset>

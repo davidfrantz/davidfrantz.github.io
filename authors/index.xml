@@ -5,23 +5,12 @@
     <link>https://davidfrantz.github.io/authors/</link>
       <atom:link href="https://davidfrantz.github.io/authors/index.xml" rel="self" type="application/rss+xml" />
     <description>Authors</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Tue, 05 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://davidfrantz.github.io/img/icon-192.png</url>
       <title>Authors</title>
       <link>https://davidfrantz.github.io/authors/</link>
     </image>
-    
-    <item>
-      <title></title>
-      <link>https://davidfrantz.github.io/authors/admin/</link>
-      <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>https://davidfrantz.github.io/authors/admin/</guid>
-      <description>&lt;p&gt;I am fascinated by the current posssibilities Earth Observation offers. Raised as an environmental scientist with a strong background in remote sensing and geoinformatics, my research concentrates on how to &lt;strong&gt;&amp;ldquo;go from data to information&amp;rdquo;&lt;/strong&gt; tailored for a wide range of environmentally centered research and monitoring needs. This particularly includes the preprocessing of operational EO data archives to analysis ready data, their management in data cubes, subsequent processing via data reduction, interpolation, time series analysis, and data integration with complementary data sources, as well as data analysis based on statistics and machine learning.&lt;/p&gt;
-&lt;p&gt;I fully support open science. Thus, I am publishing all my software and methods as open source code: &lt;a href=&#34;https://davidfrantz.github.io/code/force/&#34;&gt;FORCE&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;I am currently a postdoctoral researcher in the &lt;a href=&#34;https://www.geographie.hu-berlin.de/en/professorships/eol&#34;&gt;Earth Observation Lab of Humboldt-Universität zu Berlin&lt;/a&gt; in the &lt;a href=&#34;https://www.geographie.hu-berlin.de/en/professorships/eol/projects/matstocks/mat_stocks&#34;&gt;MAT_STOCKS project&lt;/a&gt;, where we aim at quantifying anthropogenic material stocks from S1/S2 data for various countries in the world (e.g. Germany, Japan, USA).&lt;/p&gt;
-</description>
-    </item>
     
     <item>
       <title>Andreas Rabe</title>
@@ -477,6 +466,17 @@
       <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
       <guid>https://davidfrantz.github.io/authors/patrick-matgen/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://davidfrantz.github.io/authors/admin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/admin/</guid>
+      <description>&lt;p&gt;I am fascinated by the current posssibilities Earth Observation offers. Raised as an environmental scientist with a strong background in remote sensing and geoinformatics, my research concentrates on how to &lt;strong&gt;&amp;ldquo;go from data to information&amp;rdquo;&lt;/strong&gt; tailored for a wide range of environmentally centered research and monitoring needs. This particularly includes the preprocessing of operational EO data archives to analysis ready data, their management in data cubes, subsequent processing via data reduction, interpolation, time series analysis, and data integration with complementary data sources, as well as data analysis based on statistics and machine learning.&lt;/p&gt;
+&lt;p&gt;I fully support open science. Thus, I am publishing all my software and methods as open source code: &lt;a href=&#34;https://davidfrantz.github.io/code/force/&#34;&gt;FORCE&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I am currently a postdoctoral researcher in the &lt;a href=&#34;https://www.geographie.hu-berlin.de/en/professorships/eol&#34;&gt;Earth Observation Lab of Humboldt-Universität zu Berlin&lt;/a&gt; in the &lt;a href=&#34;https://www.geographie.hu-berlin.de/en/professorships/eol/projects/matstocks/mat_stocks&#34;&gt;MAT_STOCKS project&lt;/a&gt;, where we aim at quantifying anthropogenic material stocks from S1/S2 data for various countries in the world (e.g. Germany, Japan, USA).&lt;/p&gt;
+</description>
     </item>
     
   </channel>
