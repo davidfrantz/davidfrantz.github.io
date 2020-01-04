@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Publications | DAVID FRANTZ</title>
+    <link>https://davidfrantz.github.io/publication/</link>
+      <atom:link href="https://davidfrantz.github.io/publication/index.xml" rel="self" type="application/rss+xml" />
+    <description>Publications</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://davidfrantz.github.io/img/icon-192.png</url>
+      <title>Publications</title>
+      <link>https://davidfrantz.github.io/publication/</link>
+    </image>
+    
+    <item>
+      <title>A Global MODIS Water Vapor Database for the Operational Atmospheric Correction of Historic and Recent Landsat Imagery</title>
+      <link>https://davidfrantz.github.io/publication/frantz-2019b/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/frantz-2019b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>FORCE—Landsat &#43; Sentinel-2 Analysis Ready Data and Beyond</title>
+      <link>https://davidfrantz.github.io/publication/frantz-2019a/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/frantz-2019a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Interdependent effects of climate variability and forest cover change on streamflow dynamics: a case study in the Upper Umvoti River Basin, South Africa</title>
+      <link>https://davidfrantz.github.io/publication/lebek-2019/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/lebek-2019/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mapping Cropping Practices on a National Scale Using Intra-Annual Landsat Time Series Binning</title>
+      <link>https://davidfrantz.github.io/publication/rufin-2019/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/rufin-2019/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Using Landsat and Sentinel-2 Data for the Generation of Continuously Updated Forest Type Information Layers in a Cross-Border Region</title>
+      <link>https://davidfrantz.github.io/publication/nink-2019/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/nink-2019/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Atmospheric Correction Inter-Comparison Exercise</title>
+      <link>https://davidfrantz.github.io/publication/doxani-2018/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/doxani-2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Deforestation for agricultural expansion in SW Zambia and NE Namibia and the impacts on soil fertility, soil organic carbon- and nutrient levels</title>
+      <link>https://davidfrantz.github.io/publication/blecourt-2018/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/blecourt-2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Improvement of the Fmask algorithm for Sentinel-2 images: Separating clouds from bright surfaces based on parallax effects</title>
+      <link>https://davidfrantz.github.io/publication/frantz-2018/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/frantz-2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Long-term land use change analysis in south-central Angola. Assessing the trade-off between major ecosystem services with remote sensing data</title>
+      <link>https://davidfrantz.github.io/publication/schneibel-2018/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/schneibel-2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Remote sensing-based environmental assessment and monitoring – generation of operational baseline and enhanced experimental products in southern Africa</title>
+      <link>https://davidfrantz.github.io/publication/roeder-2018/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/roeder-2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Seeing deforestation in Zambia - On the discrepancy between biophysical land-use changes and social perception</title>
+      <link>https://davidfrantz.github.io/publication/parduhn-2018/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/parduhn-2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Assessment of spatio-temporal changes of smallholder cultivation patterns in the Angolan Miombo belt using segmentation of Landsat time series</title>
+      <link>https://davidfrantz.github.io/publication/schneibel-2017a/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/schneibel-2017a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Global Analysis of the Differences Between the MODIS Vegetation Index Compositing Date and the Actual Acquisition Date</title>
+      <link>https://davidfrantz.github.io/publication/hass-2017/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/hass-2017/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Phenology-adaptive pixel-based compositing using optical earth observation imagery</title>
+      <link>https://davidfrantz.github.io/publication/frantz-2017/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/frantz-2017/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Using Annual Landsat Time Series for the Detection of Dry Forest Degradation Processes in South-Central Angola</title>
+      <link>https://davidfrantz.github.io/publication/schneibel-2017b/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/schneibel-2017b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>An Operational Radiometric Landsat Preprocessing Framework for Large-Area Time Series Applications</title>
+      <link>https://davidfrantz.github.io/publication/frantz-2016a/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/frantz-2016a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Evaluating the Trade-Off Between Food and Timber Resulting from the Conversion of Miombo Forests to Agricultural Land in Angola Using Multi-Temporal Landsat Data</title>
+      <link>https://davidfrantz.github.io/publication/schneibel-2016/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/schneibel-2016/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fire spread from MODIS burned area data: obtaining fire dynamics information for every single fire</title>
+      <link>https://davidfrantz.github.io/publication/frantz-2016e/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/frantz-2016e/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Forest Disturbance Mapping Using Dense Synthetic Landsat/MODIS Time-Series and Permutation-Based Disturbance Index Detection</title>
+      <link>https://davidfrantz.github.io/publication/frantz-2016c/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/frantz-2016c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Improving the Spatial Resolution of Land Surface Phenology by Fusing Medium- and Coarse-Resolution Inputs</title>
+      <link>https://davidfrantz.github.io/publication/frantz-2016b/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/frantz-2016b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linking Land Surface Phenology and Vegetation-Plot Databases to Model Terrestrial Plant α-Diversity of the Okavango Basin</title>
+      <link>https://davidfrantz.github.io/publication/revermann-2016/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/revermann-2016/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Enhancing the Detectability of Clouds and Their Shadows in Multitemporal Dryland Landsat Imagery: Extending Fmask</title>
+      <link>https://davidfrantz.github.io/publication/frantz-2015a/</link>
+      <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/frantz-2015a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>On the Derivation of a Spatially Distributed Aerosol Climatology for its Incorporation in a Radiometric Landsat Preprocessing Framework</title>
+      <link>https://davidfrantz.github.io/publication/frantz-2015b/</link>
+      <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/frantz-2015b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Enhanced biomass prediction by assimilating satellite data into a crop growth model</title>
+      <link>https://davidfrantz.github.io/publication/machwitz-2014/</link>
+      <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/machwitz-2014/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fire Frequency, Fire Seasonality and Fire Intensity within the Okavango Region Derived from MODIS Fire Products</title>
+      <link>https://davidfrantz.github.io/publication/stellmes-2013/</link>
+      <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/stellmes-2013/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

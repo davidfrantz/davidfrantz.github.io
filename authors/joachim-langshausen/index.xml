@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Joachim Langshausen | DAVID FRANTZ</title>
+    <link>https://davidfrantz.github.io/authors/joachim-langshausen/</link>
+      <atom:link href="https://davidfrantz.github.io/authors/joachim-langshausen/index.xml" rel="self" type="application/rss+xml" />
+    <description>Joachim Langshausen</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://davidfrantz.github.io/img/icon-192.png</url>
+      <title>Joachim Langshausen</title>
+      <link>https://davidfrantz.github.io/authors/joachim-langshausen/</link>
+    </image>
+    
+    <item>
+      <title>Using Landsat and Sentinel-2 Data for the Generation of Continuously Updated Forest Type Information Layers in a Cross-Border Region</title>
+      <link>https://davidfrantz.github.io/publication/nink-2019/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/nink-2019/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

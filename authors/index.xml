@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Authors | DAVID FRANTZ</title>
+    <link>https://davidfrantz.github.io/authors/</link>
+      <atom:link href="https://davidfrantz.github.io/authors/index.xml" rel="self" type="application/rss+xml" />
+    <description>Authors</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Tue, 05 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://davidfrantz.github.io/img/icon-192.png</url>
+      <title>Authors</title>
+      <link>https://davidfrantz.github.io/authors/</link>
+    </image>
+    
+    <item>
+      <title></title>
+      <link>https://davidfrantz.github.io/authors/admin/</link>
+      <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/admin/</guid>
+      <description>&lt;p&gt;I am fascinated by the current posssibilities Earth Observation offers. Raised as an environmental scientist with a strong background in remote sensing and geoinformatics, my research concentrates on how to &lt;strong&gt;&amp;ldquo;go from data to information&amp;rdquo;&lt;/strong&gt; tailored for a wide range of environmentally centered research and monitoring needs. This particularly includes the preprocessing of operational EO data archives to analysis ready data, their management in data cubes, subsequent processing via data reduction, interpolation, time series analysis, and data integration with complementary data sources, as well as data analysis based on statistics and machine learning.&lt;/p&gt;
+&lt;p&gt;I fully support open science. Thus, I am publishing all my software and methods as open source code: &lt;a href=&#34;https://davidfrantz.github.io/code/force/&#34;&gt;FORCE&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I am currently a postdoctoral researcher in the &lt;a href=&#34;https://www.geographie.hu-berlin.de/en/professorships/eol&#34;&gt;Earth Observation Lab of Humboldt-Universität zu Berlin&lt;/a&gt; in the &lt;a href=&#34;https://www.geographie.hu-berlin.de/en/professorships/eol/projects/matstocks/mat_stocks&#34;&gt;MAT_STOCKS project&lt;/a&gt;, where we aim at quantifying anthropogenic material stocks from S1/S2 data for various countries in the world (e.g. Germany, Japan, USA).&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Andreas Rabe</title>
+      <link>https://davidfrantz.github.io/authors/andreas-rabe/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/andreas-rabe/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cornelius Senf</title>
+      <link>https://davidfrantz.github.io/authors/cornelius-senf/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/cornelius-senf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>David Frantz</title>
+      <link>https://davidfrantz.github.io/authors/david-frantz/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/david-frantz/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Henning Buddenbaum</title>
+      <link>https://davidfrantz.github.io/authors/henning-buddenbaum/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/henning-buddenbaum/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Joachim Hill</title>
+      <link>https://davidfrantz.github.io/authors/joachim-hill/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/joachim-hill/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Joachim Langshausen</title>
+      <link>https://davidfrantz.github.io/authors/joachim-langshausen/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/joachim-langshausen/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Johannes Stoffels</title>
+      <link>https://davidfrantz.github.io/authors/johannes-stoffels/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/johannes-stoffels/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>José A. F. Monteiro</title>
+      <link>https://davidfrantz.github.io/authors/jose-a.-f.-monteiro/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/jose-a.-f.-monteiro/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Karen Lebek</title>
+      <link>https://davidfrantz.github.io/authors/karen-lebek/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/karen-lebek/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Marion Stellmes</title>
+      <link>https://davidfrantz.github.io/authors/marion-stellmes/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/marion-stellmes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mutlu Özdoğan</title>
+      <link>https://davidfrantz.github.io/authors/mutlu-ozdogan/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/mutlu-ozdogan/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Patrick Griffiths</title>
+      <link>https://davidfrantz.github.io/authors/patrick-griffiths/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/patrick-griffiths/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Patrick Hostert</title>
+      <link>https://davidfrantz.github.io/authors/patrick-hostert/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/patrick-hostert/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Philippe Rufin</title>
+      <link>https://davidfrantz.github.io/authors/philippe-rufin/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/philippe-rufin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sascha Nink</title>
+      <link>https://davidfrantz.github.io/authors/sascha-nink/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/sascha-nink/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Stefan Ernst</title>
+      <link>https://davidfrantz.github.io/authors/stefan-ernst/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/stefan-ernst/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tobias Krueger</title>
+      <link>https://davidfrantz.github.io/authors/tobias-krueger/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/tobias-krueger/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Achim Röder</title>
+      <link>https://davidfrantz.github.io/authors/achim-roder/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/achim-roder/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Alexander Gröngröft</title>
+      <link>https://davidfrantz.github.io/authors/alexander-grongroft/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/alexander-grongroft/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Andreas Uhl</title>
+      <link>https://davidfrantz.github.io/authors/andreas-uhl/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/andreas-uhl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>André Hollstein</title>
+      <link>https://davidfrantz.github.io/authors/andre-hollstein/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/andre-hollstein/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Anne Schneibel</title>
+      <link>https://davidfrantz.github.io/authors/anne-schneibel/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/anne-schneibel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Annette Eschenbach</title>
+      <link>https://davidfrantz.github.io/authors/annette-eschenbach/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/annette-eschenbach/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Antoine Mangin</title>
+      <link>https://davidfrantz.github.io/authors/antoine-mangin/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/antoine-mangin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bringfried Pflug</title>
+      <link>https://davidfrantz.github.io/authors/bringfried-pflug/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/bringfried-pflug/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>David Parduhn</title>
+      <link>https://davidfrantz.github.io/authors/david-parduhn/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/david-parduhn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Eric Vermote</title>
+      <link>https://davidfrantz.github.io/authors/eric-vermote/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/eric-vermote/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Erik Haß</title>
+      <link>https://davidfrantz.github.io/authors/erik-ha%C3%9F/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/erik-ha%C3%9F/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ferran Gascon</title>
+      <link>https://davidfrantz.github.io/authors/ferran-gascon/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/ferran-gascon/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fuqin Li</title>
+      <link>https://davidfrantz.github.io/authors/fuqin-li/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/fuqin-li/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Georgia Doxani</title>
+      <link>https://davidfrantz.github.io/authors/georgia-doxani/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/georgia-doxani/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Grit Kirches</title>
+      <link>https://davidfrantz.github.io/authors/grit-kirches/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/grit-kirches/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jean-Claude Roger</title>
+      <link>https://davidfrantz.github.io/authors/jean-claude-roger/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/jean-claude-roger/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jérôme Louis</title>
+      <link>https://davidfrantz.github.io/authors/jerome-louis/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/jerome-louis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Marleen de Blécourt</title>
+      <link>https://davidfrantz.github.io/authors/marleen-de-blecourt/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/marleen-de-blecourt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nima Pahlevan</title>
+      <link>https://davidfrantz.github.io/authors/nima-pahlevan/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/nima-pahlevan/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Olivier Hagolle</title>
+      <link>https://davidfrantz.github.io/authors/olivier-hagolle/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/olivier-hagolle/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Quinten Vanhellemont</title>
+      <link>https://davidfrantz.github.io/authors/quinten-vanhellemont/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/quinten-vanhellemont/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Stefan Adriaensen</title>
+      <link>https://davidfrantz.github.io/authors/stefan-adriaensen/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/stefan-adriaensen/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Stephan Baumann</title>
+      <link>https://davidfrantz.github.io/authors/stephan-baumann/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/stephan-baumann/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Benjamin Kowalski</title>
+      <link>https://davidfrantz.github.io/authors/benjamin-kowalski/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/benjamin-kowalski/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kim Fischer</title>
+      <link>https://davidfrantz.github.io/authors/kim-fischer/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/kim-fischer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sebastian Mader</title>
+      <link>https://davidfrantz.github.io/authors/sebastian-mader/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/sebastian-mader/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ben Strohbach</title>
+      <link>https://davidfrantz.github.io/authors/ben-strohbach/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/ben-strohbach/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jens Oldeland</title>
+      <link>https://davidfrantz.github.io/authors/jens-oldeland/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/jens-oldeland/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Manfred Finckh</title>
+      <link>https://davidfrantz.github.io/authors/manfred-finckh/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/manfred-finckh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Michael Schmidt</title>
+      <link>https://davidfrantz.github.io/authors/michael-schmidt/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/michael-schmidt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rasmus Revermann</title>
+      <link>https://davidfrantz.github.io/authors/rasmus-revermann/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/rasmus-revermann/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Thomas Udelhoven</title>
+      <link>https://davidfrantz.github.io/authors/thomas-udelhoven/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/thomas-udelhoven/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Christian Bossung</title>
+      <link>https://davidfrantz.github.io/authors/christian-bossung/</link>
+      <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/christian-bossung/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Holger Lilienthal</title>
+      <link>https://davidfrantz.github.io/authors/holger-lilienthal/</link>
+      <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/holger-lilienthal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Laura Giustarini</title>
+      <link>https://davidfrantz.github.io/authors/laura-giustarini/</link>
+      <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/laura-giustarini/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Loise Wandera</title>
+      <link>https://davidfrantz.github.io/authors/loise-wandera/</link>
+      <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/loise-wandera/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lucien Hoffmann</title>
+      <link>https://davidfrantz.github.io/authors/lucien-hoffmann/</link>
+      <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/lucien-hoffmann/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Martin Schlerf</title>
+      <link>https://davidfrantz.github.io/authors/martin-schlerf/</link>
+      <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/martin-schlerf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Miriam Machwitz</title>
+      <link>https://davidfrantz.github.io/authors/miriam-machwitz/</link>
+      <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/miriam-machwitz/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Patrick Matgen</title>
+      <link>https://davidfrantz.github.io/authors/patrick-matgen/</link>
+      <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/patrick-matgen/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

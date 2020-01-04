@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Joachim Hill | DAVID FRANTZ</title>
+    <link>https://davidfrantz.github.io/authors/joachim-hill/</link>
+      <atom:link href="https://davidfrantz.github.io/authors/joachim-hill/index.xml" rel="self" type="application/rss+xml" />
+    <description>Joachim Hill</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://davidfrantz.github.io/img/icon-192.png</url>
+      <title>Joachim Hill</title>
+      <link>https://davidfrantz.github.io/authors/joachim-hill/</link>
+    </image>
+    
+    <item>
+      <title>Using Landsat and Sentinel-2 Data for the Generation of Continuously Updated Forest Type Information Layers in a Cross-Border Region</title>
+      <link>https://davidfrantz.github.io/publication/nink-2019/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/nink-2019/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Improvement of the Fmask algorithm for Sentinel-2 images: Separating clouds from bright surfaces based on parallax effects</title>
+      <link>https://davidfrantz.github.io/publication/frantz-2018/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/frantz-2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Remote sensing-based environmental assessment and monitoring – generation of operational baseline and enhanced experimental products in southern Africa</title>
+      <link>https://davidfrantz.github.io/publication/roeder-2018/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/roeder-2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Assessment of spatio-temporal changes of smallholder cultivation patterns in the Angolan Miombo belt using segmentation of Landsat time series</title>
+      <link>https://davidfrantz.github.io/publication/schneibel-2017a/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/schneibel-2017a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Global Analysis of the Differences Between the MODIS Vegetation Index Compositing Date and the Actual Acquisition Date</title>
+      <link>https://davidfrantz.github.io/publication/hass-2017/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/hass-2017/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Phenology-adaptive pixel-based compositing using optical earth observation imagery</title>
+      <link>https://davidfrantz.github.io/publication/frantz-2017/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/frantz-2017/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Using Annual Landsat Time Series for the Detection of Dry Forest Degradation Processes in South-Central Angola</title>
+      <link>https://davidfrantz.github.io/publication/schneibel-2017b/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/schneibel-2017b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>An Operational Radiometric Landsat Preprocessing Framework for Large-Area Time Series Applications</title>
+      <link>https://davidfrantz.github.io/publication/frantz-2016a/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/frantz-2016a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Evaluating the Trade-Off Between Food and Timber Resulting from the Conversion of Miombo Forests to Agricultural Land in Angola Using Multi-Temporal Landsat Data</title>
+      <link>https://davidfrantz.github.io/publication/schneibel-2016/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/schneibel-2016/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fire spread from MODIS burned area data: obtaining fire dynamics information for every single fire</title>
+      <link>https://davidfrantz.github.io/publication/frantz-2016e/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/frantz-2016e/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Improving the Spatial Resolution of Land Surface Phenology by Fusing Medium- and Coarse-Resolution Inputs</title>
+      <link>https://davidfrantz.github.io/publication/frantz-2016b/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/frantz-2016b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>On the Derivation of a Spatially Distributed Aerosol Climatology for its Incorporation in a Radiometric Landsat Preprocessing Framework</title>
+      <link>https://davidfrantz.github.io/publication/frantz-2015b/</link>
+      <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/frantz-2015b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fire Frequency, Fire Seasonality and Fire Intensity within the Okavango Region Derived from MODIS Fire Products</title>
+      <link>https://davidfrantz.github.io/publication/stellmes-2013/</link>
+      <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/stellmes-2013/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

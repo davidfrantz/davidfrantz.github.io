@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rasmus Revermann | DAVID FRANTZ</title>
+    <link>https://davidfrantz.github.io/authors/rasmus-revermann/</link>
+      <atom:link href="https://davidfrantz.github.io/authors/rasmus-revermann/index.xml" rel="self" type="application/rss+xml" />
+    <description>Rasmus Revermann</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Fri, 01 Jan 2016 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://davidfrantz.github.io/img/icon-192.png</url>
+      <title>Rasmus Revermann</title>
+      <link>https://davidfrantz.github.io/authors/rasmus-revermann/</link>
+    </image>
+    
+    <item>
+      <title>Evaluating the Trade-Off Between Food and Timber Resulting from the Conversion of Miombo Forests to Agricultural Land in Angola Using Multi-Temporal Landsat Data</title>
+      <link>https://davidfrantz.github.io/publication/schneibel-2016/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/schneibel-2016/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linking Land Surface Phenology and Vegetation-Plot Databases to Model Terrestrial Plant α-Diversity of the Okavango Basin</title>
+      <link>https://davidfrantz.github.io/publication/revermann-2016/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/revermann-2016/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fire Frequency, Fire Seasonality and Fire Intensity within the Okavango Region Derived from MODIS Fire Products</title>
+      <link>https://davidfrantz.github.io/publication/stellmes-2013/</link>
+      <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/stellmes-2013/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

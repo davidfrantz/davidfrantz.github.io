@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>old | DAVID FRANTZ</title>
+    <link>https://davidfrantz.github.io/tags/old/</link>
+      <atom:link href="https://davidfrantz.github.io/tags/old/index.xml" rel="self" type="application/rss+xml" />
+    <description>old</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Wed, 19 Mar 2014 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://davidfrantz.github.io/img/icon-192.png</url>
+      <title>old</title>
+      <link>https://davidfrantz.github.io/tags/old/</link>
+    </image>
+    
+    <item>
+      <title>A multi-component characterization of the active Okavango Catchment and Delta based on various MODIS products</title>
+      <link>https://davidfrantz.github.io/presentation/pb056/</link>
+      <pubDate>Wed, 19 Mar 2014 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb056/</guid>
+      <description>&lt;p&gt;Marion Stellmes, David Frantz, Achim Röder, Torsten  Weber, Joachim Hill&lt;/p&gt;
+&lt;p&gt;Global Land Project (GLP) Open Science Meeting, Berlin, Germany, 19-21 March&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Characterization of forest disturbance using data-blending techniques applied to MODIS and Landsat time series in an Australian Savanna</title>
+      <link>https://davidfrantz.github.io/presentation/pb055/</link>
+      <pubDate>Wed, 19 Mar 2014 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb055/</guid>
+      <description>&lt;p&gt;David Frantz, Achim Röder, Thomas Udelhoven, Michael Schmidt&lt;/p&gt;
+&lt;p&gt;Global Land Project (GLP) Open Science Meeting, Berlin, Germany, 19-21 March&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Enhancement of Yield Prediction – Sequential Data Assimilation Using the Models Apsim and Prosail and the Particle Filter</title>
+      <link>https://davidfrantz.github.io/presentation/pb057/</link>
+      <pubDate>Sun, 22 Jul 2012 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb057/</guid>
+      <description>&lt;p&gt;M. Machwitz, Thomas Udelhoven, Martin Schlerf, Christian Bossung, Chistoph Wiedekind, David Frantz, Lucien Hoffmann&lt;/p&gt;
+&lt;p&gt;IGARSS 2012, 22-27 July 2012, Munich, Germany&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Assessing the Sensitivity of European Beech (Fagus sylvatica L.) Stands to Severe Drought Based on Measurements from Earth Observation Satellites</title>
+      <link>https://davidfrantz.github.io/presentation/pb058/</link>
+      <pubDate>Thu, 02 Jun 2011 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb058/</guid>
+      <description>&lt;p&gt;Joachim Hill, Marion Stellmes, Johannes Stoffels, Willy Werner, Oxana Shtern, David Frantz&lt;/p&gt;
+&lt;p&gt;1st EARSeL SIG on Forestry, 2-3 June 2011, Prague, Czech Republic&lt;/p&gt;
+&lt;p&gt;oral presentation and proceedings paper&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

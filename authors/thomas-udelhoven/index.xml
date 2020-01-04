@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Thomas Udelhoven | DAVID FRANTZ</title>
+    <link>https://davidfrantz.github.io/authors/thomas-udelhoven/</link>
+      <atom:link href="https://davidfrantz.github.io/authors/thomas-udelhoven/index.xml" rel="self" type="application/rss+xml" />
+    <description>Thomas Udelhoven</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Fri, 01 Jan 2016 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://davidfrantz.github.io/img/icon-192.png</url>
+      <title>Thomas Udelhoven</title>
+      <link>https://davidfrantz.github.io/authors/thomas-udelhoven/</link>
+    </image>
+    
+    <item>
+      <title>Forest Disturbance Mapping Using Dense Synthetic Landsat/MODIS Time-Series and Permutation-Based Disturbance Index Detection</title>
+      <link>https://davidfrantz.github.io/publication/frantz-2016c/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/frantz-2016c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Improving the Spatial Resolution of Land Surface Phenology by Fusing Medium- and Coarse-Resolution Inputs</title>
+      <link>https://davidfrantz.github.io/publication/frantz-2016b/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/frantz-2016b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Enhancing the Detectability of Clouds and Their Shadows in Multitemporal Dryland Landsat Imagery: Extending Fmask</title>
+      <link>https://davidfrantz.github.io/publication/frantz-2015a/</link>
+      <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/frantz-2015a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Enhanced biomass prediction by assimilating satellite data into a crop growth model</title>
+      <link>https://davidfrantz.github.io/publication/machwitz-2014/</link>
+      <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/machwitz-2014/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2018 | DAVID FRANTZ</title>
+    <link>https://davidfrantz.github.io/tags/2018/</link>
+      <atom:link href="https://davidfrantz.github.io/tags/2018/index.xml" rel="self" type="application/rss+xml" />
+    <description>2018</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://davidfrantz.github.io/img/icon-192.png</url>
+      <title>2018</title>
+      <link>https://davidfrantz.github.io/tags/2018/</link>
+    </image>
+    
+    <item>
+      <title>Water vapor database for atmospheric correction of Landsat imagery</title>
+      <link>https://davidfrantz.github.io/data/dt001/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/data/dt001/</guid>
+      <description>&lt;p&gt;Supplement to: Frantz, David; Röder, Achim; Stellmes, Marion; Hill, Joachim (2016): An operational radiometric Landsat preprocessing framework for large-area time series applications. IEEE Transactions on Geoscience and Remote Sensing, 54(7), 3928-3943, &lt;a href=&#34;https://doi.org/10.1109/TGRS.2016.2530856&#34;&gt;https://doi.org/10.1109/TGRS.2016.2530856&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Evaluation of topographic correction on forest mapping using Landsat imagery</title>
+      <link>https://davidfrantz.github.io/presentation/pb030/</link>
+      <pubDate>Mon, 10 Dec 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb030/</guid>
+      <description>&lt;p&gt;He Yin, Bin Tan, David Frantz, Volker Radeloff&lt;/p&gt;
+&lt;p&gt;American Geophysical Union (AGU) Fall Meeting, 10-14 December 2018, Washington D.C., USA&lt;/p&gt;
+&lt;p&gt;poster presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Sentinel4GRIPS: Copernicus als Baustein der Forstverwaltung</title>
+      <link>https://davidfrantz.github.io/presentation/pb019/</link>
+      <pubDate>Tue, 27 Nov 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb019/</guid>
+      <description>&lt;p&gt;Joachim Hill, Sebastian Mader, David Frantz, Johannes Stoffels, Joachim Langshausen, Jürgen Dietz, Christoph Averdung, Jens Göpfert&lt;/p&gt;
+&lt;p&gt;Nationales Forum für Fernerkundung und Copernicus, 27-29 November 2018, Berlin, Germany&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>An evaluation of urban area mapping with Sentinel-2 data and machine learning-based regression at different spatial resolutions</title>
+      <link>https://davidfrantz.github.io/presentation/pb029/</link>
+      <pubDate>Mon, 24 Sep 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb029/</guid>
+      <description>&lt;p&gt;Sebastian van der Linden, Akpona Okujeni, Franz Schug, David Frantz, Patrick Hostert&lt;/p&gt;
+&lt;p&gt;5th Joint Workshop of EARSeL SIG Urban Remote Sensing, 24-26 September 2018, Bochum, Germany&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Fernerkundliche Analysen in Zeiten von Copernicus: Neue Möglichkeiten langer und dichter Zeitreihen</title>
+      <link>https://davidfrantz.github.io/presentation/pb022/</link>
+      <pubDate>Tue, 18 Sep 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb022/</guid>
+      <description>&lt;p&gt;Patrick Hostert, David Frantz, Patrick Griffiths, Kira Pfoch, Marcel Schwieder&lt;/p&gt;
+&lt;p&gt;Bundesamt für Naturschutz, 18 September 2018, Berlin, Germany&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Land Use 2.0: the role of dense time series and phenometrics</title>
+      <link>https://davidfrantz.github.io/presentation/pb015/</link>
+      <pubDate>Wed, 08 Aug 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb015/</guid>
+      <description>&lt;p&gt;David Frantz, Patrick Hostert, Dirk Pflugmacher, Sebastian van der Linden, Matthias Baumann, Tobias Kuemmerle, Achim Röder, Patrick Griffiths&lt;/p&gt;
+&lt;p&gt;Landsat Science Team Meeting, 8-10 August 2018, Boulder, CO, USA&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Topographic Correction of Landsat imagery in the Caucasus Mountains</title>
+      <link>https://davidfrantz.github.io/presentation/pb024/</link>
+      <pubDate>Wed, 08 Aug 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb024/</guid>
+      <description>&lt;p&gt;Volker Radeloff, He Yin, Bin Tan, David Frantz, Johanna Buchner&lt;/p&gt;
+&lt;p&gt;Landsat Science Team Meeting, 8-10 August 2018, Boulder, CO, USA&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Assessment Of Transformation Processes In Dry Tropical Forests Using The Full Landsat Archive And Enhanced Information Products</title>
+      <link>https://davidfrantz.github.io/presentation/pb025/</link>
+      <pubDate>Mon, 09 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb025/</guid>
+      <description>&lt;p&gt;Achim Röder, David Frantz, Marion Stellmes, Anne Schneibel, Joachim Hill&lt;/p&gt;
+&lt;p&gt;3rd joint EARSeL LULC &amp;amp; NASA LCLUC Workshop, 9-12 July, Chania, Greece&lt;/p&gt;
+&lt;p&gt;poster and short presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Crete’s grazing history – the perspective from space</title>
+      <link>https://davidfrantz.github.io/presentation/pb020/</link>
+      <pubDate>Mon, 09 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb020/</guid>
+      <description>&lt;p&gt;Patrick Hostert, David Frantz, Philippe Rufin, Stefan Ernst, Henrieke Dierkes, Sebastian van der Linden, Achim Röder&lt;/p&gt;
+&lt;p&gt;3rd joint EARSeL LULC &amp;amp; NASA LCLUC Workshop, 9-12 July, Chania, Greece&lt;/p&gt;
+&lt;p&gt;Keynote presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Land cover mapping with multi-temporal Sentinel-2 data in mountainous landscapes</title>
+      <link>https://davidfrantz.github.io/presentation/pb023/</link>
+      <pubDate>Mon, 09 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb023/</guid>
+      <description>&lt;p&gt;Katarzyna Ostapowicz, Ewa Grabska, David Frantz, Robert Pazur&lt;/p&gt;
+&lt;p&gt;3rd joint EARSeL LULC &amp;amp; NASA LCLUC Workshop, 9-12 July, Chania, Greece&lt;/p&gt;
+&lt;p&gt;poster and short presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Landsat time-series for mapping agricultural management at the national scale in Turkey</title>
+      <link>https://davidfrantz.github.io/presentation/pb026/</link>
+      <pubDate>Mon, 09 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb026/</guid>
+      <description>&lt;p&gt;Philippe Rufin, David Frantz, Andreas Rabe, Patrick Hostert&lt;/p&gt;
+&lt;p&gt;3rd joint EARSeL LULC &amp;amp; NASA LCLUC Workshop, 9-12 July, Chania, Greece&lt;/p&gt;
+&lt;p&gt;poster and short presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Mapping spatial pattern of forest stands species composition with Sentinel-2 and forest inventory data in the Polish Carpathians</title>
+      <link>https://davidfrantz.github.io/presentation/pb018/</link>
+      <pubDate>Mon, 09 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb018/</guid>
+      <description>&lt;p&gt;Ewa Grabska, David Frantz, Katarzyna Ostapowicz&lt;/p&gt;
+&lt;p&gt;3rd joint EARSeL LULC &amp;amp; NASA LCLUC Workshop, 9-12 July, Chania, Greece&lt;/p&gt;
+&lt;p&gt;poster and short presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Multi-annual Phenology Metrics At Landsat Scale In Data-Sparse Areas</title>
+      <link>https://davidfrantz.github.io/presentation/pb027/</link>
+      <pubDate>Mon, 09 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb027/</guid>
+      <description>&lt;p&gt;Marion Stellmes, David Frantz, Achim Röder&lt;/p&gt;
+&lt;p&gt;3rd joint EARSeL LULC &amp;amp; NASA LCLUC Workshop, 9-12 July, Chania, Greece&lt;/p&gt;
+&lt;p&gt;poster and short presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Phenological Characterization of Vegetated Land Surfaces Using Integrated Landsat 7 ETM&#43;, Landsat 8 OLI and Sentinel-2 A/B MSI Time Series</title>
+      <link>https://davidfrantz.github.io/presentation/pb016/</link>
+      <pubDate>Mon, 09 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb016/</guid>
+      <description>&lt;p&gt;David Frantz, Sebastian Mader, Marcel Schwieder, Patrick Hostert&lt;/p&gt;
+&lt;p&gt;3rd joint EARSeL LULC &amp;amp; NASA LCLUC Workshop, 9-12 July, Chania, Greece&lt;/p&gt;
+&lt;p&gt;poster and short presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Understanding The Dynamics Of The Fire Regime And Its Impacts On Ecosystems In Southern Africa</title>
+      <link>https://davidfrantz.github.io/presentation/pb028/</link>
+      <pubDate>Mon, 09 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb028/</guid>
+      <description>&lt;p&gt;Marion Stellmes, Manfred Finckh, David Frantz, Rasmus Revermann, Achim Röder&lt;/p&gt;
+&lt;p&gt;38th Annual EARSeL Symposium, 9-12 July 2018, Chania, Greece&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>On the potential of the synergistic use of multisensor Landsat 7 ETM&#43;, Landsat 8 OLI and Sentinel-2 A/B MSI time series</title>
+      <link>https://davidfrantz.github.io/presentation/pb017/</link>
+      <pubDate>Tue, 27 Feb 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb017/</guid>
+      <description>&lt;p&gt;David Frantz, Sebastian Mader, Patrick Hostert&lt;/p&gt;
+&lt;p&gt;ESA LPVE 2018, 27 February – 1 March 2018, Frascati, Italy&lt;/p&gt;
+&lt;p&gt;poster presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Synergies between future Landsat and European satellite missions: From land cover to land use</title>
+      <link>https://davidfrantz.github.io/presentation/pb021/</link>
+      <pubDate>Wed, 21 Feb 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb021/</guid>
+      <description>&lt;p&gt;Patrick Hostert, Dirk Pflugmacher, Patrick Griffiths, David Frantz, Sebastian van der Linden, Matthias Baumann, Tobias Kuemmerle, Achim Röder&lt;/p&gt;
+&lt;p&gt;Landsat Science Team Meeting, 21–22 February 2018, Sioux Falls, SD, USA&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

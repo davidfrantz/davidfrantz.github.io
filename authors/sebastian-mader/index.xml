@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sebastian Mader | DAVID FRANTZ</title>
+    <link>https://davidfrantz.github.io/authors/sebastian-mader/</link>
+      <atom:link href="https://davidfrantz.github.io/authors/sebastian-mader/index.xml" rel="self" type="application/rss+xml" />
+    <description>Sebastian Mader</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://davidfrantz.github.io/img/icon-192.png</url>
+      <title>Sebastian Mader</title>
+      <link>https://davidfrantz.github.io/authors/sebastian-mader/</link>
+    </image>
+    
+    <item>
+      <title>Global Analysis of the Differences Between the MODIS Vegetation Index Compositing Date and the Actual Acquisition Date</title>
+      <link>https://davidfrantz.github.io/publication/hass-2017/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/hass-2017/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Improving the Spatial Resolution of Land Surface Phenology by Fusing Medium- and Coarse-Resolution Inputs</title>
+      <link>https://davidfrantz.github.io/publication/frantz-2016b/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/frantz-2016b/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

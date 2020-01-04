@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects | DAVID FRANTZ</title>
+    <link>https://davidfrantz.github.io/project/</link>
+      <atom:link href="https://davidfrantz.github.io/project/index.xml" rel="self" type="application/rss+xml" />
+    <description>Projects</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Thu, 15 Nov 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://davidfrantz.github.io/img/icon-192.png</url>
+      <title>Projects</title>
+      <link>https://davidfrantz.github.io/project/</link>
+    </image>
+    
+    <item>
+      <title>MAT_STOCKS</title>
+      <link>https://davidfrantz.github.io/project/mat_stocks/</link>
+      <pubDate>Thu, 15 Nov 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/project/mat_stocks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SattGrün</title>
+      <link>https://davidfrantz.github.io/project/sattgruen/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/project/sattgruen/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>FORCE NRT</title>
+      <link>https://davidfrantz.github.io/project/force-nrt/</link>
+      <pubDate>Wed, 01 Nov 2017 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/project/force-nrt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sentinel4GRIPS</title>
+      <link>https://davidfrantz.github.io/project/sentinel4grips/</link>
+      <pubDate>Mon, 01 Aug 2016 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/project/sentinel4grips/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SASSCAL</title>
+      <link>https://davidfrantz.github.io/project/sasscal/</link>
+      <pubDate>Sat, 01 Jun 2013 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/project/sasscal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TFO</title>
+      <link>https://davidfrantz.github.io/project/tfo/</link>
+      <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/project/tfo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ForeStClim</title>
+      <link>https://davidfrantz.github.io/project/forestclim/</link>
+      <pubDate>Fri, 01 Jan 2010 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/project/forestclim/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

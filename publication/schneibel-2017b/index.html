@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="David Frantz">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Dry tropical forests undergo massive conversion and degradation processes. This also holds true for the extensive Miombo forests that cover large parts of Southern Africa. While the largest proportional area can be found in Angola, the country still struggles with food shortages, insufficient medical and educational supplies, as well as the ongoing reconstruction of infrastructure after 27 years of civil war. Especially in rural areas, the local population is therefore still heavily dependent on the consumption of natural resources, as well as subsistence agriculture. This leads, on one hand, to large areas of Miombo forests being converted for cultivation purposes, but on the other hand, to degradation processes due to the selective use of forest resources. While forest conversion in south-central rural Angola has already been quantitatively described, information about forest degradation is not yet available. This is due to the history of conflicts and the therewith connected research difficulties, as well as the remote location of this area. We apply an annual time series approach using Landsat data in south-central Angola not only to assess the current degradation status of the Miombo forests, but also to derive past developments reaching back to times of armed conflicts. We use the Disturbance Index based on tasseled cap transformation to exclude external influences like inter-annual variation of rainfall. Based on this time series, linear regression is calculated for forest areas unaffected by conversion, but also for the pre-conversion period of those areas that were used for cultivation purposes during the observation time. Metrics derived from linear regression are used to classify the study area according to their dominant modification processes. We compare our results to MODIS latent integral trends and to further products to derive information on underlying drivers. Around 13% of the Miombo forests are affected by degradation processes, especially along streets, in villages, and close to existing agriculture. However, areas in presumably remote and dense forest areas are also affected to a significant extent. A comparison with MODIS derived fire ignition data shows that they are most likely affected by recurring fires and less by selective timber extraction. We confirm that areas that are used for agriculture are more heavily disturbed by selective use beforehand than those that remain unaffected by conversion. The results can be substantiated by the MODIS latent integral trends and we also show that due to extent and location, the assessment of forest conversion is most likely not sufficient to provide good estimates for the loss of natural resources.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://davidfrantz.github.io/publication/schneibel-2017b/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#5C9DE3">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon-32.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://davidfrantz.github.io/publication/schneibel-2017b/">
+
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="DAVID FRANTZ">
+  <meta property="og:url" content="https://davidfrantz.github.io/publication/schneibel-2017b/">
+  <meta property="og:title" content="Using Annual Landsat Time Series for the Detection of Dry Forest Degradation Processes in South-Central Angola | DAVID FRANTZ">
+  <meta property="og:description" content="Dry tropical forests undergo massive conversion and degradation processes. This also holds true for the extensive Miombo forests that cover large parts of Southern Africa. While the largest proportional area can be found in Angola, the country still struggles with food shortages, insufficient medical and educational supplies, as well as the ongoing reconstruction of infrastructure after 27 years of civil war. Especially in rural areas, the local population is therefore still heavily dependent on the consumption of natural resources, as well as subsistence agriculture. This leads, on one hand, to large areas of Miombo forests being converted for cultivation purposes, but on the other hand, to degradation processes due to the selective use of forest resources. While forest conversion in south-central rural Angola has already been quantitatively described, information about forest degradation is not yet available. This is due to the history of conflicts and the therewith connected research difficulties, as well as the remote location of this area. We apply an annual time series approach using Landsat data in south-central Angola not only to assess the current degradation status of the Miombo forests, but also to derive past developments reaching back to times of armed conflicts. We use the Disturbance Index based on tasseled cap transformation to exclude external influences like inter-annual variation of rainfall. Based on this time series, linear regression is calculated for forest areas unaffected by conversion, but also for the pre-conversion period of those areas that were used for cultivation purposes during the observation time. Metrics derived from linear regression are used to classify the study area according to their dominant modification processes. We compare our results to MODIS latent integral trends and to further products to derive information on underlying drivers. Around 13% of the Miombo forests are affected by degradation processes, especially along streets, in villages, and close to existing agriculture. However, areas in presumably remote and dense forest areas are also affected to a significant extent. A comparison with MODIS derived fire ignition data shows that they are most likely affected by recurring fires and less by selective timber extraction. We confirm that areas that are used for agriculture are more heavily disturbed by selective use beforehand than those that remain unaffected by conversion. The results can be substantiated by the MODIS latent integral trends and we also show that due to extent and location, the assessment of forest conversion is most likely not sufficient to provide good estimates for the loss of natural resources."><meta property="og:image" content="https://davidfrantz.github.io/img/icon-192.png">
+  <meta property="twitter:image" content="https://davidfrantz.github.io/img/icon-192.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2019-12-14T12:44:52&#43;00:00">
+    
+    <meta property="article:modified_time" content="2017-01-01T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://davidfrantz.github.io/publication/schneibel-2017b/"
+  },
+  "headline": "Using Annual Landsat Time Series for the Detection of Dry Forest Degradation Processes in South-Central Angola",
+  
+  "datePublished": "2019-12-14T12:44:52Z",
+  "dateModified": "2017-01-01T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Anne Schneibel"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "DAVID FRANTZ",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://davidfrantz.github.io/img/icon-512.png"
+    }
+  },
+  "description": "Dry tropical forests undergo massive conversion and degradation processes. This also holds true for the extensive Miombo forests that cover large parts of Southern Africa. While the largest proportional area can be found in Angola, the country still struggles with food shortages, insufficient medical and educational supplies, as well as the ongoing reconstruction of infrastructure after 27 years of civil war. Especially in rural areas, the local population is therefore still heavily dependent on the consumption of natural resources, as well as subsistence agriculture. This leads, on one hand, to large areas of Miombo forests being converted for cultivation purposes, but on the other hand, to degradation processes due to the selective use of forest resources. While forest conversion in south-central rural Angola has already been quantitatively described, information about forest degradation is not yet available. This is due to the history of conflicts and the therewith connected research difficulties, as well as the remote location of this area. We apply an annual time series approach using Landsat data in south-central Angola not only to assess the current degradation status of the Miombo forests, but also to derive past developments reaching back to times of armed conflicts. We use the Disturbance Index based on tasseled cap transformation to exclude external influences like inter-annual variation of rainfall. Based on this time series, linear regression is calculated for forest areas unaffected by conversion, but also for the pre-conversion period of those areas that were used for cultivation purposes during the observation time. Metrics derived from linear regression are used to classify the study area according to their dominant modification processes. We compare our results to MODIS latent integral trends and to further products to derive information on underlying drivers. Around 13% of the Miombo forests are affected by degradation processes, especially along streets, in villages, and close to existing agriculture. However, areas in presumably remote and dense forest areas are also affected to a significant extent. A comparison with MODIS derived fire ignition data shows that they are most likely affected by recurring fires and less by selective timber extraction. We confirm that areas that are used for agriculture are more heavily disturbed by selective use beforehand than those that remain unaffected by conversion. The results can be substantiated by the MODIS latent integral trends and we also show that due to extent and location, the assessment of forest conversion is most likely not sufficient to provide good estimates for the loss of natural resources."
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Using Annual Landsat Time Series for the Detection of Dry Forest Degradation Processes in South-Central Angola | DAVID FRANTZ</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">DAVID FRANTZ</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">DAVID FRANTZ</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-center" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#experience"><span>CV</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#publications"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#presentations"><span>Presentations</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#data"><span>Data</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#software"><span>Software</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#tutorials"><span>Tutorials</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item">
+        <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  <div class="pub">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Using Annual Landsat Time Series for the Detection of Dry Forest Degradation Processes in South-Central Angola</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+
+
+  
+  <span><a href="/authors/anne-schneibel/">Anne Schneibel</a></span>, <span><a href="/authors/david-frantz/">David Frantz</a></span>, <span><a href="/authors/achim-roder/">Achim Röder</a></span>, <span><a href="/authors/marion-stellmes/">Marion Stellmes</a></span>, <span><a href="/authors/kim-fischer/">Kim Fischer</a></span>, <span><a href="/authors/joachim-hill/">Joachim Hill</a></span>
+
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    January 2017
+  </span>
+  
+
+  
+
+  
+
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+<div class="btn-links mb-3">
+  
+  
+
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+<a class="btn btn-outline-primary my-1 mr-1" href="https://www.mdpi.com/2072-4292/9/9/905/pdf" target="_blank" rel="noopener">
+  PDF
+</a>
+
+
+
+<button type="button" class="btn btn-outline-primary my-1 mr-1 js-cite-modal"
+        data-filename="/publication/schneibel-2017b/cite.bib">
+  Cite
+</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a class="btn btn-outline-primary my-1 mr-1" href="https://doi.org/10.3390/rs9090905" target="_blank" rel="noopener">
+  DOI
+</a>
+
+
+
+</div>
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    
+    <h3>Abstract</h3>
+    <p class="pub-abstract">Dry tropical forests undergo massive conversion and degradation processes. This also holds true for the extensive Miombo forests that cover large parts of Southern Africa. While the largest proportional area can be found in Angola, the country still struggles with food shortages, insufficient medical and educational supplies, as well as the ongoing reconstruction of infrastructure after 27 years of civil war. Especially in rural areas, the local population is therefore still heavily dependent on the consumption of natural resources, as well as subsistence agriculture. This leads, on one hand, to large areas of Miombo forests being converted for cultivation purposes, but on the other hand, to degradation processes due to the selective use of forest resources. While forest conversion in south-central rural Angola has already been quantitatively described, information about forest degradation is not yet available. This is due to the history of conflicts and the therewith connected research difficulties, as well as the remote location of this area. We apply an annual time series approach using Landsat data in south-central Angola not only to assess the current degradation status of the Miombo forests, but also to derive past developments reaching back to times of armed conflicts. We use the Disturbance Index based on tasseled cap transformation to exclude external influences like inter-annual variation of rainfall. Based on this time series, linear regression is calculated for forest areas unaffected by conversion, but also for the pre-conversion period of those areas that were used for cultivation purposes during the observation time. Metrics derived from linear regression are used to classify the study area according to their dominant modification processes. We compare our results to MODIS latent integral trends and to further products to derive information on underlying drivers. Around 13% of the Miombo forests are affected by degradation processes, especially along streets, in villages, and close to existing agriculture. However, areas in presumably remote and dense forest areas are also affected to a significant extent. A comparison with MODIS derived fire ignition data shows that they are most likely affected by recurring fires and less by selective timber extraction. We confirm that areas that are used for agriculture are more heavily disturbed by selective use beforehand than those that remain unaffected by conversion. The results can be substantiated by the MODIS latent integral trends and we also show that due to extent and location, the assessment of forest conversion is most likely not sufficient to provide good estimates for the loss of natural resources.</p>
+    
+
+    
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-12 col-md-3 pub-row-heading">Type</div>
+          <div class="col-12 col-md-9">
+            
+            
+            <a href="/publication/#2">
+              Journal article
+            </a>
+            
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="d-md-none space-below"></div>
+    
+
+    
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-12 col-md-3 pub-row-heading">Publication</div>
+          <div class="col-12 col-md-9"><em>Remote Sensing</em></div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="d-md-none space-below"></div>
+    
+
+    <div class="space-below"></div>
+
+    <div class="article-style"></div>
+
+    
+
+
+
+
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://davidfrantz.github.io/publication/schneibel-2017b/&amp;text=Using%20Annual%20Landsat%20Time%20Series%20for%20the%20Detection%20of%20Dry%20Forest%20Degradation%20Processes%20in%20South-Central%20Angola" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://davidfrantz.github.io/publication/schneibel-2017b/&amp;t=Using%20Annual%20Landsat%20Time%20Series%20for%20the%20Detection%20of%20Dry%20Forest%20Degradation%20Processes%20in%20South-Central%20Angola" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Using%20Annual%20Landsat%20Time%20Series%20for%20the%20Detection%20of%20Dry%20Forest%20Degradation%20Processes%20in%20South-Central%20Angola&amp;body=https://davidfrantz.github.io/publication/schneibel-2017b/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://davidfrantz.github.io/publication/schneibel-2017b/&amp;title=Using%20Annual%20Landsat%20Time%20Series%20for%20the%20Detection%20of%20Dry%20Forest%20Degradation%20Processes%20in%20South-Central%20Angola" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=Using%20Annual%20Landsat%20Time%20Series%20for%20the%20Detection%20of%20Dry%20Forest%20Degradation%20Processes%20in%20South-Central%20Angola%20https://davidfrantz.github.io/publication/schneibel-2017b/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://davidfrantz.github.io/publication/schneibel-2017b/&amp;title=Using%20Annual%20Landsat%20Time%20Series%20for%20the%20Detection%20of%20Dry%20Forest%20Degradation%20Processes%20in%20South-Central%20Angola" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="/authors/anne-schneibel/"></a></h5>
+      
+      
+      <ul class="network-icon" aria-hidden="true">
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  </div>
+</div>
+
+      
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.3227ab49eed49815d1b4ba40154f74e7.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    © 2019-2020 David Frantz &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

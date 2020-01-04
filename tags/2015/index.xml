@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2015 | DAVID FRANTZ</title>
+    <link>https://davidfrantz.github.io/tags/2015/</link>
+      <atom:link href="https://davidfrantz.github.io/tags/2015/index.xml" rel="self" type="application/rss+xml" />
+    <description>2015</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Fri, 18 Dec 2015 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://davidfrantz.github.io/img/icon-192.png</url>
+      <title>2015</title>
+      <link>https://davidfrantz.github.io/tags/2015/</link>
+    </image>
+    
+    <item>
+      <title>Die Etablierung automatisierter Prozessierungsumgebungen zur künftigen Nutzung von Sentinel-2 Datenarchiven</title>
+      <link>https://davidfrantz.github.io/presentation/pb046/</link>
+      <pubDate>Fri, 18 Dec 2015 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb046/</guid>
+      <description>&lt;p&gt;David Frantz, Achim Röder, Marion Stellmes, Joachim Hill&lt;/p&gt;
+&lt;p&gt;Precision Forestry - Beiträge aus Fernerkundung und Geoinformatik, 18 December 2015, Trier, Germany&lt;/p&gt;
+&lt;p&gt;invited oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Generating phenology adaptive pixel-based Landsat composites across large areas</title>
+      <link>https://davidfrantz.github.io/presentation/pb047/</link>
+      <pubDate>Thu, 24 Sep 2015 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb047/</guid>
+      <description>&lt;p&gt;David Frantz, Achim Röder, Marion Stellmes, Joachim Hill&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Gemeinsame Jahrestagung der Arbeitskreise Fernerkundung (DGfG &amp;amp; DGPF), 24-25 September 2015, Bonn, Germany&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Linking Vegetation databases and phenological metrics of MODIS time series to predict plant species richness of the Okavango Basin</title>
+      <link>https://davidfrantz.github.io/presentation/pb051/</link>
+      <pubDate>Mon, 31 Aug 2015 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb051/</guid>
+      <description>&lt;p&gt;Rasmus Revermann, Manfred Finckh, Marion Stellmes, Ben Strohbach, David Frantz, Jens Oldeland&lt;/p&gt;
+&lt;p&gt;GFÖ 2015, 31-4 August/September 2015, Göttingen, Germany&lt;/p&gt;
+&lt;p&gt;poster presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Patterns, processes &amp; drivers - how interconnected social-ecological systems shape landscapes in the Okavango catchment</title>
+      <link>https://davidfrantz.github.io/presentation/pb050/</link>
+      <pubDate>Mon, 31 Aug 2015 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb050/</guid>
+      <description>&lt;p&gt;Manfred Finckh, Cynthia Erb, David Frantz, Rasmus Revermann, Achim Röder, Anne Schneibel, Marion Stellmes&lt;/p&gt;
+&lt;p&gt;GFÖ 2015, 31-4 August/September 2015, Göttingen, Germany&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>A characterization of the status and dynamics of land cover in the active Okavango catchment based on various MODIS products and climate data</title>
+      <link>https://davidfrantz.github.io/presentation/pb053/</link>
+      <pubDate>Wed, 22 Jul 2015 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb053/</guid>
+      <description>&lt;p&gt;Marion Stellmes, Achim Röder, David Frantz, Thomas Udelhoven, Joachim Hill&lt;/p&gt;
+&lt;p&gt;MultiTemp 2015, 22-24 July 2015, Annecy, France&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>On the usage of a pixel-based dark-object database for the estimation of aerosol optical depth and its incorporation in a large area Landsat processing framework</title>
+      <link>https://davidfrantz.github.io/presentation/pb048/</link>
+      <pubDate>Wed, 22 Jul 2015 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb048/</guid>
+      <description>&lt;p&gt;David Frantz, Achim Röder, Marion Stellmes, Joachim Hill&lt;/p&gt;
+&lt;p&gt;MultiTemp 2015, 22-24 July 2015, Annecy, France&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Reconstruction of MODIS derived phenology metrics at Landsat spatial resolution</title>
+      <link>https://davidfrantz.github.io/presentation/pb049/</link>
+      <pubDate>Wed, 22 Jul 2015 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb049/</guid>
+      <description>&lt;p&gt;David Frantz, Marion Stellmes, Achim Röder, Thomas Udelhoven, Sebastian Mader, Joachim Hill&lt;/p&gt;
+&lt;p&gt;MultiTemp 2015, 22-24 July 2015, Annecy, France&lt;/p&gt;
+&lt;p&gt;poster presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>A characterization of the status and dynamics of land cover in the active Okavango catchment based on various MODIS products and climate data</title>
+      <link>https://davidfrantz.github.io/presentation/pb054/</link>
+      <pubDate>Wed, 17 Jun 2015 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb054/</guid>
+      <description>&lt;p&gt;Marion Stellmes, Achim Röder, David Frantz, Thomas Udelhoven, Joachim Hill&lt;/p&gt;
+&lt;p&gt;EARSeL SIG on Temporal Analysis of Satellite Images, 17-19 June 2015, Stockholm, Sweden&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Using decadal pixel-based Landsat composites to analyze post-war forest cover dynamics in Angola. EARSeL SIG on Temporal Analysis of Satellite Images</title>
+      <link>https://davidfrantz.github.io/presentation/pb052/</link>
+      <pubDate>Wed, 17 Jun 2015 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb052/</guid>
+      <description>&lt;p&gt;Achim Röder, David Frantz, Marion Stellmes, Anne Schneibel, Manfred Finckh, Valter Chissingu, Joachim Hill&lt;/p&gt;
+&lt;p&gt;EARSeL SIG on Temporal Analysis of Satellite Images, 17-19 June 2015, Stockholm, Sweden&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

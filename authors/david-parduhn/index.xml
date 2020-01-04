@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>David Parduhn | DAVID FRANTZ</title>
+    <link>https://davidfrantz.github.io/authors/david-parduhn/</link>
+      <atom:link href="https://davidfrantz.github.io/authors/david-parduhn/index.xml" rel="self" type="application/rss+xml" />
+    <description>David Parduhn</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Mon, 01 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://davidfrantz.github.io/img/icon-192.png</url>
+      <title>David Parduhn</title>
+      <link>https://davidfrantz.github.io/authors/david-parduhn/</link>
+    </image>
+    
+    <item>
+      <title>Seeing deforestation in Zambia - On the discrepancy between biophysical land-use changes and social perception</title>
+      <link>https://davidfrantz.github.io/publication/parduhn-2018/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/parduhn-2018/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

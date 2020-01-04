@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2019 | DAVID FRANTZ</title>
+    <link>https://davidfrantz.github.io/tags/2019/</link>
+      <atom:link href="https://davidfrantz.github.io/tags/2019/index.xml" rel="self" type="application/rss+xml" />
+    <description>2019</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Mon, 16 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://davidfrantz.github.io/img/icon-192.png</url>
+      <title>2019</title>
+      <link>https://davidfrantz.github.io/tags/2019/</link>
+    </image>
+    
+    <item>
+      <title>FORCE Tutorial: Water Vapor Database</title>
+      <link>https://davidfrantz.github.io/tutorials/force-wvdb/wvdb/</link>
+      <pubDate>Mon, 16 Dec 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/tutorials/force-wvdb/wvdb/</guid>
+      <description>&lt;p&gt;&lt;em&gt;This tutorial uses FORCE v. 3.0&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;learning-objective&#34;&gt;Learning Objective&lt;/h2&gt;
+&lt;p&gt;This tutorial will show how to prepare the Water Vapor Database (WVDB) for the &lt;strong&gt;FORCE Level 2 Processing System (FORCE L2PS)&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
+&lt;p&gt;During atmospheric correction, the effect of water vapor absorption can only be corrected if we know the amount of water vapor in the atmosphere.&lt;/p&gt;
+&lt;p&gt;If you are using Sentinel-2 data only, you can stop reading. Sentinel-2 is equipped with a water vapor channel, and thus, water wapor amount can be estimated from the images.&lt;/p&gt;
+&lt;p&gt;Landsat, however, doesn&#39;t have such a band. Therefore, we need to rely on external data, which needs to be precompiled into a water vapor database.&lt;/p&gt;
+&lt;h2 id=&#34;water-vapor-database&#34;&gt;Water Vapor Database&lt;/h2&gt;
+&lt;p&gt;The database holds water vapor values for the central coordinates of each WRS-2 frame. If available, day-specific values are used.&lt;/p&gt;
+&lt;p&gt;The database consists of one table for each day (&lt;code&gt;WVP_YYYY-MM-DD.txt&lt;/code&gt;)&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ls /data/Earth/global/wvp/wvdb/WVP_2010-07-*
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;/data/Earth/global/wvp/wvdb/WVP_2010-07-01.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-02.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-03.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-04.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-05.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-06.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-07.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-08.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-09.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-10.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-11.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-12.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-13.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-14.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-15.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-16.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-17.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-18.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-19.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-20.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-21.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-22.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-23.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-24.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-25.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-26.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-27.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-28.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-29.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-30.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-31.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Each file includes one value per coordinate. In the example below, there are 13281 coordinates in each file (global land coverage). The coordinate, which is closest to the center of the Landsat image is selected, and the atmospheric correction uses this value to account for gaseous absorption.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;wc -l /data/Earth/global/wvp/wvdb/WVP_2010-07-26.txt 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;13281 /data/Earth/global/wvp/wvdb/WVP_2010-07-26.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;head /data/Earth/global/wvp/wvdb/WVP_2010-07-26.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;-15.3934 80.7603 1.170018 MOD
+-22.8654 80.0056 9999.000000 TBD
+-29.2236 79.1137 9999.000000 TBD
+-34.5930 78.1151 0.614454 MOD
+-39.1269 77.0343 0.448552 MOD
+-42.9718 75.8898 0.260607 MOD
+-46.2552 74.6958 0.282855 MYD
+-49.0816 73.4629 0.337015 MOD
+-51.5357 72.1989 9999.000000 TBD
+-53.6847 70.9100 9999.000000 TBD
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;climatology&#34;&gt;Climatology&lt;/h2&gt;
+&lt;p&gt;If day-specific values are not available (no table is existing, or there is a fill value), a monthly long-term climatology is used instead. The climatology consists of one table for each month (&lt;code&gt;WVP_0000-MM-00.txt&lt;/code&gt;).&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ls /data/Earth/global/wvp/wvdb/WVP_0000*
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;/data/Earth/global/wvp/wvdb/WVP_0000-01-00.txt
+/data/Earth/global/wvp/wvdb/WVP_0000-02-00.txt
+/data/Earth/global/wvp/wvdb/WVP_0000-03-00.txt
+/data/Earth/global/wvp/wvdb/WVP_0000-04-00.txt
+/data/Earth/global/wvp/wvdb/WVP_0000-05-00.txt
+/data/Earth/global/wvp/wvdb/WVP_0000-06-00.txt
+/data/Earth/global/wvp/wvdb/WVP_0000-07-00.txt
+/data/Earth/global/wvp/wvdb/WVP_0000-08-00.txt
+/data/Earth/global/wvp/wvdb/WVP_0000-09-00.txt
+/data/Earth/global/wvp/wvdb/WVP_0000-10-00.txt
+/data/Earth/global/wvp/wvdb/WVP_0000-11-00.txt
+/data/Earth/global/wvp/wvdb/WVP_0000-12-00.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Again, each file includes one value per coordinate. The file holds the long-term average, long-term standard deviation, and the number of measurements used to compute these statistics.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;wc -l /data/Earth/global/wvp/wvdb/WVP_0000-07-00.txt 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;13281 /data/Earth/global/wvp/wvdb/WVP_0000-07-00.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;head /data/Earth/global/wvp/wvdb/WVP_0000-07-00.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;-15.3934 80.7603 1.177704 0.364894 300
+-22.8654 80.0056 1.079682 0.328948 311
+-29.2236 79.1137 0.695211 0.234917 383
+-34.5930 78.1151 0.549352 0.256754 445
+-39.1269 77.0343 0.472883 0.224957 480
+-42.9718 75.8898 0.410826 0.211346 476
+-46.2552 74.6958 0.384219 0.145523 457
+-49.0816 73.4629 0.415261 0.170940 456
+-51.5357 72.1989 0.515858 0.223122 422
+-53.6847 70.9100 0.546611 0.273735 276
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://davidfrantz.github.io/img/wvdb.gif&#34; data-caption=&#34;Global animation of the climatology (monthly average)&#34;&gt;
+&lt;img src=&#34;https://davidfrantz.github.io/img/wvdb.gif&#34; alt=&#34;&#34; width=&#34;750&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Global animation of the climatology (monthly average)
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;uncertainty-of-the-climatology&#34;&gt;Uncertainty of the climatology&lt;/h2&gt;
+&lt;p&gt;The uncertainty of using the climatology was assessed in this paper:
+Frantz, D., Stellmes, M., &amp;amp; Hostert, P. (2019). A Global MODIS Water Vapor Database for the Operational Atmospheric Correction of Historic and Recent Landsat Imagery. Remote Sensing, 11, 257. &lt;a href=&#34;https://doi.org/10.3390/rs11030257&#34;&gt;https://doi.org/10.3390/rs11030257&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;prepare-the-wvdb&#34;&gt;Prepare the WVDB&lt;/h2&gt;
+&lt;p&gt;We generally use a WVDB generated from MODIS water vapor products (&lt;a href=&#34;https://modis.gsfc.nasa.gov/data/dataprod/mod05.php&#34;&gt;MOD05 and MYD05&lt;/a&gt;).&lt;/p&gt;
+&lt;h3 id=&#34;download-the-ready-to-go-global-wvdb&#34;&gt;Download the ready-to-go global WVDB&lt;/h3&gt;
+&lt;p&gt;You should start by downloading the pre-compiled WVDB with global coverage from &lt;a href=&#34;doi.pangaea.de/10.1594/PANGAEA.893109&#34;&gt;here&lt;/a&gt;. This saves you a lot of processing. This freely available dataset was generated with the &lt;strong&gt;FORCE WVDB&lt;/strong&gt; component, and is comprised of daily global water vapor data for February 2000 to July 2018 for each land-intersecting WRS-2 scene (13281 coordinates), as well as a monthly climatology that can be used if no daily value is available.&lt;/p&gt;
+&lt;h3 id=&#34;generate-the-wvdb-on-your-own&#34;&gt;Generate the WVDB on your own&lt;/h3&gt;
+&lt;p&gt;We try to update this dataset in regular intervals. However, if you are in need of more up-to-date data, you can use the &lt;strong&gt;FORCE WVDB&lt;/strong&gt; component to generate/update these tables on your own. &lt;strong&gt;FORCE WVDB&lt;/strong&gt; needs a table with input coordinates (center coordinates of WRS-2 frames). The &lt;a href=&#34;doi.pangaea.de/10.1594/PANGAEA.893109&#34;&gt;pre-compiled dataset&lt;/a&gt; includes such a table. If you are not interested in global coverage, you can subset this file. The file should contain two columns separated by white space, and no header. The first column should give the longitude (X), the second column the latitude (Y) with coordinates in decimal degree (negative values for West/South). Any other column is ignored (in the example below, the WRS-2 Path/Row is in the third column).&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;wc -l /data/Earth/global/wvp/wvdb/wrs-2-land.coo
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;13281 /data/Earth/global/wvp/wvdb/wrs-2-land.coo
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;head /data/Earth/global/wvp/wvdb/wrs-2-land.coo
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;-15.39340494140 80.76026666750 013001
+-22.86543244600 80.00558606640 013002
+-29.22356065160 79.11366800820 013003
+-34.59295680040 78.11513723200 013004
+-39.12687451150 77.03430642440 013005
+-42.97184515330 75.88984431700 013006
+-46.25519224080 74.69581438230 013007
+-49.08160498390 73.46286239410 013008
+-51.53569902300 72.19888348300 013009
+-53.68466715610 70.91003752470 013010
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;FORCE WVDB&lt;/strong&gt; downloads each Terra/Aqua granule (collection 6.1) that intersects with any of these coordinates. The files are downloaded from the Level1 and Atmosphere Archive and Distribution System (&lt;a href=&#34;ladsweb.modaps.eosdis.nasa.gov&#34;&gt;LAADS&lt;/a&gt;) at NASA’s Goddard Space Flight Center. Note that any permanent or temporary change/shutdown/decommissioning on LAADS’ or MODIS’ end may result in the nonfunctioning of &lt;strong&gt;FORCE WVDB&lt;/strong&gt;&amp;hellip; Also note, that they perform a weekly maintenance, during which their servers are not accessable.&lt;/p&gt;
+&lt;p&gt;As with any other FORCE program, you can display short usage instructions by executing the program without any parameters.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;force-lut-modis
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;usage: force-lut-modis coords dir-wvp dir-geometa dir-eoshdf
+           [start-year start-month start-day
+            end-year   end-month   end-day]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;A coordinate file needs to be given as 1st argument.&lt;/p&gt;
+&lt;p&gt;The MODIS data are downloaded to dir-eoshdf (this directory must exist). MODIS data that are already in dir-eoshdf are not downloaded again. &lt;em&gt;If the tool crashes because a dataset is corrupt, it is necessary to manually delete this file and run the tool again. Unfortunately, this happens from time to time due to incomplete downloads or if LAADS is unresponsive. The program attempts to re-download a corrupt file up to 10 times, but this error can occur nonetheless.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;MOD05/MYD05 data are swath products, and MOD03/MYD03 geometa tables are necessary to relate coordinates to MODIS granules. The geometa tables are downloaded to dir-geometa (this directory must exist). Tables that are already in dir-geometa are not downloaded again. &lt;em&gt;If the tool crashes because a table is invalid, it is necessary to manually delete this file and run the tool again. Unfortunately, this happens from time to time due to incomplete downloads or if LAADS is unresponsive. The program attempts to re-download a corrupt file up to 10 times, but this error can occur nonetheless.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;The final water vapor tables are saved in dir-wvp (this directory must exist). Tables that are already in dir-wvp are not processed again (i.e. no download of geometa tables and hdf files).&lt;/p&gt;
+&lt;p&gt;The start and end arguments are optional and may be used for parallelization. If they are not given, &lt;strong&gt;FORCE WVDB&lt;/strong&gt; will download the entire time series of all coordinates provided (this can be a lot!).&lt;/p&gt;
+&lt;p&gt;This directory is the directory, to which DIR_WVPLUT in the &lt;strong&gt;FORCE L2PS&lt;/strong&gt; parameter file should refer.
+&lt;code&gt;DIR_WVPLUT = /data/Earth/global/wvp/wvdb&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;If you have finished compiling the WVDB, you may delete the MODIS *.hdf files.&lt;/p&gt;
+&lt;p&gt;Download the entire data record (in one process - this is slow):&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;force-lut-modis /data/Earth/global/wvp/wvdb/wrs-2-land.coo /data/Earth/global/wvp/wvdb /data/Earth/global/wvp/geo /data/Earth/global/wvp/hdf
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Download one week:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;force-lut-modis /data/Earth/global/wvp/wvdb/wrs-2-land.coo /data/Earth/global/wvp/wvdb /data/Earth/global/wvp/geo /data/Earth/global/wvp/hdf 2010 07 01 2010 07 07
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Use GNU parallel to download an entire month in 31 parallel processes. This works by creating a list 1..31, which is distributed to 31 jobs. Each job calls &lt;strong&gt;FORCE WVDB&lt;/strong&gt; for one specific day in July 2010. The curly braces are replaced with the list value given to each process.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;seq -w 1 31 | parallel -j31 force-lut-modis /data/Earth/global/wvp/wvdb/wrs-2-land.coo /data/Earth/global/wvp/wvdb /data/Earth/global/wvp/geo /data/Earth/global/wvp/hdf 2010 07 {} 2010 07 {}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Analysis-Ready-Data für die Ableitung von Grünlandinformationen in Deutschland</title>
+      <link>https://davidfrantz.github.io/presentation/pb013/</link>
+      <pubDate>Tue, 12 Nov 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb013/</guid>
+      <description>&lt;p&gt;Marcel Schwieder, David Frantz, Kira Pfoch, Patrick Hostert&lt;/p&gt;
+&lt;p&gt;Neue Perspektiven der Erdbeobachtung - 2. Symposium zur angewandten Satellitenerdbeobachtung. 12-13 November 2019, Cologne, Germany&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Large-scale land monitoring at HUB with Landsat and Sentinel-2</title>
+      <link>https://davidfrantz.github.io/presentation/pb001/</link>
+      <pubDate>Thu, 05 Sep 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb001/</guid>
+      <description>&lt;p&gt;David Frantz, Dirk Pflugmacher, Patrick Griffiths, Franz Schug, Patrick Hostert&lt;/p&gt;
+&lt;p&gt;EODC Workshop - Sentinel Data Cubes for Large-Scale Land Monitoring, 05 September 2019, Vienna, Austria&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Dominant land cover of the Okavango Basin</title>
+      <link>https://davidfrantz.github.io/data/dt003/</link>
+      <pubDate>Mon, 01 Jul 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/data/dt003/</guid>
+      <description>&lt;p&gt;Supplement to: Stellmes, M et al. (2013): Okavango Basin - Earth Observation. In: Oldeland, J., Erb, C., Finckh, M. &amp;amp; Jürgens, N. [Eds.]: Environmental Assessments in the Okavango Region. Biodiversity &amp;amp; Ecology, 5, 23-27&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;icon: twitter
+icon_pack: fab
+name: &amp;ldquo;Follow&amp;rdquo;
+link: &lt;a href=&#34;https://twitter.com/d__frantz&#34;&gt;https://twitter.com/d__frantz&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>FORCE v. 2.0 – Analysis Ready Data and beyond</title>
+      <link>https://davidfrantz.github.io/presentation/pb002/</link>
+      <pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb002/</guid>
+      <description>&lt;p&gt;David Frantz, Patrick Hostert&lt;/p&gt;
+&lt;p&gt;ESA Living Planet Symposium, 13-17 May 2019, Milan, Italy&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Grassland Use Intensity Metrics from Sentinel-1 and Sentinel-2 Data</title>
+      <link>https://davidfrantz.github.io/presentation/pb012/</link>
+      <pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb012/</guid>
+      <description>&lt;p&gt;Marcel Schwieder, David Frantz, Patrick Griffiths, Kira Pfoch, Holger Lilienthal, Patrick Hostert&lt;/p&gt;
+&lt;p&gt;ESA Living Planet Symposium, 13-17 May 2019, Milan, Italy&lt;/p&gt;
+&lt;p&gt;poster presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Integrated Landsat/Sentinel-2 data and regression-based unmixing for large area fraction mapping of vegetation types across California’s ecoregions</title>
+      <link>https://davidfrantz.github.io/presentation/pb008/</link>
+      <pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb008/</guid>
+      <description>&lt;p&gt;Akpona Okujeni, Sam Cooper, Clemens Jaenicke, David Frantz, Patrick Hostert, Sebastian van der Linden&lt;/p&gt;
+&lt;p&gt;ESA Living Planet Symposium, 13-17 May 2019, Milan, Italy&lt;/p&gt;
+&lt;p&gt;poster presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Land Use 2.0: how dense time series and phenometrics have improved the monitoring of long-term vegetation dynamics in Mediterranean rangelands</title>
+      <link>https://davidfrantz.github.io/presentation/pb003/</link>
+      <pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb003/</guid>
+      <description>&lt;p&gt;David Frantz, Patrick Hostert, Stefan Ernst, Philippe Rufin, Achim Röder, Sebastian van der Linden&lt;/p&gt;
+&lt;p&gt;ESA Living Planet Symposium, 13-17 May 2019, Milan, Italy&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Mapping Olive Tree Cover Using Land Surface Phenology Derived From Sentinel-2A/B Time Series</title>
+      <link>https://davidfrantz.github.io/presentation/pb009/</link>
+      <pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb009/</guid>
+      <description>&lt;p&gt;Philippe Rufin, David Frantz, Henrieke Dierkes, Dirk Pflugmacher, Achim Röder, Patrick Hostert&lt;/p&gt;
+&lt;p&gt;ESA Living Planet Symposium, 13-17 May 2019, Milan, Italy&lt;/p&gt;
+&lt;p&gt;poster presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Multi-annual Phenology Metrics At Landsat Scale In Data-Sparse Areas</title>
+      <link>https://davidfrantz.github.io/presentation/pb014/</link>
+      <pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb014/</guid>
+      <description>&lt;p&gt;Marion Stellmes, David Frantz, Achim Röder&lt;/p&gt;
+&lt;p&gt;ESA Living Planet Symposium, 13-17 May 2019, Milan, Italy&lt;/p&gt;
+&lt;p&gt;poster presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Parallax based Cloud Detection for Sentinel-2 Analysis Ready Data Generation</title>
+      <link>https://davidfrantz.github.io/presentation/pb004/</link>
+      <pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb004/</guid>
+      <description>&lt;p&gt;David Frantz, Erik Haß, Andreas Uhl, Johannes Stoffels, Joachim Hill&lt;/p&gt;
+&lt;p&gt;ESA Living Planet Symposium, 13-17 May 2019, Milan, Italy&lt;/p&gt;
+&lt;p&gt;poster presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Sentinel-2 and Machine Learning Regression for Built-up and Urban Green Fraction Mapping Across European Settlements</title>
+      <link>https://davidfrantz.github.io/presentation/pb011/</link>
+      <pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb011/</guid>
+      <description>&lt;p&gt;Franz Schug, David Frantz, Akpona Okujeni, Sebastian van der Linden, Patrick Hostert&lt;/p&gt;
+&lt;p&gt;ESA Living Planet Symposium, 13-17 May 2019, Milan, Italy&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Wall-to-wall material stock mapping – from satellite data to material stock modeling</title>
+      <link>https://davidfrantz.github.io/presentation/pb010/</link>
+      <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb010/</guid>
+      <description>&lt;p&gt;Franz Schug, David Frantz, Akpona Okujeni, Sebastian van der Linden, Patrick Hostert&lt;/p&gt;
+&lt;p&gt;Global Land Programme (GLP) - 4th Open Science Meeting, 24-26 April 2019, Bern, Switzerland&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Large-area land-cover and land-use change mapping in the Caucasus Mountains using topographically corrected multi-temporal Landsat composites</title>
+      <link>https://davidfrantz.github.io/presentation/pb007/</link>
+      <pubDate>Wed, 03 Apr 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb007/</guid>
+      <description>&lt;p&gt;Johanna Buchner, He Yin, David Frantz, Benjamin Bleyhl, Tobias Kuemmerle, Tamar Bakuradze, Anna Komarova, A. Rizayeva, Hovik Sayadyan, Garik Tepanosyan, Volker Radeloff&lt;/p&gt;
+&lt;p&gt;American Association of Geographers (AAG) Annnual Meeting, 3-7 April 2019, Washington D.C., USA&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>A Landsat-based national-scale map of cropping practices for Turkey (2015)</title>
+      <link>https://davidfrantz.github.io/data/dt002/</link>
+      <pubDate>Fri, 01 Mar 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/data/dt002/</guid>
+      <description>&lt;p&gt;Supplement to: Rufin, P et al. (2019): Mapping Cropping Practices on a National Scale Using Intra-Annual Landsat Time Series Binning. Remote Sensing, 11(3), 232, &lt;a href=&#34;https://doi.org/10.3390/rs11030232&#34;&gt;https://doi.org/10.3390/rs11030232&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>FORCE - Analysis Ready Data and beyond</title>
+      <link>https://davidfrantz.github.io/presentation/pb005/</link>
+      <pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb005/</guid>
+      <description>&lt;p&gt;David Frantz, Patrick Hostert&lt;/p&gt;
+&lt;p&gt;Dreiländertagung OVG-DGPF-SGPF, 20-22 February 2019, Vienna, Austria&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Generating Analysis Ready Data from Satellite Image Archives</title>
+      <link>https://davidfrantz.github.io/presentation/pb006/</link>
+      <pubDate>Fri, 11 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb006/</guid>
+      <description>&lt;p&gt;David Frantz&lt;/p&gt;
+&lt;p&gt;Wissensmanagement in der Bioinformatik Colloquium, Humboldt-Universität zu Berlin, 11 January 2019, Berlin, Germany&lt;/p&gt;
+&lt;p&gt;invited oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

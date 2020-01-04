@@ -1,0 +1,1300 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DAVID FRANTZ</title>
+    <link>https://davidfrantz.github.io/</link>
+      <atom:link href="https://davidfrantz.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <description>DAVID FRANTZ</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Mon, 16 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://davidfrantz.github.io/img/icon-192.png</url>
+      <title>DAVID FRANTZ</title>
+      <link>https://davidfrantz.github.io/</link>
+    </image>
+    
+    <item>
+      <title>FORCE Tutorial: Water Vapor Database</title>
+      <link>https://davidfrantz.github.io/tutorials/force-wvdb/wvdb/</link>
+      <pubDate>Mon, 16 Dec 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/tutorials/force-wvdb/wvdb/</guid>
+      <description>&lt;p&gt;&lt;em&gt;This tutorial uses FORCE v. 3.0&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;learning-objective&#34;&gt;Learning Objective&lt;/h2&gt;
+&lt;p&gt;This tutorial will show how to prepare the Water Vapor Database (WVDB) for the &lt;strong&gt;FORCE Level 2 Processing System (FORCE L2PS)&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
+&lt;p&gt;During atmospheric correction, the effect of water vapor absorption can only be corrected if we know the amount of water vapor in the atmosphere.&lt;/p&gt;
+&lt;p&gt;If you are using Sentinel-2 data only, you can stop reading. Sentinel-2 is equipped with a water vapor channel, and thus, water wapor amount can be estimated from the images.&lt;/p&gt;
+&lt;p&gt;Landsat, however, doesn&#39;t have such a band. Therefore, we need to rely on external data, which needs to be precompiled into a water vapor database.&lt;/p&gt;
+&lt;h2 id=&#34;water-vapor-database&#34;&gt;Water Vapor Database&lt;/h2&gt;
+&lt;p&gt;The database holds water vapor values for the central coordinates of each WRS-2 frame. If available, day-specific values are used.&lt;/p&gt;
+&lt;p&gt;The database consists of one table for each day (&lt;code&gt;WVP_YYYY-MM-DD.txt&lt;/code&gt;)&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ls /data/Earth/global/wvp/wvdb/WVP_2010-07-*
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;/data/Earth/global/wvp/wvdb/WVP_2010-07-01.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-02.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-03.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-04.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-05.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-06.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-07.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-08.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-09.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-10.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-11.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-12.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-13.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-14.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-15.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-16.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-17.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-18.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-19.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-20.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-21.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-22.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-23.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-24.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-25.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-26.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-27.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-28.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-29.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-30.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-31.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Each file includes one value per coordinate. In the example below, there are 13281 coordinates in each file (global land coverage). The coordinate, which is closest to the center of the Landsat image is selected, and the atmospheric correction uses this value to account for gaseous absorption.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;wc -l /data/Earth/global/wvp/wvdb/WVP_2010-07-26.txt 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;13281 /data/Earth/global/wvp/wvdb/WVP_2010-07-26.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;head /data/Earth/global/wvp/wvdb/WVP_2010-07-26.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;-15.3934 80.7603 1.170018 MOD
+-22.8654 80.0056 9999.000000 TBD
+-29.2236 79.1137 9999.000000 TBD
+-34.5930 78.1151 0.614454 MOD
+-39.1269 77.0343 0.448552 MOD
+-42.9718 75.8898 0.260607 MOD
+-46.2552 74.6958 0.282855 MYD
+-49.0816 73.4629 0.337015 MOD
+-51.5357 72.1989 9999.000000 TBD
+-53.6847 70.9100 9999.000000 TBD
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;climatology&#34;&gt;Climatology&lt;/h2&gt;
+&lt;p&gt;If day-specific values are not available (no table is existing, or there is a fill value), a monthly long-term climatology is used instead. The climatology consists of one table for each month (&lt;code&gt;WVP_0000-MM-00.txt&lt;/code&gt;).&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ls /data/Earth/global/wvp/wvdb/WVP_0000*
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;/data/Earth/global/wvp/wvdb/WVP_0000-01-00.txt
+/data/Earth/global/wvp/wvdb/WVP_0000-02-00.txt
+/data/Earth/global/wvp/wvdb/WVP_0000-03-00.txt
+/data/Earth/global/wvp/wvdb/WVP_0000-04-00.txt
+/data/Earth/global/wvp/wvdb/WVP_0000-05-00.txt
+/data/Earth/global/wvp/wvdb/WVP_0000-06-00.txt
+/data/Earth/global/wvp/wvdb/WVP_0000-07-00.txt
+/data/Earth/global/wvp/wvdb/WVP_0000-08-00.txt
+/data/Earth/global/wvp/wvdb/WVP_0000-09-00.txt
+/data/Earth/global/wvp/wvdb/WVP_0000-10-00.txt
+/data/Earth/global/wvp/wvdb/WVP_0000-11-00.txt
+/data/Earth/global/wvp/wvdb/WVP_0000-12-00.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Again, each file includes one value per coordinate. The file holds the long-term average, long-term standard deviation, and the number of measurements used to compute these statistics.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;wc -l /data/Earth/global/wvp/wvdb/WVP_0000-07-00.txt 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;13281 /data/Earth/global/wvp/wvdb/WVP_0000-07-00.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;head /data/Earth/global/wvp/wvdb/WVP_0000-07-00.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;-15.3934 80.7603 1.177704 0.364894 300
+-22.8654 80.0056 1.079682 0.328948 311
+-29.2236 79.1137 0.695211 0.234917 383
+-34.5930 78.1151 0.549352 0.256754 445
+-39.1269 77.0343 0.472883 0.224957 480
+-42.9718 75.8898 0.410826 0.211346 476
+-46.2552 74.6958 0.384219 0.145523 457
+-49.0816 73.4629 0.415261 0.170940 456
+-51.5357 72.1989 0.515858 0.223122 422
+-53.6847 70.9100 0.546611 0.273735 276
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://davidfrantz.github.io/img/wvdb.gif&#34; data-caption=&#34;Global animation of the climatology (monthly average)&#34;&gt;
+&lt;img src=&#34;https://davidfrantz.github.io/img/wvdb.gif&#34; alt=&#34;&#34; width=&#34;750&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Global animation of the climatology (monthly average)
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;uncertainty-of-the-climatology&#34;&gt;Uncertainty of the climatology&lt;/h2&gt;
+&lt;p&gt;The uncertainty of using the climatology was assessed in this paper:
+Frantz, D., Stellmes, M., &amp;amp; Hostert, P. (2019). A Global MODIS Water Vapor Database for the Operational Atmospheric Correction of Historic and Recent Landsat Imagery. Remote Sensing, 11, 257. &lt;a href=&#34;https://doi.org/10.3390/rs11030257&#34;&gt;https://doi.org/10.3390/rs11030257&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;prepare-the-wvdb&#34;&gt;Prepare the WVDB&lt;/h2&gt;
+&lt;p&gt;We generally use a WVDB generated from MODIS water vapor products (&lt;a href=&#34;https://modis.gsfc.nasa.gov/data/dataprod/mod05.php&#34;&gt;MOD05 and MYD05&lt;/a&gt;).&lt;/p&gt;
+&lt;h3 id=&#34;download-the-ready-to-go-global-wvdb&#34;&gt;Download the ready-to-go global WVDB&lt;/h3&gt;
+&lt;p&gt;You should start by downloading the pre-compiled WVDB with global coverage from &lt;a href=&#34;doi.pangaea.de/10.1594/PANGAEA.893109&#34;&gt;here&lt;/a&gt;. This saves you a lot of processing. This freely available dataset was generated with the &lt;strong&gt;FORCE WVDB&lt;/strong&gt; component, and is comprised of daily global water vapor data for February 2000 to July 2018 for each land-intersecting WRS-2 scene (13281 coordinates), as well as a monthly climatology that can be used if no daily value is available.&lt;/p&gt;
+&lt;h3 id=&#34;generate-the-wvdb-on-your-own&#34;&gt;Generate the WVDB on your own&lt;/h3&gt;
+&lt;p&gt;We try to update this dataset in regular intervals. However, if you are in need of more up-to-date data, you can use the &lt;strong&gt;FORCE WVDB&lt;/strong&gt; component to generate/update these tables on your own. &lt;strong&gt;FORCE WVDB&lt;/strong&gt; needs a table with input coordinates (center coordinates of WRS-2 frames). The &lt;a href=&#34;doi.pangaea.de/10.1594/PANGAEA.893109&#34;&gt;pre-compiled dataset&lt;/a&gt; includes such a table. If you are not interested in global coverage, you can subset this file. The file should contain two columns separated by white space, and no header. The first column should give the longitude (X), the second column the latitude (Y) with coordinates in decimal degree (negative values for West/South). Any other column is ignored (in the example below, the WRS-2 Path/Row is in the third column).&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;wc -l /data/Earth/global/wvp/wvdb/wrs-2-land.coo
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;13281 /data/Earth/global/wvp/wvdb/wrs-2-land.coo
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;head /data/Earth/global/wvp/wvdb/wrs-2-land.coo
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;-15.39340494140 80.76026666750 013001
+-22.86543244600 80.00558606640 013002
+-29.22356065160 79.11366800820 013003
+-34.59295680040 78.11513723200 013004
+-39.12687451150 77.03430642440 013005
+-42.97184515330 75.88984431700 013006
+-46.25519224080 74.69581438230 013007
+-49.08160498390 73.46286239410 013008
+-51.53569902300 72.19888348300 013009
+-53.68466715610 70.91003752470 013010
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;FORCE WVDB&lt;/strong&gt; downloads each Terra/Aqua granule (collection 6.1) that intersects with any of these coordinates. The files are downloaded from the Level1 and Atmosphere Archive and Distribution System (&lt;a href=&#34;ladsweb.modaps.eosdis.nasa.gov&#34;&gt;LAADS&lt;/a&gt;) at NASA’s Goddard Space Flight Center. Note that any permanent or temporary change/shutdown/decommissioning on LAADS’ or MODIS’ end may result in the nonfunctioning of &lt;strong&gt;FORCE WVDB&lt;/strong&gt;&amp;hellip; Also note, that they perform a weekly maintenance, during which their servers are not accessable.&lt;/p&gt;
+&lt;p&gt;As with any other FORCE program, you can display short usage instructions by executing the program without any parameters.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;force-lut-modis
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;usage: force-lut-modis coords dir-wvp dir-geometa dir-eoshdf
+           [start-year start-month start-day
+            end-year   end-month   end-day]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;A coordinate file needs to be given as 1st argument.&lt;/p&gt;
+&lt;p&gt;The MODIS data are downloaded to dir-eoshdf (this directory must exist). MODIS data that are already in dir-eoshdf are not downloaded again. &lt;em&gt;If the tool crashes because a dataset is corrupt, it is necessary to manually delete this file and run the tool again. Unfortunately, this happens from time to time due to incomplete downloads or if LAADS is unresponsive. The program attempts to re-download a corrupt file up to 10 times, but this error can occur nonetheless.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;MOD05/MYD05 data are swath products, and MOD03/MYD03 geometa tables are necessary to relate coordinates to MODIS granules. The geometa tables are downloaded to dir-geometa (this directory must exist). Tables that are already in dir-geometa are not downloaded again. &lt;em&gt;If the tool crashes because a table is invalid, it is necessary to manually delete this file and run the tool again. Unfortunately, this happens from time to time due to incomplete downloads or if LAADS is unresponsive. The program attempts to re-download a corrupt file up to 10 times, but this error can occur nonetheless.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;The final water vapor tables are saved in dir-wvp (this directory must exist). Tables that are already in dir-wvp are not processed again (i.e. no download of geometa tables and hdf files).&lt;/p&gt;
+&lt;p&gt;The start and end arguments are optional and may be used for parallelization. If they are not given, &lt;strong&gt;FORCE WVDB&lt;/strong&gt; will download the entire time series of all coordinates provided (this can be a lot!).&lt;/p&gt;
+&lt;p&gt;This directory is the directory, to which DIR_WVPLUT in the &lt;strong&gt;FORCE L2PS&lt;/strong&gt; parameter file should refer.
+&lt;code&gt;DIR_WVPLUT = /data/Earth/global/wvp/wvdb&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;If you have finished compiling the WVDB, you may delete the MODIS *.hdf files.&lt;/p&gt;
+&lt;p&gt;Download the entire data record (in one process - this is slow):&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;force-lut-modis /data/Earth/global/wvp/wvdb/wrs-2-land.coo /data/Earth/global/wvp/wvdb /data/Earth/global/wvp/geo /data/Earth/global/wvp/hdf
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Download one week:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;force-lut-modis /data/Earth/global/wvp/wvdb/wrs-2-land.coo /data/Earth/global/wvp/wvdb /data/Earth/global/wvp/geo /data/Earth/global/wvp/hdf 2010 07 01 2010 07 07
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Use GNU parallel to download an entire month in 31 parallel processes. This works by creating a list 1..31, which is distributed to 31 jobs. Each job calls &lt;strong&gt;FORCE WVDB&lt;/strong&gt; for one specific day in July 2010. The curly braces are replaced with the list value given to each process.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;seq -w 1 31 | parallel -j31 force-lut-modis /data/Earth/global/wvp/wvdb/wrs-2-land.coo /data/Earth/global/wvp/wvdb /data/Earth/global/wvp/geo /data/Earth/global/wvp/hdf 2010 07 {} 2010 07 {}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>FORCE</title>
+      <link>https://davidfrantz.github.io/code/force/</link>
+      <pubDate>Sun, 15 Dec 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/code/force/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;FORCE&lt;/strong&gt; is an all-in-one solution for the mass-processing of selected medium-resolution satellite image archives to enable large area + time series applications. Currently supported are Landsat 4/5 TM, Landsat 7 ETM+, Landsat 8 OLI and Sentinel-2 A/B MSI. The software is capable of processing Level 1 products as obtained from the space agencies to Level 2–4 products.&lt;/p&gt;
+&lt;h2 id=&#34;download&#34;&gt;Download&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;FORCE&lt;/strong&gt; may be used and downloaded for &lt;strong&gt;free&lt;/strong&gt;! It is completely open source and there are no restrictions on usage (for details see &lt;a href=&#34;http://www.gnu.org/licenses/&#34;&gt;GPL License&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;The current version (2.1) can be downloaded from  &lt;a href=&#34;http://force.feut.de&#34;&gt;Trier University&lt;/a&gt; after a short self-registration.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;However, it is requested that you to use the software in accordance with academic standards and fair usage. Without this, software like &lt;em&gt;FORCE&lt;/em&gt; will not survive. This includes citation of the software and the scientific publications, proper acknowledgement in any public presentation, or an offer of co-authorship of scientific articles in case substantial help in setting up, modifying or running the software is provided. At minimum, the citation of the&lt;/em&gt; &lt;a href=&#34;https://davidfrantz.github.io/publication/frantz-2019a/&#34;&gt;&lt;em&gt;key paper&lt;/em&gt;&lt;/a&gt; &lt;em&gt;is requested.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;the-main-features-are&#34;&gt;The main features are&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Integration of Landsat 4–8, and Sentinel-2 A/B as Virtual Constellation.&lt;/li&gt;
+&lt;li&gt;Data management of Landsat and Sentinel-2 Level 1 data + Download of Sentinel-2 data.&lt;/li&gt;
+&lt;li&gt;Near-realtime (NRT) processing capability.&lt;/li&gt;
+&lt;li&gt;Generation of Analysis Ready Data (ARD). Advanced cloud and cloud shadow detection. Quality screening. Integrated atmospheric and topographic correction: one algorithm for all sensors. Adjacency effect correction. BRDF reduction. Resolution merge of Sentinel-2 bands: 20m &amp;ndash;&amp;gt; 10m. Data cubing: reprojection / gridding.&lt;/li&gt;
+&lt;li&gt;Generation of highly Analysis Ready Data (hARD). Large area. Gap free. Best Available Pixel (BAP) composites. Phenology Adaptive Composites (PAC). Spectral Temporal Metrics (STM). Ideal input for your Machine Learners!&lt;/li&gt;
+&lt;li&gt;Generation of highly Analysis Ready Data plus (hARD+). Time Series generation: spectral bands, spectral indices, Spectral Mixture Analysis (SMA). Time series folding. Time series interpolation. Time series statistics. Trend analysis. Change, Aftereffect, Trend (CAT) analysis. Land Surface Phenology (LSP).&lt;/li&gt;
+&lt;li&gt;Detailed data mining of the Clear Sky Observation (CSO) availability.&lt;/li&gt;
+&lt;li&gt;Data Fusion. Improving spatial resolution of coarse continuous fields: MODIS LSP &amp;ndash;&amp;gt; medium resolution LSP. Improving spatial resolution of lower resolution ARD using higher resolution ARD: 30m Landsat &amp;ndash;&amp;gt; 10m using Sentinel-2 targets&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Analysis-Ready-Data für die Ableitung von Grünlandinformationen in Deutschland</title>
+      <link>https://davidfrantz.github.io/presentation/pb013/</link>
+      <pubDate>Tue, 12 Nov 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb013/</guid>
+      <description>&lt;p&gt;Marcel Schwieder, David Frantz, Kira Pfoch, Patrick Hostert&lt;/p&gt;
+&lt;p&gt;Neue Perspektiven der Erdbeobachtung - 2. Symposium zur angewandten Satellitenerdbeobachtung. 12-13 November 2019, Cologne, Germany&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Large-scale land monitoring at HUB with Landsat and Sentinel-2</title>
+      <link>https://davidfrantz.github.io/presentation/pb001/</link>
+      <pubDate>Thu, 05 Sep 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb001/</guid>
+      <description>&lt;p&gt;David Frantz, Dirk Pflugmacher, Patrick Griffiths, Franz Schug, Patrick Hostert&lt;/p&gt;
+&lt;p&gt;EODC Workshop - Sentinel Data Cubes for Large-Scale Land Monitoring, 05 September 2019, Vienna, Austria&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Dominant land cover of the Okavango Basin</title>
+      <link>https://davidfrantz.github.io/data/dt003/</link>
+      <pubDate>Mon, 01 Jul 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/data/dt003/</guid>
+      <description>&lt;p&gt;Supplement to: Stellmes, M et al. (2013): Okavango Basin - Earth Observation. In: Oldeland, J., Erb, C., Finckh, M. &amp;amp; Jürgens, N. [Eds.]: Environmental Assessments in the Okavango Region. Biodiversity &amp;amp; Ecology, 5, 23-27&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;icon: twitter
+icon_pack: fab
+name: &amp;ldquo;Follow&amp;rdquo;
+link: &lt;a href=&#34;https://twitter.com/d__frantz&#34;&gt;https://twitter.com/d__frantz&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>FORCE v. 2.0 – Analysis Ready Data and beyond</title>
+      <link>https://davidfrantz.github.io/presentation/pb002/</link>
+      <pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb002/</guid>
+      <description>&lt;p&gt;David Frantz, Patrick Hostert&lt;/p&gt;
+&lt;p&gt;ESA Living Planet Symposium, 13-17 May 2019, Milan, Italy&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Grassland Use Intensity Metrics from Sentinel-1 and Sentinel-2 Data</title>
+      <link>https://davidfrantz.github.io/presentation/pb012/</link>
+      <pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb012/</guid>
+      <description>&lt;p&gt;Marcel Schwieder, David Frantz, Patrick Griffiths, Kira Pfoch, Holger Lilienthal, Patrick Hostert&lt;/p&gt;
+&lt;p&gt;ESA Living Planet Symposium, 13-17 May 2019, Milan, Italy&lt;/p&gt;
+&lt;p&gt;poster presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Integrated Landsat/Sentinel-2 data and regression-based unmixing for large area fraction mapping of vegetation types across California’s ecoregions</title>
+      <link>https://davidfrantz.github.io/presentation/pb008/</link>
+      <pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb008/</guid>
+      <description>&lt;p&gt;Akpona Okujeni, Sam Cooper, Clemens Jaenicke, David Frantz, Patrick Hostert, Sebastian van der Linden&lt;/p&gt;
+&lt;p&gt;ESA Living Planet Symposium, 13-17 May 2019, Milan, Italy&lt;/p&gt;
+&lt;p&gt;poster presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Land Use 2.0: how dense time series and phenometrics have improved the monitoring of long-term vegetation dynamics in Mediterranean rangelands</title>
+      <link>https://davidfrantz.github.io/presentation/pb003/</link>
+      <pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb003/</guid>
+      <description>&lt;p&gt;David Frantz, Patrick Hostert, Stefan Ernst, Philippe Rufin, Achim Röder, Sebastian van der Linden&lt;/p&gt;
+&lt;p&gt;ESA Living Planet Symposium, 13-17 May 2019, Milan, Italy&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Mapping Olive Tree Cover Using Land Surface Phenology Derived From Sentinel-2A/B Time Series</title>
+      <link>https://davidfrantz.github.io/presentation/pb009/</link>
+      <pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb009/</guid>
+      <description>&lt;p&gt;Philippe Rufin, David Frantz, Henrieke Dierkes, Dirk Pflugmacher, Achim Röder, Patrick Hostert&lt;/p&gt;
+&lt;p&gt;ESA Living Planet Symposium, 13-17 May 2019, Milan, Italy&lt;/p&gt;
+&lt;p&gt;poster presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Multi-annual Phenology Metrics At Landsat Scale In Data-Sparse Areas</title>
+      <link>https://davidfrantz.github.io/presentation/pb014/</link>
+      <pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb014/</guid>
+      <description>&lt;p&gt;Marion Stellmes, David Frantz, Achim Röder&lt;/p&gt;
+&lt;p&gt;ESA Living Planet Symposium, 13-17 May 2019, Milan, Italy&lt;/p&gt;
+&lt;p&gt;poster presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Parallax based Cloud Detection for Sentinel-2 Analysis Ready Data Generation</title>
+      <link>https://davidfrantz.github.io/presentation/pb004/</link>
+      <pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb004/</guid>
+      <description>&lt;p&gt;David Frantz, Erik Haß, Andreas Uhl, Johannes Stoffels, Joachim Hill&lt;/p&gt;
+&lt;p&gt;ESA Living Planet Symposium, 13-17 May 2019, Milan, Italy&lt;/p&gt;
+&lt;p&gt;poster presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Sentinel-2 and Machine Learning Regression for Built-up and Urban Green Fraction Mapping Across European Settlements</title>
+      <link>https://davidfrantz.github.io/presentation/pb011/</link>
+      <pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb011/</guid>
+      <description>&lt;p&gt;Franz Schug, David Frantz, Akpona Okujeni, Sebastian van der Linden, Patrick Hostert&lt;/p&gt;
+&lt;p&gt;ESA Living Planet Symposium, 13-17 May 2019, Milan, Italy&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Wall-to-wall material stock mapping – from satellite data to material stock modeling</title>
+      <link>https://davidfrantz.github.io/presentation/pb010/</link>
+      <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb010/</guid>
+      <description>&lt;p&gt;Franz Schug, David Frantz, Akpona Okujeni, Sebastian van der Linden, Patrick Hostert&lt;/p&gt;
+&lt;p&gt;Global Land Programme (GLP) - 4th Open Science Meeting, 24-26 April 2019, Bern, Switzerland&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Large-area land-cover and land-use change mapping in the Caucasus Mountains using topographically corrected multi-temporal Landsat composites</title>
+      <link>https://davidfrantz.github.io/presentation/pb007/</link>
+      <pubDate>Wed, 03 Apr 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb007/</guid>
+      <description>&lt;p&gt;Johanna Buchner, He Yin, David Frantz, Benjamin Bleyhl, Tobias Kuemmerle, Tamar Bakuradze, Anna Komarova, A. Rizayeva, Hovik Sayadyan, Garik Tepanosyan, Volker Radeloff&lt;/p&gt;
+&lt;p&gt;American Association of Geographers (AAG) Annnual Meeting, 3-7 April 2019, Washington D.C., USA&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>A Landsat-based national-scale map of cropping practices for Turkey (2015)</title>
+      <link>https://davidfrantz.github.io/data/dt002/</link>
+      <pubDate>Fri, 01 Mar 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/data/dt002/</guid>
+      <description>&lt;p&gt;Supplement to: Rufin, P et al. (2019): Mapping Cropping Practices on a National Scale Using Intra-Annual Landsat Time Series Binning. Remote Sensing, 11(3), 232, &lt;a href=&#34;https://doi.org/10.3390/rs11030232&#34;&gt;https://doi.org/10.3390/rs11030232&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>FORCE - Analysis Ready Data and beyond</title>
+      <link>https://davidfrantz.github.io/presentation/pb005/</link>
+      <pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb005/</guid>
+      <description>&lt;p&gt;David Frantz, Patrick Hostert&lt;/p&gt;
+&lt;p&gt;Dreiländertagung OVG-DGPF-SGPF, 20-22 February 2019, Vienna, Austria&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Display Jupyter Notebooks with Academic</title>
+      <link>https://davidfrantz.github.io/tutorials/jupyter/</link>
+      <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/tutorials/jupyter/</guid>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from IPython.core.display import Image
+Image(&#39;https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;./index_1_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(&amp;quot;Welcome to Academic!&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Welcome to Academic!
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;install-python-and-jupyterlab&#34;&gt;Install Python and JupyterLab&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.anaconda.com/distribution/#download-section&#34;&gt;Install Anaconda&lt;/a&gt; which includes Python 3 and JupyterLab.&lt;/p&gt;
+&lt;p&gt;Alternatively, install JupyterLab with &lt;code&gt;pip3 install jupyterlab&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;create-or-upload-a-jupyter-notebook&#34;&gt;Create or upload a Jupyter notebook&lt;/h2&gt;
+&lt;p&gt;Run the following commands in your Terminal, substituting &lt;code&gt;&amp;lt;MY-WEBSITE-FOLDER&amp;gt;&lt;/code&gt; and &lt;code&gt;&amp;lt;SHORT-POST-TITLE&amp;gt;&lt;/code&gt; with the file path to your Academic website folder and a short title for your blog post (use hyphens instead of spaces), respectively:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;mkdir -p &amp;lt;MY-WEBSITE-FOLDER&amp;gt;/content/post/&amp;lt;SHORT-POST-TITLE&amp;gt;/
+cd &amp;lt;MY-WEBSITE-FOLDER&amp;gt;/content/post/&amp;lt;SHORT-POST-TITLE&amp;gt;/
+jupyter lab index.ipynb
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The &lt;code&gt;jupyter&lt;/code&gt; command above will launch the JupyterLab editor, allowing us to add Academic metadata and write the content.&lt;/p&gt;
+&lt;h2 id=&#34;edit-your-post-metadata&#34;&gt;Edit your post metadata&lt;/h2&gt;
+&lt;p&gt;The first cell of your Jupter notebook will contain your post metadata (&lt;a href=&#34;https://sourcethemes.com/academic/docs/front-matter/&#34;&gt;front matter&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;In Jupter, choose &lt;em&gt;Markdown&lt;/em&gt; as the type of the first cell and wrap your Academic metadata in three dashes, indicating that it is YAML front matter:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;---
+title: My post&#39;s title
+date: 2019-09-01
+
+# Put any other Academic metadata here...
+---
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Edit the metadata of your post, using the &lt;a href=&#34;https://sourcethemes.com/academic/docs/managing-content&#34;&gt;documentation&lt;/a&gt; as a guide to the available options.&lt;/p&gt;
+&lt;p&gt;To set a &lt;a href=&#34;https://sourcethemes.com/academic/docs/managing-content/#featured-image&#34;&gt;featured image&lt;/a&gt;, place an image named &lt;code&gt;featured&lt;/code&gt; into your post&#39;s folder.&lt;/p&gt;
+&lt;p&gt;For other tips, such as using math, see the guide on &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34;&gt;writing content with Academic&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;convert-notebook-to-markdown&#34;&gt;Convert notebook to Markdown&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;jupyter nbconvert index.ipynb --to markdown --NbConvertApp.output_files_dir=.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;example&#34;&gt;Example&lt;/h2&gt;
+&lt;p&gt;This post was created with Jupyter. The orginal files can be found at &lt;a href=&#34;https://github.com/gcushen/hugo-academic/tree/master/exampleSite/content/post/jupyter&#34;&gt;https://github.com/gcushen/hugo-academic/tree/master/exampleSite/content/post/jupyter&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Generating Analysis Ready Data from Satellite Image Archives</title>
+      <link>https://davidfrantz.github.io/presentation/pb006/</link>
+      <pubDate>Fri, 11 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb006/</guid>
+      <description>&lt;p&gt;David Frantz&lt;/p&gt;
+&lt;p&gt;Wissensmanagement in der Bioinformatik Colloquium, Humboldt-Universität zu Berlin, 11 January 2019, Berlin, Germany&lt;/p&gt;
+&lt;p&gt;invited oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>A Global MODIS Water Vapor Database for the Operational Atmospheric Correction of Historic and Recent Landsat Imagery</title>
+      <link>https://davidfrantz.github.io/publication/frantz-2019b/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/frantz-2019b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>FORCE—Landsat &#43; Sentinel-2 Analysis Ready Data and Beyond</title>
+      <link>https://davidfrantz.github.io/publication/frantz-2019a/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/frantz-2019a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Interdependent effects of climate variability and forest cover change on streamflow dynamics: a case study in the Upper Umvoti River Basin, South Africa</title>
+      <link>https://davidfrantz.github.io/publication/lebek-2019/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/lebek-2019/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mapping Cropping Practices on a National Scale Using Intra-Annual Landsat Time Series Binning</title>
+      <link>https://davidfrantz.github.io/publication/rufin-2019/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/rufin-2019/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Using Landsat and Sentinel-2 Data for the Generation of Continuously Updated Forest Type Information Layers in a Cross-Border Region</title>
+      <link>https://davidfrantz.github.io/publication/nink-2019/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/nink-2019/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Water vapor database for atmospheric correction of Landsat imagery</title>
+      <link>https://davidfrantz.github.io/data/dt001/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/data/dt001/</guid>
+      <description>&lt;p&gt;Supplement to: Frantz, David; Röder, Achim; Stellmes, Marion; Hill, Joachim (2016): An operational radiometric Landsat preprocessing framework for large-area time series applications. IEEE Transactions on Geoscience and Remote Sensing, 54(7), 3928-3943, &lt;a href=&#34;https://doi.org/10.1109/TGRS.2016.2530856&#34;&gt;https://doi.org/10.1109/TGRS.2016.2530856&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Evaluation of topographic correction on forest mapping using Landsat imagery</title>
+      <link>https://davidfrantz.github.io/presentation/pb030/</link>
+      <pubDate>Mon, 10 Dec 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb030/</guid>
+      <description>&lt;p&gt;He Yin, Bin Tan, David Frantz, Volker Radeloff&lt;/p&gt;
+&lt;p&gt;American Geophysical Union (AGU) Fall Meeting, 10-14 December 2018, Washington D.C., USA&lt;/p&gt;
+&lt;p&gt;poster presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Sentinel4GRIPS: Copernicus als Baustein der Forstverwaltung</title>
+      <link>https://davidfrantz.github.io/presentation/pb019/</link>
+      <pubDate>Tue, 27 Nov 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb019/</guid>
+      <description>&lt;p&gt;Joachim Hill, Sebastian Mader, David Frantz, Johannes Stoffels, Joachim Langshausen, Jürgen Dietz, Christoph Averdung, Jens Göpfert&lt;/p&gt;
+&lt;p&gt;Nationales Forum für Fernerkundung und Copernicus, 27-29 November 2018, Berlin, Germany&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>MAT_STOCKS</title>
+      <link>https://davidfrantz.github.io/project/mat_stocks/</link>
+      <pubDate>Thu, 15 Nov 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/project/mat_stocks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>An evaluation of urban area mapping with Sentinel-2 data and machine learning-based regression at different spatial resolutions</title>
+      <link>https://davidfrantz.github.io/presentation/pb029/</link>
+      <pubDate>Mon, 24 Sep 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb029/</guid>
+      <description>&lt;p&gt;Sebastian van der Linden, Akpona Okujeni, Franz Schug, David Frantz, Patrick Hostert&lt;/p&gt;
+&lt;p&gt;5th Joint Workshop of EARSeL SIG Urban Remote Sensing, 24-26 September 2018, Bochum, Germany&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Fernerkundliche Analysen in Zeiten von Copernicus: Neue Möglichkeiten langer und dichter Zeitreihen</title>
+      <link>https://davidfrantz.github.io/presentation/pb022/</link>
+      <pubDate>Tue, 18 Sep 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb022/</guid>
+      <description>&lt;p&gt;Patrick Hostert, David Frantz, Patrick Griffiths, Kira Pfoch, Marcel Schwieder&lt;/p&gt;
+&lt;p&gt;Bundesamt für Naturschutz, 18 September 2018, Berlin, Germany&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Land Use 2.0: the role of dense time series and phenometrics</title>
+      <link>https://davidfrantz.github.io/presentation/pb015/</link>
+      <pubDate>Wed, 08 Aug 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb015/</guid>
+      <description>&lt;p&gt;David Frantz, Patrick Hostert, Dirk Pflugmacher, Sebastian van der Linden, Matthias Baumann, Tobias Kuemmerle, Achim Röder, Patrick Griffiths&lt;/p&gt;
+&lt;p&gt;Landsat Science Team Meeting, 8-10 August 2018, Boulder, CO, USA&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Topographic Correction of Landsat imagery in the Caucasus Mountains</title>
+      <link>https://davidfrantz.github.io/presentation/pb024/</link>
+      <pubDate>Wed, 08 Aug 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb024/</guid>
+      <description>&lt;p&gt;Volker Radeloff, He Yin, Bin Tan, David Frantz, Johanna Buchner&lt;/p&gt;
+&lt;p&gt;Landsat Science Team Meeting, 8-10 August 2018, Boulder, CO, USA&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Assessment Of Transformation Processes In Dry Tropical Forests Using The Full Landsat Archive And Enhanced Information Products</title>
+      <link>https://davidfrantz.github.io/presentation/pb025/</link>
+      <pubDate>Mon, 09 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb025/</guid>
+      <description>&lt;p&gt;Achim Röder, David Frantz, Marion Stellmes, Anne Schneibel, Joachim Hill&lt;/p&gt;
+&lt;p&gt;3rd joint EARSeL LULC &amp;amp; NASA LCLUC Workshop, 9-12 July, Chania, Greece&lt;/p&gt;
+&lt;p&gt;poster and short presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Crete’s grazing history – the perspective from space</title>
+      <link>https://davidfrantz.github.io/presentation/pb020/</link>
+      <pubDate>Mon, 09 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb020/</guid>
+      <description>&lt;p&gt;Patrick Hostert, David Frantz, Philippe Rufin, Stefan Ernst, Henrieke Dierkes, Sebastian van der Linden, Achim Röder&lt;/p&gt;
+&lt;p&gt;3rd joint EARSeL LULC &amp;amp; NASA LCLUC Workshop, 9-12 July, Chania, Greece&lt;/p&gt;
+&lt;p&gt;Keynote presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Land cover mapping with multi-temporal Sentinel-2 data in mountainous landscapes</title>
+      <link>https://davidfrantz.github.io/presentation/pb023/</link>
+      <pubDate>Mon, 09 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb023/</guid>
+      <description>&lt;p&gt;Katarzyna Ostapowicz, Ewa Grabska, David Frantz, Robert Pazur&lt;/p&gt;
+&lt;p&gt;3rd joint EARSeL LULC &amp;amp; NASA LCLUC Workshop, 9-12 July, Chania, Greece&lt;/p&gt;
+&lt;p&gt;poster and short presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Landsat time-series for mapping agricultural management at the national scale in Turkey</title>
+      <link>https://davidfrantz.github.io/presentation/pb026/</link>
+      <pubDate>Mon, 09 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb026/</guid>
+      <description>&lt;p&gt;Philippe Rufin, David Frantz, Andreas Rabe, Patrick Hostert&lt;/p&gt;
+&lt;p&gt;3rd joint EARSeL LULC &amp;amp; NASA LCLUC Workshop, 9-12 July, Chania, Greece&lt;/p&gt;
+&lt;p&gt;poster and short presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Mapping spatial pattern of forest stands species composition with Sentinel-2 and forest inventory data in the Polish Carpathians</title>
+      <link>https://davidfrantz.github.io/presentation/pb018/</link>
+      <pubDate>Mon, 09 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb018/</guid>
+      <description>&lt;p&gt;Ewa Grabska, David Frantz, Katarzyna Ostapowicz&lt;/p&gt;
+&lt;p&gt;3rd joint EARSeL LULC &amp;amp; NASA LCLUC Workshop, 9-12 July, Chania, Greece&lt;/p&gt;
+&lt;p&gt;poster and short presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Multi-annual Phenology Metrics At Landsat Scale In Data-Sparse Areas</title>
+      <link>https://davidfrantz.github.io/presentation/pb027/</link>
+      <pubDate>Mon, 09 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb027/</guid>
+      <description>&lt;p&gt;Marion Stellmes, David Frantz, Achim Röder&lt;/p&gt;
+&lt;p&gt;3rd joint EARSeL LULC &amp;amp; NASA LCLUC Workshop, 9-12 July, Chania, Greece&lt;/p&gt;
+&lt;p&gt;poster and short presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Phenological Characterization of Vegetated Land Surfaces Using Integrated Landsat 7 ETM&#43;, Landsat 8 OLI and Sentinel-2 A/B MSI Time Series</title>
+      <link>https://davidfrantz.github.io/presentation/pb016/</link>
+      <pubDate>Mon, 09 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb016/</guid>
+      <description>&lt;p&gt;David Frantz, Sebastian Mader, Marcel Schwieder, Patrick Hostert&lt;/p&gt;
+&lt;p&gt;3rd joint EARSeL LULC &amp;amp; NASA LCLUC Workshop, 9-12 July, Chania, Greece&lt;/p&gt;
+&lt;p&gt;poster and short presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Understanding The Dynamics Of The Fire Regime And Its Impacts On Ecosystems In Southern Africa</title>
+      <link>https://davidfrantz.github.io/presentation/pb028/</link>
+      <pubDate>Mon, 09 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb028/</guid>
+      <description>&lt;p&gt;Marion Stellmes, Manfred Finckh, David Frantz, Rasmus Revermann, Achim Röder&lt;/p&gt;
+&lt;p&gt;38th Annual EARSeL Symposium, 9-12 July 2018, Chania, Greece&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>On the potential of the synergistic use of multisensor Landsat 7 ETM&#43;, Landsat 8 OLI and Sentinel-2 A/B MSI time series</title>
+      <link>https://davidfrantz.github.io/presentation/pb017/</link>
+      <pubDate>Tue, 27 Feb 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb017/</guid>
+      <description>&lt;p&gt;David Frantz, Sebastian Mader, Patrick Hostert&lt;/p&gt;
+&lt;p&gt;ESA LPVE 2018, 27 February – 1 March 2018, Frascati, Italy&lt;/p&gt;
+&lt;p&gt;poster presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Synergies between future Landsat and European satellite missions: From land cover to land use</title>
+      <link>https://davidfrantz.github.io/presentation/pb021/</link>
+      <pubDate>Wed, 21 Feb 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb021/</guid>
+      <description>&lt;p&gt;Patrick Hostert, Dirk Pflugmacher, Patrick Griffiths, David Frantz, Sebastian van der Linden, Matthias Baumann, Tobias Kuemmerle, Achim Röder&lt;/p&gt;
+&lt;p&gt;Landsat Science Team Meeting, 21–22 February 2018, Sioux Falls, SD, USA&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Atmospheric Correction Inter-Comparison Exercise</title>
+      <link>https://davidfrantz.github.io/publication/doxani-2018/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/doxani-2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Deforestation for agricultural expansion in SW Zambia and NE Namibia and the impacts on soil fertility, soil organic carbon- and nutrient levels</title>
+      <link>https://davidfrantz.github.io/publication/blecourt-2018/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/blecourt-2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Improvement of the Fmask algorithm for Sentinel-2 images: Separating clouds from bright surfaces based on parallax effects</title>
+      <link>https://davidfrantz.github.io/publication/frantz-2018/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/frantz-2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Long-term land use change analysis in south-central Angola. Assessing the trade-off between major ecosystem services with remote sensing data</title>
+      <link>https://davidfrantz.github.io/publication/schneibel-2018/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/schneibel-2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Remote sensing-based environmental assessment and monitoring – generation of operational baseline and enhanced experimental products in southern Africa</title>
+      <link>https://davidfrantz.github.io/publication/roeder-2018/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/roeder-2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SattGrün</title>
+      <link>https://davidfrantz.github.io/project/sattgruen/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/project/sattgruen/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Seeing deforestation in Zambia - On the discrepancy between biophysical land-use changes and social perception</title>
+      <link>https://davidfrantz.github.io/publication/parduhn-2018/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/parduhn-2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>FORCE NRT</title>
+      <link>https://davidfrantz.github.io/project/force-nrt/</link>
+      <pubDate>Wed, 01 Nov 2017 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/project/force-nrt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Integrating Phenological Information for Pixel-Based Compositing - Generation of Multi-Seasonal Composites Using MODIS and Landsat Image Archives</title>
+      <link>https://davidfrantz.github.io/presentation/pb031/</link>
+      <pubDate>Tue, 27 Jun 2017 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb031/</guid>
+      <description>&lt;p&gt;David Frantz, Achim Röder, Marion Stellmes, Joachim Hill&lt;/p&gt;
+&lt;p&gt;MultiTemp 2017, 27-29 June 2017, Bruges, Belgium&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Multi-annual Phenology Metrics at Landsat Scale Using Spatially Improved Land Surface Phenology to Support Monitoring of the Status and Change of Land Cover in Central Angola</title>
+      <link>https://davidfrantz.github.io/presentation/pb036/</link>
+      <pubDate>Tue, 27 Jun 2017 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb036/</guid>
+      <description>&lt;p&gt;Marion Stellmes, David Frantz, Anne Schneibel, Achim Röder&lt;/p&gt;
+&lt;p&gt;MultiTemp 2017, 27-29 June, Bruges, Belgium&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>An Operational Processing Chain for Medium Resolution Earth Observation Data to Establish Datacubes for Environmental Monitoring In Southern Africa</title>
+      <link>https://davidfrantz.github.io/presentation/pb035/</link>
+      <pubDate>Mon, 08 May 2017 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb035/</guid>
+      <description>&lt;p&gt;Achim Röder, David Frantz, Anne Schneibel, Marion Stellmes, Joachim Hill&lt;/p&gt;
+&lt;p&gt;The 37th International Symposium on Remote Sensing of Environment, 8-12 May  2017, Tshwane, South Africa&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>FORCE - Framework for Operational Radiometric Correction for Environmental Monitoring</title>
+      <link>https://davidfrantz.github.io/presentation/pb032/</link>
+      <pubDate>Tue, 11 Apr 2017 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb032/</guid>
+      <description>&lt;p&gt;David Frantz Joachim Hill&lt;/p&gt;
+&lt;p&gt;ACIX: CEOS-WGCV Atmospheric Correction Inter-comparison Exercise&lt;/p&gt;
+&lt;p&gt;short presentation and discussion of inter-comparison results&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Sentinel4GRIPS: Assimilation von Erdbeobachtungsdaten in forstliche Inventur- und Planungssysteme</title>
+      <link>https://davidfrantz.github.io/presentation/pb034/</link>
+      <pubDate>Tue, 14 Mar 2017 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb034/</guid>
+      <description>&lt;p&gt;Joachim Langshausen, Joachim Hill, Christoph Averdung, David Frantz, Sebastian Mader, Johannes Stoffels, Jürgen Dietz, Jens Göpfert&lt;/p&gt;
+&lt;p&gt;Nationales Forum für Fernerkundung und Copernicus 2017, 14-16 March 2017, Berlin, Germany&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Aufbereitung von Satellitenbildarchiven zur Charakterisierung von Waldsystemen</title>
+      <link>https://davidfrantz.github.io/presentation/pb033/</link>
+      <pubDate>Wed, 08 Mar 2017 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb033/</guid>
+      <description>&lt;p&gt;David Frantz, Erik Haß, Joachim Hill&lt;/p&gt;
+&lt;p&gt;Einsatzmöglichkeiten von Sentinel-Daten aus dem Erdbeobachtungsprogramm Copernicus, 8 March 2017, Saarbrücken, Germany&lt;/p&gt;
+&lt;p&gt;invited oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Assessment of spatio-temporal changes of smallholder cultivation patterns in the Angolan Miombo belt using segmentation of Landsat time series</title>
+      <link>https://davidfrantz.github.io/publication/schneibel-2017a/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/schneibel-2017a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Global Analysis of the Differences Between the MODIS Vegetation Index Compositing Date and the Actual Acquisition Date</title>
+      <link>https://davidfrantz.github.io/publication/hass-2017/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/hass-2017/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Phenology-adaptive pixel-based compositing using optical earth observation imagery</title>
+      <link>https://davidfrantz.github.io/publication/frantz-2017/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/frantz-2017/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Using Annual Landsat Time Series for the Detection of Dry Forest Degradation Processes in South-Central Angola</title>
+      <link>https://davidfrantz.github.io/publication/schneibel-2017b/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/schneibel-2017b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sentinel4GRIPS - Aufbereitung von Satellitenbildarchiven zur Charakterisierung von Waldsystemen</title>
+      <link>https://davidfrantz.github.io/presentation/pb037/</link>
+      <pubDate>Wed, 21 Dec 2016 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb037/</guid>
+      <description>&lt;p&gt;David Frantz, Erik Haß, Joachim Hill&lt;/p&gt;
+&lt;p&gt;Precision Forestry 2016: Beiträge aus Fernerkundung und Geoinformatik, 21 December 2016, Trier, Germany&lt;/p&gt;
+&lt;p&gt;invited oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Integration von Sentinel-2 Daten in die automatisierte Level-2 Prozessierung von Erdbeobachtungsdaten</title>
+      <link>https://davidfrantz.github.io/presentation/pb038/</link>
+      <pubDate>Tue, 08 Nov 2016 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb038/</guid>
+      <description>&lt;p&gt;David Frantz, Erik Haß, Joachim Hill&lt;/p&gt;
+&lt;p&gt;Veränderungserkennung mittels Fernerkundungsdaten, 8-9 November 2016, Koblenz, Germany&lt;/p&gt;
+&lt;p&gt;invited oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Sentinel4GRIPS</title>
+      <link>https://davidfrantz.github.io/project/sentinel4grips/</link>
+      <pubDate>Mon, 01 Aug 2016 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/project/sentinel4grips/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Understanding the fire regime of Southern Africa and its impacts on ecosystems</title>
+      <link>https://davidfrantz.github.io/presentation/pb045/</link>
+      <pubDate>Mon, 04 Jul 2016 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb045/</guid>
+      <description>&lt;p&gt;Marion Stellmes, David Frantz, Manfred Finckh, Rasmus Revermann, Achim Röder, Vera De Cauwer, Anne Schneibel, Joachim Hill&lt;/p&gt;
+&lt;p&gt;GEO BON 2016 Open Science Conference &amp;amp; All Hands Meeting, 4-8 July 216, Leipzig, Germany&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Using the full depth of the Landsat archive to analyze post-war forest cover dynamics in Angola</title>
+      <link>https://davidfrantz.github.io/presentation/pb044/</link>
+      <pubDate>Mon, 04 Jul 2016 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb044/</guid>
+      <description>&lt;p&gt;Achim Röder, David Frantz, Marion Stellmes, Anne Schneibel, Valter Chissingui, Manfred Finckh, Joachim Hill&lt;/p&gt;
+&lt;p&gt;GEO BON 2016 Open Science Conference &amp;amp; All Hands Meeting, 4-8 July 2016, Leipzig, Germany&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>lnd-prepro - An operational radiometric multi-sensor pre-processing framework developed for Southern African Landsat imagery</title>
+      <link>https://davidfrantz.github.io/presentation/pb039/</link>
+      <pubDate>Tue, 21 Jun 2016 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb039/</guid>
+      <description>&lt;p&gt;David Frantz Joachim Hill&lt;/p&gt;
+&lt;p&gt;ACIX: CEOS-WGCV Atmospheric Correction Inter-comparison Exercise, 21-22 June 2016, College Park, MD, USA&lt;/p&gt;
+&lt;p&gt;oral presentation via web-conference&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>An operational radiometric multi-sensor pre-processing framework for large-area time-series applications of medium resolution optical satellite imagery</title>
+      <link>https://davidfrantz.github.io/presentation/pb040/</link>
+      <pubDate>Mon, 09 May 2016 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb040/</guid>
+      <description>&lt;p&gt;David Frantz, Achim Röder, Marion Stellmes, Joachim Hill&lt;/p&gt;
+&lt;p&gt;ESA Living Planet Symposium, 9-13 May 2016, Prague, Czech Republic&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Academic: the website builder for Hugo</title>
+      <link>https://davidfrantz.github.io/tutorials/getting-started/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/tutorials/getting-started/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Create a free website with Academic using Markdown, Jupyter, or RStudio. Choose a beautiful color theme and build anything with the Page Builder - over 40 &lt;em&gt;widgets&lt;/em&gt;, &lt;em&gt;themes&lt;/em&gt;, and &lt;em&gt;language packs&lt;/em&gt; included!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://academic-demo.netlify.com/&#34;&gt;Check out the latest &lt;strong&gt;demo&lt;/strong&gt;&lt;/a&gt; of what you&#39;ll get in less than 10 minutes, or &lt;a href=&#34;https://sourcethemes.com/academic/#expo&#34;&gt;view the &lt;strong&gt;showcase&lt;/strong&gt;&lt;/a&gt; of personal, project, and business sites.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;👉 &lt;a href=&#34;#install&#34;&gt;&lt;strong&gt;Get Started&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;📚 &lt;a href=&#34;https://sourcethemes.com/academic/docs/&#34;&gt;View the &lt;strong&gt;documentation&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;💬 &lt;a href=&#34;https://discourse.gohugo.io&#34;&gt;&lt;strong&gt;Ask a question&lt;/strong&gt; on the forum&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;👥 &lt;a href=&#34;https://spectrum.chat/academic&#34;&gt;Chat with the &lt;strong&gt;community&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;🐦 Twitter: &lt;a href=&#34;https://twitter.com/source_themes&#34;&gt;@source_themes&lt;/a&gt; &lt;a href=&#34;https://twitter.com/GeorgeCushen&#34;&gt;@GeorgeCushen&lt;/a&gt; &lt;a href=&#34;https://twitter.com/search?q=%23MadeWithAcademic&amp;amp;src=typd&#34;&gt;#MadeWithAcademic&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;💡 &lt;a href=&#34;https://github.com/gcushen/hugo-academic/issues&#34;&gt;Request a &lt;strong&gt;feature&lt;/strong&gt; or report a &lt;strong&gt;bug&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;⬆️ &lt;strong&gt;Updating?&lt;/strong&gt; View the &lt;a href=&#34;https://sourcethemes.com/academic/docs/update/&#34;&gt;Update Guide&lt;/a&gt; and &lt;a href=&#34;https://sourcethemes.com/academic/updates/&#34;&gt;Release Notes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;❤ &lt;strong&gt;Support development&lt;/strong&gt; of Academic:
+&lt;ul&gt;
+&lt;li&gt;☕️ &lt;a href=&#34;https://paypal.me/cushen&#34;&gt;&lt;strong&gt;Donate a coffee&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;💵 &lt;a href=&#34;https://www.patreon.com/cushen&#34;&gt;Become a backer on &lt;strong&gt;Patreon&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;🖼️ &lt;a href=&#34;https://www.redbubble.com/people/neutreno/works/34387919-academic&#34;&gt;Decorate your laptop or journal with an Academic &lt;strong&gt;sticker&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;👕 &lt;a href=&#34;https://academic.threadless.com/&#34;&gt;Wear the &lt;strong&gt;T-shirt&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;👩‍💻 &lt;a href=&#34;https://sourcethemes.com/academic/docs/contribute/&#34;&gt;&lt;strong&gt;Contribute&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/academic.png&#34; data-caption=&#34;Academic is mobile first with a responsive design to ensure that your site looks stunning on every device.&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/academic.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Academic is mobile first with a responsive design to ensure that your site looks stunning on every device.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Key features:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Page builder&lt;/strong&gt; - Create &lt;em&gt;anything&lt;/em&gt; with &lt;a href=&#34;https://sourcethemes.com/academic/docs/page-builder/&#34;&gt;&lt;strong&gt;widgets&lt;/strong&gt;&lt;/a&gt; and &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34;&gt;&lt;strong&gt;elements&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Edit any type of content&lt;/strong&gt; - Blog posts, publications, talks, slides, projects, and more!&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Create content&lt;/strong&gt; in &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34;&gt;&lt;strong&gt;Markdown&lt;/strong&gt;&lt;/a&gt;, &lt;a href=&#34;https://sourcethemes.com/academic/docs/jupyter/&#34;&gt;&lt;strong&gt;Jupyter&lt;/strong&gt;&lt;/a&gt;, or &lt;a href=&#34;https://sourcethemes.com/academic/docs/install/#install-with-rstudio&#34;&gt;&lt;strong&gt;RStudio&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Plugin System&lt;/strong&gt; - Fully customizable &lt;a href=&#34;https://sourcethemes.com/academic/themes/&#34;&gt;&lt;strong&gt;color&lt;/strong&gt; and &lt;strong&gt;font themes&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Display Code and Math&lt;/strong&gt; - Code highlighting and &lt;a href=&#34;https://en.wikibooks.org/wiki/LaTeX/Mathematics&#34;&gt;LaTeX math&lt;/a&gt; supported&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Integrations&lt;/strong&gt; - &lt;a href=&#34;https://analytics.google.com&#34;&gt;Google Analytics&lt;/a&gt;, &lt;a href=&#34;https://disqus.com&#34;&gt;Disqus commenting&lt;/a&gt;, Maps, Contact Forms, and more!&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Beautiful Site&lt;/strong&gt; - Simple and refreshing one page design&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Industry-Leading SEO&lt;/strong&gt; - Help get your website found on search engines and social media&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Media Galleries&lt;/strong&gt; - Display your images and videos with captions in a customizable gallery&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mobile Friendly&lt;/strong&gt; - Look amazing on every screen with a mobile friendly version of your site&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Multi-language&lt;/strong&gt; - 15+ language packs including English, 中文, and Português&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Multi-user&lt;/strong&gt; - Each author gets their own profile page&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Privacy Pack&lt;/strong&gt; - Assists with GDPR&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Stand Out&lt;/strong&gt; - Bring your site to life with animation, parallax backgrounds, and scroll effects&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;One-Click Deployment&lt;/strong&gt; - No servers. No databases. Only files.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;themes&#34;&gt;Themes&lt;/h2&gt;
+&lt;p&gt;Academic comes with &lt;strong&gt;automatic day (light) and night (dark) mode&lt;/strong&gt; built-in. Alternatively, visitors can  choose their preferred mode - click the sun/moon icon in the top right of the &lt;a href=&#34;https://academic-demo.netlify.com/&#34;&gt;Demo&lt;/a&gt; to see it in action! Day/night mode can also be disabled by the site admin in &lt;code&gt;params.toml&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://sourcethemes.com/academic/themes/&#34;&gt;Choose a stunning &lt;strong&gt;theme&lt;/strong&gt; and &lt;strong&gt;font&lt;/strong&gt;&lt;/a&gt; for your site. Themes are fully &lt;a href=&#34;https://sourcethemes.com/academic/docs/customization/#custom-theme&#34;&gt;customizable&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;ecosystem&#34;&gt;Ecosystem&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/sourcethemes/academic-admin&#34;&gt;Academic Admin&lt;/a&gt;:&lt;/strong&gt; An admin tool to import publications from BibTeX or import assets for an offline site&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/sourcethemes/academic-scripts&#34;&gt;Academic Scripts&lt;/a&gt;:&lt;/strong&gt; Scripts to help migrate content to new versions of Academic&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;install&#34;&gt;Install&lt;/h2&gt;
+&lt;p&gt;You can choose from one of the following four methods to install:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/install/#install-with-web-browser&#34;&gt;&lt;strong&gt;one-click install using your web browser (recommended)&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/install/#install-with-git&#34;&gt;install on your computer using &lt;strong&gt;Git&lt;/strong&gt; with the Command Prompt/Terminal app&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/install/#install-with-zip&#34;&gt;install on your computer by downloading the &lt;strong&gt;ZIP files&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/install/#install-with-rstudio&#34;&gt;install on your computer with &lt;strong&gt;RStudio&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Then &lt;a href=&#34;https://sourcethemes.com/academic/docs/get-started/&#34;&gt;personalize and deploy your new site&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;updating&#34;&gt;Updating&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/update/&#34;&gt;View the Update Guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Feel free to &lt;em&gt;star&lt;/em&gt; the project on &lt;a href=&#34;https://github.com/gcushen/hugo-academic/&#34;&gt;Github&lt;/a&gt; to help keep track of &lt;a href=&#34;https://sourcethemes.com/academic/updates&#34;&gt;updates&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;license&#34;&gt;License&lt;/h2&gt;
+&lt;p&gt;Copyright 2016-present &lt;a href=&#34;https://georgecushen.com&#34;&gt;George Cushen&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Released under the &lt;a href=&#34;https://github.com/gcushen/hugo-academic/blob/master/LICENSE.md&#34;&gt;MIT&lt;/a&gt; license.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Phenology-Adaptive Pixel-Based Landsat Composites. Supporting Wall-to-Wall Mapping Efforts</title>
+      <link>https://davidfrantz.github.io/presentation/pb041/</link>
+      <pubDate>Wed, 30 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb041/</guid>
+      <description>&lt;p&gt;David Frantz&lt;/p&gt;
+&lt;p&gt;Geomatics Lab Colloquium, Humboldt-Universität zu Berlin, March 2016, Berlin, Germany&lt;/p&gt;
+&lt;p&gt;invited oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Linking Land Surface Phenology and Vegetation-Plot Databases to predict Species Diversity and Distributions in the Okavango Basin</title>
+      <link>https://davidfrantz.github.io/presentation/pb043/</link>
+      <pubDate>Tue, 23 Feb 2016 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb043/</guid>
+      <description>&lt;p&gt;Rasmus Revermann, Manfred Finckh, Marion Stellmes, Vera de Cauwer, David Frantz, Ben Strohbach, Jens Oldeland&lt;/p&gt;
+&lt;p&gt;European Conference of Tropical Ecology, 23-26 February  2016, Göttingen, Germany&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Tool or Disaster - Logics and Trade-Offs behind Wildfires in the Okavango Basin</title>
+      <link>https://davidfrantz.github.io/presentation/pb042/</link>
+      <pubDate>Tue, 23 Feb 2016 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb042/</guid>
+      <description>&lt;p&gt;Manfred Finckh, Marion Stellmes, David Frantz, Rasmus Revermann&lt;/p&gt;
+&lt;p&gt;European Conference of Tropical Ecology, 23-26 February  2016, Göttingen, Germany&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>An Operational Radiometric Landsat Preprocessing Framework for Large-Area Time Series Applications</title>
+      <link>https://davidfrantz.github.io/publication/frantz-2016a/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/frantz-2016a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Evaluating the Trade-Off Between Food and Timber Resulting from the Conversion of Miombo Forests to Agricultural Land in Angola Using Multi-Temporal Landsat Data</title>
+      <link>https://davidfrantz.github.io/publication/schneibel-2016/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/schneibel-2016/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fire spread from MODIS burned area data: obtaining fire dynamics information for every single fire</title>
+      <link>https://davidfrantz.github.io/publication/frantz-2016e/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/frantz-2016e/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Forest Disturbance Mapping Using Dense Synthetic Landsat/MODIS Time-Series and Permutation-Based Disturbance Index Detection</title>
+      <link>https://davidfrantz.github.io/publication/frantz-2016c/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/frantz-2016c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Improving the Spatial Resolution of Land Surface Phenology by Fusing Medium- and Coarse-Resolution Inputs</title>
+      <link>https://davidfrantz.github.io/publication/frantz-2016b/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/frantz-2016b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linking Land Surface Phenology and Vegetation-Plot Databases to Model Terrestrial Plant α-Diversity of the Okavango Basin</title>
+      <link>https://davidfrantz.github.io/publication/revermann-2016/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/revermann-2016/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Die Etablierung automatisierter Prozessierungsumgebungen zur künftigen Nutzung von Sentinel-2 Datenarchiven</title>
+      <link>https://davidfrantz.github.io/presentation/pb046/</link>
+      <pubDate>Fri, 18 Dec 2015 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb046/</guid>
+      <description>&lt;p&gt;David Frantz, Achim Röder, Marion Stellmes, Joachim Hill&lt;/p&gt;
+&lt;p&gt;Precision Forestry - Beiträge aus Fernerkundung und Geoinformatik, 18 December 2015, Trier, Germany&lt;/p&gt;
+&lt;p&gt;invited oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Generating phenology adaptive pixel-based Landsat composites across large areas</title>
+      <link>https://davidfrantz.github.io/presentation/pb047/</link>
+      <pubDate>Thu, 24 Sep 2015 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb047/</guid>
+      <description>&lt;p&gt;David Frantz, Achim Röder, Marion Stellmes, Joachim Hill&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Gemeinsame Jahrestagung der Arbeitskreise Fernerkundung (DGfG &amp;amp; DGPF), 24-25 September 2015, Bonn, Germany&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Linking Vegetation databases and phenological metrics of MODIS time series to predict plant species richness of the Okavango Basin</title>
+      <link>https://davidfrantz.github.io/presentation/pb051/</link>
+      <pubDate>Mon, 31 Aug 2015 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb051/</guid>
+      <description>&lt;p&gt;Rasmus Revermann, Manfred Finckh, Marion Stellmes, Ben Strohbach, David Frantz, Jens Oldeland&lt;/p&gt;
+&lt;p&gt;GFÖ 2015, 31-4 August/September 2015, Göttingen, Germany&lt;/p&gt;
+&lt;p&gt;poster presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Patterns, processes &amp; drivers - how interconnected social-ecological systems shape landscapes in the Okavango catchment</title>
+      <link>https://davidfrantz.github.io/presentation/pb050/</link>
+      <pubDate>Mon, 31 Aug 2015 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb050/</guid>
+      <description>&lt;p&gt;Manfred Finckh, Cynthia Erb, David Frantz, Rasmus Revermann, Achim Röder, Anne Schneibel, Marion Stellmes&lt;/p&gt;
+&lt;p&gt;GFÖ 2015, 31-4 August/September 2015, Göttingen, Germany&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>A characterization of the status and dynamics of land cover in the active Okavango catchment based on various MODIS products and climate data</title>
+      <link>https://davidfrantz.github.io/presentation/pb053/</link>
+      <pubDate>Wed, 22 Jul 2015 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb053/</guid>
+      <description>&lt;p&gt;Marion Stellmes, Achim Röder, David Frantz, Thomas Udelhoven, Joachim Hill&lt;/p&gt;
+&lt;p&gt;MultiTemp 2015, 22-24 July 2015, Annecy, France&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>On the usage of a pixel-based dark-object database for the estimation of aerosol optical depth and its incorporation in a large area Landsat processing framework</title>
+      <link>https://davidfrantz.github.io/presentation/pb048/</link>
+      <pubDate>Wed, 22 Jul 2015 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb048/</guid>
+      <description>&lt;p&gt;David Frantz, Achim Röder, Marion Stellmes, Joachim Hill&lt;/p&gt;
+&lt;p&gt;MultiTemp 2015, 22-24 July 2015, Annecy, France&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Reconstruction of MODIS derived phenology metrics at Landsat spatial resolution</title>
+      <link>https://davidfrantz.github.io/presentation/pb049/</link>
+      <pubDate>Wed, 22 Jul 2015 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb049/</guid>
+      <description>&lt;p&gt;David Frantz, Marion Stellmes, Achim Röder, Thomas Udelhoven, Sebastian Mader, Joachim Hill&lt;/p&gt;
+&lt;p&gt;MultiTemp 2015, 22-24 July 2015, Annecy, France&lt;/p&gt;
+&lt;p&gt;poster presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>A characterization of the status and dynamics of land cover in the active Okavango catchment based on various MODIS products and climate data</title>
+      <link>https://davidfrantz.github.io/presentation/pb054/</link>
+      <pubDate>Wed, 17 Jun 2015 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb054/</guid>
+      <description>&lt;p&gt;Marion Stellmes, Achim Röder, David Frantz, Thomas Udelhoven, Joachim Hill&lt;/p&gt;
+&lt;p&gt;EARSeL SIG on Temporal Analysis of Satellite Images, 17-19 June 2015, Stockholm, Sweden&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Using decadal pixel-based Landsat composites to analyze post-war forest cover dynamics in Angola. EARSeL SIG on Temporal Analysis of Satellite Images</title>
+      <link>https://davidfrantz.github.io/presentation/pb052/</link>
+      <pubDate>Wed, 17 Jun 2015 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb052/</guid>
+      <description>&lt;p&gt;Achim Röder, David Frantz, Marion Stellmes, Anne Schneibel, Manfred Finckh, Valter Chissingu, Joachim Hill&lt;/p&gt;
+&lt;p&gt;EARSeL SIG on Temporal Analysis of Satellite Images, 17-19 June 2015, Stockholm, Sweden&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Enhancing the Detectability of Clouds and Their Shadows in Multitemporal Dryland Landsat Imagery: Extending Fmask</title>
+      <link>https://davidfrantz.github.io/publication/frantz-2015a/</link>
+      <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/frantz-2015a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>On the Derivation of a Spatially Distributed Aerosol Climatology for its Incorporation in a Radiometric Landsat Preprocessing Framework</title>
+      <link>https://davidfrantz.github.io/publication/frantz-2015b/</link>
+      <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/frantz-2015b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A multi-component characterization of the active Okavango Catchment and Delta based on various MODIS products</title>
+      <link>https://davidfrantz.github.io/presentation/pb056/</link>
+      <pubDate>Wed, 19 Mar 2014 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb056/</guid>
+      <description>&lt;p&gt;Marion Stellmes, David Frantz, Achim Röder, Torsten  Weber, Joachim Hill&lt;/p&gt;
+&lt;p&gt;Global Land Project (GLP) Open Science Meeting, Berlin, Germany, 19-21 March&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Characterization of forest disturbance using data-blending techniques applied to MODIS and Landsat time series in an Australian Savanna</title>
+      <link>https://davidfrantz.github.io/presentation/pb055/</link>
+      <pubDate>Wed, 19 Mar 2014 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb055/</guid>
+      <description>&lt;p&gt;David Frantz, Achim Röder, Thomas Udelhoven, Michael Schmidt&lt;/p&gt;
+&lt;p&gt;Global Land Project (GLP) Open Science Meeting, Berlin, Germany, 19-21 March&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Enhanced biomass prediction by assimilating satellite data into a crop growth model</title>
+      <link>https://davidfrantz.github.io/publication/machwitz-2014/</link>
+      <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/machwitz-2014/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SASSCAL</title>
+      <link>https://davidfrantz.github.io/project/sasscal/</link>
+      <pubDate>Sat, 01 Jun 2013 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/project/sasscal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fire Frequency, Fire Seasonality and Fire Intensity within the Okavango Region Derived from MODIS Fire Products</title>
+      <link>https://davidfrantz.github.io/publication/stellmes-2013/</link>
+      <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/stellmes-2013/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Enhancement of Yield Prediction – Sequential Data Assimilation Using the Models Apsim and Prosail and the Particle Filter</title>
+      <link>https://davidfrantz.github.io/presentation/pb057/</link>
+      <pubDate>Sun, 22 Jul 2012 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb057/</guid>
+      <description>&lt;p&gt;M. Machwitz, Thomas Udelhoven, Martin Schlerf, Christian Bossung, Chistoph Wiedekind, David Frantz, Lucien Hoffmann&lt;/p&gt;
+&lt;p&gt;IGARSS 2012, 22-27 July 2012, Munich, Germany&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>TFO</title>
+      <link>https://davidfrantz.github.io/project/tfo/</link>
+      <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/project/tfo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Assessing the Sensitivity of European Beech (Fagus sylvatica L.) Stands to Severe Drought Based on Measurements from Earth Observation Satellites</title>
+      <link>https://davidfrantz.github.io/presentation/pb058/</link>
+      <pubDate>Thu, 02 Jun 2011 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb058/</guid>
+      <description>&lt;p&gt;Joachim Hill, Marion Stellmes, Johannes Stoffels, Willy Werner, Oxana Shtern, David Frantz&lt;/p&gt;
+&lt;p&gt;1st EARSeL SIG on Forestry, 2-3 June 2011, Prague, Czech Republic&lt;/p&gt;
+&lt;p&gt;oral presentation and proceedings paper&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ForeStClim</title>
+      <link>https://davidfrantz.github.io/project/forestclim/</link>
+      <pubDate>Fri, 01 Jan 2010 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/project/forestclim/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

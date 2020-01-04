@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Erik Haß | DAVID FRANTZ</title>
+    <link>https://davidfrantz.github.io/authors/erik-ha%C3%9F/</link>
+      <atom:link href="https://davidfrantz.github.io/authors/erik-ha%C3%9F/index.xml" rel="self" type="application/rss+xml" />
+    <description>Erik Haß</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Mon, 01 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://davidfrantz.github.io/img/icon-192.png</url>
+      <title>Erik Haß</title>
+      <link>https://davidfrantz.github.io/authors/erik-ha%C3%9F/</link>
+    </image>
+    
+    <item>
+      <title>Improvement of the Fmask algorithm for Sentinel-2 images: Separating clouds from bright surfaces based on parallax effects</title>
+      <link>https://davidfrantz.github.io/publication/frantz-2018/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/frantz-2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Assessment of spatio-temporal changes of smallholder cultivation patterns in the Angolan Miombo belt using segmentation of Landsat time series</title>
+      <link>https://davidfrantz.github.io/publication/schneibel-2017a/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/schneibel-2017a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Global Analysis of the Differences Between the MODIS Vegetation Index Compositing Date and the Actual Acquisition Date</title>
+      <link>https://davidfrantz.github.io/publication/hass-2017/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/hass-2017/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

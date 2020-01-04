@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Anne Schneibel | DAVID FRANTZ</title>
+    <link>https://davidfrantz.github.io/authors/anne-schneibel/</link>
+      <atom:link href="https://davidfrantz.github.io/authors/anne-schneibel/index.xml" rel="self" type="application/rss+xml" />
+    <description>Anne Schneibel</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Mon, 01 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://davidfrantz.github.io/img/icon-192.png</url>
+      <title>Anne Schneibel</title>
+      <link>https://davidfrantz.github.io/authors/anne-schneibel/</link>
+    </image>
+    
+    <item>
+      <title>Long-term land use change analysis in south-central Angola. Assessing the trade-off between major ecosystem services with remote sensing data</title>
+      <link>https://davidfrantz.github.io/publication/schneibel-2018/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/schneibel-2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Assessment of spatio-temporal changes of smallholder cultivation patterns in the Angolan Miombo belt using segmentation of Landsat time series</title>
+      <link>https://davidfrantz.github.io/publication/schneibel-2017a/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/schneibel-2017a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Using Annual Landsat Time Series for the Detection of Dry Forest Degradation Processes in South-Central Angola</title>
+      <link>https://davidfrantz.github.io/publication/schneibel-2017b/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/schneibel-2017b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Evaluating the Trade-Off Between Food and Timber Resulting from the Conversion of Miombo Forests to Agricultural Land in Angola Using Multi-Temporal Landsat Data</title>
+      <link>https://davidfrantz.github.io/publication/schneibel-2016/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/schneibel-2016/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

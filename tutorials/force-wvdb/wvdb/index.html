@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="David Frantz">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="This tutorial will show how to prepare the Water Vapor Database (WVDB) for the **FORCE Level 2 Processing System (FORCE L2PS)**.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://davidfrantz.github.io/tutorials/force-wvdb/wvdb/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#5C9DE3">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon-32.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://davidfrantz.github.io/tutorials/force-wvdb/wvdb/">
+
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="DAVID FRANTZ">
+  <meta property="og:url" content="https://davidfrantz.github.io/tutorials/force-wvdb/wvdb/">
+  <meta property="og:title" content="FORCE Tutorial: Water Vapor Database | DAVID FRANTZ">
+  <meta property="og:description" content="This tutorial will show how to prepare the Water Vapor Database (WVDB) for the **FORCE Level 2 Processing System (FORCE L2PS)**."><meta property="og:image" content="https://davidfrantz.github.io/img/icon-192.png">
+  <meta property="twitter:image" content="https://davidfrantz.github.io/img/icon-192.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2019-12-16T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2019-12-16T00:00:00&#43;00:00">
+  
+
+  
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>FORCE Tutorial: Water Vapor Database | DAVID FRANTZ</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">DAVID FRANTZ</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">DAVID FRANTZ</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-center" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#experience"><span>CV</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#publications"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#presentations"><span>Presentations</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#data"><span>Data</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#software"><span>Software</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#tutorials"><span>Tutorials</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item">
+        <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>FORCE Tutorial: Water Vapor Database</h1>
+
+  
+  <p class="page-subtitle">Prepare the Water Vapor Database for Level 2 Processing</p>
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Dec 16, 2019
+  </span>
+  
+
+  
+
+  
+
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <p><em>This tutorial uses FORCE v. 3.0</em></p>
+<h2 id="learning-objective">Learning Objective</h2>
+<p>This tutorial will show how to prepare the Water Vapor Database (WVDB) for the <strong>FORCE Level 2 Processing System (FORCE L2PS)</strong>.</p>
+<h2 id="background">Background</h2>
+<p>During atmospheric correction, the effect of water vapor absorption can only be corrected if we know the amount of water vapor in the atmosphere.</p>
+<p>If you are using Sentinel-2 data only, you can stop reading. Sentinel-2 is equipped with a water vapor channel, and thus, water wapor amount can be estimated from the images.</p>
+<p>Landsat, however, doesn't have such a band. Therefore, we need to rely on external data, which needs to be precompiled into a water vapor database.</p>
+<h2 id="water-vapor-database">Water Vapor Database</h2>
+<p>The database holds water vapor values for the central coordinates of each WRS-2 frame. If available, day-specific values are used.</p>
+<p>The database consists of one table for each day (<code>WVP_YYYY-MM-DD.txt</code>)</p>
+<pre><code class="language-bash">ls /data/Earth/global/wvp/wvdb/WVP_2010-07-*
+</code></pre>
+<pre><code>/data/Earth/global/wvp/wvdb/WVP_2010-07-01.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-02.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-03.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-04.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-05.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-06.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-07.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-08.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-09.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-10.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-11.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-12.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-13.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-14.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-15.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-16.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-17.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-18.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-19.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-20.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-21.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-22.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-23.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-24.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-25.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-26.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-27.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-28.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-29.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-30.txt
+/data/Earth/global/wvp/wvdb/WVP_2010-07-31.txt
+</code></pre>
+<p>Each file includes one value per coordinate. In the example below, there are 13281 coordinates in each file (global land coverage). The coordinate, which is closest to the center of the Landsat image is selected, and the atmospheric correction uses this value to account for gaseous absorption.</p>
+<pre><code class="language-bash">wc -l /data/Earth/global/wvp/wvdb/WVP_2010-07-26.txt 
+</code></pre>
+<pre><code>13281 /data/Earth/global/wvp/wvdb/WVP_2010-07-26.txt
+</code></pre>
+<pre><code class="language-bash">head /data/Earth/global/wvp/wvdb/WVP_2010-07-26.txt
+</code></pre>
+<pre><code>-15.3934 80.7603 1.170018 MOD
+-22.8654 80.0056 9999.000000 TBD
+-29.2236 79.1137 9999.000000 TBD
+-34.5930 78.1151 0.614454 MOD
+-39.1269 77.0343 0.448552 MOD
+-42.9718 75.8898 0.260607 MOD
+-46.2552 74.6958 0.282855 MYD
+-49.0816 73.4629 0.337015 MOD
+-51.5357 72.1989 9999.000000 TBD
+-53.6847 70.9100 9999.000000 TBD
+</code></pre>
+<h2 id="climatology">Climatology</h2>
+<p>If day-specific values are not available (no table is existing, or there is a fill value), a monthly long-term climatology is used instead. The climatology consists of one table for each month (<code>WVP_0000-MM-00.txt</code>).</p>
+<pre><code class="language-bash">ls /data/Earth/global/wvp/wvdb/WVP_0000*
+</code></pre>
+<pre><code>/data/Earth/global/wvp/wvdb/WVP_0000-01-00.txt
+/data/Earth/global/wvp/wvdb/WVP_0000-02-00.txt
+/data/Earth/global/wvp/wvdb/WVP_0000-03-00.txt
+/data/Earth/global/wvp/wvdb/WVP_0000-04-00.txt
+/data/Earth/global/wvp/wvdb/WVP_0000-05-00.txt
+/data/Earth/global/wvp/wvdb/WVP_0000-06-00.txt
+/data/Earth/global/wvp/wvdb/WVP_0000-07-00.txt
+/data/Earth/global/wvp/wvdb/WVP_0000-08-00.txt
+/data/Earth/global/wvp/wvdb/WVP_0000-09-00.txt
+/data/Earth/global/wvp/wvdb/WVP_0000-10-00.txt
+/data/Earth/global/wvp/wvdb/WVP_0000-11-00.txt
+/data/Earth/global/wvp/wvdb/WVP_0000-12-00.txt
+</code></pre>
+<p>Again, each file includes one value per coordinate. The file holds the long-term average, long-term standard deviation, and the number of measurements used to compute these statistics.</p>
+<pre><code class="language-bash">wc -l /data/Earth/global/wvp/wvdb/WVP_0000-07-00.txt 
+</code></pre>
+<pre><code>13281 /data/Earth/global/wvp/wvdb/WVP_0000-07-00.txt
+</code></pre>
+<pre><code class="language-bash">head /data/Earth/global/wvp/wvdb/WVP_0000-07-00.txt
+</code></pre>
+<pre><code>-15.3934 80.7603 1.177704 0.364894 300
+-22.8654 80.0056 1.079682 0.328948 311
+-29.2236 79.1137 0.695211 0.234917 383
+-34.5930 78.1151 0.549352 0.256754 445
+-39.1269 77.0343 0.472883 0.224957 480
+-42.9718 75.8898 0.410826 0.211346 476
+-46.2552 74.6958 0.384219 0.145523 457
+-49.0816 73.4629 0.415261 0.170940 456
+-51.5357 72.1989 0.515858 0.223122 422
+-53.6847 70.9100 0.546611 0.273735 276
+</code></pre>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<figure>
+
+
+  <a data-fancybox="" href="/img/wvdb.gif" data-caption="Global animation of the climatology (monthly average)">
+<img src="/img/wvdb.gif" alt="" width="750" ></a>
+
+
+  
+  
+  <figcaption>
+    Global animation of the climatology (monthly average)
+  </figcaption>
+
+
+</figure>
+
+<h2 id="uncertainty-of-the-climatology">Uncertainty of the climatology</h2>
+<p>The uncertainty of using the climatology was assessed in this paper:
+Frantz, D., Stellmes, M., &amp; Hostert, P. (2019). A Global MODIS Water Vapor Database for the Operational Atmospheric Correction of Historic and Recent Landsat Imagery. Remote Sensing, 11, 257. <a href="https://doi.org/10.3390/rs11030257">https://doi.org/10.3390/rs11030257</a></p>
+<h2 id="prepare-the-wvdb">Prepare the WVDB</h2>
+<p>We generally use a WVDB generated from MODIS water vapor products (<a href="https://modis.gsfc.nasa.gov/data/dataprod/mod05.php">MOD05 and MYD05</a>).</p>
+<h3 id="download-the-ready-to-go-global-wvdb">Download the ready-to-go global WVDB</h3>
+<p>You should start by downloading the pre-compiled WVDB with global coverage from <a href="doi.pangaea.de/10.1594/PANGAEA.893109">here</a>. This saves you a lot of processing. This freely available dataset was generated with the <strong>FORCE WVDB</strong> component, and is comprised of daily global water vapor data for February 2000 to July 2018 for each land-intersecting WRS-2 scene (13281 coordinates), as well as a monthly climatology that can be used if no daily value is available.</p>
+<h3 id="generate-the-wvdb-on-your-own">Generate the WVDB on your own</h3>
+<p>We try to update this dataset in regular intervals. However, if you are in need of more up-to-date data, you can use the <strong>FORCE WVDB</strong> component to generate/update these tables on your own. <strong>FORCE WVDB</strong> needs a table with input coordinates (center coordinates of WRS-2 frames). The <a href="doi.pangaea.de/10.1594/PANGAEA.893109">pre-compiled dataset</a> includes such a table. If you are not interested in global coverage, you can subset this file. The file should contain two columns separated by white space, and no header. The first column should give the longitude (X), the second column the latitude (Y) with coordinates in decimal degree (negative values for West/South). Any other column is ignored (in the example below, the WRS-2 Path/Row is in the third column).</p>
+<pre><code class="language-bash">wc -l /data/Earth/global/wvp/wvdb/wrs-2-land.coo
+</code></pre>
+<pre><code>13281 /data/Earth/global/wvp/wvdb/wrs-2-land.coo
+</code></pre>
+<pre><code class="language-bash">head /data/Earth/global/wvp/wvdb/wrs-2-land.coo
+</code></pre>
+<pre><code>-15.39340494140 80.76026666750 013001
+-22.86543244600 80.00558606640 013002
+-29.22356065160 79.11366800820 013003
+-34.59295680040 78.11513723200 013004
+-39.12687451150 77.03430642440 013005
+-42.97184515330 75.88984431700 013006
+-46.25519224080 74.69581438230 013007
+-49.08160498390 73.46286239410 013008
+-51.53569902300 72.19888348300 013009
+-53.68466715610 70.91003752470 013010
+</code></pre>
+<p><strong>FORCE WVDB</strong> downloads each Terra/Aqua granule (collection 6.1) that intersects with any of these coordinates. The files are downloaded from the Level1 and Atmosphere Archive and Distribution System (<a href="ladsweb.modaps.eosdis.nasa.gov">LAADS</a>) at NASA’s Goddard Space Flight Center. Note that any permanent or temporary change/shutdown/decommissioning on LAADS’ or MODIS’ end may result in the nonfunctioning of <strong>FORCE WVDB</strong>&hellip; Also note, that they perform a weekly maintenance, during which their servers are not accessable.</p>
+<p>As with any other FORCE program, you can display short usage instructions by executing the program without any parameters.</p>
+<pre><code class="language-bash">force-lut-modis
+</code></pre>
+<pre><code>usage: force-lut-modis coords dir-wvp dir-geometa dir-eoshdf
+           [start-year start-month start-day
+            end-year   end-month   end-day]
+</code></pre>
+<p>A coordinate file needs to be given as 1st argument.</p>
+<p>The MODIS data are downloaded to dir-eoshdf (this directory must exist). MODIS data that are already in dir-eoshdf are not downloaded again. <em>If the tool crashes because a dataset is corrupt, it is necessary to manually delete this file and run the tool again. Unfortunately, this happens from time to time due to incomplete downloads or if LAADS is unresponsive. The program attempts to re-download a corrupt file up to 10 times, but this error can occur nonetheless.</em></p>
+<p>MOD05/MYD05 data are swath products, and MOD03/MYD03 geometa tables are necessary to relate coordinates to MODIS granules. The geometa tables are downloaded to dir-geometa (this directory must exist). Tables that are already in dir-geometa are not downloaded again. <em>If the tool crashes because a table is invalid, it is necessary to manually delete this file and run the tool again. Unfortunately, this happens from time to time due to incomplete downloads or if LAADS is unresponsive. The program attempts to re-download a corrupt file up to 10 times, but this error can occur nonetheless.</em></p>
+<p>The final water vapor tables are saved in dir-wvp (this directory must exist). Tables that are already in dir-wvp are not processed again (i.e. no download of geometa tables and hdf files).</p>
+<p>The start and end arguments are optional and may be used for parallelization. If they are not given, <strong>FORCE WVDB</strong> will download the entire time series of all coordinates provided (this can be a lot!).</p>
+<p>This directory is the directory, to which DIR_WVPLUT in the <strong>FORCE L2PS</strong> parameter file should refer.
+<code>DIR_WVPLUT = /data/Earth/global/wvp/wvdb</code></p>
+<p>If you have finished compiling the WVDB, you may delete the MODIS *.hdf files.</p>
+<p>Download the entire data record (in one process - this is slow):</p>
+<pre><code class="language-bash">force-lut-modis /data/Earth/global/wvp/wvdb/wrs-2-land.coo /data/Earth/global/wvp/wvdb /data/Earth/global/wvp/geo /data/Earth/global/wvp/hdf
+</code></pre>
+<p>Download one week:</p>
+<pre><code class="language-bash">force-lut-modis /data/Earth/global/wvp/wvdb/wrs-2-land.coo /data/Earth/global/wvp/wvdb /data/Earth/global/wvp/geo /data/Earth/global/wvp/hdf 2010 07 01 2010 07 07
+</code></pre>
+<p>Use GNU parallel to download an entire month in 31 parallel processes. This works by creating a list 1..31, which is distributed to 31 jobs. Each job calls <strong>FORCE WVDB</strong> for one specific day in July 2010. The curly braces are replaced with the list value given to each process.</p>
+<pre><code class="language-bash">seq -w 1 31 | parallel -j31 force-lut-modis /data/Earth/global/wvp/wvdb/wrs-2-land.coo /data/Earth/global/wvp/wvdb /data/Earth/global/wvp/geo /data/Earth/global/wvp/hdf 2010 07 {} 2010 07 {}
+</code></pre>
+
+    </div>
+
+    
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/2019/">2019</a>
+  
+  <a class="badge badge-light" href="/tags/force/">FORCE</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://davidfrantz.github.io/tutorials/force-wvdb/wvdb/&amp;text=FORCE%20Tutorial:%20Water%20Vapor%20Database" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://davidfrantz.github.io/tutorials/force-wvdb/wvdb/&amp;t=FORCE%20Tutorial:%20Water%20Vapor%20Database" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=FORCE%20Tutorial:%20Water%20Vapor%20Database&amp;body=https://davidfrantz.github.io/tutorials/force-wvdb/wvdb/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://davidfrantz.github.io/tutorials/force-wvdb/wvdb/&amp;title=FORCE%20Tutorial:%20Water%20Vapor%20Database" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=FORCE%20Tutorial:%20Water%20Vapor%20Database%20https://davidfrantz.github.io/tutorials/force-wvdb/wvdb/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://davidfrantz.github.io/tutorials/force-wvdb/wvdb/&amp;title=FORCE%20Tutorial:%20Water%20Vapor%20Database" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <img class="portrait mr-3" src="/authors/admin/avatar_huba61fb2ae087847d5946ab8e48bc46d6_594175_250x250_fill_q90_lanczos_center.jpg" alt="Avatar">
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://davidfrantz.github.io/">David Frantz</a></h5>
+      <h6 class="card-subtitle">Postdoctoral Researcher</h6>
+      <p class="card-text">EO, ARD, FORCE, Data Science, Open Science</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+    <li>
+      <a href="mailto:david.frantz@geo.hu-berlin.de" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.de/citations?user=JtEWu3AAAAAJ" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.researchgate.net/profile/David_Frantz" target="_blank" rel="noopener">
+        <i class="fab fa-researchgate"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="http://orcid.org/0000-0002-9292-3931" target="_blank" rel="noopener">
+        <i class="fab fa-orcid"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/davidfrantz" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/d__frantz" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>Related</h3>
+    <ul>
+      
+      <li><a href="/presentation/pb013/">Analysis-Ready-Data für die Ableitung von Grünlandinformationen in Deutschland</a></li>
+      
+      <li><a href="/presentation/pb001/">Large-scale land monitoring at HUB with Landsat and Sentinel-2</a></li>
+      
+      <li><a href="/data/dt003/">Dominant land cover of the Okavango Basin</a></li>
+      
+      <li><a href="/presentation/pb002/">FORCE v. 2.0 – Analysis Ready Data and beyond</a></li>
+      
+      <li><a href="/presentation/pb012/">Grassland Use Intensity Metrics from Sentinel-1 and Sentinel-2 Data</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.3227ab49eed49815d1b4ba40154f74e7.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    © 2019-2020 David Frantz &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

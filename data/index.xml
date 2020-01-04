@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Presentations | DAVID FRANTZ</title>
+    <link>https://davidfrantz.github.io/data/</link>
+      <atom:link href="https://davidfrantz.github.io/data/index.xml" rel="self" type="application/rss+xml" />
+    <description>Presentations</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Mon, 01 Jul 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://davidfrantz.github.io/img/icon-192.png</url>
+      <title>Presentations</title>
+      <link>https://davidfrantz.github.io/data/</link>
+    </image>
+    
+    <item>
+      <title>Dominant land cover of the Okavango Basin</title>
+      <link>https://davidfrantz.github.io/data/dt003/</link>
+      <pubDate>Mon, 01 Jul 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/data/dt003/</guid>
+      <description>&lt;p&gt;Supplement to: Stellmes, M et al. (2013): Okavango Basin - Earth Observation. In: Oldeland, J., Erb, C., Finckh, M. &amp;amp; Jürgens, N. [Eds.]: Environmental Assessments in the Okavango Region. Biodiversity &amp;amp; Ecology, 5, 23-27&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;icon: twitter
+icon_pack: fab
+name: &amp;ldquo;Follow&amp;rdquo;
+link: &lt;a href=&#34;https://twitter.com/d__frantz&#34;&gt;https://twitter.com/d__frantz&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>A Landsat-based national-scale map of cropping practices for Turkey (2015)</title>
+      <link>https://davidfrantz.github.io/data/dt002/</link>
+      <pubDate>Fri, 01 Mar 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/data/dt002/</guid>
+      <description>&lt;p&gt;Supplement to: Rufin, P et al. (2019): Mapping Cropping Practices on a National Scale Using Intra-Annual Landsat Time Series Binning. Remote Sensing, 11(3), 232, &lt;a href=&#34;https://doi.org/10.3390/rs11030232&#34;&gt;https://doi.org/10.3390/rs11030232&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Water vapor database for atmospheric correction of Landsat imagery</title>
+      <link>https://davidfrantz.github.io/data/dt001/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/data/dt001/</guid>
+      <description>&lt;p&gt;Supplement to: Frantz, David; Röder, Achim; Stellmes, Marion; Hill, Joachim (2016): An operational radiometric Landsat preprocessing framework for large-area time series applications. IEEE Transactions on Geoscience and Remote Sensing, 54(7), 3928-3943, &lt;a href=&#34;https://doi.org/10.1109/TGRS.2016.2530856&#34;&gt;https://doi.org/10.1109/TGRS.2016.2530856&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

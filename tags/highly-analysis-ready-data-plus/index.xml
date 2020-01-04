@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>highly Analysis Ready Data plus | DAVID FRANTZ</title>
+    <link>https://davidfrantz.github.io/tags/highly-analysis-ready-data-plus/</link>
+      <atom:link href="https://davidfrantz.github.io/tags/highly-analysis-ready-data-plus/index.xml" rel="self" type="application/rss+xml" />
+    <description>highly Analysis Ready Data plus</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Sun, 15 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://davidfrantz.github.io/img/icon-192.png</url>
+      <title>highly Analysis Ready Data plus</title>
+      <link>https://davidfrantz.github.io/tags/highly-analysis-ready-data-plus/</link>
+    </image>
+    
+    <item>
+      <title>FORCE</title>
+      <link>https://davidfrantz.github.io/code/force/</link>
+      <pubDate>Sun, 15 Dec 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/code/force/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;FORCE&lt;/strong&gt; is an all-in-one solution for the mass-processing of selected medium-resolution satellite image archives to enable large area + time series applications. Currently supported are Landsat 4/5 TM, Landsat 7 ETM+, Landsat 8 OLI and Sentinel-2 A/B MSI. The software is capable of processing Level 1 products as obtained from the space agencies to Level 2–4 products.&lt;/p&gt;
+&lt;h2 id=&#34;download&#34;&gt;Download&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;FORCE&lt;/strong&gt; may be used and downloaded for &lt;strong&gt;free&lt;/strong&gt;! It is completely open source and there are no restrictions on usage (for details see &lt;a href=&#34;http://www.gnu.org/licenses/&#34;&gt;GPL License&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;The current version (2.1) can be downloaded from  &lt;a href=&#34;http://force.feut.de&#34;&gt;Trier University&lt;/a&gt; after a short self-registration.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;However, it is requested that you to use the software in accordance with academic standards and fair usage. Without this, software like &lt;em&gt;FORCE&lt;/em&gt; will not survive. This includes citation of the software and the scientific publications, proper acknowledgement in any public presentation, or an offer of co-authorship of scientific articles in case substantial help in setting up, modifying or running the software is provided. At minimum, the citation of the&lt;/em&gt; &lt;a href=&#34;https://davidfrantz.github.io/publication/frantz-2019a/&#34;&gt;&lt;em&gt;key paper&lt;/em&gt;&lt;/a&gt; &lt;em&gt;is requested.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;the-main-features-are&#34;&gt;The main features are&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Integration of Landsat 4–8, and Sentinel-2 A/B as Virtual Constellation.&lt;/li&gt;
+&lt;li&gt;Data management of Landsat and Sentinel-2 Level 1 data + Download of Sentinel-2 data.&lt;/li&gt;
+&lt;li&gt;Near-realtime (NRT) processing capability.&lt;/li&gt;
+&lt;li&gt;Generation of Analysis Ready Data (ARD). Advanced cloud and cloud shadow detection. Quality screening. Integrated atmospheric and topographic correction: one algorithm for all sensors. Adjacency effect correction. BRDF reduction. Resolution merge of Sentinel-2 bands: 20m &amp;ndash;&amp;gt; 10m. Data cubing: reprojection / gridding.&lt;/li&gt;
+&lt;li&gt;Generation of highly Analysis Ready Data (hARD). Large area. Gap free. Best Available Pixel (BAP) composites. Phenology Adaptive Composites (PAC). Spectral Temporal Metrics (STM). Ideal input for your Machine Learners!&lt;/li&gt;
+&lt;li&gt;Generation of highly Analysis Ready Data plus (hARD+). Time Series generation: spectral bands, spectral indices, Spectral Mixture Analysis (SMA). Time series folding. Time series interpolation. Time series statistics. Trend analysis. Change, Aftereffect, Trend (CAT) analysis. Land Surface Phenology (LSP).&lt;/li&gt;
+&lt;li&gt;Detailed data mining of the Clear Sky Observation (CSO) availability.&lt;/li&gt;
+&lt;li&gt;Data Fusion. Improving spatial resolution of coarse continuous fields: MODIS LSP &amp;ndash;&amp;gt; medium resolution LSP. Improving spatial resolution of lower resolution ARD using higher resolution ARD: 30m Landsat &amp;ndash;&amp;gt; 10m using Sentinel-2 targets&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

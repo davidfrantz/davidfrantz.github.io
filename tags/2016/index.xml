@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2016 | DAVID FRANTZ</title>
+    <link>https://davidfrantz.github.io/tags/2016/</link>
+      <atom:link href="https://davidfrantz.github.io/tags/2016/index.xml" rel="self" type="application/rss+xml" />
+    <description>2016</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Wed, 21 Dec 2016 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://davidfrantz.github.io/img/icon-192.png</url>
+      <title>2016</title>
+      <link>https://davidfrantz.github.io/tags/2016/</link>
+    </image>
+    
+    <item>
+      <title>Sentinel4GRIPS - Aufbereitung von Satellitenbildarchiven zur Charakterisierung von Waldsystemen</title>
+      <link>https://davidfrantz.github.io/presentation/pb037/</link>
+      <pubDate>Wed, 21 Dec 2016 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb037/</guid>
+      <description>&lt;p&gt;David Frantz, Erik Haß, Joachim Hill&lt;/p&gt;
+&lt;p&gt;Precision Forestry 2016: Beiträge aus Fernerkundung und Geoinformatik, 21 December 2016, Trier, Germany&lt;/p&gt;
+&lt;p&gt;invited oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Integration von Sentinel-2 Daten in die automatisierte Level-2 Prozessierung von Erdbeobachtungsdaten</title>
+      <link>https://davidfrantz.github.io/presentation/pb038/</link>
+      <pubDate>Tue, 08 Nov 2016 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb038/</guid>
+      <description>&lt;p&gt;David Frantz, Erik Haß, Joachim Hill&lt;/p&gt;
+&lt;p&gt;Veränderungserkennung mittels Fernerkundungsdaten, 8-9 November 2016, Koblenz, Germany&lt;/p&gt;
+&lt;p&gt;invited oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Understanding the fire regime of Southern Africa and its impacts on ecosystems</title>
+      <link>https://davidfrantz.github.io/presentation/pb045/</link>
+      <pubDate>Mon, 04 Jul 2016 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb045/</guid>
+      <description>&lt;p&gt;Marion Stellmes, David Frantz, Manfred Finckh, Rasmus Revermann, Achim Röder, Vera De Cauwer, Anne Schneibel, Joachim Hill&lt;/p&gt;
+&lt;p&gt;GEO BON 2016 Open Science Conference &amp;amp; All Hands Meeting, 4-8 July 216, Leipzig, Germany&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Using the full depth of the Landsat archive to analyze post-war forest cover dynamics in Angola</title>
+      <link>https://davidfrantz.github.io/presentation/pb044/</link>
+      <pubDate>Mon, 04 Jul 2016 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb044/</guid>
+      <description>&lt;p&gt;Achim Röder, David Frantz, Marion Stellmes, Anne Schneibel, Valter Chissingui, Manfred Finckh, Joachim Hill&lt;/p&gt;
+&lt;p&gt;GEO BON 2016 Open Science Conference &amp;amp; All Hands Meeting, 4-8 July 2016, Leipzig, Germany&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>lnd-prepro - An operational radiometric multi-sensor pre-processing framework developed for Southern African Landsat imagery</title>
+      <link>https://davidfrantz.github.io/presentation/pb039/</link>
+      <pubDate>Tue, 21 Jun 2016 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb039/</guid>
+      <description>&lt;p&gt;David Frantz Joachim Hill&lt;/p&gt;
+&lt;p&gt;ACIX: CEOS-WGCV Atmospheric Correction Inter-comparison Exercise, 21-22 June 2016, College Park, MD, USA&lt;/p&gt;
+&lt;p&gt;oral presentation via web-conference&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>An operational radiometric multi-sensor pre-processing framework for large-area time-series applications of medium resolution optical satellite imagery</title>
+      <link>https://davidfrantz.github.io/presentation/pb040/</link>
+      <pubDate>Mon, 09 May 2016 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb040/</guid>
+      <description>&lt;p&gt;David Frantz, Achim Röder, Marion Stellmes, Joachim Hill&lt;/p&gt;
+&lt;p&gt;ESA Living Planet Symposium, 9-13 May 2016, Prague, Czech Republic&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Phenology-Adaptive Pixel-Based Landsat Composites. Supporting Wall-to-Wall Mapping Efforts</title>
+      <link>https://davidfrantz.github.io/presentation/pb041/</link>
+      <pubDate>Wed, 30 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb041/</guid>
+      <description>&lt;p&gt;David Frantz&lt;/p&gt;
+&lt;p&gt;Geomatics Lab Colloquium, Humboldt-Universität zu Berlin, March 2016, Berlin, Germany&lt;/p&gt;
+&lt;p&gt;invited oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Linking Land Surface Phenology and Vegetation-Plot Databases to predict Species Diversity and Distributions in the Okavango Basin</title>
+      <link>https://davidfrantz.github.io/presentation/pb043/</link>
+      <pubDate>Tue, 23 Feb 2016 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb043/</guid>
+      <description>&lt;p&gt;Rasmus Revermann, Manfred Finckh, Marion Stellmes, Vera de Cauwer, David Frantz, Ben Strohbach, Jens Oldeland&lt;/p&gt;
+&lt;p&gt;European Conference of Tropical Ecology, 23-26 February  2016, Göttingen, Germany&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Tool or Disaster - Logics and Trade-Offs behind Wildfires in the Okavango Basin</title>
+      <link>https://davidfrantz.github.io/presentation/pb042/</link>
+      <pubDate>Tue, 23 Feb 2016 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb042/</guid>
+      <description>&lt;p&gt;Manfred Finckh, Marion Stellmes, David Frantz, Rasmus Revermann&lt;/p&gt;
+&lt;p&gt;European Conference of Tropical Ecology, 23-26 February  2016, Göttingen, Germany&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

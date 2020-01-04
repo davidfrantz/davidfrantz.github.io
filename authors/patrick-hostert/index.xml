@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Patrick Hostert | DAVID FRANTZ</title>
+    <link>https://davidfrantz.github.io/authors/patrick-hostert/</link>
+      <atom:link href="https://davidfrantz.github.io/authors/patrick-hostert/index.xml" rel="self" type="application/rss+xml" />
+    <description>Patrick Hostert</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://davidfrantz.github.io/img/icon-192.png</url>
+      <title>Patrick Hostert</title>
+      <link>https://davidfrantz.github.io/authors/patrick-hostert/</link>
+    </image>
+    
+    <item>
+      <title>A Global MODIS Water Vapor Database for the Operational Atmospheric Correction of Historic and Recent Landsat Imagery</title>
+      <link>https://davidfrantz.github.io/publication/frantz-2019b/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/frantz-2019b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mapping Cropping Practices on a National Scale Using Intra-Annual Landsat Time Series Binning</title>
+      <link>https://davidfrantz.github.io/publication/rufin-2019/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/rufin-2019/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2017 | DAVID FRANTZ</title>
+    <link>https://davidfrantz.github.io/tags/2017/</link>
+      <atom:link href="https://davidfrantz.github.io/tags/2017/index.xml" rel="self" type="application/rss+xml" />
+    <description>2017</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Tue, 27 Jun 2017 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://davidfrantz.github.io/img/icon-192.png</url>
+      <title>2017</title>
+      <link>https://davidfrantz.github.io/tags/2017/</link>
+    </image>
+    
+    <item>
+      <title>Integrating Phenological Information for Pixel-Based Compositing - Generation of Multi-Seasonal Composites Using MODIS and Landsat Image Archives</title>
+      <link>https://davidfrantz.github.io/presentation/pb031/</link>
+      <pubDate>Tue, 27 Jun 2017 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb031/</guid>
+      <description>&lt;p&gt;David Frantz, Achim Röder, Marion Stellmes, Joachim Hill&lt;/p&gt;
+&lt;p&gt;MultiTemp 2017, 27-29 June 2017, Bruges, Belgium&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Multi-annual Phenology Metrics at Landsat Scale Using Spatially Improved Land Surface Phenology to Support Monitoring of the Status and Change of Land Cover in Central Angola</title>
+      <link>https://davidfrantz.github.io/presentation/pb036/</link>
+      <pubDate>Tue, 27 Jun 2017 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb036/</guid>
+      <description>&lt;p&gt;Marion Stellmes, David Frantz, Anne Schneibel, Achim Röder&lt;/p&gt;
+&lt;p&gt;MultiTemp 2017, 27-29 June, Bruges, Belgium&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>An Operational Processing Chain for Medium Resolution Earth Observation Data to Establish Datacubes for Environmental Monitoring In Southern Africa</title>
+      <link>https://davidfrantz.github.io/presentation/pb035/</link>
+      <pubDate>Mon, 08 May 2017 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb035/</guid>
+      <description>&lt;p&gt;Achim Röder, David Frantz, Anne Schneibel, Marion Stellmes, Joachim Hill&lt;/p&gt;
+&lt;p&gt;The 37th International Symposium on Remote Sensing of Environment, 8-12 May  2017, Tshwane, South Africa&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>FORCE - Framework for Operational Radiometric Correction for Environmental Monitoring</title>
+      <link>https://davidfrantz.github.io/presentation/pb032/</link>
+      <pubDate>Tue, 11 Apr 2017 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb032/</guid>
+      <description>&lt;p&gt;David Frantz Joachim Hill&lt;/p&gt;
+&lt;p&gt;ACIX: CEOS-WGCV Atmospheric Correction Inter-comparison Exercise&lt;/p&gt;
+&lt;p&gt;short presentation and discussion of inter-comparison results&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Sentinel4GRIPS: Assimilation von Erdbeobachtungsdaten in forstliche Inventur- und Planungssysteme</title>
+      <link>https://davidfrantz.github.io/presentation/pb034/</link>
+      <pubDate>Tue, 14 Mar 2017 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb034/</guid>
+      <description>&lt;p&gt;Joachim Langshausen, Joachim Hill, Christoph Averdung, David Frantz, Sebastian Mader, Johannes Stoffels, Jürgen Dietz, Jens Göpfert&lt;/p&gt;
+&lt;p&gt;Nationales Forum für Fernerkundung und Copernicus 2017, 14-16 March 2017, Berlin, Germany&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Aufbereitung von Satellitenbildarchiven zur Charakterisierung von Waldsystemen</title>
+      <link>https://davidfrantz.github.io/presentation/pb033/</link>
+      <pubDate>Wed, 08 Mar 2017 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pb033/</guid>
+      <description>&lt;p&gt;David Frantz, Erik Haß, Joachim Hill&lt;/p&gt;
+&lt;p&gt;Einsatzmöglichkeiten von Sentinel-Daten aus dem Erdbeobachtungsprogramm Copernicus, 8 March 2017, Saarbrücken, Germany&lt;/p&gt;
+&lt;p&gt;invited oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
