@@ -19,7 +19,6 @@
       <guid>https://davidfrantz.github.io/code/force/</guid>
       <description>&lt;p&gt;&lt;strong&gt;FORCE&lt;/strong&gt; is an all-in-one solution for the mass-processing of selected medium-resolution satellite image archives to enable large area + time series applications. Currently supported are Landsat 4/5 TM, Landsat 7 ETM+, Landsat 8 OLI and Sentinel-2 A/B MSI. The software is capable of processing Level 1 products as obtained from the space agencies to Level 2–4 products.&lt;/p&gt;
 &lt;h2 id=&#34;download&#34;&gt;Download&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;this here is a test.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;FORCE&lt;/strong&gt; may be used and downloaded for &lt;strong&gt;free&lt;/strong&gt;! It is completely open source and there are no restrictions on usage (for details see &lt;a href=&#34;http://www.gnu.org/licenses/&#34;&gt;GPL License&lt;/a&gt;).&lt;/p&gt;
 &lt;p&gt;The current version (2.1) can be downloaded from  &lt;a href=&#34;http://force.feut.de&#34;&gt;Trier University&lt;/a&gt; after a short self-registration.&lt;/p&gt;
 &lt;blockquote&gt;
