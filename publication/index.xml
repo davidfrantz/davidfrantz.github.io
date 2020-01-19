@@ -5,12 +5,20 @@
     <link>https://davidfrantz.github.io/publication/</link>
       <atom:link href="https://davidfrantz.github.io/publication/index.xml" rel="self" type="application/rss+xml" />
     <description>Publications</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Fri, 17 Jan 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://davidfrantz.github.io/img/icon-192.png</url>
       <title>Publications</title>
       <link>https://davidfrantz.github.io/publication/</link>
     </image>
+    
+    <item>
+      <title>Visualizing and labeling dense multi-sensor earth observation time series: The EO Time Series Viewer</title>
+      <link>https://davidfrantz.github.io/publication/jakimow-2020/</link>
+      <pubDate>Fri, 17 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/jakimow-2020/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>A Global MODIS Water Vapor Database for the Operational Atmospheric Correction of Historic and Recent Landsat Imagery</title>

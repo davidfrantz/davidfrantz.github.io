@@ -5,12 +5,52 @@
     <link>https://davidfrantz.github.io/authors/</link>
       <atom:link href="https://davidfrantz.github.io/authors/index.xml" rel="self" type="application/rss+xml" />
     <description>Authors</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Fri, 17 Jan 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://davidfrantz.github.io/img/icon-192.png</url>
       <title>Authors</title>
       <link>https://davidfrantz.github.io/authors/</link>
     </image>
+    
+    <item>
+      <title>Benjamin Jakimow</title>
+      <link>https://davidfrantz.github.io/authors/benjamin-jakimow/</link>
+      <pubDate>Fri, 17 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/benjamin-jakimow/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>David Frantz</title>
+      <link>https://davidfrantz.github.io/authors/david-frantz/</link>
+      <pubDate>Fri, 17 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/david-frantz/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fabian Thiel</title>
+      <link>https://davidfrantz.github.io/authors/fabian-thiel/</link>
+      <pubDate>Fri, 17 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/fabian-thiel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Patrick Hostert</title>
+      <link>https://davidfrantz.github.io/authors/patrick-hostert/</link>
+      <pubDate>Fri, 17 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/patrick-hostert/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sebastian van der Linden</title>
+      <link>https://davidfrantz.github.io/authors/sebastian-van-der-linden/</link>
+      <pubDate>Fri, 17 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/sebastian-van-der-linden/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Andreas Rabe</title>
@@ -25,14 +65,6 @@
       <link>https://davidfrantz.github.io/authors/cornelius-senf/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
       <guid>https://davidfrantz.github.io/authors/cornelius-senf/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>David Frantz</title>
-      <link>https://davidfrantz.github.io/authors/david-frantz/</link>
-      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>https://davidfrantz.github.io/authors/david-frantz/</guid>
       <description></description>
     </item>
     
@@ -105,14 +137,6 @@
       <link>https://davidfrantz.github.io/authors/patrick-griffiths/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
       <guid>https://davidfrantz.github.io/authors/patrick-griffiths/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Patrick Hostert</title>
-      <link>https://davidfrantz.github.io/authors/patrick-hostert/</link>
-      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>https://davidfrantz.github.io/authors/patrick-hostert/</guid>
       <description></description>
     </item>
     
