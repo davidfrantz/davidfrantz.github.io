@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="David Frantz">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="This tutorial will explain what quality bits are, how quality bits are implemented in **FORCE**, how to visualize them, and how to deal with them in Higher Level Processing.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://davidfrantz.github.io/tutorials/force-qai/qai/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#5C9DE3">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon-32.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://davidfrantz.github.io/tutorials/force-qai/qai/">
+
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="DAVID FRANTZ">
+  <meta property="og:url" content="https://davidfrantz.github.io/tutorials/force-qai/qai/">
+  <meta property="og:title" content="FORCE Tutorial: Quality Bits a.k.a. Cloud Masks etc. | DAVID FRANTZ">
+  <meta property="og:description" content="This tutorial will explain what quality bits are, how quality bits are implemented in **FORCE**, how to visualize them, and how to deal with them in Higher Level Processing."><meta property="og:image" content="https://davidfrantz.github.io/img/icon-192.png">
+  <meta property="twitter:image" content="https://davidfrantz.github.io/img/icon-192.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2020-02-03T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2020-02-03T00:00:00&#43;00:00">
+  
+
+  
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>FORCE Tutorial: Quality Bits a.k.a. Cloud Masks etc. | DAVID FRANTZ</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">DAVID FRANTZ</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">DAVID FRANTZ</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-center" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#experience"><span>CV</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#publications"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#presentations"><span>Presentations</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#data"><span>Data</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#software"><span>Software</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#tutorials"><span>Tutorials</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item">
+        <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>FORCE Tutorial: Quality Bits a.k.a. Cloud Masks etc.</h1>
+
+  
+  <p class="page-subtitle">How to deal with the Level 2 quality masks</p>
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Feb 3, 2020
+  </span>
+  
+
+  
+
+  
+
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <p><em>This tutorial uses FORCE v. 3.0</em></p>
+<h2 id="learning-objective">Learning Objective</h2>
+<p>This tutorial will explain what quality bits are, how quality bits are implemented in <strong>FORCE</strong>, how to visualize them, and how to deal with them in Higher Level Processing.</p>
+<h2 id="what-are-quality-bits">What are quality bits?</h2>
+<p><strong>FORCE L2PS</strong> provides a description of the quality of each pixel in the form of quality bits. This bit-packed information allows users to apply per pixel filters to all Level 2 products. The bits represent combinations of surface, atmospheric, and processing-related conditions that can affect the overall usefulness of a given pixel for a particular application. The success of any follow-up analysis depends on the rigorous usage of these information!
+A good explanation of quality bits is given by the <a href="https://www.usgs.gov/land-resources/nli/landsat/landsat-collection-1-level-1-quality-assessment-band?qt-science_support_page_related_con=0#qt-science_support_page_related_con">USGS</a>:</p>
+<blockquote>
+<p>The bit-packed information in the QA bands is a translation of binary strings. For example, the integer value “1” translates to the binary value “0001.” The binary value “0001” has 4 bits, written right to left as bits 0 (“1”), 1 (“0”), 2 (“0”), and 3 (“0”). Each of the bits 0-3 represents a condition that can affect the calculation of a physical value. [&hellip;] If the condition is true, the bit is set to “1,” or “0” if false.</p>
+</blockquote>
+<h2 id="sounds-complicated-why-not-use-a-scene-classification">Sounds complicated… Why not use a scene classification?</h2>
+<p>Although interpretation of quality bits is not immediate to humans, they do possess quite some advantages. As opposed to a scene classification, quality bits allow the flagging of multiple conditions, e.g. ice clouds, cloud shadows on top of clouds or snow, high aerosol load and cloud, etc. If a 16bit Integer is used for storing the quality bits, up to 16 different conditions can co-exist in any possible combination. In a scene classification, only one condition can be stored, and the algorithm developer needs to make assumptions on the priority of the conditions; however these may differ from application to application. Quality bits allow to store all these information in a single  image. From a technical perspective, quality bits save disc space, and reduce the I/O load for follow-up analyses.</p>
+<h2 id="quality-bits-in-force">Quality bits in FORCE</h2>
+<p>In <strong>FORCE</strong>, the quality bits are found in the Quality Assurance Information (<code>QAI</code>) product, which is an integral part of each Level 2 dataset, and is alway present next to the reflectance images (<code>BOA</code> or <code>TOA</code>).
+When generating Best Available Pixel (<code>BAP</code>) composites (Level 3), the bit flags of the selected observation are stored in the first band of the composite information (<code>INF</code>) product.
+Currently <strong>FORCE</strong> implements a 16bit QAI layer with 12 quality bits, some of them as double-bit words:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Bit No.</th>
+<th align="left">Parameter name</th>
+<th align="center">Bit comb.</th>
+<th align="center">Integer</th>
+<th align="left">State</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">0</td>
+<td align="left">Valid data</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="left">valid</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">no data</td>
+</tr>
+<tr>
+<td align="left">1–2</td>
+<td align="left">Cloud state</td>
+<td align="center">00</td>
+<td align="center">0</td>
+<td align="left">clear</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="center">01</td>
+<td align="center">1</td>
+<td align="left">less confident cloud (i.e., buffered cloud 300 m)</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="center">10</td>
+<td align="center">2</td>
+<td align="left">confident, opaque cloud</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="center">11</td>
+<td align="center">3</td>
+<td align="left">cirrus</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">Cloud shadow flag</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="left">no</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">yes</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">Snow flag</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="left">no</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">yes</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left">Water flag</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="left">no</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">yes</td>
+</tr>
+<tr>
+<td align="left">6–7</td>
+<td align="left">Aerosol state</td>
+<td align="center">00</td>
+<td align="center">0</td>
+<td align="left">estimated (best quality)</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="center">01</td>
+<td align="center">1</td>
+<td align="left">interpolated (mid quality)</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="center">10</td>
+<td align="center">2</td>
+<td align="left">high (aerosol optical depth &gt; 0.6, use with caution)</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="center">11</td>
+<td align="center">3</td>
+<td align="left">fill (global fallback, low quality)</td>
+</tr>
+<tr>
+<td align="left">8</td>
+<td align="left">Subzero flag</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="left">no</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">yes (use with caution)</td>
+</tr>
+<tr>
+<td align="left">9</td>
+<td align="left">Saturation flag</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="left">no</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">yes (use with caution)</td>
+</tr>
+<tr>
+<td align="left">10</td>
+<td align="left">High sun zenith flag</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="left">no</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">yes (sun elevation &lt; 15°, use with caution)</td>
+</tr>
+<tr>
+<td align="left">11–12</td>
+<td align="left">Illumination state</td>
+<td align="center">00</td>
+<td align="center">0</td>
+<td align="left">good (incidence angle &lt; 55°, best quality for top. correction)</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="center">01</td>
+<td align="center">1</td>
+<td align="left">medium (incidence angle 55°–80°, good quality for top. correction)</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="center">10</td>
+<td align="center">2</td>
+<td align="left">poor (incidence angle &gt; 80°, low quality for top. correction)</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="center">11</td>
+<td align="center">3</td>
+<td align="left">shadow (incidence angle &gt; 90°, no top. correction applied)</td>
+</tr>
+<tr>
+<td align="left">13</td>
+<td align="left">Slope flag</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="left">no (cosine correction applied)</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">yes (enhanced C-correction applied)</td>
+</tr>
+<tr>
+<td align="left">14</td>
+<td align="left">Water vapor flag</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="left">measured (best quality, only Sentinel-2)</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="left">fill (scene average, only Sentinel-2)</td>
+</tr>
+<tr>
+<td align="left">15</td>
+<td align="left">Empty</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="left">TBD</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<ul>
+<li>Nodata values are values where nothing was observed, where auxiliary data was not given (e.g. nodata in DEM), or
+where data is substantially corrupt (e.g. impulse noise, or when the surface reflectance estimate is &gt; 2.0 or &lt; -1.0)</li>
+<li>Clouds are given in three categories, i.e. opaque clouds (confident cloud), buffered clouds (300m; less confident cloud), and cirrus clouds.</li>
+<li>Cloud shadows are detected on the basis of the cloud layer. If a cloud is missed, the cloud shadow is missed, too. If a false
+positive cloud is detected, false positive cloud shadows follow.</li>
+<li>Aerosol Optical Depth is estimated for fairly coarse grid cells. If there is no valid AOD estimation in any cell, values are
+interpolated. If there is no valid AOD estimation for the complete image, a fill value is assigned (AOD is guessed). If AOD @550nm is higher than 0.6, it is flagged as high aerosol; this is not necessarily critical, but should be used with caution (see subzero flag).</li>
+<li>If the surface reflectance estimate in any band is &lt; 0, the subzero flag is set. This can point to overestimation of AOD.</li>
+<li>If DNs were saturated, or if the surface reflectance estimate in any band is &gt; 1, the saturation flag is set.</li>
+<li>If sun elevation is smaller than 15°, the high sun zenith flag is set. Use this data with caution, radiative transfer computations might be out of specification.</li>
+<li>The illumination state is related to the quality of the topographic correction. If the incidence angle is smaller than 55°, quality is best. If the incidence angle is larger than 80°, the quality of the topographic correction is low, and data artefacts are possible. If the area is not illuminated at all, no topographic correction is done (values are the same as without topographic correction).</li>
+<li>The slope flag indicates whether a simple cosine correction (slope ≤ 2°) was used for topographic correction, or if the enhanced C-correction was used (slope &gt; 2°).</li>
+<li>The water vapor flag indicates whether water vapor was estimated, or if the scene average was used to fill. Water vapor is not estimated over water and cloud shadow pixels. This flag only applies to Sentinel-2 images.</li>
+</ul>
+</blockquote>
+<h2 id="visualization">Visualization</h2>
+<p>Visualizing the raw QAI image is pretty meaningless. Don’t be surprised that the integers do not resemble any of the patterns you would expect (e.g. cloud distribution).</p>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<figure>
+
+
+  <a data-fancybox="" href="/img/tutorial-qai-boa.jpg" data-caption="Sentinel-2B image over Berlin, 01.07.2019; left: RGB image; right: quality bits">
+<img src="/img/tutorial-qai-boa.jpg" alt="" ></a>
+
+
+  
+  
+  <figcaption>
+    Sentinel-2B image over Berlin, 01.07.2019; left: RGB image; right: quality bits
+  </figcaption>
+
+
+</figure>
+
+<h3 id="quicklooks">Quicklooks</h3>
+<p>Since v. 3.0, <strong>FORCE L2PS</strong> can output quicklook images for each Level 2 dataset (<code>OVV</code> = overview product). These thumbnails serve as first impression of image quality. Some of the quality conditions are superimposed on the RGB images. Opaque clouds are shown in pink, cirrus clouds in red, cloud shadows in cyan, snow in yellow, saturated pixels in orange, and sub-zero reflectance values in a greenish tone. The overview for the QAI image from above is shown here:</p>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<figure>
+
+
+  <a data-fancybox="" href="/img/tutorial-qai-ovv.jpg" data-caption="Quicklook image generated by FORCE L2PS; pink: opaque clouds; cyan: cloud shadows">
+<img src="/img/tutorial-qai-ovv.jpg" alt="" ></a>
+
+
+  
+  
+  <figcaption>
+    Quicklook image generated by <strong>FORCE L2PS</strong>; pink: opaque clouds; cyan: cloud shadows
+  </figcaption>
+
+
+</figure>
+
+<h3 id="inflate-quality-bits">Inflate quality bits</h3>
+<p>A full deciphering of all quality bits to individual quality masks can be generated with <strong>FORCE</strong>:</p>
+<pre><code class="language-bash">force-qai-inflate
+</code></pre>
+<pre><code>Usage: force-qai-inflate QAI dir format
+</code></pre>
+<pre><code class="language-bash">force-qai-inflate /data/level2/X0069_Y0043/20190701_LEVEL2_SEN2B_QAI.tif ~/temp GTiff
+</code></pre>
+<p>This program generates a 12-band image, where each of the flags (see table above) is written to a separate band. However, force-qai-inflate was not designed to generate inflated masks for each and every Level 2 product in a routine manner due to the computational and disc-space related overhead. We strongly recommend to make use of  the bits directly (see remaining part of the tutorial).</p>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<figure>
+
+
+  <a data-fancybox="" href="/img/tutorial-qai-cld.jpg" data-caption="Quality bits; left: cloud state; right: cloud shadow flag">
+<img src="/img/tutorial-qai-cld.jpg" alt="" ></a>
+
+
+  
+  
+  <figcaption>
+    Quality bits; left: cloud state; right: cloud shadow flag
+  </figcaption>
+
+
+</figure>
+
+<h3 id="quality-bit-rendering-in-qgis">Quality bit rendering in QGIS</h3>
+<p>There is a nice QGIS plugin from my colleague <a href="https://www.geographie.hu-berlin.de/en/professorships/eol/people/labmembers/benjamin_jakimow">Benjamin Jakimow</a>, which can visualize quality bits in QGIS <em>on the fly</em>. Quality bit inflating is not necessary anymore! The <a href="http://plugins.qgis.org/plugins/BitFlagRenderer/">Bit Flag Renderer plugin</a> provides a new renderer for QGIS, with which any quality bit product can flexibly be visualized. The plugin includes predefined bit visualization rules for the <strong>FORCE</strong> QAI bits. The default visualization matches the information and colors from the quicklook images described above):</p>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<figure>
+
+
+  <a data-fancybox="" href="/img/tutorial-qai-bfr.jpg" data-caption="Bit Flag Renderer in QGIS displaying a quality bit layer on-the-fly with the pre-defined FORCE settings">
+<img src="/img/tutorial-qai-bfr.jpg" alt="" ></a>
+
+
+  
+  
+  <figcaption>
+    Bit Flag Renderer in QGIS displaying a quality bit layer on-the-fly with the pre-defined FORCE settings
+  </figcaption>
+
+
+</figure>
+
+<h2 id="quality-masking-in-higher-level-processing">Quality masking in Higher Level Processing</h2>
+<p>For follow-up processing and analyses, the usage of the QAI information is key, e.g. to exclude clouds. In all <strong>FORCE Higher Level routines</strong>, quality masking is done on the fly, and the user has full control about what condition(s) to filter. The parameter <code>SCREEN_QAI</code> provides a simple mechanism to mask out any combination of conditions using any of the following keywords: <em>NODATA, CLOUD_OPAQUE, CLOUD_BUFFER, CLOUD_CIRRUS, CLOUD_SHADOW, SNOW, WATER, AOD_FILL, AOD_HIGH, AOD_INT, SUBZERO, SATURATION, SUN_LOW, ILLUMIN_NONE, ILLUMIN_POOR, ILLUMIN_LOW, SLOPED, WVP_NONE</em>. The default parametrization is to filter out nodata, clouds, cloud shadows, snow, saturated or subzero reflectance:</p>
+<p><code>SCREEN_QAI = NODATA CLOUD_OPAQUE CLOUD_BUFFER CLOUD_CIRRUS CLOUD_SHADOW SNOW SUBZERO SATURATION</code></p>
+<p>Following images illustrate the effect of quality filtering on an average reflectance image generated by using all available observations over a 3 month period (using Spectral Temporal Metrics in the <strong>Time Series Analysis module</strong>). The left image was produced by filtering nodata values only, the right image was produced using the default quality screening.</p>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<figure>
+
+
+  <a data-fancybox="" href="/img/tutorial-qai-avg.jpg" data-caption="Average reflectance over three month; left: not using quality bits; right with quality bits">
+<img src="/img/tutorial-qai-avg.jpg" alt="" ></a>
+
+
+  
+  
+  <figcaption>
+    Average reflectance over three month; left: <strong>not using</strong> quality bits; right <strong>with</strong> quality bits
+  </figcaption>
+
+
+</figure>
+
+
+    </div>
+
+    
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/2020/">2020</a>
+  
+  <a class="badge badge-light" href="/tags/force/">FORCE</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://davidfrantz.github.io/tutorials/force-qai/qai/&amp;text=FORCE%20Tutorial:%20Quality%20Bits%20a.k.a.%20Cloud%20Masks%20etc." target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://davidfrantz.github.io/tutorials/force-qai/qai/&amp;t=FORCE%20Tutorial:%20Quality%20Bits%20a.k.a.%20Cloud%20Masks%20etc." target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=FORCE%20Tutorial:%20Quality%20Bits%20a.k.a.%20Cloud%20Masks%20etc.&amp;body=https://davidfrantz.github.io/tutorials/force-qai/qai/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://davidfrantz.github.io/tutorials/force-qai/qai/&amp;title=FORCE%20Tutorial:%20Quality%20Bits%20a.k.a.%20Cloud%20Masks%20etc." target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=FORCE%20Tutorial:%20Quality%20Bits%20a.k.a.%20Cloud%20Masks%20etc.%20https://davidfrantz.github.io/tutorials/force-qai/qai/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://davidfrantz.github.io/tutorials/force-qai/qai/&amp;title=FORCE%20Tutorial:%20Quality%20Bits%20a.k.a.%20Cloud%20Masks%20etc." target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <img class="portrait mr-3" src="/authors/admin/avatar_huba61fb2ae087847d5946ab8e48bc46d6_594175_250x250_fill_q90_lanczos_center.jpg" alt="Avatar">
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://davidfrantz.github.io/">David Frantz</a></h5>
+      <h6 class="card-subtitle">Postdoctoral Researcher</h6>
+      <p class="card-text">EO, ARD, FORCE, Data Science, Open Science</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+    <li>
+      <a href="mailto:david.frantz@geo.hu-berlin.de" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.de/citations?user=JtEWu3AAAAAJ" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.researchgate.net/profile/David_Frantz" target="_blank" rel="noopener">
+        <i class="fab fa-researchgate"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="http://orcid.org/0000-0002-9292-3931" target="_blank" rel="noopener">
+        <i class="fab fa-orcid"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/davidfrantz" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/d__frantz" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>Related</h3>
+    <ul>
+      
+      <li><a href="/tutorials/force-wvdb/wvdb/">FORCE Tutorial: Water Vapor Database</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.3227ab49eed49815d1b4ba40154f74e7.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    © 2019-2020 David Frantz &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
