@@ -184,10 +184,10 @@ ls /data/Dagobah/edc/level2/X0135_Y0098/20181225_LEVEL2_SEN2A_BOA.tif
 /data/Dagobah/edc/level2/X0135_Y0098/20181225_LEVEL2_SEN2A_BOA.tif
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;i-processed-quite-some-data-there-are-many-many-tiles-how-do-i-find-a-poi&#34;&gt;I processed quite some data. There are many, many tiles. How do I find a POI?&lt;/h2&gt;
-&lt;p&gt;Given any coordinate $$(\lambda,\phi)$$, the computation of the corresponding tile is pretty straightforward.&lt;/p&gt;
+&lt;p&gt;Given any coordinate $(\lambda,\phi)$, the computation of the corresponding tile is pretty straightforward.&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Convert the coordinate $$(\lambda,\phi)$$ to the projected coordinate $$(X,Y)$$&lt;/li&gt;
-&lt;li&gt;Given the tile size $t_s$ and the grid origin in projected coordinates $$(X_O,Y_O)$$, the tile ID can be computed as $$Tile_X = floor((X-X_O)/t_s)$$ and $$Tile_Y = floor((Y_O-Y)/t_s)$$&lt;/li&gt;
+&lt;li&gt;Convert the coordinate $(\lambda,\phi)$ to the projected coordinate $(X,Y)$&lt;/li&gt;
+&lt;li&gt;Given the tile size $t_s$ and the grid origin in projected coordinates $(X_O,Y_O)$, the tile ID can be computed as $Tile_X = floor((X-X_O)/t_s)$ and $Tile_Y = floor((Y_O-Y)/t_s)$&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;With some more math, you can also compute the exact pixel.&lt;/p&gt;
 &lt;p&gt;However, there is also a &lt;strong&gt;FORCE&lt;/strong&gt; program that relieves you from doing this on your own:&lt;/p&gt;

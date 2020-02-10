@@ -745,10 +745,10 @@ ls /data/Dagobah/edc/level2/X0135_Y0098/20181225_LEVEL2_SEN2A_BOA.tif
 /data/Dagobah/edc/level2/X0135_Y0098/20181225_LEVEL2_SEN2A_BOA.tif
 </code></pre>
 <h2 id="i-processed-quite-some-data-there-are-many-many-tiles-how-do-i-find-a-poi">I processed quite some data. There are many, many tiles. How do I find a POI?</h2>
-<p>Given any coordinate $$(\lambda,\phi)$$, the computation of the corresponding tile is pretty straightforward.</p>
+<p>Given any coordinate $(\lambda,\phi)$, the computation of the corresponding tile is pretty straightforward.</p>
 <ol>
-<li>Convert the coordinate $$(\lambda,\phi)$$ to the projected coordinate $$(X,Y)$$</li>
-<li>Given the tile size $t_s$ and the grid origin in projected coordinates $$(X_O,Y_O)$$, the tile ID can be computed as $$Tile_X = floor((X-X_O)/t_s)$$ and $$Tile_Y = floor((Y_O-Y)/t_s)$$</li>
+<li>Convert the coordinate $(\lambda,\phi)$ to the projected coordinate $(X,Y)$</li>
+<li>Given the tile size $t_s$ and the grid origin in projected coordinates $(X_O,Y_O)$, the tile ID can be computed as $Tile_X = floor((X-X_O)/t_s)$ and $Tile_Y = floor((Y_O-Y)/t_s)$</li>
 </ol>
 <p>With some more math, you can also compute the exact pixel.</p>
 <p>However, there is also a <strong>FORCE</strong> program that relieves you from doing this on your own:</p>
