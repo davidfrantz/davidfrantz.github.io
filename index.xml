@@ -5,12 +5,320 @@
     <link>https://davidfrantz.github.io/</link>
       <atom:link href="https://davidfrantz.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>DAVID FRANTZ</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Mon, 03 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Sun, 09 Feb 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://davidfrantz.github.io/img/icon-192.png</url>
       <title>DAVID FRANTZ</title>
       <link>https://davidfrantz.github.io/</link>
     </image>
+    
+    <item>
+      <title>FORCE Tutorial: The Datacube</title>
+      <link>https://davidfrantz.github.io/tutorials/force-datacube/datacube-and-mosaicking/</link>
+      <pubDate>Sun, 09 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/tutorials/force-datacube/datacube-and-mosaicking/</guid>
+      <description>&lt;p&gt;&lt;em&gt;This tutorial uses FORCE v. 3.0&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;learning-objective&#34;&gt;Learning Objective&lt;/h2&gt;
+&lt;p&gt;This tutorial will explain how to conveniently display cubed data.&lt;/p&gt;
+&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
+&lt;p&gt;FORCE makes heavy use of the data cube concept. This includes two main points:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;All data are in the &lt;strong&gt;same coordinate system&lt;/strong&gt;, which should be valid for a large regional extent (e.g. a continental projection).&lt;/li&gt;
+&lt;li&gt;The data are organized in regular, non-overlapping &lt;strong&gt;tiles&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://davidfrantz.github.io/img/tutorial-datacube-scheme.jpg&#34; data-caption=&#34;Overview of the datacube concept in FORCE&#34;&gt;
+&lt;img src=&#34;https://davidfrantz.github.io/img/tutorial-datacube-scheme.jpg&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Overview of the datacube concept in &lt;strong&gt;FORCE&lt;/strong&gt;
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;The ‘grid’ is the regular spatial subdivision of the land surface in the target coordinate system.&lt;/li&gt;
+&lt;li&gt;The ‘grid origin’ is the location, where the tile numbering starts with zero. Tile numbers increase toward the South and East. Although not recommended, negative tile numbers may be present if the tile origin is not North–West of the study area.&lt;/li&gt;
+&lt;li&gt;The ‘tile’ is one entity of the grid, i.e., a grid cell with a unique tile identifier, e.g., X0003_Y0002. The tile is stationary, i.e., it always covers the same extent on the land surface.&lt;/li&gt;
+&lt;li&gt;The ‘tile size’ is defined in target coordinate system units (most commonly in meters). Tiles are square.&lt;/li&gt;
+&lt;li&gt;Each ‘original image’ is partitioned into several ‘chips’, i.e., any original image is intersected with the grid and then tiled into chips.&lt;/li&gt;
+&lt;li&gt;Chips are grouped in ‘datasets’, which group data, e.g. according to acquisition date and sensor.&lt;/li&gt;
+&lt;li&gt;The ‘data cube’ groups all datasets within a tile in a time-ordered manner. The data cube may contain data from several sensors and different resolutions. Thus, the pixel size is allowed to vary, but the tile extent stays fixed. The tile size must be a multiple of the resolutions. Other data like features or auxiliary data are also permitted in the data cube (e.g. DEM or climate variables).&lt;/li&gt;
+&lt;li&gt;The data cube concept allows for non-redundant data storage and efficient data access, as well as simplified extraction of data and information.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;how-to-define-the-datacube-parameters&#34;&gt;How to define the datacube parameters?&lt;/h2&gt;
+&lt;p&gt;When generating Level 2 ARD data with &lt;strong&gt;FORCE L2PS&lt;/strong&gt;, you need to define the datacube in the parameter file. Empty parameter files can be generated with &lt;code&gt;force-parameter&lt;/code&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;DO_REPROJ&lt;/code&gt; indicates whether the images should be reprojected to the target coordinate system - or stay in their original UTM projection.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;DO_TILE&lt;/code&gt; indicates whether the images should be tiled to chips that intersect with the grid system - or stay in the original reference system (WRS-2/MGRS).&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;PROJECTION&lt;/code&gt; defines the target coordinate system. This projection should ideally be valid for a large geographic extent. The projection needs to given as &amp;ldquo;WKT&amp;rdquo; string. You can verify your projection (and convert to WKT from another format) using &lt;code&gt;gdalsrsinfo&lt;/code&gt; (see below). If this fails, you need to fix the projection - otherwise &lt;strong&gt;FORCE L2PS&lt;/strong&gt; will likely fail, too.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ORIGIN_LAT&lt;/code&gt; and &lt;code&gt;ORIGIN_LON&lt;/code&gt; are the origin coordinates of the grid system in decimal degree. The upper left corner of tile X0000_Y0000 represents this point. It is a good choice to use a coordinate that is North-West of your study area – to avoid negative tile numbers.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;TILE_SIZE&lt;/code&gt; is the tile size (in target units, commonly in meters). Tiles are square.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;BLOCK_SIZE&lt;/code&gt; is the block size (in target units, commonly in meters) of the image chips. Blocks are stripes, i.e. they are as wide as the tile and as high as specified here. The blocks represent the internal structure of the GeoTiffs, and represent the primary processing unit of the force-higher-level routines.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Two default projection / grid systems are predefined in &lt;strong&gt;FORCE&lt;/strong&gt;. They can be specified via the &lt;code&gt;PROJECTION&lt;/code&gt; parameter instead of giving a WKT string. The predefined options have their own settings for &lt;code&gt;ORIGIN_LAT&lt;/code&gt;, &lt;code&gt;ORIGIN_LON&lt;/code&gt;, &lt;code&gt;TILE_SIZE&lt;/code&gt;, and &lt;code&gt;BLOCK_SIZE&lt;/code&gt;, thus the values given in the parameterfile will be ignored. &lt;a href=&#34;https://cartography.tuwien.ac.at/eurocarto/wp-content/uploads/2015/09/3_6_ppt.pdf&#34;&gt;EQUI7&lt;/a&gt; consists of 7 Equi-Distant, continental projections with a tile size of 100km. &lt;a href=&#34;https://measures-glance.github.io/glance-grids/&#34;&gt;GLANCE7&lt;/a&gt; consists of 7 Equal-Area, continental projections, with a tile size of 150km. One datacube will be generated for each continent.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;If you are not using the datacube options, i.e. &lt;code&gt;DO_REPROJ = FALSE&lt;/code&gt; or &lt;code&gt;DO_TILE = FALSE&lt;/code&gt;, you are running into a &lt;strong&gt;dead end&lt;/strong&gt; for &lt;strong&gt;FORCE&lt;/strong&gt;. In this case, the data cannot be further processed or analysed with any higher level FORCE functionality&amp;hellip;&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;how-to-validate-the-projection&#34;&gt;How to validate the projection?&lt;/h2&gt;
+&lt;p&gt;GDAL has a built-in projection conversion/validation tool:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;gdalsrsinfo -v &#39;PROJCS[&amp;quot;ETRS89 / LAEA Europe&amp;quot;,GEOGCS[&amp;quot;ETRS89&amp;quot;,DATUM[&amp;quot;European_Terrestrial_Reference_System_1989&amp;quot;,SPHEROID[&amp;quot;GRS 1980&amp;quot;,6378137,298.257222101,AUTHORITY[&amp;quot;EPSG&amp;quot;,&amp;quot;7019&amp;quot;]],TOWGS84[0,0,0,0,0,0,0],AUTHORITY[&amp;quot;EPSG&amp;quot;,&amp;quot;6258&amp;quot;]],PRIMEM[&amp;quot;Greenwich&amp;quot;,0,AUTHORITY[&amp;quot;EPSG&amp;quot;,&amp;quot;8901&amp;quot;]],UNIT[&amp;quot;degree&amp;quot;,0.0174532925199433,AUTHORITY[&amp;quot;EPSG&amp;quot;,&amp;quot;9122&amp;quot;]],AUTHORITY[&amp;quot;EPSG&amp;quot;,&amp;quot;4258&amp;quot;]],PROJECTION[&amp;quot;Lambert_Azimuthal_Equal_Area&amp;quot;],PARAMETER[&amp;quot;latitude_of_center&amp;quot;,52],PARAMETER[&amp;quot;longitude_of_center&amp;quot;,10],PARAMETER[&amp;quot;false_easting&amp;quot;,4321000],PARAMETER[&amp;quot;false_northing&amp;quot;,3210000],UNIT[&amp;quot;metre&amp;quot;,1,AUTHORITY[&amp;quot;EPSG&amp;quot;,&amp;quot;9001&amp;quot;]],AUTHORITY[&amp;quot;EPSG&amp;quot;,&amp;quot;3035&amp;quot;]]&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Validate Succeeds
+
+PROJ.4 : &#39;+proj=laea +lat_0=52 +lon_0=10 +x_0=4321000 +y_0=3210000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs &#39;
+
+OGC WKT :
+PROJCS[&amp;quot;ETRS89 / LAEA Europe&amp;quot;,
+    GEOGCS[&amp;quot;ETRS89&amp;quot;,
+        DATUM[&amp;quot;European_Terrestrial_Reference_System_1989&amp;quot;,
+            SPHEROID[&amp;quot;GRS 1980&amp;quot;,6378137,298.257222101,
+                AUTHORITY[&amp;quot;EPSG&amp;quot;,&amp;quot;7019&amp;quot;]],
+            TOWGS84[0,0,0,0,0,0,0],
+            AUTHORITY[&amp;quot;EPSG&amp;quot;,&amp;quot;6258&amp;quot;]],
+        PRIMEM[&amp;quot;Greenwich&amp;quot;,0,
+            AUTHORITY[&amp;quot;EPSG&amp;quot;,&amp;quot;8901&amp;quot;]],
+        UNIT[&amp;quot;degree&amp;quot;,0.0174532925199433,
+            AUTHORITY[&amp;quot;EPSG&amp;quot;,&amp;quot;9122&amp;quot;]],
+        AUTHORITY[&amp;quot;EPSG&amp;quot;,&amp;quot;4258&amp;quot;]],
+    PROJECTION[&amp;quot;Lambert_Azimuthal_Equal_Area&amp;quot;],
+    PARAMETER[&amp;quot;latitude_of_center&amp;quot;,52],
+    PARAMETER[&amp;quot;longitude_of_center&amp;quot;,10],
+    PARAMETER[&amp;quot;false_easting&amp;quot;,4321000],
+    PARAMETER[&amp;quot;false_northing&amp;quot;,3210000],
+    UNIT[&amp;quot;metre&amp;quot;,1,
+        AUTHORITY[&amp;quot;EPSG&amp;quot;,&amp;quot;9001&amp;quot;]],
+    AUTHORITY[&amp;quot;EPSG&amp;quot;,&amp;quot;3035&amp;quot;]]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;where-is-the-datacube-definition-stored&#34;&gt;Where is the datacube definition stored?&lt;/h2&gt;
+&lt;p&gt;At the top level of the generated datacube, a text file will be generated (&lt;code&gt;datacube-definition.prj&lt;/code&gt;). This file is key for all
+&lt;strong&gt;FORCE&lt;/strong&gt; higher-level functionality. Each higher-level module will save a copy of this file in the corresponding output directory. If this file is not present, the tools will fail. Therefore, &lt;strong&gt;do not modify, move, or delete this file&lt;/strong&gt;. This file contains the datacube definition as defined above.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;projection in WKT&lt;/li&gt;
+&lt;li&gt;grid origin, longitude&lt;/li&gt;
+&lt;li&gt;grid origin, latitude&lt;/li&gt;
+&lt;li&gt;grid origin, x-coordinate in projection&lt;/li&gt;
+&lt;li&gt;grid origin, y-coordinate in projection&lt;/li&gt;
+&lt;li&gt;tile size in projection units&lt;/li&gt;
+&lt;li&gt;block size in projection units&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cat /data/Dagobah/edc/level2/datacube-definition.prj
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;PROJCS[&amp;quot;ETRS89 / LAEA Europe&amp;quot;,GEOGCS[&amp;quot;ETRS89&amp;quot;,DATUM[&amp;quot;European_Terrestrial_Reference_System_1989&amp;quot;,SPHEROID[&amp;quot;GRS 1980&amp;quot;,6378137,298.257222101,AUTHORITY[&amp;quot;EPSG&amp;quot;,&amp;quot;7019&amp;quot;]],TOWGS84[0,0,0,0,0,0,0],AUTHORITY[&amp;quot;EPSG&amp;quot;,&amp;quot;6258&amp;quot;]],PRIMEM[&amp;quot;Greenwich&amp;quot;,0,AUTHORITY[&amp;quot;EPSG&amp;quot;,&amp;quot;8901&amp;quot;]],UNIT[&amp;quot;degree&amp;quot;,0.0174532925199433,AUTHORITY[&amp;quot;EPSG&amp;quot;,&amp;quot;9122&amp;quot;]],AUTHORITY[&amp;quot;EPSG&amp;quot;,&amp;quot;4258&amp;quot;]],PROJECTION[&amp;quot;Lambert_Azimuthal_Equal_Area&amp;quot;],PARAMETER[&amp;quot;latitude_of_center&amp;quot;,52],PARAMETER[&amp;quot;longitude_of_center&amp;quot;,10],PARAMETER[&amp;quot;false_easting&amp;quot;,4321000],PARAMETER[&amp;quot;false_northing&amp;quot;,3210000],UNIT[&amp;quot;metre&amp;quot;,1,AUTHORITY[&amp;quot;EPSG&amp;quot;,&amp;quot;9001&amp;quot;]],AUTHORITY[&amp;quot;EPSG&amp;quot;,&amp;quot;3035&amp;quot;]]
+-25.000000
+60.000000
+2456026.250000
+4574919.500000
+30000.000000
+3000.0000000
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;em&gt;In some rare circumstances, you might need to generate this file on your own. However, this only applies if - for any reason - you skip the Level 2 processing (e.g. if you only want to work with external features, or trick &lt;strong&gt;FORCE&lt;/strong&gt; into using external ARD datasets).&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;how-is-the-datacube-organized&#34;&gt;How is the datacube organized?&lt;/h2&gt;
+&lt;p&gt;In practice, the tiles are directories in the file system, and each chip represents one file.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ls /data/Dagobah/edc/level2 | tail
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;X0134_Y0095
+X0134_Y0096
+X0134_Y0097
+X0134_Y0098
+X0134_Y0099
+X0135_Y0095
+X0135_Y0096
+X0135_Y0097
+X0135_Y0098
+X0135_Y0099
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ls /data/Dagobah/edc/level2/X0134_Y0097/*.tif | tail
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;/data/Dagobah/edc/level2/X0134_Y0097/20181225_LEVEL2_SEN2A_BOA.tif
+/data/Dagobah/edc/level2/X0134_Y0097/20181225_LEVEL2_SEN2A_CLD.tif
+/data/Dagobah/edc/level2/X0134_Y0097/20181225_LEVEL2_SEN2A_HOT.tif
+/data/Dagobah/edc/level2/X0134_Y0097/20181225_LEVEL2_SEN2A_QAI.tif
+/data/Dagobah/edc/level2/X0134_Y0097/20181225_LEVEL2_SEN2A_VZN.tif
+/data/Dagobah/edc/level2/X0134_Y0097/20181230_LEVEL2_SEN2B_BOA.tif
+/data/Dagobah/edc/level2/X0134_Y0097/20181230_LEVEL2_SEN2B_CLD.tif
+/data/Dagobah/edc/level2/X0134_Y0097/20181230_LEVEL2_SEN2B_HOT.tif
+/data/Dagobah/edc/level2/X0134_Y0097/20181230_LEVEL2_SEN2B_QAI.tif
+/data/Dagobah/edc/level2/X0134_Y0097/20181230_LEVEL2_SEN2B_VZN.tif
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Within the tile, &lt;strong&gt;FORCE&lt;/strong&gt; semantically groups files into datasets if they have the same sensor and date (e.g. multiple products like Bottom-of-Atmosphere reflectance &lt;code&gt;BOA&lt;/code&gt; and Quality Assurance Information &lt;code&gt;QAI&lt;/code&gt;).&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ls /data/Dagobah/edc/level2/X0134_Y0097/20181225_LEVEL2_SEN2A_*.tif
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;/data/Dagobah/edc/level2/X0134_Y0097/20181225_LEVEL2_SEN2A_BOA.tif
+/data/Dagobah/edc/level2/X0134_Y0097/20181225_LEVEL2_SEN2A_CLD.tif
+/data/Dagobah/edc/level2/X0134_Y0097/20181225_LEVEL2_SEN2A_HOT.tif
+/data/Dagobah/edc/level2/X0134_Y0097/20181225_LEVEL2_SEN2A_QAI.tif
+/data/Dagobah/edc/level2/X0134_Y0097/20181225_LEVEL2_SEN2A_VZN.tif
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;It is important to note that chips in different tiles have the same filename, thus they can easily be mosaicked.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ls /data/Dagobah/edc/level2/X0134_Y0097/20181225_LEVEL2_SEN2A_BOA.tif
+ls /data/Dagobah/edc/level2/X0135_Y0097/20181225_LEVEL2_SEN2A_BOA.tif
+ls /data/Dagobah/edc/level2/X0134_Y0098/20181225_LEVEL2_SEN2A_BOA.tif
+ls /data/Dagobah/edc/level2/X0135_Y0098/20181225_LEVEL2_SEN2A_BOA.tif
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;/data/Dagobah/edc/level2/X0134_Y0097/20181225_LEVEL2_SEN2A_BOA.tif
+/data/Dagobah/edc/level2/X0135_Y0097/20181225_LEVEL2_SEN2A_BOA.tif
+/data/Dagobah/edc/level2/X0134_Y0098/20181225_LEVEL2_SEN2A_BOA.tif
+/data/Dagobah/edc/level2/X0135_Y0098/20181225_LEVEL2_SEN2A_BOA.tif
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;i-processed-quite-some-data-there-are-many-many-tiles-how-do-i-find-a-poi&#34;&gt;I processed quite some data. There are many, many tiles. How do I find a POI?&lt;/h2&gt;
+&lt;p&gt;Given any coordinate $(\lambda,\phi)$, the computation of the corresponding tile is pretty straightforward.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Convert the coordinate $(\lambda,\phi)$ to the projected coordinate $(X,Y)$&lt;/li&gt;
+&lt;li&gt;Given the tile size $t_s$ and the grid origin in projected coordinates $(X_O,Y_O)$, the tile ID can be computed as $Tile_X = floor((X-X_O)/t_s)$ and $Tile_Y = floor((Y_O-Y)/t_s)$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;With some more math, you can also compute the exact pixel.&lt;/p&gt;
+&lt;p&gt;However, there is also a &lt;strong&gt;FORCE&lt;/strong&gt; program that relieves you from doing this on your own:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;force-tile-finder
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;usage: force-tile-finder datacube lon lat res
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;force-tile-finder /data/Dagobah/edc/level2 13.404194 52.502889 10
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Point { LON/LAT (13.40,52.50) | X/Y (4552071.50,3271363.25) }
+  is in tile X0069_Y0043 at pixel 2604/1355
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Another useful &lt;strong&gt;FORCE&lt;/strong&gt; program can generate a vector file (shapefile or kml) for convenient display of the tiles.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;force-tabulate-grid
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;usage: force-tabulate-grid datacube bottom top left right format
+             format: shp or kml
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;force-tabulate-grid /data/Dagobah/edc/level2 35 60 0 20 kml
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;/data/Dagobah/edc/level2/datacube-grid.kml
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The grid can easily be loaded in GoogleEarth or any GIS. The attribute table contains the tile ID.&lt;/p&gt;
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://davidfrantz.github.io/img/tutorial-datacube-google-grid.jpg&#34; data-caption=&#34;Exported grid loaded in Google Earth&#34;&gt;
+&lt;img src=&#34;https://davidfrantz.github.io/img/tutorial-datacube-google-grid.jpg&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Exported grid loaded in Google Earth
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;how-to-visualize-data-for-a-large-extent-more-conveniently&#34;&gt;How to visualize data for a large extent more conveniently?&lt;/h2&gt;
+&lt;p&gt;Whenever you use a FORCE routine, cubed data will be generated. It is a bit cumbersome to display such data for a large extent without some further treatment. The following recipe can be used for any cubed &lt;strong&gt;FORCE&lt;/strong&gt; data - irrespective of processing level.&lt;/p&gt;
+&lt;p&gt;Lucky us, the &lt;a href=&#34;https://gdal.org/drivers/raster/vrt.html&#34;&gt;GDAL virtual format&lt;/a&gt; represents an ideal concept for this. With VRTs, mosaicks of cubed data can be generated without physically copying the data. The VRT is basically a text file in xml-Format, which both holds (relative) links to the original data and the rules to assemble the mosaic on-the-fly.
+&lt;strong&gt;FORCE&lt;/strong&gt; comes with a tool to generate such mosaics:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;force-mosaic
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Usage: force-mosaic tiled-archive
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;force-mosaic /data/Dagobah/edc/level2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;force-mosaic searches for image files in the datacube, and mosaics all files with the same basename. The mosaics are stored in the &lt;code&gt;mosaic&lt;/code&gt; subdirectory.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ls /data/Dagobah/edc/level2/mosaic | head
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;19840328_LEVEL2_LND05_BOA.vrt
+19840328_LEVEL2_LND05_CLD.vrt
+19840328_LEVEL2_LND05_HOT.vrt
+19840328_LEVEL2_LND05_QAI.vrt
+19840328_LEVEL2_LND05_VZN.vrt
+19840409_LEVEL2_LND05_BOA.vrt
+19840409_LEVEL2_LND05_CLD.vrt
+19840409_LEVEL2_LND05_HOT.vrt
+19840409_LEVEL2_LND05_QAI.vrt
+19840409_LEVEL2_LND05_VZN.vrt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;To speed up visualization, pyramids might be generated for the VRT files. This significantly increases loading and response times for visualization. However, pyramid layers are basically copies of the original data at reduced resolution, and as such, they consume some disc space. Consider from case to case whether fast display merits the excess disc usage. &lt;strong&gt;FORCE&lt;/strong&gt; comes with a tool to generate pyramids:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;force-pyramid
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Usage: force-pyramid file
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Pyramids for one file can be generated with:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;force-pyramid /data/Dagobah/edc/level2/mosaic/19840828_LEVEL2_LND05_BOA.vrt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;/data/Dagobah/edc/level2/mosaic/19840828_LEVEL2_LND05_BOA.vrt
+computing pyramids for 19840828_LEVEL2_LND05_BOA.vrt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Practically, a DEFLATE compressed overview image will be stored next to the VRT:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ls /data/Dagobah/edc/level2/mosaic/19840828_LEVEL2_LND05_BOA*
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;/data/Dagobah/edc/level2/mosaic/19840828_LEVEL2_LND05_BOA.vrt
+/data/Dagobah/edc/level2/mosaic/19840828_LEVEL2_LND05_BOA.vrt.ovr
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Pyramids for all VRT mosaics can be parallely generated with:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ls /data/Dagobah/edc/level2/mosaic/*.vrt | parallel force-pyramid {}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Any modern software based on GDAL (e.g. QGIS) is able to display VRTs, and can also handle the attached pyramid layers. Mosaicking is done on-the-fly, data outside of the display extent are not loaded.&lt;/p&gt;
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://davidfrantz.github.io/img/tutorial-datacube-mosaic.jpg&#34; data-caption=&#34;VRT mosaick loaded in QGIS&#34;&gt;
+&lt;img src=&#34;https://davidfrantz.github.io/img/tutorial-datacube-mosaic.jpg&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    VRT mosaick loaded in QGIS
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+</description>
+    </item>
     
     <item>
       <title>FORCE Tutorial: Quality Bits a.k.a. Cloud Masks etc.</title>
