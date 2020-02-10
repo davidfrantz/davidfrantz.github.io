@@ -20,7 +20,7 @@
       <description>&lt;p&gt;&lt;em&gt;This tutorial uses FORCE v. 3.0&lt;/em&gt;&lt;/p&gt;
 &lt;script src=&#34;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&#34; type=&#34;text/javascript&#34;&gt;&lt;/script&gt;
 &lt;h2 id=&#34;learning-objective&#34;&gt;Learning Objective&lt;/h2&gt;
-&lt;p&gt;This tutorial will explain how to conveniently display cubed data.&lt;/p&gt;
+&lt;p&gt;This tutorial explains what a datacube is, how it is parameterized, how you can find a POI, how to visualize the tiling grid, and how to conveniently display cubed data.&lt;/p&gt;
 &lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
 &lt;p&gt;FORCE makes heavy use of the data cube concept. This includes two main points:&lt;/p&gt;
 &lt;ol&gt;
@@ -173,15 +173,20 @@ X0135_Y0099
 /data/Dagobah/edc/level2/X0134_Y0097/20181225_LEVEL2_SEN2A_VZN.tif
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;It is important to note that chips in different tiles have the same filename, thus they can easily be mosaicked.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ls /data/Dagobah/edc/level2/X0134_Y0097/20181225_LEVEL2_SEN2A_BOA.tif
-ls /data/Dagobah/edc/level2/X0135_Y0097/20181225_LEVEL2_SEN2A_BOA.tif
-ls /data/Dagobah/edc/level2/X0134_Y0098/20181225_LEVEL2_SEN2A_BOA.tif
-ls /data/Dagobah/edc/level2/X0135_Y0098/20181225_LEVEL2_SEN2A_BOA.tif
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ls /data/Dagobah/edc/level2/X*/20181225_LEVEL2_SEN2A_BOA.tif | wc -l
+ls /data/Dagobah/edc/level2/X*/20181225_LEVEL2_SEN2A_BOA.tif | tail
 &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;/data/Dagobah/edc/level2/X0134_Y0097/20181225_LEVEL2_SEN2A_BOA.tif
-/data/Dagobah/edc/level2/X0135_Y0097/20181225_LEVEL2_SEN2A_BOA.tif
+&lt;pre&gt;&lt;code&gt;49
+/data/Dagobah/edc/level2/X0133_Y0100/20181225_LEVEL2_SEN2A_BOA.tif
+/data/Dagobah/edc/level2/X0134_Y0096/20181225_LEVEL2_SEN2A_BOA.tif
+/data/Dagobah/edc/level2/X0134_Y0097/20181225_LEVEL2_SEN2A_BOA.tif
 /data/Dagobah/edc/level2/X0134_Y0098/20181225_LEVEL2_SEN2A_BOA.tif
+/data/Dagobah/edc/level2/X0134_Y0099/20181225_LEVEL2_SEN2A_BOA.tif
+/data/Dagobah/edc/level2/X0135_Y0095/20181225_LEVEL2_SEN2A_BOA.tif
+/data/Dagobah/edc/level2/X0135_Y0096/20181225_LEVEL2_SEN2A_BOA.tif
+/data/Dagobah/edc/level2/X0135_Y0097/20181225_LEVEL2_SEN2A_BOA.tif
 /data/Dagobah/edc/level2/X0135_Y0098/20181225_LEVEL2_SEN2A_BOA.tif
+/data/Dagobah/edc/level2/X0135_Y0099/20181225_LEVEL2_SEN2A_BOA.tif
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;i-processed-quite-some-data-there-are-many-many-tiles-how-do-i-find-a-poi&#34;&gt;I processed quite some data. There are many, many tiles. How do I find a POI?&lt;/h2&gt;
 &lt;p&gt;Given any coordinate \((\lambda,\phi)\), the computation of the corresponding tile is pretty straightforward.&lt;/p&gt;
