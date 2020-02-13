@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>FORCE | DAVID FRANTZ</title>
-    <link>https://davidfrantz.github.io/tags/force/</link>
-      <atom:link href="https://davidfrantz.github.io/tags/force/index.xml" rel="self" type="application/rss+xml" />
-    <description>FORCE</description>
+    <title>Tutorial | DAVID FRANTZ</title>
+    <link>https://davidfrantz.github.io/tags/tutorial/</link>
+      <atom:link href="https://davidfrantz.github.io/tags/tutorial/index.xml" rel="self" type="application/rss+xml" />
+    <description>Tutorial</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Sun, 09 Feb 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://davidfrantz.github.io/img/icon-192.png</url>
-      <title>FORCE</title>
-      <link>https://davidfrantz.github.io/tags/force/</link>
+      <title>Tutorial</title>
+      <link>https://davidfrantz.github.io/tags/tutorial/</link>
     </image>
     
     <item>
