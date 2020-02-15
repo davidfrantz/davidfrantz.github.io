@@ -5,7 +5,7 @@
     <link>https://davidfrantz.github.io/</link>
       <atom:link href="https://davidfrantz.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>DAVID FRANTZ</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Sun, 09 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Sat, 15 Feb 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://davidfrantz.github.io/img/icon-192.png</url>
       <title>DAVID FRANTZ</title>
@@ -13,10 +13,89 @@
     </image>
     
     <item>
+      <title>FORCE Tutorial: DEM</title>
+      <link>https://davidfrantz.github.io/tutorials/force-dem/dem/</link>
+      <pubDate>Sat, 15 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/tutorials/force-dem/dem/</guid>
+      <description>&lt;p&gt;&lt;em&gt;This tutorial uses FORCE v. 3.0&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;learning-objective&#34;&gt;Learning Objective&lt;/h2&gt;
+&lt;p&gt;This tutorial will show how to prepare a Digital Elevation Model (DEM) for the &lt;strong&gt;FORCE Level 2 Processing System (FORCE L2PS)&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;FORCE L2PS&lt;/strong&gt; uses a DEM for&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;enhanced cloud and cloud shadow detection,&lt;/li&gt;
+&lt;li&gt;atmospheric correction, and to&lt;/li&gt;
+&lt;li&gt;perform the topographic correction.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In the cloud shadow detection, the DEM is primarily used to distinguish cloud shadows from water and topographic shadows. In the atmospheric correction, the DEM is used to scale the optical depths with altitude. The topographic correction is of course relying on the DEM. In principle, &lt;strong&gt;FORCE L2PS&lt;/strong&gt; can be used without a DEM (FILE_DEM = NULL). In this case, the surface is assumed to be flat at z = 0m a.s.l. The topographic correction, however, can only be used if a DEM is given (surprise).&lt;/p&gt;
+&lt;p&gt;In any case, it is strongly advised to use a DEM. Plus, it is not complicated to acquire it, free options are available. You probably already have a DEM for your study area anyway.&lt;/p&gt;
+&lt;h2 id=&#34;data-format&#34;&gt;Data format&lt;/h2&gt;
+&lt;p&gt;There are little requirements on the data format:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The unit must be meters.&lt;/li&gt;
+&lt;li&gt;The Nodata value shouldn&#39;t be 0, which is a valid elevation.&lt;/li&gt;
+&lt;li&gt;The DEM must cover the complete image(s) to be processed.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Thus, a mosaic that covers your complete study area needs to be prepared. The DEM is warped and cropped to the projection and extent of the Level 1 image, which is processed with &lt;strong&gt;FORCE L2PS&lt;/strong&gt;. This is done on-the-fly. Therefore, data type, data format, projection, extent etc. can be chosen freely - as long as GDAL is able to handle it (GDAL can handle pretty much anything).&lt;/p&gt;
+&lt;p&gt;Please note, that pixels with nodata values in the DEM will have nodata values in the Level 2 products, too. Thus, make sure your DEM covers the complete area of interest.&lt;/p&gt;
+&lt;h2 id=&#34;which-dem&#34;&gt;Which DEM?&lt;/h2&gt;
+&lt;p&gt;The DEM should match the resolution of the Level 1 image data as closely as possible. If possible, it is advised to use a finer resolution. However, as it is hard to acquire high spatial resolution DEMs, especially for larger areas, lower resolution works too. Often, we use the 30m SRTM DEM or 30m ASTER DEM, or a combination thereof, e.g. SRTM filled with ASTER (SRTM is a bit better, but there are holes in mountainous regions, and coverage is only 60°N-60°S).&lt;/p&gt;
+&lt;p&gt;The SRTM DEM can be obtained from &lt;a href=&#34;https://earthexplorer.usgs.gov/&#34;&gt;EarthExplorer&lt;/a&gt;. The ASTER DEM can be obtained from &lt;a href=&#34;https://search.earthdata.nasa.gov/search/&#34;&gt;EarthData&lt;/a&gt; or &lt;a href=&#34;https://ssl.jspacesystems.or.jp/ersdac/GDEM/E/&#34;&gt;Japan Space Systems&lt;/a&gt;. Both are free of charge.&lt;/p&gt;
+&lt;h2 id=&#34;prepare-the-mosaic&#34;&gt;Prepare the mosaic&lt;/h2&gt;
+&lt;p&gt;The following steps illustrate how to build a virtual mosaic from SRTM data. Generally, DEM data come in tiles (datacube style), e.g. each SRTM tile covers 1°. The &lt;a href=&#34;gdal.org/drivers/raster/vrt.html&#34;&gt;GDAL Virtual Format&lt;/a&gt; allows to mosaick data without producing a physical representation, i.e. the virtual mosaic only holds links to the original tiled data, plus some rules on how to combine them into the mosaic.&lt;/p&gt;
+&lt;p&gt;Assuming you have downloaded some SRTM tiles, we first prepare a text file that holds all the filepaths:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;find /data/Dagobah/global/dem/srtm -name &#39;*.tif&#39; &amp;gt; /data/Earth/global/dem/srtm.txt
+cat /data/Dagobah/global/dem/srtm.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;/data/Dagobah/global/dem/srtm/n35_e027_1arc_v3.tif
+/data/Dagobah/global/dem/srtm/n35_e026_1arc_v3.tif
+/data/Dagobah/global/dem/srtm/n37_e026_1arc_v3.tif
+/data/Dagobah/global/dem/srtm/n36_e025_1arc_v3.tif
+/data/Dagobah/global/dem/srtm/n37_e027_1arc_v3.tif
+/data/Dagobah/global/dem/srtm/n37_e025_1arc_v3.tif
+/data/Dagobah/global/dem/srtm/n36_e024_1arc_v3.tif
+/data/Dagobah/global/dem/srtm/n35_e023_1arc_v3.tif
+/data/Dagobah/global/dem/srtm/n37_e024_1arc_v3.tif
+/data/Dagobah/global/dem/srtm/n36_e026_1arc_v3.tif
+/data/Dagobah/global/dem/srtm/n37_e023_1arc_v3.tif
+/data/Dagobah/global/dem/srtm/n35_e024_1arc_v3.tif
+/data/Dagobah/global/dem/srtm/n35_e025_1arc_v3.tif
+/data/Dagobah/global/dem/srtm/n36_e023_1arc_v3.tif
+/data/Dagobah/global/dem/srtm/n36_e027_1arc_v3.tif
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then, we use the &lt;code&gt;gdalbuildvrt&lt;/code&gt; command to generate the virtual mosaic.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;gdalbuildvrt -input_file_list /data/Dagobah/global/dem/srtm.txt /data/Earth/global/dem/srtm.vrt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0...10...20...30...40...50...60...70...80...90...100 - done.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The VRT file is a simple xml file:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;head -n 14 /data/Dagobah/global/dem/srtm.vrt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;VRTDataset rasterXSize=&amp;quot;18001&amp;quot; rasterYSize=&amp;quot;10801&amp;quot;&amp;gt;
+  &amp;lt;SRS&amp;gt;GEOGCS[&amp;quot;WGS 84&amp;quot;,DATUM[&amp;quot;WGS_1984&amp;quot;,SPHEROID[&amp;quot;WGS 84&amp;quot;,6378137,298.257223563,AUTHORITY[&amp;quot;EPSG&amp;quot;,&amp;quot;7030&amp;quot;]],AUTHORITY[&amp;quot;EPSG&amp;quot;,&amp;quot;6326&amp;quot;]],PRIMEM[&amp;quot;Greenwich&amp;quot;,0],UNIT[&amp;quot;degree&amp;quot;,0.0174532925199433],AUTHORITY[&amp;quot;EPSG&amp;quot;,&amp;quot;4326&amp;quot;]]&amp;lt;/SRS&amp;gt;
+  &amp;lt;GeoTransform&amp;gt;  2.2999861111111112e+01,  2.7777777777777794e-04,  0.0000000000000000e+00,  3.8000138888888891e+01,  0.0000000000000000e+00, -2.7777777777777794e-04&amp;lt;/GeoTransform&amp;gt;
+  &amp;lt;VRTRasterBand dataType=&amp;quot;Int16&amp;quot; band=&amp;quot;1&amp;quot;&amp;gt;
+    &amp;lt;NoDataValue&amp;gt;-32767&amp;lt;/NoDataValue&amp;gt;
+    &amp;lt;ColorInterp&amp;gt;Gray&amp;lt;/ColorInterp&amp;gt;
+    &amp;lt;ComplexSource&amp;gt;
+      &amp;lt;SourceFilename relativeToVRT=&amp;quot;1&amp;quot;&amp;gt;srtm/n35_e027_1arc_v3.tif&amp;lt;/SourceFilename&amp;gt;
+      &amp;lt;SourceBand&amp;gt;1&amp;lt;/SourceBand&amp;gt;
+      &amp;lt;SourceProperties RasterXSize=&amp;quot;3601&amp;quot; RasterYSize=&amp;quot;3601&amp;quot; DataType=&amp;quot;Int16&amp;quot; BlockXSize=&amp;quot;3601&amp;quot; BlockYSize=&amp;quot;1&amp;quot; /&amp;gt;
+      &amp;lt;SrcRect xOff=&amp;quot;0&amp;quot; yOff=&amp;quot;0&amp;quot; xSize=&amp;quot;3601&amp;quot; ySize=&amp;quot;3601&amp;quot; /&amp;gt;
+      &amp;lt;DstRect xOff=&amp;quot;14400&amp;quot; yOff=&amp;quot;7200&amp;quot; xSize=&amp;quot;3601&amp;quot; ySize=&amp;quot;3601&amp;quot; /&amp;gt;
+      &amp;lt;NODATA&amp;gt;-32767&amp;lt;/NODATA&amp;gt;
+    &amp;lt;/ComplexSource&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Any software that is based on GDAL is able to read this file, e.g. QGIS - and &lt;strong&gt;FORCE&lt;/strong&gt;. The filepath of this file needs to given in the &lt;strong&gt;FORCE L2PS&lt;/strong&gt; parameter file:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;FILE_DEM = /data/Dagobah/global/dem/srtm.vrt&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>FORCE Tutorial: The Datacube</title>
-      <link>https://davidfrantz.github.io/tutorials/force-datacube/datacube-and-mosaicking/</link>
+      <link>https://davidfrantz.github.io/tutorials/force-datacube/datacube/</link>
       <pubDate>Sun, 09 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>https://davidfrantz.github.io/tutorials/force-datacube/datacube-and-mosaicking/</guid>
+      <guid>https://davidfrantz.github.io/tutorials/force-datacube/datacube/</guid>
       <description>&lt;p&gt;&lt;em&gt;This tutorial uses FORCE v. 3.0&lt;/em&gt;&lt;/p&gt;
 &lt;script src=&#34;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&#34; type=&#34;text/javascript&#34;&gt;&lt;/script&gt;
 &lt;h2 id=&#34;learning-objective&#34;&gt;Learning Objective&lt;/h2&gt;
