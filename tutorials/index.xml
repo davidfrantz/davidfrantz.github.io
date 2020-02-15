@@ -98,9 +98,9 @@ cat /data/Dagobah/global/dem/srtm.txt
       <guid>https://davidfrantz.github.io/tutorials/force-datacube/datacube/</guid>
       <description>&lt;p&gt;&lt;em&gt;This tutorial uses FORCE v. 3.0&lt;/em&gt;&lt;/p&gt;
 &lt;script src=&#34;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&#34; type=&#34;text/javascript&#34;&gt;&lt;/script&gt;
-&lt;h2 id=&#34;learning-objective&#34;&gt;Learning Objective&lt;/h2&gt;
+&lt;h2 id=&#34;learning-objective&#34;&gt;&lt;strong&gt;Learning Objective&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;This tutorial explains what a datacube is, how it is parameterized, how you can find a POI, how to visualize the tiling grid, and how to conveniently display cubed data.&lt;/p&gt;
-&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
+&lt;h2 id=&#34;background&#34;&gt;&lt;strong&gt;Background&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;FORCE makes heavy use of the data cube concept. This includes two main points:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;All data are in the &lt;strong&gt;same coordinate system&lt;/strong&gt;, which should be valid for a large regional extent (e.g. a continental projection).&lt;/li&gt;
@@ -149,7 +149,7 @@ cat /data/Dagobah/global/dem/srtm.txt
 &lt;li&gt;The data cube concept allows for non-redundant data storage and efficient data access, as well as simplified extraction of data and information.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&#34;how-to-define-the-datacube-parameters&#34;&gt;How to define the datacube parameters?&lt;/h2&gt;
+&lt;h2 id=&#34;how-to-define-the-datacube-parameters&#34;&gt;&lt;strong&gt;How to define the datacube parameters?&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;When generating Level 2 ARD data with &lt;strong&gt;FORCE L2PS&lt;/strong&gt;, you need to define the datacube in the parameter file. Empty parameter files can be generated with &lt;code&gt;force-parameter&lt;/code&gt;.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;DO_REPROJ&lt;/code&gt; indicates whether the images should be reprojected to the target coordinate system - or stay in their original UTM projection.&lt;/li&gt;
@@ -161,7 +161,7 @@ cat /data/Dagobah/global/dem/srtm.txt
 &lt;/ul&gt;
 &lt;p&gt;Two default projection / grid systems are predefined in &lt;strong&gt;FORCE&lt;/strong&gt;. They can be specified via the &lt;code&gt;PROJECTION&lt;/code&gt; parameter instead of giving a WKT string. The predefined options have their own settings for &lt;code&gt;ORIGIN_LAT&lt;/code&gt;, &lt;code&gt;ORIGIN_LON&lt;/code&gt;, &lt;code&gt;TILE_SIZE&lt;/code&gt;, and &lt;code&gt;BLOCK_SIZE&lt;/code&gt;, thus the values given in the parameterfile will be ignored. &lt;a href=&#34;https://cartography.tuwien.ac.at/eurocarto/wp-content/uploads/2015/09/3_6_ppt.pdf&#34;&gt;EQUI7&lt;/a&gt; consists of 7 Equi-Distant, continental projections with a tile size of 100km. &lt;a href=&#34;https://measures-glance.github.io/glance-grids/&#34;&gt;GLANCE7&lt;/a&gt; consists of 7 Equal-Area, continental projections, with a tile size of 150km. One datacube will be generated for each continent.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;If you are not using the datacube options, i.e. &lt;code&gt;DO_REPROJ = FALSE&lt;/code&gt; or &lt;code&gt;DO_TILE = FALSE&lt;/code&gt;, you are running into a &lt;strong&gt;dead end&lt;/strong&gt; for &lt;strong&gt;FORCE&lt;/strong&gt;. In this case, the data cannot be further processed or analysed with any higher level FORCE functionality&amp;hellip;&lt;/em&gt;&lt;/p&gt;
-&lt;h2 id=&#34;how-to-validate-the-projection&#34;&gt;How to validate the projection?&lt;/h2&gt;
+&lt;h2 id=&#34;how-to-validate-the-projection&#34;&gt;&lt;strong&gt;How to validate the projection?&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;GDAL has a built-in projection conversion/validation tool:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;gdalsrsinfo -v &#39;PROJCS[&amp;quot;ETRS89 / LAEA Europe&amp;quot;,GEOGCS[&amp;quot;ETRS89&amp;quot;,DATUM[&amp;quot;European_Terrestrial_Reference_System_1989&amp;quot;,SPHEROID[&amp;quot;GRS 1980&amp;quot;,6378137,298.257222101,AUTHORITY[&amp;quot;EPSG&amp;quot;,&amp;quot;7019&amp;quot;]],TOWGS84[0,0,0,0,0,0,0],AUTHORITY[&amp;quot;EPSG&amp;quot;,&amp;quot;6258&amp;quot;]],PRIMEM[&amp;quot;Greenwich&amp;quot;,0,AUTHORITY[&amp;quot;EPSG&amp;quot;,&amp;quot;8901&amp;quot;]],UNIT[&amp;quot;degree&amp;quot;,0.0174532925199433,AUTHORITY[&amp;quot;EPSG&amp;quot;,&amp;quot;9122&amp;quot;]],AUTHORITY[&amp;quot;EPSG&amp;quot;,&amp;quot;4258&amp;quot;]],PROJECTION[&amp;quot;Lambert_Azimuthal_Equal_Area&amp;quot;],PARAMETER[&amp;quot;latitude_of_center&amp;quot;,52],PARAMETER[&amp;quot;longitude_of_center&amp;quot;,10],PARAMETER[&amp;quot;false_easting&amp;quot;,4321000],PARAMETER[&amp;quot;false_northing&amp;quot;,3210000],UNIT[&amp;quot;metre&amp;quot;,1,AUTHORITY[&amp;quot;EPSG&amp;quot;,&amp;quot;9001&amp;quot;]],AUTHORITY[&amp;quot;EPSG&amp;quot;,&amp;quot;3035&amp;quot;]]&#39;
 &lt;/code&gt;&lt;/pre&gt;
@@ -191,7 +191,7 @@ PROJCS[&amp;quot;ETRS89 / LAEA Europe&amp;quot;,
         AUTHORITY[&amp;quot;EPSG&amp;quot;,&amp;quot;9001&amp;quot;]],
     AUTHORITY[&amp;quot;EPSG&amp;quot;,&amp;quot;3035&amp;quot;]]
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;where-is-the-datacube-definition-stored&#34;&gt;Where is the datacube definition stored?&lt;/h2&gt;
+&lt;h2 id=&#34;where-is-the-datacube-definition-stored&#34;&gt;&lt;strong&gt;Where is the datacube definition stored?&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;At the top level of the generated datacube, a text file will be generated (&lt;code&gt;datacube-definition.prj&lt;/code&gt;). This file is key for all
 &lt;strong&gt;FORCE&lt;/strong&gt; higher-level functionality. Each higher-level module will save a copy of this file in the corresponding output directory. If this file is not present, the tools will fail. Therefore, &lt;strong&gt;do not modify, move, or delete this file&lt;/strong&gt;. This file contains the datacube definition as defined above.&lt;/p&gt;
 &lt;ol&gt;
@@ -214,7 +214,7 @@ PROJCS[&amp;quot;ETRS89 / LAEA Europe&amp;quot;,
 3000.0000000
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;em&gt;In some rare circumstances, you might need to generate this file on your own. However, this only applies if - for any reason - you skip the Level 2 processing (e.g. if you only want to work with external features, or trick &lt;strong&gt;FORCE&lt;/strong&gt; into using external ARD datasets).&lt;/em&gt;&lt;/p&gt;
-&lt;h2 id=&#34;how-is-the-datacube-organized&#34;&gt;How is the datacube organized?&lt;/h2&gt;
+&lt;h2 id=&#34;how-is-the-datacube-organized&#34;&gt;&lt;strong&gt;How is the datacube organized?&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;In practice, the tiles are directories in the file system, and each chip represents one file.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ls /data/Dagobah/edc/level2 | tail
 &lt;/code&gt;&lt;/pre&gt;
@@ -267,7 +267,7 @@ ls /data/Dagobah/edc/level2/X*/20181225_LEVEL2_SEN2A_BOA.tif | tail
 /data/Dagobah/edc/level2/X0135_Y0098/20181225_LEVEL2_SEN2A_BOA.tif
 /data/Dagobah/edc/level2/X0135_Y0099/20181225_LEVEL2_SEN2A_BOA.tif
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;i-processed-quite-some-data-there-are-many-many-tiles-how-do-i-find-a-poi&#34;&gt;I processed quite some data. There are many, many tiles. How do I find a POI?&lt;/h2&gt;
+&lt;h2 id=&#34;i-processed-quite-some-data-there-are-many-many-tiles-how-do-i-find-a-poi&#34;&gt;&lt;strong&gt;I processed quite some data. There are many, many tiles. How do I find a POI?&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;Given any coordinate \((\lambda,\phi)\), the computation of the corresponding tile is pretty straightforward.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Convert the coordinate \((\lambda,\phi)\) to the projected coordinate \((X,Y)\)&lt;/li&gt;
@@ -326,7 +326,7 @@ ls /data/Dagobah/edc/level2/X*/20181225_LEVEL2_SEN2A_BOA.tif | tail
 
 &lt;/figure&gt;
 
-&lt;h2 id=&#34;how-to-visualize-data-for-a-large-extent-more-conveniently&#34;&gt;How to visualize data for a large extent more conveniently?&lt;/h2&gt;
+&lt;h2 id=&#34;how-to-visualize-data-for-a-large-extent-more-conveniently&#34;&gt;&lt;strong&gt;How to visualize data for a large extent more conveniently?&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;Whenever you use a FORCE routine, cubed data will be generated. It is a bit cumbersome to display such data for a large extent without some further treatment. The following recipe can be used for any cubed &lt;strong&gt;FORCE&lt;/strong&gt; data - irrespective of processing level.&lt;/p&gt;
 &lt;p&gt;Lucky us, the &lt;a href=&#34;https://gdal.org/drivers/raster/vrt.html&#34;&gt;GDAL virtual format&lt;/a&gt; represents an ideal concept for this. With VRTs, mosaicks of cubed data can be generated without physically copying the data. The VRT is basically a text file in xml-Format, which both holds (relative) links to the original data and the rules to assemble the mosaic on-the-fly.
 &lt;strong&gt;FORCE&lt;/strong&gt; comes with a tool to generate such mosaics:&lt;/p&gt;
@@ -411,17 +411,17 @@ computing pyramids for 19840828_LEVEL2_LND05_BOA.vrt
       <pubDate>Mon, 03 Feb 2020 00:00:00 +0000</pubDate>
       <guid>https://davidfrantz.github.io/tutorials/force-qai/qai/</guid>
       <description>&lt;p&gt;&lt;em&gt;This tutorial uses FORCE v. 3.0&lt;/em&gt;&lt;/p&gt;
-&lt;h2 id=&#34;learning-objective&#34;&gt;Learning Objective&lt;/h2&gt;
+&lt;h2 id=&#34;learning-objective&#34;&gt;&lt;strong&gt;Learning Objective&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;This tutorial will explain what quality bits are, how quality bits are implemented in &lt;strong&gt;FORCE&lt;/strong&gt;, how to visualize them, and how to deal with them in Higher Level Processing.&lt;/p&gt;
-&lt;h2 id=&#34;what-are-quality-bits&#34;&gt;What are quality bits?&lt;/h2&gt;
+&lt;h2 id=&#34;what-are-quality-bits&#34;&gt;&lt;strong&gt;What are quality bits?&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;FORCE L2PS&lt;/strong&gt; provides a description of the quality of each pixel in the form of quality bits. This bit-packed information allows users to apply per pixel filters to all Level 2 products. The bits represent combinations of surface, atmospheric, and processing-related conditions that can affect the overall usefulness of a given pixel for a particular application. The success of any follow-up analysis depends on the rigorous usage of these information!
 A good explanation of quality bits is given by the &lt;a href=&#34;https://www.usgs.gov/land-resources/nli/landsat/landsat-collection-1-level-1-quality-assessment-band?qt-science_support_page_related_con=0#qt-science_support_page_related_con&#34;&gt;USGS&lt;/a&gt;:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;The bit-packed information in the QA bands is a translation of binary strings. For example, the integer value “1” translates to the binary value “0001.” The binary value “0001” has 4 bits, written right to left as bits 0 (“1”), 1 (“0”), 2 (“0”), and 3 (“0”). Each of the bits 0-3 represents a condition that can affect the calculation of a physical value. [&amp;hellip;] If the condition is true, the bit is set to “1,” or “0” if false.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&#34;sounds-complicated-why-not-use-a-scene-classification&#34;&gt;Sounds complicated… Why not use a scene classification?&lt;/h2&gt;
+&lt;h2 id=&#34;sounds-complicated-why-not-use-a-scene-classification&#34;&gt;&lt;strong&gt;Sounds complicated… Why not use a scene classification?&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;Although interpretation of quality bits is not immediate to humans, they do possess quite some advantages. As opposed to a scene classification, quality bits allow the flagging of multiple conditions, e.g. ice clouds, cloud shadows on top of clouds or snow, high aerosol load and cloud, etc. If a 16bit Integer is used for storing the quality bits, up to 16 different conditions can co-exist in any possible combination. In a scene classification, only one condition can be stored, and the algorithm developer needs to make assumptions on the priority of the conditions; however these may differ from application to application. Quality bits allow to store all these information in a single  image. From a technical perspective, quality bits save disc space, and reduce the I/O load for follow-up analyses.&lt;/p&gt;
-&lt;h2 id=&#34;quality-bits-in-force&#34;&gt;Quality bits in FORCE&lt;/h2&gt;
+&lt;h2 id=&#34;quality-bits-in-force&#34;&gt;&lt;strong&gt;Quality bits in FORCE&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;In &lt;strong&gt;FORCE&lt;/strong&gt;, the quality bits are found in the Quality Assurance Information (&lt;code&gt;QAI&lt;/code&gt;) product, which is an integral part of each Level 2 dataset, and is alway present next to the reflectance images (&lt;code&gt;BOA&lt;/code&gt; or &lt;code&gt;TOA&lt;/code&gt;).
 When generating Best Available Pixel (&lt;code&gt;BAP&lt;/code&gt;) composites (Level 3), the bit flags of the selected observation are stored in the first band of the composite information (&lt;code&gt;INF&lt;/code&gt;) product.
 Currently &lt;strong&gt;FORCE&lt;/strong&gt; implements a 16bit QAI layer with 12 quality bits, some of them as double-bit words:&lt;/p&gt;
@@ -672,7 +672,7 @@ interpolated. If there is no valid AOD estimation for the complete image, a fill
 &lt;li&gt;The water vapor flag indicates whether water vapor was estimated, or if the scene average was used to fill. Water vapor is not estimated over water and cloud shadow pixels. This flag only applies to Sentinel-2 images.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&#34;visualization&#34;&gt;Visualization&lt;/h2&gt;
+&lt;h2 id=&#34;visualization&#34;&gt;&lt;strong&gt;Visualization&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;Visualizing the raw QAI image is pretty meaningless. Don’t be surprised that the integers do not resemble any of the patterns you would expect (e.g. cloud distribution).&lt;/p&gt;
 
 
@@ -705,7 +705,7 @@ interpolated. If there is no valid AOD estimation for the complete image, a fill
 
 &lt;/figure&gt;
 
-&lt;h3 id=&#34;quicklooks&#34;&gt;Quicklooks&lt;/h3&gt;
+&lt;h3 id=&#34;quicklooks&#34;&gt;&lt;strong&gt;Quicklooks&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;Since v. 3.0, &lt;strong&gt;FORCE L2PS&lt;/strong&gt; can output quicklook images for each Level 2 dataset (&lt;code&gt;OVV&lt;/code&gt; = overview product). These thumbnails serve as first impression of image quality. Some of the quality conditions are superimposed on the RGB images. Opaque clouds are shown in pink, cirrus clouds in red, cloud shadows in cyan, snow in yellow, saturated pixels in orange, and sub-zero reflectance values in a greenish tone. The overview for the QAI image from above is shown here:&lt;/p&gt;
 
 
@@ -738,7 +738,7 @@ interpolated. If there is no valid AOD estimation for the complete image, a fill
 
 &lt;/figure&gt;
 
-&lt;h3 id=&#34;inflate-quality-bits&#34;&gt;Inflate quality bits&lt;/h3&gt;
+&lt;h3 id=&#34;inflate-quality-bits&#34;&gt;&lt;strong&gt;Inflate quality bits&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;A full deciphering of all quality bits to individual quality masks can be generated with &lt;strong&gt;FORCE&lt;/strong&gt;:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;force-qai-inflate
 &lt;/code&gt;&lt;/pre&gt;
@@ -778,7 +778,7 @@ interpolated. If there is no valid AOD estimation for the complete image, a fill
 
 &lt;/figure&gt;
 
-&lt;h3 id=&#34;quality-bit-rendering-in-qgis&#34;&gt;Quality bit rendering in QGIS&lt;/h3&gt;
+&lt;h3 id=&#34;quality-bit-rendering-in-qgis&#34;&gt;&lt;strong&gt;Quality bit rendering in QGIS&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;There is a nice QGIS plugin from my colleague &lt;a href=&#34;https://www.geographie.hu-berlin.de/en/professorships/eol/people/labmembers/benjamin_jakimow&#34;&gt;Benjamin Jakimow&lt;/a&gt;, which can visualize quality bits in QGIS &lt;em&gt;on the fly&lt;/em&gt;. Quality bit inflating is not necessary anymore! The &lt;a href=&#34;http://plugins.qgis.org/plugins/BitFlagRenderer/&#34;&gt;Bit Flag Renderer plugin&lt;/a&gt; provides a new renderer for QGIS, with which any quality bit product can flexibly be visualized. The plugin includes predefined bit visualization rules for the &lt;strong&gt;FORCE&lt;/strong&gt; QAI bits. The default visualization matches the information and colors from the quicklook images described above):&lt;/p&gt;
 
 
@@ -811,7 +811,7 @@ interpolated. If there is no valid AOD estimation for the complete image, a fill
 
 &lt;/figure&gt;
 
-&lt;h2 id=&#34;quality-masking-in-higher-level-processing&#34;&gt;Quality masking in Higher Level Processing&lt;/h2&gt;
+&lt;h2 id=&#34;quality-masking-in-higher-level-processing&#34;&gt;&lt;strong&gt;Quality masking in Higher Level Processing&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;For follow-up processing and analyses, the usage of the QAI information is key, e.g. to exclude clouds. In all &lt;strong&gt;FORCE Higher Level routines&lt;/strong&gt;, quality masking is done on the fly, and the user has full control about what condition(s) to filter. The parameter &lt;code&gt;SCREEN_QAI&lt;/code&gt; provides a simple mechanism to mask out any combination of conditions using any of the following keywords: &lt;em&gt;NODATA, CLOUD_OPAQUE, CLOUD_BUFFER, CLOUD_CIRRUS, CLOUD_SHADOW, SNOW, WATER, AOD_FILL, AOD_HIGH, AOD_INT, SUBZERO, SATURATION, SUN_LOW, ILLUMIN_NONE, ILLUMIN_POOR, ILLUMIN_LOW, SLOPED, WVP_NONE&lt;/em&gt;. The default parametrization is to filter out nodata, clouds, cloud shadows, snow, saturated or subzero reflectance:&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;SCREEN_QAI = NODATA CLOUD_OPAQUE CLOUD_BUFFER CLOUD_CIRRUS CLOUD_SHADOW SNOW SUBZERO SATURATION&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Following images illustrate the effect of quality filtering on an average reflectance image generated by using all available observations over a 3 month period (using Spectral Temporal Metrics in the &lt;strong&gt;Time Series Analysis module&lt;/strong&gt;). The left image was produced by filtering nodata values only, the right image was produced using the default quality screening.&lt;/p&gt;
@@ -855,13 +855,13 @@ interpolated. If there is no valid AOD estimation for the complete image, a fill
       <pubDate>Mon, 16 Dec 2019 00:00:00 +0000</pubDate>
       <guid>https://davidfrantz.github.io/tutorials/force-wvdb/wvdb/</guid>
       <description>&lt;p&gt;&lt;em&gt;This tutorial uses FORCE v. 3.0&lt;/em&gt;&lt;/p&gt;
-&lt;h2 id=&#34;learning-objective&#34;&gt;Learning Objective&lt;/h2&gt;
+&lt;h2 id=&#34;learning-objective&#34;&gt;&lt;strong&gt;Learning Objective&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;This tutorial will show how to prepare the Water Vapor Database (WVDB) for the &lt;strong&gt;FORCE Level 2 Processing System (FORCE L2PS)&lt;/strong&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
+&lt;h2 id=&#34;background&#34;&gt;&lt;strong&gt;Background&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;During atmospheric correction, the effect of water vapor absorption can only be corrected if we know the amount of water vapor in the atmosphere.&lt;/p&gt;
 &lt;p&gt;If you are using Sentinel-2 data only, you can stop reading. Sentinel-2 is equipped with a water vapor channel, and thus, water wapor amount can be estimated from the images.&lt;/p&gt;
 &lt;p&gt;Landsat, however, doesn&#39;t have such a band. Therefore, we need to rely on external data, which needs to be precompiled into a water vapor database.&lt;/p&gt;
-&lt;h2 id=&#34;water-vapor-database&#34;&gt;Water Vapor Database&lt;/h2&gt;
+&lt;h2 id=&#34;water-vapor-database&#34;&gt;&lt;strong&gt;Water Vapor Database&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;The database holds water vapor values for the central coordinates of each WRS-2 frame. If available, day-specific values are used.&lt;/p&gt;
 &lt;p&gt;The database consists of one table for each day (&lt;code&gt;WVP_YYYY-MM-DD.txt&lt;/code&gt;)&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ls /data/Earth/global/wvp/wvdb/WVP_2010-07-*
@@ -916,7 +916,7 @@ interpolated. If there is no valid AOD estimation for the complete image, a fill
 -51.5357 72.1989 9999.000000 TBD
 -53.6847 70.9100 9999.000000 TBD
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;climatology&#34;&gt;Climatology&lt;/h2&gt;
+&lt;h2 id=&#34;climatology&#34;&gt;&lt;strong&gt;Climatology&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;If day-specific values are not available (no table is existing, or there is a fill value), a monthly long-term climatology is used instead. The climatology consists of one table for each month (&lt;code&gt;WVP_0000-MM-00.txt&lt;/code&gt;).&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ls /data/Earth/global/wvp/wvdb/WVP_0000*
 &lt;/code&gt;&lt;/pre&gt;
@@ -982,14 +982,14 @@ interpolated. If there is no valid AOD estimation for the complete image, a fill
 
 &lt;/figure&gt;
 
-&lt;h2 id=&#34;uncertainty-of-the-climatology&#34;&gt;Uncertainty of the climatology&lt;/h2&gt;
+&lt;h3 id=&#34;uncertainty-of-the-climatology&#34;&gt;&lt;strong&gt;Uncertainty of the climatology&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;The uncertainty of using the climatology was assessed in this paper:
 Frantz, D., Stellmes, M., &amp;amp; Hostert, P. (2019). A Global MODIS Water Vapor Database for the Operational Atmospheric Correction of Historic and Recent Landsat Imagery. Remote Sensing, 11, 257. &lt;a href=&#34;https://doi.org/10.3390/rs11030257&#34;&gt;https://doi.org/10.3390/rs11030257&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;prepare-the-wvdb&#34;&gt;Prepare the WVDB&lt;/h2&gt;
+&lt;h2 id=&#34;prepare-the-wvdb&#34;&gt;&lt;strong&gt;Prepare the WVDB&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;We generally use a WVDB generated from MODIS water vapor products (&lt;a href=&#34;https://modis.gsfc.nasa.gov/data/dataprod/mod05.php&#34;&gt;MOD05 and MYD05&lt;/a&gt;).&lt;/p&gt;
-&lt;h3 id=&#34;download-the-ready-to-go-global-wvdb&#34;&gt;Download the ready-to-go global WVDB&lt;/h3&gt;
+&lt;h3 id=&#34;download-the-ready-to-go-global-wvdb&#34;&gt;&lt;strong&gt;Download the ready-to-go global WVDB&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;You should start by downloading the pre-compiled WVDB with global coverage from &lt;a href=&#34;doi.pangaea.de/10.1594/PANGAEA.893109&#34;&gt;here&lt;/a&gt;. This saves you a lot of processing. This freely available dataset was generated with the &lt;strong&gt;FORCE WVDB&lt;/strong&gt; component, and is comprised of daily global water vapor data for February 2000 to July 2018 for each land-intersecting WRS-2 scene (13281 coordinates), as well as a monthly climatology that can be used if no daily value is available.&lt;/p&gt;
-&lt;h3 id=&#34;generate-the-wvdb-on-your-own&#34;&gt;Generate the WVDB on your own&lt;/h3&gt;
+&lt;h3 id=&#34;generate-the-wvdb-on-your-own&#34;&gt;&lt;strong&gt;Generate the WVDB on your own&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;We try to update this dataset in regular intervals. However, if you are in need of more up-to-date data, you can use the &lt;strong&gt;FORCE WVDB&lt;/strong&gt; component to generate/update these tables on your own.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Please note that you need access to the LAADS DAAC before using this tool (see last section on this page).&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;FORCE WVDB&lt;/strong&gt; needs a table with input coordinates (center coordinates of WRS-2 frames). The &lt;a href=&#34;doi.pangaea.de/10.1594/PANGAEA.893109&#34;&gt;pre-compiled dataset&lt;/a&gt; includes such a table. If you are not interested in global coverage, you can subset this file. The file should contain two columns separated by white space, and no header. The first column should give the longitude (X), the second column the latitude (Y) with coordinates in decimal degree (negative values for West/South). Any other column is ignored (in the example below, the WRS-2 Path/Row is in the third column).&lt;/p&gt;
@@ -1035,7 +1035,7 @@ Frantz, D., Stellmes, M., &amp;amp; Hostert, P. (2019). A Global MODIS Water Vap
 &lt;p&gt;Use GNU parallel to download an entire month in 31 parallel processes. This works by creating a list 1..31, which is distributed to 31 jobs. Each job calls &lt;strong&gt;FORCE WVDB&lt;/strong&gt; for one specific day in July 2010. The curly braces are replaced with the list value given to each process.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;seq -w 1 31 | parallel -j31 force-lut-modis /data/Earth/global/wvp/wvdb/wrs-2-land.coo /data/Earth/global/wvp/wvdb /data/Earth/global/wvp/geo /data/Earth/global/wvp/hdf 2010 07 {} 2010 07 {}
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;get-access-to-the-laads-daac-edit-13022020&#34;&gt;Get access to the LAADS DAAC (edit 13.02.2020)&lt;/h2&gt;
+&lt;h2 id=&#34;get-access-to-the-laads-daac-edit-13022020&#34;&gt;&lt;strong&gt;Get access to the LAADS DAAC&lt;/strong&gt; &lt;em&gt;(edit 13.02.2020)&lt;/em&gt;&lt;/h2&gt;
 &lt;p&gt;You need authentification to download data from the LAADS DAAC. This works by requesting an App Key from &lt;a href=&#34;https://ladsweb.modaps.eosdis.nasa.gov/tools-and-services/data-download-scripts/#requesting&#34;&gt;NASA Earthdata&lt;/a&gt;. You can make this key available to &lt;strong&gt;FORCE&lt;/strong&gt; by putting the character string in a file &lt;code&gt;.laads&lt;/code&gt; in your home directory. With this, you should be able to download data.&lt;/p&gt;
 </description>
     </item>

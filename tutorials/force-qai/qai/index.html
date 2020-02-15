@@ -579,17 +579,17 @@
 
     <div class="article-style">
       <p><em>This tutorial uses FORCE v. 3.0</em></p>
-<h2 id="learning-objective">Learning Objective</h2>
+<h2 id="learning-objective"><strong>Learning Objective</strong></h2>
 <p>This tutorial will explain what quality bits are, how quality bits are implemented in <strong>FORCE</strong>, how to visualize them, and how to deal with them in Higher Level Processing.</p>
-<h2 id="what-are-quality-bits">What are quality bits?</h2>
+<h2 id="what-are-quality-bits"><strong>What are quality bits?</strong></h2>
 <p><strong>FORCE L2PS</strong> provides a description of the quality of each pixel in the form of quality bits. This bit-packed information allows users to apply per pixel filters to all Level 2 products. The bits represent combinations of surface, atmospheric, and processing-related conditions that can affect the overall usefulness of a given pixel for a particular application. The success of any follow-up analysis depends on the rigorous usage of these information!
 A good explanation of quality bits is given by the <a href="https://www.usgs.gov/land-resources/nli/landsat/landsat-collection-1-level-1-quality-assessment-band?qt-science_support_page_related_con=0#qt-science_support_page_related_con">USGS</a>:</p>
 <blockquote>
 <p>The bit-packed information in the QA bands is a translation of binary strings. For example, the integer value “1” translates to the binary value “0001.” The binary value “0001” has 4 bits, written right to left as bits 0 (“1”), 1 (“0”), 2 (“0”), and 3 (“0”). Each of the bits 0-3 represents a condition that can affect the calculation of a physical value. [&hellip;] If the condition is true, the bit is set to “1,” or “0” if false.</p>
 </blockquote>
-<h2 id="sounds-complicated-why-not-use-a-scene-classification">Sounds complicated… Why not use a scene classification?</h2>
+<h2 id="sounds-complicated-why-not-use-a-scene-classification"><strong>Sounds complicated… Why not use a scene classification?</strong></h2>
 <p>Although interpretation of quality bits is not immediate to humans, they do possess quite some advantages. As opposed to a scene classification, quality bits allow the flagging of multiple conditions, e.g. ice clouds, cloud shadows on top of clouds or snow, high aerosol load and cloud, etc. If a 16bit Integer is used for storing the quality bits, up to 16 different conditions can co-exist in any possible combination. In a scene classification, only one condition can be stored, and the algorithm developer needs to make assumptions on the priority of the conditions; however these may differ from application to application. Quality bits allow to store all these information in a single  image. From a technical perspective, quality bits save disc space, and reduce the I/O load for follow-up analyses.</p>
-<h2 id="quality-bits-in-force">Quality bits in FORCE</h2>
+<h2 id="quality-bits-in-force"><strong>Quality bits in FORCE</strong></h2>
 <p>In <strong>FORCE</strong>, the quality bits are found in the Quality Assurance Information (<code>QAI</code>) product, which is an integral part of each Level 2 dataset, and is alway present next to the reflectance images (<code>BOA</code> or <code>TOA</code>).
 When generating Best Available Pixel (<code>BAP</code>) composites (Level 3), the bit flags of the selected observation are stored in the first band of the composite information (<code>INF</code>) product.
 Currently <strong>FORCE</strong> implements a 16bit QAI layer with 12 quality bits, some of them as double-bit words:</p>
@@ -840,7 +840,7 @@ interpolated. If there is no valid AOD estimation for the complete image, a fill
 <li>The water vapor flag indicates whether water vapor was estimated, or if the scene average was used to fill. Water vapor is not estimated over water and cloud shadow pixels. This flag only applies to Sentinel-2 images.</li>
 </ul>
 </blockquote>
-<h2 id="visualization">Visualization</h2>
+<h2 id="visualization"><strong>Visualization</strong></h2>
 <p>Visualizing the raw QAI image is pretty meaningless. Don’t be surprised that the integers do not resemble any of the patterns you would expect (e.g. cloud distribution).</p>
 
 
@@ -873,7 +873,7 @@ interpolated. If there is no valid AOD estimation for the complete image, a fill
 
 </figure>
 
-<h3 id="quicklooks">Quicklooks</h3>
+<h3 id="quicklooks"><strong>Quicklooks</strong></h3>
 <p>Since v. 3.0, <strong>FORCE L2PS</strong> can output quicklook images for each Level 2 dataset (<code>OVV</code> = overview product). These thumbnails serve as first impression of image quality. Some of the quality conditions are superimposed on the RGB images. Opaque clouds are shown in pink, cirrus clouds in red, cloud shadows in cyan, snow in yellow, saturated pixels in orange, and sub-zero reflectance values in a greenish tone. The overview for the QAI image from above is shown here:</p>
 
 
@@ -906,7 +906,7 @@ interpolated. If there is no valid AOD estimation for the complete image, a fill
 
 </figure>
 
-<h3 id="inflate-quality-bits">Inflate quality bits</h3>
+<h3 id="inflate-quality-bits"><strong>Inflate quality bits</strong></h3>
 <p>A full deciphering of all quality bits to individual quality masks can be generated with <strong>FORCE</strong>:</p>
 <pre><code class="language-bash">force-qai-inflate
 </code></pre>
@@ -946,7 +946,7 @@ interpolated. If there is no valid AOD estimation for the complete image, a fill
 
 </figure>
 
-<h3 id="quality-bit-rendering-in-qgis">Quality bit rendering in QGIS</h3>
+<h3 id="quality-bit-rendering-in-qgis"><strong>Quality bit rendering in QGIS</strong></h3>
 <p>There is a nice QGIS plugin from my colleague <a href="https://www.geographie.hu-berlin.de/en/professorships/eol/people/labmembers/benjamin_jakimow">Benjamin Jakimow</a>, which can visualize quality bits in QGIS <em>on the fly</em>. Quality bit inflating is not necessary anymore! The <a href="http://plugins.qgis.org/plugins/BitFlagRenderer/">Bit Flag Renderer plugin</a> provides a new renderer for QGIS, with which any quality bit product can flexibly be visualized. The plugin includes predefined bit visualization rules for the <strong>FORCE</strong> QAI bits. The default visualization matches the information and colors from the quicklook images described above):</p>
 
 
@@ -979,7 +979,7 @@ interpolated. If there is no valid AOD estimation for the complete image, a fill
 
 </figure>
 
-<h2 id="quality-masking-in-higher-level-processing">Quality masking in Higher Level Processing</h2>
+<h2 id="quality-masking-in-higher-level-processing"><strong>Quality masking in Higher Level Processing</strong></h2>
 <p>For follow-up processing and analyses, the usage of the QAI information is key, e.g. to exclude clouds. In all <strong>FORCE Higher Level routines</strong>, quality masking is done on the fly, and the user has full control about what condition(s) to filter. The parameter <code>SCREEN_QAI</code> provides a simple mechanism to mask out any combination of conditions using any of the following keywords: <em>NODATA, CLOUD_OPAQUE, CLOUD_BUFFER, CLOUD_CIRRUS, CLOUD_SHADOW, SNOW, WATER, AOD_FILL, AOD_HIGH, AOD_INT, SUBZERO, SATURATION, SUN_LOW, ILLUMIN_NONE, ILLUMIN_POOR, ILLUMIN_LOW, SLOPED, WVP_NONE</em>. The default parametrization is to filter out nodata, clouds, cloud shadows, snow, saturated or subzero reflectance:</p>
 <p><code>SCREEN_QAI = NODATA CLOUD_OPAQUE CLOUD_BUFFER CLOUD_CIRRUS CLOUD_SHADOW SNOW SUBZERO SATURATION</code></p>
 <p>Following images illustrate the effect of quality filtering on an average reflectance image generated by using all available observations over a 3 month period (using Spectral Temporal Metrics in the <strong>Time Series Analysis module</strong>). The left image was produced by filtering nodata values only, the right image was produced using the default quality screening.</p>

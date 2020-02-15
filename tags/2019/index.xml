@@ -18,13 +18,13 @@
       <pubDate>Mon, 16 Dec 2019 00:00:00 +0000</pubDate>
       <guid>https://davidfrantz.github.io/tutorials/force-wvdb/wvdb/</guid>
       <description>&lt;p&gt;&lt;em&gt;This tutorial uses FORCE v. 3.0&lt;/em&gt;&lt;/p&gt;
-&lt;h2 id=&#34;learning-objective&#34;&gt;Learning Objective&lt;/h2&gt;
+&lt;h2 id=&#34;learning-objective&#34;&gt;&lt;strong&gt;Learning Objective&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;This tutorial will show how to prepare the Water Vapor Database (WVDB) for the &lt;strong&gt;FORCE Level 2 Processing System (FORCE L2PS)&lt;/strong&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
+&lt;h2 id=&#34;background&#34;&gt;&lt;strong&gt;Background&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;During atmospheric correction, the effect of water vapor absorption can only be corrected if we know the amount of water vapor in the atmosphere.&lt;/p&gt;
 &lt;p&gt;If you are using Sentinel-2 data only, you can stop reading. Sentinel-2 is equipped with a water vapor channel, and thus, water wapor amount can be estimated from the images.&lt;/p&gt;
 &lt;p&gt;Landsat, however, doesn&#39;t have such a band. Therefore, we need to rely on external data, which needs to be precompiled into a water vapor database.&lt;/p&gt;
-&lt;h2 id=&#34;water-vapor-database&#34;&gt;Water Vapor Database&lt;/h2&gt;
+&lt;h2 id=&#34;water-vapor-database&#34;&gt;&lt;strong&gt;Water Vapor Database&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;The database holds water vapor values for the central coordinates of each WRS-2 frame. If available, day-specific values are used.&lt;/p&gt;
 &lt;p&gt;The database consists of one table for each day (&lt;code&gt;WVP_YYYY-MM-DD.txt&lt;/code&gt;)&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ls /data/Earth/global/wvp/wvdb/WVP_2010-07-*
@@ -79,7 +79,7 @@
 -51.5357 72.1989 9999.000000 TBD
 -53.6847 70.9100 9999.000000 TBD
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;climatology&#34;&gt;Climatology&lt;/h2&gt;
+&lt;h2 id=&#34;climatology&#34;&gt;&lt;strong&gt;Climatology&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;If day-specific values are not available (no table is existing, or there is a fill value), a monthly long-term climatology is used instead. The climatology consists of one table for each month (&lt;code&gt;WVP_0000-MM-00.txt&lt;/code&gt;).&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ls /data/Earth/global/wvp/wvdb/WVP_0000*
 &lt;/code&gt;&lt;/pre&gt;
@@ -145,14 +145,14 @@
 
 &lt;/figure&gt;
 
-&lt;h2 id=&#34;uncertainty-of-the-climatology&#34;&gt;Uncertainty of the climatology&lt;/h2&gt;
+&lt;h3 id=&#34;uncertainty-of-the-climatology&#34;&gt;&lt;strong&gt;Uncertainty of the climatology&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;The uncertainty of using the climatology was assessed in this paper:
 Frantz, D., Stellmes, M., &amp;amp; Hostert, P. (2019). A Global MODIS Water Vapor Database for the Operational Atmospheric Correction of Historic and Recent Landsat Imagery. Remote Sensing, 11, 257. &lt;a href=&#34;https://doi.org/10.3390/rs11030257&#34;&gt;https://doi.org/10.3390/rs11030257&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;prepare-the-wvdb&#34;&gt;Prepare the WVDB&lt;/h2&gt;
+&lt;h2 id=&#34;prepare-the-wvdb&#34;&gt;&lt;strong&gt;Prepare the WVDB&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;We generally use a WVDB generated from MODIS water vapor products (&lt;a href=&#34;https://modis.gsfc.nasa.gov/data/dataprod/mod05.php&#34;&gt;MOD05 and MYD05&lt;/a&gt;).&lt;/p&gt;
-&lt;h3 id=&#34;download-the-ready-to-go-global-wvdb&#34;&gt;Download the ready-to-go global WVDB&lt;/h3&gt;
+&lt;h3 id=&#34;download-the-ready-to-go-global-wvdb&#34;&gt;&lt;strong&gt;Download the ready-to-go global WVDB&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;You should start by downloading the pre-compiled WVDB with global coverage from &lt;a href=&#34;doi.pangaea.de/10.1594/PANGAEA.893109&#34;&gt;here&lt;/a&gt;. This saves you a lot of processing. This freely available dataset was generated with the &lt;strong&gt;FORCE WVDB&lt;/strong&gt; component, and is comprised of daily global water vapor data for February 2000 to July 2018 for each land-intersecting WRS-2 scene (13281 coordinates), as well as a monthly climatology that can be used if no daily value is available.&lt;/p&gt;
-&lt;h3 id=&#34;generate-the-wvdb-on-your-own&#34;&gt;Generate the WVDB on your own&lt;/h3&gt;
+&lt;h3 id=&#34;generate-the-wvdb-on-your-own&#34;&gt;&lt;strong&gt;Generate the WVDB on your own&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;We try to update this dataset in regular intervals. However, if you are in need of more up-to-date data, you can use the &lt;strong&gt;FORCE WVDB&lt;/strong&gt; component to generate/update these tables on your own.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Please note that you need access to the LAADS DAAC before using this tool (see last section on this page).&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;FORCE WVDB&lt;/strong&gt; needs a table with input coordinates (center coordinates of WRS-2 frames). The &lt;a href=&#34;doi.pangaea.de/10.1594/PANGAEA.893109&#34;&gt;pre-compiled dataset&lt;/a&gt; includes such a table. If you are not interested in global coverage, you can subset this file. The file should contain two columns separated by white space, and no header. The first column should give the longitude (X), the second column the latitude (Y) with coordinates in decimal degree (negative values for West/South). Any other column is ignored (in the example below, the WRS-2 Path/Row is in the third column).&lt;/p&gt;
@@ -198,7 +198,7 @@ Frantz, D., Stellmes, M., &amp;amp; Hostert, P. (2019). A Global MODIS Water Vap
 &lt;p&gt;Use GNU parallel to download an entire month in 31 parallel processes. This works by creating a list 1..31, which is distributed to 31 jobs. Each job calls &lt;strong&gt;FORCE WVDB&lt;/strong&gt; for one specific day in July 2010. The curly braces are replaced with the list value given to each process.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;seq -w 1 31 | parallel -j31 force-lut-modis /data/Earth/global/wvp/wvdb/wrs-2-land.coo /data/Earth/global/wvp/wvdb /data/Earth/global/wvp/geo /data/Earth/global/wvp/hdf 2010 07 {} 2010 07 {}
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;get-access-to-the-laads-daac-edit-13022020&#34;&gt;Get access to the LAADS DAAC (edit 13.02.2020)&lt;/h2&gt;
+&lt;h2 id=&#34;get-access-to-the-laads-daac-edit-13022020&#34;&gt;&lt;strong&gt;Get access to the LAADS DAAC&lt;/strong&gt; &lt;em&gt;(edit 13.02.2020)&lt;/em&gt;&lt;/h2&gt;
 &lt;p&gt;You need authentification to download data from the LAADS DAAC. This works by requesting an App Key from &lt;a href=&#34;https://ladsweb.modaps.eosdis.nasa.gov/tools-and-services/data-download-scripts/#requesting&#34;&gt;NASA Earthdata&lt;/a&gt;. You can make this key available to &lt;strong&gt;FORCE&lt;/strong&gt; by putting the character string in a file &lt;code&gt;.laads&lt;/code&gt; in your home directory. With this, you should be able to download data.&lt;/p&gt;
 </description>
     </item>

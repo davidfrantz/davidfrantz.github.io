@@ -580,9 +580,9 @@
     <div class="article-style">
       <p><em>This tutorial uses FORCE v. 3.0</em></p>
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-<h2 id="learning-objective">Learning Objective</h2>
+<h2 id="learning-objective"><strong>Learning Objective</strong></h2>
 <p>This tutorial explains what a datacube is, how it is parameterized, how you can find a POI, how to visualize the tiling grid, and how to conveniently display cubed data.</p>
-<h2 id="background">Background</h2>
+<h2 id="background"><strong>Background</strong></h2>
 <p>FORCE makes heavy use of the data cube concept. This includes two main points:</p>
 <ol>
 <li>All data are in the <strong>same coordinate system</strong>, which should be valid for a large regional extent (e.g. a continental projection).</li>
@@ -631,7 +631,7 @@
 <li>The data cube concept allows for non-redundant data storage and efficient data access, as well as simplified extraction of data and information.</li>
 </ul>
 </blockquote>
-<h2 id="how-to-define-the-datacube-parameters">How to define the datacube parameters?</h2>
+<h2 id="how-to-define-the-datacube-parameters"><strong>How to define the datacube parameters?</strong></h2>
 <p>When generating Level 2 ARD data with <strong>FORCE L2PS</strong>, you need to define the datacube in the parameter file. Empty parameter files can be generated with <code>force-parameter</code>.</p>
 <ul>
 <li><code>DO_REPROJ</code> indicates whether the images should be reprojected to the target coordinate system - or stay in their original UTM projection.</li>
@@ -643,7 +643,7 @@
 </ul>
 <p>Two default projection / grid systems are predefined in <strong>FORCE</strong>. They can be specified via the <code>PROJECTION</code> parameter instead of giving a WKT string. The predefined options have their own settings for <code>ORIGIN_LAT</code>, <code>ORIGIN_LON</code>, <code>TILE_SIZE</code>, and <code>BLOCK_SIZE</code>, thus the values given in the parameterfile will be ignored. <a href="https://cartography.tuwien.ac.at/eurocarto/wp-content/uploads/2015/09/3_6_ppt.pdf">EQUI7</a> consists of 7 Equi-Distant, continental projections with a tile size of 100km. <a href="https://measures-glance.github.io/glance-grids/">GLANCE7</a> consists of 7 Equal-Area, continental projections, with a tile size of 150km. One datacube will be generated for each continent.</p>
 <p><em>If you are not using the datacube options, i.e. <code>DO_REPROJ = FALSE</code> or <code>DO_TILE = FALSE</code>, you are running into a <strong>dead end</strong> for <strong>FORCE</strong>. In this case, the data cannot be further processed or analysed with any higher level FORCE functionality&hellip;</em></p>
-<h2 id="how-to-validate-the-projection">How to validate the projection?</h2>
+<h2 id="how-to-validate-the-projection"><strong>How to validate the projection?</strong></h2>
 <p>GDAL has a built-in projection conversion/validation tool:</p>
 <pre><code class="language-bash">gdalsrsinfo -v 'PROJCS[&quot;ETRS89 / LAEA Europe&quot;,GEOGCS[&quot;ETRS89&quot;,DATUM[&quot;European_Terrestrial_Reference_System_1989&quot;,SPHEROID[&quot;GRS 1980&quot;,6378137,298.257222101,AUTHORITY[&quot;EPSG&quot;,&quot;7019&quot;]],TOWGS84[0,0,0,0,0,0,0],AUTHORITY[&quot;EPSG&quot;,&quot;6258&quot;]],PRIMEM[&quot;Greenwich&quot;,0,AUTHORITY[&quot;EPSG&quot;,&quot;8901&quot;]],UNIT[&quot;degree&quot;,0.0174532925199433,AUTHORITY[&quot;EPSG&quot;,&quot;9122&quot;]],AUTHORITY[&quot;EPSG&quot;,&quot;4258&quot;]],PROJECTION[&quot;Lambert_Azimuthal_Equal_Area&quot;],PARAMETER[&quot;latitude_of_center&quot;,52],PARAMETER[&quot;longitude_of_center&quot;,10],PARAMETER[&quot;false_easting&quot;,4321000],PARAMETER[&quot;false_northing&quot;,3210000],UNIT[&quot;metre&quot;,1,AUTHORITY[&quot;EPSG&quot;,&quot;9001&quot;]],AUTHORITY[&quot;EPSG&quot;,&quot;3035&quot;]]'
 </code></pre>
@@ -673,7 +673,7 @@ PROJCS[&quot;ETRS89 / LAEA Europe&quot;,
         AUTHORITY[&quot;EPSG&quot;,&quot;9001&quot;]],
     AUTHORITY[&quot;EPSG&quot;,&quot;3035&quot;]]
 </code></pre>
-<h2 id="where-is-the-datacube-definition-stored">Where is the datacube definition stored?</h2>
+<h2 id="where-is-the-datacube-definition-stored"><strong>Where is the datacube definition stored?</strong></h2>
 <p>At the top level of the generated datacube, a text file will be generated (<code>datacube-definition.prj</code>). This file is key for all
 <strong>FORCE</strong> higher-level functionality. Each higher-level module will save a copy of this file in the corresponding output directory. If this file is not present, the tools will fail. Therefore, <strong>do not modify, move, or delete this file</strong>. This file contains the datacube definition as defined above.</p>
 <ol>
@@ -696,7 +696,7 @@ PROJCS[&quot;ETRS89 / LAEA Europe&quot;,
 3000.0000000
 </code></pre>
 <p><em>In some rare circumstances, you might need to generate this file on your own. However, this only applies if - for any reason - you skip the Level 2 processing (e.g. if you only want to work with external features, or trick <strong>FORCE</strong> into using external ARD datasets).</em></p>
-<h2 id="how-is-the-datacube-organized">How is the datacube organized?</h2>
+<h2 id="how-is-the-datacube-organized"><strong>How is the datacube organized?</strong></h2>
 <p>In practice, the tiles are directories in the file system, and each chip represents one file.</p>
 <pre><code class="language-bash">ls /data/Dagobah/edc/level2 | tail
 </code></pre>
@@ -749,7 +749,7 @@ ls /data/Dagobah/edc/level2/X*/20181225_LEVEL2_SEN2A_BOA.tif | tail
 /data/Dagobah/edc/level2/X0135_Y0098/20181225_LEVEL2_SEN2A_BOA.tif
 /data/Dagobah/edc/level2/X0135_Y0099/20181225_LEVEL2_SEN2A_BOA.tif
 </code></pre>
-<h2 id="i-processed-quite-some-data-there-are-many-many-tiles-how-do-i-find-a-poi">I processed quite some data. There are many, many tiles. How do I find a POI?</h2>
+<h2 id="i-processed-quite-some-data-there-are-many-many-tiles-how-do-i-find-a-poi"><strong>I processed quite some data. There are many, many tiles. How do I find a POI?</strong></h2>
 <p>Given any coordinate \((\lambda,\phi)\), the computation of the corresponding tile is pretty straightforward.</p>
 <ol>
 <li>Convert the coordinate \((\lambda,\phi)\) to the projected coordinate \((X,Y)\)</li>
@@ -808,7 +808,7 @@ ls /data/Dagobah/edc/level2/X*/20181225_LEVEL2_SEN2A_BOA.tif | tail
 
 </figure>
 
-<h2 id="how-to-visualize-data-for-a-large-extent-more-conveniently">How to visualize data for a large extent more conveniently?</h2>
+<h2 id="how-to-visualize-data-for-a-large-extent-more-conveniently"><strong>How to visualize data for a large extent more conveniently?</strong></h2>
 <p>Whenever you use a FORCE routine, cubed data will be generated. It is a bit cumbersome to display such data for a large extent without some further treatment. The following recipe can be used for any cubed <strong>FORCE</strong> data - irrespective of processing level.</p>
 <p>Lucky us, the <a href="https://gdal.org/drivers/raster/vrt.html">GDAL virtual format</a> represents an ideal concept for this. With VRTs, mosaicks of cubed data can be generated without physically copying the data. The VRT is basically a text file in xml-Format, which both holds (relative) links to the original data and the rules to assemble the mosaic on-the-fly.
 <strong>FORCE</strong> comes with a tool to generate such mosaics:</p>
