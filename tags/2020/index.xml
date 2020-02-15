@@ -92,6 +92,278 @@ cat /data/Dagobah/global/dem/srtm.txt
     </item>
     
     <item>
+      <title>FORCE Tutorial: Sentinel-2 Level 1C</title>
+      <link>https://davidfrantz.github.io/tutorials/force-level1-s2/sentinel-2-l1c/</link>
+      <pubDate>Sat, 15 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/tutorials/force-level1-s2/sentinel-2-l1c/</guid>
+      <description>&lt;p&gt;&lt;em&gt;This tutorial uses FORCE v. 3.0&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;learning-objective&#34;&gt;&lt;strong&gt;Learning Objective&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;This tutorial explains how to use the FORCE Level 1 Archiving Suite (FORCE L1AS) to download, organize, and maintain a clean and consistent Sentinel-2 Level 1 data pool, as well as corresponding data queues needed for the Level 2 processing.&lt;/p&gt;
+&lt;h2 id=&#34;overview&#34;&gt;&lt;strong&gt;Overview&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;ESA provides an application programming interface (API) for data query and automatic download (see &lt;a href=&#34;https://scihub.copernicus.eu/twiki/do/view/SciHubUserGuide/BatchScripting?redirectedfrom=SciHubUserGuide.8BatchScripting&#34;&gt;here&lt;/a&gt;). Based on some user-defined parameters (coordinates etc.) &lt;strong&gt;FORCE L1AS&lt;/strong&gt; pulls a metadata report from the Copernicus API Hub. Each hit is compared
+with the local data holdings you already downloaded. If a new file is sitting on ESA&#39;s end, the missing image is downloaded. A file queue is generated and updated accordingly - which is the main input to the &lt;strong&gt;FORCE Level 2 Processing System&lt;/strong&gt;.&lt;/p&gt;
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://davidfrantz.github.io/img/tutorial-l1sen2.png&#34; data-caption=&#34;Sentinel-2 downloader in the FORCE Level 1 Archiving Suite&#34;&gt;
+&lt;img src=&#34;https://davidfrantz.github.io/img/tutorial-l1sen2.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Sentinel-2 downloader in the &lt;strong&gt;FORCE Level 1 Archiving Suite&lt;/strong&gt;
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;setup&#34;&gt;&lt;strong&gt;Setup&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Now, the first step is to get access to ESA&#39;s data and services. For that, you need an account. If you don&#39;t have one, register &lt;a href=&#34;https://scihub.copernicus.eu/dhus/#/self-registration&#34;&gt;here&lt;/a&gt;. It&#39;s free.&lt;/p&gt;
+&lt;p&gt;Then, your credentials must be made available to &lt;strong&gt;FORCE L1AS&lt;/strong&gt; to be able to request and receive ESA data. On your machine, your login credentials must be placed in a hidden file &lt;code&gt;.scihub&lt;/code&gt; in your home directory. I advise to only give user reading rights to this file. The user name goes in the first line, the password in the second line. Please note that special characters might be problematic. Also note, if you generate this file from a Windows machine, the Windows EOL character will cause problems.&lt;/p&gt;
+&lt;h2 id=&#34;download-some-data&#34;&gt;&lt;strong&gt;Download some data&lt;/strong&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;instructions&#34;&gt;&lt;strong&gt;Instructions&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;After setting up your account, you should be able to download Sentinel-2 data via &lt;strong&gt;FORCE L1AS&lt;/strong&gt;. As with any other &lt;strong&gt;FORCE&lt;/strong&gt; program, you can display short usage instructions by executing the program without any parameters.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;force-level1-sentinel2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Usage: force-level1-sentinel2 Level-1-Datapool queue Boundingbox
+                   starttime endtime min-cc max-cc [dry]
+
+  Level-1-Datapool
+  An existing directory, your files will be stored here
+
+  queue
+  Downloaded files are appended to a file queue, which is needed for
+  the Level 2 processing. The file doesn&#39;t need to exist. If it exists,
+  new lines will be appended on successful ingestion
+
+  Boundingbox
+  The coordinates of your study area: &amp;quot;X1/Y1,X2/Y2,X3/Y3,...,X1/Y1&amp;quot;
+  The box must be closed (first X/Y = last X/Y). X/Y must be given as
+  decimal degrees with negative values for West and South coordinates.
+  Note that the box doesn&#39;t have to be square, you can specify a polygon
+
+  starttime endtime
+  Dates must be given as YYYY-MM-DD
+
+  min-cc max-cc
+  The cloud cover range must be given in %
+
+  dry will trigger a dry run that will only return the number of images
+  and their total data volume
+
+  Your ESA credentials must be placed in /home/frantzda/.scihub
+    First line: User name
+    Second line: Password, special characters might be problematic
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;dry-run&#34;&gt;&lt;strong&gt;Dry run&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Please note that &lt;strong&gt;FORCE&lt;/strong&gt; won&#39;t check that there is enough space on your hard disc. If you don&#39;t dare to download all data straight away, there is a dry run option implemented that only checks how much data would be downloaded with the parameters you provided. This is given by the optional &lt;code&gt;dry&lt;/code&gt; keyword at the end of the command line. The following query asks for all data in July 2019 with a maximum cloud coverage of 50%. The region of interest here is a rather small area in Zambia&#39;s Northwestern Province, depicting a large copper mine in the Miombo forest.&lt;/p&gt;
+&lt;p&gt;The single most frequent error here is the specification of the coordinates. If you don&#39;t receive any data for your study area, or end up somewhere else entirely, double check that the coordinates are given in the correct order.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;X = Longitude&lt;/li&gt;
+&lt;li&gt;Y = Latitude&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;force-level1-sentinel2 /data/Dagobah/S2L1C /data/Dagobah/S2L1C/zambia.txt &amp;quot;25.43/-12.46,25.94/-12.46,25.94/-11.98,25.39/-11.99,25.43/-12.46&amp;quot; 2019-07-01 2019-07-31 0 50 dry
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;2020-02-15_15:36:36 - Found 13 S2A/B files.
+13 Sentinel-2 A/B L1C files available
+5.19094 GB data volume available
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;download&#34;&gt;&lt;strong&gt;Download&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;The actual download is triggered by omitting the &lt;code&gt;dry&lt;/code&gt; option. &lt;strong&gt;FORCE L1AS&lt;/strong&gt; downloads all data that match the parameters provided - and which weren&#39;t downloaded before. Note that the program checks against the files on the disc (not the file queue). Each downloaded image is unzipped after the download. If both steps were successful, the image is appended to the file queue.&lt;/p&gt;
+&lt;p&gt;Do not wonder if FORCE tells you that it has found exactly 100 S2A/B files. The ESA API Hub only allows to retrieve metadata for 100 products. Thus, FORCE iterates through the pages until no more image can be retrieved.&lt;/p&gt;
+&lt;p&gt;Please note that download speed varies considerably..&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;force-level1-sentinel2 /data/Dagobah/S2L1C /data/Dagobah/S2L1C/zambia.txt &amp;quot;25.43/-12.46,25.94/-12.46,25.94/-11.98,25.39/-11.99,25.43/-12.46&amp;quot; 2019-07-01 2019-07-31 0 50
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;2020-02-15_15:37:03 - Found 13 S2A/B files.
+2020-02-15_15:37:03 - Found 13 S2A/B files on this page.
+/data/Dagobah 100%[===================&amp;gt;] 729.50M  32.4MB/s    in 23s     
+/data/Dagobah 100%[===================&amp;gt;] 271.14M  30.5MB/s    in 7.0s    
+/data/Dagobah 100%[===================&amp;gt;] 742.98M  29.8MB/s    in 24s     
+/data/Dagobah 100%[===================&amp;gt;] 266.53M  28.1MB/s    in 11s     
+/data/Dagobah 100%[===================&amp;gt;] 732.80M  30.7MB/s    in 20s     
+/data/Dagobah 100%[===================&amp;gt;] 224.77M  69.2MB/s    in 3.2s    
+/data/Dagobah 100%[===================&amp;gt;] 730.90M  81.6MB/s    in 9.6s    
+/data/Dagobah 100%[===================&amp;gt;] 268.45M  42.5MB/s    in 7.9s    
+/data/Dagobah 100%[===================&amp;gt;] 704.98M  45.8MB/s    in 21s     
+/data/Dagobah 100%[===================&amp;gt;] 258.02M  47.5MB/s    in 5.9s    
+/data/Dagobah 100%[===================&amp;gt;] 754.09M  61.7MB/s    in 13s     
+/data/Dagobah 100%[===================&amp;gt;] 259.80M  66.5MB/s    in 4.3s    
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In the Level 1 Datapool, there is now the file queue, as well as a directory for each MGRS tile that was retrieved.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ls /data/Dagobah/S2L1C
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;T35LLG  zambia.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In the directories, there are the unzipped images.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ls /data/Dagobah/S2L1C/T*
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;S2A_MSIL1C_20190707T080611_N0207_R078_T35LLG_20190707T100942.SAFE
+S2A_MSIL1C_20190710T081611_N0208_R121_T35LLG_20190710T103430.SAFE
+S2A_MSIL1C_20190717T080611_N0208_R078_T35LLG_20190717T110132.SAFE
+S2A_MSIL1C_20190720T081611_N0208_R121_T35LLG_20190720T134157.SAFE
+S2A_MSIL1C_20190727T080611_N0208_R078_T35LLG_20190727T115444.SAFE
+S2A_MSIL1C_20190730T081611_N0208_R121_T35LLG_20190730T103748.SAFE
+S2B_MSIL1C_20190702T080619_N0207_R078_T35LLG_20190702T115117.SAFE
+S2B_MSIL1C_20190705T081609_N0207_R121_T35LLG_20190705T110801.SAFE
+S2B_MSIL1C_20190712T080619_N0208_R078_T35LLG_20190712T110120.SAFE
+S2B_MSIL1C_20190715T081609_N0208_R121_T35LLG_20190715T121541.SAFE
+S2B_MSIL1C_20190722T080619_N0208_R078_T35LLG_20190722T110547.SAFE
+S2B_MSIL1C_20190725T081609_N0208_R121_T35LLG_20190725T120407.SAFE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Note that for Sentinel-2, the compression is realized in the image data, not in the container, thus unzipping the data does not inflate the file size (much).&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;du -h -d 1 /data/Dagobah/S2L1C
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;5.9G	/data/Dagobah/S2L1C/T35LLG
+5.9G	/data/Dagobah/S2L1C
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The file queue is holding the full filepaths to all ingested images. This is the main input to &lt;strong&gt;force-level2&lt;/strong&gt;. Each image is in a separate line. A processing-state flag determines if the image is enqueued for Level 2 processing - or was already processed and will be ignored next time. This flag is either &lt;code&gt;QUEUED&lt;/code&gt; or &lt;code&gt;DONE&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Note that the filepath of the granule ID is the given in the file queue. This has &lt;em&gt;historic&lt;/em&gt; reasons as the initial Sentinel-2 products distributed by ESA contained severel granules within a product.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cat /data/Dagobah/S2L1C/zambia.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;/data/Dagobah/S2L1C/T35LLG/S2A_MSIL1C_20190730T081611_N0208_R121_T35LLG_20190730T103748.SAFE/GRANULE/L1C_T35LLG_A021425_20190730T083653 QUEUED
+/data/Dagobah/S2L1C/T35LLG/S2A_MSIL1C_20190727T080611_N0208_R078_T35LLG_20190727T115444.SAFE/GRANULE/L1C_T35LLG_A021382_20190727T082120 QUEUED
+/data/Dagobah/S2L1C/T35LLG/S2B_MSIL1C_20190725T081609_N0208_R121_T35LLG_20190725T120407.SAFE/GRANULE/L1C_T35LLG_A012445_20190725T083254 QUEUED
+/data/Dagobah/S2L1C/T35LLG/S2B_MSIL1C_20190722T080619_N0208_R078_T35LLG_20190722T110547.SAFE/GRANULE/L1C_T35LLG_A012402_20190722T082743 QUEUED
+/data/Dagobah/S2L1C/T35LLG/S2A_MSIL1C_20190720T081611_N0208_R121_T35LLG_20190720T134157.SAFE/GRANULE/L1C_T35LLG_A021282_20190720T084228 QUEUED
+/data/Dagobah/S2L1C/T35LLG/S2A_MSIL1C_20190717T080611_N0208_R078_T35LLG_20190717T110132.SAFE/GRANULE/L1C_T35LLG_A021239_20190717T083340 QUEUED
+/data/Dagobah/S2L1C/T35LLG/S2B_MSIL1C_20190715T081609_N0208_R121_T35LLG_20190715T121541.SAFE/GRANULE/L1C_T35LLG_A012302_20190715T083620 QUEUED
+/data/Dagobah/S2L1C/T35LLG/S2B_MSIL1C_20190712T080619_N0208_R078_T35LLG_20190712T110120.SAFE/GRANULE/L1C_T35LLG_A012259_20190712T083051 QUEUED
+/data/Dagobah/S2L1C/T35LLG/S2A_MSIL1C_20190710T081611_N0208_R121_T35LLG_20190710T103430.SAFE/GRANULE/L1C_T35LLG_A021139_20190710T084315 QUEUED
+/data/Dagobah/S2L1C/T35LLG/S2A_MSIL1C_20190707T080611_N0207_R078_T35LLG_20190707T100942.SAFE/GRANULE/L1C_T35LLG_A021096_20190707T082728 QUEUED
+/data/Dagobah/S2L1C/T35LLG/S2B_MSIL1C_20190705T081609_N0207_R121_T35LLG_20190705T110801.SAFE/GRANULE/L1C_T35LLG_A012159_20190705T083413 QUEUED
+/data/Dagobah/S2L1C/T35LLG/S2B_MSIL1C_20190702T080619_N0207_R078_T35LLG_20190702T115117.SAFE/GRANULE/L1C_T35LLG_A012116_20190702T083253 QUEUED
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;download-some-more-data&#34;&gt;&lt;strong&gt;Download some more data&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Downloading more data is easy. You can use the same datapool, and the same file queue for this. Images are only downloaded if they weren&#39;t downloaded yet. Thus, you can e.g. change the boundingbox, time frame or cloud coverage, and only download data that was not covered by the previous run. In the following example, the Eastern X-Coordinates were increased by 1 degree.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;force-level1-sentinel2 /data/Dagobah/S2L1C /data/Dagobah/S2L1C/zambia.txt &amp;quot;25.43/-12.46,26.94/-12.46,26.94/-11.98,25.39/-11.99,25.43/-12.46&amp;quot; 2019-07-01 2019-07-31 0 50
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;2020-02-15_15:43:57 - Found 26 S2A/B files.
+2020-02-15_15:43:57 - Found 26 S2A/B files on this page.
+/data/Dagobah 100%[===================&amp;gt;]  54.08M  43.4MB/s    in 1.2s    
+/data/Dagobah 100%[===================&amp;gt;] 794.27M  73.7MB/s    in 11s     
+/data/Dagobah 100%[===================&amp;gt;]  57.66M  61.0MB/s    in 0.9s    
+/data/Dagobah 100%[===================&amp;gt;] 782.06M  80.1MB/s    in 10s     
+/data/Dagobah 100%[===================&amp;gt;]  49.95M  52.0MB/s    in 1.0s    
+/data/Dagobah 100%[===================&amp;gt;] 555.54M  85.9MB/s    in 6.8s    
+/data/Dagobah 100%[===================&amp;gt;]  52.83M  57.7MB/s    in 0.9s    
+/data/Dagobah 100%[===================&amp;gt;] 788.67M  79.2MB/s    in 12s     
+/data/Dagobah 100%[===================&amp;gt;]  48.47M  52.4MB/s    in 0.9s    
+/data/Dagobah 100%[===================&amp;gt;] 779.62M  81.5MB/s    in 9.4s    
+/data/Dagobah 100%[===================&amp;gt;]  58.56M  50.9MB/s    in 1.1s    
+/data/Dagobah 100%[===================&amp;gt;] 781.21M  54.6MB/s    in 17s     
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;From the 26 available images, only 13 were retrieved, 13 were already downloaded before. There are now several directories with different MGRS tiles in your Level 1 Datapool.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ls /data/Dagobah/S2L1C/T*
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;/data/Dagobah/S2L1C/T35LLG:
+S2A_MSIL1C_20190707T080611_N0207_R078_T35LLG_20190707T100942.SAFE
+S2A_MSIL1C_20190710T081611_N0208_R121_T35LLG_20190710T103430.SAFE
+S2A_MSIL1C_20190717T080611_N0208_R078_T35LLG_20190717T110132.SAFE
+S2A_MSIL1C_20190720T081611_N0208_R121_T35LLG_20190720T134157.SAFE
+S2A_MSIL1C_20190727T080611_N0208_R078_T35LLG_20190727T115444.SAFE
+S2A_MSIL1C_20190730T081611_N0208_R121_T35LLG_20190730T103748.SAFE
+S2B_MSIL1C_20190702T080619_N0207_R078_T35LLG_20190702T115117.SAFE
+S2B_MSIL1C_20190705T081609_N0207_R121_T35LLG_20190705T110801.SAFE
+S2B_MSIL1C_20190712T080619_N0208_R078_T35LLG_20190712T110120.SAFE
+S2B_MSIL1C_20190715T081609_N0208_R121_T35LLG_20190715T121541.SAFE
+S2B_MSIL1C_20190722T080619_N0208_R078_T35LLG_20190722T110547.SAFE
+S2B_MSIL1C_20190725T081609_N0208_R121_T35LLG_20190725T120407.SAFE
+
+/data/Dagobah/S2L1C/T35LMG:
+S2A_MSIL1C_20190707T080611_N0207_R078_T35LMG_20190707T100942.SAFE
+S2A_MSIL1C_20190710T081611_N0208_R121_T35LMG_20190710T103430.SAFE
+S2A_MSIL1C_20190717T080611_N0208_R078_T35LMG_20190717T110132.SAFE
+S2A_MSIL1C_20190720T081611_N0208_R121_T35LMG_20190720T134157.SAFE
+S2A_MSIL1C_20190727T080611_N0208_R078_T35LMG_20190727T115444.SAFE
+S2A_MSIL1C_20190730T081611_N0208_R121_T35LMG_20190730T103748.SAFE
+S2B_MSIL1C_20190702T080619_N0207_R078_T35LMG_20190702T115117.SAFE
+S2B_MSIL1C_20190705T081609_N0207_R121_T35LMG_20190705T110801.SAFE
+S2B_MSIL1C_20190712T080619_N0208_R078_T35LMG_20190712T110120.SAFE
+S2B_MSIL1C_20190715T081609_N0208_R121_T35LMG_20190715T121541.SAFE
+S2B_MSIL1C_20190722T080619_N0208_R078_T35LMG_20190722T110547.SAFE
+S2B_MSIL1C_20190725T081609_N0208_R121_T35LMG_20190725T120407.SAFE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The new files were appended to the file queue, too.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cat /data/Dagobah/S2L1C/zambia.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;/data/Dagobah/S2L1C/T35LLG/S2A_MSIL1C_20190730T081611_N0208_R121_T35LLG_20190730T103748.SAFE/GRANULE/L1C_T35LLG_A021425_20190730T083653 QUEUED
+/data/Dagobah/S2L1C/T35LLG/S2A_MSIL1C_20190727T080611_N0208_R078_T35LLG_20190727T115444.SAFE/GRANULE/L1C_T35LLG_A021382_20190727T082120 QUEUED
+/data/Dagobah/S2L1C/T35LLG/S2B_MSIL1C_20190725T081609_N0208_R121_T35LLG_20190725T120407.SAFE/GRANULE/L1C_T35LLG_A012445_20190725T083254 QUEUED
+/data/Dagobah/S2L1C/T35LLG/S2B_MSIL1C_20190722T080619_N0208_R078_T35LLG_20190722T110547.SAFE/GRANULE/L1C_T35LLG_A012402_20190722T082743 QUEUED
+/data/Dagobah/S2L1C/T35LLG/S2A_MSIL1C_20190720T081611_N0208_R121_T35LLG_20190720T134157.SAFE/GRANULE/L1C_T35LLG_A021282_20190720T084228 QUEUED
+/data/Dagobah/S2L1C/T35LLG/S2A_MSIL1C_20190717T080611_N0208_R078_T35LLG_20190717T110132.SAFE/GRANULE/L1C_T35LLG_A021239_20190717T083340 QUEUED
+/data/Dagobah/S2L1C/T35LLG/S2B_MSIL1C_20190715T081609_N0208_R121_T35LLG_20190715T121541.SAFE/GRANULE/L1C_T35LLG_A012302_20190715T083620 QUEUED
+/data/Dagobah/S2L1C/T35LLG/S2B_MSIL1C_20190712T080619_N0208_R078_T35LLG_20190712T110120.SAFE/GRANULE/L1C_T35LLG_A012259_20190712T083051 QUEUED
+/data/Dagobah/S2L1C/T35LLG/S2A_MSIL1C_20190710T081611_N0208_R121_T35LLG_20190710T103430.SAFE/GRANULE/L1C_T35LLG_A021139_20190710T084315 QUEUED
+/data/Dagobah/S2L1C/T35LLG/S2A_MSIL1C_20190707T080611_N0207_R078_T35LLG_20190707T100942.SAFE/GRANULE/L1C_T35LLG_A021096_20190707T082728 QUEUED
+/data/Dagobah/S2L1C/T35LLG/S2B_MSIL1C_20190705T081609_N0207_R121_T35LLG_20190705T110801.SAFE/GRANULE/L1C_T35LLG_A012159_20190705T083413 QUEUED
+/data/Dagobah/S2L1C/T35LLG/S2B_MSIL1C_20190702T080619_N0207_R078_T35LLG_20190702T115117.SAFE/GRANULE/L1C_T35LLG_A012116_20190702T083253 QUEUED
+/data/Dagobah/S2L1C/T35LMG/S2A_MSIL1C_20190730T081611_N0208_R121_T35LMG_20190730T103748.SAFE/GRANULE/L1C_T35LMG_A021425_20190730T083653 QUEUED
+/data/Dagobah/S2L1C/T35LMG/S2A_MSIL1C_20190727T080611_N0208_R078_T35LMG_20190727T115444.SAFE/GRANULE/L1C_T35LMG_A021382_20190727T082120 QUEUED
+/data/Dagobah/S2L1C/T35LMG/S2B_MSIL1C_20190725T081609_N0208_R121_T35LMG_20190725T120407.SAFE/GRANULE/L1C_T35LMG_A012445_20190725T083254 QUEUED
+/data/Dagobah/S2L1C/T35LMG/S2B_MSIL1C_20190722T080619_N0208_R078_T35LMG_20190722T110547.SAFE/GRANULE/L1C_T35LMG_A012402_20190722T082743 QUEUED
+/data/Dagobah/S2L1C/T35LMG/S2A_MSIL1C_20190720T081611_N0208_R121_T35LMG_20190720T134157.SAFE/GRANULE/L1C_T35LMG_A021282_20190720T084228 QUEUED
+/data/Dagobah/S2L1C/T35LMG/S2A_MSIL1C_20190717T080611_N0208_R078_T35LMG_20190717T110132.SAFE/GRANULE/L1C_T35LMG_A021239_20190717T083340 QUEUED
+/data/Dagobah/S2L1C/T35LMG/S2B_MSIL1C_20190715T081609_N0208_R121_T35LMG_20190715T121541.SAFE/GRANULE/L1C_T35LMG_A012302_20190715T083620 QUEUED
+/data/Dagobah/S2L1C/T35LMG/S2B_MSIL1C_20190712T080619_N0208_R078_T35LMG_20190712T110120.SAFE/GRANULE/L1C_T35LMG_A012259_20190712T083051 QUEUED
+/data/Dagobah/S2L1C/T35LMG/S2A_MSIL1C_20190710T081611_N0208_R121_T35LMG_20190710T103430.SAFE/GRANULE/L1C_T35LMG_A021139_20190710T084315 QUEUED
+/data/Dagobah/S2L1C/T35LMG/S2A_MSIL1C_20190707T080611_N0207_R078_T35LMG_20190707T100942.SAFE/GRANULE/L1C_T35LMG_A021096_20190707T082728 QUEUED
+/data/Dagobah/S2L1C/T35LMG/S2B_MSIL1C_20190705T081609_N0207_R121_T35LMG_20190705T110801.SAFE/GRANULE/L1C_T35LMG_A012159_20190705T083413 QUEUED
+/data/Dagobah/S2L1C/T35LMG/S2B_MSIL1C_20190702T080619_N0207_R078_T35LMG_20190702T115117.SAFE/GRANULE/L1C_T35LMG_A012116_20190702T083253 QUEUED
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;setting-up-a-scheduled-download&#34;&gt;&lt;strong&gt;Setting up a scheduled download&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;The same logic can be used to set up a scheduler for downloading your data at regular intervals. For example, a daily cronjob can be installed to retrieve all data covering your study area. A cronjob is installed by adding lines to the cronjob file.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;crontab -e
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If your FORCE installation is not in a standard search path, you need to define the PATH variable, and include the path where FORCE is installed. Then, use the command line from above and schedule it with cron notation. Following line will start the download at 3:00 AM each day. &lt;em&gt;Replace YOURNAME with your user name.&lt;/em&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;PATH=/home/YOURNAME/bin:/usr/bin:/bin:/usr/local/bin
+0 3 * * * force-level1-sentinel2 /data/Dagobah/S2L1C /data/Dagobah/S2L1C/zambia.txt &amp;quot;25.43/-12.46,26.94/-12.46,26.94/-11.98,25.39/-11.99,25.43/-12.46&amp;quot; 2018-07-01 2018-07-31 0 50
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;long-term-archive&#34;&gt;&lt;strong&gt;Long Term Archive&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;In September 2018, ESA has activated the Long Term Archive (LTA) to roll out old (and potentially infrequently used) data products from the online storage system to offline storage. For details, see &lt;a href=&#34;https://scihub.copernicus.eu/userguide/LongTermArchive&#34;&gt;here&lt;/a&gt;. As of now (the following numbers might change in the future), the last year of data shall stay online, and is immediately ready for download. Offline data may be pulled from offline to online storage upon request. The data retrieval shall happen within 24h and the products shall stay online for 3 days. If they were not downloaded within this time period, they need to be pulled again. A user quota is implemented to prevent users from pulling the entire archive - unfortunately this quota is ridicously low, 1 request per hour per user&amp;hellip; Let&#39;s all hope it doesn&#39;t stay this way :/&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;FORCE &amp;gt;= 3.0&lt;/strong&gt; is able to handle LTA data. Previous &lt;strong&gt;FORCE&lt;/strong&gt; versions crash when trying to download offline products.
+&lt;strong&gt;FORCE L1AS&lt;/strong&gt; determines whether a product is online or offline.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If online, the image is downloaded as described above.&lt;/li&gt;
+&lt;li&gt;If offline, a pull request from offline to online storage is sent. ESA hasn&#39;t implemented any callback for this retrieval, thus &lt;strong&gt;FORCE L1AS&lt;/strong&gt; will simply send pull requests for each requested offline image, probably download some available online images, and then exit. &lt;strong&gt;FORCE L1AS&lt;/strong&gt; needs to be run again to retrieve the restored data. To this end, it comes in handy to set up a download scheduler as desribed above.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;force-level1-sentinel2 /data/Dagobah/S2L1C /data/Dagobah/S2L1C/zambia.txt &amp;quot;25.43/-12.46,25.94/-12.46,25.94/-11.98,25.39/-11.99,25.43/-12.46&amp;quot; 2018-07-01 2018-07-31 0 50
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;2020-02-15_15:49:18 - Found 12 S2A/B files.
+2020-02-15_15:49:18 - Found 12 S2A/B files on this page.
+S2B_MSIL1C_20180730T081559_N0206_R121_T35LLG_20180730T141111.SAFE: Pulling from Long Term Archive. Rerun this program after a while
+S2B_MSIL1C_20180727T080609_N0206_R078_T35LLG_20180727T121446.SAFE: Pulling from Long Term Archive. Rerun this program after a while
+S2A_MSIL1C_20180725T081601_N0206_R121_T35LLG_20180725T121615.SAFE: Pulling from Long Term Archive. Rerun this program after a while
+S2A_MSIL1C_20180722T080611_N0206_R078_T35LLG_20180722T115605.SAFE: Pulling from Long Term Archive. Rerun this program after a while
+S2B_MSIL1C_20180720T081559_N0206_R121_T35LLG_20180720T121127.SAFE: Pulling from Long Term Archive. Rerun this program after a while
+S2B_MSIL1C_20180717T080609_N0206_R078_T35LLG_20180717T120239.SAFE: Pulling from Long Term Archive. Rerun this program after a while
+S2A_MSIL1C_20180715T081601_N0206_R121_T35LLG_20180715T103432.SAFE: Pulling from Long Term Archive. Rerun this program after a while
+S2A_MSIL1C_20180712T080611_N0206_R078_T35LLG_20180712T102334.SAFE: Pulling from Long Term Archive. Rerun this program after a while
+S2B_MSIL1C_20180710T081559_N0206_R121_T35LLG_20180710T120813.SAFE: Pulling from Long Term Archive. Rerun this program after a while
+S2B_MSIL1C_20180707T080609_N0206_R078_T35LLG_20180707T115209.SAFE: Pulling from Long Term Archive. Rerun this program after a while
+S2A_MSIL1C_20180705T081601_N0206_R121_T35LLG_20180705T103349.SAFE: Pulling from Long Term Archive. Rerun this program after a while
+S2A_MSIL1C_20180702T080611_N0206_R078_T35LLG_20180702T115230.SAFE: Pulling from Long Term Archive. Rerun this program after a while
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>FORCE Tutorial: The Datacube</title>
       <link>https://davidfrantz.github.io/tutorials/force-datacube/datacube/</link>
       <pubDate>Sun, 09 Feb 2020 00:00:00 +0000</pubDate>

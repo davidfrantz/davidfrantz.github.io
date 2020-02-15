@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="David Frantz">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="This tutorial explains how to use the FORCE Level 1 Archiving Suite (FORCE L1AS) to download, organize, and maintain a clean and consistent Sentinel-2 Level 1 data pool, as well as corresponding data queues needed for the Level 2 processing.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://davidfrantz.github.io/tutorials/force-level1-s2/sentinel-2-l1c/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#5C9DE3">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon-32.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://davidfrantz.github.io/tutorials/force-level1-s2/sentinel-2-l1c/">
+
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="DAVID FRANTZ">
+  <meta property="og:url" content="https://davidfrantz.github.io/tutorials/force-level1-s2/sentinel-2-l1c/">
+  <meta property="og:title" content="FORCE Tutorial: Sentinel-2 Level 1C | DAVID FRANTZ">
+  <meta property="og:description" content="This tutorial explains how to use the FORCE Level 1 Archiving Suite (FORCE L1AS) to download, organize, and maintain a clean and consistent Sentinel-2 Level 1 data pool, as well as corresponding data queues needed for the Level 2 processing."><meta property="og:image" content="https://davidfrantz.github.io/img/icon-192.png">
+  <meta property="twitter:image" content="https://davidfrantz.github.io/img/icon-192.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2020-02-15T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2020-02-15T00:00:00&#43;00:00">
+  
+
+  
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>FORCE Tutorial: Sentinel-2 Level 1C | DAVID FRANTZ</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">DAVID FRANTZ</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">DAVID FRANTZ</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-center" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#experience"><span>CV</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#publications"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#presentations"><span>Presentations</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#data"><span>Data</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#software"><span>Software</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#tutorials"><span>Tutorials</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item">
+        <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>FORCE Tutorial: Sentinel-2 Level 1C</h1>
+
+  
+  <p class="page-subtitle">Download and manage Sentinel-2 Level 1C data</p>
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Feb 15, 2020
+  </span>
+  
+
+  
+
+  
+
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <p><em>This tutorial uses FORCE v. 3.0</em></p>
+<h2 id="learning-objective"><strong>Learning Objective</strong></h2>
+<p>This tutorial explains how to use the FORCE Level 1 Archiving Suite (FORCE L1AS) to download, organize, and maintain a clean and consistent Sentinel-2 Level 1 data pool, as well as corresponding data queues needed for the Level 2 processing.</p>
+<h2 id="overview"><strong>Overview</strong></h2>
+<p>ESA provides an application programming interface (API) for data query and automatic download (see <a href="https://scihub.copernicus.eu/twiki/do/view/SciHubUserGuide/BatchScripting?redirectedfrom=SciHubUserGuide.8BatchScripting">here</a>). Based on some user-defined parameters (coordinates etc.) <strong>FORCE L1AS</strong> pulls a metadata report from the Copernicus API Hub. Each hit is compared
+with the local data holdings you already downloaded. If a new file is sitting on ESA's end, the missing image is downloaded. A file queue is generated and updated accordingly - which is the main input to the <strong>FORCE Level 2 Processing System</strong>.</p>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<figure>
+
+
+  <a data-fancybox="" href="/img/tutorial-l1sen2.png" data-caption="Sentinel-2 downloader in the FORCE Level 1 Archiving Suite">
+<img src="/img/tutorial-l1sen2.png" alt="" ></a>
+
+
+  
+  
+  <figcaption>
+    Sentinel-2 downloader in the <strong>FORCE Level 1 Archiving Suite</strong>
+  </figcaption>
+
+
+</figure>
+
+<h2 id="setup"><strong>Setup</strong></h2>
+<p>Now, the first step is to get access to ESA's data and services. For that, you need an account. If you don't have one, register <a href="https://scihub.copernicus.eu/dhus/#/self-registration">here</a>. It's free.</p>
+<p>Then, your credentials must be made available to <strong>FORCE L1AS</strong> to be able to request and receive ESA data. On your machine, your login credentials must be placed in a hidden file <code>.scihub</code> in your home directory. I advise to only give user reading rights to this file. The user name goes in the first line, the password in the second line. Please note that special characters might be problematic. Also note, if you generate this file from a Windows machine, the Windows EOL character will cause problems.</p>
+<h2 id="download-some-data"><strong>Download some data</strong></h2>
+<h3 id="instructions"><strong>Instructions</strong></h3>
+<p>After setting up your account, you should be able to download Sentinel-2 data via <strong>FORCE L1AS</strong>. As with any other <strong>FORCE</strong> program, you can display short usage instructions by executing the program without any parameters.</p>
+<pre><code class="language-bash">force-level1-sentinel2
+</code></pre>
+<pre><code>Usage: force-level1-sentinel2 Level-1-Datapool queue Boundingbox
+                   starttime endtime min-cc max-cc [dry]
+
+  Level-1-Datapool
+  An existing directory, your files will be stored here
+
+  queue
+  Downloaded files are appended to a file queue, which is needed for
+  the Level 2 processing. The file doesn't need to exist. If it exists,
+  new lines will be appended on successful ingestion
+
+  Boundingbox
+  The coordinates of your study area: &quot;X1/Y1,X2/Y2,X3/Y3,...,X1/Y1&quot;
+  The box must be closed (first X/Y = last X/Y). X/Y must be given as
+  decimal degrees with negative values for West and South coordinates.
+  Note that the box doesn't have to be square, you can specify a polygon
+
+  starttime endtime
+  Dates must be given as YYYY-MM-DD
+
+  min-cc max-cc
+  The cloud cover range must be given in %
+
+  dry will trigger a dry run that will only return the number of images
+  and their total data volume
+
+  Your ESA credentials must be placed in /home/frantzda/.scihub
+    First line: User name
+    Second line: Password, special characters might be problematic
+</code></pre>
+<h3 id="dry-run"><strong>Dry run</strong></h3>
+<p>Please note that <strong>FORCE</strong> won't check that there is enough space on your hard disc. If you don't dare to download all data straight away, there is a dry run option implemented that only checks how much data would be downloaded with the parameters you provided. This is given by the optional <code>dry</code> keyword at the end of the command line. The following query asks for all data in July 2019 with a maximum cloud coverage of 50%. The region of interest here is a rather small area in Zambia's Northwestern Province, depicting a large copper mine in the Miombo forest.</p>
+<p>The single most frequent error here is the specification of the coordinates. If you don't receive any data for your study area, or end up somewhere else entirely, double check that the coordinates are given in the correct order.</p>
+<ul>
+<li>X = Longitude</li>
+<li>Y = Latitude</li>
+</ul>
+<pre><code class="language-bash">force-level1-sentinel2 /data/Dagobah/S2L1C /data/Dagobah/S2L1C/zambia.txt &quot;25.43/-12.46,25.94/-12.46,25.94/-11.98,25.39/-11.99,25.43/-12.46&quot; 2019-07-01 2019-07-31 0 50 dry
+</code></pre>
+<pre><code>2020-02-15_15:36:36 - Found 13 S2A/B files.
+13 Sentinel-2 A/B L1C files available
+5.19094 GB data volume available
+</code></pre>
+<h3 id="download"><strong>Download</strong></h3>
+<p>The actual download is triggered by omitting the <code>dry</code> option. <strong>FORCE L1AS</strong> downloads all data that match the parameters provided - and which weren't downloaded before. Note that the program checks against the files on the disc (not the file queue). Each downloaded image is unzipped after the download. If both steps were successful, the image is appended to the file queue.</p>
+<p>Do not wonder if FORCE tells you that it has found exactly 100 S2A/B files. The ESA API Hub only allows to retrieve metadata for 100 products. Thus, FORCE iterates through the pages until no more image can be retrieved.</p>
+<p>Please note that download speed varies considerably..</p>
+<pre><code class="language-bash">force-level1-sentinel2 /data/Dagobah/S2L1C /data/Dagobah/S2L1C/zambia.txt &quot;25.43/-12.46,25.94/-12.46,25.94/-11.98,25.39/-11.99,25.43/-12.46&quot; 2019-07-01 2019-07-31 0 50
+</code></pre>
+<pre><code>2020-02-15_15:37:03 - Found 13 S2A/B files.
+2020-02-15_15:37:03 - Found 13 S2A/B files on this page.
+/data/Dagobah 100%[===================&gt;] 729.50M  32.4MB/s    in 23s     
+/data/Dagobah 100%[===================&gt;] 271.14M  30.5MB/s    in 7.0s    
+/data/Dagobah 100%[===================&gt;] 742.98M  29.8MB/s    in 24s     
+/data/Dagobah 100%[===================&gt;] 266.53M  28.1MB/s    in 11s     
+/data/Dagobah 100%[===================&gt;] 732.80M  30.7MB/s    in 20s     
+/data/Dagobah 100%[===================&gt;] 224.77M  69.2MB/s    in 3.2s    
+/data/Dagobah 100%[===================&gt;] 730.90M  81.6MB/s    in 9.6s    
+/data/Dagobah 100%[===================&gt;] 268.45M  42.5MB/s    in 7.9s    
+/data/Dagobah 100%[===================&gt;] 704.98M  45.8MB/s    in 21s     
+/data/Dagobah 100%[===================&gt;] 258.02M  47.5MB/s    in 5.9s    
+/data/Dagobah 100%[===================&gt;] 754.09M  61.7MB/s    in 13s     
+/data/Dagobah 100%[===================&gt;] 259.80M  66.5MB/s    in 4.3s    
+</code></pre>
+<p>In the Level 1 Datapool, there is now the file queue, as well as a directory for each MGRS tile that was retrieved.</p>
+<pre><code class="language-bash">ls /data/Dagobah/S2L1C
+</code></pre>
+<pre><code>T35LLG  zambia.txt
+</code></pre>
+<p>In the directories, there are the unzipped images.</p>
+<pre><code class="language-bash">ls /data/Dagobah/S2L1C/T*
+</code></pre>
+<pre><code>S2A_MSIL1C_20190707T080611_N0207_R078_T35LLG_20190707T100942.SAFE
+S2A_MSIL1C_20190710T081611_N0208_R121_T35LLG_20190710T103430.SAFE
+S2A_MSIL1C_20190717T080611_N0208_R078_T35LLG_20190717T110132.SAFE
+S2A_MSIL1C_20190720T081611_N0208_R121_T35LLG_20190720T134157.SAFE
+S2A_MSIL1C_20190727T080611_N0208_R078_T35LLG_20190727T115444.SAFE
+S2A_MSIL1C_20190730T081611_N0208_R121_T35LLG_20190730T103748.SAFE
+S2B_MSIL1C_20190702T080619_N0207_R078_T35LLG_20190702T115117.SAFE
+S2B_MSIL1C_20190705T081609_N0207_R121_T35LLG_20190705T110801.SAFE
+S2B_MSIL1C_20190712T080619_N0208_R078_T35LLG_20190712T110120.SAFE
+S2B_MSIL1C_20190715T081609_N0208_R121_T35LLG_20190715T121541.SAFE
+S2B_MSIL1C_20190722T080619_N0208_R078_T35LLG_20190722T110547.SAFE
+S2B_MSIL1C_20190725T081609_N0208_R121_T35LLG_20190725T120407.SAFE
+</code></pre>
+<p>Note that for Sentinel-2, the compression is realized in the image data, not in the container, thus unzipping the data does not inflate the file size (much).</p>
+<pre><code class="language-bash">du -h -d 1 /data/Dagobah/S2L1C
+</code></pre>
+<pre><code>5.9G	/data/Dagobah/S2L1C/T35LLG
+5.9G	/data/Dagobah/S2L1C
+</code></pre>
+<p>The file queue is holding the full filepaths to all ingested images. This is the main input to <strong>force-level2</strong>. Each image is in a separate line. A processing-state flag determines if the image is enqueued for Level 2 processing - or was already processed and will be ignored next time. This flag is either <code>QUEUED</code> or <code>DONE</code>.</p>
+<p>Note that the filepath of the granule ID is the given in the file queue. This has <em>historic</em> reasons as the initial Sentinel-2 products distributed by ESA contained severel granules within a product.</p>
+<pre><code class="language-bash">cat /data/Dagobah/S2L1C/zambia.txt
+</code></pre>
+<pre><code>/data/Dagobah/S2L1C/T35LLG/S2A_MSIL1C_20190730T081611_N0208_R121_T35LLG_20190730T103748.SAFE/GRANULE/L1C_T35LLG_A021425_20190730T083653 QUEUED
+/data/Dagobah/S2L1C/T35LLG/S2A_MSIL1C_20190727T080611_N0208_R078_T35LLG_20190727T115444.SAFE/GRANULE/L1C_T35LLG_A021382_20190727T082120 QUEUED
+/data/Dagobah/S2L1C/T35LLG/S2B_MSIL1C_20190725T081609_N0208_R121_T35LLG_20190725T120407.SAFE/GRANULE/L1C_T35LLG_A012445_20190725T083254 QUEUED
+/data/Dagobah/S2L1C/T35LLG/S2B_MSIL1C_20190722T080619_N0208_R078_T35LLG_20190722T110547.SAFE/GRANULE/L1C_T35LLG_A012402_20190722T082743 QUEUED
+/data/Dagobah/S2L1C/T35LLG/S2A_MSIL1C_20190720T081611_N0208_R121_T35LLG_20190720T134157.SAFE/GRANULE/L1C_T35LLG_A021282_20190720T084228 QUEUED
+/data/Dagobah/S2L1C/T35LLG/S2A_MSIL1C_20190717T080611_N0208_R078_T35LLG_20190717T110132.SAFE/GRANULE/L1C_T35LLG_A021239_20190717T083340 QUEUED
+/data/Dagobah/S2L1C/T35LLG/S2B_MSIL1C_20190715T081609_N0208_R121_T35LLG_20190715T121541.SAFE/GRANULE/L1C_T35LLG_A012302_20190715T083620 QUEUED
+/data/Dagobah/S2L1C/T35LLG/S2B_MSIL1C_20190712T080619_N0208_R078_T35LLG_20190712T110120.SAFE/GRANULE/L1C_T35LLG_A012259_20190712T083051 QUEUED
+/data/Dagobah/S2L1C/T35LLG/S2A_MSIL1C_20190710T081611_N0208_R121_T35LLG_20190710T103430.SAFE/GRANULE/L1C_T35LLG_A021139_20190710T084315 QUEUED
+/data/Dagobah/S2L1C/T35LLG/S2A_MSIL1C_20190707T080611_N0207_R078_T35LLG_20190707T100942.SAFE/GRANULE/L1C_T35LLG_A021096_20190707T082728 QUEUED
+/data/Dagobah/S2L1C/T35LLG/S2B_MSIL1C_20190705T081609_N0207_R121_T35LLG_20190705T110801.SAFE/GRANULE/L1C_T35LLG_A012159_20190705T083413 QUEUED
+/data/Dagobah/S2L1C/T35LLG/S2B_MSIL1C_20190702T080619_N0207_R078_T35LLG_20190702T115117.SAFE/GRANULE/L1C_T35LLG_A012116_20190702T083253 QUEUED
+</code></pre>
+<h2 id="download-some-more-data"><strong>Download some more data</strong></h2>
+<p>Downloading more data is easy. You can use the same datapool, and the same file queue for this. Images are only downloaded if they weren't downloaded yet. Thus, you can e.g. change the boundingbox, time frame or cloud coverage, and only download data that was not covered by the previous run. In the following example, the Eastern X-Coordinates were increased by 1 degree.</p>
+<pre><code class="language-bash">force-level1-sentinel2 /data/Dagobah/S2L1C /data/Dagobah/S2L1C/zambia.txt &quot;25.43/-12.46,26.94/-12.46,26.94/-11.98,25.39/-11.99,25.43/-12.46&quot; 2019-07-01 2019-07-31 0 50
+</code></pre>
+<pre><code>2020-02-15_15:43:57 - Found 26 S2A/B files.
+2020-02-15_15:43:57 - Found 26 S2A/B files on this page.
+/data/Dagobah 100%[===================&gt;]  54.08M  43.4MB/s    in 1.2s    
+/data/Dagobah 100%[===================&gt;] 794.27M  73.7MB/s    in 11s     
+/data/Dagobah 100%[===================&gt;]  57.66M  61.0MB/s    in 0.9s    
+/data/Dagobah 100%[===================&gt;] 782.06M  80.1MB/s    in 10s     
+/data/Dagobah 100%[===================&gt;]  49.95M  52.0MB/s    in 1.0s    
+/data/Dagobah 100%[===================&gt;] 555.54M  85.9MB/s    in 6.8s    
+/data/Dagobah 100%[===================&gt;]  52.83M  57.7MB/s    in 0.9s    
+/data/Dagobah 100%[===================&gt;] 788.67M  79.2MB/s    in 12s     
+/data/Dagobah 100%[===================&gt;]  48.47M  52.4MB/s    in 0.9s    
+/data/Dagobah 100%[===================&gt;] 779.62M  81.5MB/s    in 9.4s    
+/data/Dagobah 100%[===================&gt;]  58.56M  50.9MB/s    in 1.1s    
+/data/Dagobah 100%[===================&gt;] 781.21M  54.6MB/s    in 17s     
+</code></pre>
+<p>From the 26 available images, only 13 were retrieved, 13 were already downloaded before. There are now several directories with different MGRS tiles in your Level 1 Datapool.</p>
+<pre><code class="language-bash">ls /data/Dagobah/S2L1C/T*
+</code></pre>
+<pre><code>/data/Dagobah/S2L1C/T35LLG:
+S2A_MSIL1C_20190707T080611_N0207_R078_T35LLG_20190707T100942.SAFE
+S2A_MSIL1C_20190710T081611_N0208_R121_T35LLG_20190710T103430.SAFE
+S2A_MSIL1C_20190717T080611_N0208_R078_T35LLG_20190717T110132.SAFE
+S2A_MSIL1C_20190720T081611_N0208_R121_T35LLG_20190720T134157.SAFE
+S2A_MSIL1C_20190727T080611_N0208_R078_T35LLG_20190727T115444.SAFE
+S2A_MSIL1C_20190730T081611_N0208_R121_T35LLG_20190730T103748.SAFE
+S2B_MSIL1C_20190702T080619_N0207_R078_T35LLG_20190702T115117.SAFE
+S2B_MSIL1C_20190705T081609_N0207_R121_T35LLG_20190705T110801.SAFE
+S2B_MSIL1C_20190712T080619_N0208_R078_T35LLG_20190712T110120.SAFE
+S2B_MSIL1C_20190715T081609_N0208_R121_T35LLG_20190715T121541.SAFE
+S2B_MSIL1C_20190722T080619_N0208_R078_T35LLG_20190722T110547.SAFE
+S2B_MSIL1C_20190725T081609_N0208_R121_T35LLG_20190725T120407.SAFE
+
+/data/Dagobah/S2L1C/T35LMG:
+S2A_MSIL1C_20190707T080611_N0207_R078_T35LMG_20190707T100942.SAFE
+S2A_MSIL1C_20190710T081611_N0208_R121_T35LMG_20190710T103430.SAFE
+S2A_MSIL1C_20190717T080611_N0208_R078_T35LMG_20190717T110132.SAFE
+S2A_MSIL1C_20190720T081611_N0208_R121_T35LMG_20190720T134157.SAFE
+S2A_MSIL1C_20190727T080611_N0208_R078_T35LMG_20190727T115444.SAFE
+S2A_MSIL1C_20190730T081611_N0208_R121_T35LMG_20190730T103748.SAFE
+S2B_MSIL1C_20190702T080619_N0207_R078_T35LMG_20190702T115117.SAFE
+S2B_MSIL1C_20190705T081609_N0207_R121_T35LMG_20190705T110801.SAFE
+S2B_MSIL1C_20190712T080619_N0208_R078_T35LMG_20190712T110120.SAFE
+S2B_MSIL1C_20190715T081609_N0208_R121_T35LMG_20190715T121541.SAFE
+S2B_MSIL1C_20190722T080619_N0208_R078_T35LMG_20190722T110547.SAFE
+S2B_MSIL1C_20190725T081609_N0208_R121_T35LMG_20190725T120407.SAFE
+</code></pre>
+<p>The new files were appended to the file queue, too.</p>
+<pre><code class="language-bash">cat /data/Dagobah/S2L1C/zambia.txt
+</code></pre>
+<pre><code>/data/Dagobah/S2L1C/T35LLG/S2A_MSIL1C_20190730T081611_N0208_R121_T35LLG_20190730T103748.SAFE/GRANULE/L1C_T35LLG_A021425_20190730T083653 QUEUED
+/data/Dagobah/S2L1C/T35LLG/S2A_MSIL1C_20190727T080611_N0208_R078_T35LLG_20190727T115444.SAFE/GRANULE/L1C_T35LLG_A021382_20190727T082120 QUEUED
+/data/Dagobah/S2L1C/T35LLG/S2B_MSIL1C_20190725T081609_N0208_R121_T35LLG_20190725T120407.SAFE/GRANULE/L1C_T35LLG_A012445_20190725T083254 QUEUED
+/data/Dagobah/S2L1C/T35LLG/S2B_MSIL1C_20190722T080619_N0208_R078_T35LLG_20190722T110547.SAFE/GRANULE/L1C_T35LLG_A012402_20190722T082743 QUEUED
+/data/Dagobah/S2L1C/T35LLG/S2A_MSIL1C_20190720T081611_N0208_R121_T35LLG_20190720T134157.SAFE/GRANULE/L1C_T35LLG_A021282_20190720T084228 QUEUED
+/data/Dagobah/S2L1C/T35LLG/S2A_MSIL1C_20190717T080611_N0208_R078_T35LLG_20190717T110132.SAFE/GRANULE/L1C_T35LLG_A021239_20190717T083340 QUEUED
+/data/Dagobah/S2L1C/T35LLG/S2B_MSIL1C_20190715T081609_N0208_R121_T35LLG_20190715T121541.SAFE/GRANULE/L1C_T35LLG_A012302_20190715T083620 QUEUED
+/data/Dagobah/S2L1C/T35LLG/S2B_MSIL1C_20190712T080619_N0208_R078_T35LLG_20190712T110120.SAFE/GRANULE/L1C_T35LLG_A012259_20190712T083051 QUEUED
+/data/Dagobah/S2L1C/T35LLG/S2A_MSIL1C_20190710T081611_N0208_R121_T35LLG_20190710T103430.SAFE/GRANULE/L1C_T35LLG_A021139_20190710T084315 QUEUED
+/data/Dagobah/S2L1C/T35LLG/S2A_MSIL1C_20190707T080611_N0207_R078_T35LLG_20190707T100942.SAFE/GRANULE/L1C_T35LLG_A021096_20190707T082728 QUEUED
+/data/Dagobah/S2L1C/T35LLG/S2B_MSIL1C_20190705T081609_N0207_R121_T35LLG_20190705T110801.SAFE/GRANULE/L1C_T35LLG_A012159_20190705T083413 QUEUED
+/data/Dagobah/S2L1C/T35LLG/S2B_MSIL1C_20190702T080619_N0207_R078_T35LLG_20190702T115117.SAFE/GRANULE/L1C_T35LLG_A012116_20190702T083253 QUEUED
+/data/Dagobah/S2L1C/T35LMG/S2A_MSIL1C_20190730T081611_N0208_R121_T35LMG_20190730T103748.SAFE/GRANULE/L1C_T35LMG_A021425_20190730T083653 QUEUED
+/data/Dagobah/S2L1C/T35LMG/S2A_MSIL1C_20190727T080611_N0208_R078_T35LMG_20190727T115444.SAFE/GRANULE/L1C_T35LMG_A021382_20190727T082120 QUEUED
+/data/Dagobah/S2L1C/T35LMG/S2B_MSIL1C_20190725T081609_N0208_R121_T35LMG_20190725T120407.SAFE/GRANULE/L1C_T35LMG_A012445_20190725T083254 QUEUED
+/data/Dagobah/S2L1C/T35LMG/S2B_MSIL1C_20190722T080619_N0208_R078_T35LMG_20190722T110547.SAFE/GRANULE/L1C_T35LMG_A012402_20190722T082743 QUEUED
+/data/Dagobah/S2L1C/T35LMG/S2A_MSIL1C_20190720T081611_N0208_R121_T35LMG_20190720T134157.SAFE/GRANULE/L1C_T35LMG_A021282_20190720T084228 QUEUED
+/data/Dagobah/S2L1C/T35LMG/S2A_MSIL1C_20190717T080611_N0208_R078_T35LMG_20190717T110132.SAFE/GRANULE/L1C_T35LMG_A021239_20190717T083340 QUEUED
+/data/Dagobah/S2L1C/T35LMG/S2B_MSIL1C_20190715T081609_N0208_R121_T35LMG_20190715T121541.SAFE/GRANULE/L1C_T35LMG_A012302_20190715T083620 QUEUED
+/data/Dagobah/S2L1C/T35LMG/S2B_MSIL1C_20190712T080619_N0208_R078_T35LMG_20190712T110120.SAFE/GRANULE/L1C_T35LMG_A012259_20190712T083051 QUEUED
+/data/Dagobah/S2L1C/T35LMG/S2A_MSIL1C_20190710T081611_N0208_R121_T35LMG_20190710T103430.SAFE/GRANULE/L1C_T35LMG_A021139_20190710T084315 QUEUED
+/data/Dagobah/S2L1C/T35LMG/S2A_MSIL1C_20190707T080611_N0207_R078_T35LMG_20190707T100942.SAFE/GRANULE/L1C_T35LMG_A021096_20190707T082728 QUEUED
+/data/Dagobah/S2L1C/T35LMG/S2B_MSIL1C_20190705T081609_N0207_R121_T35LMG_20190705T110801.SAFE/GRANULE/L1C_T35LMG_A012159_20190705T083413 QUEUED
+/data/Dagobah/S2L1C/T35LMG/S2B_MSIL1C_20190702T080619_N0207_R078_T35LMG_20190702T115117.SAFE/GRANULE/L1C_T35LMG_A012116_20190702T083253 QUEUED
+</code></pre>
+<h2 id="setting-up-a-scheduled-download"><strong>Setting up a scheduled download</strong></h2>
+<p>The same logic can be used to set up a scheduler for downloading your data at regular intervals. For example, a daily cronjob can be installed to retrieve all data covering your study area. A cronjob is installed by adding lines to the cronjob file.</p>
+<pre><code class="language-bash">crontab -e
+</code></pre>
+<p>If your FORCE installation is not in a standard search path, you need to define the PATH variable, and include the path where FORCE is installed. Then, use the command line from above and schedule it with cron notation. Following line will start the download at 3:00 AM each day. <em>Replace YOURNAME with your user name.</em></p>
+<pre><code class="language-bash">PATH=/home/YOURNAME/bin:/usr/bin:/bin:/usr/local/bin
+0 3 * * * force-level1-sentinel2 /data/Dagobah/S2L1C /data/Dagobah/S2L1C/zambia.txt &quot;25.43/-12.46,26.94/-12.46,26.94/-11.98,25.39/-11.99,25.43/-12.46&quot; 2018-07-01 2018-07-31 0 50
+</code></pre>
+<h2 id="long-term-archive"><strong>Long Term Archive</strong></h2>
+<p>In September 2018, ESA has activated the Long Term Archive (LTA) to roll out old (and potentially infrequently used) data products from the online storage system to offline storage. For details, see <a href="https://scihub.copernicus.eu/userguide/LongTermArchive">here</a>. As of now (the following numbers might change in the future), the last year of data shall stay online, and is immediately ready for download. Offline data may be pulled from offline to online storage upon request. The data retrieval shall happen within 24h and the products shall stay online for 3 days. If they were not downloaded within this time period, they need to be pulled again. A user quota is implemented to prevent users from pulling the entire archive - unfortunately this quota is ridicously low, 1 request per hour per user&hellip; Let's all hope it doesn't stay this way :/</p>
+<p><strong>FORCE &gt;= 3.0</strong> is able to handle LTA data. Previous <strong>FORCE</strong> versions crash when trying to download offline products.
+<strong>FORCE L1AS</strong> determines whether a product is online or offline.</p>
+<ul>
+<li>If online, the image is downloaded as described above.</li>
+<li>If offline, a pull request from offline to online storage is sent. ESA hasn't implemented any callback for this retrieval, thus <strong>FORCE L1AS</strong> will simply send pull requests for each requested offline image, probably download some available online images, and then exit. <strong>FORCE L1AS</strong> needs to be run again to retrieve the restored data. To this end, it comes in handy to set up a download scheduler as desribed above.</li>
+</ul>
+<pre><code class="language-bash">force-level1-sentinel2 /data/Dagobah/S2L1C /data/Dagobah/S2L1C/zambia.txt &quot;25.43/-12.46,25.94/-12.46,25.94/-11.98,25.39/-11.99,25.43/-12.46&quot; 2018-07-01 2018-07-31 0 50
+</code></pre>
+<pre><code>2020-02-15_15:49:18 - Found 12 S2A/B files.
+2020-02-15_15:49:18 - Found 12 S2A/B files on this page.
+S2B_MSIL1C_20180730T081559_N0206_R121_T35LLG_20180730T141111.SAFE: Pulling from Long Term Archive. Rerun this program after a while
+S2B_MSIL1C_20180727T080609_N0206_R078_T35LLG_20180727T121446.SAFE: Pulling from Long Term Archive. Rerun this program after a while
+S2A_MSIL1C_20180725T081601_N0206_R121_T35LLG_20180725T121615.SAFE: Pulling from Long Term Archive. Rerun this program after a while
+S2A_MSIL1C_20180722T080611_N0206_R078_T35LLG_20180722T115605.SAFE: Pulling from Long Term Archive. Rerun this program after a while
+S2B_MSIL1C_20180720T081559_N0206_R121_T35LLG_20180720T121127.SAFE: Pulling from Long Term Archive. Rerun this program after a while
+S2B_MSIL1C_20180717T080609_N0206_R078_T35LLG_20180717T120239.SAFE: Pulling from Long Term Archive. Rerun this program after a while
+S2A_MSIL1C_20180715T081601_N0206_R121_T35LLG_20180715T103432.SAFE: Pulling from Long Term Archive. Rerun this program after a while
+S2A_MSIL1C_20180712T080611_N0206_R078_T35LLG_20180712T102334.SAFE: Pulling from Long Term Archive. Rerun this program after a while
+S2B_MSIL1C_20180710T081559_N0206_R121_T35LLG_20180710T120813.SAFE: Pulling from Long Term Archive. Rerun this program after a while
+S2B_MSIL1C_20180707T080609_N0206_R078_T35LLG_20180707T115209.SAFE: Pulling from Long Term Archive. Rerun this program after a while
+S2A_MSIL1C_20180705T081601_N0206_R121_T35LLG_20180705T103349.SAFE: Pulling from Long Term Archive. Rerun this program after a while
+S2A_MSIL1C_20180702T080611_N0206_R078_T35LLG_20180702T115230.SAFE: Pulling from Long Term Archive. Rerun this program after a while
+</code></pre>
+
+    </div>
+
+    
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/2020/">2020</a>
+  
+  <a class="badge badge-light" href="/tags/force/">FORCE</a>
+  
+  <a class="badge badge-light" href="/tags/tutorial/">Tutorial</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://davidfrantz.github.io/tutorials/force-level1-s2/sentinel-2-l1c/&amp;text=FORCE%20Tutorial:%20Sentinel-2%20Level%201C" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://davidfrantz.github.io/tutorials/force-level1-s2/sentinel-2-l1c/&amp;t=FORCE%20Tutorial:%20Sentinel-2%20Level%201C" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=FORCE%20Tutorial:%20Sentinel-2%20Level%201C&amp;body=https://davidfrantz.github.io/tutorials/force-level1-s2/sentinel-2-l1c/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://davidfrantz.github.io/tutorials/force-level1-s2/sentinel-2-l1c/&amp;title=FORCE%20Tutorial:%20Sentinel-2%20Level%201C" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=FORCE%20Tutorial:%20Sentinel-2%20Level%201C%20https://davidfrantz.github.io/tutorials/force-level1-s2/sentinel-2-l1c/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://davidfrantz.github.io/tutorials/force-level1-s2/sentinel-2-l1c/&amp;title=FORCE%20Tutorial:%20Sentinel-2%20Level%201C" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <img class="portrait mr-3" src="/authors/admin/avatar_huba61fb2ae087847d5946ab8e48bc46d6_594175_250x250_fill_q90_lanczos_center.jpg" alt="Avatar">
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://davidfrantz.github.io/">David Frantz</a></h5>
+      <h6 class="card-subtitle">Postdoctoral Researcher</h6>
+      <p class="card-text">EO, ARD, FORCE, Data Science, Open Science</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+    <li>
+      <a href="mailto:david.frantz@geo.hu-berlin.de" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.de/citations?user=JtEWu3AAAAAJ" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.researchgate.net/profile/David_Frantz" target="_blank" rel="noopener">
+        <i class="fab fa-researchgate"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="http://orcid.org/0000-0002-9292-3931" target="_blank" rel="noopener">
+        <i class="fab fa-orcid"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/davidfrantz" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/d__frantz" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>Related</h3>
+    <ul>
+      
+      <li><a href="/tutorials/force-dem/dem/">FORCE Tutorial: DEM</a></li>
+      
+      <li><a href="/tutorials/force-datacube/datacube/">FORCE Tutorial: The Datacube</a></li>
+      
+      <li><a href="/tutorials/force-qai/qai/">FORCE Tutorial: Quality Bits a.k.a. Cloud Masks etc.</a></li>
+      
+      <li><a href="/tutorials/force-wvdb/wvdb/">FORCE Tutorial: Water Vapor Database</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.3227ab49eed49815d1b4ba40154f74e7.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    © 2019-2020 David Frantz &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
