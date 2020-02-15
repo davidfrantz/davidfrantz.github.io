@@ -818,7 +818,7 @@ S2B_MSIL1C_20190725T081609_N0208_R121_T35LMG_20190725T120407.SAFE
 0 3 * * * force-level1-sentinel2 /data/Dagobah/S2L1C /data/Dagobah/S2L1C/zambia.txt &quot;25.43/-12.46,26.94/-12.46,26.94/-11.98,25.39/-11.99,25.43/-12.46&quot; 2018-07-01 2018-07-31 0 50
 </code></pre>
 <h2 id="long-term-archive"><strong>Long Term Archive</strong></h2>
-<p>In September 2018, ESA has activated the Long Term Archive (LTA) to roll out old (and potentially infrequently used) data products from the online storage system to offline storage. For details, see <a href="https://scihub.copernicus.eu/userguide/LongTermArchive">here</a>. As of now (the following numbers might change in the future), the last year of data shall stay online, and is immediately ready for download. Offline data may be pulled from offline to online storage upon request. The data retrieval shall happen within 24h and the products shall stay online for 3 days. If they were not downloaded within this time period, they need to be pulled again. A user quota is implemented to prevent users from pulling the entire archive - unfortunately this quota is ridicously low, 1 request per hour per user&hellip; Let's all hope it doesn't stay this way :/</p>
+<p>In September 2019, ESA has activated the Long Term Archive (LTA) to roll out old (and potentially infrequently used) data products from the online storage system to offline storage. For details, see <a href="https://scihub.copernicus.eu/userguide/LongTermArchive">here</a>. As of now (the following numbers might change in the future), the last year of data shall stay online, and is immediately ready for download. Offline data may be pulled from offline to online storage upon request. The data retrieval shall happen within 24h and the products shall stay online for 3 days. If they were not downloaded within this time period, they need to be pulled again. A user quota is implemented to prevent users from pulling the entire archive - unfortunately this quota is ridicously low, 1 request per hour per user&hellip; Let's all hope it doesn't stay this way :/</p>
 <p><strong>FORCE &gt;= 3.0</strong> is able to handle LTA data. Previous <strong>FORCE</strong> versions crash when trying to download offline products.
 <strong>FORCE L1AS</strong> determines whether a product is online or offline.</p>
 <ul>
@@ -829,18 +829,18 @@ S2B_MSIL1C_20190725T081609_N0208_R121_T35LMG_20190725T120407.SAFE
 </code></pre>
 <pre><code>2020-02-15_15:49:18 - Found 12 S2A/B files.
 2020-02-15_15:49:18 - Found 12 S2A/B files on this page.
-S2B_MSIL1C_20180730T081559_N0206_R121_T35LLG_20180730T141111.SAFE: Pulling from Long Term Archive. Rerun this program after a while
-S2B_MSIL1C_20180727T080609_N0206_R078_T35LLG_20180727T121446.SAFE: Pulling from Long Term Archive. Rerun this program after a while
-S2A_MSIL1C_20180725T081601_N0206_R121_T35LLG_20180725T121615.SAFE: Pulling from Long Term Archive. Rerun this program after a while
-S2A_MSIL1C_20180722T080611_N0206_R078_T35LLG_20180722T115605.SAFE: Pulling from Long Term Archive. Rerun this program after a while
-S2B_MSIL1C_20180720T081559_N0206_R121_T35LLG_20180720T121127.SAFE: Pulling from Long Term Archive. Rerun this program after a while
-S2B_MSIL1C_20180717T080609_N0206_R078_T35LLG_20180717T120239.SAFE: Pulling from Long Term Archive. Rerun this program after a while
-S2A_MSIL1C_20180715T081601_N0206_R121_T35LLG_20180715T103432.SAFE: Pulling from Long Term Archive. Rerun this program after a while
-S2A_MSIL1C_20180712T080611_N0206_R078_T35LLG_20180712T102334.SAFE: Pulling from Long Term Archive. Rerun this program after a while
-S2B_MSIL1C_20180710T081559_N0206_R121_T35LLG_20180710T120813.SAFE: Pulling from Long Term Archive. Rerun this program after a while
-S2B_MSIL1C_20180707T080609_N0206_R078_T35LLG_20180707T115209.SAFE: Pulling from Long Term Archive. Rerun this program after a while
-S2A_MSIL1C_20180705T081601_N0206_R121_T35LLG_20180705T103349.SAFE: Pulling from Long Term Archive. Rerun this program after a while
-S2A_MSIL1C_20180702T080611_N0206_R078_T35LLG_20180702T115230.SAFE: Pulling from Long Term Archive. Rerun this program after a while
+S2B_MSIL1C_20180730T081559_N0206_R121_T35LLG_20180730T141111.SAFE: Pulling from Long Term Archive. Success. Rerun this program after a while
+S2B_MSIL1C_20180727T080609_N0206_R078_T35LLG_20180727T121446.SAFE: Pulling from Long Term Archive. Failed. You have exhausted your user quota. Rerun this program after a while
+S2A_MSIL1C_20180725T081601_N0206_R121_T35LLG_20180725T121615.SAFE: Pulling from Long Term Archive. Failed. You have exhausted your user quota. Rerun this program after a while
+S2A_MSIL1C_20180722T080611_N0206_R078_T35LLG_20180722T115605.SAFE: Pulling from Long Term Archive. Failed. You have exhausted your user quota. Rerun this program after a while
+S2B_MSIL1C_20180720T081559_N0206_R121_T35LLG_20180720T121127.SAFE: Pulling from Long Term Archive. Failed. You have exhausted your user quota. Rerun this program after a while
+S2B_MSIL1C_20180717T080609_N0206_R078_T35LLG_20180717T120239.SAFE: Pulling from Long Term Archive. Failed. You have exhausted your user quota. Rerun this program after a while
+S2A_MSIL1C_20180715T081601_N0206_R121_T35LLG_20180715T103432.SAFE: Pulling from Long Term Archive. Failed. You have exhausted your user quota. Rerun this program after a while
+S2A_MSIL1C_20180712T080611_N0206_R078_T35LLG_20180712T102334.SAFE: Pulling from Long Term Archive. Failed. Too Many Requests
+S2B_MSIL1C_20180710T081559_N0206_R121_T35LLG_20180710T120813.SAFE: Pulling from Long Term Archive. Failed. Too Many Requests
+S2B_MSIL1C_20180707T080609_N0206_R078_T35LLG_20180707T115209.SAFE: Pulling from Long Term Archive. Failed. Too Many Requests
+S2A_MSIL1C_20180705T081601_N0206_R121_T35LLG_20180705T103349.SAFE: Pulling from Long Term Archive. Failed. Too Many Requests
+S2A_MSIL1C_20180702T080611_N0206_R078_T35LLG_20180702T115230.SAFE: Pulling from Long Term Archive. Failed. Too Many Requests
 </code></pre>
 
     </div>
