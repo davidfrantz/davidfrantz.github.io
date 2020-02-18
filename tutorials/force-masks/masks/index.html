@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="David Frantz">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="This tutorial explains how to generate and use processing masks in the FORCE Higher Level Processing System.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://davidfrantz.github.io/tutorials/force-masks/masks/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#5C9DE3">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon-32.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://davidfrantz.github.io/tutorials/force-masks/masks/">
+
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="DAVID FRANTZ">
+  <meta property="og:url" content="https://davidfrantz.github.io/tutorials/force-masks/masks/">
+  <meta property="og:title" content="FORCE Tutorial: Processing Masks | DAVID FRANTZ">
+  <meta property="og:description" content="This tutorial explains how to generate and use processing masks in the FORCE Higher Level Processing System."><meta property="og:image" content="https://davidfrantz.github.io/img/icon-192.png">
+  <meta property="twitter:image" content="https://davidfrantz.github.io/img/icon-192.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2020-02-18T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2020-02-18T00:00:00&#43;00:00">
+  
+
+  
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>FORCE Tutorial: Processing Masks | DAVID FRANTZ</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">DAVID FRANTZ</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">DAVID FRANTZ</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-center" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#experience"><span>CV</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#publications"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#presentations"><span>Presentations</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#data"><span>Data</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#software"><span>Software</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#tutorials"><span>Tutorials</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item">
+        <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>FORCE Tutorial: Processing Masks</h1>
+
+  
+  <p class="page-subtitle">Speed up Higher Level Processing</p>
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Feb 18, 2020
+  </span>
+  
+
+  
+
+  
+
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <p><em>This tutorial uses FORCE v. 3.0</em></p>
+<h2 id="learning-objective"><strong>Learning Objective</strong></h2>
+<p>This tutorial explains how to generate and use processing masks in the <strong>FORCE Higher Level Processing System</strong>.</p>
+<h2 id="what-are-processing-masks"><strong>What are processing masks?</strong></h2>
+<p>In the <strong>FORCE Higher Level Processing System</strong>, processing masks can be used to restrict processing and analysis to certain pixels of interest. The masks need to be in datacube format, i.e. they need to be raster images in the same grid as all the other data. The masks can - but don’t need to - be in the same directory as the other data. The masks should be binary images. The pixels that have a mask value of 0 will be skipped.</p>
+<h2 id="what-is-the-advantage-of-using-processing-masks"><strong>What is the advantage of using processing masks?</strong></h2>
+<ul>
+<li>
+<p>Processing masks speed up processing.</p>
+<ul>
+<li>For each processing unit (block within the tile), the analysis mask is read first. If no valid pixel is in there, all the other data are not input, and the block is skipped. As an example, when processing a country like Japan, and provide a land mask, you can speed up processing significantly as many blocks are skipped entirely.</li>
+<li>On the pixel level, invalid pixels are skipped, too. This is especially beneficial for CPU-heavy tasks, e.g. machine learning predictions. As an example, when computing a tree species classification, you can speed up processing substantially if you provide a forest masks.</li>
+</ul>
+</li>
+<li>
+<p>Processing masks decrease data volume substantially.</p>
+<ul>
+<li>In the processed products, the pixels of no interest have a nodata value. As all FORCE output is compressed (unless you choose to output in ENVI format; I don’t recommend to do this), the compression kicks in nicely if you have used processing masks. You can easily decrease data volume by several factors.</li>
+</ul>
+</li>
+<li>
+<p>Processing masks facilitate analyzing the processed data.</p>
+<ul>
+<li>In the processed products, the pixels of no interest have a nodata value. Thus, you don’t need to sort the pixels on your own, e.g. computing confusion matrices and classification accuracy is more straightforward to implement.</li>
+</ul>
+</li>
+</ul>
+<h2 id="generate-processing-masks"><strong>Generate processing masks</strong></h2>
+<h3 id="option-1-from-shapefile-to-mask"><strong>Option 1: from shapefile to mask</strong></h3>
+<p><strong>FORCE</strong> comes with a program to generate processing masks from a shapefile:</p>
+<pre><code class="language-bash">force-cube
+</code></pre>
+<pre><code>Usage: force-cube input-file output-dir resample resolution
+       input-file: the file you want to cube
+       output-dir: the directory you want to store the cubes;
+                   datacube-definition.prj needs to exist in there
+       resample:   resampling method
+                   (1) any GDAL resampling method for raster data, e.g. cubic
+                   (2) rasterize for vector data
+       resolution: the resolution of the cubed data
+</code></pre>
+<p><code>force-cube</code> imports raster or vector data into the datacube format needed by <strong>FORCE</strong>. The output directory needs to contain a copy of the datacube definition (see datacube tutorial).</p>
+<p>The <code>rasterize</code> resampling option rasterizes polygon vector geometries. It burns the occurence of the geometry into a raster image, i.e. it assigns the value <em>1</em> to all cells that are covered by a geometry, <em>0</em> if not. The resulting masks are compressed GeoTiff images. Do not worry about data volume when converting from vector to raster data, because the compression rate is extremely high.</p>
+<p>In the following example, we generate a processing mask for the administrative area of Vienna, Austria.</p>
+<pre><code class="language-bash">force-cube vienna.shp /data/Dagobah/edc/misc/mask rasterize 10
+</code></pre>
+<pre><code>0...10...20...30...40...50...60...70...80...90...100 - done.
+0...10...20...30...40...50...60...70...80...90...100 - done.
+0...10...20...30...40...50...60...70...80...90...100 - done.
+0...10...20...30...40...50...60...70...80...90...100 - done.
+</code></pre>
+<p>In this example, Vienna is covered by four tiles, a cubed GeoTiff was generated in each tile:</p>
+<pre><code class="language-bash">ls /data/Dagobah/edc/misc/mask/X*/vienna.tif
+</code></pre>
+<pre><code>/data/Jakku/germany-mask/X0077_Y0058/vienna.tif
+/data/Jakku/germany-mask/X0077_Y0059/vienna.tif
+/data/Jakku/germany-mask/X0078_Y0058/vienna.tif
+/data/Jakku/germany-mask/X0078_Y0059/vienna.tif
+</code></pre>
+<p>For speedy visuailzation, build overviews and pyramids:</p>
+<pre><code class="language-bash">force-mosaic /data/Dagobah/edc/misc/mask
+force-pyramid /data/Dagobah/edc/misc/mask/mosaic/vienna.vrt
+</code></pre>
+<pre><code>mosaicking vienna.tif
+4 chips found.
+computing pyramids for vienna.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+</code></pre>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<figure>
+
+
+  <a data-fancybox="" href="/img/tutorial-mask-vector.jpg" data-caption="Mask of Vienna generated from a shapefile. Overlayed with the processing grid in green">
+<img src="/img/tutorial-mask-vector.jpg" alt="" ></a>
+
+
+  
+  
+  <figcaption>
+    Mask of Vienna generated from a shapefile. Overlayed with the processing grid in green
+  </figcaption>
+
+
+</figure>
+
+<h3 id="option-2-from-raster-to-mask"><strong>Option 2: from raster to mask</strong></h3>
+<p>As of now, <strong>FORCE</strong> does not come with a handy tool to generate masks from a raster image with continuous values (this is on my to-do list though). However, you can follow this recipe to accomplish this.</p>
+<p>In the example given below, our input image is a multiband continuous fields dataset, which gives the percentages of built-up land (urban), high vegetation (trees), and low vegetation (grass, agriculture). Point 1) may be skipped if the data are already in datacube format, which is the case in this example.</p>
+<ol>
+<li>If the data are not already in the datacube format, use <code>force-cube</code> to import the data (see the usage above). Use a raster resampling option to trigger the raster import, e.g. <code>cubic</code>.</li>
+<li>Go to the parent directory of the cubed images (this is important for the next point), and generate a list with the filenames:</li>
+</ol>
+<pre><code class="language-bash">cd /data/Jakku/germany-LC/pred
+ls X*/CONFIELD_MLP.tif &gt; files.txt
+</code></pre>
+<pre><code class="language-bash">In this example, the image covers 597 tiles:
+</code></pre>
+<pre><code class="language-bash">wc -l files.txt
+</code></pre>
+<pre><code>597 files.txt
+</code></pre>
+<pre><code class="language-bash">head files.txt
+</code></pre>
+<pre><code>X0052_Y0045/CONFIELD_MLP.tif
+X0052_Y0046/CONFIELD_MLP.tif
+X0052_Y0047/CONFIELD_MLP.tif
+X0052_Y0048/CONFIELD_MLP.tif
+X0052_Y0049/CONFIELD_MLP.tif
+X0052_Y0050/CONFIELD_MLP.tif
+X0052_Y0051/CONFIELD_MLP.tif
+X0052_Y0052/CONFIELD_MLP.tif
+X0052_Y0053/CONFIELD_MLP.tif
+X0053_Y0045/CONFIELD_MLP.tif
+</code></pre>
+<ol start="3">
+<li>Generate the masks using a command similar to the example below. The 1st part of the command uses the list from point 2), and parallely calls the command in parentheses <code>&quot;...&quot;</code>. The curly braces <code>{//}</code> replace the input image with its dirname, i.e. with the tile ID. A directory for the tile is generated if it is not already existing. The <code>gdal_calc.py</code> command handles simple raster algebra. The <code>-A</code> and <code>--A_band</code> options specify the image and band on which to operate the calculation specified by <code>--calc</code> (in our input image, the tree percentage is in band 2). A binary image (= mask) will be generated, wherein all pixels larger than 3000 (i.e. 30%) are set to <em>1</em>. The <code>--creation-option</code> parameters are options that specify compression etc. The blocksize parameters should best reflect the blocksize used for the datacube (see datacube tutorial). <em>As said before, a tool for this will likely be implemented in a not-so-far future version of FORCE.</em></li>
+</ol>
+<pre><code class="language-bash">parallel -a files.txt &quot;mkdir -p /data/Dagobah/edc/misc/mask/{//}; gdal_calc.py -A {} --A_band=2 --outfile=/data/Dagobah/edc/misc/mask/{//}/forest-mask.tif --calc='(A&gt;3000)' --NoDataValue=255 --type=Byte --format=GTiff --creation-option='COMPRESS=LZW' --creation-option='PREDICTOR=2' --creation-option='NUM_THREADS=ALL_CPUS' --creation-option='BIGTIFF=YES' --creation-option='BLOCKXSIZE=3000' --creation-option='BLOCKYSIZE=300'&quot;
+</code></pre>
+<pre><code>0 .. 10 .. 20 .. 30 .. 40 .. 50 .. 60 .. 70 .. 80 .. 90 .. 100 - Done
+0 .. 10 .. 20 .. 30 .. 40 .. 50 .. 60 .. 70 .. 80 .. 90 .. 100 - Done
+0 .. 10 .. 20 .. 30 .. 40 .. 50 .. 60 .. 70 .. 80 .. 90 .. 100 - Done
+0 .. 10 .. 20 .. 30 .. 40 .. 50 .. 60 .. 70 .. 80 .. 90 .. 100 - Done
+0 .. 10 .. 20 .. 30 .. 40 .. 50 .. 60 .. 70 .. 80 .. 90 .. 100 - Done
+0 .. 10 .. 20 .. 30 .. 40 .. 50 .. 60 .. 70 .. 80 .. 90 .. 100 - Done
+0 .. 10 .. 20 .. 30 .. 40 .. 50 .. 60 .. 70 .. 80 .. 90 .. 100 - Done
+0 .. 10 .. 20 .. 30 .. 40 .. 50 .. 60 .. 70 .. 80 .. 90 .. 100 - Done
+0 .. 10 .. 20 .. 30 .. 40 .. 50 .. 60 .. 70 .. 80 .. 90 .. 100 - Done
+0 .. 10 .. 20 .. 30 .. 40 .. 50 .. 60 .. 70 .. 80 .. 90 .. 100 - Done
+0 .. 10 .. 20 .. 30 .. 40 .. 50 .. 60 .. 70 .. 80 .. 90 .. 100 - Done
+0 .. 10 .. 20 .. 30 .. 40 .. 50 .. 60 .. 70 .. 80 .. 90 .. 100 - Done
+0 .. 10 .. 20 .. 30 .. 40 .. 50 .. 60 .. 70 .. 80 .. 90 .. 100 - Done
+0 .. 10 .. 20 .. 30 .. 40 .. 50 .. 60 .. 70 .. 80 .. 90 .. 100 - Done
+0 .. 10 .. 20 .. 30 .. 40 .. 50 .. 60 .. 70 .. 80 .. 90 .. 100 - Done
+...
+</code></pre>
+<p>We now have one cubed mask for each input image in the mask directory:</p>
+<pre><code class="language-bash">ls /data/Dagobah/edc/misc/mask/X*/forest-mask.tif | wc -l
+</code></pre>
+<pre><code>597
+</code></pre>
+<p>For speedy visuailzation, build overviews and pyramids:</p>
+<pre><code class="language-bash">force-mosaic /data/Dagobah/edc/misc/mask
+force-pyramid /data/Dagobah/edc/misc/mask/mosaic/forest-mask.vrt
+</code></pre>
+<pre><code>mosaicking forest-mask.tif
+597 chips found.
+computing pyramids for forest-mask.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+</code></pre>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<figure>
+
+
+  <a data-fancybox="" href="/img/tutorial-mask-raster.jpg" data-caption="Forest mask generated from continuous raster input. Overlayed with the processing grid in green">
+<img src="/img/tutorial-mask-raster.jpg" alt="" ></a>
+
+
+  
+  
+  <figcaption>
+    Forest mask generated from continuous raster input. Overlayed with the processing grid in green
+  </figcaption>
+
+
+</figure>
+
+<h2 id="use-processing-masks"><strong>Use processing masks</strong></h2>
+<p>Processing masks can easily be used in <code>force-higher-level</code> by setting the <code>DIR_MASK</code> and <code>BASE_MASK</code> parameters in the parameter file. They are the parent directory of the cubed masks, and the basename of the masks, respectively. To use the Vienna mask from above:</p>
+<p><code>DIR_MASK = /data/Dagobah/edc/misc/mask</code></p>
+<p><code>BASE_MASK = vienna.tif</code></p>
+
+    </div>
+
+    
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/2020/">2020</a>
+  
+  <a class="badge badge-light" href="/tags/force/">FORCE</a>
+  
+  <a class="badge badge-light" href="/tags/tutorial/">Tutorial</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://davidfrantz.github.io/tutorials/force-masks/masks/&amp;text=FORCE%20Tutorial:%20Processing%20Masks" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://davidfrantz.github.io/tutorials/force-masks/masks/&amp;t=FORCE%20Tutorial:%20Processing%20Masks" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=FORCE%20Tutorial:%20Processing%20Masks&amp;body=https://davidfrantz.github.io/tutorials/force-masks/masks/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://davidfrantz.github.io/tutorials/force-masks/masks/&amp;title=FORCE%20Tutorial:%20Processing%20Masks" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=FORCE%20Tutorial:%20Processing%20Masks%20https://davidfrantz.github.io/tutorials/force-masks/masks/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://davidfrantz.github.io/tutorials/force-masks/masks/&amp;title=FORCE%20Tutorial:%20Processing%20Masks" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <img class="portrait mr-3" src="/authors/admin/avatar_huba61fb2ae087847d5946ab8e48bc46d6_594175_250x250_fill_q90_lanczos_center.jpg" alt="Avatar">
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://davidfrantz.github.io/">David Frantz</a></h5>
+      <h6 class="card-subtitle">Postdoctoral Researcher</h6>
+      <p class="card-text">EO, ARD, FORCE, Data Science, Open Science</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+    <li>
+      <a href="mailto:david.frantz@geo.hu-berlin.de" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.de/citations?user=JtEWu3AAAAAJ" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.researchgate.net/profile/David_Frantz" target="_blank" rel="noopener">
+        <i class="fab fa-researchgate"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="http://orcid.org/0000-0002-9292-3931" target="_blank" rel="noopener">
+        <i class="fab fa-orcid"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/davidfrantz" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/d__frantz" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>Related</h3>
+    <ul>
+      
+      <li><a href="/tutorials/force-level1-s2/sentinel-2-l1c/">FORCE Tutorial: Sentinel-2 Level 1C</a></li>
+      
+      <li><a href="/tutorials/force-dem/dem/">FORCE Tutorial: DEM</a></li>
+      
+      <li><a href="/tutorials/force-datacube/datacube/">FORCE Tutorial: The Datacube</a></li>
+      
+      <li><a href="/tutorials/force-qai/qai/">FORCE Tutorial: Quality Bits a.k.a. Cloud Masks etc.</a></li>
+      
+      <li><a href="/tutorials/force-wvdb/wvdb/">FORCE Tutorial: Water Vapor Database</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.3227ab49eed49815d1b4ba40154f74e7.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    © 2019-2020 David Frantz &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

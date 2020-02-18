@@ -5,12 +5,219 @@
     <link>https://davidfrantz.github.io/</link>
       <atom:link href="https://davidfrantz.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>DAVID FRANTZ</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Sat, 15 Feb 2020 15:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Tue, 18 Feb 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://davidfrantz.github.io/img/icon-192.png</url>
       <title>DAVID FRANTZ</title>
       <link>https://davidfrantz.github.io/</link>
     </image>
+    
+    <item>
+      <title>FORCE Tutorial: Processing Masks</title>
+      <link>https://davidfrantz.github.io/tutorials/force-masks/masks/</link>
+      <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/tutorials/force-masks/masks/</guid>
+      <description>&lt;p&gt;&lt;em&gt;This tutorial uses FORCE v. 3.0&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;learning-objective&#34;&gt;&lt;strong&gt;Learning Objective&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;This tutorial explains how to generate and use processing masks in the &lt;strong&gt;FORCE Higher Level Processing System&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;what-are-processing-masks&#34;&gt;&lt;strong&gt;What are processing masks?&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;In the &lt;strong&gt;FORCE Higher Level Processing System&lt;/strong&gt;, processing masks can be used to restrict processing and analysis to certain pixels of interest. The masks need to be in datacube format, i.e. they need to be raster images in the same grid as all the other data. The masks can - but don’t need to - be in the same directory as the other data. The masks should be binary images. The pixels that have a mask value of 0 will be skipped.&lt;/p&gt;
+&lt;h2 id=&#34;what-is-the-advantage-of-using-processing-masks&#34;&gt;&lt;strong&gt;What is the advantage of using processing masks?&lt;/strong&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Processing masks speed up processing.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;For each processing unit (block within the tile), the analysis mask is read first. If no valid pixel is in there, all the other data are not input, and the block is skipped. As an example, when processing a country like Japan, and provide a land mask, you can speed up processing significantly as many blocks are skipped entirely.&lt;/li&gt;
+&lt;li&gt;On the pixel level, invalid pixels are skipped, too. This is especially beneficial for CPU-heavy tasks, e.g. machine learning predictions. As an example, when computing a tree species classification, you can speed up processing substantially if you provide a forest masks.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Processing masks decrease data volume substantially.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;In the processed products, the pixels of no interest have a nodata value. As all FORCE output is compressed (unless you choose to output in ENVI format; I don’t recommend to do this), the compression kicks in nicely if you have used processing masks. You can easily decrease data volume by several factors.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Processing masks facilitate analyzing the processed data.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;In the processed products, the pixels of no interest have a nodata value. Thus, you don’t need to sort the pixels on your own, e.g. computing confusion matrices and classification accuracy is more straightforward to implement.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;generate-processing-masks&#34;&gt;&lt;strong&gt;Generate processing masks&lt;/strong&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;option-1-from-shapefile-to-mask&#34;&gt;&lt;strong&gt;Option 1: from shapefile to mask&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;FORCE&lt;/strong&gt; comes with a program to generate processing masks from a shapefile:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;force-cube
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Usage: force-cube input-file output-dir resample resolution
+       input-file: the file you want to cube
+       output-dir: the directory you want to store the cubes;
+                   datacube-definition.prj needs to exist in there
+       resample:   resampling method
+                   (1) any GDAL resampling method for raster data, e.g. cubic
+                   (2) rasterize for vector data
+       resolution: the resolution of the cubed data
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;force-cube&lt;/code&gt; imports raster or vector data into the datacube format needed by &lt;strong&gt;FORCE&lt;/strong&gt;. The output directory needs to contain a copy of the datacube definition (see datacube tutorial).&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;rasterize&lt;/code&gt; resampling option rasterizes polygon vector geometries. It burns the occurence of the geometry into a raster image, i.e. it assigns the value &lt;em&gt;1&lt;/em&gt; to all cells that are covered by a geometry, &lt;em&gt;0&lt;/em&gt; if not. The resulting masks are compressed GeoTiff images. Do not worry about data volume when converting from vector to raster data, because the compression rate is extremely high.&lt;/p&gt;
+&lt;p&gt;In the following example, we generate a processing mask for the administrative area of Vienna, Austria.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;force-cube vienna.shp /data/Dagobah/edc/misc/mask rasterize 10
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0...10...20...30...40...50...60...70...80...90...100 - done.
+0...10...20...30...40...50...60...70...80...90...100 - done.
+0...10...20...30...40...50...60...70...80...90...100 - done.
+0...10...20...30...40...50...60...70...80...90...100 - done.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In this example, Vienna is covered by four tiles, a cubed GeoTiff was generated in each tile:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ls /data/Dagobah/edc/misc/mask/X*/vienna.tif
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;/data/Jakku/germany-mask/X0077_Y0058/vienna.tif
+/data/Jakku/germany-mask/X0077_Y0059/vienna.tif
+/data/Jakku/germany-mask/X0078_Y0058/vienna.tif
+/data/Jakku/germany-mask/X0078_Y0059/vienna.tif
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;For speedy visuailzation, build overviews and pyramids:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;force-mosaic /data/Dagobah/edc/misc/mask
+force-pyramid /data/Dagobah/edc/misc/mask/mosaic/vienna.vrt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;mosaicking vienna.tif
+4 chips found.
+computing pyramids for vienna.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://davidfrantz.github.io/img/tutorial-mask-vector.jpg&#34; data-caption=&#34;Mask of Vienna generated from a shapefile. Overlayed with the processing grid in green&#34;&gt;
+&lt;img src=&#34;https://davidfrantz.github.io/img/tutorial-mask-vector.jpg&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Mask of Vienna generated from a shapefile. Overlayed with the processing grid in green
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;option-2-from-raster-to-mask&#34;&gt;&lt;strong&gt;Option 2: from raster to mask&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;As of now, &lt;strong&gt;FORCE&lt;/strong&gt; does not come with a handy tool to generate masks from a raster image with continuous values (this is on my to-do list though). However, you can follow this recipe to accomplish this.&lt;/p&gt;
+&lt;p&gt;In the example given below, our input image is a multiband continuous fields dataset, which gives the percentages of built-up land (urban), high vegetation (trees), and low vegetation (grass, agriculture). Point 1) may be skipped if the data are already in datacube format, which is the case in this example.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;If the data are not already in the datacube format, use &lt;code&gt;force-cube&lt;/code&gt; to import the data (see the usage above). Use a raster resampling option to trigger the raster import, e.g. &lt;code&gt;cubic&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Go to the parent directory of the cubed images (this is important for the next point), and generate a list with the filenames:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd /data/Jakku/germany-LC/pred
+ls X*/CONFIELD_MLP.tif &amp;gt; files.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;In this example, the image covers 597 tiles:
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;wc -l files.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;597 files.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;head files.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;X0052_Y0045/CONFIELD_MLP.tif
+X0052_Y0046/CONFIELD_MLP.tif
+X0052_Y0047/CONFIELD_MLP.tif
+X0052_Y0048/CONFIELD_MLP.tif
+X0052_Y0049/CONFIELD_MLP.tif
+X0052_Y0050/CONFIELD_MLP.tif
+X0052_Y0051/CONFIELD_MLP.tif
+X0052_Y0052/CONFIELD_MLP.tif
+X0052_Y0053/CONFIELD_MLP.tif
+X0053_Y0045/CONFIELD_MLP.tif
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Generate the masks using a command similar to the example below. The 1st part of the command uses the list from point 2), and parallely calls the command in parentheses &lt;code&gt;&amp;quot;...&amp;quot;&lt;/code&gt;. The curly braces &lt;code&gt;{//}&lt;/code&gt; replace the input image with its dirname, i.e. with the tile ID. A directory for the tile is generated if it is not already existing. The &lt;code&gt;gdal_calc.py&lt;/code&gt; command handles simple raster algebra. The &lt;code&gt;-A&lt;/code&gt; and &lt;code&gt;--A_band&lt;/code&gt; options specify the image and band on which to operate the calculation specified by &lt;code&gt;--calc&lt;/code&gt; (in our input image, the tree percentage is in band 2). A binary image (= mask) will be generated, wherein all pixels larger than 3000 (i.e. 30%) are set to &lt;em&gt;1&lt;/em&gt;. The &lt;code&gt;--creation-option&lt;/code&gt; parameters are options that specify compression etc. The blocksize parameters should best reflect the blocksize used for the datacube (see datacube tutorial). &lt;em&gt;As said before, a tool for this will likely be implemented in a not-so-far future version of FORCE.&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;parallel -a files.txt &amp;quot;mkdir -p /data/Dagobah/edc/misc/mask/{//}; gdal_calc.py -A {} --A_band=2 --outfile=/data/Dagobah/edc/misc/mask/{//}/forest-mask.tif --calc=&#39;(A&amp;gt;3000)&#39; --NoDataValue=255 --type=Byte --format=GTiff --creation-option=&#39;COMPRESS=LZW&#39; --creation-option=&#39;PREDICTOR=2&#39; --creation-option=&#39;NUM_THREADS=ALL_CPUS&#39; --creation-option=&#39;BIGTIFF=YES&#39; --creation-option=&#39;BLOCKXSIZE=3000&#39; --creation-option=&#39;BLOCKYSIZE=300&#39;&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0 .. 10 .. 20 .. 30 .. 40 .. 50 .. 60 .. 70 .. 80 .. 90 .. 100 - Done
+0 .. 10 .. 20 .. 30 .. 40 .. 50 .. 60 .. 70 .. 80 .. 90 .. 100 - Done
+0 .. 10 .. 20 .. 30 .. 40 .. 50 .. 60 .. 70 .. 80 .. 90 .. 100 - Done
+0 .. 10 .. 20 .. 30 .. 40 .. 50 .. 60 .. 70 .. 80 .. 90 .. 100 - Done
+0 .. 10 .. 20 .. 30 .. 40 .. 50 .. 60 .. 70 .. 80 .. 90 .. 100 - Done
+0 .. 10 .. 20 .. 30 .. 40 .. 50 .. 60 .. 70 .. 80 .. 90 .. 100 - Done
+0 .. 10 .. 20 .. 30 .. 40 .. 50 .. 60 .. 70 .. 80 .. 90 .. 100 - Done
+0 .. 10 .. 20 .. 30 .. 40 .. 50 .. 60 .. 70 .. 80 .. 90 .. 100 - Done
+0 .. 10 .. 20 .. 30 .. 40 .. 50 .. 60 .. 70 .. 80 .. 90 .. 100 - Done
+0 .. 10 .. 20 .. 30 .. 40 .. 50 .. 60 .. 70 .. 80 .. 90 .. 100 - Done
+0 .. 10 .. 20 .. 30 .. 40 .. 50 .. 60 .. 70 .. 80 .. 90 .. 100 - Done
+0 .. 10 .. 20 .. 30 .. 40 .. 50 .. 60 .. 70 .. 80 .. 90 .. 100 - Done
+0 .. 10 .. 20 .. 30 .. 40 .. 50 .. 60 .. 70 .. 80 .. 90 .. 100 - Done
+0 .. 10 .. 20 .. 30 .. 40 .. 50 .. 60 .. 70 .. 80 .. 90 .. 100 - Done
+0 .. 10 .. 20 .. 30 .. 40 .. 50 .. 60 .. 70 .. 80 .. 90 .. 100 - Done
+...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We now have one cubed mask for each input image in the mask directory:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ls /data/Dagobah/edc/misc/mask/X*/forest-mask.tif | wc -l
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;597
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;For speedy visuailzation, build overviews and pyramids:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;force-mosaic /data/Dagobah/edc/misc/mask
+force-pyramid /data/Dagobah/edc/misc/mask/mosaic/forest-mask.vrt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;mosaicking forest-mask.tif
+597 chips found.
+computing pyramids for forest-mask.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://davidfrantz.github.io/img/tutorial-mask-raster.jpg&#34; data-caption=&#34;Forest mask generated from continuous raster input. Overlayed with the processing grid in green&#34;&gt;
+&lt;img src=&#34;https://davidfrantz.github.io/img/tutorial-mask-raster.jpg&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Forest mask generated from continuous raster input. Overlayed with the processing grid in green
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;use-processing-masks&#34;&gt;&lt;strong&gt;Use processing masks&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Processing masks can easily be used in &lt;code&gt;force-higher-level&lt;/code&gt; by setting the &lt;code&gt;DIR_MASK&lt;/code&gt; and &lt;code&gt;BASE_MASK&lt;/code&gt; parameters in the parameter file. They are the parent directory of the cubed masks, and the basename of the masks, respectively. To use the Vienna mask from above:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;DIR_MASK = /data/Dagobah/edc/misc/mask&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;BASE_MASK = vienna.tif&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>FORCE Tutorial: Sentinel-2 Level 1C</title>
