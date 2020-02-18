@@ -71,10 +71,10 @@
 &lt;p&gt;In this example, Vienna is covered by four tiles, a cubed GeoTiff was generated in each tile:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ls /data/Dagobah/edc/misc/mask/X*/vienna.tif
 &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;/data/Jakku/germany-mask/X0077_Y0058/vienna.tif
-/data/Jakku/germany-mask/X0077_Y0059/vienna.tif
-/data/Jakku/germany-mask/X0078_Y0058/vienna.tif
-/data/Jakku/germany-mask/X0078_Y0059/vienna.tif
+&lt;pre&gt;&lt;code&gt;/data/Dagobah/edc/misc/mask/X0077_Y0058/vienna.tif
+/data/Dagobah/edc/misc/mask/X0077_Y0059/vienna.tif
+/data/Dagobah/edc/misc/mask/X0078_Y0058/vienna.tif
+/data/Dagobah/edc/misc/mask/X0078_Y0059/vienna.tif
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;For speedy visuailzation, build overviews and pyramids:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;force-mosaic /data/Dagobah/edc/misc/mask
