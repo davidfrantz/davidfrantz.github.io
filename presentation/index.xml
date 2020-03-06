@@ -5,12 +5,25 @@
     <link>https://davidfrantz.github.io/presentation/</link>
       <atom:link href="https://davidfrantz.github.io/presentation/index.xml" rel="self" type="application/rss+xml" />
     <description>Presentations</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Tue, 12 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Wed, 04 Mar 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://davidfrantz.github.io/img/icon-192.png</url>
       <title>Presentations</title>
       <link>https://davidfrantz.github.io/presentation/</link>
     </image>
+    
+    <item>
+      <title>Abschätzung der Grünlandnutzungsintensität aus integrierten Sentinel-1 und Sentinel-2 Zeitreihen</title>
+      <link>https://davidfrantz.github.io/presentation/schwieder-2020/</link>
+      <pubDate>Wed, 04 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/schwieder-2020/</guid>
+      <description>&lt;p&gt;Marcel Schwieder, David Frantz, David Loibl, Kira Pfoch, Patrick Hostert&lt;/p&gt;
+&lt;ol start=&#34;40&#34;&gt;
+&lt;li&gt;Wissenschaftlich-Technische Jahrestagung der DGPF, 4-6 March 2020, Stuttgart, Germany&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Analysis-Ready-Data für die Ableitung von Grünlandinformationen in Deutschland</title>

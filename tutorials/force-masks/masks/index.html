@@ -681,7 +681,7 @@ computing pyramids for vienna.vrt
 <p>As of now, <strong>FORCE</strong> does not come with a handy tool to generate masks from a raster image with continuous values (this is on my to-do list though). However, you can follow this recipe to accomplish this.</p>
 <p>In the example given below, our input image is a multiband continuous fields dataset, which gives the percentages of built-up land (urban), high vegetation (trees), and low vegetation (grass, agriculture). Point 1) may be skipped if the data are already in datacube format, which is the case in this example.</p>
 <ol>
-<li>If the data are not already in the datacube format, use <code>force-cube</code> to import the data (see the usage above). Use a raster resampling option to trigger the raster import, e.g. <code>cubic</code>.</li>
+<li>If the data are not already in the datacube format, use <code>force-cube</code> to import the data (see the usage above). Use a raster resampling option to trigger the raster import, e.g. <code>cubic</code> (bc it's all about cubes, eh?).</li>
 <li>Go to the parent directory of the cubed images (this is important for the next point), and generate a list with the filenames:</li>
 </ol>
 <pre><code class="language-bash">cd /data/Jakku/germany-LC/pred
