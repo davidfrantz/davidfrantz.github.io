@@ -5,12 +5,20 @@
     <link>https://davidfrantz.github.io/authors/patrick-hostert/</link>
       <atom:link href="https://davidfrantz.github.io/authors/patrick-hostert/index.xml" rel="self" type="application/rss+xml" />
     <description>Patrick Hostert</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Fri, 17 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Mon, 06 Apr 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://davidfrantz.github.io/img/icon-192.png</url>
       <title>Patrick Hostert</title>
       <link>https://davidfrantz.github.io/authors/patrick-hostert/</link>
     </image>
+    
+    <item>
+      <title>Operational Coregistration of the Sentinel-2A/B Image Archive Using Multitemporal Landsat Spectral Averages</title>
+      <link>https://davidfrantz.github.io/publication/rufin-2020/</link>
+      <pubDate>Mon, 06 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/rufin-2020/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Visualizing and labeling dense multi-sensor earth observation time series: The EO Time Series Viewer</title>
