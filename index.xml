@@ -5,12 +5,330 @@
     <link>https://davidfrantz.github.io/</link>
       <atom:link href="https://davidfrantz.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>DAVID FRANTZ</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Mon, 06 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Mon, 20 Apr 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://davidfrantz.github.io/img/icon-192.png</url>
       <title>DAVID FRANTZ</title>
       <link>https://davidfrantz.github.io/</link>
     </image>
+    
+    <item>
+      <title>FORCE Tutorial: Level 2 ARD</title>
+      <link>https://davidfrantz.github.io/tutorials/force-ard/l2-ard/</link>
+      <pubDate>Mon, 20 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/tutorials/force-ard/l2-ard/</guid>
+      <description>&lt;p&gt;&lt;em&gt;This tutorial uses FORCE v. 3.2&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;learning-objective&#34;&gt;&lt;strong&gt;Learning Objective&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;This tutorial explains what Analysis Ready Data are, and how to use the &lt;strong&gt;FORCE Level 2 Processing System&lt;/strong&gt; to generate them.&lt;/p&gt;
+&lt;h2 id=&#34;what-are-levels&#34;&gt;&lt;strong&gt;What are Levels?&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Remote sensing products are grouped in a hierarchical classification scheme. Level 0 data are the measurements taken onboard the satellite - they are not available to users. Level 1 data are radiometrically calibrated and georectified. Level 2 data most notably include some sort of atmospheric correction and probably other corrections like topographic correction. Level 3 data are temporal Level 2 aggregates, e.g. pixel based composites or statistical aggregations like multitemporal averages. Level 4 products are model output (classifications etc.), often derived from multi-temporal or multi-sensor measurements. I am defining Levels 1 and 2 as lower-level products and Levels 3 and above as higher-level products.&lt;/p&gt;
+&lt;h2 id=&#34;what-are-analysis-ready-data&#34;&gt;&lt;strong&gt;What are Analysis Ready Data?&lt;/strong&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Analysis Ready Data are satellite data that have been processed to a minimum set of requirements and organized into a form that allows immediate analysis with a minimum of additional user effort and interoperability both through time and with other datasets (&lt;a href=&#34;http://ceos.org/ard&#34;&gt;CEOS&lt;/a&gt;).&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Simply put, ARD are readily usable for any application without much further processing. In my opinion, such data need to be well corrected for atmospheric and other effects, have undergone a very good and aggressive cloud screening, are accompanied by pixel-based quality indicators (cloud masks but also other criteria), and are provided in a regular non-overlapping grid system without any redundancy in a single coordinate system (at least on the continental scale) in the form of data cubes.&lt;/p&gt;
+&lt;p&gt;Just as a note: Although ARD are a huge step forward for increasing scientific and operational uptake from broader user groups, ARD do not represent the ultimate state of Analysis-Readiness. Thus, FORCE additionally provides means to generate highly Analysis Ready Data (hARD) and even highly Analysis Ready Data plus (hARD+), of which the latter can be directly ingested, analyzed, and interpreted in a GIS without ANY further processing. However, the scope of this tutorial is on plain ARD (don&#39;t get me wrong, ARD are great!).&lt;/p&gt;
+&lt;h2 id=&#34;force-level-2-processing-system&#34;&gt;&lt;strong&gt;FORCE Level 2 Processing System&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;The &lt;strong&gt;FORCE Level 2 Processing System&lt;/strong&gt; is capable of generating such ARD.&lt;/p&gt;
+&lt;p&gt;In principle, the same algorithm is applied to all supported sensors, although specific processing options are triggered or are only available for some sensors. Essentially, L2PS converts each Level 1 image to ARD specification. This includes three main processing steps:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;cloud and cloud shadow detection&lt;/li&gt;
+&lt;li&gt;radiometric correction&lt;/li&gt;
+&lt;li&gt;data cubing&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;For Sentinel-2, two additional options are implemented:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;resolution merging, i.e. increase the spatial resolution of the 20m bands to 10m&lt;/li&gt;
+&lt;li&gt;co-registration with Landsat time series&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Note that most options and corrections can be switched off (e.g. atmospheric correction or data cubing) - this tutorial will however focus on our default parameterization for generating ARD.&lt;/p&gt;
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://davidfrantz.github.io/img/tutorial-l2-ard-l2ps.jpg&#34; data-caption=&#34;FORCE Level 2 Processing System Workflow&#34;&gt;
+&lt;img src=&#34;https://davidfrantz.github.io/img/tutorial-l2-ard-l2ps.jpg&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    FORCE Level 2 Processing System Workflow
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;getting-started&#34;&gt;&lt;strong&gt;Getting started&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;This tutorial walks you through the main parts, for more details, please refer to the &lt;a href=&#34;https://force-eo.readthedocs.io/en/latest/components/lower-level/level2/index.html&#34;&gt;documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;make-sure-to-have-enough-horsepower&#34;&gt;&lt;strong&gt;Make sure to have enough horsepower&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Generating ARD is compute-heavy. Input and output need quite some disc space. And processes need sufficient RAM. Please do not expect this to work on a weak laptop or similar. It is mainly intended to run on sufficiently powerful servers or virtual machines. There are some ways to make most out of rigs where RAM is an issue (see parallel processing section below), but there is a limit. At least, you will need to have 8-8.5GB of RAM for processing a Sentinel-2 image.&lt;/p&gt;
+&lt;h3 id=&#34;recommended-folder-structure&#34;&gt;&lt;strong&gt;Recommended folder structure&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Although not strictly required, I strongly suggest to use separate directories for Level 1 input data, Level 2 output data, parametrization, log files, temporary directory (if input are zip/tar.gz containers) and any other auxiliary data. So, let’s start by creating some directories, e.g.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;mkdir /data/force/level1
+mkdir /data/force/level2
+mkdir /data/force/param
+mkdir /data/force/log
+mkdir /data/force/misc
+mkdir /data/force/temp
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;the-parameter-file&#34;&gt;&lt;strong&gt;The parameter file&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;The core element of L2PS is the parameter file. An empty Level 2 parameter file can be generated with&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;force-parameter /data/force/param LEVEL2 1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;LEVEL2
+An empty parameter file skeleton was written to
+  /data/force/param/LEVEL2-skeleton.prm
+Note that all parameters need to be given, even though some may not be used
+with you specific parameterization.
+You should rename the file, e.g. my-first-LEVEL2.prm.
+Parameterize according to your needs and run with
+force-level2 /data/force/param/my-first-LEVEL2.prm
+ or for a single image:
+force-l2ps image /data/force/param/my-first-LEVEL2.prm
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The trailing &lt;code&gt;1&lt;/code&gt; means that descriptions for every parameter will be included. If you prefer a shorter parameter file, give a &lt;code&gt;0&lt;/code&gt; instead. The descriptions can also be found in the &lt;a href=&#34;https://force-eo.readthedocs.io/en/latest/components/lower-level/level2/param.html&#34;&gt;documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Let’s rename the file, and have a look:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;mv /data/force/param/LEVEL2-skeleton.prm /data/force/param/l2ps.prm
+head /data/force/param/l2ps.prm
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;++PARAM_LEVEL2_START++
+
+# INPUT/OUTPUT DIRECTORIES
+# ------------------------------------------------------------------------
+# The file queue specifies, which images are to be processed. The full path
+# to the file needs to be given. Do  not  paste  the content of the file queue
+# into the parameter file. The file queue is mandatory for force-level2, but
+# may be NULL for force-l2ps.
+# Type: full file path
+FILE_QUEUE = NULL
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;It is a simple text file. Lines beginning with &lt;code&gt;#&lt;/code&gt; are comments. All parameters are given in tag and value notation (&lt;code&gt;TAG = VALUE&lt;/code&gt;). The file can be edited with any text editor. However, make sure that you are using Unix End-of-Line &lt;code&gt;\n&lt;/code&gt;. MOST errors are because of parameter files with Windows End-of-Line &lt;code&gt;\r\n&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;parameterization&#34;&gt;&lt;strong&gt;Parameterization&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Let&#39;s start to parameterize L2PS. Open the file in the text editor of your choice, e.g.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;vi /data/force/param/l2ps.prm
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;1-input--output&#34;&gt;&lt;strong&gt;1) Input / Output&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;The main input is a file queue that holds the full filepaths to all ingested images. All images that are enqueued (processing flag is &lt;code&gt;QUEUED&lt;/code&gt;) will be processed, all other are ignored. After processing, the flag will be set to &lt;code&gt;DONE&lt;/code&gt;. The &lt;a href=&#34;https://davidfrantz.github.io/tutorials/force-level1-s2/sentinel-2-l1c/&#34;&gt;Sentinel-2 Level 1C tutorial&lt;/a&gt; explains how to use the FORCE Level 1 Archiving Suite (FORCE L1AS) to download, organize, and maintain a clean and consistent Sentinel-2 Level 1 data pool, as well as corresponding data queues needed for the Level 2 processing. There isn&#39;t a tutorial for Landsat yet, but it works similarly. Let&#39;s assume, we already have downloaded some images, the file queue is set like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;FILE_QUEUE = /data/force/level1/queue.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Next, we set the directories for output, logfiles and temporary data. The temp directory is mostly used for temporarily unpacking zip/tar.gz containers.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;DIR_LEVEL2 = /data/force/level2
+DIR_LOG = /data/force/log
+DIR_TEMP = /data/force/temp
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;2-digital-elevation-model&#34;&gt;&lt;strong&gt;2) Digital Elevation Model&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;A Digital Elevation model is used to improve cloud and cloud shadow detection, atmospheric correction and to perform the topographic correction. The &lt;a href=&#34;https://davidfrantz.github.io/tutorials/force-dem/dem/&#34;&gt;DEM tutorial&lt;/a&gt; explains how to properly prepare a Digital Elevation Model (DEM). Let&#39;s assume, we already have prepared the DEM, it is set like this. Make sure to set the nodata value correctly:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;FILE_DEM = /data/force/misc/dem/srtm.vrt
+DEM_NODATA = -32767
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;3-datacube-parameters&#34;&gt;&lt;strong&gt;3) Datacube parameters&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;The datacube parameters, e.g. resolution, projection, tile size, block size, grid origin etc. are under full user control. As data cubing is an essential concept of FORCE, I highly recommend to read the &lt;a href=&#34;https://davidfrantz.github.io/tutorials/force-datacube/datacube/&#34;&gt;Datacube tutorial&lt;/a&gt;, which explains what a datacube is, how it is parameterized, how you can find a POI, how to visualize the tiling grid, and how to conveniently display cubed data.&lt;/p&gt;
+&lt;p&gt;Our parameter file already has some working defaults. You likely want to adjust them to your needs, but for starters, let&#39;s take the default values.&lt;/p&gt;
+&lt;h3 id=&#34;4-radiometric-correction&#34;&gt;&lt;strong&gt;4) Radiometric correction&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;The default parameter file already has all radiometric corrections enabled, and this is the setup I commonly use for generating ARD. This includes atmospheric correction with multiple scattering effects, image-based AOD estimation, topographic correction, adjacency effect correction, and nadir BRDF correction. The only thing that needs to be changed (and only if processing Landsat data) is the parameterization of the water vapor correction. Please see the &lt;a href=&#34;https://davidfrantz.github.io/tutorials/force-dem/dem/&#34;&gt;Water Vapor Database tutorial&lt;/a&gt; for instructions on how to prepare/download the Water Vapor Database. The directory that contains this database needs to be like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;DIR_WVPLUT = /data/force/misc/wvdb
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;5-cloud-detection&#34;&gt;&lt;strong&gt;5) Cloud detection&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;The default parameter file already has meaningful values for the cloud correction. I usually don&#39;t tweak the Fmask parameters. You can probably change the maximum cloud cover parameters to your liking. The &lt;code&gt;MAX_CLOUD_COVER_FRAME&lt;/code&gt; parameter cancels the processing of images that exceed the given threshold. The processing will be canceled right after cloud detection and thus saves quite some processing time. In my opinion, heavily clouded images are most often of little use, and even if cloud detection flags some pixels as &amp;ldquo;clear&amp;rdquo;, they are usually somewhat contaminated, e.g. diffuse transitions from clear to cloud or even false negatives.. Therefore, I commonly do not go up to 100%. The &lt;code&gt;MAX_CLOUD_COVER_TILE&lt;/code&gt; parameter is similar, but it works on a per tile basis. It suppresses the output for chips (tiled image) that exceed the given threshold.&lt;/p&gt;
+&lt;h3 id=&#34;6-resolution-merge&#34;&gt;&lt;strong&gt;6) Resolution merge&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;This parameter defines the method used for improving the spatial resolution of Sentinel-2’s 20m bands to 10m. It defaults to the ImproPhe code, which is a data fusion option with both decent performance and quality. Let&#39;s keep this method, but feel free to try the other options.&lt;/p&gt;
+&lt;h3 id=&#34;7-co-registration&#34;&gt;&lt;strong&gt;7) Co-Registration&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Since v. 3.0, FORCE is able to perform a co-registration of Sentinel-2 images with Landsat time series. For starters, we will not use this option. A separate tutorial is planned asap that will explain how to do this.&lt;/p&gt;
+&lt;h3 id=&#34;8-parallel-processing&#34;&gt;&lt;strong&gt;8) Parallel Processing&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;FORCE L2PS uses a nested parallelization strategy. The main parallelization level is multiprocessing: individual images are processed simultaneously (the box in the workflow figure). Each process can additionally use multithreading, which means that each image can be additionally processed parallely. The multiplication of both shouldn&#39;t exceed the number of threads your system supports.&lt;/p&gt;
+&lt;p&gt;I recommend to use as many processes, and as few threads as possible. However, a mild mix may be beneficial, e.g. 2 threads per process. If processing only a few (or one) image, increase the multithreading ratio accordingly. This can speed up the work significantly. If RAM is too small, inncrease the multithreading ratio accordingly. If there isn&#39;t enough RAM to support all processes, some images will fail due to insufficient memory.&lt;/p&gt;
+&lt;p&gt;To prevent an I/O jam at startup (by reading / extracting a lot of data simultaneously), a delay (in seconds) might be necessary: a new process waits for some seconds before starting. The necessary delay (or none) is dependent on your system’s architecture (I/O speed etc), on sensor to be processed, and whether packed archives or uncompressed images are given as input.&lt;/p&gt;
+&lt;p&gt;Please note that I cannot recommend useful default settings. This is extremely dependent on your rig&#39;s setup (# of CPUs, RAM, I/O speed, parallel disc access etc.) and on what exactly you are doing (e.g. Sentinel-2 has higher ressource requirements compared to Landsat, are the input images extracted or still packed in zip/tar.gz containers, enabling/disabling certain processing options have an effect, too).&lt;/p&gt;
+&lt;p&gt;Please Have a look at these two setups (click to enlarge). The plots illustrate how the work (of processing the same 8 images) is being spread to CPUs and threads, how the delay works, and how the processes consume RAM (highly idealized - actually, the memory footprint varies across runtime).&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Good setup&lt;/th&gt;
+&lt;th&gt;Bad setup&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;4 processes with 2 threads each&lt;/td&gt;
+&lt;td&gt;8 processes with 1 thread each&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;RAM is large enough to support this many processes&lt;/td&gt;
+&lt;td&gt;RAM is not large enough to support this many processes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://davidfrantz.github.io/img/tutorial-l2-ard-cpu-ram-l2-good.jpg&#34; &gt;
+&lt;img src=&#34;https://davidfrantz.github.io/img/tutorial-l2-ard-cpu-ram-l2-good.jpg&#34; alt=&#34;&#34; width=&#34;200&#34; &gt;&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+&lt;/td&gt;
+&lt;td&gt;
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://davidfrantz.github.io/img/tutorial-l2-ard-cpu-ram-l2-bad.jpg&#34; &gt;
+&lt;img src=&#34;https://davidfrantz.github.io/img/tutorial-l2-ard-cpu-ram-l2-bad.jpg&#34; alt=&#34;&#34; width=&#34;200&#34; &gt;&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;In my case, I am running on a bare-metal Ubuntu server with 32 CPUs / 64 threads, 500GB RAM (way more than sufficient), and a RAID6 HDD file system that is directly attached to the server. Both my Landsat and Sentinel-2 input images are still packed. I am using these parameters:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;NPROC = 32
+NTHREAD = 2
+DELAY = 5
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;9-output-options&#34;&gt;&lt;strong&gt;9) Output options&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;The default output options are already my usual setup for ARD generation. The output files will be stored as compressed GeoTiff images with internal blocks for partial access. Note that metadata are written to the FORCE domain, thus they only show up if you look into all metadata domains, e.g.&lt;/p&gt;
+&lt;p&gt;The Bottom-of-Atmosphere reflectance product and the Quality Assurance Information are written by default - and they can&#39;t be disabled. I typically generate additional quicklooks (&lt;code&gt;OUTPUT_OVV&lt;/code&gt;). If you want to generate pixel based composites in the next step, you should additionally output the &lt;code&gt;OUTPUT_DST&lt;/code&gt;, &lt;code&gt;OUTPUT_VZN&lt;/code&gt;, and &lt;code&gt;OUTPUT_HOT&lt;/code&gt; products. The &lt;code&gt;OUTPUT_AOD&lt;/code&gt; and &lt;code&gt;OUTPUT_WVP&lt;/code&gt; products are not used by any higher level submodule - they are only useful for validation purposes.&lt;/p&gt;
+&lt;h2 id=&#34;processing&#34;&gt;&lt;strong&gt;Processing&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Once the parameter file is finished, processing is pretty straight forward. Simply feed the parameter file to &lt;code&gt;force-level2&lt;/code&gt;. A progress bar keeps you updated about the ETA, the number of completed, running and waiting processes.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;force-level2 /data/force/param/l2ps.prm
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;47 images enqueued. Start processing with 32 CPUs
+
+Computers / CPU cores / Max jobs to run
+1:local / 64 / 32
+
+Computer:jobs running/jobs completed/%of started jobs/Average seconds to complete
+ETA: 12046s Left: 45 AVG: 280.00s  local:32/2/100%/596.5s 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;logfile&#34;&gt;&lt;strong&gt;Logfile&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;After processing, I recommend to check the logfiles, which we have written to &lt;code&gt;/data/force/log&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ls /data/force/log | tail
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;S2A_OPER_MSI_L1C_TL_SGS__20160310T160000_A003736_T33JYG_N02.01
+S2A_OPER_MSI_L1C_TL_SGS__20160409T141153_A004165_T33JYG_N02.01
+S2A_OPER_MSI_L1C_TL_SGS__20160827T135818_A006167_T33JYG_N02.04
+S2A_OPER_MSI_L1C_TL_SGS__20160916T135429_A006453_T33JYG_N02.04
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The logfiles report the percentage of data cover (how many pixels are not no-data), water cover, snow cover and cloud cover. Then, aerosol optical depth @ 550 nm (scene average), and the number of dark targets for retrieving aerosol optical depth (over water/vegetation) are printed. Then, the number of products written (number of tiles), and a supportive success indication is printed. In the case the overall cloud coverage is higher than allowed, the image is skipped. The processing time (real time) is appended at the end.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cat /data/force/log/* | tail
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;S2A_OPER_MSI_L1C_TL_SGS__20160310T160000_A003736_T33JYG_N02.01: dc:  99.95%. wc:  18.04%. sc:   0.07%. cc:   7.13%. AOD: 0.1129. # of targets: 240/42. 25 product(s) written. Success! Processing time: 14 mins 35 secs
+S2A_OPER_MSI_L1C_TL_SGS__20160409T141153_A004165_T33JYG_N02.01: dc: 100.00%. wc:  18.39%. sc:   0.07%. cc:   0.08%. AOD: 0.1455. # of targets: 25/43. 25 product(s) written. Success! Processing time: 15 mins 19 secs
+S2A_OPER_MSI_L1C_TL_SGS__20160827T135818_A006167_T33JYG_N02.04: dc: 100.00%. wc:  18.43%. sc:   0.10%. cc:   0.11%. AOD: 0.1208. # of targets: 74/0. 25 product(s) written. Success! Processing time: 13 mins 50 secs
+S2A_OPER_MSI_L1C_TL_SGS__20160916T135429_A006453_T33JYG_N02.04: dc: 100.00%. wc:   1.78%. sc:   2.85%. cc: 100.00%. Skip. Processing time: 12 mins 17 secs
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;output-format&#34;&gt;&lt;strong&gt;Output format&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;For all details on the output format, please refer to the &lt;a href=&#34;https://force-eo.readthedocs.io/en/latest/components/lower-level/level2/format.html#metadata&#34;&gt;documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The output data are organized in data cubes. The tiles manifest as directories in the file system, and the images are stored within. This is decribed in more detail in the &lt;a href=&#34;https://davidfrantz.github.io/tutorials/force-datacube/datacube/&#34;&gt;Datacube tutorial&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Basically, for each tile, you get a time series of square image chips that always show the same extent:&lt;/p&gt;
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://davidfrantz.github.io/img/tutorial-l2-ard-results.jpg&#34; data-caption=&#34;Data Cube of Landsat 7/8 and Sentinel-2 A/B Level 2 ARD. A two-month period of atmospherically corrected imagery acquired over South-East Berlin, Germany, is shown here.&#34;&gt;
+&lt;img src=&#34;https://davidfrantz.github.io/img/tutorial-l2-ard-results.jpg&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Data Cube of Landsat 7/8 and Sentinel-2 A/B Level 2 ARD. A two-month period of atmospherically corrected imagery acquired over South-East Berlin, Germany, is shown here.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;Each dataset consists of a &lt;code&gt;BOA&lt;/code&gt; and &lt;code&gt;QAI&lt;/code&gt; product, which are Bottom-of-Atmosphere reflectance and Quality Assurance Information. Depending on parameterization ,there are more products, e.g. &lt;code&gt;OVV&lt;/code&gt; for image overviews (quicklooks).&lt;/p&gt;
+&lt;p&gt;The reflectance products are multi-band images and consist of 6 bands for Landsat (Landsat legacy bands), and 10 bands for Sentinel-2 (land surface bands). All bands are provided at the same spatial resolution, typically 30m for Landsat and 10m for Sentinel-2.&lt;/p&gt;
+&lt;p&gt;QAI are provided bit-wise for each pixel. QAI are essential for making your analyses a success, therefore, please have a look at the &lt;a href=&#34;https://davidfrantz.github.io/tutorials/force-qai/qai/&#34;&gt;Quality Bits tutorial&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Metadata are written to all output products. Note that FORCE-specific metadata will be written to the FORCE domain, and thus are probably not visible unless the FORCE domain (or all domains) are specifically requested:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{bash,&#34;&gt;gdalinfo -mdd all /data/force/level2/X0007_Y0007/20170424_LEVEL2_SEN2A_BOA.tif
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Driver: GTiff/GeoTIFF
+Files: /data/force/level2/X0007_Y0007/20170424_LEVEL2_SEN2A_BOA.tif
+Size is 3000, 3000
+Coordinate System is:
+PROJCS[&amp;quot;WGS 84 / UTM zone 33S&amp;quot;,
+    GEOGCS[&amp;quot;WGS 84&amp;quot;,
+        DATUM[&amp;quot;WGS_1984&amp;quot;,
+        
+...
+
+Band 10 Block=3000x300 Type=Int16, ColorInterp=Undefined
+  Description = SWIR2
+  NoData Value=-9999
+  Metadata (FORCE):
+    Date=2017-04-24T08:26:01.0Z
+    Domain=SWIR2
+    Scale=10000.000
+    Sensor=SEN2A
+    Wavelength=2.202
+    Wavelength_unit=micrometers
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;ard-now-what&#34;&gt;&lt;strong&gt;ARD, now what?&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;FORCE provides a lot of functionality to further process the generated ARD into hARD or hARD+ products, e.g. using pixel-based compositing or time series analyses.&lt;/p&gt;
+&lt;p&gt;Please see the &lt;a href=&#34;https://force-eo.readthedocs.io/en/latest/components/higher-level/index.html&#34;&gt;Higher Level processing options&lt;/a&gt; in the documentation. Some more tutorials are planned, which deal with all these options.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Operational Coregistration of the Sentinel-2A/B Image Archive Using Multitemporal Landsat Spectral Averages</title>
