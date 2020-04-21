@@ -655,7 +655,7 @@ mkdir /data/force/temp
 An empty parameter file skeleton was written to
   /data/force/param/LEVEL2-skeleton.prm
 Note that all parameters need to be given, even though some may not be used
-with you specific parameterization.
+with your specific parameterization.
 You should rename the file, e.g. my-first-LEVEL2.prm.
 Parameterize according to your needs and run with
 force-level2 /data/force/param/my-first-LEVEL2.prm
@@ -705,9 +705,9 @@ DEM_NODATA = -32767
 <pre><code class="language-bash">DIR_WVPLUT = /data/force/misc/wvdb
 </code></pre>
 <h3 id="5-cloud-detection"><strong>5) Cloud detection</strong></h3>
-<p>The default parameter file already has meaningful values for the cloud correction. I usually don't tweak the Fmask parameters. You can probably change the maximum cloud cover parameters to your liking. The <code>MAX_CLOUD_COVER_FRAME</code> parameter cancels the processing of images that exceed the given threshold. The processing will be canceled right after cloud detection and thus saves quite some processing time. In my opinion, heavily clouded images are most often of little use, and even if cloud detection flags some pixels as &ldquo;clear&rdquo;, they are usually somewhat contaminated, e.g. diffuse transitions from clear to cloud or even false negatives.. Therefore, I commonly do not go up to 100%. The <code>MAX_CLOUD_COVER_TILE</code> parameter is similar, but it works on a per tile basis. It suppresses the output for chips (tiled image) that exceed the given threshold.</p>
+<p>The default parameter file already has meaningful values for the cloud correction. I usually don't tweak the Fmask parameters. You can probably change the maximum cloud cover parameters to your liking. The <code>MAX_CLOUD_COVER_FRAME</code> parameter cancels the processing of images that exceed the given threshold. The processing will be canceled right after cloud detection and thus saves quite some processing time. In my opinion, heavily clouded images are most often of little use, and even if cloud detection flags some pixels as &ldquo;clear&rdquo;, they are usually somewhat contaminated, e.g. in transition zones from clear-sky to cloud.. Therefore, I commonly do not go up to 100%. The <code>MAX_CLOUD_COVER_TILE</code> parameter is similar, but it works on a per tile basis. It suppresses the output for chips (tiled image) that exceed the given threshold.</p>
 <h3 id="6-resolution-merge"><strong>6) Resolution merge</strong></h3>
-<p>This parameter defines the method used for improving the spatial resolution of Sentinel-2’s 20m bands to 10m. It defaults to the ImproPhe code, which is a data fusion option with both decent performance and quality. Let's keep this method, but feel free to try the other options.</p>
+<p>This parameter defines the method used for improving the spatial resolution of Sentinel-2’s 20m bands to 10m. It defaults to the <a href="https://ieeexplore.ieee.org/document/7452606">ImproPhe code</a>, which is a data fusion option with both decent performance and quality. Let's keep this method, but feel free to try the other options.</p>
 <h3 id="7-co-registration"><strong>7) Co-Registration</strong></h3>
 <p>Since v. 3.0, FORCE is able to perform a co-registration of Sentinel-2 images with Landsat time series. For starters, we will not use this option. A separate tutorial is planned asap that will explain how to do this.</p>
 <h3 id="8-parallel-processing"><strong>8) Parallel Processing</strong></h3>
@@ -715,7 +715,7 @@ DEM_NODATA = -32767
 <p>I recommend to use as many processes, and as few threads as possible. However, a mild mix may be beneficial, e.g. 2 threads per process. If processing only a few (or one) image, increase the multithreading ratio accordingly. This can speed up the work significantly. If RAM is too small, inncrease the multithreading ratio accordingly. If there isn't enough RAM to support all processes, some images will fail due to insufficient memory.</p>
 <p>To prevent an I/O jam at startup (by reading / extracting a lot of data simultaneously), a delay (in seconds) might be necessary: a new process waits for some seconds before starting. The necessary delay (or none) is dependent on your system’s architecture (I/O speed etc), on sensor to be processed, and whether packed archives or uncompressed images are given as input.</p>
 <p>Please note that I cannot recommend useful default settings. This is extremely dependent on your rig's setup (# of CPUs, RAM, I/O speed, parallel disc access etc.) and on what exactly you are doing (e.g. Sentinel-2 has higher ressource requirements compared to Landsat, are the input images extracted or still packed in zip/tar.gz containers, enabling/disabling certain processing options have an effect, too).</p>
-<p>Please Have a look at these two setups (click to enlarge). The plots illustrate how the work (of processing the same 8 images) is being spread to CPUs and threads, how the delay works, and how the processes consume RAM (highly idealized - actually, the memory footprint varies across runtime).</p>
+<p>Please have a look at these two setups (click to enlarge). The plots illustrate how the work (of processing the same 8 images) is being spread to CPUs and threads, how the delay works, and how the processes consume RAM (highly idealized - actually, the memory footprint varies across runtime).</p>
 <table>
 <thead>
 <tr>
