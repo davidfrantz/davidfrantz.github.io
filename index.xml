@@ -5,12 +5,20 @@
     <link>https://davidfrantz.github.io/</link>
       <atom:link href="https://davidfrantz.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>DAVID FRANTZ</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Mon, 20 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Mon, 11 May 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://davidfrantz.github.io/img/icon-192.png</url>
       <title>DAVID FRANTZ</title>
       <link>https://davidfrantz.github.io/</link>
     </image>
+    
+    <item>
+      <title>Mapping urban-rural gradients of settlements and vegetation at national scale using Sentinel-2 spectral-temporal metrics and regression-based unmixing with synthetic training data</title>
+      <link>https://davidfrantz.github.io/publication/schug-2020/</link>
+      <pubDate>Mon, 11 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/schug-2020/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>FORCE Tutorial: Level 2 ARD</title>
