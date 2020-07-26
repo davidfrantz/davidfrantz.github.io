@@ -5,7 +5,7 @@
     <link>https://davidfrantz.github.io/authors/</link>
       <atom:link href="https://davidfrantz.github.io/authors/index.xml" rel="self" type="application/rss+xml" />
     <description>Authors</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Mon, 11 May 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Fri, 24 Jul 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://davidfrantz.github.io/img/icon-192.png</url>
       <title>Authors</title>
@@ -13,18 +13,138 @@
     </image>
     
     <item>
-      <title>Akpona Okujeni</title>
-      <link>https://davidfrantz.github.io/authors/akpona-okujeni/</link>
-      <pubDate>Mon, 11 May 2020 00:00:00 +0000</pubDate>
-      <guid>https://davidfrantz.github.io/authors/akpona-okujeni/</guid>
+      <title>Afag Rizayeva</title>
+      <link>https://davidfrantz.github.io/authors/afag-rizayeva/</link>
+      <pubDate>Fri, 24 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/afag-rizayeva/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Anna Komarova</title>
+      <link>https://davidfrantz.github.io/authors/anna-komarova/</link>
+      <pubDate>Fri, 24 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/anna-komarova/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Benjamin Bleyhl</title>
+      <link>https://davidfrantz.github.io/authors/benjamin-bleyhl/</link>
+      <pubDate>Fri, 24 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/benjamin-bleyhl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bin Tan</title>
+      <link>https://davidfrantz.github.io/authors/bin-tan/</link>
+      <pubDate>Fri, 24 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/bin-tan/</guid>
       <description></description>
     </item>
     
     <item>
       <title>David Frantz</title>
       <link>https://davidfrantz.github.io/authors/david-frantz/</link>
-      <pubDate>Mon, 11 May 2020 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 24 Jul 2020 00:00:00 +0000</pubDate>
       <guid>https://davidfrantz.github.io/authors/david-frantz/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Elshad Askerov</title>
+      <link>https://davidfrantz.github.io/authors/elshad-askerov/</link>
+      <pubDate>Fri, 24 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/elshad-askerov/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Garegin Tepanosyan</title>
+      <link>https://davidfrantz.github.io/authors/garegin-tepanosyan/</link>
+      <pubDate>Fri, 24 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/garegin-tepanosyan/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>He Yin</title>
+      <link>https://davidfrantz.github.io/authors/he-yin/</link>
+      <pubDate>Fri, 24 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/he-yin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hovik Sayadyan</title>
+      <link>https://davidfrantz.github.io/authors/hovik-sayadyan/</link>
+      <pubDate>Fri, 24 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/hovik-sayadyan/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Johanna Buchner</title>
+      <link>https://davidfrantz.github.io/authors/johanna-buchner/</link>
+      <pubDate>Fri, 24 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/johanna-buchner/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Katarzyna Lewińska</title>
+      <link>https://davidfrantz.github.io/authors/katarzyna-lewinska/</link>
+      <pubDate>Fri, 24 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/katarzyna-lewinska/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nodar Elizbarashvili</title>
+      <link>https://davidfrantz.github.io/authors/nodar-elizbarashvili/</link>
+      <pubDate>Fri, 24 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/nodar-elizbarashvili/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nugzar Zazanashvili</title>
+      <link>https://davidfrantz.github.io/authors/nugzar-zazanashvili/</link>
+      <pubDate>Fri, 24 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/nugzar-zazanashvili/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tamar Bakuradze</title>
+      <link>https://davidfrantz.github.io/authors/tamar-bakuradze/</link>
+      <pubDate>Fri, 24 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/tamar-bakuradze/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tobias Kuemmerle</title>
+      <link>https://davidfrantz.github.io/authors/tobias-kuemmerle/</link>
+      <pubDate>Fri, 24 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/tobias-kuemmerle/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Volker Radeloff</title>
+      <link>https://davidfrantz.github.io/authors/volker-radeloff/</link>
+      <pubDate>Fri, 24 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/volker-radeloff/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Akpona Okujeni</title>
+      <link>https://davidfrantz.github.io/authors/akpona-okujeni/</link>
+      <pubDate>Mon, 11 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/akpona-okujeni/</guid>
       <description></description>
     </item>
     
