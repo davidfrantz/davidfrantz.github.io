@@ -5,7 +5,7 @@
     <link>https://davidfrantz.github.io/tags/</link>
       <atom:link href="https://davidfrantz.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <description>Tags</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Wed, 15 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Sat, 01 Aug 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://davidfrantz.github.io/img/icon-192.png</url>
       <title>Tags</title>
@@ -13,18 +13,18 @@
     </image>
     
     <item>
-      <title>running</title>
-      <link>https://davidfrantz.github.io/tags/running/</link>
-      <pubDate>Wed, 15 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>https://davidfrantz.github.io/tags/running/</guid>
+      <title>2020</title>
+      <link>https://davidfrantz.github.io/tags/2020/</link>
+      <pubDate>Sat, 01 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/tags/2020/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>2020</title>
-      <link>https://davidfrantz.github.io/tags/2020/</link>
-      <pubDate>Mon, 04 May 2020 00:00:00 +0000</pubDate>
-      <guid>https://davidfrantz.github.io/tags/2020/</guid>
+      <title>running</title>
+      <link>https://davidfrantz.github.io/tags/running/</link>
+      <pubDate>Wed, 15 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/tags/running/</guid>
       <description></description>
     </item>
     

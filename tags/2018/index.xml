@@ -14,9 +14,9 @@
     
     <item>
       <title>Water vapor database for atmospheric correction of Landsat imagery</title>
-      <link>https://davidfrantz.github.io/data/dt001/</link>
+      <link>https://davidfrantz.github.io/data/frantz-2018/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>https://davidfrantz.github.io/data/dt001/</guid>
+      <guid>https://davidfrantz.github.io/data/frantz-2018/</guid>
       <description>&lt;p&gt;Supplement to: Frantz, David; Röder, Achim; Stellmes, Marion; Hill, Joachim (2016): An operational radiometric Landsat preprocessing framework for large-area time series applications. IEEE Transactions on Geoscience and Remote Sensing, 54(7), 3928-3943, &lt;a href=&#34;https://doi.org/10.1109/TGRS.2016.2530856&#34;&gt;https://doi.org/10.1109/TGRS.2016.2530856&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>

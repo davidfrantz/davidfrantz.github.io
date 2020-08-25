@@ -5,7 +5,7 @@
     <link>https://davidfrantz.github.io/data/</link>
       <atom:link href="https://davidfrantz.github.io/data/index.xml" rel="self" type="application/rss+xml" />
     <description>Presentations</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Mon, 01 Jul 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Sat, 01 Aug 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://davidfrantz.github.io/img/icon-192.png</url>
       <title>Presentations</title>
@@ -13,10 +13,28 @@
     </image>
     
     <item>
+      <title>Land cover fraction map of Germany at 10m spatial resolution based on Sentinel-1 and Sentinel-2 spectral temporal metrics</title>
+      <link>https://davidfrantz.github.io/data/schug-2020/</link>
+      <pubDate>Sat, 01 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/data/schug-2020/</guid>
+      <description>&lt;p&gt;Supplement to: Schug, F. et al. (2020): Mapping urban-rural gradients of settlements and vegetation at national scale using Sentinel-2 spectral-temporal metrics and regression-based unmixing with synthetic training data. Remote Sensing of Environment, 246, 111810, &lt;a href=&#34;https://doi.org/10.1016/j.rse.2020.111810&#34;&gt;https://doi.org/10.1016/j.rse.2020.111810&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Land-Cover Change Maps of the Caucasus</title>
+      <link>https://davidfrantz.github.io/data/buchner-2020/</link>
+      <pubDate>Sat, 01 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/data/buchner-2020/</guid>
+      <description>&lt;p&gt;Supplement to: Buchner, J. et al. (2020): Land-cover change in the Caucasus Mountains since 1987 based on the topographic correction of multi-temporal Landsat composites. Remote Sensing of Environment, 248, 111967, &lt;a href=&#34;https://doi.org/10.1016/j.rse.2020.111967&#34;&gt;https://doi.org/10.1016/j.rse.2020.111967&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Dominant land cover of the Okavango Basin</title>
-      <link>https://davidfrantz.github.io/data/dt003/</link>
+      <link>https://davidfrantz.github.io/data/stellmes-2019/</link>
       <pubDate>Mon, 01 Jul 2019 00:00:00 +0000</pubDate>
-      <guid>https://davidfrantz.github.io/data/dt003/</guid>
+      <guid>https://davidfrantz.github.io/data/stellmes-2019/</guid>
       <description>&lt;p&gt;Supplement to: Stellmes, M et al. (2013): Okavango Basin - Earth Observation. In: Oldeland, J., Erb, C., Finckh, M. &amp;amp; Jürgens, N. [Eds.]: Environmental Assessments in the Okavango Region. Biodiversity &amp;amp; Ecology, 5, 23-27&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;icon: twitter
@@ -29,18 +47,18 @@ link: &lt;a href=&#34;https://twitter.com/d__frantz&#34;&gt;https://twitter.com/
     
     <item>
       <title>A Landsat-based national-scale map of cropping practices for Turkey (2015)</title>
-      <link>https://davidfrantz.github.io/data/dt002/</link>
+      <link>https://davidfrantz.github.io/data/rufin-2019/</link>
       <pubDate>Fri, 01 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>https://davidfrantz.github.io/data/dt002/</guid>
-      <description>&lt;p&gt;Supplement to: Rufin, P et al. (2019): Mapping Cropping Practices on a National Scale Using Intra-Annual Landsat Time Series Binning. Remote Sensing, 11(3), 232, &lt;a href=&#34;https://doi.org/10.3390/rs11030232&#34;&gt;https://doi.org/10.3390/rs11030232&lt;/a&gt;&lt;/p&gt;
+      <guid>https://davidfrantz.github.io/data/rufin-2019/</guid>
+      <description>&lt;p&gt;Supplement to: Rufin, P. et al. (2019): Mapping Cropping Practices on a National Scale Using Intra-Annual Landsat Time Series Binning. Remote Sensing, 11(3), 232, &lt;a href=&#34;https://doi.org/10.3390/rs11030232&#34;&gt;https://doi.org/10.3390/rs11030232&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Water vapor database for atmospheric correction of Landsat imagery</title>
-      <link>https://davidfrantz.github.io/data/dt001/</link>
+      <link>https://davidfrantz.github.io/data/frantz-2018/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>https://davidfrantz.github.io/data/dt001/</guid>
+      <guid>https://davidfrantz.github.io/data/frantz-2018/</guid>
       <description>&lt;p&gt;Supplement to: Frantz, David; Röder, Achim; Stellmes, Marion; Hill, Joachim (2016): An operational radiometric Landsat preprocessing framework for large-area time series applications. IEEE Transactions on Geoscience and Remote Sensing, 54(7), 3928-3943, &lt;a href=&#34;https://doi.org/10.1109/TGRS.2016.2530856&#34;&gt;https://doi.org/10.1109/TGRS.2016.2530856&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
