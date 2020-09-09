@@ -19,7 +19,7 @@
       <guid>https://davidfrantz.github.io/tutorials/force-tsi/tsi/</guid>
       <description>&lt;p&gt;&lt;em&gt;This tutorial uses FORCE v. 3.5&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id=&#34;learning-objective&#34;&gt;&lt;strong&gt;Learning Objective&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;This tutorial explains introduces the Time Series Analysis (TSA) submodule of the &lt;strong&gt;FORCE Higher Level Processing system (HLPS)&lt;/strong&gt;, shows how to interpolate time series, and how to visualize and animate them via QGIS plugins.&lt;/p&gt;
+&lt;p&gt;This tutorial introduces the Time Series Analysis (TSA) submodule of the &lt;strong&gt;FORCE Higher Level Processing system (HLPS)&lt;/strong&gt;, shows how to interpolate time series, and how to visualize and animate them via QGIS plugins.&lt;/p&gt;
 &lt;h2 id=&#34;why-interpolation&#34;&gt;&lt;strong&gt;Why interpolation?&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;Despite regular observations, EO time series are generally not equidistant.
 Nominal equidistance is only given for areas that are not covered by orbital overlaps (16 days revisit at nadir for a single Landsat).
