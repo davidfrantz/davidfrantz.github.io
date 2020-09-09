@@ -5,12 +5,443 @@
     <link>https://davidfrantz.github.io/tags/force/</link>
       <atom:link href="https://davidfrantz.github.io/tags/force/index.xml" rel="self" type="application/rss+xml" />
     <description>FORCE</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Mon, 20 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Tue, 08 Sep 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://davidfrantz.github.io/img/icon-192.png</url>
       <title>FORCE</title>
       <link>https://davidfrantz.github.io/tags/force/</link>
     </image>
+    
+    <item>
+      <title>FORCE Tutorial: Interpolation</title>
+      <link>https://davidfrantz.github.io/tutorials/force-tsi/tsi/</link>
+      <pubDate>Tue, 08 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/tutorials/force-tsi/tsi/</guid>
+      <description>&lt;p&gt;&lt;em&gt;This tutorial uses FORCE v. 3.5&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;learning-objective&#34;&gt;&lt;strong&gt;Learning Objective&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;This tutorial explains how to interpolate time series using the Time Series Analysis (TSA) submodule of the &lt;strong&gt;FORCE Higher Level Processing system (HLPS)&lt;/strong&gt;, and how to visualize and animate them via QGIS plugins.&lt;/p&gt;
+&lt;h2 id=&#34;why-interpolation&#34;&gt;&lt;strong&gt;Why interpolation?&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Interpolation of time series may serve a variety of purposes.
+Despite regular observations, EO time series are generally not equidistant.
+Nominal equidistance is only given for areas that are not covered by orbital overlaps (16 days revisit at nadir for a single Landsat).
+For areas in lateral overlaps, we have alternating revisits of 1 and 7 days.
+If we are getting closer to the poles, we even get triple, quadruple etc. overlaps, which complicates this alternating pattern.
+The same applies if we consider multiple sensors, e.g. two Landsat and two Sentinel-2 satellites.
+And of course, nominal revisit != actual revisit.
+We cannot see through clouds (unless we are talking radar).
+Probably, you want to remove snow observations.
+There might have been some sensor or ground segment outages, or the data couldn&#39;t have been processed to our quality requirements (e.g. tier 2 data).
+The sensor might not have looked on Earth as the satellite took a detour to avoid space debris etc. etc..&lt;/p&gt;
+&lt;p&gt;Interpolation might simply be used to close these gaps.
+It smoothes the time series, and thus effectively reduces noise.
+Equidistant is established, which might be needed for other algorithms.&lt;/p&gt;
+&lt;p&gt;Time Series interpolation is a basic option within the Time Series Analysis (TSA) submodule of the &lt;strong&gt;FORCE Higher Level Processing system (HLPS)&lt;/strong&gt;, which is commonly performed before using more advanced time series analysis methods:&lt;/p&gt;
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://davidfrantz.github.io/img/force-tsa-workflow.jpg&#34; data-caption=&#34;Time Series Analysis Workflow&#34;&gt;
+&lt;img src=&#34;https://davidfrantz.github.io/img/force-tsa-workflow.jpg&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Time Series Analysis Workflow
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;Workflow image of TSA here.&lt;/p&gt;
+&lt;h2 id=&#34;rbf-interpolation&#34;&gt;&lt;strong&gt;RBF interpolation&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;In FORCE, a couple of interpolation methods are implemented.
+We often use ensembles of Radial Basis Function (RBF) convolution filters (see this paper &lt;a href=&#34;sciencedirect.com/science/article/pii/S0303243416301003&#34;&gt;here&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;This is similar to a moving average filter.
+A kernel is moved over the time series, and the observations are weighted according to a Gaussian distribution.
+This means that an observation in the middle of the kernel gets a higher weight.&lt;/p&gt;
+&lt;p&gt;Now, data density is usually variable, which means that we have seasons with larger data availability (e.g. in the summer) - and seasons with low data availability.
+For good data situations, we would want to have a narrow Gaussian to more closely follow the actual time series.
+For bad data situations, however, a narrow kernel would result in many nodata values and wouldn&#39;t smooth the time series appropriately.&lt;/p&gt;
+&lt;p&gt;Therefore, we use multiple kernels of different widths.
+The estimates from those kernels are eventually aggregated using a weighted average, wherein the weights correspond to the data availability within each kernel.
+This gives preference to the kernel with better data coverage.
+An interpolated time series looks like this:&lt;/p&gt;
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://davidfrantz.github.io/img/tutorial-tsi-rbf.jpg&#34; data-caption=&#34;Interpolated time series using RBF ensembles&#34;&gt;
+&lt;img src=&#34;https://davidfrantz.github.io/img/tutorial-tsi-rbf.jpg&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Interpolated time series using RBF ensembles
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;parameterfile&#34;&gt;&lt;strong&gt;Parameterfile&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Time Series Interpolation (TSI) is available within the &lt;a href=&#34;https://force-eo.readthedocs.io/en/latest/components/higher-level/tsa/index.html&#34;&gt;Time Series Analysis (TSA)&lt;/a&gt; submodule of the &lt;a href=&#34;https://force-eo.readthedocs.io/en/latest/components/higher-level/index.html&#34;&gt;FORCE Higher Level Processing system (HLPS)&lt;/a&gt;.
+We start by generating an empty parameterfile, and rename the file.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;mkdir /data/europe/interpolation
+force-parameter /data/europe/interpolation TSA 1
+cd /data/europe/interpolation
+mv TSA-skeleton.prm tsi.prm
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;TSA
+An empty parameter file skeleton was written to
+  /data/europe/interpolation/TSA-skeleton.prm
+Note that all parameters need to be given, even though some may not be used
+with your specific parameterization.
+You should rename the file, e.g. my-first-TSA.prm.
+Parameterize according to your needs and run with
+force-higher-level /data/europe/interpolation/my-first-TSA.prm
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If you prefer a more compact parameterfile without all the comments, use &lt;code&gt;0&lt;/code&gt; instead of &lt;code&gt;1&lt;/code&gt; as the last parameter.
+The full set of parameters is also documented &lt;a href=&#34;https://force-eo.readthedocs.io/en/latest/components/higher-level/tsa/param.html&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Input / Output directories&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;For this tutorial, we assume that we already have an existing Level 2 ARD datapool, which contains preprocessed data for multiple years (see &lt;a href=&#34;https://davidfrantz.github.io/tutorials/force-ard/l2-ard/&#34;&gt;ARD tutorial&lt;/a&gt;).
+The parent directory of this datapool goes into the DIR_LOWER parameter.
+The DIR_HIGHER parameter names the output directory, where the interpolated time series will be generated (although technically possible, I suggest to use a different file path). Example:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;DIR_LOWER = /data/europe/level2
+DIR_HIGHER = /data/europe/interpolation
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Analysis mask&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;As we are only interested in the land surface - and there is a lot of water around Crete - we use a processing mask.
+Have a look at the &lt;a href=&#34;https://davidfrantz.github.io/tutorials/force-masks/masks/&#34;&gt;processing mask tutorial&lt;/a&gt; for further details.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;mkdir -p /data/europe/masks
+cp /data/europe/level2/datacube-definition.prj -t /data/europe/masks
+force-cube /data/gis/admin/crete.gpkg /data/europe/masks rasterize 30
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0...10...20...30...40...50...60...70...80...90...100 - done.
+0...10...20...30...40...50...60...70...80...90...100 - done.
+0...10...20...30...40...50...60...70...80...90...100 - done.
+...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In the parameterfile, use the masks like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;DIR_MASK = /data/europe/masks
+BASE_MASK = crete.tif
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Output options&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;For interoperability with the QGIS plugins, we will generate one output image (for each index) in GeoTiff format, which will have the interpolated dates as bands:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;OUTPUT_FORMAT = GTiff
+OUTPUT_EXPLODE = FALSE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;All other parameters are not relevant for now.
+However, please note that you can generate a lot of time series based outputs at the same time, e.g. Trend Analysis, Land Surface Phenology, etc.
+This saves time as data is only read once.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Spatial extent&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;FORCE HLPS requires a square processing extent, which can be set using &lt;code&gt;X_TILE_RANGE&lt;/code&gt; and &lt;code&gt;Y_TILE_RANGE&lt;/code&gt;. Then, if the extent of our region of interest is not square, we can further refine the processing extent by specifying a tile allow-list (&lt;code&gt;FILE_TILE&lt;/code&gt;). Please see the &lt;a href=&#34;https://davidfrantz.github.io/tutorials/force-datacube/datacube/&#34;&gt;datacube tutorial&lt;/a&gt; for more details, and I also suggest you to have a look at the &lt;a href=&#34;https://force-eo.readthedocs.io/en/latest/components/higher-level/hl-compute.html&#34;&gt;computing model of HLPS&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;There are different ways to obtain these values, e.g. by generating, and filtering a shapefile with tiles via &lt;code&gt;force-tabulate-grid&lt;/code&gt;. The easiest way, however, is to use &lt;code&gt;force-tile-extent&lt;/code&gt; with a shapefile (or any other OGR-supported vector format). Example for Crete, Greece:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;force-tile-extent /data/gis/admin/crete.gpkg /data/europe/level2 /data/europe/interpolation/crete.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Suggested Processing extent:
+X_TILE_RANGE = 103 111
+Y_TILE_RANGE = 101 105
+
+Processing extent is not square.
+Suggest to use the tile allow-list:
+FILE_TILE = /home/frantzda/temp/europe/crete.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Block size&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The block size is a parameter that you should only adjust if you are running in RAM-shortages.
+&lt;em&gt;First, try the default value and don’t worry&lt;/em&gt;.
+However, if the program is &lt;code&gt;killed&lt;/code&gt; by the system, this can be mitigated by adjusting &lt;code&gt;BLOCK_SIZE&lt;/code&gt;.
+Please have a look at the &lt;a href=&#34;https://force-eo.readthedocs.io/en/latest/components/higher-level/hl-compute.html&#34;&gt;computing model&lt;/a&gt; to understand how blocks are implemented and used in FORCE.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt;  The block size is a value, which was set in Level 2 Processing; thus the default block size aligns with the physical layout of the files, and can be considered optimal for reading speed. If you adjust it, it is recommended to use a block size, which is a fraction of the original block size (without remainder, e.g. 1/2 of the original value).&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Quality screening&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This here is &lt;strong&gt;super-important,&lt;/strong&gt; and cannot be stressed enough!&lt;/p&gt;
+&lt;p&gt;Without proper quality screening, the results will look like s#%$, trash-in, trash-out!
+By default, FORCE screens for nodata values, various cloud types, cloud shadows, snow, sub-zero or saturated reflectance.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;SCREEN_QAI = NODATA CLOUD_OPAQUE CLOUD_BUFFER CLOUD_CIRRUS CLOUD_SHADOW SNOW SUBZERO SATURATION
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In addition, recognizing that cloud masks are never perfect, TSA offers an outlier detection routine.
+This screens each pixel’s time series and might be used to remove undetected cloud, cloud shadow, or snow remnants.
+The outlier detection is iteratively removing outliers until the time series noise is smaller than the given value.
+Note however that this method might also remove some “valid” data points, e.g. mowing events in intensively managed grasslands.
+This risk increases with decreasing data availability.&lt;/p&gt;
+&lt;p&gt;Following the outlier removal, there is an inliner restoration.
+If an observation, which was flagged as cloud, cloud shadow etc., fits well into the time series trajectory, it will be restored, and will then be used in the time series analysis.&lt;/p&gt;
+&lt;p&gt;For our purpose, using this option is fine, thus, let&#39;s keep the default values:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ABOVE_NOISE = 3
+BELOW_NOISE = 1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Temporal extent, Sensor, Index&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;To eventually generate a long term animation, let’s use 30 years of Landsat data:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;TIME_RANGE = 1990-01-01 2019-12-31
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;FORCE HLPS allows you to easily combine data from different sensors - provided that we only use mutually available bands.
+For this tutorial, we are using data from the Landsat sensors:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;SENSORS = LND04 LND05 LND07 LND08
+RESOLUTION = 30
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;All processing in the TSA submodule is performed band-wise.
+You can choose from a fairly long list of spectral bands and indices (see &lt;a href=&#34;https://force-eo.readthedocs.io/en/latest/components/higher-level/tsa/param.html&#34;&gt;here&lt;/a&gt;).
+HLPS will only read required bands to reduce I/O.
+In order to generate a nice-looking and information-rich animation, we are using the three tasseled cap components:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;INDEX = TC-BRIGHT TC-GREEN TC-WET
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Interpolation&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Now, let’s define the interpolation parameters.
+We wil be using the RBF interpolation to create a smoothed time series with 16-day interpolation steps.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;INTERPOLATE = RBF
+INT_DAY = 16
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We are commonly using following widths for the gaussians. The width (in days) refers to full-width-at-half-maximum.
+This generally works fine, but feel free to experiment here.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;RBF_SIGMA = 8 16 32
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The cutoff parameter determines the width of the kernels.
+It works similar to the confidence level in statistical tests, i.e. 0.95 means that we cut the kernel such that 95% of the Gaussian is retained.
+Essentially, this paramter determines how many nodata values will remain in the time series.
+You will have less nodata values with values closer to one.
+However, the interpolated values will also be less reliable when the next valid observations are too far away (remember: trash-in, trash-out).
+It also determines processing speed: more narrow kernels are faster.
+Commonly, we are using the default value &lt;code&gt;0.95&lt;/code&gt;.
+However, as our primary goal is to generate a nice-looking animation, we bump this parameter up:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;RBF_CUTOFF = 0.995
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;..and of course, we request outputting the interpolated time series:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;OUTPUT_TSI = TRUE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Parallelization&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;HLPS uses a computing model, which &lt;em&gt;streams&lt;/em&gt; the data.
+Please have a detailed look the at &lt;a href=&#34;https://force-eo.readthedocs.io/en/latest/components/higher-level/hl-compute.html&#34;&gt;computing model of HLPS&lt;/a&gt;.
+Most often, generating interpolated time series (without doing anything else) is input-, or output-bound.
+However, this strongly varies with data density, the number of requested indices, disc speed (SSD vs HDD, RAID or not, …), CPU clock speed, if you read/write from/to different (or the same) discs etc&amp;hellip;
+The progress bar will tell you how much time is spent for reading, computing, and writing.
+This helps you identify if your job is e.g. input-limited. You might want to adjust the settings accordingly (also note that you may have more or less CPUs than me).
+Please also note: fairly often, inexperienced users tend to overdo parallel reads/writes beyond a value that is reasonable - if reading/writing doesn’t accelerate when you add more CPUs, this is likely the case (you might even slow down your job by overdoing I/O).&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;NTHREAD_READ = 8
+NTHREAD_COMPUTE = 32
+NTHREAD_WRITE = 4
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;processing&#34;&gt;&lt;strong&gt;Processing&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Processing is straightforward:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;force-higher-level /data/europe/interpolation/tsi.prm
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;number of processing units: 280
+ (active tiles: 28, chunks per tile: 10)
+________________________________________
+Progress:                        100.00%
+Time for I/C/O:           054%/037%/008%
+ETA:             00y 00m 00d 00h 00m 00s
+
+________________________________________
+Real time:       00y 00m 00d 00h 58m 41s
+Virtual time:    00y 00m 00d 01h 32m 54s
+Saved time:      00y 00m 00d 00h 34m 13s
+
+________________________________________
+Virtual I-time:  00y 00m 00d 00h 50m 30s
+Virtual C-time:  00y 00m 00d 00h 34m 31s
+Virtual O-time:  00y 00m 00d 00h 07m 53s
+
+________________________________________
+I-bound time:    00y 00m 00d 00h 23m 42s
+C-bound time:    00y 00m 00d 00h 07m 10s
+O-bound time:    00y 00m 00d 00h 00m 26s
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;After this, we do some postprocessing for simplified data handling, and to prepare the data for ingestion into the QGIS plugins.&lt;/p&gt;
+&lt;p&gt;First, we generate a mosaic:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;force-mosaic /data/europe/interpolation
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;mosaicking 3 products:
+1 1990-2019_001-365_HL_TSA_LNDLG_TCB_TSI.tif
+2 1990-2019_001-365_HL_TSA_LNDLG_TCG_TSI.tif
+3 1990-2019_001-365_HL_TSA_LNDLG_TCW_TSI.tif
+
+mosaicking 1990-2019_001-365_HL_TSA_LNDLG_TCW_TSI.tif
+27 chips found.
+
+mosaicking 1990-2019_001-365_HL_TSA_LNDLG_TCB_TSI.tif
+27 chips found.
+
+mosaicking 1990-2019_001-365_HL_TSA_LNDLG_TCG_TSI.tif
+27 chips found.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then, we build a four-dimensional stack from the three tasseled cap components.
+This stack is sorted by date, but interleaved by thematic band.
+This data model is a prerequisite to the usage of the following QGIS plugins.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; For very long time series, &lt;code&gt;force-stack&lt;/code&gt; still seems a bit slow - but at least it works&amp;hellip;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd mosaic
+force-stack *TCB*TSI.vrt *TCG*TSI.vrt *TCW*TSI.vrt 4D-Tasseled-Cap-TSI.vrt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;file 1:
+  /data/europe/interpolation/mosaic
+  1990-2019_001-365_HL_TSA_LNDLG_TCB_TSI.vrt
+  9000 4000 684
+file 2:
+  /data/europe/interpolation/mosaic
+  1990-2019_001-365_HL_TSA_LNDLG_TCG_TSI.vrt
+  9000 4000 684
+file 3:
+  /data/europe/interpolation/mosaic
+  1990-2019_001-365_HL_TSA_LNDLG_TCW_TSI.vrt
+  9000 4000 684
+
+Same number of bands detected. Stacking by band.
+
+Band 0001: 1990-2019_001-365_HL_TSA_LNDLG_TCB_TSI.vrt band 1
+Band 0002: 1990-2019_001-365_HL_TSA_LNDLG_TCG_TSI.vrt band 1
+Band 0003: 1990-2019_001-365_HL_TSA_LNDLG_TCW_TSI.vrt band 1
+Band 0004: 1990-2019_001-365_HL_TSA_LNDLG_TCB_TSI.vrt band 2
+Band 0005: 1990-2019_001-365_HL_TSA_LNDLG_TCG_TSI.vrt band 2
+Band 0006: 1990-2019_001-365_HL_TSA_LNDLG_TCW_TSI.vrt band 2
+Band 0007: 1990-2019_001-365_HL_TSA_LNDLG_TCB_TSI.vrt band 3
+Band 0008: 1990-2019_001-365_HL_TSA_LNDLG_TCG_TSI.vrt band 3
+Band 0009: 1990-2019_001-365_HL_TSA_LNDLG_TCW_TSI.vrt band 3
+...
+Band 2050: 1990-2019_001-365_HL_TSA_LNDLG_TCB_TSI.vrt band 684
+Band 2051: 1990-2019_001-365_HL_TSA_LNDLG_TCG_TSI.vrt band 684
+Band 2052: 1990-2019_001-365_HL_TSA_LNDLG_TCW_TSI.vrt band 684
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;For rapid display, we compute pyramids:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;force-pyramid 4D-Tasseled-Cap-TSI.vrt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;/data/europe/interpolation/mosaic/4D-Tasseled-Cap-TSI.vrt
+computing pyramids for 4D-Tasseled-Cap-TSI.vrt
+...10...20...30...40...50...60...70...80...90...100 - done.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;visualization&#34;&gt;&lt;strong&gt;Visualization&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Layer Styling&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Let&#39;s drag&#39;n&#39;drop the &lt;code&gt;4D-Tasseled-Cap-TSI.vrt&lt;/code&gt; into &lt;strong&gt;QGIS&lt;/strong&gt;, and visualize the Tasseled Cap components of the 1st timestamp as RGB composite (using the &lt;code&gt;Multiband color&lt;/code&gt; renderer), i.e. we put the first three bands into the red (Brightness), green (Greenness), and blue (Wetness) channels for intuitive color interpretation.
+The chosen stretch will later be applied to the animation as well.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Time Series Plots&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;You can conveniently look at the pixels&#39;s time series using the &lt;a href=&#34;https://raster-data-plotting.readthedocs.io/en/latest/&#34;&gt;Raster Data Plotting&lt;/a&gt; plugin (© &lt;a href=&#34;mailto:andreas.rabe@geo.hu-berlin.de&#34;&gt;Andreas Rabe&lt;/a&gt;).
+I am using red, green, and blue lines for the Brigthness, Greenness, and Wetness components, respectively, and decrease the symbol size a bit.&lt;/p&gt;
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://davidfrantz.github.io/img/tutorial-tsi-rdp.jpg&#34; data-caption=&#34;Raster Data Plotting plugin&#34;&gt;
+&lt;img src=&#34;https://davidfrantz.github.io/img/tutorial-tsi-rdp.jpg&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Raster Data Plotting plugin
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Time Series Animation&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Let&#39;s use the &lt;a href=&#34;https://raster-timeseries-manager.readthedocs.io/en/latest/&#34;&gt;Raster Timeseries Manager&lt;/a&gt; plugin (© &lt;a href=&#34;mailto:andreas.rabe@geo.hu-berlin.de&#34;&gt;Andreas Rabe&lt;/a&gt;) to generate a web- or presentation-ready animation.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;SETUP:&lt;/em&gt;&lt;/strong&gt;  For preparing the animation, go to the plugin&#39;s &lt;code&gt;System&lt;/code&gt; tab.
+This needs to be done only once and will set up all necessary tools for saving the animation.
+For this, you need to install &lt;a href=&#34;https://imagemagick.org/script/download.php&#34;&gt;ImageMagick&lt;/a&gt;, and then tell the plugin where the &lt;code&gt;imagemagick&lt;/code&gt; and &lt;code&gt;ffmpeg&lt;/code&gt; executables are located.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Simply select &lt;code&gt;4D-Tasseled-Cap-TSI&lt;/code&gt; in the &lt;code&gt;Timeseries&lt;/code&gt; field.
+Now, you can already look at the animation (hit play &lt;code&gt;&amp;gt;&lt;/code&gt;).
+While the animation is running, you can even pan and zoom in the map canvas.
+IMHO, this is a great way of virtually exploring 4D data!&lt;/p&gt;
+&lt;p&gt;In the temporal tab, you can set the temporal range for the animation.
+For the animation shown below, I only use the last 5 years of data (otherwise the GIF will be too large).&lt;/p&gt;
+&lt;p&gt;For saving the animation, go to the &lt;code&gt;Video Creator&lt;/code&gt; tab, and set an output directory. Probably create an empty one before:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;mkdir -p /data/europe/interpolation/animation
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The export process takes two steps:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Export the frames as images.
+This is done by pushing the movie tape button.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; The size of the exported images depends on the size of the map canvas.
+This will have a direct effect on the size of the final animation.
+Adjust the canvas size to your needs.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Generate the animation by pushing the &lt;code&gt;MP4&lt;/code&gt; or &lt;code&gt;GIF&lt;/code&gt; button.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://davidfrantz.github.io/img/tutorial-tsi-rtm.gif&#34; data-caption=&#34;Animation of interpolated Tasseled Cap time series&#34;&gt;
+&lt;img src=&#34;https://davidfrantz.github.io/img/tutorial-tsi-rtm.gif&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Animation of interpolated Tasseled Cap time series
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;That&#39;s it. Have fun exploring your 4D data.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>FORCE Tutorial: Level 2 ARD</title>

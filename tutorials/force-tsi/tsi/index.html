@@ -1,0 +1,1450 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="David Frantz">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="This tutorial explains how to interpolate time series using the Time Series Analysis (TSA) submodule of the FORCE Higher Level Processing system (HLPS), how to visualize and animate them using the Raster Data Plotting and Raster Timeseries Manager QGIS plugin.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://davidfrantz.github.io/tutorials/force-tsi/tsi/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#5C9DE3">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon-32.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://davidfrantz.github.io/tutorials/force-tsi/tsi/">
+
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="DAVID FRANTZ">
+  <meta property="og:url" content="https://davidfrantz.github.io/tutorials/force-tsi/tsi/">
+  <meta property="og:title" content="FORCE Tutorial: Interpolation | DAVID FRANTZ">
+  <meta property="og:description" content="This tutorial explains how to interpolate time series using the Time Series Analysis (TSA) submodule of the FORCE Higher Level Processing system (HLPS), how to visualize and animate them using the Raster Data Plotting and Raster Timeseries Manager QGIS plugin."><meta property="og:image" content="https://davidfrantz.github.io/img/icon-192.png">
+  <meta property="twitter:image" content="https://davidfrantz.github.io/img/icon-192.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2020-09-08T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2020-09-08T00:00:00&#43;00:00">
+  
+
+  
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>FORCE Tutorial: Interpolation | DAVID FRANTZ</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">DAVID FRANTZ</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">DAVID FRANTZ</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-center" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#experience"><span>CV</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#publications"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#presentations"><span>Presentations</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#data"><span>Data</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#software"><span>Software</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#tutorials"><span>Tutorials</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item">
+        <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>FORCE Tutorial: Interpolation</h1>
+
+  
+  <p class="page-subtitle">How to interpolate and animate time series?</p>
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Sep 8, 2020
+  </span>
+  
+
+  
+
+  
+
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <p><em>This tutorial uses FORCE v. 3.5</em></p>
+<h2 id="learning-objective"><strong>Learning Objective</strong></h2>
+<p>This tutorial explains how to interpolate time series using the Time Series Analysis (TSA) submodule of the <strong>FORCE Higher Level Processing system (HLPS)</strong>, and how to visualize and animate them via QGIS plugins.</p>
+<h2 id="why-interpolation"><strong>Why interpolation?</strong></h2>
+<p>Interpolation of time series may serve a variety of purposes.
+Despite regular observations, EO time series are generally not equidistant.
+Nominal equidistance is only given for areas that are not covered by orbital overlaps (16 days revisit at nadir for a single Landsat).
+For areas in lateral overlaps, we have alternating revisits of 1 and 7 days.
+If we are getting closer to the poles, we even get triple, quadruple etc. overlaps, which complicates this alternating pattern.
+The same applies if we consider multiple sensors, e.g. two Landsat and two Sentinel-2 satellites.
+And of course, nominal revisit != actual revisit.
+We cannot see through clouds (unless we are talking radar).
+Probably, you want to remove snow observations.
+There might have been some sensor or ground segment outages, or the data couldn't have been processed to our quality requirements (e.g. tier 2 data).
+The sensor might not have looked on Earth as the satellite took a detour to avoid space debris etc. etc..</p>
+<p>Interpolation might simply be used to close these gaps.
+It smoothes the time series, and thus effectively reduces noise.
+Equidistant is established, which might be needed for other algorithms.</p>
+<p>Time Series interpolation is a basic option within the Time Series Analysis (TSA) submodule of the <strong>FORCE Higher Level Processing system (HLPS)</strong>, which is commonly performed before using more advanced time series analysis methods:</p>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<figure>
+
+
+  <a data-fancybox="" href="/img/force-tsa-workflow.jpg" data-caption="Time Series Analysis Workflow">
+<img src="/img/force-tsa-workflow.jpg" alt="" ></a>
+
+
+  
+  
+  <figcaption>
+    Time Series Analysis Workflow
+  </figcaption>
+
+
+</figure>
+
+<p>Workflow image of TSA here.</p>
+<h2 id="rbf-interpolation"><strong>RBF interpolation</strong></h2>
+<p>In FORCE, a couple of interpolation methods are implemented.
+We often use ensembles of Radial Basis Function (RBF) convolution filters (see this paper <a href="sciencedirect.com/science/article/pii/S0303243416301003">here</a>).</p>
+<p>This is similar to a moving average filter.
+A kernel is moved over the time series, and the observations are weighted according to a Gaussian distribution.
+This means that an observation in the middle of the kernel gets a higher weight.</p>
+<p>Now, data density is usually variable, which means that we have seasons with larger data availability (e.g. in the summer) - and seasons with low data availability.
+For good data situations, we would want to have a narrow Gaussian to more closely follow the actual time series.
+For bad data situations, however, a narrow kernel would result in many nodata values and wouldn't smooth the time series appropriately.</p>
+<p>Therefore, we use multiple kernels of different widths.
+The estimates from those kernels are eventually aggregated using a weighted average, wherein the weights correspond to the data availability within each kernel.
+This gives preference to the kernel with better data coverage.
+An interpolated time series looks like this:</p>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<figure>
+
+
+  <a data-fancybox="" href="/img/tutorial-tsi-rbf.jpg" data-caption="Interpolated time series using RBF ensembles">
+<img src="/img/tutorial-tsi-rbf.jpg" alt="" ></a>
+
+
+  
+  
+  <figcaption>
+    Interpolated time series using RBF ensembles
+  </figcaption>
+
+
+</figure>
+
+<h2 id="parameterfile"><strong>Parameterfile</strong></h2>
+<p>Time Series Interpolation (TSI) is available within the <a href="https://force-eo.readthedocs.io/en/latest/components/higher-level/tsa/index.html">Time Series Analysis (TSA)</a> submodule of the <a href="https://force-eo.readthedocs.io/en/latest/components/higher-level/index.html">FORCE Higher Level Processing system (HLPS)</a>.
+We start by generating an empty parameterfile, and rename the file.</p>
+<pre><code class="language-bash">mkdir /data/europe/interpolation
+force-parameter /data/europe/interpolation TSA 1
+cd /data/europe/interpolation
+mv TSA-skeleton.prm tsi.prm
+</code></pre>
+<pre><code>TSA
+An empty parameter file skeleton was written to
+  /data/europe/interpolation/TSA-skeleton.prm
+Note that all parameters need to be given, even though some may not be used
+with your specific parameterization.
+You should rename the file, e.g. my-first-TSA.prm.
+Parameterize according to your needs and run with
+force-higher-level /data/europe/interpolation/my-first-TSA.prm
+</code></pre>
+<p>If you prefer a more compact parameterfile without all the comments, use <code>0</code> instead of <code>1</code> as the last parameter.
+The full set of parameters is also documented <a href="https://force-eo.readthedocs.io/en/latest/components/higher-level/tsa/param.html">here</a>.</p>
+<p><strong>Input / Output directories</strong></p>
+<p>For this tutorial, we assume that we already have an existing Level 2 ARD datapool, which contains preprocessed data for multiple years (see <a href="https://davidfrantz.github.io/tutorials/force-ard/l2-ard/">ARD tutorial</a>).
+The parent directory of this datapool goes into the DIR_LOWER parameter.
+The DIR_HIGHER parameter names the output directory, where the interpolated time series will be generated (although technically possible, I suggest to use a different file path). Example:</p>
+<pre><code class="language-bash">DIR_LOWER = /data/europe/level2
+DIR_HIGHER = /data/europe/interpolation
+</code></pre>
+<p><strong>Analysis mask</strong></p>
+<p>As we are only interested in the land surface - and there is a lot of water around Crete - we use a processing mask.
+Have a look at the <a href="https://davidfrantz.github.io/tutorials/force-masks/masks/">processing mask tutorial</a> for further details.</p>
+<pre><code class="language-bash">mkdir -p /data/europe/masks
+cp /data/europe/level2/datacube-definition.prj -t /data/europe/masks
+force-cube /data/gis/admin/crete.gpkg /data/europe/masks rasterize 30
+</code></pre>
+<pre><code>0...10...20...30...40...50...60...70...80...90...100 - done.
+0...10...20...30...40...50...60...70...80...90...100 - done.
+0...10...20...30...40...50...60...70...80...90...100 - done.
+...
+</code></pre>
+<p>In the parameterfile, use the masks like this:</p>
+<pre><code class="language-bash">DIR_MASK = /data/europe/masks
+BASE_MASK = crete.tif
+</code></pre>
+<p><strong>Output options</strong></p>
+<p>For interoperability with the QGIS plugins, we will generate one output image (for each index) in GeoTiff format, which will have the interpolated dates as bands:</p>
+<pre><code class="language-bash">OUTPUT_FORMAT = GTiff
+OUTPUT_EXPLODE = FALSE
+</code></pre>
+<p>All other parameters are not relevant for now.
+However, please note that you can generate a lot of time series based outputs at the same time, e.g. Trend Analysis, Land Surface Phenology, etc.
+This saves time as data is only read once.</p>
+<p><strong>Spatial extent</strong></p>
+<p>FORCE HLPS requires a square processing extent, which can be set using <code>X_TILE_RANGE</code> and <code>Y_TILE_RANGE</code>. Then, if the extent of our region of interest is not square, we can further refine the processing extent by specifying a tile allow-list (<code>FILE_TILE</code>). Please see the <a href="https://davidfrantz.github.io/tutorials/force-datacube/datacube/">datacube tutorial</a> for more details, and I also suggest you to have a look at the <a href="https://force-eo.readthedocs.io/en/latest/components/higher-level/hl-compute.html">computing model of HLPS</a>.</p>
+<p>There are different ways to obtain these values, e.g. by generating, and filtering a shapefile with tiles via <code>force-tabulate-grid</code>. The easiest way, however, is to use <code>force-tile-extent</code> with a shapefile (or any other OGR-supported vector format). Example for Crete, Greece:</p>
+<pre><code class="language-bash">force-tile-extent /data/gis/admin/crete.gpkg /data/europe/level2 /data/europe/interpolation/crete.txt
+</code></pre>
+<pre><code>Suggested Processing extent:
+X_TILE_RANGE = 103 111
+Y_TILE_RANGE = 101 105
+
+Processing extent is not square.
+Suggest to use the tile allow-list:
+FILE_TILE = /home/frantzda/temp/europe/crete.txt
+</code></pre>
+<p><strong>Block size</strong></p>
+<p>The block size is a parameter that you should only adjust if you are running in RAM-shortages.
+<em>First, try the default value and don’t worry</em>.
+However, if the program is <code>killed</code> by the system, this can be mitigated by adjusting <code>BLOCK_SIZE</code>.
+Please have a look at the <a href="https://force-eo.readthedocs.io/en/latest/components/higher-level/hl-compute.html">computing model</a> to understand how blocks are implemented and used in FORCE.</p>
+<blockquote>
+<p><strong><em>NOTE:</em></strong>  The block size is a value, which was set in Level 2 Processing; thus the default block size aligns with the physical layout of the files, and can be considered optimal for reading speed. If you adjust it, it is recommended to use a block size, which is a fraction of the original block size (without remainder, e.g. 1/2 of the original value).</p>
+</blockquote>
+<p><strong>Quality screening</strong></p>
+<p>This here is <strong>super-important,</strong> and cannot be stressed enough!</p>
+<p>Without proper quality screening, the results will look like s#%$, trash-in, trash-out!
+By default, FORCE screens for nodata values, various cloud types, cloud shadows, snow, sub-zero or saturated reflectance.</p>
+<pre><code class="language-bash">SCREEN_QAI = NODATA CLOUD_OPAQUE CLOUD_BUFFER CLOUD_CIRRUS CLOUD_SHADOW SNOW SUBZERO SATURATION
+</code></pre>
+<p>In addition, recognizing that cloud masks are never perfect, TSA offers an outlier detection routine.
+This screens each pixel’s time series and might be used to remove undetected cloud, cloud shadow, or snow remnants.
+The outlier detection is iteratively removing outliers until the time series noise is smaller than the given value.
+Note however that this method might also remove some “valid” data points, e.g. mowing events in intensively managed grasslands.
+This risk increases with decreasing data availability.</p>
+<p>Following the outlier removal, there is an inliner restoration.
+If an observation, which was flagged as cloud, cloud shadow etc., fits well into the time series trajectory, it will be restored, and will then be used in the time series analysis.</p>
+<p>For our purpose, using this option is fine, thus, let's keep the default values:</p>
+<pre><code class="language-bash">ABOVE_NOISE = 3
+BELOW_NOISE = 1
+</code></pre>
+<p><strong>Temporal extent, Sensor, Index</strong></p>
+<p>To eventually generate a long term animation, let’s use 30 years of Landsat data:</p>
+<pre><code class="language-bash">TIME_RANGE = 1990-01-01 2019-12-31
+</code></pre>
+<p>FORCE HLPS allows you to easily combine data from different sensors - provided that we only use mutually available bands.
+For this tutorial, we are using data from the Landsat sensors:</p>
+<pre><code class="language-bash">SENSORS = LND04 LND05 LND07 LND08
+RESOLUTION = 30
+</code></pre>
+<p>All processing in the TSA submodule is performed band-wise.
+You can choose from a fairly long list of spectral bands and indices (see <a href="https://force-eo.readthedocs.io/en/latest/components/higher-level/tsa/param.html">here</a>).
+HLPS will only read required bands to reduce I/O.
+In order to generate a nice-looking and information-rich animation, we are using the three tasseled cap components:</p>
+<pre><code class="language-bash">INDEX = TC-BRIGHT TC-GREEN TC-WET
+</code></pre>
+<p><strong>Interpolation</strong></p>
+<p>Now, let’s define the interpolation parameters.
+We wil be using the RBF interpolation to create a smoothed time series with 16-day interpolation steps.</p>
+<pre><code class="language-bash">INTERPOLATE = RBF
+INT_DAY = 16
+</code></pre>
+<p>We are commonly using following widths for the gaussians. The width (in days) refers to full-width-at-half-maximum.
+This generally works fine, but feel free to experiment here.</p>
+<pre><code class="language-bash">RBF_SIGMA = 8 16 32
+</code></pre>
+<p>The cutoff parameter determines the width of the kernels.
+It works similar to the confidence level in statistical tests, i.e. 0.95 means that we cut the kernel such that 95% of the Gaussian is retained.
+Essentially, this paramter determines how many nodata values will remain in the time series.
+You will have less nodata values with values closer to one.
+However, the interpolated values will also be less reliable when the next valid observations are too far away (remember: trash-in, trash-out).
+It also determines processing speed: more narrow kernels are faster.
+Commonly, we are using the default value <code>0.95</code>.
+However, as our primary goal is to generate a nice-looking animation, we bump this parameter up:</p>
+<pre><code class="language-bash">RBF_CUTOFF = 0.995
+</code></pre>
+<p>..and of course, we request outputting the interpolated time series:</p>
+<pre><code class="language-bash">OUTPUT_TSI = TRUE
+</code></pre>
+<p><strong>Parallelization</strong></p>
+<p>HLPS uses a computing model, which <em>streams</em> the data.
+Please have a detailed look the at <a href="https://force-eo.readthedocs.io/en/latest/components/higher-level/hl-compute.html">computing model of HLPS</a>.
+Most often, generating interpolated time series (without doing anything else) is input-, or output-bound.
+However, this strongly varies with data density, the number of requested indices, disc speed (SSD vs HDD, RAID or not, …), CPU clock speed, if you read/write from/to different (or the same) discs etc&hellip;
+The progress bar will tell you how much time is spent for reading, computing, and writing.
+This helps you identify if your job is e.g. input-limited. You might want to adjust the settings accordingly (also note that you may have more or less CPUs than me).
+Please also note: fairly often, inexperienced users tend to overdo parallel reads/writes beyond a value that is reasonable - if reading/writing doesn’t accelerate when you add more CPUs, this is likely the case (you might even slow down your job by overdoing I/O).</p>
+<pre><code class="language-bash">NTHREAD_READ = 8
+NTHREAD_COMPUTE = 32
+NTHREAD_WRITE = 4
+</code></pre>
+<h2 id="processing"><strong>Processing</strong></h2>
+<p>Processing is straightforward:</p>
+<pre><code class="language-bash">force-higher-level /data/europe/interpolation/tsi.prm
+</code></pre>
+<pre><code>number of processing units: 280
+ (active tiles: 28, chunks per tile: 10)
+________________________________________
+Progress:                        100.00%
+Time for I/C/O:           054%/037%/008%
+ETA:             00y 00m 00d 00h 00m 00s
+
+________________________________________
+Real time:       00y 00m 00d 00h 58m 41s
+Virtual time:    00y 00m 00d 01h 32m 54s
+Saved time:      00y 00m 00d 00h 34m 13s
+
+________________________________________
+Virtual I-time:  00y 00m 00d 00h 50m 30s
+Virtual C-time:  00y 00m 00d 00h 34m 31s
+Virtual O-time:  00y 00m 00d 00h 07m 53s
+
+________________________________________
+I-bound time:    00y 00m 00d 00h 23m 42s
+C-bound time:    00y 00m 00d 00h 07m 10s
+O-bound time:    00y 00m 00d 00h 00m 26s
+</code></pre>
+<p>After this, we do some postprocessing for simplified data handling, and to prepare the data for ingestion into the QGIS plugins.</p>
+<p>First, we generate a mosaic:</p>
+<pre><code class="language-bash">force-mosaic /data/europe/interpolation
+</code></pre>
+<pre><code>mosaicking 3 products:
+1 1990-2019_001-365_HL_TSA_LNDLG_TCB_TSI.tif
+2 1990-2019_001-365_HL_TSA_LNDLG_TCG_TSI.tif
+3 1990-2019_001-365_HL_TSA_LNDLG_TCW_TSI.tif
+
+mosaicking 1990-2019_001-365_HL_TSA_LNDLG_TCW_TSI.tif
+27 chips found.
+
+mosaicking 1990-2019_001-365_HL_TSA_LNDLG_TCB_TSI.tif
+27 chips found.
+
+mosaicking 1990-2019_001-365_HL_TSA_LNDLG_TCG_TSI.tif
+27 chips found.
+</code></pre>
+<p>Then, we build a four-dimensional stack from the three tasseled cap components.
+This stack is sorted by date, but interleaved by thematic band.
+This data model is a prerequisite to the usage of the following QGIS plugins.</p>
+<blockquote>
+<p><strong><em>NOTE:</em></strong> For very long time series, <code>force-stack</code> still seems a bit slow - but at least it works&hellip;</p>
+</blockquote>
+<pre><code class="language-bash">cd mosaic
+force-stack *TCB*TSI.vrt *TCG*TSI.vrt *TCW*TSI.vrt 4D-Tasseled-Cap-TSI.vrt
+</code></pre>
+<pre><code>file 1:
+  /data/europe/interpolation/mosaic
+  1990-2019_001-365_HL_TSA_LNDLG_TCB_TSI.vrt
+  9000 4000 684
+file 2:
+  /data/europe/interpolation/mosaic
+  1990-2019_001-365_HL_TSA_LNDLG_TCG_TSI.vrt
+  9000 4000 684
+file 3:
+  /data/europe/interpolation/mosaic
+  1990-2019_001-365_HL_TSA_LNDLG_TCW_TSI.vrt
+  9000 4000 684
+
+Same number of bands detected. Stacking by band.
+
+Band 0001: 1990-2019_001-365_HL_TSA_LNDLG_TCB_TSI.vrt band 1
+Band 0002: 1990-2019_001-365_HL_TSA_LNDLG_TCG_TSI.vrt band 1
+Band 0003: 1990-2019_001-365_HL_TSA_LNDLG_TCW_TSI.vrt band 1
+Band 0004: 1990-2019_001-365_HL_TSA_LNDLG_TCB_TSI.vrt band 2
+Band 0005: 1990-2019_001-365_HL_TSA_LNDLG_TCG_TSI.vrt band 2
+Band 0006: 1990-2019_001-365_HL_TSA_LNDLG_TCW_TSI.vrt band 2
+Band 0007: 1990-2019_001-365_HL_TSA_LNDLG_TCB_TSI.vrt band 3
+Band 0008: 1990-2019_001-365_HL_TSA_LNDLG_TCG_TSI.vrt band 3
+Band 0009: 1990-2019_001-365_HL_TSA_LNDLG_TCW_TSI.vrt band 3
+...
+Band 2050: 1990-2019_001-365_HL_TSA_LNDLG_TCB_TSI.vrt band 684
+Band 2051: 1990-2019_001-365_HL_TSA_LNDLG_TCG_TSI.vrt band 684
+Band 2052: 1990-2019_001-365_HL_TSA_LNDLG_TCW_TSI.vrt band 684
+</code></pre>
+<p>For rapid display, we compute pyramids:</p>
+<pre><code class="language-bash">force-pyramid 4D-Tasseled-Cap-TSI.vrt
+</code></pre>
+<pre><code>/data/europe/interpolation/mosaic/4D-Tasseled-Cap-TSI.vrt
+computing pyramids for 4D-Tasseled-Cap-TSI.vrt
+...10...20...30...40...50...60...70...80...90...100 - done.
+</code></pre>
+<h2 id="visualization"><strong>Visualization</strong></h2>
+<p><strong>Layer Styling</strong></p>
+<p>Let's drag'n'drop the <code>4D-Tasseled-Cap-TSI.vrt</code> into <strong>QGIS</strong>, and visualize the Tasseled Cap components of the 1st timestamp as RGB composite (using the <code>Multiband color</code> renderer), i.e. we put the first three bands into the red (Brightness), green (Greenness), and blue (Wetness) channels for intuitive color interpretation.
+The chosen stretch will later be applied to the animation as well.</p>
+<p><strong>Time Series Plots</strong></p>
+<p>You can conveniently look at the pixels's time series using the <a href="https://raster-data-plotting.readthedocs.io/en/latest/">Raster Data Plotting</a> plugin (© <a href="mailto:andreas.rabe@geo.hu-berlin.de">Andreas Rabe</a>).
+I am using red, green, and blue lines for the Brigthness, Greenness, and Wetness components, respectively, and decrease the symbol size a bit.</p>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<figure>
+
+
+  <a data-fancybox="" href="/img/tutorial-tsi-rdp.jpg" data-caption="Raster Data Plotting plugin">
+<img src="/img/tutorial-tsi-rdp.jpg" alt="" ></a>
+
+
+  
+  
+  <figcaption>
+    Raster Data Plotting plugin
+  </figcaption>
+
+
+</figure>
+
+<p><strong>Time Series Animation</strong></p>
+<p>Let's use the <a href="https://raster-timeseries-manager.readthedocs.io/en/latest/">Raster Timeseries Manager</a> plugin (© <a href="mailto:andreas.rabe@geo.hu-berlin.de">Andreas Rabe</a>) to generate a web- or presentation-ready animation.</p>
+<blockquote>
+<p><strong><em>SETUP:</em></strong>  For preparing the animation, go to the plugin's <code>System</code> tab.
+This needs to be done only once and will set up all necessary tools for saving the animation.
+For this, you need to install <a href="https://imagemagick.org/script/download.php">ImageMagick</a>, and then tell the plugin where the <code>imagemagick</code> and <code>ffmpeg</code> executables are located.</p>
+</blockquote>
+<p>Simply select <code>4D-Tasseled-Cap-TSI</code> in the <code>Timeseries</code> field.
+Now, you can already look at the animation (hit play <code>&gt;</code>).
+While the animation is running, you can even pan and zoom in the map canvas.
+IMHO, this is a great way of virtually exploring 4D data!</p>
+<p>In the temporal tab, you can set the temporal range for the animation.
+For the animation shown below, I only use the last 5 years of data (otherwise the GIF will be too large).</p>
+<p>For saving the animation, go to the <code>Video Creator</code> tab, and set an output directory. Probably create an empty one before:</p>
+<pre><code class="language-bash">mkdir -p /data/europe/interpolation/animation
+</code></pre>
+<p>The export process takes two steps:</p>
+<ol>
+<li>
+<p>Export the frames as images.
+This is done by pushing the movie tape button.</p>
+<blockquote>
+<p><strong><em>NOTE:</em></strong> The size of the exported images depends on the size of the map canvas.
+This will have a direct effect on the size of the final animation.
+Adjust the canvas size to your needs.</p>
+</blockquote>
+</li>
+<li>
+<p>Generate the animation by pushing the <code>MP4</code> or <code>GIF</code> button.</p>
+</li>
+</ol>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<figure>
+
+
+  <a data-fancybox="" href="/img/tutorial-tsi-rtm.gif" data-caption="Animation of interpolated Tasseled Cap time series">
+<img src="/img/tutorial-tsi-rtm.gif" alt="" ></a>
+
+
+  
+  
+  <figcaption>
+    Animation of interpolated Tasseled Cap time series
+  </figcaption>
+
+
+</figure>
+
+<p>That's it. Have fun exploring your 4D data.</p>
+
+    </div>
+
+    
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/2020/">2020</a>
+  
+  <a class="badge badge-light" href="/tags/force/">FORCE</a>
+  
+  <a class="badge badge-light" href="/tags/higher-level/">Higher Level</a>
+  
+  <a class="badge badge-light" href="/tags/raster-data-plotting/">Raster Data Plotting</a>
+  
+  <a class="badge badge-light" href="/tags/raster-timeseries-manager/">Raster Timeseries Manager</a>
+  
+  <a class="badge badge-light" href="/tags/qgis/">QGIS</a>
+  
+  <a class="badge badge-light" href="/tags/tutorial/">Tutorial</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://davidfrantz.github.io/tutorials/force-tsi/tsi/&amp;text=FORCE%20Tutorial:%20Interpolation" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://davidfrantz.github.io/tutorials/force-tsi/tsi/&amp;t=FORCE%20Tutorial:%20Interpolation" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=FORCE%20Tutorial:%20Interpolation&amp;body=https://davidfrantz.github.io/tutorials/force-tsi/tsi/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://davidfrantz.github.io/tutorials/force-tsi/tsi/&amp;title=FORCE%20Tutorial:%20Interpolation" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=FORCE%20Tutorial:%20Interpolation%20https://davidfrantz.github.io/tutorials/force-tsi/tsi/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://davidfrantz.github.io/tutorials/force-tsi/tsi/&amp;title=FORCE%20Tutorial:%20Interpolation" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <img class="portrait mr-3" src="/authors/admin/avatar_huba61fb2ae087847d5946ab8e48bc46d6_594175_250x250_fill_q90_lanczos_center.jpg" alt="Avatar">
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://davidfrantz.github.io/">David Frantz</a></h5>
+      <h6 class="card-subtitle">Postdoctoral Researcher</h6>
+      <p class="card-text">EO, ARD, FORCE, Data Science, Open Science</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+    <li>
+      <a href="mailto:david.frantz@geo.hu-berlin.de" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.de/citations?user=JtEWu3AAAAAJ" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.researchgate.net/profile/David_Frantz" target="_blank" rel="noopener">
+        <i class="fab fa-researchgate"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="http://orcid.org/0000-0002-9292-3931" target="_blank" rel="noopener">
+        <i class="fab fa-orcid"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/davidfrantz" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/d__frantz" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>Related</h3>
+    <ul>
+      
+      <li><a href="/tutorials/force-qai/qai/">FORCE Tutorial: Quality Bits a.k.a. Cloud Masks etc.</a></li>
+      
+      <li><a href="/tutorials/force-masks/masks/">FORCE Tutorial: Processing Masks</a></li>
+      
+      <li><a href="/tutorials/force-datacube/datacube/">FORCE Tutorial: The Datacube</a></li>
+      
+      <li><a href="/tutorials/force-ard/l2-ard/">FORCE Tutorial: Level 2 ARD</a></li>
+      
+      <li><a href="/tutorials/force-level1-s2/sentinel-2-l1c/">FORCE Tutorial: Sentinel-2 Level 1C</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.3227ab49eed49815d1b4ba40154f74e7.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    © 2019-2020 David Frantz &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
