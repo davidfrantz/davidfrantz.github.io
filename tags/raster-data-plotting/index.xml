@@ -19,10 +19,9 @@
       <guid>https://davidfrantz.github.io/tutorials/force-tsi/tsi/</guid>
       <description>&lt;p&gt;&lt;em&gt;This tutorial uses FORCE v. 3.5&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id=&#34;learning-objective&#34;&gt;&lt;strong&gt;Learning Objective&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;This tutorial explains how to interpolate time series using the Time Series Analysis (TSA) submodule of the &lt;strong&gt;FORCE Higher Level Processing system (HLPS)&lt;/strong&gt;, and how to visualize and animate them via QGIS plugins.&lt;/p&gt;
+&lt;p&gt;This tutorial explains introduces the Time Series Analysis (TSA) submodule of the &lt;strong&gt;FORCE Higher Level Processing system (HLPS)&lt;/strong&gt;, shows how to interpolate time series, and how to visualize and animate them via QGIS plugins.&lt;/p&gt;
 &lt;h2 id=&#34;why-interpolation&#34;&gt;&lt;strong&gt;Why interpolation?&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;Interpolation of time series may serve a variety of purposes.
-Despite regular observations, EO time series are generally not equidistant.
+&lt;p&gt;Despite regular observations, EO time series are generally not equidistant.
 Nominal equidistance is only given for areas that are not covered by orbital overlaps (16 days revisit at nadir for a single Landsat).
 For areas in lateral overlaps, we have alternating revisits of 1 and 7 days.
 If we are getting closer to the poles, we even get triple, quadruple etc. overlaps, which complicates this alternating pattern.
@@ -34,8 +33,8 @@ There might have been some sensor or ground segment outages, or the data couldn&
 The sensor might not have looked on Earth as the satellite took a detour to avoid space debris etc. etc..&lt;/p&gt;
 &lt;p&gt;Interpolation might simply be used to close these gaps.
 It smoothes the time series, and thus effectively reduces noise.
-Equidistant is established, which might be needed for other algorithms.&lt;/p&gt;
-&lt;p&gt;Time Series interpolation is a basic option within the Time Series Analysis (TSA) submodule of the &lt;strong&gt;FORCE Higher Level Processing system (HLPS)&lt;/strong&gt;, which is commonly performed before using more advanced time series analysis methods:&lt;/p&gt;
+Equidistance is established, which might be needed for following processing steps.&lt;/p&gt;
+&lt;p&gt;Time Series interpolation is a basic option within the &lt;a href=&#34;https://force-eo.readthedocs.io/en/latest/components/higher-level/tsa/index.html&#34;&gt;Time Series Analysis (TSA)&lt;/a&gt; submodule of the &lt;a href=&#34;https://force-eo.readthedocs.io/en/latest/components/higher-level/index.html&#34;&gt;FORCE Higher Level Processing system (HLPS)&lt;/a&gt;, and may be performed before using more advanced time series analysis methods:&lt;/p&gt;
 
 
 
@@ -67,19 +66,21 @@ Equidistant is established, which might be needed for other algorithms.&lt;/p&gt
 
 &lt;/figure&gt;
 
-&lt;p&gt;Workflow image of TSA here.&lt;/p&gt;
 &lt;h2 id=&#34;rbf-interpolation&#34;&gt;&lt;strong&gt;RBF interpolation&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;In FORCE, a couple of interpolation methods are implemented.
-We often use ensembles of Radial Basis Function (RBF) convolution filters (see this paper &lt;a href=&#34;sciencedirect.com/science/article/pii/S0303243416301003&#34;&gt;here&lt;/a&gt;).&lt;/p&gt;
-&lt;p&gt;This is similar to a moving average filter.
-A kernel is moved over the time series, and the observations are weighted according to a Gaussian distribution.
+Most often, we use ensembles of Radial Basis Function (RBF) convolution filters (see this paper &lt;a href=&#34;https://www.sciencedirect.com/science/article/pii/S0303243416301003&#34;&gt;here&lt;/a&gt;).
+As this is a convolution filter, no fitting is involved (as e.g. compared to splines or Savitzky-Golay filters), thus the method is really fast, while keeping a good balance between retaining detail and smoothing.&lt;/p&gt;
+&lt;p&gt;The method is basically a moving average filter on steroids.
+A kernel is moved over the time series, and the observations are weighted according to a Gaussian distribution (Gaussian lowpass).
 This means that an observation in the middle of the kernel gets a higher weight.&lt;/p&gt;
-&lt;p&gt;Now, data density is usually variable, which means that we have seasons with larger data availability (e.g. in the summer) - and seasons with low data availability.
+&lt;p&gt;Now, data density is usually variable, which means that we have seasons with higher data availability (e.g. in the summer) - and seasons with poor data availability.
 For good data situations, we would want to have a narrow Gaussian to more closely follow the actual time series.
 For bad data situations, however, a narrow kernel would result in many nodata values and wouldn&#39;t smooth the time series appropriately.&lt;/p&gt;
 &lt;p&gt;Therefore, we use multiple kernels of different widths.
 The estimates from those kernels are eventually aggregated using a weighted average, wherein the weights correspond to the data availability within each kernel.
-This gives preference to the kernel with better data coverage.
+This gives preference to the kernel with better data coverage.&lt;/p&gt;
+&lt;p&gt;This tutorial will show you how to generate an RBF-interpolated time series, and how to dynamically look at the data.
+I will demonstrate this for the island of Crete (greece) in the Mediterranean Sea.
 An interpolated time series looks like this:&lt;/p&gt;
 
 
@@ -113,8 +114,7 @@ An interpolated time series looks like this:&lt;/p&gt;
 &lt;/figure&gt;
 
 &lt;h2 id=&#34;parameterfile&#34;&gt;&lt;strong&gt;Parameterfile&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;Time Series Interpolation (TSI) is available within the &lt;a href=&#34;https://force-eo.readthedocs.io/en/latest/components/higher-level/tsa/index.html&#34;&gt;Time Series Analysis (TSA)&lt;/a&gt; submodule of the &lt;a href=&#34;https://force-eo.readthedocs.io/en/latest/components/higher-level/index.html&#34;&gt;FORCE Higher Level Processing system (HLPS)&lt;/a&gt;.
-We start by generating an empty parameterfile, and rename the file.&lt;/p&gt;
+&lt;p&gt;We start by generating an empty TSA parameterfile, and rename the file.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;mkdir /data/europe/interpolation
 force-parameter /data/europe/interpolation TSA 1
 cd /data/europe/interpolation
@@ -164,7 +164,7 @@ However, please note that you can generate a lot of time series based outputs at
 This saves time as data is only read once.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Spatial extent&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;FORCE HLPS requires a square processing extent, which can be set using &lt;code&gt;X_TILE_RANGE&lt;/code&gt; and &lt;code&gt;Y_TILE_RANGE&lt;/code&gt;. Then, if the extent of our region of interest is not square, we can further refine the processing extent by specifying a tile allow-list (&lt;code&gt;FILE_TILE&lt;/code&gt;). Please see the &lt;a href=&#34;https://davidfrantz.github.io/tutorials/force-datacube/datacube/&#34;&gt;datacube tutorial&lt;/a&gt; for more details, and I also suggest you to have a look at the &lt;a href=&#34;https://force-eo.readthedocs.io/en/latest/components/higher-level/hl-compute.html&#34;&gt;computing model of HLPS&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;There are different ways to obtain these values, e.g. by generating, and filtering a shapefile with tiles via &lt;code&gt;force-tabulate-grid&lt;/code&gt;. The easiest way, however, is to use &lt;code&gt;force-tile-extent&lt;/code&gt; with a shapefile (or any other OGR-supported vector format). Example for Crete, Greece:&lt;/p&gt;
+&lt;p&gt;There are different ways to obtain these values, e.g. by generating, and filtering a shapefile with tiles via &lt;code&gt;force-tabulate-grid&lt;/code&gt;. The easiest way, however, is to use &lt;code&gt;force-tile-extent&lt;/code&gt; with a vector geometry. Example for Crete, Greece:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;force-tile-extent /data/gis/admin/crete.gpkg /data/europe/level2 /data/europe/interpolation/crete.txt
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;Suggested Processing extent:
@@ -173,7 +173,7 @@ Y_TILE_RANGE = 101 105
 
 Processing extent is not square.
 Suggest to use the tile allow-list:
-FILE_TILE = /home/frantzda/temp/europe/crete.txt
+FILE_TILE = /data/europe/interpolation/crete.txt
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;strong&gt;Block size&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;The block size is a parameter that you should only adjust if you are running in RAM-shortages.
@@ -192,10 +192,10 @@ By default, FORCE screens for nodata values, various cloud types, cloud shadows,
 &lt;p&gt;In addition, recognizing that cloud masks are never perfect, TSA offers an outlier detection routine.
 This screens each pixel’s time series and might be used to remove undetected cloud, cloud shadow, or snow remnants.
 The outlier detection is iteratively removing outliers until the time series noise is smaller than the given value.
-Note however that this method might also remove some “valid” data points, e.g. mowing events in intensively managed grasslands.
+Note however: this method might also remove some “valid” data points, e.g. mowing events in intensively managed grasslands.
 This risk increases with decreasing data availability.&lt;/p&gt;
 &lt;p&gt;Following the outlier removal, there is an inliner restoration.
-If an observation, which was flagged as cloud, cloud shadow etc., fits well into the time series trajectory, it will be restored, and will then be used in the time series analysis.&lt;/p&gt;
+If an observation (flagged as cloud, cloud shadow etc.) fits well into the time series trajectory, it will be restored.&lt;/p&gt;
 &lt;p&gt;For our purpose, using this option is fine, thus, let&#39;s keep the default values:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ABOVE_NOISE = 3
 BELOW_NOISE = 1
@@ -247,8 +247,8 @@ The progress bar will tell you how much time is spent for reading, computing, an
 This helps you identify if your job is e.g. input-limited. You might want to adjust the settings accordingly (also note that you may have more or less CPUs than me).
 Please also note: fairly often, inexperienced users tend to overdo parallel reads/writes beyond a value that is reasonable - if reading/writing doesn’t accelerate when you add more CPUs, this is likely the case (you might even slow down your job by overdoing I/O).&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;NTHREAD_READ = 8
-NTHREAD_COMPUTE = 32
-NTHREAD_WRITE = 4
+NTHREAD_COMPUTE = 7
+NTHREAD_WRITE = 3
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;processing&#34;&gt;&lt;strong&gt;Processing&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;Processing is straightforward:&lt;/p&gt;
@@ -276,8 +276,8 @@ I-bound time:    00y 00m 00d 00h 23m 42s
 C-bound time:    00y 00m 00d 00h 07m 10s
 O-bound time:    00y 00m 00d 00h 00m 26s
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;After this, we do some postprocessing for simplified data handling, and to prepare the data for ingestion into the QGIS plugins.&lt;/p&gt;
-&lt;p&gt;First, we generate a mosaic:&lt;/p&gt;
+&lt;p&gt;After this, we do some postprocessing for simplified data handling, and to prepare the data for ingestion into the QGIS plugins.
+First, we generate a mosaic:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;force-mosaic /data/europe/interpolation
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;mosaicking 3 products:
@@ -390,10 +390,8 @@ While the animation is running, you can even pan and zoom in the map canvas.
 IMHO, this is a great way of virtually exploring 4D data!&lt;/p&gt;
 &lt;p&gt;In the temporal tab, you can set the temporal range for the animation.
 For the animation shown below, I only use the last 5 years of data (otherwise the GIF will be too large).&lt;/p&gt;
-&lt;p&gt;For saving the animation, go to the &lt;code&gt;Video Creator&lt;/code&gt; tab, and set an output directory. Probably create an empty one before:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;mkdir -p /data/europe/interpolation/animation
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The export process takes two steps:&lt;/p&gt;
+&lt;p&gt;For saving the animation, go to the &lt;code&gt;Video Creator&lt;/code&gt; tab, and set an output directory.
+The export process takes two steps:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Export the frames as images.
