@@ -5,7 +5,7 @@
     <link>https://davidfrantz.github.io/tags/</link>
       <atom:link href="https://davidfrantz.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <description>Tags</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Tue, 08 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Wed, 09 Sep 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://davidfrantz.github.io/img/icon-192.png</url>
       <title>Tags</title>
@@ -15,7 +15,7 @@
     <item>
       <title>2020</title>
       <link>https://davidfrantz.github.io/tags/2020/</link>
-      <pubDate>Tue, 08 Sep 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
       <guid>https://davidfrantz.github.io/tags/2020/</guid>
       <description></description>
     </item>
@@ -23,7 +23,7 @@
     <item>
       <title>FORCE</title>
       <link>https://davidfrantz.github.io/tags/force/</link>
-      <pubDate>Tue, 08 Sep 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
       <guid>https://davidfrantz.github.io/tags/force/</guid>
       <description></description>
     </item>
@@ -31,7 +31,7 @@
     <item>
       <title>Higher Level</title>
       <link>https://davidfrantz.github.io/tags/higher-level/</link>
-      <pubDate>Tue, 08 Sep 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
       <guid>https://davidfrantz.github.io/tags/higher-level/</guid>
       <description></description>
     </item>
@@ -39,8 +39,16 @@
     <item>
       <title>QGIS</title>
       <link>https://davidfrantz.github.io/tags/qgis/</link>
-      <pubDate>Tue, 08 Sep 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
       <guid>https://davidfrantz.github.io/tags/qgis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tutorial</title>
+      <link>https://davidfrantz.github.io/tags/tutorial/</link>
+      <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/tags/tutorial/</guid>
       <description></description>
     </item>
     
@@ -57,14 +65,6 @@
       <link>https://davidfrantz.github.io/tags/raster-timeseries-manager/</link>
       <pubDate>Tue, 08 Sep 2020 00:00:00 +0000</pubDate>
       <guid>https://davidfrantz.github.io/tags/raster-timeseries-manager/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tutorial</title>
-      <link>https://davidfrantz.github.io/tags/tutorial/</link>
-      <pubDate>Tue, 08 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>https://davidfrantz.github.io/tags/tutorial/</guid>
       <description></description>
     </item>
     

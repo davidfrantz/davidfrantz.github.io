@@ -5,12 +5,492 @@
     <link>https://davidfrantz.github.io/tags/force/</link>
       <atom:link href="https://davidfrantz.github.io/tags/force/index.xml" rel="self" type="application/rss+xml" />
     <description>FORCE</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Tue, 08 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Wed, 09 Sep 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://davidfrantz.github.io/img/icon-192.png</url>
       <title>FORCE</title>
       <link>https://davidfrantz.github.io/tags/force/</link>
     </image>
+    
+    <item>
+      <title>FORCE Tutorial: Spectral Temporal Metrics</title>
+      <link>https://davidfrantz.github.io/tutorials/force-stm/stm/</link>
+      <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/tutorials/force-stm/stm/</guid>
+      <description>&lt;p&gt;&lt;em&gt;This tutorial uses FORCE v. 3.5&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;learning-objective&#34;&gt;&lt;strong&gt;Learning Objective&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;This tutorial explains what Spectral Temporal Metrics are, and how to generate them using the Time Series Analysis (TSA) submodule of the &lt;strong&gt;FORCE Higher Level Processing system (HLPS)&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;what-are-spectral-temporal-metrics&#34;&gt;&lt;strong&gt;What are Spectral Temporal Metrics?&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;There are also other names around, which describe the same concept.
+However, regardless of how you name it, Spectral Temporal Metrics (or simply STMs) are band-wise descriptive statistics, which summarize reflectance (or an index derived thereof) within a defined time period.
+This can be the annual mean, standard deviation or median.
+Before calculating the statistics, the data is quality filtered, e.g. clouds are removed.&lt;/p&gt;
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://davidfrantz.github.io/img/tutorial-stm-example.png&#34; data-caption=&#34;STM concept (C) Stefan Ernst&#34;&gt;
+&lt;img src=&#34;https://davidfrantz.github.io/img/tutorial-stm-example.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    STM concept (C) Stefan Ernst
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;It is important to note that STMs are statistical aggregations - and not composites as in &lt;em&gt;“we select the full spectrum for the optimal observation”&lt;/em&gt;.
+Thus, some care should be taken when dealing with these kinds of metrics: an STM spectrum cannot be interpreted in the classic remote-sensing-textbook sense.
+As an example, computing the NDVI from the 25% quantile of red and near infrared reflectance may yield unexpected results as they are not originating from the same acquisition date…
+Funny things may happen when you do.
+To emphasize this distinction, this is why we generally do not term them composites - but STMs (&lt;em&gt;this is debatable, I know&lt;/em&gt;).&lt;/p&gt;
+&lt;p&gt;Anyway, STMs are powerful, yet simple (&lt;em&gt;simple is good!&lt;/em&gt;) metrics that are often used as features for Machine Learning algorithms, both for classification and regression problems.
+Due to their robustness (as compared to more advanced metrics) and their spatial completeness, they simplify the extrapolation/mapping of a response variable (qualitative or quantitative, e.g. classification labels or forest biomass) across very large areas.&lt;/p&gt;
+&lt;h2 id=&#34;parameterfile&#34;&gt;&lt;strong&gt;Parameterfile&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;STMs are available within the &lt;a href=&#34;https://force-eo.readthedocs.io/en/latest/components/higher-level/tsa/index.html&#34;&gt;Time Series Analysis (TSA)&lt;/a&gt; submodule of the &lt;a href=&#34;https://force-eo.readthedocs.io/en/latest/components/higher-level/index.html&#34;&gt;FORCE Higher Level Processing system (HLPS)&lt;/a&gt;.
+You can use &lt;code&gt;force-parameter&lt;/code&gt; to generate an empty parameterfile.&lt;/p&gt;
+&lt;p&gt;To familiarize yourself with the TSA submodule, I suggest taking a detour to the &lt;a href=&#34;&#34;&gt;interpolation tutorial&lt;/a&gt; before advancing.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Temporal extent&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The temporal extent defines the time period, which is used for aggregating the Level 2 observations into STMs.
+Broader windows generally result in cleaner metrics, although at the expense of seasonal information.
+It is hard to give a suggestion here, as this is a complex decision, which depends on sensors used, data availability, environmental conditions, cloud occurence, phenology, what you want to do with the data etc.
+To demonstrate, we are generating annual STMs for entire 2018:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;TIME_RANGE = 2018-01-01 2018-12-31&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Sensors&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;FORCE HLPS allows you to easily combine data from different sensors - provided that we only use mutually available bands.
+For this tutorial, we are using data from Landsat 8, Sentinel-2A and Sentinel-2B.
+We are setting the output resolution to 30m.
+For Landsat, this is the native resolution.
+For the 10m Sentinel-2, we degrade the resolution using an approximated Point Spread Function (Gaussian lowpass with FWHM = analysis resolution), which approximates the acquisition of data at lower spatial resolution.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;SENSORS = LND08 SEN2A SEN2B
+RESOLUTION = 30
+REDUCE_PSF = TRUE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Bands / Indices&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;We will produce STMs for some spectral bands, as well as some indices:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;INDEX = RED NIR SWIR1 NDVI NDBI MNDWI&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Outlier detection&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;If you see cloud remnants in your STMs, you might want to experiment with the outlier detection option.
+For now, lets disable it with:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ABOVE_NOISE = 0
+BELOW_NOISE = 0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Interpolation&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Before temporally aggregating the L2 observations, we can interpolate the time series. Try this out! But for now, let’s go without:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;INTERPOLATE = NONE&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;STMs&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Now, we define the statistics for producing the STMs.
+You can specify a list with all statistics at once.
+Currently available are&lt;/p&gt;
+&lt;p&gt;|&amp;mdash;&amp;mdash;|&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;|
+| AVG | Average |
+| STD | Standard deviation |
+| MIN | Minimum |
+| MAX | Maximum |
+| RNG | Range |
+| QXX | Quantiles, replace XX with any 2-digit number, e.g. Q50 for the median. Multiple quantiles can be given |
+| IQR | Inter-quartile range |
+| SKW | Skewness |
+| KRT | Kurtosis |
+| NUM | Number of observations (after outlier detection and interpolation) |
+|&amp;mdash;&amp;mdash;|&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;|&lt;/p&gt;
+&lt;p&gt;Let’s go with these metrics for now:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;STM = Q10 Q25 Q50 Q75 Q90 AVG STD
+OUTPUT_STM = TRUE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Explode Output?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;By default, HLPS will produce multi-band files for each spectral band/index, i.e. you will get one file for each index, which will have as many bands as there are STMs.
+If you rather prefer single-band images, i.e. one file for each index and each STM, use&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;OUTPUT_EXPLODE = TRUE&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Other parameters&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The other parameters are not relevant for generating STMs. However, please note that you can generate STMs AND use the other options at the same time, e.g. Trend Analysis, Land Surface Phenology, etc. This saves time as data is only read once.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Processing&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Processing is straightforward. Simply use:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;force-higher-level /data/europe/stm/stm.prm
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;number of processing units: 280
+ (active tiles: 28, chunks per tile: 10)
+________________________________________
+Progress:                        100.00%
+Time for I/C/O:           087%/008%/004%
+ETA:             00y 00m 00d 00h 00m 00s
+
+________________________________________
+Real time:       00y 00m 00d 00h 19m 05s
+Virtual time:    00y 00m 00d 00h 21m 35s
+Saved time:      00y 00m 00d 00h 02m 30s
+
+________________________________________
+Virtual I-time:  00y 00m 00d 00h 18m 53s
+Virtual C-time:  00y 00m 00d 00h 01m 47s
+Virtual O-time:  00y 00m 00d 00h 00m 55s
+
+________________________________________
+I-bound time:    00y 00m 00d 00h 17m 10s
+C-bound time:    00y 00m 00d 00h 00m 07s
+O-bound time:    00y 00m 00d 00h 00m 03s
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;After this, we generate a mosaic.
+With &lt;code&gt;OUTPUT_EXPLODE = TRUE&lt;/code&gt;, you get one image for each requested index and statistical aggregation, i.e. 42 images in our case:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;force-mosaic /data/europe/stm
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;mosaicking 42 products:
+1 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_AVG.tif
+2 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q10.tif
+3 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q25.tif
+4 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q50.tif
+5 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q75.tif
+6 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q90.tif
+7 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_STD.tif
+8 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_AVG.tif
+9 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q10.tif
+10 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q25.tif
+11 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q50.tif
+12 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q75.tif
+13 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q90.tif
+14 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_STD.tif
+15 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_AVG.tif
+16 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q10.tif
+17 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q25.tif
+18 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q50.tif
+19 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q75.tif
+20 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q90.tif
+21 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_STD.tif
+22 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_AVG.tif
+23 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q10.tif
+24 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q25.tif
+25 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q50.tif
+26 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q75.tif
+27 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q90.tif
+28 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_STD.tif
+29 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_AVG.tif
+30 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q10.tif
+31 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q25.tif
+32 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q50.tif
+33 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q75.tif
+34 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q90.tif
+35 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_STD.tif
+36 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_AVG.tif
+37 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q10.tif
+38 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q25.tif
+39 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q50.tif
+40 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q75.tif
+41 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q90.tif
+42 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_STD.tif
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_AVG.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q25.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q90.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q50.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q75.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q75.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q10.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_AVG.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q25.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q10.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_STD.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q50.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q90.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q10.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_STD.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_AVG.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_STD.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q75.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q25.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q25.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q50.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q90.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q75.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q10.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_AVG.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_AVG.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_STD.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q10.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q25.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q50.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q90.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q50.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q90.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q75.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q25.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_STD.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q75.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q10.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_STD.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q50.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q90.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_AVG.tif
+26 chips found.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;visualization&#34;&gt;&lt;strong&gt;Visualization&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Visualizing an RGB color composite in QGIS, wherein the 3 bands come from different physical files, does not work out of the box..
+Thus, we need to put the required bands into one file. Luckily, a virtual data format suffices.
+This example here stacks the 50% quantiles of the reflectance bands, as well as the 90% quantiles of the indices.
+For fast visualization, we are computing pyramids.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd /data/europe/stm/mosaic
+force-stack *RED_STM_Q50.vrt *NIR_STM_Q50.vrt *SW1_STM_Q50.vrt stack-bands-STM_Q50.vrt
+force-stack *NDB_STM_Q90.vrt *NDV_STM_Q90.vrt *MNW_STM_Q90.vrt stack-indices-STM_Q90.vrt
+ls *.vrt | parallel force-pyramid {}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;file 1:
+  /data/europe/stm/mosaic
+  2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q50.vrt
+  9000 4000 1
+file 2:
+  /data/europe/stm/mosaic
+  2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q50.vrt
+  9000 4000 1
+file 3:
+  /data/europe/stm/mosaic
+  2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q50.vrt
+  9000 4000 1
+
+Same number of bands detected. Stacking by band.
+
+Band 0001: 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q50.vrt band 1
+Band 0002: 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q50.vrt band 1
+Band 0003: 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q50.vrt band 1
+
+file 1:
+  /data/europe/stm/mosaic
+  2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q90.vrt
+  9000 4000 1
+file 2:
+  /data/europe/stm/mosaic
+  2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q90.vrt
+  9000 4000 1
+file 3:
+  /data/europe/stm/mosaic
+  2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q90.vrt
+  9000 4000 1
+
+Same number of bands detected. Stacking by band.
+
+Band 0001: 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q90.vrt band 1
+Band 0002: 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q90.vrt band 1
+Band 0003: 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q90.vrt band 1
+
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q10.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q25.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q75.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_AVG.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q10.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q25.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q50.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q75.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q75.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q10.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q50.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q90.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_AVG.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_STD.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_STD.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q50.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q90.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q10.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q25.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_STD.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q25.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q90.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_AVG.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q90.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q75.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_AVG.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q50.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_AVG.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q10.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q25.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q10.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q50.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q75.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q90.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_AVG.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_STD.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q75.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q25.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q50.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q90.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_STD.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_STD.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for stack-bands-STM_Q50.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for stack-indices-STM_Q90.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://davidfrantz.github.io/img/tutorial-stm-qgis.jpg&#34; data-caption=&#34;RGB composite of STMs - Top: Q50 reflectance - Bottom: Q90 Indices&#34;&gt;
+&lt;img src=&#34;https://davidfrantz.github.io/img/tutorial-stm-qgis.jpg&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    RGB composite of STMs - Top: Q50 reflectance - Bottom: Q90 Indices
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+</description>
+    </item>
     
     <item>
       <title>FORCE Tutorial: Interpolation</title>
@@ -133,8 +613,8 @@ force-higher-level /data/europe/interpolation/my-first-TSA.prm
 The full set of parameters is also documented &lt;a href=&#34;https://force-eo.readthedocs.io/en/latest/components/higher-level/tsa/param.html&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Input / Output directories&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;For this tutorial, we assume that we already have an existing Level 2 ARD datapool, which contains preprocessed data for multiple years (see &lt;a href=&#34;https://davidfrantz.github.io/tutorials/force-ard/l2-ard/&#34;&gt;ARD tutorial&lt;/a&gt;).
-The parent directory of this datapool goes into the DIR_LOWER parameter.
-The DIR_HIGHER parameter names the output directory, where the interpolated time series will be generated (although technically possible, I suggest to use a different file path). Example:&lt;/p&gt;
+The parent directory of this datapool goes into the &lt;code&gt;DIR_LOWER&lt;/code&gt; parameter.
+The &lt;code&gt;DIR_HIGHER&lt;/code&gt; parameter names the output directory, where the interpolated time series will be generated (although technically possible, I suggest to use a different file path). Example:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;DIR_LOWER = /data/europe/level2
 DIR_HIGHER = /data/europe/interpolation
 &lt;/code&gt;&lt;/pre&gt;

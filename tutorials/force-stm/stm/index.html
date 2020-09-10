@@ -1,0 +1,1495 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="David Frantz">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="This tutorial explains what Spectral Temporal Metrics are, and how to generate them using the Time Series Analysis (TSA) submodule of the FORCE Higher Level Processing system (HLPS). ">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://davidfrantz.github.io/tutorials/force-stm/stm/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#5C9DE3">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon-32.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://davidfrantz.github.io/tutorials/force-stm/stm/">
+
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="DAVID FRANTZ">
+  <meta property="og:url" content="https://davidfrantz.github.io/tutorials/force-stm/stm/">
+  <meta property="og:title" content="FORCE Tutorial: Spectral Temporal Metrics | DAVID FRANTZ">
+  <meta property="og:description" content="This tutorial explains what Spectral Temporal Metrics are, and how to generate them using the Time Series Analysis (TSA) submodule of the FORCE Higher Level Processing system (HLPS). "><meta property="og:image" content="https://davidfrantz.github.io/img/icon-192.png">
+  <meta property="twitter:image" content="https://davidfrantz.github.io/img/icon-192.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2020-09-09T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2020-09-09T00:00:00&#43;00:00">
+  
+
+  
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>FORCE Tutorial: Spectral Temporal Metrics | DAVID FRANTZ</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">DAVID FRANTZ</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">DAVID FRANTZ</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-center" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#experience"><span>CV</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#publications"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#presentations"><span>Presentations</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#data"><span>Data</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#software"><span>Software</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#tutorials"><span>Tutorials</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item">
+        <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>FORCE Tutorial: Spectral Temporal Metrics</h1>
+
+  
+  <p class="page-subtitle">How to aggregate time series</p>
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Sep 9, 2020
+  </span>
+  
+
+  
+
+  
+
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <p><em>This tutorial uses FORCE v. 3.5</em></p>
+<h2 id="learning-objective"><strong>Learning Objective</strong></h2>
+<p>This tutorial explains what Spectral Temporal Metrics are, and how to generate them using the Time Series Analysis (TSA) submodule of the <strong>FORCE Higher Level Processing system (HLPS)</strong>.</p>
+<h2 id="what-are-spectral-temporal-metrics"><strong>What are Spectral Temporal Metrics?</strong></h2>
+<p>There are also other names around, which describe the same concept.
+However, regardless of how you name it, Spectral Temporal Metrics (or simply STMs) are band-wise descriptive statistics, which summarize reflectance (or an index derived thereof) within a defined time period.
+This can be the annual mean, standard deviation or median.
+Before calculating the statistics, the data is quality filtered, e.g. clouds are removed.</p>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<figure>
+
+
+  <a data-fancybox="" href="/img/tutorial-stm-example.png" data-caption="STM concept (C) Stefan Ernst">
+<img src="/img/tutorial-stm-example.png" alt="" ></a>
+
+
+  
+  
+  <figcaption>
+    STM concept (C) Stefan Ernst
+  </figcaption>
+
+
+</figure>
+
+<p>It is important to note that STMs are statistical aggregations - and not composites as in <em>“we select the full spectrum for the optimal observation”</em>.
+Thus, some care should be taken when dealing with these kinds of metrics: an STM spectrum cannot be interpreted in the classic remote-sensing-textbook sense.
+As an example, computing the NDVI from the 25% quantile of red and near infrared reflectance may yield unexpected results as they are not originating from the same acquisition date…
+Funny things may happen when you do.
+To emphasize this distinction, this is why we generally do not term them composites - but STMs (<em>this is debatable, I know</em>).</p>
+<p>Anyway, STMs are powerful, yet simple (<em>simple is good!</em>) metrics that are often used as features for Machine Learning algorithms, both for classification and regression problems.
+Due to their robustness (as compared to more advanced metrics) and their spatial completeness, they simplify the extrapolation/mapping of a response variable (qualitative or quantitative, e.g. classification labels or forest biomass) across very large areas.</p>
+<h2 id="parameterfile"><strong>Parameterfile</strong></h2>
+<p>STMs are available within the <a href="https://force-eo.readthedocs.io/en/latest/components/higher-level/tsa/index.html">Time Series Analysis (TSA)</a> submodule of the <a href="https://force-eo.readthedocs.io/en/latest/components/higher-level/index.html">FORCE Higher Level Processing system (HLPS)</a>.
+You can use <code>force-parameter</code> to generate an empty parameterfile.</p>
+<p>To familiarize yourself with the TSA submodule, I suggest taking a detour to the <a href="">interpolation tutorial</a> before advancing.</p>
+<p><strong>Temporal extent</strong></p>
+<p>The temporal extent defines the time period, which is used for aggregating the Level 2 observations into STMs.
+Broader windows generally result in cleaner metrics, although at the expense of seasonal information.
+It is hard to give a suggestion here, as this is a complex decision, which depends on sensors used, data availability, environmental conditions, cloud occurence, phenology, what you want to do with the data etc.
+To demonstrate, we are generating annual STMs for entire 2018:</p>
+<p><code>TIME_RANGE = 2018-01-01 2018-12-31</code></p>
+<p><strong>Sensors</strong></p>
+<p>FORCE HLPS allows you to easily combine data from different sensors - provided that we only use mutually available bands.
+For this tutorial, we are using data from Landsat 8, Sentinel-2A and Sentinel-2B.
+We are setting the output resolution to 30m.
+For Landsat, this is the native resolution.
+For the 10m Sentinel-2, we degrade the resolution using an approximated Point Spread Function (Gaussian lowpass with FWHM = analysis resolution), which approximates the acquisition of data at lower spatial resolution.</p>
+<pre><code class="language-bash">SENSORS = LND08 SEN2A SEN2B
+RESOLUTION = 30
+REDUCE_PSF = TRUE
+</code></pre>
+<p><strong>Bands / Indices</strong></p>
+<p>We will produce STMs for some spectral bands, as well as some indices:</p>
+<p><code>INDEX = RED NIR SWIR1 NDVI NDBI MNDWI</code></p>
+<p><strong>Outlier detection</strong></p>
+<p>If you see cloud remnants in your STMs, you might want to experiment with the outlier detection option.
+For now, lets disable it with:</p>
+<pre><code class="language-bash">ABOVE_NOISE = 0
+BELOW_NOISE = 0
+</code></pre>
+<p><strong>Interpolation</strong></p>
+<p>Before temporally aggregating the L2 observations, we can interpolate the time series. Try this out! But for now, let’s go without:</p>
+<p><code>INTERPOLATE = NONE</code></p>
+<p><strong>STMs</strong></p>
+<p>Now, we define the statistics for producing the STMs.
+You can specify a list with all statistics at once.
+Currently available are</p>
+<p>|&mdash;&mdash;|&mdash;&mdash;&mdash;&mdash;&ndash;|
+| AVG | Average |
+| STD | Standard deviation |
+| MIN | Minimum |
+| MAX | Maximum |
+| RNG | Range |
+| QXX | Quantiles, replace XX with any 2-digit number, e.g. Q50 for the median. Multiple quantiles can be given |
+| IQR | Inter-quartile range |
+| SKW | Skewness |
+| KRT | Kurtosis |
+| NUM | Number of observations (after outlier detection and interpolation) |
+|&mdash;&mdash;|&mdash;&mdash;&mdash;&mdash;&ndash;|</p>
+<p>Let’s go with these metrics for now:</p>
+<pre><code class="language-bash">STM = Q10 Q25 Q50 Q75 Q90 AVG STD
+OUTPUT_STM = TRUE
+</code></pre>
+<p><strong>Explode Output?</strong></p>
+<p>By default, HLPS will produce multi-band files for each spectral band/index, i.e. you will get one file for each index, which will have as many bands as there are STMs.
+If you rather prefer single-band images, i.e. one file for each index and each STM, use</p>
+<p><code>OUTPUT_EXPLODE = TRUE</code></p>
+<p><strong>Other parameters</strong></p>
+<p>The other parameters are not relevant for generating STMs. However, please note that you can generate STMs AND use the other options at the same time, e.g. Trend Analysis, Land Surface Phenology, etc. This saves time as data is only read once.</p>
+<p><strong>Processing</strong></p>
+<p>Processing is straightforward. Simply use:</p>
+<pre><code class="language-bash">force-higher-level /data/europe/stm/stm.prm
+</code></pre>
+<pre><code>number of processing units: 280
+ (active tiles: 28, chunks per tile: 10)
+________________________________________
+Progress:                        100.00%
+Time for I/C/O:           087%/008%/004%
+ETA:             00y 00m 00d 00h 00m 00s
+
+________________________________________
+Real time:       00y 00m 00d 00h 19m 05s
+Virtual time:    00y 00m 00d 00h 21m 35s
+Saved time:      00y 00m 00d 00h 02m 30s
+
+________________________________________
+Virtual I-time:  00y 00m 00d 00h 18m 53s
+Virtual C-time:  00y 00m 00d 00h 01m 47s
+Virtual O-time:  00y 00m 00d 00h 00m 55s
+
+________________________________________
+I-bound time:    00y 00m 00d 00h 17m 10s
+C-bound time:    00y 00m 00d 00h 00m 07s
+O-bound time:    00y 00m 00d 00h 00m 03s
+</code></pre>
+<p>After this, we generate a mosaic.
+With <code>OUTPUT_EXPLODE = TRUE</code>, you get one image for each requested index and statistical aggregation, i.e. 42 images in our case:</p>
+<pre><code class="language-bash">force-mosaic /data/europe/stm
+</code></pre>
+<pre><code>mosaicking 42 products:
+1 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_AVG.tif
+2 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q10.tif
+3 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q25.tif
+4 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q50.tif
+5 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q75.tif
+6 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q90.tif
+7 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_STD.tif
+8 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_AVG.tif
+9 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q10.tif
+10 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q25.tif
+11 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q50.tif
+12 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q75.tif
+13 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q90.tif
+14 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_STD.tif
+15 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_AVG.tif
+16 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q10.tif
+17 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q25.tif
+18 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q50.tif
+19 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q75.tif
+20 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q90.tif
+21 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_STD.tif
+22 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_AVG.tif
+23 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q10.tif
+24 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q25.tif
+25 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q50.tif
+26 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q75.tif
+27 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q90.tif
+28 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_STD.tif
+29 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_AVG.tif
+30 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q10.tif
+31 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q25.tif
+32 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q50.tif
+33 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q75.tif
+34 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q90.tif
+35 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_STD.tif
+36 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_AVG.tif
+37 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q10.tif
+38 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q25.tif
+39 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q50.tif
+40 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q75.tif
+41 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q90.tif
+42 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_STD.tif
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_AVG.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q25.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q90.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q50.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q75.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q75.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q10.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_AVG.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q25.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q10.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_STD.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q50.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q90.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q10.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_STD.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_AVG.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_STD.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q75.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q25.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q25.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q50.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q90.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q75.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q10.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_AVG.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_AVG.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_STD.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q10.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q25.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q50.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q90.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q50.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q90.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q75.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q25.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_STD.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q75.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q10.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_STD.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q50.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q90.tif
+26 chips found.
+
+mosaicking 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_AVG.tif
+26 chips found.
+</code></pre>
+<h2 id="visualization"><strong>Visualization</strong></h2>
+<p>Visualizing an RGB color composite in QGIS, wherein the 3 bands come from different physical files, does not work out of the box..
+Thus, we need to put the required bands into one file. Luckily, a virtual data format suffices.
+This example here stacks the 50% quantiles of the reflectance bands, as well as the 90% quantiles of the indices.
+For fast visualization, we are computing pyramids.</p>
+<pre><code class="language-bash">cd /data/europe/stm/mosaic
+force-stack *RED_STM_Q50.vrt *NIR_STM_Q50.vrt *SW1_STM_Q50.vrt stack-bands-STM_Q50.vrt
+force-stack *NDB_STM_Q90.vrt *NDV_STM_Q90.vrt *MNW_STM_Q90.vrt stack-indices-STM_Q90.vrt
+ls *.vrt | parallel force-pyramid {}
+</code></pre>
+<pre><code>file 1:
+  /data/europe/stm/mosaic
+  2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q50.vrt
+  9000 4000 1
+file 2:
+  /data/europe/stm/mosaic
+  2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q50.vrt
+  9000 4000 1
+file 3:
+  /data/europe/stm/mosaic
+  2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q50.vrt
+  9000 4000 1
+
+Same number of bands detected. Stacking by band.
+
+Band 0001: 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q50.vrt band 1
+Band 0002: 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q50.vrt band 1
+Band 0003: 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q50.vrt band 1
+
+file 1:
+  /data/europe/stm/mosaic
+  2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q90.vrt
+  9000 4000 1
+file 2:
+  /data/europe/stm/mosaic
+  2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q90.vrt
+  9000 4000 1
+file 3:
+  /data/europe/stm/mosaic
+  2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q90.vrt
+  9000 4000 1
+
+Same number of bands detected. Stacking by band.
+
+Band 0001: 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q90.vrt band 1
+Band 0002: 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q90.vrt band 1
+Band 0003: 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q90.vrt band 1
+
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q10.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q25.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q75.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_AVG.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q10.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q25.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q50.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q75.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q75.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q10.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q50.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q90.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_AVG.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_STD.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_STD.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q50.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q90.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q10.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q25.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_STD.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q25.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q90.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_AVG.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q90.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q75.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_AVG.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q50.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_AVG.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q10.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q25.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q10.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q50.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q75.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q90.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_AVG.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_STD.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q75.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q25.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q50.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q90.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_STD.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_STD.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for stack-bands-STM_Q50.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+computing pyramids for stack-indices-STM_Q90.vrt
+0...10...20...30...40...50...60...70...80...90...100 - done.
+</code></pre>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<figure>
+
+
+  <a data-fancybox="" href="/img/tutorial-stm-qgis.jpg" data-caption="RGB composite of STMs - Top: Q50 reflectance - Bottom: Q90 Indices">
+<img src="/img/tutorial-stm-qgis.jpg" alt="" ></a>
+
+
+  
+  
+  <figcaption>
+    RGB composite of STMs - Top: Q50 reflectance - Bottom: Q90 Indices
+  </figcaption>
+
+
+</figure>
+
+
+    </div>
+
+    
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/2020/">2020</a>
+  
+  <a class="badge badge-light" href="/tags/force/">FORCE</a>
+  
+  <a class="badge badge-light" href="/tags/higher-level/">Higher Level</a>
+  
+  <a class="badge badge-light" href="/tags/qgis/">QGIS</a>
+  
+  <a class="badge badge-light" href="/tags/tutorial/">Tutorial</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://davidfrantz.github.io/tutorials/force-stm/stm/&amp;text=FORCE%20Tutorial:%20Spectral%20Temporal%20Metrics" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://davidfrantz.github.io/tutorials/force-stm/stm/&amp;t=FORCE%20Tutorial:%20Spectral%20Temporal%20Metrics" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=FORCE%20Tutorial:%20Spectral%20Temporal%20Metrics&amp;body=https://davidfrantz.github.io/tutorials/force-stm/stm/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://davidfrantz.github.io/tutorials/force-stm/stm/&amp;title=FORCE%20Tutorial:%20Spectral%20Temporal%20Metrics" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=FORCE%20Tutorial:%20Spectral%20Temporal%20Metrics%20https://davidfrantz.github.io/tutorials/force-stm/stm/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://davidfrantz.github.io/tutorials/force-stm/stm/&amp;title=FORCE%20Tutorial:%20Spectral%20Temporal%20Metrics" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <img class="portrait mr-3" src="/authors/admin/avatar_huba61fb2ae087847d5946ab8e48bc46d6_594175_250x250_fill_q90_lanczos_center.jpg" alt="Avatar">
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://davidfrantz.github.io/">David Frantz</a></h5>
+      <h6 class="card-subtitle">Postdoctoral Researcher</h6>
+      <p class="card-text">EO, ARD, FORCE, Data Science, Open Science</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+    <li>
+      <a href="mailto:david.frantz@geo.hu-berlin.de" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.de/citations?user=JtEWu3AAAAAJ" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.researchgate.net/profile/David_Frantz" target="_blank" rel="noopener">
+        <i class="fab fa-researchgate"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="http://orcid.org/0000-0002-9292-3931" target="_blank" rel="noopener">
+        <i class="fab fa-orcid"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/davidfrantz" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/d__frantz" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>Related</h3>
+    <ul>
+      
+      <li><a href="/tutorials/force-tsi/tsi/">FORCE Tutorial: Interpolation</a></li>
+      
+      <li><a href="/tutorials/force-qai/qai/">FORCE Tutorial: Quality Bits a.k.a. Cloud Masks etc.</a></li>
+      
+      <li><a href="/tutorials/force-masks/masks/">FORCE Tutorial: Processing Masks</a></li>
+      
+      <li><a href="/tutorials/force-datacube/datacube/">FORCE Tutorial: The Datacube</a></li>
+      
+      <li><a href="/tutorials/force-ard/l2-ard/">FORCE Tutorial: Level 2 ARD</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.3227ab49eed49815d1b4ba40154f74e7.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    © 2019-2020 David Frantz &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

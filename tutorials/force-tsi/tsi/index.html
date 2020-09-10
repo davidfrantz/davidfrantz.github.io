@@ -694,8 +694,8 @@ force-higher-level /data/europe/interpolation/my-first-TSA.prm
 The full set of parameters is also documented <a href="https://force-eo.readthedocs.io/en/latest/components/higher-level/tsa/param.html">here</a>.</p>
 <p><strong>Input / Output directories</strong></p>
 <p>For this tutorial, we assume that we already have an existing Level 2 ARD datapool, which contains preprocessed data for multiple years (see <a href="https://davidfrantz.github.io/tutorials/force-ard/l2-ard/">ARD tutorial</a>).
-The parent directory of this datapool goes into the DIR_LOWER parameter.
-The DIR_HIGHER parameter names the output directory, where the interpolated time series will be generated (although technically possible, I suggest to use a different file path). Example:</p>
+The parent directory of this datapool goes into the <code>DIR_LOWER</code> parameter.
+The <code>DIR_HIGHER</code> parameter names the output directory, where the interpolated time series will be generated (although technically possible, I suggest to use a different file path). Example:</p>
 <pre><code class="language-bash">DIR_LOWER = /data/europe/level2
 DIR_HIGHER = /data/europe/interpolation
 </code></pre>
