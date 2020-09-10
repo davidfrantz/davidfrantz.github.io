@@ -520,7 +520,7 @@
   <h1>FORCE Tutorial: Spectral Temporal Metrics</h1>
 
   
-  <p class="page-subtitle">How to aggregate time series</p>
+  <p class="page-subtitle">How to aggregate time series?</p>
   
 
   
@@ -627,7 +627,7 @@ Due to their robustness (as compared to more advanced metrics) and their spatial
 <h2 id="parameterfile"><strong>Parameterfile</strong></h2>
 <p>STMs are available within the <a href="https://force-eo.readthedocs.io/en/latest/components/higher-level/tsa/index.html">Time Series Analysis (TSA)</a> submodule of the <a href="https://force-eo.readthedocs.io/en/latest/components/higher-level/index.html">FORCE Higher Level Processing system (HLPS)</a>.
 You can use <code>force-parameter</code> to generate an empty parameterfile.</p>
-<p>To familiarize yourself with the TSA submodule, I suggest taking a detour to the <a href="">interpolation tutorial</a> before advancing.</p>
+<p>To familiarize yourself with the TSA submodule, I suggest taking a detour to the <a href="https://davidfrantz.github.io/tutorials/force-tsi/tsi/">interpolation tutorial</a> before advancing.</p>
 <p><strong>Temporal extent</strong></p>
 <p>The temporal extent defines the time period, which is used for aggregating the Level 2 observations into STMs.
 Broader windows generally result in cleaner metrics, although at the expense of seasonal information.
@@ -660,18 +660,60 @@ BELOW_NOISE = 0
 <p>Now, we define the statistics for producing the STMs.
 You can specify a list with all statistics at once.
 Currently available are</p>
-<p>|&mdash;&mdash;|&mdash;&mdash;&mdash;&mdash;&ndash;|
-| AVG | Average |
-| STD | Standard deviation |
-| MIN | Minimum |
-| MAX | Maximum |
-| RNG | Range |
-| QXX | Quantiles, replace XX with any 2-digit number, e.g. Q50 for the median. Multiple quantiles can be given |
-| IQR | Inter-quartile range |
-| SKW | Skewness |
-| KRT | Kurtosis |
-| NUM | Number of observations (after outlier detection and interpolation) |
-|&mdash;&mdash;|&mdash;&mdash;&mdash;&mdash;&ndash;|</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AVG</td>
+<td>Average</td>
+</tr>
+<tr>
+<td>STD</td>
+<td>Standard deviation</td>
+</tr>
+<tr>
+<td>MIN</td>
+<td>Minimum</td>
+</tr>
+<tr>
+<td>MAX</td>
+<td>Maximum</td>
+</tr>
+<tr>
+<td>RNG</td>
+<td>Range</td>
+</tr>
+<tr>
+<td>QXX</td>
+<td>Quantiles, replace XX with any 2-digit number, e.g. Q50 for the median. Multiple quantiles can be given</td>
+</tr>
+<tr>
+<td>IQR</td>
+<td>Inter-quartile range</td>
+</tr>
+<tr>
+<td>SKW</td>
+<td>Skewness</td>
+</tr>
+<tr>
+<td>KRT</td>
+<td>Kurtosis</td>
+</tr>
+<tr>
+<td>NUM</td>
+<td>Number of observations (after outlier detection and interpolation)</td>
+</tr>
+<tr>
+<td>&mdash;</td>
+<td>&mdash;</td>
+</tr>
+</tbody>
+</table>
 <p>Let’s go with these metrics for now:</p>
 <pre><code class="language-bash">STM = Q10 Q25 Q50 Q75 Q90 AVG STD
 OUTPUT_STM = TRUE
@@ -717,41 +759,7 @@ With <code>OUTPUT_EXPLODE = TRUE</code>, you get one image for each requested in
 2 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q10.tif
 3 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q25.tif
 4 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q50.tif
-5 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q75.tif
-6 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q90.tif
-7 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_STD.tif
-8 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_AVG.tif
-9 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q10.tif
-10 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q25.tif
-11 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q50.tif
-12 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q75.tif
-13 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q90.tif
-14 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_STD.tif
-15 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_AVG.tif
-16 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q10.tif
-17 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q25.tif
-18 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q50.tif
-19 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q75.tif
-20 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q90.tif
-21 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_STD.tif
-22 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_AVG.tif
-23 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q10.tif
-24 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q25.tif
-25 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q50.tif
-26 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q75.tif
-27 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q90.tif
-28 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_STD.tif
-29 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_AVG.tif
-30 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q10.tif
-31 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q25.tif
-32 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q50.tif
-33 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q75.tif
-34 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q90.tif
-35 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_STD.tif
-36 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_AVG.tif
-37 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q10.tif
-38 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q25.tif
-39 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q50.tif
+...
 40 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q75.tif
 41 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q90.tif
 42 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_STD.tif
@@ -762,122 +770,7 @@ mosaicking 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_AVG.tif
 mosaicking 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q25.tif
 26 chips found.
 
-mosaicking 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q90.tif
-26 chips found.
-
-mosaicking 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q50.tif
-26 chips found.
-
-mosaicking 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q75.tif
-26 chips found.
-
-mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q75.tif
-26 chips found.
-
-mosaicking 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q10.tif
-26 chips found.
-
-mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_AVG.tif
-26 chips found.
-
-mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q25.tif
-26 chips found.
-
-mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q10.tif
-26 chips found.
-
-mosaicking 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_STD.tif
-26 chips found.
-
-mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q50.tif
-26 chips found.
-
-mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q90.tif
-26 chips found.
-
-mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q10.tif
-26 chips found.
-
-mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_STD.tif
-26 chips found.
-
-mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_AVG.tif
-26 chips found.
-
-mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_STD.tif
-26 chips found.
-
-mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q75.tif
-26 chips found.
-
-mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q25.tif
-26 chips found.
-
-mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q25.tif
-26 chips found.
-
-mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q50.tif
-26 chips found.
-
-mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q90.tif
-26 chips found.
-
-mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q75.tif
-26 chips found.
-
-mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q10.tif
-26 chips found.
-
-mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_AVG.tif
-26 chips found.
-
-mosaicking 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_AVG.tif
-26 chips found.
-
-mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_STD.tif
-26 chips found.
-
-mosaicking 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q10.tif
-26 chips found.
-
-mosaicking 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q25.tif
-26 chips found.
-
-mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q50.tif
-26 chips found.
-
-mosaicking 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q90.tif
-26 chips found.
-
-mosaicking 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q50.tif
-26 chips found.
-
-mosaicking 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q90.tif
-26 chips found.
-
-mosaicking 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q75.tif
-26 chips found.
-
-mosaicking 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q25.tif
-26 chips found.
-
-mosaicking 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_STD.tif
-26 chips found.
-
-mosaicking 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q75.tif
-26 chips found.
-
-mosaicking 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q10.tif
-26 chips found.
-
-mosaicking 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_STD.tif
-26 chips found.
-
-mosaicking 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q50.tif
-26 chips found.
-
-mosaicking 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q90.tif
-26 chips found.
+...
 
 mosaicking 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_AVG.tif
 26 chips found.
@@ -934,86 +827,7 @@ computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q10.vrt
 0...10...20...30...40...50...60...70...80...90...100 - done.
 computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q25.vrt
 0...10...20...30...40...50...60...70...80...90...100 - done.
-computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q75.vrt
-0...10...20...30...40...50...60...70...80...90...100 - done.
-computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_AVG.vrt
-0...10...20...30...40...50...60...70...80...90...100 - done.
-computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q10.vrt
-0...10...20...30...40...50...60...70...80...90...100 - done.
-computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q25.vrt
-0...10...20...30...40...50...60...70...80...90...100 - done.
-computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q50.vrt
-0...10...20...30...40...50...60...70...80...90...100 - done.
-computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q75.vrt
-0...10...20...30...40...50...60...70...80...90...100 - done.
-computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q75.vrt
-0...10...20...30...40...50...60...70...80...90...100 - done.
-computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q10.vrt
-0...10...20...30...40...50...60...70...80...90...100 - done.
-computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q50.vrt
-0...10...20...30...40...50...60...70...80...90...100 - done.
-computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q90.vrt
-0...10...20...30...40...50...60...70...80...90...100 - done.
-computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_AVG.vrt
-0...10...20...30...40...50...60...70...80...90...100 - done.
-computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_STD.vrt
-0...10...20...30...40...50...60...70...80...90...100 - done.
-computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_STD.vrt
-0...10...20...30...40...50...60...70...80...90...100 - done.
-computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q50.vrt
-0...10...20...30...40...50...60...70...80...90...100 - done.
-computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q90.vrt
-0...10...20...30...40...50...60...70...80...90...100 - done.
-computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q10.vrt
-0...10...20...30...40...50...60...70...80...90...100 - done.
-computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q25.vrt
-0...10...20...30...40...50...60...70...80...90...100 - done.
-computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_STD.vrt
-0...10...20...30...40...50...60...70...80...90...100 - done.
-computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q25.vrt
-0...10...20...30...40...50...60...70...80...90...100 - done.
-computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q90.vrt
-0...10...20...30...40...50...60...70...80...90...100 - done.
-computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_AVG.vrt
-0...10...20...30...40...50...60...70...80...90...100 - done.
-computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q90.vrt
-0...10...20...30...40...50...60...70...80...90...100 - done.
-computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q75.vrt
-0...10...20...30...40...50...60...70...80...90...100 - done.
-computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_AVG.vrt
-0...10...20...30...40...50...60...70...80...90...100 - done.
-computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q50.vrt
-0...10...20...30...40...50...60...70...80...90...100 - done.
-computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_AVG.vrt
-0...10...20...30...40...50...60...70...80...90...100 - done.
-computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q10.vrt
-0...10...20...30...40...50...60...70...80...90...100 - done.
-computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q25.vrt
-0...10...20...30...40...50...60...70...80...90...100 - done.
-computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q10.vrt
-0...10...20...30...40...50...60...70...80...90...100 - done.
-computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q50.vrt
-0...10...20...30...40...50...60...70...80...90...100 - done.
-computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q75.vrt
-0...10...20...30...40...50...60...70...80...90...100 - done.
-computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q90.vrt
-0...10...20...30...40...50...60...70...80...90...100 - done.
-computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_AVG.vrt
-0...10...20...30...40...50...60...70...80...90...100 - done.
-computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_STD.vrt
-0...10...20...30...40...50...60...70...80...90...100 - done.
-computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q75.vrt
-0...10...20...30...40...50...60...70...80...90...100 - done.
-computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q25.vrt
-0...10...20...30...40...50...60...70...80...90...100 - done.
-computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q50.vrt
-0...10...20...30...40...50...60...70...80...90...100 - done.
-computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q90.vrt
-0...10...20...30...40...50...60...70...80...90...100 - done.
-computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_STD.vrt
-0...10...20...30...40...50...60...70...80...90...100 - done.
-computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_STD.vrt
-0...10...20...30...40...50...60...70...80...90...100 - done.
+...
 computing pyramids for stack-bands-STM_Q50.vrt
 0...10...20...30...40...50...60...70...80...90...100 - done.
 computing pyramids for stack-indices-STM_Q90.vrt
