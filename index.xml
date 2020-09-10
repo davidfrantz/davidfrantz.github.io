@@ -43,14 +43,14 @@ Before calculating the statistics, the data is quality filtered, e.g. clouds are
 &lt;figure&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;https://davidfrantz.github.io/img/tutorial-stm-example.png&#34; data-caption=&#34;STM concept (C) Stefan Ernst&#34;&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://davidfrantz.github.io/img/tutorial-stm-example.png&#34; data-caption=&#34;STM concept © Stefan Ernst&#34;&gt;
 &lt;img src=&#34;https://davidfrantz.github.io/img/tutorial-stm-example.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
 
 
   
   
   &lt;figcaption&gt;
-    STM concept (C) Stefan Ernst
+    STM concept © Stefan Ernst
   &lt;/figcaption&gt;
 
 
@@ -146,10 +146,6 @@ Currently available are&lt;/p&gt;
 &lt;tr&gt;
 &lt;td&gt;NUM&lt;/td&gt;
 &lt;td&gt;Number of observations (after outlier detection and interpolation)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&amp;mdash;&lt;/td&gt;
-&lt;td&gt;&amp;mdash;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
