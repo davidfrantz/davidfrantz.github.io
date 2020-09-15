@@ -5,12 +5,36 @@
     <link>https://davidfrantz.github.io/authors/</link>
       <atom:link href="https://davidfrantz.github.io/authors/index.xml" rel="self" type="application/rss+xml" />
     <description>Authors</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Fri, 24 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Tue, 15 Sep 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://davidfrantz.github.io/img/icon-192.png</url>
       <title>Authors</title>
       <link>https://davidfrantz.github.io/authors/</link>
     </image>
+    
+    <item>
+      <title>David Frantz</title>
+      <link>https://davidfrantz.github.io/authors/david-frantz/</link>
+      <pubDate>Tue, 15 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/david-frantz/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ewa Grabska</title>
+      <link>https://davidfrantz.github.io/authors/ewa-grabska/</link>
+      <pubDate>Tue, 15 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/ewa-grabska/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Katarzyna Ostapowicz</title>
+      <link>https://davidfrantz.github.io/authors/katarzyna-ostapowicz/</link>
+      <pubDate>Tue, 15 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/authors/katarzyna-ostapowicz/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Afag Rizayeva</title>
@@ -41,14 +65,6 @@
       <link>https://davidfrantz.github.io/authors/bin-tan/</link>
       <pubDate>Fri, 24 Jul 2020 00:00:00 +0000</pubDate>
       <guid>https://davidfrantz.github.io/authors/bin-tan/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>David Frantz</title>
-      <link>https://davidfrantz.github.io/authors/david-frantz/</link>
-      <pubDate>Fri, 24 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>https://davidfrantz.github.io/authors/david-frantz/</guid>
       <description></description>
     </item>
     

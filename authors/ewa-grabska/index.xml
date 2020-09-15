@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ewa Grabska | DAVID FRANTZ</title>
+    <link>https://davidfrantz.github.io/authors/ewa-grabska/</link>
+      <atom:link href="https://davidfrantz.github.io/authors/ewa-grabska/index.xml" rel="self" type="application/rss+xml" />
+    <description>Ewa Grabska</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Tue, 15 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://davidfrantz.github.io/img/icon-192.png</url>
+      <title>Ewa Grabska</title>
+      <link>https://davidfrantz.github.io/authors/ewa-grabska/</link>
+    </image>
+    
+    <item>
+      <title>Evaluation of machine learning algorithms for forest stand species mapping using Sentinel-2 imagery and environmental data in the Polish Carpathians [accepted]</title>
+      <link>https://davidfrantz.github.io/publication/grabska-2020/</link>
+      <pubDate>Tue, 15 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/grabska-2020/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
