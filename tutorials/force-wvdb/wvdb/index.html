@@ -581,14 +581,38 @@
       <p><em>This tutorial uses FORCE v. 3.0</em></p>
 <h2 id="learning-objective"><strong>Learning Objective</strong></h2>
 <p>This tutorial will show how to prepare the Water Vapor Database (WVDB) for the <strong>FORCE Level 2 Processing System (FORCE L2PS)</strong>.</p>
-<p>Chart start</p>
+<p>Chart start 1</p>
 
 
 
   
 
 
-<div id="chart-187463952" class="chart pb-3" style="max-width: 100%; margin: auto;"></div>
+<div id="chart-837215649" class="chart pb-3" style="max-width: 100%; margin: auto;"></div>
+<script>
+  (function() {
+    let a = setInterval( function() {
+      if ( typeof window.Plotly === 'undefined' ) {
+        return;
+      }
+      clearInterval( a );
+
+      Plotly.d3.json("/img/test.json", function(chart) {
+        Plotly.plot('chart-837215649', chart.data, chart.layout, {responsive: true});
+      });
+    }, 500 );
+  })();
+
+</script>
+<p>Chart end 1</p>
+<p>Chart start 2</p>
+
+
+
+  
+
+
+<div id="chart-542861739" class="chart pb-3" style="max-width: 100%; margin: auto;"></div>
 <script>
   (function() {
     let a = setInterval( function() {
@@ -598,13 +622,13 @@
       clearInterval( a );
 
       Plotly.d3.json("/img/network.json", function(chart) {
-        Plotly.plot('chart-187463952', chart.data, chart.layout, {responsive: true});
+        Plotly.plot('chart-542861739', chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
 
 </script>
-<p>Chart end</p>
+<p>Chart end 2</p>
 <h2 id="background"><strong>Background</strong></h2>
 <p>During atmospheric correction, the effect of water vapor absorption can only be corrected if we know the amount of water vapor in the atmosphere.</p>
 <p>If you are using Sentinel-2 data only, you can stop reading. Sentinel-2 is equipped with a water vapor channel, and thus, water wapor amount can be estimated from the images.</p>

@@ -1,0 +1,5305 @@
+{
+  "visdat": {
+    "59c11477cf6": ["function () ", "plotlyVisDat"],
+    "59cff26d1c": ["function () ", "data"],
+    "59c6087425e": ["function () ", "data"]
+  },
+  "cur_data": "59c6087425e",
+  "attrs": {
+    "59cff26d1c": {
+      "x": {},
+      "y": {},
+      "alpha_stroke": 1,
+      "sizes": [10, 100],
+      "spans": [1, 20],
+      "type": "scatter",
+      "mode": "markers",
+      "size": [12.556229318461, 2, 2, 2, 2, 2, 2, 2, 7.54517744447956, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 15.7359488179406, 2, 2, 2, 6.39444915467244, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 12.2597974298461, 2, 2, 4.77258872223978, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 6.39444915467244, 12.2597974298461, 2, 2, 4.77258872223978, 2, 2, 2, 2, 2, 2, 2, 8.4377516497364, 2, 4.77258872223978, 2, 6.39444915467244, 2, 4.77258872223978, 4.77258872223978, 2, 2, 2, 2, 7.54517744447956, 2, 2, 2],
+      "color": [2018, 2020, 2020, 2018, 2018, 2019, 2018, 2020, 2018, 2018, 2018, 2016, 2020, 2020, 2017, 2020, 2018, 2014, 2019, 2020, 2020, 2018, 2020, 2018, 2018, 2020, 2020, 2018, 2020, 2018, 2020, 2018, 2018, 2020, 2019, 2014, 2020, 2018, 2016, 2018, 2019, 2019, 2020, 2019, 2019, 2019, 2020, 2020, 2020, 2017, 2014, 2020, 2014, 2014, 2016, 2019, 2018, 2014, 2016, 2014, 2019, 2018, 2020, 2020, 2018, 2019, 2020, 2014, 2020, 2018, 2016, 2019, 2017, 2020, 2018, 2019, 2018, 2020, 2016, 2019, 2020, 2020],
+      "colors": "viridis",
+      "text": ["<b> Achim Röder <\/b> <br> 14 publication(s) <br> Latest publication: <br> M. de Blécourt et al. (2018) <br> Deforestation for agricultural expansion in SW Zambia and NE Namibia and the impacts on soil fertility, soil organic carbon- and nutrient levels <br> <i> Biodiversity & Ecology 6 - Climate change and adaptive landmanagement in southern Africa - assessments, changes, challenges, and solutions <\/i>", "<b> Afag Rizayeva <\/b> <br> 1 publication(s) <br> Latest publication: <br> J. Buchner et al. (2020) <br> Land-cover change in the Caucasus Mountains since 1987 based on the topographic correction of multi-temporal Landsat composites <br> <i> Remote Sensing of Environment <\/i>", "<b> Akpona Okujeni <\/b> <br> 1 publication(s) <br> Latest publication: <br> F. Schug et al. (2020) <br> Mapping urban-rural gradients of settlements and vegetation at national scale using Sentinel-2 spectral-temporal metrics and regression-based unmixing with synthetic training data <br> <i> Remote Sensing of Environment <\/i>", "<b> Alexander Gröngröft <\/b> <br> 1 publication(s) <br> Latest publication: <br> M. de Blécourt et al. (2018) <br> Deforestation for agricultural expansion in SW Zambia and NE Namibia and the impacts on soil fertility, soil organic carbon- and nutrient levels <br> <i> Biodiversity & Ecology 6 - Climate change and adaptive landmanagement in southern Africa - assessments, changes, challenges, and solutions <\/i>", "<b> André Hollstein <\/b> <br> 1 publication(s) <br> Latest publication: <br> G. Doxani et al. (2018) <br> Atmospheric Correction Inter-Comparison Exercise <br> <i> Remote Sensing <\/i>", "<b> Andreas Rabe <\/b> <br> 1 publication(s) <br> Latest publication: <br> P. Rufin et al. (2019) <br> Mapping Cropping Practices on a National Scale Using Intra-Annual Landsat Time Series Binning <br> <i> Remote Sensing <\/i>", "<b> Andreas Uhl <\/b> <br> 1 publication(s) <br> Latest publication: <br> D. Frantz et al. (2018) <br> Improvement of the Fmask algorithm for Sentinel-2 images: Separating clouds from bright surfaces based on parallax effects <br> <i> Remote Sensing of Environment <\/i>", "<b> Anna Komarova <\/b> <br> 1 publication(s) <br> Latest publication: <br> J. Buchner et al. (2020) <br> Land-cover change in the Caucasus Mountains since 1987 based on the topographic correction of multi-temporal Landsat composites <br> <i> Remote Sensing of Environment <\/i>", "<b> Anne Schneibel <\/b> <br> 4 publication(s) <br> Latest publication: <br> A. Schneibel et al. (2018) <br> Long-term land use change analysis in south-central Angola. Assessing the trade-off between major ecosystem services with remote sensing data <br> <i> Biodiversity & Ecology 6 - Climate change and adaptive landmanagement in southern Africa - assessments, changes, challenges, and solutions <\/i>", "<b> Annette Eschenbach <\/b> <br> 1 publication(s) <br> Latest publication: <br> M. de Blécourt et al. (2018) <br> Deforestation for agricultural expansion in SW Zambia and NE Namibia and the impacts on soil fertility, soil organic carbon- and nutrient levels <br> <i> Biodiversity & Ecology 6 - Climate change and adaptive landmanagement in southern Africa - assessments, changes, challenges, and solutions <\/i>", "<b> Antoine Mangin <\/b> <br> 1 publication(s) <br> Latest publication: <br> G. Doxani et al. (2018) <br> Atmospheric Correction Inter-Comparison Exercise <br> <i> Remote Sensing <\/i>", "<b> Ben Strohbach <\/b> <br> 1 publication(s) <br> Latest publication: <br> R. Revermann et al. (2016) <br> Linking Land Surface Phenology and Vegetation-Plot Databases to Model Terrestrial Plant a-Diversity of the Okavango Basin <br> <i> Remote Sensing <\/i>", "<b> Benjamin Bleyhl <\/b> <br> 1 publication(s) <br> Latest publication: <br> J. Buchner et al. (2020) <br> Land-cover change in the Caucasus Mountains since 1987 based on the topographic correction of multi-temporal Landsat composites <br> <i> Remote Sensing of Environment <\/i>", "<b> Benjamin Jakimow <\/b> <br> 1 publication(s) <br> Latest publication: <br> B. Jakimow et al. (2020) <br> Visualizing and labeling dense multi-sensor earth observation time series: The EO Time Series Viewer <br> <i> Environmental Modelling & Software <\/i>", "<b> Benjamin Kowalski <\/b> <br> 1 publication(s) <br> Latest publication: <br> A. Schneibel et al. (2017) <br> Assessment of spatio-temporal changes of smallholder cultivation patterns in the Angolan Miombo belt using segmentation of Landsat time series <br> <i> Remote Sensing of Environment <\/i>", "<b> Bin Tan <\/b> <br> 1 publication(s) <br> Latest publication: <br> J. Buchner et al. (2020) <br> Land-cover change in the Caucasus Mountains since 1987 based on the topographic correction of multi-temporal Landsat composites <br> <i> Remote Sensing of Environment <\/i>", "<b> Bringfried Pflug <\/b> <br> 1 publication(s) <br> Latest publication: <br> G. Doxani et al. (2018) <br> Atmospheric Correction Inter-Comparison Exercise <br> <i> Remote Sensing <\/i>", "<b> Christian Bossung <\/b> <br> 1 publication(s) <br> Latest publication: <br> M. Machwitz et al. (2014) <br> Enhanced biomass prediction by assimilating satellite data into a crop growth model <br> <i> Environmental Modelling & Software <\/i>", "<b> Cornelius Senf <\/b> <br> 1 publication(s) <br> Latest publication: <br> K. Lebek et al. (2019) <br> Interdependent effects of climate variability and forest cover change on streamflow dynamics: a case study in the Upper Umvoti River Basin, South Africa <br> <i> Regional Environmental Change <\/i>", "<b> Daniel Scheffler <\/b> <br> 1 publication(s) <br> Latest publication: <br> D. Scheffler et al. (2020) <br> Spectral harmonization and red edge prediction of Landsat-8 to Sentinel-2 using land cover optimized multivariate regressors <br> <i> Remote Sensing of Environment <\/i>", "<b> David Frantz <\/b> <br> 31 publication(s) <br> Latest publication: <br> E. Grabska et al. (2020) <br> Evaluation of machine learning algorithms for forest stand species mapping using Sentinel-2 imagery and environmental data in the Polish Carpathians [accepted] <br> <i> Remote Sensing of Environment <\/i>", "<b> David Parduhn <\/b> <br> 1 publication(s) <br> Latest publication: <br> D. Parduhn et al. (2018) <br> Seeing deforestation in Zambia - On the discrepancy between biophysical land-use changes and social perception <br> <i> Biodiversity & Ecology 6 - Climate change and adaptive landmanagement in southern Africa - assessments, changes, challenges, and solutions <\/i>", "<b> Elshad Askerov <\/b> <br> 1 publication(s) <br> Latest publication: <br> J. Buchner et al. (2020) <br> Land-cover change in the Caucasus Mountains since 1987 based on the topographic correction of multi-temporal Landsat composites <br> <i> Remote Sensing of Environment <\/i>", "<b> Eric Vermote <\/b> <br> 1 publication(s) <br> Latest publication: <br> G. Doxani et al. (2018) <br> Atmospheric Correction Inter-Comparison Exercise <br> <i> Remote Sensing <\/i>", "<b> Erik Haß <\/b> <br> 3 publication(s) <br> Latest publication: <br> D. Frantz et al. (2018) <br> Improvement of the Fmask algorithm for Sentinel-2 images: Separating clouds from bright surfaces based on parallax effects <br> <i> Remote Sensing of Environment <\/i>", "<b> Ewa Grabska <\/b> <br> 1 publication(s) <br> Latest publication: <br> E. Grabska et al. (2020) <br> Evaluation of machine learning algorithms for forest stand species mapping using Sentinel-2 imagery and environmental data in the Polish Carpathians [accepted] <br> <i> Remote Sensing of Environment <\/i>", "<b> Fabian Thiel <\/b> <br> 1 publication(s) <br> Latest publication: <br> B. Jakimow et al. (2020) <br> Visualizing and labeling dense multi-sensor earth observation time series: The EO Time Series Viewer <br> <i> Environmental Modelling & Software <\/i>", "<b> Ferran Gascon <\/b> <br> 1 publication(s) <br> Latest publication: <br> G. Doxani et al. (2018) <br> Atmospheric Correction Inter-Comparison Exercise <br> <i> Remote Sensing <\/i>", "<b> Franz Schug <\/b> <br> 1 publication(s) <br> Latest publication: <br> F. Schug et al. (2020) <br> Mapping urban-rural gradients of settlements and vegetation at national scale using Sentinel-2 spectral-temporal metrics and regression-based unmixing with synthetic training data <br> <i> Remote Sensing of Environment <\/i>", "<b> Fuqin Li <\/b> <br> 1 publication(s) <br> Latest publication: <br> G. Doxani et al. (2018) <br> Atmospheric Correction Inter-Comparison Exercise <br> <i> Remote Sensing <\/i>", "<b> Garegin Tepanosyan <\/b> <br> 1 publication(s) <br> Latest publication: <br> J. Buchner et al. (2020) <br> Land-cover change in the Caucasus Mountains since 1987 based on the topographic correction of multi-temporal Landsat composites <br> <i> Remote Sensing of Environment <\/i>", "<b> Georgia Doxani <\/b> <br> 1 publication(s) <br> Latest publication: <br> G. Doxani et al. (2018) <br> Atmospheric Correction Inter-Comparison Exercise <br> <i> Remote Sensing <\/i>", "<b> Grit Kirches <\/b> <br> 1 publication(s) <br> Latest publication: <br> G. Doxani et al. (2018) <br> Atmospheric Correction Inter-Comparison Exercise <br> <i> Remote Sensing <\/i>", "<b> He Yin <\/b> <br> 1 publication(s) <br> Latest publication: <br> J. Buchner et al. (2020) <br> Land-cover change in the Caucasus Mountains since 1987 based on the topographic correction of multi-temporal Landsat composites <br> <i> Remote Sensing of Environment <\/i>", "<b> Henning Buddenbaum <\/b> <br> 1 publication(s) <br> Latest publication: <br> S. Nink et al. (2019) <br> Using Landsat and Sentinel-2 Data for the Generation of Continuously Updated Forest Type Information Layers in a Cross-Border Region <br> <i> Remote Sensing <\/i>", "<b> Holger Lilienthal <\/b> <br> 1 publication(s) <br> Latest publication: <br> M. Machwitz et al. (2014) <br> Enhanced biomass prediction by assimilating satellite data into a crop growth model <br> <i> Environmental Modelling & Software <\/i>", "<b> Hovik Sayadyan <\/b> <br> 1 publication(s) <br> Latest publication: <br> J. Buchner et al. (2020) <br> Land-cover change in the Caucasus Mountains since 1987 based on the topographic correction of multi-temporal Landsat composites <br> <i> Remote Sensing of Environment <\/i>", "<b> Jean-Claude Roger <\/b> <br> 1 publication(s) <br> Latest publication: <br> G. Doxani et al. (2018) <br> Atmospheric Correction Inter-Comparison Exercise <br> <i> Remote Sensing <\/i>", "<b> Jens Oldeland <\/b> <br> 1 publication(s) <br> Latest publication: <br> R. Revermann et al. (2016) <br> Linking Land Surface Phenology and Vegetation-Plot Databases to Model Terrestrial Plant a-Diversity of the Okavango Basin <br> <i> Remote Sensing <\/i>", "<b> Jérôme Louis <\/b> <br> 1 publication(s) <br> Latest publication: <br> G. Doxani et al. (2018) <br> Atmospheric Correction Inter-Comparison Exercise <br> <i> Remote Sensing <\/i>", "<b> Joachim Hill <\/b> <br> 13 publication(s) <br> Latest publication: <br> S. Nink et al. (2019) <br> Using Landsat and Sentinel-2 Data for the Generation of Continuously Updated Forest Type Information Layers in a Cross-Border Region <br> <i> Remote Sensing <\/i>", "<b> Joachim Langshausen <\/b> <br> 1 publication(s) <br> Latest publication: <br> S. Nink et al. (2019) <br> Using Landsat and Sentinel-2 Data for the Generation of Continuously Updated Forest Type Information Layers in a Cross-Border Region <br> <i> Remote Sensing <\/i>", "<b> Johanna Buchner <\/b> <br> 1 publication(s) <br> Latest publication: <br> J. Buchner et al. (2020) <br> Land-cover change in the Caucasus Mountains since 1987 based on the topographic correction of multi-temporal Landsat composites <br> <i> Remote Sensing of Environment <\/i>", "<b> Johannes Stoffels <\/b> <br> 2 publication(s) <br> Latest publication: <br> S. Nink et al. (2019) <br> Using Landsat and Sentinel-2 Data for the Generation of Continuously Updated Forest Type Information Layers in a Cross-Border Region <br> <i> Remote Sensing <\/i>", "<b> José Monteiro <\/b> <br> 1 publication(s) <br> Latest publication: <br> K. Lebek et al. (2019) <br> Interdependent effects of climate variability and forest cover change on streamflow dynamics: a case study in the Upper Umvoti River Basin, South Africa <br> <i> Regional Environmental Change <\/i>", "<b> Karen Lebek <\/b> <br> 1 publication(s) <br> Latest publication: <br> K. Lebek et al. (2019) <br> Interdependent effects of climate variability and forest cover change on streamflow dynamics: a case study in the Upper Umvoti River Basin, South Africa <br> <i> Regional Environmental Change <\/i>", "<b> Karl Segl <\/b> <br> 1 publication(s) <br> Latest publication: <br> D. Scheffler et al. (2020) <br> Spectral harmonization and red edge prediction of Landsat-8 to Sentinel-2 using land cover optimized multivariate regressors <br> <i> Remote Sensing of Environment <\/i>", "<b> Katarzyna Lewinska <\/b> <br> 1 publication(s) <br> Latest publication: <br> J. Buchner et al. (2020) <br> Land-cover change in the Caucasus Mountains since 1987 based on the topographic correction of multi-temporal Landsat composites <br> <i> Remote Sensing of Environment <\/i>", "<b> Katarzyna Ostapowicz <\/b> <br> 1 publication(s) <br> Latest publication: <br> E. Grabska et al. (2020) <br> Evaluation of machine learning algorithms for forest stand species mapping using Sentinel-2 imagery and environmental data in the Polish Carpathians [accepted] <br> <i> Remote Sensing of Environment <\/i>", "<b> Kim Fischer <\/b> <br> 1 publication(s) <br> Latest publication: <br> A. Schneibel et al. (2017) <br> Using Annual Landsat Time Series for the Detection of Dry Forest Degradation Processes in South-Central Angola <br> <i> Remote Sensing <\/i>", "<b> Laura Giustarini <\/b> <br> 1 publication(s) <br> Latest publication: <br> M. Machwitz et al. (2014) <br> Enhanced biomass prediction by assimilating satellite data into a crop growth model <br> <i> Environmental Modelling & Software <\/i>", "<b> Lin Yan <\/b> <br> 1 publication(s) <br> Latest publication: <br> P. Rufin et al. (2020) <br> Operational Coregistration of the Sentinel-2A/B Image Archive Using Multitemporal Landsat Spectral Averages <br> <i> IEEE Geoscience and Remote Sensing Letters <\/i>", "<b> Loise Wandera <\/b> <br> 1 publication(s) <br> Latest publication: <br> M. Machwitz et al. (2014) <br> Enhanced biomass prediction by assimilating satellite data into a crop growth model <br> <i> Environmental Modelling & Software <\/i>", "<b> Lucien Hoffmann <\/b> <br> 1 publication(s) <br> Latest publication: <br> M. Machwitz et al. (2014) <br> Enhanced biomass prediction by assimilating satellite data into a crop growth model <br> <i> Environmental Modelling & Software <\/i>", "<b> Manfred Finckh <\/b> <br> 3 publication(s) <br> Latest publication: <br> R. Revermann et al. (2016) <br> Linking Land Surface Phenology and Vegetation-Plot Databases to Model Terrestrial Plant a-Diversity of the Okavango Basin <br> <i> Remote Sensing <\/i>", "<b> Marion Stellmes <\/b> <br> 13 publication(s) <br> Latest publication: <br> D. Frantz et al. (2019) <br> A Global MODIS Water Vapor Database for the Operational Atmospheric Correction of Historic and Recent Landsat Imagery <br> <i> Remote Sensing <\/i>", "<b> Marleen de Blécourt <\/b> <br> 1 publication(s) <br> Latest publication: <br> M. de Blécourt et al. (2018) <br> Deforestation for agricultural expansion in SW Zambia and NE Namibia and the impacts on soil fertility, soil organic carbon- and nutrient levels <br> <i> Biodiversity & Ecology 6 - Climate change and adaptive landmanagement in southern Africa - assessments, changes, challenges, and solutions <\/i>", "<b> Martin Schlerf <\/b> <br> 1 publication(s) <br> Latest publication: <br> M. Machwitz et al. (2014) <br> Enhanced biomass prediction by assimilating satellite data into a crop growth model <br> <i> Environmental Modelling & Software <\/i>", "<b> Michael Schmidt <\/b> <br> 2 publication(s) <br> Latest publication: <br> D. Frantz et al. (2016) <br> Forest Disturbance Mapping Using Dense Synthetic Landsat/MODIS Time-Series and Permutation-Based Disturbance Index Detection <br> <i> Remote Sensing <\/i>", "<b> Miriam Machwitz <\/b> <br> 1 publication(s) <br> Latest publication: <br> M. Machwitz et al. (2014) <br> Enhanced biomass prediction by assimilating satellite data into a crop growth model <br> <i> Environmental Modelling & Software <\/i>", "<b> Mutlu Özdogan <\/b> <br> 1 publication(s) <br> Latest publication: <br> P. Rufin et al. (2019) <br> Mapping Cropping Practices on a National Scale Using Intra-Annual Landsat Time Series Binning <br> <i> Remote Sensing <\/i>", "<b> Nima Pahlevan <\/b> <br> 1 publication(s) <br> Latest publication: <br> G. Doxani et al. (2018) <br> Atmospheric Correction Inter-Comparison Exercise <br> <i> Remote Sensing <\/i>", "<b> Nodar Elizbarashvili <\/b> <br> 1 publication(s) <br> Latest publication: <br> J. Buchner et al. (2020) <br> Land-cover change in the Caucasus Mountains since 1987 based on the topographic correction of multi-temporal Landsat composites <br> <i> Remote Sensing of Environment <\/i>", "<b> Nugzar Zazanashvili <\/b> <br> 1 publication(s) <br> Latest publication: <br> J. Buchner et al. (2020) <br> Land-cover change in the Caucasus Mountains since 1987 based on the topographic correction of multi-temporal Landsat composites <br> <i> Remote Sensing of Environment <\/i>", "<b> Olivier Hagolle <\/b> <br> 1 publication(s) <br> Latest publication: <br> G. Doxani et al. (2018) <br> Atmospheric Correction Inter-Comparison Exercise <br> <i> Remote Sensing <\/i>", "<b> Patrick Griffiths <\/b> <br> 1 publication(s) <br> Latest publication: <br> P. Rufin et al. (2019) <br> Mapping Cropping Practices on a National Scale Using Intra-Annual Landsat Time Series Binning <br> <i> Remote Sensing <\/i>", "<b> Patrick Hostert <\/b> <br> 5 publication(s) <br> Latest publication: <br> F. Schug et al. (2020) <br> Mapping urban-rural gradients of settlements and vegetation at national scale using Sentinel-2 spectral-temporal metrics and regression-based unmixing with synthetic training data <br> <i> Remote Sensing of Environment <\/i>", "<b> Patrick Matgen <\/b> <br> 1 publication(s) <br> Latest publication: <br> M. Machwitz et al. (2014) <br> Enhanced biomass prediction by assimilating satellite data into a crop growth model <br> <i> Environmental Modelling & Software <\/i>", "<b> Philippe Rufin <\/b> <br> 2 publication(s) <br> Latest publication: <br> P. Rufin et al. (2020) <br> Operational Coregistration of the Sentinel-2A/B Image Archive Using Multitemporal Landsat Spectral Averages <br> <i> IEEE Geoscience and Remote Sensing Letters <\/i>", "<b> Quinten Vanhellemont <\/b> <br> 1 publication(s) <br> Latest publication: <br> G. Doxani et al. (2018) <br> Atmospheric Correction Inter-Comparison Exercise <br> <i> Remote Sensing <\/i>", "<b> Rasmus Revermann <\/b> <br> 3 publication(s) <br> Latest publication: <br> R. Revermann et al. (2016) <br> Linking Land Surface Phenology and Vegetation-Plot Databases to Model Terrestrial Plant a-Diversity of the Okavango Basin <br> <i> Remote Sensing <\/i>", "<b> Sascha Nink <\/b> <br> 1 publication(s) <br> Latest publication: <br> S. Nink et al. (2019) <br> Using Landsat and Sentinel-2 Data for the Generation of Continuously Updated Forest Type Information Layers in a Cross-Border Region <br> <i> Remote Sensing <\/i>", "<b> Sebastian Mader <\/b> <br> 2 publication(s) <br> Latest publication: <br> E. Haß et al. (2017) <br> Global Analysis of the Differences Between the MODIS Vegetation Index Compositing Date and the Actual Acquisition Date <br> <i> IEEE Geoscience and Remote Sensing Letters <\/i>", "<b> Sebastian van der Linden <\/b> <br> 2 publication(s) <br> Latest publication: <br> F. Schug et al. (2020) <br> Mapping urban-rural gradients of settlements and vegetation at national scale using Sentinel-2 spectral-temporal metrics and regression-based unmixing with synthetic training data <br> <i> Remote Sensing of Environment <\/i>", "<b> Stefan Adriaensen <\/b> <br> 1 publication(s) <br> Latest publication: <br> G. Doxani et al. (2018) <br> Atmospheric Correction Inter-Comparison Exercise <br> <i> Remote Sensing <\/i>", "<b> Stefan Ernst <\/b> <br> 1 publication(s) <br> Latest publication: <br> P. Rufin et al. (2019) <br> Mapping Cropping Practices on a National Scale Using Intra-Annual Landsat Time Series Binning <br> <i> Remote Sensing <\/i>", "<b> Stephan Baumann <\/b> <br> 1 publication(s) <br> Latest publication: <br> M. de Blécourt et al. (2018) <br> Deforestation for agricultural expansion in SW Zambia and NE Namibia and the impacts on soil fertility, soil organic carbon- and nutrient levels <br> <i> Biodiversity & Ecology 6 - Climate change and adaptive landmanagement in southern Africa - assessments, changes, challenges, and solutions <\/i>", "<b> Tamar Bakuradze <\/b> <br> 1 publication(s) <br> Latest publication: <br> J. Buchner et al. (2020) <br> Land-cover change in the Caucasus Mountains since 1987 based on the topographic correction of multi-temporal Landsat composites <br> <i> Remote Sensing of Environment <\/i>", "<b> Thomas Udelhoven <\/b> <br> 4 publication(s) <br> Latest publication: <br> D. Frantz et al. (2016) <br> Improving the Spatial Resolution of Land Surface Phenology by Fusing Medium- and Coarse-Resolution Inputs <br> <i> IEEE Transactions on Geoscience and Remote Sensing <\/i>", "<b> Tobias Krueger <\/b> <br> 1 publication(s) <br> Latest publication: <br> K. Lebek et al. (2019) <br> Interdependent effects of climate variability and forest cover change on streamflow dynamics: a case study in the Upper Umvoti River Basin, South Africa <br> <i> Regional Environmental Change <\/i>", "<b> Tobias Kuemmerle <\/b> <br> 1 publication(s) <br> Latest publication: <br> J. Buchner et al. (2020) <br> Land-cover change in the Caucasus Mountains since 1987 based on the topographic correction of multi-temporal Landsat composites <br> <i> Remote Sensing of Environment <\/i>", "<b> Volker Radeloff <\/b> <br> 1 publication(s) <br> Latest publication: <br> J. Buchner et al. (2020) <br> Land-cover change in the Caucasus Mountains since 1987 based on the topographic correction of multi-temporal Landsat composites <br> <i> Remote Sensing of Environment <\/i>"],
+      "hoverinfo": "text",
+      "inherit": true
+    },
+    "59c6087425e": {
+      "x": {},
+      "y": {},
+      "alpha_stroke": 1,
+      "sizes": [10, 100],
+      "spans": [1, 20],
+      "text": ["Achim Röder", "Afag Rizayeva", "Akpona Okujeni", "Alexander Gröngröft", "André Hollstein", "Andreas Rabe", "Andreas Uhl", "Anna Komarova", "Anne Schneibel", "Annette Eschenbach", "Antoine Mangin", "Ben Strohbach", "Benjamin Bleyhl", "Benjamin Jakimow", "Benjamin Kowalski", "Bin Tan", "Bringfried Pflug", "Christian Bossung", "Cornelius Senf", "Daniel Scheffler", "David Frantz", "David Parduhn", "Elshad Askerov", "Eric Vermote", "Erik Haß", "Ewa Grabska", "Fabian Thiel", "Ferran Gascon", "Franz Schug", "Fuqin Li", "Garegin Tepanosyan", "Georgia Doxani", "Grit Kirches", "He Yin", "Henning Buddenbaum", "Holger Lilienthal", "Hovik Sayadyan", "Jean-Claude Roger", "Jens Oldeland", "Jérôme Louis", "Joachim Hill", "Joachim Langshausen", "Johanna Buchner", "Johannes Stoffels", "José Monteiro", "Karen Lebek", "Karl Segl", "Katarzyna Lewinska", "Katarzyna Ostapowicz", "Kim Fischer", "Laura Giustarini", "Lin Yan", "Loise Wandera", "Lucien Hoffmann", "Manfred Finckh", "Marion Stellmes", "Marleen de Blécourt", "Martin Schlerf", "Michael Schmidt", "Miriam Machwitz", "Mutlu Özdogan", "Nima Pahlevan", "Nodar Elizbarashvili", "Nugzar Zazanashvili", "Olivier Hagolle", "Patrick Griffiths", "Patrick Hostert", "Patrick Matgen", "Philippe Rufin", "Quinten Vanhellemont", "Rasmus Revermann", "Sascha Nink", "Sebastian Mader", "Sebastian van der Linden", "Stefan Adriaensen", "Stefan Ernst", "Stephan Baumann", "Tamar Bakuradze", "Thomas Udelhoven", "Tobias Krueger", "Tobias Kuemmerle", "Volker Radeloff"],
+      "type": "scatter",
+      "mode": "text",
+      "textposition": "top right",
+      "textfont": {
+        "color": "grey60",
+        "size": 8
+      },
+      "showlegend": false,
+      "inherit": true
+    }
+  },
+  "layout": {
+    "margin": {
+      "b": 40,
+      "l": 60,
+      "t": 25,
+      "r": 10
+    },
+    "title": "Network",
+    "shapes": [
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.2726264670637,
+        "y0": -1.26813506850718,
+        "x1": -1.54108216252627,
+        "y1": -3.05965390539781
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.628764787039964,
+          "opacity": 0.5
+        },
+        "x0": -1.2726264670637,
+        "y0": -1.26813506850718,
+        "x1": -1.79540567047724,
+        "y1": -1.39555079424878
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.2726264670637,
+        "y0": -1.26813506850718,
+        "x1": -1.71379277426312,
+        "y1": -2.60193297022473
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.2726264670637,
+        "y0": -1.26813506850718,
+        "x1": -2.31232166575359,
+        "y1": -1.27517340883096
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 1.04635244320509,
+          "opacity": 0.5
+        },
+        "x0": -1.2726264670637,
+        "y0": -1.26813506850718,
+        "x1": 0.78380565633142,
+        "y1": -0.0978301854585344
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.2726264670637,
+        "y0": -1.26813506850718,
+        "x1": -2.14291236335806,
+        "y1": -0.686373534063212
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.934195030998015,
+          "opacity": 0.5
+        },
+        "x0": -1.2726264670637,
+        "y0": -1.26813506850718,
+        "x1": -1.75789296974258,
+        "y1": -0.299827817408301
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.2726264670637,
+        "y0": -1.26813506850718,
+        "x1": -1.38988924212273,
+        "y1": -0.714361463164916
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.397715726853315,
+          "opacity": 0.5
+        },
+        "x0": -1.2726264670637,
+        "y0": -1.26813506850718,
+        "x1": -0.903001095245503,
+        "y1": -1.78539303117574
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.96596509093279,
+          "opacity": 0.5
+        },
+        "x0": -1.2726264670637,
+        "y0": -1.26813506850718,
+        "x1": -0.426089086262581,
+        "y1": -1.1123394150912
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.2726264670637,
+        "y0": -1.26813506850718,
+        "x1": -2.37670157594432,
+        "y1": -2.23376605997871
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.397715726853315,
+          "opacity": 0.5
+        },
+        "x0": -1.2726264670637,
+        "y0": -1.26813506850718,
+        "x1": -0.29610932968853,
+        "y1": -0.172355742540291
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.397715726853315,
+          "opacity": 0.5
+        },
+        "x0": -1.2726264670637,
+        "y0": -1.26813506850718,
+        "x1": -1.3572197360622,
+        "y1": -1.94943334040232
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.2726264670637,
+        "y0": -1.26813506850718,
+        "x1": -1.03607995940238,
+        "y1": -0.022837885177919
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.2726264670637,
+        "y0": -1.26813506850718,
+        "x1": -2.18737653975755,
+        "y1": -2.71724196314126
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.53287076288937,
+          "opacity": 0.5
+        },
+        "x0": -1.2726264670637,
+        "y0": -1.26813506850718,
+        "x1": 0.488444298570025,
+        "y1": 0.783164264497795
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.05171980721152,
+        "y0": 3.3379879672252,
+        "x1": -0.390054941813585,
+        "y1": 3.27065806802968
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.05171980721152,
+        "y0": 3.3379879672252,
+        "x1": -1.29138308273449,
+        "y1": 2.79112667874032
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.05171980721152,
+        "y0": 3.3379879672252,
+        "x1": -1.04884658753386,
+        "y1": 2.4632868172737
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.05171980721152,
+        "y0": 3.3379879672252,
+        "x1": 0.78380565633142,
+        "y1": -0.0978301854585344
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.05171980721152,
+        "y0": 3.3379879672252,
+        "x1": -1.4636358419301,
+        "y1": 2.29888431857531
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.05171980721152,
+        "y0": 3.3379879672252,
+        "x1": -0.730082063081177,
+        "y1": 3.43871140312218
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.05171980721152,
+        "y0": 3.3379879672252,
+        "x1": -1.67947092578932,
+        "y1": 2.5874078789277
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.05171980721152,
+        "y0": 3.3379879672252,
+        "x1": -1.62255992892602,
+        "y1": 2.96970285658957
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.05171980721152,
+        "y0": 3.3379879672252,
+        "x1": -0.489507433861241,
+        "y1": 2.54426426279071
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.05171980721152,
+        "y0": 3.3379879672252,
+        "x1": -0.69498850220812,
+        "y1": 2.25282919274514
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.05171980721152,
+        "y0": 3.3379879672252,
+        "x1": -0.261642704263206,
+        "y1": 2.85212966141274
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.05171980721152,
+        "y0": 3.3379879672252,
+        "x1": -0.592209618263027,
+        "y1": 3.00697490799087
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.05171980721152,
+        "y0": 3.3379879672252,
+        "x1": -1.36899235542332,
+        "y1": 3.27537305798583
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.05171980721152,
+        "y0": 3.3379879672252,
+        "x1": -1.11847368622181,
+        "y1": 2.12052625790946
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.05171980721152,
+        "y0": 3.3379879672252,
+        "x1": -0.91146834288241,
+        "y1": 2.87453203814626
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 4.27260877777309,
+        "y0": -1.67732014689135,
+        "x1": 0.78380565633142,
+        "y1": -0.0978301854585344
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 4.27260877777309,
+        "y0": -1.67732014689135,
+        "x1": 3.95680958947594,
+        "y1": -2.21310128773031
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 4.27260877777309,
+        "y0": -1.67732014689135,
+        "x1": 2.95978322082146,
+        "y1": -1.0487643054632
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 4.27260877777309,
+        "y0": -1.67732014689135,
+        "x1": 3.3198909861352,
+        "y1": -1.81771273371642
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.54108216252627,
+        "y0": -3.05965390539781,
+        "x1": -1.71379277426312,
+        "y1": -2.60193297022473
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.54108216252627,
+        "y0": -3.05965390539781,
+        "x1": 0.78380565633142,
+        "y1": -0.0978301854585344
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.54108216252627,
+        "y0": -3.05965390539781,
+        "x1": -2.37670157594432,
+        "y1": -2.23376605997871
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.54108216252627,
+        "y0": -3.05965390539781,
+        "x1": -2.18737653975755,
+        "y1": -2.71724196314126
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.10505412234333,
+        "y0": -3.88771654859051,
+        "x1": 1.79978943331048,
+        "y1": -2.8481117672648
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.10505412234333,
+        "y0": -3.88771654859051,
+        "x1": 2.13067182926018,
+        "y1": -2.98976502153847
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.10505412234333,
+        "y0": -3.88771654859051,
+        "x1": 0.78380565633142,
+        "y1": -0.0978301854585344
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.10505412234333,
+        "y0": -3.88771654859051,
+        "x1": 0.88845319940626,
+        "y1": -3.26811341888026
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.10505412234333,
+        "y0": -3.88771654859051,
+        "x1": 1.22384624752895,
+        "y1": -2.71564252137786
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.10505412234333,
+        "y0": -3.88771654859051,
+        "x1": 1.3481508714458,
+        "y1": -3.52469650511161
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.10505412234333,
+        "y0": -3.88771654859051,
+        "x1": 1.15067427893413,
+        "y1": -3.09682395157017
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.10505412234333,
+        "y0": -3.88771654859051,
+        "x1": 0.838033895830965,
+        "y1": -3.6193720864604
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.10505412234333,
+        "y0": -3.88771654859051,
+        "x1": 2.10421832141066,
+        "y1": -3.66992199961711
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.10505412234333,
+        "y0": -3.88771654859051,
+        "x1": 2.22759329194805,
+        "y1": -3.32856313493149
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.10505412234333,
+        "y0": -3.88771654859051,
+        "x1": 1.79753281915993,
+        "y1": -3.82022610898841
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.10505412234333,
+        "y0": -3.88771654859051,
+        "x1": 1.75165472969096,
+        "y1": -3.35049552150432
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.10505412234333,
+        "y0": -3.88771654859051,
+        "x1": 1.50096542303968,
+        "y1": -2.93174209750206
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.10505412234333,
+        "y0": -3.88771654859051,
+        "x1": 1.47762287945925,
+        "y1": -3.93709929114527
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 4.32338808136187,
+        "y0": -0.172803277678729,
+        "x1": 0.78380565633142,
+        "y1": -0.0978301854585344
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 4.32338808136187,
+        "y0": -0.172803277678729,
+        "x1": 4.49968453926375,
+        "y1": -0.68230831947089
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 4.32338808136187,
+        "y0": -0.172803277678729,
+        "x1": 3.63718174223631,
+        "y1": -0.503639616344162
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 4.32338808136187,
+        "y0": -0.172803277678729,
+        "x1": 2.95978322082146,
+        "y1": -1.0487643054632
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 4.32338808136187,
+        "y0": -0.172803277678729,
+        "x1": 3.79069527654518,
+        "y1": 0.00975941588557499
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 4.32338808136187,
+        "y0": -0.172803277678729,
+        "x1": 4.06161988863182,
+        "y1": -0.806087619917521
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -3.01870013691459,
+        "y0": -0.706403139942613,
+        "x1": 0.78380565633142,
+        "y1": -0.0978301854585344
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -3.01870013691459,
+        "y0": -0.706403139942613,
+        "x1": -2.14291236335806,
+        "y1": -0.686373534063212
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -3.01870013691459,
+        "y0": -0.706403139942613,
+        "x1": -1.75789296974258,
+        "y1": -0.299827817408301
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -3.01870013691459,
+        "y0": -0.706403139942613,
+        "x1": -2.8044857945916,
+        "y1": -0.0413418961121236
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.390054941813585,
+        "y0": 3.27065806802968,
+        "x1": -1.29138308273449,
+        "y1": 2.79112667874032
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.390054941813585,
+        "y0": 3.27065806802968,
+        "x1": -1.04884658753386,
+        "y1": 2.4632868172737
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.390054941813585,
+        "y0": 3.27065806802968,
+        "x1": 0.78380565633142,
+        "y1": -0.0978301854585344
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.390054941813585,
+        "y0": 3.27065806802968,
+        "x1": -1.4636358419301,
+        "y1": 2.29888431857531
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.390054941813585,
+        "y0": 3.27065806802968,
+        "x1": -0.730082063081177,
+        "y1": 3.43871140312218
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.390054941813585,
+        "y0": 3.27065806802968,
+        "x1": -1.67947092578932,
+        "y1": 2.5874078789277
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.390054941813585,
+        "y0": 3.27065806802968,
+        "x1": -1.62255992892602,
+        "y1": 2.96970285658957
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.390054941813585,
+        "y0": 3.27065806802968,
+        "x1": -0.489507433861241,
+        "y1": 2.54426426279071
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.390054941813585,
+        "y0": 3.27065806802968,
+        "x1": -0.69498850220812,
+        "y1": 2.25282919274514
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.390054941813585,
+        "y0": 3.27065806802968,
+        "x1": -0.261642704263206,
+        "y1": 2.85212966141274
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.390054941813585,
+        "y0": 3.27065806802968,
+        "x1": -0.592209618263027,
+        "y1": 3.00697490799087
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.390054941813585,
+        "y0": 3.27065806802968,
+        "x1": -1.36899235542332,
+        "y1": 3.27537305798583
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.390054941813585,
+        "y0": 3.27065806802968,
+        "x1": -1.11847368622181,
+        "y1": 2.12052625790946
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.390054941813585,
+        "y0": 3.27065806802968,
+        "x1": -0.91146834288241,
+        "y1": 2.87453203814626
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.79540567047724,
+        "y0": -1.39555079424878,
+        "x1": -2.31232166575359,
+        "y1": -1.27517340883096
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.628764787039964,
+          "opacity": 0.5
+        },
+        "x0": -1.79540567047724,
+        "y0": -1.39555079424878,
+        "x1": 0.78380565633142,
+        "y1": -0.0978301854585344
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.79540567047724,
+        "y0": -1.39555079424878,
+        "x1": -2.14291236335806,
+        "y1": -0.686373534063212
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.53287076288937,
+          "opacity": 0.5
+        },
+        "x0": -1.79540567047724,
+        "y0": -1.39555079424878,
+        "x1": -1.75789296974258,
+        "y1": -0.299827817408301
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.79540567047724,
+        "y0": -1.39555079424878,
+        "x1": -1.38988924212273,
+        "y1": -0.714361463164916
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.79540567047724,
+        "y0": -1.39555079424878,
+        "x1": -0.903001095245503,
+        "y1": -1.78539303117574
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.628764787039964,
+          "opacity": 0.5
+        },
+        "x0": -1.79540567047724,
+        "y0": -1.39555079424878,
+        "x1": -0.426089086262581,
+        "y1": -1.1123394150912
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.79540567047724,
+        "y0": -1.39555079424878,
+        "x1": -1.3572197360622,
+        "y1": -1.94943334040232
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.71379277426312,
+        "y0": -2.60193297022473,
+        "x1": 0.78380565633142,
+        "y1": -0.0978301854585344
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.71379277426312,
+        "y0": -2.60193297022473,
+        "x1": -2.37670157594432,
+        "y1": -2.23376605997871
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.71379277426312,
+        "y0": -2.60193297022473,
+        "x1": -2.18737653975755,
+        "y1": -2.71724196314126
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.79978943331048,
+        "y0": -2.8481117672648,
+        "x1": 2.13067182926018,
+        "y1": -2.98976502153847
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.79978943331048,
+        "y0": -2.8481117672648,
+        "x1": 0.78380565633142,
+        "y1": -0.0978301854585344
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.79978943331048,
+        "y0": -2.8481117672648,
+        "x1": 0.88845319940626,
+        "y1": -3.26811341888026
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.79978943331048,
+        "y0": -2.8481117672648,
+        "x1": 1.22384624752895,
+        "y1": -2.71564252137786
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.79978943331048,
+        "y0": -2.8481117672648,
+        "x1": 1.3481508714458,
+        "y1": -3.52469650511161
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.79978943331048,
+        "y0": -2.8481117672648,
+        "x1": 1.15067427893413,
+        "y1": -3.09682395157017
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.79978943331048,
+        "y0": -2.8481117672648,
+        "x1": 0.838033895830965,
+        "y1": -3.6193720864604
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.79978943331048,
+        "y0": -2.8481117672648,
+        "x1": 2.10421832141066,
+        "y1": -3.66992199961711
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.79978943331048,
+        "y0": -2.8481117672648,
+        "x1": 2.22759329194805,
+        "y1": -3.32856313493149
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.79978943331048,
+        "y0": -2.8481117672648,
+        "x1": 1.79753281915993,
+        "y1": -3.82022610898841
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.79978943331048,
+        "y0": -2.8481117672648,
+        "x1": 1.75165472969096,
+        "y1": -3.35049552150432
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.79978943331048,
+        "y0": -2.8481117672648,
+        "x1": 1.50096542303968,
+        "y1": -2.93174209750206
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.79978943331048,
+        "y0": -2.8481117672648,
+        "x1": 1.47762287945925,
+        "y1": -3.93709929114527
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.386361525747042,
+        "y0": -2.36476965987981,
+        "x1": 0.78380565633142,
+        "y1": -0.0978301854585344
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.386361525747042,
+        "y0": -2.36476965987981,
+        "x1": -0.76667785050148,
+        "y1": -2.74886699152
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.386361525747042,
+        "y0": -2.36476965987981,
+        "x1": -0.903001095245503,
+        "y1": -1.78539303117574
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.386361525747042,
+        "y0": -2.36476965987981,
+        "x1": -0.426089086262581,
+        "y1": -1.1123394150912
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.386361525747042,
+        "y0": -2.36476965987981,
+        "x1": -1.3572197360622,
+        "y1": -1.94943334040232
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.29138308273449,
+        "y0": 2.79112667874032,
+        "x1": -1.04884658753386,
+        "y1": 2.4632868172737
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.29138308273449,
+        "y0": 2.79112667874032,
+        "x1": 0.78380565633142,
+        "y1": -0.0978301854585344
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.29138308273449,
+        "y0": 2.79112667874032,
+        "x1": -1.4636358419301,
+        "y1": 2.29888431857531
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.29138308273449,
+        "y0": 2.79112667874032,
+        "x1": -0.730082063081177,
+        "y1": 3.43871140312218
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.29138308273449,
+        "y0": 2.79112667874032,
+        "x1": -1.67947092578932,
+        "y1": 2.5874078789277
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.29138308273449,
+        "y0": 2.79112667874032,
+        "x1": -1.62255992892602,
+        "y1": 2.96970285658957
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.29138308273449,
+        "y0": 2.79112667874032,
+        "x1": -0.489507433861241,
+        "y1": 2.54426426279071
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.29138308273449,
+        "y0": 2.79112667874032,
+        "x1": -0.69498850220812,
+        "y1": 2.25282919274514
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.29138308273449,
+        "y0": 2.79112667874032,
+        "x1": -0.261642704263206,
+        "y1": 2.85212966141274
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.29138308273449,
+        "y0": 2.79112667874032,
+        "x1": -0.592209618263027,
+        "y1": 3.00697490799087
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.29138308273449,
+        "y0": 2.79112667874032,
+        "x1": -1.36899235542332,
+        "y1": 3.27537305798583
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.29138308273449,
+        "y0": 2.79112667874032,
+        "x1": -1.11847368622181,
+        "y1": 2.12052625790946
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.29138308273449,
+        "y0": 2.79112667874032,
+        "x1": -0.91146834288241,
+        "y1": 2.87453203814626
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 3.35184761885081,
+        "y0": -2.3365187467201,
+        "x1": 0.78380565633142,
+        "y1": -0.0978301854585344
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 3.35184761885081,
+        "y0": -2.3365187467201,
+        "x1": 3.72095572629567,
+        "y1": -1.50077892128854
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 3.35184761885081,
+        "y0": -2.3365187467201,
+        "x1": 2.95978322082146,
+        "y1": -1.0487643054632
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 3.35184761885081,
+        "y0": -2.3365187467201,
+        "x1": 3.3198909861352,
+        "y1": -1.81771273371642
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -2.31232166575359,
+        "y0": -1.27517340883096,
+        "x1": 0.78380565633142,
+        "y1": -0.0978301854585344
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -2.31232166575359,
+        "y0": -1.27517340883096,
+        "x1": -2.14291236335806,
+        "y1": -0.686373534063212
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -2.31232166575359,
+        "y0": -1.27517340883096,
+        "x1": -1.75789296974258,
+        "y1": -0.299827817408301
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -2.31232166575359,
+        "y0": -1.27517340883096,
+        "x1": -0.426089086262581,
+        "y1": -1.1123394150912
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.04884658753386,
+        "y0": 2.4632868172737,
+        "x1": 0.78380565633142,
+        "y1": -0.0978301854585344
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.04884658753386,
+        "y0": 2.4632868172737,
+        "x1": -1.4636358419301,
+        "y1": 2.29888431857531
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.04884658753386,
+        "y0": 2.4632868172737,
+        "x1": -0.730082063081177,
+        "y1": 3.43871140312218
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.04884658753386,
+        "y0": 2.4632868172737,
+        "x1": -1.67947092578932,
+        "y1": 2.5874078789277
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.04884658753386,
+        "y0": 2.4632868172737,
+        "x1": -1.62255992892602,
+        "y1": 2.96970285658957
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.04884658753386,
+        "y0": 2.4632868172737,
+        "x1": -0.489507433861241,
+        "y1": 2.54426426279071
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.04884658753386,
+        "y0": 2.4632868172737,
+        "x1": -0.69498850220812,
+        "y1": 2.25282919274514
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.04884658753386,
+        "y0": 2.4632868172737,
+        "x1": -0.261642704263206,
+        "y1": 2.85212966141274
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.04884658753386,
+        "y0": 2.4632868172737,
+        "x1": -0.592209618263027,
+        "y1": 3.00697490799087
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.04884658753386,
+        "y0": 2.4632868172737,
+        "x1": -1.36899235542332,
+        "y1": 3.27537305798583
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.04884658753386,
+        "y0": 2.4632868172737,
+        "x1": -1.11847368622181,
+        "y1": 2.12052625790946
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.04884658753386,
+        "y0": 2.4632868172737,
+        "x1": -0.91146834288241,
+        "y1": 2.87453203814626
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 2.13067182926018,
+        "y0": -2.98976502153847,
+        "x1": 0.78380565633142,
+        "y1": -0.0978301854585344
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 2.13067182926018,
+        "y0": -2.98976502153847,
+        "x1": 0.88845319940626,
+        "y1": -3.26811341888026
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 2.13067182926018,
+        "y0": -2.98976502153847,
+        "x1": 1.22384624752895,
+        "y1": -2.71564252137786
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 2.13067182926018,
+        "y0": -2.98976502153847,
+        "x1": 1.3481508714458,
+        "y1": -3.52469650511161
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 2.13067182926018,
+        "y0": -2.98976502153847,
+        "x1": 1.15067427893413,
+        "y1": -3.09682395157017
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 2.13067182926018,
+        "y0": -2.98976502153847,
+        "x1": 0.838033895830965,
+        "y1": -3.6193720864604
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 2.13067182926018,
+        "y0": -2.98976502153847,
+        "x1": 2.10421832141066,
+        "y1": -3.66992199961711
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 2.13067182926018,
+        "y0": -2.98976502153847,
+        "x1": 2.22759329194805,
+        "y1": -3.32856313493149
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 2.13067182926018,
+        "y0": -2.98976502153847,
+        "x1": 1.79753281915993,
+        "y1": -3.82022610898841
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 2.13067182926018,
+        "y0": -2.98976502153847,
+        "x1": 1.75165472969096,
+        "y1": -3.35049552150432
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 2.13067182926018,
+        "y0": -2.98976502153847,
+        "x1": 1.50096542303968,
+        "y1": -2.93174209750206
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 2.13067182926018,
+        "y0": -2.98976502153847,
+        "x1": 1.47762287945925,
+        "y1": -3.93709929114527
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 2.22010864852364,
+        "y0": 1.63158517678377,
+        "x1": 0.78380565633142,
+        "y1": -0.0978301854585344
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 2.22010864852364,
+        "y0": 1.63158517678377,
+        "x1": 1.26550849180258,
+        "y1": 2.28517148335352
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 2.22010864852364,
+        "y0": 1.63158517678377,
+        "x1": 1.4431472904605,
+        "y1": 1.35111616347776
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 2.22010864852364,
+        "y0": 1.63158517678377,
+        "x1": 1.66438739804686,
+        "y1": 1.83213692375705
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 2.22010864852364,
+        "y0": 1.63158517678377,
+        "x1": 1.13234403455037,
+        "y1": 1.8073735284642
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 2.22010864852364,
+        "y0": 1.63158517678377,
+        "x1": 2.06415485491223,
+        "y1": 2.07136781387853
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 2.22010864852364,
+        "y0": 1.63158517678377,
+        "x1": 1.92940055450375,
+        "y1": 1.24888064646601
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 2.22010864852364,
+        "y0": 1.63158517678377,
+        "x1": 1.70666558231423,
+        "y1": 2.39120355430727
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 2.22010864852364,
+        "y0": 1.63158517678377,
+        "x1": 0.488444298570025,
+        "y1": 0.783164264497795
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 3.89279072071057,
+        "y0": 1.20788752515841,
+        "x1": 0.78380565633142,
+        "y1": -0.0978301854585344
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 3.89279072071057,
+        "y0": 1.20788752515841,
+        "x1": 4.55767073429259,
+        "y1": 0.780912710343797
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 3.89279072071057,
+        "y0": 1.20788752515841,
+        "x1": 4.23641595036277,
+        "y1": 1.73021712979977
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 3.89279072071057,
+        "y0": 1.20788752515841,
+        "x1": 4.58972895423832,
+        "y1": 1.29721729202184
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 2.4565815524399,
+        "y0": 3.55168313462887,
+        "x1": 0.78380565633142,
+        "y1": -0.0978301854585344
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 2.4565815524399,
+        "y0": 3.55168313462887,
+        "x1": 1.76513690712805,
+        "y1": 3.74071048136187
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": 3.80276425201702,
+        "y1": 2.24893256226608
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": -1.4636358419301,
+        "y1": 2.29888431857531
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": 0.88845319940626,
+        "y1": -3.26811341888026
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.53287076288937,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": -2.14291236335806,
+        "y1": -0.686373534063212
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": 3.43798418082812,
+        "y1": 2.71518864712679
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": 3.72095572629567,
+        "y1": -1.50077892128854
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": 1.22384624752895,
+        "y1": -2.71564252137786
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": 3.95680958947594,
+        "y1": -2.21310128773031
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": 1.3481508714458,
+        "y1": -3.52469650511161
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": -0.730082063081177,
+        "y1": 3.43871140312218
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": 1.15067427893413,
+        "y1": -3.09682395157017
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": 0.838033895830965,
+        "y1": -3.6193720864604
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": -1.67947092578932,
+        "y1": 2.5874078789277
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": -2.37345265407473,
+        "y1": 0.63100351225363
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": 1.26550849180258,
+        "y1": 2.28517148335352
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": -1.62255992892602,
+        "y1": 2.96970285658957
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": 2.10421832141066,
+        "y1": -3.66992199961711
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": -0.76667785050148,
+        "y1": -2.74886699152
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": 2.22759329194805,
+        "y1": -3.32856313493149
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 1.02164978582051,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": -1.75789296974258,
+        "y1": -0.299827817408301
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": -3.07738138265254,
+        "y1": 0.389289326800805
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": -0.489507433861241,
+        "y1": 2.54426426279071
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.397715726853315,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": -2.8044857945916,
+        "y1": -0.0413418961121236
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": 4.55767073429259,
+        "y1": 0.780912710343797
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": 4.23641595036277,
+        "y1": 1.73021712979977
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": 1.76513690712805,
+        "y1": 3.74071048136187
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": -0.69498850220812,
+        "y1": 2.25282919274514
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": 3.01184708756245,
+        "y1": 3.07915907666119
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": -1.38988924212273,
+        "y1": -0.714361463164916
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": 1.4431472904605,
+        "y1": 1.35111616347776
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": 3.04518447379072,
+        "y1": 0.0993319842389035
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": 1.66438739804686,
+        "y1": 1.83213692375705
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": 1.13234403455037,
+        "y1": 1.8073735284642
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.53287076288937,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": -0.903001095245503,
+        "y1": -1.78539303117574
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 1.02164978582051,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": -0.426089086262581,
+        "y1": -1.1123394150912
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": -2.37670157594432,
+        "y1": -2.23376605997871
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": 2.06415485491223,
+        "y1": 2.07136781387853
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.397715726853315,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": -0.29610932968853,
+        "y1": -0.172355742540291
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": 1.92940055450375,
+        "y1": 1.24888064646601
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": 4.49968453926375,
+        "y1": -0.68230831947089
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": 1.79753281915993,
+        "y1": -3.82022610898841
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": -0.261642704263206,
+        "y1": 2.85212966141274
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": -0.592209618263027,
+        "y1": 3.00697490799087
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": 1.75165472969096,
+        "y1": -3.35049552150432
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": 3.63718174223631,
+        "y1": -0.503639616344162
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.703145970811367,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": 2.95978322082146,
+        "y1": -1.0487643054632
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": 1.70666558231423,
+        "y1": 2.39120355430727
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.397715726853315,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": 3.79069527654518,
+        "y1": 0.00975941588557499
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": 1.50096542303968,
+        "y1": -2.93174209750206
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.53287076288937,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": -1.3572197360622,
+        "y1": -1.94943334040232
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": -2.79734508655311,
+        "y1": 0.856602553560456
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.397715726853315,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": -1.03607995940238,
+        "y1": -0.022837885177919
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.397715726853315,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": 3.3198909861352,
+        "y1": -1.81771273371642
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": 1.47762287945925,
+        "y1": -3.93709929114527
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": 4.06161988863182,
+        "y1": -0.806087619917521
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": -2.18737653975755,
+        "y1": -2.71724196314126
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": -1.36899235542332,
+        "y1": 3.27537305798583
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.628764787039964,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": 0.488444298570025,
+        "y1": 0.783164264497795
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": 4.58972895423832,
+        "y1": 1.29721729202184
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": -1.11847368622181,
+        "y1": 2.12052625790946
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.78380565633142,
+        "y0": -0.0978301854585344,
+        "x1": -0.91146834288241,
+        "y1": 2.87453203814626
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.4636358419301,
+        "y0": 2.29888431857531,
+        "x1": -0.730082063081177,
+        "y1": 3.43871140312218
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.4636358419301,
+        "y0": 2.29888431857531,
+        "x1": -1.67947092578932,
+        "y1": 2.5874078789277
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.4636358419301,
+        "y0": 2.29888431857531,
+        "x1": -1.62255992892602,
+        "y1": 2.96970285658957
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.4636358419301,
+        "y0": 2.29888431857531,
+        "x1": -0.489507433861241,
+        "y1": 2.54426426279071
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.4636358419301,
+        "y0": 2.29888431857531,
+        "x1": -0.69498850220812,
+        "y1": 2.25282919274514
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.4636358419301,
+        "y0": 2.29888431857531,
+        "x1": -0.261642704263206,
+        "y1": 2.85212966141274
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.4636358419301,
+        "y0": 2.29888431857531,
+        "x1": -0.592209618263027,
+        "y1": 3.00697490799087
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.4636358419301,
+        "y0": 2.29888431857531,
+        "x1": -1.36899235542332,
+        "y1": 3.27537305798583
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.4636358419301,
+        "y0": 2.29888431857531,
+        "x1": -1.11847368622181,
+        "y1": 2.12052625790946
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.4636358419301,
+        "y0": 2.29888431857531,
+        "x1": -0.91146834288241,
+        "y1": 2.87453203814626
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.88845319940626,
+        "y0": -3.26811341888026,
+        "x1": 1.22384624752895,
+        "y1": -2.71564252137786
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.88845319940626,
+        "y0": -3.26811341888026,
+        "x1": 1.3481508714458,
+        "y1": -3.52469650511161
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.88845319940626,
+        "y0": -3.26811341888026,
+        "x1": 1.15067427893413,
+        "y1": -3.09682395157017
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.88845319940626,
+        "y0": -3.26811341888026,
+        "x1": 0.838033895830965,
+        "y1": -3.6193720864604
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.88845319940626,
+        "y0": -3.26811341888026,
+        "x1": 2.10421832141066,
+        "y1": -3.66992199961711
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.88845319940626,
+        "y0": -3.26811341888026,
+        "x1": 2.22759329194805,
+        "y1": -3.32856313493149
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.88845319940626,
+        "y0": -3.26811341888026,
+        "x1": 1.79753281915993,
+        "y1": -3.82022610898841
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.88845319940626,
+        "y0": -3.26811341888026,
+        "x1": 1.75165472969096,
+        "y1": -3.35049552150432
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.88845319940626,
+        "y0": -3.26811341888026,
+        "x1": 1.50096542303968,
+        "y1": -2.93174209750206
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.88845319940626,
+        "y0": -3.26811341888026,
+        "x1": 1.47762287945925,
+        "y1": -3.93709929114527
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.53287076288937,
+          "opacity": 0.5
+        },
+        "x0": -2.14291236335806,
+        "y0": -0.686373534063212,
+        "x1": -1.75789296974258,
+        "y1": -0.299827817408301
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -2.14291236335806,
+        "y0": -0.686373534063212,
+        "x1": -2.8044857945916,
+        "y1": -0.0413418961121236
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -2.14291236335806,
+        "y0": -0.686373534063212,
+        "x1": -0.426089086262581,
+        "y1": -1.1123394150912
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -2.14291236335806,
+        "y0": -0.686373534063212,
+        "x1": -1.03607995940238,
+        "y1": -0.022837885177919
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 3.43798418082812,
+        "y0": 2.71518864712679,
+        "x1": 3.01184708756245,
+        "y1": 3.07915907666119
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 3.72095572629567,
+        "y0": -1.50077892128854,
+        "x1": 2.95978322082146,
+        "y1": -1.0487643054632
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 3.72095572629567,
+        "y0": -1.50077892128854,
+        "x1": 3.3198909861352,
+        "y1": -1.81771273371642
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.22384624752895,
+        "y0": -2.71564252137786,
+        "x1": 1.3481508714458,
+        "y1": -3.52469650511161
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.22384624752895,
+        "y0": -2.71564252137786,
+        "x1": 1.15067427893413,
+        "y1": -3.09682395157017
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.22384624752895,
+        "y0": -2.71564252137786,
+        "x1": 0.838033895830965,
+        "y1": -3.6193720864604
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.22384624752895,
+        "y0": -2.71564252137786,
+        "x1": 2.10421832141066,
+        "y1": -3.66992199961711
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.22384624752895,
+        "y0": -2.71564252137786,
+        "x1": 2.22759329194805,
+        "y1": -3.32856313493149
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.22384624752895,
+        "y0": -2.71564252137786,
+        "x1": 1.79753281915993,
+        "y1": -3.82022610898841
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.22384624752895,
+        "y0": -2.71564252137786,
+        "x1": 1.75165472969096,
+        "y1": -3.35049552150432
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.22384624752895,
+        "y0": -2.71564252137786,
+        "x1": 1.50096542303968,
+        "y1": -2.93174209750206
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.22384624752895,
+        "y0": -2.71564252137786,
+        "x1": 1.47762287945925,
+        "y1": -3.93709929114527
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 3.95680958947594,
+        "y0": -2.21310128773031,
+        "x1": 2.95978322082146,
+        "y1": -1.0487643054632
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 3.95680958947594,
+        "y0": -2.21310128773031,
+        "x1": 3.3198909861352,
+        "y1": -1.81771273371642
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.3481508714458,
+        "y0": -3.52469650511161,
+        "x1": 1.15067427893413,
+        "y1": -3.09682395157017
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.3481508714458,
+        "y0": -3.52469650511161,
+        "x1": 0.838033895830965,
+        "y1": -3.6193720864604
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.3481508714458,
+        "y0": -3.52469650511161,
+        "x1": 2.10421832141066,
+        "y1": -3.66992199961711
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.3481508714458,
+        "y0": -3.52469650511161,
+        "x1": 2.22759329194805,
+        "y1": -3.32856313493149
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.3481508714458,
+        "y0": -3.52469650511161,
+        "x1": 1.79753281915993,
+        "y1": -3.82022610898841
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.3481508714458,
+        "y0": -3.52469650511161,
+        "x1": 1.75165472969096,
+        "y1": -3.35049552150432
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.3481508714458,
+        "y0": -3.52469650511161,
+        "x1": 1.50096542303968,
+        "y1": -2.93174209750206
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.3481508714458,
+        "y0": -3.52469650511161,
+        "x1": 1.47762287945925,
+        "y1": -3.93709929114527
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.730082063081177,
+        "y0": 3.43871140312218,
+        "x1": -1.67947092578932,
+        "y1": 2.5874078789277
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.730082063081177,
+        "y0": 3.43871140312218,
+        "x1": -1.62255992892602,
+        "y1": 2.96970285658957
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.730082063081177,
+        "y0": 3.43871140312218,
+        "x1": -0.489507433861241,
+        "y1": 2.54426426279071
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.730082063081177,
+        "y0": 3.43871140312218,
+        "x1": -0.69498850220812,
+        "y1": 2.25282919274514
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.730082063081177,
+        "y0": 3.43871140312218,
+        "x1": -0.261642704263206,
+        "y1": 2.85212966141274
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.730082063081177,
+        "y0": 3.43871140312218,
+        "x1": -0.592209618263027,
+        "y1": 3.00697490799087
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.730082063081177,
+        "y0": 3.43871140312218,
+        "x1": -1.36899235542332,
+        "y1": 3.27537305798583
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.730082063081177,
+        "y0": 3.43871140312218,
+        "x1": -1.11847368622181,
+        "y1": 2.12052625790946
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.730082063081177,
+        "y0": 3.43871140312218,
+        "x1": -0.91146834288241,
+        "y1": 2.87453203814626
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.15067427893413,
+        "y0": -3.09682395157017,
+        "x1": 0.838033895830965,
+        "y1": -3.6193720864604
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.15067427893413,
+        "y0": -3.09682395157017,
+        "x1": 2.10421832141066,
+        "y1": -3.66992199961711
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.15067427893413,
+        "y0": -3.09682395157017,
+        "x1": 2.22759329194805,
+        "y1": -3.32856313493149
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.15067427893413,
+        "y0": -3.09682395157017,
+        "x1": 1.79753281915993,
+        "y1": -3.82022610898841
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.15067427893413,
+        "y0": -3.09682395157017,
+        "x1": 1.75165472969096,
+        "y1": -3.35049552150432
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.15067427893413,
+        "y0": -3.09682395157017,
+        "x1": 1.50096542303968,
+        "y1": -2.93174209750206
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.15067427893413,
+        "y0": -3.09682395157017,
+        "x1": 1.47762287945925,
+        "y1": -3.93709929114527
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.838033895830965,
+        "y0": -3.6193720864604,
+        "x1": 2.10421832141066,
+        "y1": -3.66992199961711
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.838033895830965,
+        "y0": -3.6193720864604,
+        "x1": 2.22759329194805,
+        "y1": -3.32856313493149
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.838033895830965,
+        "y0": -3.6193720864604,
+        "x1": 1.79753281915993,
+        "y1": -3.82022610898841
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.838033895830965,
+        "y0": -3.6193720864604,
+        "x1": 1.75165472969096,
+        "y1": -3.35049552150432
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.838033895830965,
+        "y0": -3.6193720864604,
+        "x1": 1.50096542303968,
+        "y1": -2.93174209750206
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 0.838033895830965,
+        "y0": -3.6193720864604,
+        "x1": 1.47762287945925,
+        "y1": -3.93709929114527
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.67947092578932,
+        "y0": 2.5874078789277,
+        "x1": -1.62255992892602,
+        "y1": 2.96970285658957
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.67947092578932,
+        "y0": 2.5874078789277,
+        "x1": -0.489507433861241,
+        "y1": 2.54426426279071
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.67947092578932,
+        "y0": 2.5874078789277,
+        "x1": -0.69498850220812,
+        "y1": 2.25282919274514
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.67947092578932,
+        "y0": 2.5874078789277,
+        "x1": -0.261642704263206,
+        "y1": 2.85212966141274
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.67947092578932,
+        "y0": 2.5874078789277,
+        "x1": -0.592209618263027,
+        "y1": 3.00697490799087
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.67947092578932,
+        "y0": 2.5874078789277,
+        "x1": -1.36899235542332,
+        "y1": 3.27537305798583
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.67947092578932,
+        "y0": 2.5874078789277,
+        "x1": -1.11847368622181,
+        "y1": 2.12052625790946
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.67947092578932,
+        "y0": 2.5874078789277,
+        "x1": -0.91146834288241,
+        "y1": 2.87453203814626
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -2.37345265407473,
+        "y0": 0.63100351225363,
+        "x1": -1.75789296974258,
+        "y1": -0.299827817408301
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -2.37345265407473,
+        "y0": 0.63100351225363,
+        "x1": -3.07738138265254,
+        "y1": 0.389289326800805
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -2.37345265407473,
+        "y0": 0.63100351225363,
+        "x1": -2.8044857945916,
+        "y1": -0.0413418961121236
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -2.37345265407473,
+        "y0": 0.63100351225363,
+        "x1": -2.79734508655311,
+        "y1": 0.856602553560456
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.26550849180258,
+        "y0": 2.28517148335352,
+        "x1": 1.4431472904605,
+        "y1": 1.35111616347776
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.26550849180258,
+        "y0": 2.28517148335352,
+        "x1": 1.66438739804686,
+        "y1": 1.83213692375705
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.26550849180258,
+        "y0": 2.28517148335352,
+        "x1": 1.13234403455037,
+        "y1": 1.8073735284642
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.26550849180258,
+        "y0": 2.28517148335352,
+        "x1": 2.06415485491223,
+        "y1": 2.07136781387853
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.26550849180258,
+        "y0": 2.28517148335352,
+        "x1": 1.92940055450375,
+        "y1": 1.24888064646601
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.26550849180258,
+        "y0": 2.28517148335352,
+        "x1": 1.70666558231423,
+        "y1": 2.39120355430727
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.26550849180258,
+        "y0": 2.28517148335352,
+        "x1": 0.488444298570025,
+        "y1": 0.783164264497795
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.62255992892602,
+        "y0": 2.96970285658957,
+        "x1": -0.489507433861241,
+        "y1": 2.54426426279071
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.62255992892602,
+        "y0": 2.96970285658957,
+        "x1": -0.69498850220812,
+        "y1": 2.25282919274514
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.62255992892602,
+        "y0": 2.96970285658957,
+        "x1": -0.261642704263206,
+        "y1": 2.85212966141274
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.62255992892602,
+        "y0": 2.96970285658957,
+        "x1": -0.592209618263027,
+        "y1": 3.00697490799087
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.62255992892602,
+        "y0": 2.96970285658957,
+        "x1": -1.36899235542332,
+        "y1": 3.27537305798583
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.62255992892602,
+        "y0": 2.96970285658957,
+        "x1": -1.11847368622181,
+        "y1": 2.12052625790946
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.62255992892602,
+        "y0": 2.96970285658957,
+        "x1": -0.91146834288241,
+        "y1": 2.87453203814626
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 2.10421832141066,
+        "y0": -3.66992199961711,
+        "x1": 2.22759329194805,
+        "y1": -3.32856313493149
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 2.10421832141066,
+        "y0": -3.66992199961711,
+        "x1": 1.79753281915993,
+        "y1": -3.82022610898841
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 2.10421832141066,
+        "y0": -3.66992199961711,
+        "x1": 1.75165472969096,
+        "y1": -3.35049552150432
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 2.10421832141066,
+        "y0": -3.66992199961711,
+        "x1": 1.50096542303968,
+        "y1": -2.93174209750206
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 2.10421832141066,
+        "y0": -3.66992199961711,
+        "x1": 1.47762287945925,
+        "y1": -3.93709929114527
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.76667785050148,
+        "y0": -2.74886699152,
+        "x1": -0.903001095245503,
+        "y1": -1.78539303117574
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.76667785050148,
+        "y0": -2.74886699152,
+        "x1": -0.426089086262581,
+        "y1": -1.1123394150912
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.76667785050148,
+        "y0": -2.74886699152,
+        "x1": -1.3572197360622,
+        "y1": -1.94943334040232
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 2.22759329194805,
+        "y0": -3.32856313493149,
+        "x1": 1.79753281915993,
+        "y1": -3.82022610898841
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 2.22759329194805,
+        "y0": -3.32856313493149,
+        "x1": 1.75165472969096,
+        "y1": -3.35049552150432
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 2.22759329194805,
+        "y0": -3.32856313493149,
+        "x1": 1.50096542303968,
+        "y1": -2.93174209750206
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 2.22759329194805,
+        "y0": -3.32856313493149,
+        "x1": 1.47762287945925,
+        "y1": -3.93709929114527
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.75789296974258,
+        "y0": -0.299827817408301,
+        "x1": -3.07738138265254,
+        "y1": 0.389289326800805
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.397715726853315,
+          "opacity": 0.5
+        },
+        "x0": -1.75789296974258,
+        "y0": -0.299827817408301,
+        "x1": -2.8044857945916,
+        "y1": -0.0413418961121236
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.75789296974258,
+        "y0": -0.299827817408301,
+        "x1": -1.38988924212273,
+        "y1": -0.714361463164916
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.397715726853315,
+          "opacity": 0.5
+        },
+        "x0": -1.75789296974258,
+        "y0": -0.299827817408301,
+        "x1": -0.903001095245503,
+        "y1": -1.78539303117574
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.934195030998015,
+          "opacity": 0.5
+        },
+        "x0": -1.75789296974258,
+        "y0": -0.299827817408301,
+        "x1": -0.426089086262581,
+        "y1": -1.1123394150912
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.397715726853315,
+          "opacity": 0.5
+        },
+        "x0": -1.75789296974258,
+        "y0": -0.299827817408301,
+        "x1": -1.3572197360622,
+        "y1": -1.94943334040232
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.75789296974258,
+        "y0": -0.299827817408301,
+        "x1": -2.79734508655311,
+        "y1": 0.856602553560456
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.397715726853315,
+          "opacity": 0.5
+        },
+        "x0": -1.75789296974258,
+        "y0": -0.299827817408301,
+        "x1": -1.03607995940238,
+        "y1": -0.022837885177919
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.75789296974258,
+        "y0": -0.299827817408301,
+        "x1": 0.488444298570025,
+        "y1": 0.783164264497795
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -3.07738138265254,
+        "y0": 0.389289326800805,
+        "x1": -2.8044857945916,
+        "y1": -0.0413418961121236
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -3.07738138265254,
+        "y0": 0.389289326800805,
+        "x1": -2.79734508655311,
+        "y1": 0.856602553560456
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.489507433861241,
+        "y0": 2.54426426279071,
+        "x1": -0.69498850220812,
+        "y1": 2.25282919274514
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.489507433861241,
+        "y0": 2.54426426279071,
+        "x1": -0.261642704263206,
+        "y1": 2.85212966141274
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.489507433861241,
+        "y0": 2.54426426279071,
+        "x1": -0.592209618263027,
+        "y1": 3.00697490799087
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.489507433861241,
+        "y0": 2.54426426279071,
+        "x1": -1.36899235542332,
+        "y1": 3.27537305798583
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.489507433861241,
+        "y0": 2.54426426279071,
+        "x1": -1.11847368622181,
+        "y1": 2.12052625790946
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.489507433861241,
+        "y0": 2.54426426279071,
+        "x1": -0.91146834288241,
+        "y1": 2.87453203814626
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -2.8044857945916,
+        "y0": -0.0413418961121236,
+        "x1": -2.79734508655311,
+        "y1": 0.856602553560456
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 4.55767073429259,
+        "y0": 0.780912710343797,
+        "x1": 4.23641595036277,
+        "y1": 1.73021712979977
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 4.55767073429259,
+        "y0": 0.780912710343797,
+        "x1": 4.58972895423832,
+        "y1": 1.29721729202184
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 4.23641595036277,
+        "y0": 1.73021712979977,
+        "x1": 4.58972895423832,
+        "y1": 1.29721729202184
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.69498850220812,
+        "y0": 2.25282919274514,
+        "x1": -0.261642704263206,
+        "y1": 2.85212966141274
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.69498850220812,
+        "y0": 2.25282919274514,
+        "x1": -0.592209618263027,
+        "y1": 3.00697490799087
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.69498850220812,
+        "y0": 2.25282919274514,
+        "x1": -1.36899235542332,
+        "y1": 3.27537305798583
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.69498850220812,
+        "y0": 2.25282919274514,
+        "x1": -1.11847368622181,
+        "y1": 2.12052625790946
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.69498850220812,
+        "y0": 2.25282919274514,
+        "x1": -0.91146834288241,
+        "y1": 2.87453203814626
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.38988924212273,
+        "y0": -0.714361463164916,
+        "x1": -0.426089086262581,
+        "y1": -1.1123394150912
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.4431472904605,
+        "y0": 1.35111616347776,
+        "x1": 1.66438739804686,
+        "y1": 1.83213692375705
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.4431472904605,
+        "y0": 1.35111616347776,
+        "x1": 1.13234403455037,
+        "y1": 1.8073735284642
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.4431472904605,
+        "y0": 1.35111616347776,
+        "x1": 2.06415485491223,
+        "y1": 2.07136781387853
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.4431472904605,
+        "y0": 1.35111616347776,
+        "x1": 1.92940055450375,
+        "y1": 1.24888064646601
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.4431472904605,
+        "y0": 1.35111616347776,
+        "x1": 1.70666558231423,
+        "y1": 2.39120355430727
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.4431472904605,
+        "y0": 1.35111616347776,
+        "x1": 0.488444298570025,
+        "y1": 0.783164264497795
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 3.04518447379072,
+        "y0": 0.0993319842389035,
+        "x1": 2.95978322082146,
+        "y1": -1.0487643054632
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 3.04518447379072,
+        "y0": 0.0993319842389035,
+        "x1": 3.79069527654518,
+        "y1": 0.00975941588557499
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.66438739804686,
+        "y0": 1.83213692375705,
+        "x1": 1.13234403455037,
+        "y1": 1.8073735284642
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.66438739804686,
+        "y0": 1.83213692375705,
+        "x1": 2.06415485491223,
+        "y1": 2.07136781387853
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.66438739804686,
+        "y0": 1.83213692375705,
+        "x1": 1.92940055450375,
+        "y1": 1.24888064646601
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.66438739804686,
+        "y0": 1.83213692375705,
+        "x1": 1.70666558231423,
+        "y1": 2.39120355430727
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.66438739804686,
+        "y0": 1.83213692375705,
+        "x1": 0.488444298570025,
+        "y1": 0.783164264497795
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.13234403455037,
+        "y0": 1.8073735284642,
+        "x1": 2.06415485491223,
+        "y1": 2.07136781387853
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.13234403455037,
+        "y0": 1.8073735284642,
+        "x1": 1.92940055450375,
+        "y1": 1.24888064646601
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.13234403455037,
+        "y0": 1.8073735284642,
+        "x1": 1.70666558231423,
+        "y1": 2.39120355430727
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.13234403455037,
+        "y0": 1.8073735284642,
+        "x1": 0.488444298570025,
+        "y1": 0.783164264497795
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.53287076288937,
+          "opacity": 0.5
+        },
+        "x0": -0.903001095245503,
+        "y0": -1.78539303117574,
+        "x1": -0.426089086262581,
+        "y1": -1.1123394150912
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.53287076288937,
+          "opacity": 0.5
+        },
+        "x0": -0.903001095245503,
+        "y0": -1.78539303117574,
+        "x1": -1.3572197360622,
+        "y1": -1.94943334040232
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.426089086262581,
+        "y0": -1.1123394150912,
+        "x1": 2.95978322082146,
+        "y1": -1.0487643054632
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.53287076288937,
+          "opacity": 0.5
+        },
+        "x0": -0.426089086262581,
+        "y0": -1.1123394150912,
+        "x1": -1.3572197360622,
+        "y1": -1.94943334040232
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.426089086262581,
+        "y0": -1.1123394150912,
+        "x1": -1.03607995940238,
+        "y1": -0.022837885177919
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.426089086262581,
+        "y0": -1.1123394150912,
+        "x1": 0.488444298570025,
+        "y1": 0.783164264497795
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -2.37670157594432,
+        "y0": -2.23376605997871,
+        "x1": -2.18737653975755,
+        "y1": -2.71724196314126
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 2.06415485491223,
+        "y0": 2.07136781387853,
+        "x1": 1.92940055450375,
+        "y1": 1.24888064646601
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 2.06415485491223,
+        "y0": 2.07136781387853,
+        "x1": 1.70666558231423,
+        "y1": 2.39120355430727
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 2.06415485491223,
+        "y0": 2.07136781387853,
+        "x1": 0.488444298570025,
+        "y1": 0.783164264497795
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.397715726853315,
+          "opacity": 0.5
+        },
+        "x0": -0.29610932968853,
+        "y0": -0.172355742540291,
+        "x1": 0.488444298570025,
+        "y1": 0.783164264497795
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.92940055450375,
+        "y0": 1.24888064646601,
+        "x1": 1.70666558231423,
+        "y1": 2.39120355430727
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.92940055450375,
+        "y0": 1.24888064646601,
+        "x1": 0.488444298570025,
+        "y1": 0.783164264497795
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 4.49968453926375,
+        "y0": -0.68230831947089,
+        "x1": 3.63718174223631,
+        "y1": -0.503639616344162
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 4.49968453926375,
+        "y0": -0.68230831947089,
+        "x1": 2.95978322082146,
+        "y1": -1.0487643054632
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 4.49968453926375,
+        "y0": -0.68230831947089,
+        "x1": 3.79069527654518,
+        "y1": 0.00975941588557499
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 4.49968453926375,
+        "y0": -0.68230831947089,
+        "x1": 4.06161988863182,
+        "y1": -0.806087619917521
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.79753281915993,
+        "y0": -3.82022610898841,
+        "x1": 1.75165472969096,
+        "y1": -3.35049552150432
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.79753281915993,
+        "y0": -3.82022610898841,
+        "x1": 1.50096542303968,
+        "y1": -2.93174209750206
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.79753281915993,
+        "y0": -3.82022610898841,
+        "x1": 1.47762287945925,
+        "y1": -3.93709929114527
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.261642704263206,
+        "y0": 2.85212966141274,
+        "x1": -0.592209618263027,
+        "y1": 3.00697490799087
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.261642704263206,
+        "y0": 2.85212966141274,
+        "x1": -1.36899235542332,
+        "y1": 3.27537305798583
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.261642704263206,
+        "y0": 2.85212966141274,
+        "x1": -1.11847368622181,
+        "y1": 2.12052625790946
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.261642704263206,
+        "y0": 2.85212966141274,
+        "x1": -0.91146834288241,
+        "y1": 2.87453203814626
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.592209618263027,
+        "y0": 3.00697490799087,
+        "x1": -1.36899235542332,
+        "y1": 3.27537305798583
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.592209618263027,
+        "y0": 3.00697490799087,
+        "x1": -1.11847368622181,
+        "y1": 2.12052625790946
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -0.592209618263027,
+        "y0": 3.00697490799087,
+        "x1": -0.91146834288241,
+        "y1": 2.87453203814626
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.75165472969096,
+        "y0": -3.35049552150432,
+        "x1": 1.50096542303968,
+        "y1": -2.93174209750206
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.75165472969096,
+        "y0": -3.35049552150432,
+        "x1": 1.47762287945925,
+        "y1": -3.93709929114527
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 3.63718174223631,
+        "y0": -0.503639616344162,
+        "x1": 2.95978322082146,
+        "y1": -1.0487643054632
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 3.63718174223631,
+        "y0": -0.503639616344162,
+        "x1": 3.79069527654518,
+        "y1": 0.00975941588557499
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 3.63718174223631,
+        "y0": -0.503639616344162,
+        "x1": 4.06161988863182,
+        "y1": -0.806087619917521
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.397715726853315,
+          "opacity": 0.5
+        },
+        "x0": 2.95978322082146,
+        "y0": -1.0487643054632,
+        "x1": 3.79069527654518,
+        "y1": 0.00975941588557499
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.397715726853315,
+          "opacity": 0.5
+        },
+        "x0": 2.95978322082146,
+        "y0": -1.0487643054632,
+        "x1": 3.3198909861352,
+        "y1": -1.81771273371642
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 2.95978322082146,
+        "y0": -1.0487643054632,
+        "x1": 4.06161988863182,
+        "y1": -0.806087619917521
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.70666558231423,
+        "y0": 2.39120355430727,
+        "x1": 0.488444298570025,
+        "y1": 0.783164264497795
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 3.79069527654518,
+        "y0": 0.00975941588557499,
+        "x1": 4.06161988863182,
+        "y1": -0.806087619917521
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": 1.50096542303968,
+        "y0": -2.93174209750206,
+        "x1": 1.47762287945925,
+        "y1": -3.93709929114527
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.03607995940238,
+        "y0": -0.022837885177919,
+        "x1": 0.488444298570025,
+        "y1": 0.783164264497795
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.36899235542332,
+        "y0": 3.27537305798583,
+        "x1": -1.11847368622181,
+        "y1": 2.12052625790946
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.36899235542332,
+        "y0": 3.27537305798583,
+        "x1": -0.91146834288241,
+        "y1": 2.87453203814626
+      },
+      {
+        "type": "line",
+        "line": {
+          "color": "grey90",
+          "width": 0.166666666666667,
+          "opacity": 0.5
+        },
+        "x0": -1.11847368622181,
+        "y0": 2.12052625790946,
+        "x1": -0.91146834288241,
+        "y1": 2.87453203814626
+      }
+    ],
+    "xaxis": {
+      "domain": [0, 1],
+      "automargin": true,
+      "title": "",
+      "showgrid": false,
+      "showticklabels": false,
+      "zeroline": false
+    },
+    "yaxis": {
+      "domain": [0, 1],
+      "automargin": true,
+      "title": "",
+      "showgrid": false,
+      "showticklabels": false,
+      "zeroline": false
+    },
+    "hovermode": "closest",
+    "showlegend": false,
+    "legend": {
+      "yanchor": "top",
+      "y": 0.5
+    }
+  },
+  "source": "A",
+  "config": {
+    "showSendToCloud": false
+  },
+  "data": [
+    {
+      "x": [-1.2726264670637, -1.05171980721152, 4.27260877777309, -1.54108216252627, 1.10505412234333, 4.32338808136187, -3.01870013691459, -0.390054941813585, -1.79540567047724, -1.71379277426312, 1.79978943331048, -0.386361525747042, -1.29138308273449, 3.35184761885081, -2.31232166575359, -1.04884658753386, 2.13067182926018, 2.22010864852364, 3.89279072071057, 2.4565815524399, 0.78380565633142, 3.80276425201702, -1.4636358419301, 0.88845319940626, -2.14291236335806, 3.43798418082812, 3.72095572629567, 1.22384624752895, 3.95680958947594, 1.3481508714458, -0.730082063081177, 1.15067427893413, 0.838033895830965, -1.67947092578932, -2.37345265407473, 1.26550849180258, -1.62255992892602, 2.10421832141066, -0.76667785050148, 2.22759329194805, -1.75789296974258, -3.07738138265254, -0.489507433861241, -2.8044857945916, 4.55767073429259, 4.23641595036277, 1.76513690712805, -0.69498850220812, 3.01184708756245, -1.38988924212273, 1.4431472904605, 3.04518447379072, 1.66438739804686, 1.13234403455037, -0.903001095245503, -0.426089086262581, -2.37670157594432, 2.06415485491223, -0.29610932968853, 1.92940055450375, 4.49968453926375, 1.79753281915993, -0.261642704263206, -0.592209618263027, 1.75165472969096, 3.63718174223631, 2.95978322082146, 1.70666558231423, 3.79069527654518, 1.50096542303968, -1.3572197360622, -2.79734508655311, -1.03607995940238, 3.3198909861352, 1.47762287945925, 4.06161988863182, -2.18737653975755, -1.36899235542332, 0.488444298570025, 4.58972895423832, -1.11847368622181, -0.91146834288241],
+      "y": [-1.26813506850718, 3.3379879672252, -1.67732014689135, -3.05965390539781, -3.88771654859051, -0.172803277678729, -0.706403139942613, 3.27065806802968, -1.39555079424878, -2.60193297022473, -2.8481117672648, -2.36476965987981, 2.79112667874032, -2.3365187467201, -1.27517340883096, 2.4632868172737, -2.98976502153847, 1.63158517678377, 1.20788752515841, 3.55168313462887, -0.0978301854585344, 2.24893256226608, 2.29888431857531, -3.26811341888026, -0.686373534063212, 2.71518864712679, -1.50077892128854, -2.71564252137786, -2.21310128773031, -3.52469650511161, 3.43871140312218, -3.09682395157017, -3.6193720864604, 2.5874078789277, 0.63100351225363, 2.28517148335352, 2.96970285658957, -3.66992199961711, -2.74886699152, -3.32856313493149, -0.299827817408301, 0.389289326800805, 2.54426426279071, -0.0413418961121236, 0.780912710343797, 1.73021712979977, 3.74071048136187, 2.25282919274514, 3.07915907666119, -0.714361463164916, 1.35111616347776, 0.0993319842389035, 1.83213692375705, 1.8073735284642, -1.78539303117574, -1.1123394150912, -2.23376605997871, 2.07136781387853, -0.172355742540291, 1.24888064646601, -0.68230831947089, -3.82022610898841, 2.85212966141274, 3.00697490799087, -3.35049552150432, -0.503639616344162, -1.0487643054632, 2.39120355430727, 0.00975941588557499, -2.93174209750206, -1.94943334040232, 0.856602553560456, -0.022837885177919, -1.81771273371642, -3.93709929114527, -0.806087619917521, -2.71724196314126, 3.27537305798583, 0.783164264497795, 1.29721729202184, 2.12052625790946, 2.87453203814626],
+      "type": "scatter",
+      "mode": "markers",
+      "text": ["<b> Achim Röder <\/b> <br> 14 publication(s) <br> Latest publication: <br> M. de Blécourt et al. (2018) <br> Deforestation for agricultural expansion in SW Zambia and NE Namibia and the impacts on soil fertility, soil organic carbon- and nutrient levels <br> <i> Biodiversity & Ecology 6 - Climate change and adaptive landmanagement in southern Africa - assessments, changes, challenges, and solutions <\/i>", "<b> Afag Rizayeva <\/b> <br> 1 publication(s) <br> Latest publication: <br> J. Buchner et al. (2020) <br> Land-cover change in the Caucasus Mountains since 1987 based on the topographic correction of multi-temporal Landsat composites <br> <i> Remote Sensing of Environment <\/i>", "<b> Akpona Okujeni <\/b> <br> 1 publication(s) <br> Latest publication: <br> F. Schug et al. (2020) <br> Mapping urban-rural gradients of settlements and vegetation at national scale using Sentinel-2 spectral-temporal metrics and regression-based unmixing with synthetic training data <br> <i> Remote Sensing of Environment <\/i>", "<b> Alexander Gröngröft <\/b> <br> 1 publication(s) <br> Latest publication: <br> M. de Blécourt et al. (2018) <br> Deforestation for agricultural expansion in SW Zambia and NE Namibia and the impacts on soil fertility, soil organic carbon- and nutrient levels <br> <i> Biodiversity & Ecology 6 - Climate change and adaptive landmanagement in southern Africa - assessments, changes, challenges, and solutions <\/i>", "<b> André Hollstein <\/b> <br> 1 publication(s) <br> Latest publication: <br> G. Doxani et al. (2018) <br> Atmospheric Correction Inter-Comparison Exercise <br> <i> Remote Sensing <\/i>", "<b> Andreas Rabe <\/b> <br> 1 publication(s) <br> Latest publication: <br> P. Rufin et al. (2019) <br> Mapping Cropping Practices on a National Scale Using Intra-Annual Landsat Time Series Binning <br> <i> Remote Sensing <\/i>", "<b> Andreas Uhl <\/b> <br> 1 publication(s) <br> Latest publication: <br> D. Frantz et al. (2018) <br> Improvement of the Fmask algorithm for Sentinel-2 images: Separating clouds from bright surfaces based on parallax effects <br> <i> Remote Sensing of Environment <\/i>", "<b> Anna Komarova <\/b> <br> 1 publication(s) <br> Latest publication: <br> J. Buchner et al. (2020) <br> Land-cover change in the Caucasus Mountains since 1987 based on the topographic correction of multi-temporal Landsat composites <br> <i> Remote Sensing of Environment <\/i>", "<b> Anne Schneibel <\/b> <br> 4 publication(s) <br> Latest publication: <br> A. Schneibel et al. (2018) <br> Long-term land use change analysis in south-central Angola. Assessing the trade-off between major ecosystem services with remote sensing data <br> <i> Biodiversity & Ecology 6 - Climate change and adaptive landmanagement in southern Africa - assessments, changes, challenges, and solutions <\/i>", "<b> Annette Eschenbach <\/b> <br> 1 publication(s) <br> Latest publication: <br> M. de Blécourt et al. (2018) <br> Deforestation for agricultural expansion in SW Zambia and NE Namibia and the impacts on soil fertility, soil organic carbon- and nutrient levels <br> <i> Biodiversity & Ecology 6 - Climate change and adaptive landmanagement in southern Africa - assessments, changes, challenges, and solutions <\/i>", "<b> Antoine Mangin <\/b> <br> 1 publication(s) <br> Latest publication: <br> G. Doxani et al. (2018) <br> Atmospheric Correction Inter-Comparison Exercise <br> <i> Remote Sensing <\/i>", "<b> Ben Strohbach <\/b> <br> 1 publication(s) <br> Latest publication: <br> R. Revermann et al. (2016) <br> Linking Land Surface Phenology and Vegetation-Plot Databases to Model Terrestrial Plant a-Diversity of the Okavango Basin <br> <i> Remote Sensing <\/i>", "<b> Benjamin Bleyhl <\/b> <br> 1 publication(s) <br> Latest publication: <br> J. Buchner et al. (2020) <br> Land-cover change in the Caucasus Mountains since 1987 based on the topographic correction of multi-temporal Landsat composites <br> <i> Remote Sensing of Environment <\/i>", "<b> Benjamin Jakimow <\/b> <br> 1 publication(s) <br> Latest publication: <br> B. Jakimow et al. (2020) <br> Visualizing and labeling dense multi-sensor earth observation time series: The EO Time Series Viewer <br> <i> Environmental Modelling & Software <\/i>", "<b> Benjamin Kowalski <\/b> <br> 1 publication(s) <br> Latest publication: <br> A. Schneibel et al. (2017) <br> Assessment of spatio-temporal changes of smallholder cultivation patterns in the Angolan Miombo belt using segmentation of Landsat time series <br> <i> Remote Sensing of Environment <\/i>", "<b> Bin Tan <\/b> <br> 1 publication(s) <br> Latest publication: <br> J. Buchner et al. (2020) <br> Land-cover change in the Caucasus Mountains since 1987 based on the topographic correction of multi-temporal Landsat composites <br> <i> Remote Sensing of Environment <\/i>", "<b> Bringfried Pflug <\/b> <br> 1 publication(s) <br> Latest publication: <br> G. Doxani et al. (2018) <br> Atmospheric Correction Inter-Comparison Exercise <br> <i> Remote Sensing <\/i>", "<b> Christian Bossung <\/b> <br> 1 publication(s) <br> Latest publication: <br> M. Machwitz et al. (2014) <br> Enhanced biomass prediction by assimilating satellite data into a crop growth model <br> <i> Environmental Modelling & Software <\/i>", "<b> Cornelius Senf <\/b> <br> 1 publication(s) <br> Latest publication: <br> K. Lebek et al. (2019) <br> Interdependent effects of climate variability and forest cover change on streamflow dynamics: a case study in the Upper Umvoti River Basin, South Africa <br> <i> Regional Environmental Change <\/i>", "<b> Daniel Scheffler <\/b> <br> 1 publication(s) <br> Latest publication: <br> D. Scheffler et al. (2020) <br> Spectral harmonization and red edge prediction of Landsat-8 to Sentinel-2 using land cover optimized multivariate regressors <br> <i> Remote Sensing of Environment <\/i>", "<b> David Frantz <\/b> <br> 31 publication(s) <br> Latest publication: <br> E. Grabska et al. (2020) <br> Evaluation of machine learning algorithms for forest stand species mapping using Sentinel-2 imagery and environmental data in the Polish Carpathians [accepted] <br> <i> Remote Sensing of Environment <\/i>", "<b> David Parduhn <\/b> <br> 1 publication(s) <br> Latest publication: <br> D. Parduhn et al. (2018) <br> Seeing deforestation in Zambia - On the discrepancy between biophysical land-use changes and social perception <br> <i> Biodiversity & Ecology 6 - Climate change and adaptive landmanagement in southern Africa - assessments, changes, challenges, and solutions <\/i>", "<b> Elshad Askerov <\/b> <br> 1 publication(s) <br> Latest publication: <br> J. Buchner et al. (2020) <br> Land-cover change in the Caucasus Mountains since 1987 based on the topographic correction of multi-temporal Landsat composites <br> <i> Remote Sensing of Environment <\/i>", "<b> Eric Vermote <\/b> <br> 1 publication(s) <br> Latest publication: <br> G. Doxani et al. (2018) <br> Atmospheric Correction Inter-Comparison Exercise <br> <i> Remote Sensing <\/i>", "<b> Erik Haß <\/b> <br> 3 publication(s) <br> Latest publication: <br> D. Frantz et al. (2018) <br> Improvement of the Fmask algorithm for Sentinel-2 images: Separating clouds from bright surfaces based on parallax effects <br> <i> Remote Sensing of Environment <\/i>", "<b> Ewa Grabska <\/b> <br> 1 publication(s) <br> Latest publication: <br> E. Grabska et al. (2020) <br> Evaluation of machine learning algorithms for forest stand species mapping using Sentinel-2 imagery and environmental data in the Polish Carpathians [accepted] <br> <i> Remote Sensing of Environment <\/i>", "<b> Fabian Thiel <\/b> <br> 1 publication(s) <br> Latest publication: <br> B. Jakimow et al. (2020) <br> Visualizing and labeling dense multi-sensor earth observation time series: The EO Time Series Viewer <br> <i> Environmental Modelling & Software <\/i>", "<b> Ferran Gascon <\/b> <br> 1 publication(s) <br> Latest publication: <br> G. Doxani et al. (2018) <br> Atmospheric Correction Inter-Comparison Exercise <br> <i> Remote Sensing <\/i>", "<b> Franz Schug <\/b> <br> 1 publication(s) <br> Latest publication: <br> F. Schug et al. (2020) <br> Mapping urban-rural gradients of settlements and vegetation at national scale using Sentinel-2 spectral-temporal metrics and regression-based unmixing with synthetic training data <br> <i> Remote Sensing of Environment <\/i>", "<b> Fuqin Li <\/b> <br> 1 publication(s) <br> Latest publication: <br> G. Doxani et al. (2018) <br> Atmospheric Correction Inter-Comparison Exercise <br> <i> Remote Sensing <\/i>", "<b> Garegin Tepanosyan <\/b> <br> 1 publication(s) <br> Latest publication: <br> J. Buchner et al. (2020) <br> Land-cover change in the Caucasus Mountains since 1987 based on the topographic correction of multi-temporal Landsat composites <br> <i> Remote Sensing of Environment <\/i>", "<b> Georgia Doxani <\/b> <br> 1 publication(s) <br> Latest publication: <br> G. Doxani et al. (2018) <br> Atmospheric Correction Inter-Comparison Exercise <br> <i> Remote Sensing <\/i>", "<b> Grit Kirches <\/b> <br> 1 publication(s) <br> Latest publication: <br> G. Doxani et al. (2018) <br> Atmospheric Correction Inter-Comparison Exercise <br> <i> Remote Sensing <\/i>", "<b> He Yin <\/b> <br> 1 publication(s) <br> Latest publication: <br> J. Buchner et al. (2020) <br> Land-cover change in the Caucasus Mountains since 1987 based on the topographic correction of multi-temporal Landsat composites <br> <i> Remote Sensing of Environment <\/i>", "<b> Henning Buddenbaum <\/b> <br> 1 publication(s) <br> Latest publication: <br> S. Nink et al. (2019) <br> Using Landsat and Sentinel-2 Data for the Generation of Continuously Updated Forest Type Information Layers in a Cross-Border Region <br> <i> Remote Sensing <\/i>", "<b> Holger Lilienthal <\/b> <br> 1 publication(s) <br> Latest publication: <br> M. Machwitz et al. (2014) <br> Enhanced biomass prediction by assimilating satellite data into a crop growth model <br> <i> Environmental Modelling & Software <\/i>", "<b> Hovik Sayadyan <\/b> <br> 1 publication(s) <br> Latest publication: <br> J. Buchner et al. (2020) <br> Land-cover change in the Caucasus Mountains since 1987 based on the topographic correction of multi-temporal Landsat composites <br> <i> Remote Sensing of Environment <\/i>", "<b> Jean-Claude Roger <\/b> <br> 1 publication(s) <br> Latest publication: <br> G. Doxani et al. (2018) <br> Atmospheric Correction Inter-Comparison Exercise <br> <i> Remote Sensing <\/i>", "<b> Jens Oldeland <\/b> <br> 1 publication(s) <br> Latest publication: <br> R. Revermann et al. (2016) <br> Linking Land Surface Phenology and Vegetation-Plot Databases to Model Terrestrial Plant a-Diversity of the Okavango Basin <br> <i> Remote Sensing <\/i>", "<b> Jérôme Louis <\/b> <br> 1 publication(s) <br> Latest publication: <br> G. Doxani et al. (2018) <br> Atmospheric Correction Inter-Comparison Exercise <br> <i> Remote Sensing <\/i>", "<b> Joachim Hill <\/b> <br> 13 publication(s) <br> Latest publication: <br> S. Nink et al. (2019) <br> Using Landsat and Sentinel-2 Data for the Generation of Continuously Updated Forest Type Information Layers in a Cross-Border Region <br> <i> Remote Sensing <\/i>", "<b> Joachim Langshausen <\/b> <br> 1 publication(s) <br> Latest publication: <br> S. Nink et al. (2019) <br> Using Landsat and Sentinel-2 Data for the Generation of Continuously Updated Forest Type Information Layers in a Cross-Border Region <br> <i> Remote Sensing <\/i>", "<b> Johanna Buchner <\/b> <br> 1 publication(s) <br> Latest publication: <br> J. Buchner et al. (2020) <br> Land-cover change in the Caucasus Mountains since 1987 based on the topographic correction of multi-temporal Landsat composites <br> <i> Remote Sensing of Environment <\/i>", "<b> Johannes Stoffels <\/b> <br> 2 publication(s) <br> Latest publication: <br> S. Nink et al. (2019) <br> Using Landsat and Sentinel-2 Data for the Generation of Continuously Updated Forest Type Information Layers in a Cross-Border Region <br> <i> Remote Sensing <\/i>", "<b> José Monteiro <\/b> <br> 1 publication(s) <br> Latest publication: <br> K. Lebek et al. (2019) <br> Interdependent effects of climate variability and forest cover change on streamflow dynamics: a case study in the Upper Umvoti River Basin, South Africa <br> <i> Regional Environmental Change <\/i>", "<b> Karen Lebek <\/b> <br> 1 publication(s) <br> Latest publication: <br> K. Lebek et al. (2019) <br> Interdependent effects of climate variability and forest cover change on streamflow dynamics: a case study in the Upper Umvoti River Basin, South Africa <br> <i> Regional Environmental Change <\/i>", "<b> Karl Segl <\/b> <br> 1 publication(s) <br> Latest publication: <br> D. Scheffler et al. (2020) <br> Spectral harmonization and red edge prediction of Landsat-8 to Sentinel-2 using land cover optimized multivariate regressors <br> <i> Remote Sensing of Environment <\/i>", "<b> Katarzyna Lewinska <\/b> <br> 1 publication(s) <br> Latest publication: <br> J. Buchner et al. (2020) <br> Land-cover change in the Caucasus Mountains since 1987 based on the topographic correction of multi-temporal Landsat composites <br> <i> Remote Sensing of Environment <\/i>", "<b> Katarzyna Ostapowicz <\/b> <br> 1 publication(s) <br> Latest publication: <br> E. Grabska et al. (2020) <br> Evaluation of machine learning algorithms for forest stand species mapping using Sentinel-2 imagery and environmental data in the Polish Carpathians [accepted] <br> <i> Remote Sensing of Environment <\/i>", "<b> Kim Fischer <\/b> <br> 1 publication(s) <br> Latest publication: <br> A. Schneibel et al. (2017) <br> Using Annual Landsat Time Series for the Detection of Dry Forest Degradation Processes in South-Central Angola <br> <i> Remote Sensing <\/i>", "<b> Laura Giustarini <\/b> <br> 1 publication(s) <br> Latest publication: <br> M. Machwitz et al. (2014) <br> Enhanced biomass prediction by assimilating satellite data into a crop growth model <br> <i> Environmental Modelling & Software <\/i>", "<b> Lin Yan <\/b> <br> 1 publication(s) <br> Latest publication: <br> P. Rufin et al. (2020) <br> Operational Coregistration of the Sentinel-2A/B Image Archive Using Multitemporal Landsat Spectral Averages <br> <i> IEEE Geoscience and Remote Sensing Letters <\/i>", "<b> Loise Wandera <\/b> <br> 1 publication(s) <br> Latest publication: <br> M. Machwitz et al. (2014) <br> Enhanced biomass prediction by assimilating satellite data into a crop growth model <br> <i> Environmental Modelling & Software <\/i>", "<b> Lucien Hoffmann <\/b> <br> 1 publication(s) <br> Latest publication: <br> M. Machwitz et al. (2014) <br> Enhanced biomass prediction by assimilating satellite data into a crop growth model <br> <i> Environmental Modelling & Software <\/i>", "<b> Manfred Finckh <\/b> <br> 3 publication(s) <br> Latest publication: <br> R. Revermann et al. (2016) <br> Linking Land Surface Phenology and Vegetation-Plot Databases to Model Terrestrial Plant a-Diversity of the Okavango Basin <br> <i> Remote Sensing <\/i>", "<b> Marion Stellmes <\/b> <br> 13 publication(s) <br> Latest publication: <br> D. Frantz et al. (2019) <br> A Global MODIS Water Vapor Database for the Operational Atmospheric Correction of Historic and Recent Landsat Imagery <br> <i> Remote Sensing <\/i>", "<b> Marleen de Blécourt <\/b> <br> 1 publication(s) <br> Latest publication: <br> M. de Blécourt et al. (2018) <br> Deforestation for agricultural expansion in SW Zambia and NE Namibia and the impacts on soil fertility, soil organic carbon- and nutrient levels <br> <i> Biodiversity & Ecology 6 - Climate change and adaptive landmanagement in southern Africa - assessments, changes, challenges, and solutions <\/i>", "<b> Martin Schlerf <\/b> <br> 1 publication(s) <br> Latest publication: <br> M. Machwitz et al. (2014) <br> Enhanced biomass prediction by assimilating satellite data into a crop growth model <br> <i> Environmental Modelling & Software <\/i>", "<b> Michael Schmidt <\/b> <br> 2 publication(s) <br> Latest publication: <br> D. Frantz et al. (2016) <br> Forest Disturbance Mapping Using Dense Synthetic Landsat/MODIS Time-Series and Permutation-Based Disturbance Index Detection <br> <i> Remote Sensing <\/i>", "<b> Miriam Machwitz <\/b> <br> 1 publication(s) <br> Latest publication: <br> M. Machwitz et al. (2014) <br> Enhanced biomass prediction by assimilating satellite data into a crop growth model <br> <i> Environmental Modelling & Software <\/i>", "<b> Mutlu Özdogan <\/b> <br> 1 publication(s) <br> Latest publication: <br> P. Rufin et al. (2019) <br> Mapping Cropping Practices on a National Scale Using Intra-Annual Landsat Time Series Binning <br> <i> Remote Sensing <\/i>", "<b> Nima Pahlevan <\/b> <br> 1 publication(s) <br> Latest publication: <br> G. Doxani et al. (2018) <br> Atmospheric Correction Inter-Comparison Exercise <br> <i> Remote Sensing <\/i>", "<b> Nodar Elizbarashvili <\/b> <br> 1 publication(s) <br> Latest publication: <br> J. Buchner et al. (2020) <br> Land-cover change in the Caucasus Mountains since 1987 based on the topographic correction of multi-temporal Landsat composites <br> <i> Remote Sensing of Environment <\/i>", "<b> Nugzar Zazanashvili <\/b> <br> 1 publication(s) <br> Latest publication: <br> J. Buchner et al. (2020) <br> Land-cover change in the Caucasus Mountains since 1987 based on the topographic correction of multi-temporal Landsat composites <br> <i> Remote Sensing of Environment <\/i>", "<b> Olivier Hagolle <\/b> <br> 1 publication(s) <br> Latest publication: <br> G. Doxani et al. (2018) <br> Atmospheric Correction Inter-Comparison Exercise <br> <i> Remote Sensing <\/i>", "<b> Patrick Griffiths <\/b> <br> 1 publication(s) <br> Latest publication: <br> P. Rufin et al. (2019) <br> Mapping Cropping Practices on a National Scale Using Intra-Annual Landsat Time Series Binning <br> <i> Remote Sensing <\/i>", "<b> Patrick Hostert <\/b> <br> 5 publication(s) <br> Latest publication: <br> F. Schug et al. (2020) <br> Mapping urban-rural gradients of settlements and vegetation at national scale using Sentinel-2 spectral-temporal metrics and regression-based unmixing with synthetic training data <br> <i> Remote Sensing of Environment <\/i>", "<b> Patrick Matgen <\/b> <br> 1 publication(s) <br> Latest publication: <br> M. Machwitz et al. (2014) <br> Enhanced biomass prediction by assimilating satellite data into a crop growth model <br> <i> Environmental Modelling & Software <\/i>", "<b> Philippe Rufin <\/b> <br> 2 publication(s) <br> Latest publication: <br> P. Rufin et al. (2020) <br> Operational Coregistration of the Sentinel-2A/B Image Archive Using Multitemporal Landsat Spectral Averages <br> <i> IEEE Geoscience and Remote Sensing Letters <\/i>", "<b> Quinten Vanhellemont <\/b> <br> 1 publication(s) <br> Latest publication: <br> G. Doxani et al. (2018) <br> Atmospheric Correction Inter-Comparison Exercise <br> <i> Remote Sensing <\/i>", "<b> Rasmus Revermann <\/b> <br> 3 publication(s) <br> Latest publication: <br> R. Revermann et al. (2016) <br> Linking Land Surface Phenology and Vegetation-Plot Databases to Model Terrestrial Plant a-Diversity of the Okavango Basin <br> <i> Remote Sensing <\/i>", "<b> Sascha Nink <\/b> <br> 1 publication(s) <br> Latest publication: <br> S. Nink et al. (2019) <br> Using Landsat and Sentinel-2 Data for the Generation of Continuously Updated Forest Type Information Layers in a Cross-Border Region <br> <i> Remote Sensing <\/i>", "<b> Sebastian Mader <\/b> <br> 2 publication(s) <br> Latest publication: <br> E. Haß et al. (2017) <br> Global Analysis of the Differences Between the MODIS Vegetation Index Compositing Date and the Actual Acquisition Date <br> <i> IEEE Geoscience and Remote Sensing Letters <\/i>", "<b> Sebastian van der Linden <\/b> <br> 2 publication(s) <br> Latest publication: <br> F. Schug et al. (2020) <br> Mapping urban-rural gradients of settlements and vegetation at national scale using Sentinel-2 spectral-temporal metrics and regression-based unmixing with synthetic training data <br> <i> Remote Sensing of Environment <\/i>", "<b> Stefan Adriaensen <\/b> <br> 1 publication(s) <br> Latest publication: <br> G. Doxani et al. (2018) <br> Atmospheric Correction Inter-Comparison Exercise <br> <i> Remote Sensing <\/i>", "<b> Stefan Ernst <\/b> <br> 1 publication(s) <br> Latest publication: <br> P. Rufin et al. (2019) <br> Mapping Cropping Practices on a National Scale Using Intra-Annual Landsat Time Series Binning <br> <i> Remote Sensing <\/i>", "<b> Stephan Baumann <\/b> <br> 1 publication(s) <br> Latest publication: <br> M. de Blécourt et al. (2018) <br> Deforestation for agricultural expansion in SW Zambia and NE Namibia and the impacts on soil fertility, soil organic carbon- and nutrient levels <br> <i> Biodiversity & Ecology 6 - Climate change and adaptive landmanagement in southern Africa - assessments, changes, challenges, and solutions <\/i>", "<b> Tamar Bakuradze <\/b> <br> 1 publication(s) <br> Latest publication: <br> J. Buchner et al. (2020) <br> Land-cover change in the Caucasus Mountains since 1987 based on the topographic correction of multi-temporal Landsat composites <br> <i> Remote Sensing of Environment <\/i>", "<b> Thomas Udelhoven <\/b> <br> 4 publication(s) <br> Latest publication: <br> D. Frantz et al. (2016) <br> Improving the Spatial Resolution of Land Surface Phenology by Fusing Medium- and Coarse-Resolution Inputs <br> <i> IEEE Transactions on Geoscience and Remote Sensing <\/i>", "<b> Tobias Krueger <\/b> <br> 1 publication(s) <br> Latest publication: <br> K. Lebek et al. (2019) <br> Interdependent effects of climate variability and forest cover change on streamflow dynamics: a case study in the Upper Umvoti River Basin, South Africa <br> <i> Regional Environmental Change <\/i>", "<b> Tobias Kuemmerle <\/b> <br> 1 publication(s) <br> Latest publication: <br> J. Buchner et al. (2020) <br> Land-cover change in the Caucasus Mountains since 1987 based on the topographic correction of multi-temporal Landsat composites <br> <i> Remote Sensing of Environment <\/i>", "<b> Volker Radeloff <\/b> <br> 1 publication(s) <br> Latest publication: <br> J. Buchner et al. (2020) <br> Land-cover change in the Caucasus Mountains since 1987 based on the topographic correction of multi-temporal Landsat composites <br> <i> Remote Sensing of Environment <\/i>"],
+      "hoverinfo": ["text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text"],
+      "marker": {
+        "colorbar": {
+          "title": "",
+          "ticklen": 2
+        },
+        "cmin": 2014,
+        "cmax": 2020,
+        "colorscale": [
+          ["0", "rgba(68,1,84,1)"],
+          ["0.0416666666666667", "rgba(71,17,100,1)"],
+          ["0.0833333333333333", "rgba(72,31,112,1)"],
+          ["0.125", "rgba(71,45,123,1)"],
+          ["0.166666666666667", "rgba(68,58,131,1)"],
+          ["0.208333333333333", "rgba(64,70,136,1)"],
+          ["0.25", "rgba(59,82,139,1)"],
+          ["0.291666666666667", "rgba(54,93,141,1)"],
+          ["0.333333333333333", "rgba(49,104,142,1)"],
+          ["0.375", "rgba(44,114,142,1)"],
+          ["0.416666666666667", "rgba(40,124,142,1)"],
+          ["0.458333333333333", "rgba(36,134,142,1)"],
+          ["0.5", "rgba(33,144,141,1)"],
+          ["0.541666666666667", "rgba(31,154,138,1)"],
+          ["0.583333333333333", "rgba(32,164,134,1)"],
+          ["0.625", "rgba(39,173,129,1)"],
+          ["0.666666666666667", "rgba(53,183,121,1)"],
+          ["0.708333333333333", "rgba(71,193,110,1)"],
+          ["0.75", "rgba(93,200,99,1)"],
+          ["0.791666666666667", "rgba(117,208,84,1)"],
+          ["0.833333333333333", "rgba(143,214,68,1)"],
+          ["0.875", "rgba(170,220,50,1)"],
+          ["0.916666666666667", "rgba(199,224,32,1)"],
+          ["0.958333333333333", "rgba(227,228,24,1)"],
+          ["1", "rgba(253,231,37,1)"]
+        ],
+        "showscale": false,
+        "color": [2018, 2020, 2020, 2018, 2018, 2019, 2018, 2020, 2018, 2018, 2018, 2016, 2020, 2020, 2017, 2020, 2018, 2014, 2019, 2020, 2020, 2018, 2020, 2018, 2018, 2020, 2020, 2018, 2020, 2018, 2020, 2018, 2018, 2020, 2019, 2014, 2020, 2018, 2016, 2018, 2019, 2019, 2020, 2019, 2019, 2019, 2020, 2020, 2020, 2017, 2014, 2020, 2014, 2014, 2016, 2019, 2018, 2014, 2016, 2014, 2019, 2018, 2020, 2020, 2018, 2019, 2020, 2014, 2020, 2018, 2016, 2019, 2017, 2020, 2018, 2019, 2018, 2020, 2016, 2019, 2020, 2020],
+        "size": [79.166000198007, 10, 10, 10, 10, 10, 10, 10, 46.332835584778, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 100, 10, 10, 10, 38.7930909733702, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 77.2237339353012, 10, 10, 28.166417792389, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 38.7930909733702, 77.2237339353012, 10, 10, 28.166417792389, 10, 10, 10, 10, 10, 10, 10, 52.1811158556096, 10, 28.166417792389, 10, 38.7930909733702, 10, 28.166417792389, 28.166417792389, 10, 10, 10, 10, 46.332835584778, 10, 10, 10],
+        "sizemode": "area",
+        "line": {
+          "colorbar": {
+            "title": "",
+            "ticklen": 2
+          },
+          "cmin": 2014,
+          "cmax": 2020,
+          "colorscale": [
+            ["0", "rgba(68,1,84,1)"],
+            ["0.0416666666666667", "rgba(71,17,100,1)"],
+            ["0.0833333333333333", "rgba(72,31,112,1)"],
+            ["0.125", "rgba(71,45,123,1)"],
+            ["0.166666666666667", "rgba(68,58,131,1)"],
+            ["0.208333333333333", "rgba(64,70,136,1)"],
+            ["0.25", "rgba(59,82,139,1)"],
+            ["0.291666666666667", "rgba(54,93,141,1)"],
+            ["0.333333333333333", "rgba(49,104,142,1)"],
+            ["0.375", "rgba(44,114,142,1)"],
+            ["0.416666666666667", "rgba(40,124,142,1)"],
+            ["0.458333333333333", "rgba(36,134,142,1)"],
+            ["0.5", "rgba(33,144,141,1)"],
+            ["0.541666666666667", "rgba(31,154,138,1)"],
+            ["0.583333333333333", "rgba(32,164,134,1)"],
+            ["0.625", "rgba(39,173,129,1)"],
+            ["0.666666666666667", "rgba(53,183,121,1)"],
+            ["0.708333333333333", "rgba(71,193,110,1)"],
+            ["0.75", "rgba(93,200,99,1)"],
+            ["0.791666666666667", "rgba(117,208,84,1)"],
+            ["0.833333333333333", "rgba(143,214,68,1)"],
+            ["0.875", "rgba(170,220,50,1)"],
+            ["0.916666666666667", "rgba(199,224,32,1)"],
+            ["0.958333333333333", "rgba(227,228,24,1)"],
+            ["1", "rgba(253,231,37,1)"]
+          ],
+          "showscale": false,
+          "color": [2018, 2020, 2020, 2018, 2018, 2019, 2018, 2020, 2018, 2018, 2018, 2016, 2020, 2020, 2017, 2020, 2018, 2014, 2019, 2020, 2020, 2018, 2020, 2018, 2018, 2020, 2020, 2018, 2020, 2018, 2020, 2018, 2018, 2020, 2019, 2014, 2020, 2018, 2016, 2018, 2019, 2019, 2020, 2019, 2019, 2019, 2020, 2020, 2020, 2017, 2014, 2020, 2014, 2014, 2016, 2019, 2018, 2014, 2016, 2014, 2019, 2018, 2020, 2020, 2018, 2019, 2020, 2014, 2020, 2018, 2016, 2019, 2017, 2020, 2018, 2019, 2018, 2020, 2016, 2019, 2020, 2020]
+        }
+      },
+      "textfont": {
+        "size": [79.166000198007, 10, 10, 10, 10, 10, 10, 10, 46.332835584778, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 100, 10, 10, 10, 38.7930909733702, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 77.2237339353012, 10, 10, 28.166417792389, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 38.7930909733702, 77.2237339353012, 10, 10, 28.166417792389, 10, 10, 10, 10, 10, 10, 10, 52.1811158556096, 10, 28.166417792389, 10, 38.7930909733702, 10, 28.166417792389, 28.166417792389, 10, 10, 10, 10, 46.332835584778, 10, 10, 10]
+      },
+      "error_y": {
+        "width": []
+      },
+      "error_x": {
+        "width": []
+      },
+      "xaxis": "x",
+      "yaxis": "y",
+      "frame": null
+    },
+    {
+      "x": [-1.2726264670637, -1.05171980721152, 4.27260877777309, -1.54108216252627, 1.10505412234333, 4.32338808136187, -3.01870013691459, -0.390054941813585, -1.79540567047724, -1.71379277426312, 1.79978943331048, -0.386361525747042, -1.29138308273449, 3.35184761885081, -2.31232166575359, -1.04884658753386, 2.13067182926018, 2.22010864852364, 3.89279072071057, 2.4565815524399, 0.78380565633142, 3.80276425201702, -1.4636358419301, 0.88845319940626, -2.14291236335806, 3.43798418082812, 3.72095572629567, 1.22384624752895, 3.95680958947594, 1.3481508714458, -0.730082063081177, 1.15067427893413, 0.838033895830965, -1.67947092578932, -2.37345265407473, 1.26550849180258, -1.62255992892602, 2.10421832141066, -0.76667785050148, 2.22759329194805, -1.75789296974258, -3.07738138265254, -0.489507433861241, -2.8044857945916, 4.55767073429259, 4.23641595036277, 1.76513690712805, -0.69498850220812, 3.01184708756245, -1.38988924212273, 1.4431472904605, 3.04518447379072, 1.66438739804686, 1.13234403455037, -0.903001095245503, -0.426089086262581, -2.37670157594432, 2.06415485491223, -0.29610932968853, 1.92940055450375, 4.49968453926375, 1.79753281915993, -0.261642704263206, -0.592209618263027, 1.75165472969096, 3.63718174223631, 2.95978322082146, 1.70666558231423, 3.79069527654518, 1.50096542303968, -1.3572197360622, -2.79734508655311, -1.03607995940238, 3.3198909861352, 1.47762287945925, 4.06161988863182, -2.18737653975755, -1.36899235542332, 0.488444298570025, 4.58972895423832, -1.11847368622181, -0.91146834288241],
+      "y": [-1.26813506850718, 3.3379879672252, -1.67732014689135, -3.05965390539781, -3.88771654859051, -0.172803277678729, -0.706403139942613, 3.27065806802968, -1.39555079424878, -2.60193297022473, -2.8481117672648, -2.36476965987981, 2.79112667874032, -2.3365187467201, -1.27517340883096, 2.4632868172737, -2.98976502153847, 1.63158517678377, 1.20788752515841, 3.55168313462887, -0.0978301854585344, 2.24893256226608, 2.29888431857531, -3.26811341888026, -0.686373534063212, 2.71518864712679, -1.50077892128854, -2.71564252137786, -2.21310128773031, -3.52469650511161, 3.43871140312218, -3.09682395157017, -3.6193720864604, 2.5874078789277, 0.63100351225363, 2.28517148335352, 2.96970285658957, -3.66992199961711, -2.74886699152, -3.32856313493149, -0.299827817408301, 0.389289326800805, 2.54426426279071, -0.0413418961121236, 0.780912710343797, 1.73021712979977, 3.74071048136187, 2.25282919274514, 3.07915907666119, -0.714361463164916, 1.35111616347776, 0.0993319842389035, 1.83213692375705, 1.8073735284642, -1.78539303117574, -1.1123394150912, -2.23376605997871, 2.07136781387853, -0.172355742540291, 1.24888064646601, -0.68230831947089, -3.82022610898841, 2.85212966141274, 3.00697490799087, -3.35049552150432, -0.503639616344162, -1.0487643054632, 2.39120355430727, 0.00975941588557499, -2.93174209750206, -1.94943334040232, 0.856602553560456, -0.022837885177919, -1.81771273371642, -3.93709929114527, -0.806087619917521, -2.71724196314126, 3.27537305798583, 0.783164264497795, 1.29721729202184, 2.12052625790946, 2.87453203814626],
+      "text": ["Achim Röder", "Afag Rizayeva", "Akpona Okujeni", "Alexander Gröngröft", "André Hollstein", "Andreas Rabe", "Andreas Uhl", "Anna Komarova", "Anne Schneibel", "Annette Eschenbach", "Antoine Mangin", "Ben Strohbach", "Benjamin Bleyhl", "Benjamin Jakimow", "Benjamin Kowalski", "Bin Tan", "Bringfried Pflug", "Christian Bossung", "Cornelius Senf", "Daniel Scheffler", "David Frantz", "David Parduhn", "Elshad Askerov", "Eric Vermote", "Erik Haß", "Ewa Grabska", "Fabian Thiel", "Ferran Gascon", "Franz Schug", "Fuqin Li", "Garegin Tepanosyan", "Georgia Doxani", "Grit Kirches", "He Yin", "Henning Buddenbaum", "Holger Lilienthal", "Hovik Sayadyan", "Jean-Claude Roger", "Jens Oldeland", "Jérôme Louis", "Joachim Hill", "Joachim Langshausen", "Johanna Buchner", "Johannes Stoffels", "José Monteiro", "Karen Lebek", "Karl Segl", "Katarzyna Lewinska", "Katarzyna Ostapowicz", "Kim Fischer", "Laura Giustarini", "Lin Yan", "Loise Wandera", "Lucien Hoffmann", "Manfred Finckh", "Marion Stellmes", "Marleen de Blécourt", "Martin Schlerf", "Michael Schmidt", "Miriam Machwitz", "Mutlu Özdogan", "Nima Pahlevan", "Nodar Elizbarashvili", "Nugzar Zazanashvili", "Olivier Hagolle", "Patrick Griffiths", "Patrick Hostert", "Patrick Matgen", "Philippe Rufin", "Quinten Vanhellemont", "Rasmus Revermann", "Sascha Nink", "Sebastian Mader", "Sebastian van der Linden", "Stefan Adriaensen", "Stefan Ernst", "Stephan Baumann", "Tamar Bakuradze", "Thomas Udelhoven", "Tobias Krueger", "Tobias Kuemmerle", "Volker Radeloff"],
+      "type": "scatter",
+      "mode": "text",
+      "textposition": ["top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right", "top right"],
+      "textfont": {
+        "color": "grey60",
+        "size": 8
+      },
+      "showlegend": false,
+      "marker": {
+        "color": "rgba(255,127,14,1)",
+        "line": {
+          "color": "rgba(255,127,14,1)"
+        }
+      },
+      "error_y": {
+        "color": "rgba(255,127,14,1)"
+      },
+      "error_x": {
+        "color": "rgba(255,127,14,1)"
+      },
+      "line": {
+        "color": "rgba(255,127,14,1)"
+      },
+      "xaxis": "x",
+      "yaxis": "y",
+      "frame": null
+    },
+    {
+      "x": [-3.07738138265254, 4.58972895423832],
+      "y": [-3.93709929114527, 3.74071048136187],
+      "type": "scatter",
+      "mode": "markers",
+      "opacity": 0,
+      "hoverinfo": "none",
+      "showlegend": false,
+      "marker": {
+        "colorbar": {
+          "title": "",
+          "ticklen": 2,
+          "len": 0.5,
+          "lenmode": "fraction",
+          "y": 1,
+          "yanchor": "top"
+        },
+        "cmin": 2014,
+        "cmax": 2020,
+        "colorscale": [
+          ["0", "rgba(68,1,84,1)"],
+          ["0.0416666666666667", "rgba(71,17,100,1)"],
+          ["0.0833333333333333", "rgba(72,31,112,1)"],
+          ["0.125", "rgba(71,45,123,1)"],
+          ["0.166666666666667", "rgba(68,58,131,1)"],
+          ["0.208333333333333", "rgba(64,70,136,1)"],
+          ["0.25", "rgba(59,82,139,1)"],
+          ["0.291666666666667", "rgba(54,93,141,1)"],
+          ["0.333333333333333", "rgba(49,104,142,1)"],
+          ["0.375", "rgba(44,114,142,1)"],
+          ["0.416666666666667", "rgba(40,124,142,1)"],
+          ["0.458333333333333", "rgba(36,134,142,1)"],
+          ["0.5", "rgba(33,144,141,1)"],
+          ["0.541666666666667", "rgba(31,154,138,1)"],
+          ["0.583333333333333", "rgba(32,164,134,1)"],
+          ["0.625", "rgba(39,173,129,1)"],
+          ["0.666666666666667", "rgba(53,183,121,1)"],
+          ["0.708333333333333", "rgba(71,193,110,1)"],
+          ["0.75", "rgba(93,200,99,1)"],
+          ["0.791666666666667", "rgba(117,208,84,1)"],
+          ["0.833333333333333", "rgba(143,214,68,1)"],
+          ["0.875", "rgba(170,220,50,1)"],
+          ["0.916666666666667", "rgba(199,224,32,1)"],
+          ["0.958333333333333", "rgba(227,228,24,1)"],
+          ["1", "rgba(253,231,37,1)"]
+        ],
+        "showscale": true,
+        "color": [2014, 2020],
+        "line": {
+          "color": "rgba(44,160,44,1)"
+        }
+      },
+      "xaxis": "x",
+      "yaxis": "y",
+      "frame": null
+    }
+  ],
+  "highlight": {
+    "on": "plotly_click",
+    "persistent": false,
+    "dynamic": false,
+    "selectize": false,
+    "opacityDim": 0.2,
+    "selected": {
+      "opacity": 1
+    },
+    "debounce": 0
+  },
+  "shinyEvents": ["plotly_hover", "plotly_click", "plotly_selected", "plotly_relayout", "plotly_brushed", "plotly_brushing", "plotly_clickannotation", "plotly_doubleclick", "plotly_deselect", "plotly_afterplot", "plotly_sunburstclick"],
+  "base_url": "https://plot.ly"
+}
