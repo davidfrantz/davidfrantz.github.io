@@ -584,7 +584,11 @@
 <p>Chart start</p>
 
 
-<div id="chart-581267349" class="chart pb-3" style="max-width: 100%; margin: auto;"></div>
+
+  
+
+
+<div id="chart-148273956" class="chart pb-3" style="max-width: 100%; margin: auto;"></div>
 <script>
   (function() {
     let a = setInterval( function() {
@@ -593,8 +597,8 @@
       }
       clearInterval( a );
 
-      Plotly.d3.json("network.json", function(chart) {
-        Plotly.plot('chart-581267349', chart.data, chart.layout, {responsive: true});
+      Plotly.d3.json("/img/network.json", function(chart) {
+        Plotly.plot('chart-148273956', chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();

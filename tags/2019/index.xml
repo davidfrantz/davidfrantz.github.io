@@ -23,7 +23,11 @@
 &lt;p&gt;Chart start&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-894615237&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+
+  
+
+
+&lt;div id=&#34;chart-568934127&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -32,8 +36,8 @@
       }
       clearInterval( a );
 
-      Plotly.d3.json(&#34;network.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-894615237&#39;, chart.data, chart.layout, {responsive: true});
+      Plotly.d3.json(&#34;/img/network.json&#34;, function(chart) {
+        Plotly.plot(&#39;chart-568934127&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
