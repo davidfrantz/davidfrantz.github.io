@@ -2372,6 +2372,26 @@ interpolated. If there is no valid AOD estimation for the complete image, a fill
       <description>&lt;p&gt;&lt;em&gt;This tutorial uses FORCE v. 3.0&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id=&#34;learning-objective&#34;&gt;&lt;strong&gt;Learning Objective&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;This tutorial will show how to prepare the Water Vapor Database (WVDB) for the &lt;strong&gt;FORCE Level 2 Processing System (FORCE L2PS)&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Chart start&lt;/p&gt;
+
+
+&lt;div id=&#34;chart-917325648&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;script&gt;
+  (function() {
+    let a = setInterval( function() {
+      if ( typeof window.Plotly === &#39;undefined&#39; ) {
+        return;
+      }
+      clearInterval( a );
+
+      Plotly.d3.json(&#34;network.json&#34;, function(chart) {
+        Plotly.plot(&#39;chart-917325648&#39;, chart.data, chart.layout, {responsive: true});
+      });
+    }, 500 );
+  })();
+
+&lt;/script&gt;
+&lt;p&gt;Chart end&lt;/p&gt;
 &lt;h2 id=&#34;background&#34;&gt;&lt;strong&gt;Background&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;During atmospheric correction, the effect of water vapor absorption can only be corrected if we know the amount of water vapor in the atmosphere.&lt;/p&gt;
 &lt;p&gt;If you are using Sentinel-2 data only, you can stop reading. Sentinel-2 is equipped with a water vapor channel, and thus, water wapor amount can be estimated from the images.&lt;/p&gt;

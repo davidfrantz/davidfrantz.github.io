@@ -581,6 +581,26 @@
       <p><em>This tutorial uses FORCE v. 3.0</em></p>
 <h2 id="learning-objective"><strong>Learning Objective</strong></h2>
 <p>This tutorial will show how to prepare the Water Vapor Database (WVDB) for the <strong>FORCE Level 2 Processing System (FORCE L2PS)</strong>.</p>
+<p>Chart start</p>
+
+
+<div id="chart-745983261" class="chart pb-3" style="max-width: 100%; margin: auto;"></div>
+<script>
+  (function() {
+    let a = setInterval( function() {
+      if ( typeof window.Plotly === 'undefined' ) {
+        return;
+      }
+      clearInterval( a );
+
+      Plotly.d3.json("network.json", function(chart) {
+        Plotly.plot('chart-745983261', chart.data, chart.layout, {responsive: true});
+      });
+    }, 500 );
+  })();
+
+</script>
+<p>Chart end</p>
 <h2 id="background"><strong>Background</strong></h2>
 <p>During atmospheric correction, the effect of water vapor absorption can only be corrected if we know the amount of water vapor in the atmosphere.</p>
 <p>If you are using Sentinel-2 data only, you can stop reading. Sentinel-2 is equipped with a water vapor channel, and thus, water wapor amount can be estimated from the images.</p>
@@ -1118,6 +1138,14 @@ Frantz, D., Stellmes, M., &amp; Hostert, P. (2019). A Global MODIS Water Vapor D
     
 
     
+    
+
+    
+    
+    <script>
+      window.PlotlyConfig = {MathJaxConfig: 'local'};
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/1.54.7/plotly.min.js" integrity="sha512-eftiPCZn2L4fmOs+IforhSiBbW7f+fLzhqTPTD74kSOt4gcD+Q2btwLJ8V7fklVoKuSegQCKVqP/73T0tbmrmA==" crossorigin="anonymous"></script>
     
 
     
