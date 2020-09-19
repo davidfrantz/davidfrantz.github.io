@@ -2477,7 +2477,7 @@ interpolated. If there is no valid AOD estimation for the complete image, a fill
   
 
 
-&lt;div id=&#34;chart-813249657&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; max-height=750; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-273198456&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -2487,7 +2487,7 @@ interpolated. If there is no valid AOD estimation for the complete image, a fill
       clearInterval( a );
 
       Plotly.d3.json(&#34;/img/test.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-813249657&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-273198456&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
@@ -2501,7 +2501,7 @@ interpolated. If there is no valid AOD estimation for the complete image, a fill
   
 
 
-&lt;div id=&#34;chart-628145973&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; max-height=750; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-831956247&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -2511,7 +2511,7 @@ interpolated. If there is no valid AOD estimation for the complete image, a fill
       clearInterval( a );
 
       Plotly.d3.json(&#34;/img/network.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-628145973&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-831956247&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
