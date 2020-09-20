@@ -590,7 +590,7 @@ The same applies if we consider multiple sensors, e.g. two Landsat and two Senti
 And of course, nominal revisit != actual revisit.
 We cannot see through clouds (unless we are talking radar).
 Probably, you want to remove snow observations.
-There might have been some sensor or ground segment outages, or the data couldn't have been processed to our quality requirements (e.g. tier 2 data).
+There might have been some sensor or ground segment outages, or the data couldn&rsquo;t have been processed to our quality requirements (e.g. tier 2 data).
 The sensor might not have looked on Earth as the satellite took a detour to avoid space debris etc. etc..</p>
 <p>Interpolation might simply be used to close these gaps.
 It smoothes the time series, and thus effectively reduces noise.
@@ -636,7 +636,7 @@ A kernel is moved over the time series, and the observations are weighted accord
 This means that an observation in the middle of the kernel gets a higher weight.</p>
 <p>Now, data density is usually variable, which means that we have seasons with higher data availability (e.g. in the summer) - and seasons with poor data availability.
 For good data situations, we would want to have a narrow Gaussian to more closely follow the actual time series.
-For bad data situations, however, a narrow kernel would result in many nodata values and wouldn't smooth the time series appropriately.</p>
+For bad data situations, however, a narrow kernel would result in many nodata values and wouldn&rsquo;t smooth the time series appropriately.</p>
 <p>Therefore, we use multiple kernels of different widths.
 The estimates from those kernels are eventually aggregated using a weighted average, wherein the weights correspond to the data availability within each kernel.
 This gives preference to the kernel with better data coverage.</p>
@@ -757,7 +757,7 @@ Note however: this method might also remove some “valid” data points, e.g. m
 This risk increases with decreasing data availability.</p>
 <p>Following the outlier removal, there is an inliner restoration.
 If an observation (flagged as cloud, cloud shadow etc.) fits well into the time series trajectory, it will be restored.</p>
-<p>For our purpose, using this option is fine, thus, let's keep the default values:</p>
+<p>For our purpose, using this option is fine, thus, let&rsquo;s keep the default values:</p>
 <pre><code class="language-bash">ABOVE_NOISE = 3
 BELOW_NOISE = 1
 </code></pre>
@@ -902,10 +902,10 @@ computing pyramids for 4D-Tasseled-Cap-TSI.vrt
 </code></pre>
 <h2 id="visualization"><strong>Visualization</strong></h2>
 <p><strong>Layer Styling</strong></p>
-<p>Let's drag'n'drop the <code>4D-Tasseled-Cap-TSI.vrt</code> into <strong>QGIS</strong>, and visualize the Tasseled Cap components of the 1st timestamp as RGB composite (using the <code>Multiband color</code> renderer), i.e. we put the first three bands into the red (Brightness), green (Greenness), and blue (Wetness) channels for intuitive color interpretation.
+<p>Let&rsquo;s drag&rsquo;n&rsquo;drop the <code>4D-Tasseled-Cap-TSI.vrt</code> into <strong>QGIS</strong>, and visualize the Tasseled Cap components of the 1st timestamp as RGB composite (using the <code>Multiband color</code> renderer), i.e. we put the first three bands into the red (Brightness), green (Greenness), and blue (Wetness) channels for intuitive color interpretation.
 The chosen stretch will later be applied to the animation as well.</p>
 <p><strong>Time Series Plots</strong></p>
-<p>You can conveniently look at the pixels's time series using the <a href="https://raster-data-plotting.readthedocs.io/en/latest/">Raster Data Plotting</a> plugin (© <a href="mailto:andreas.rabe@geo.hu-berlin.de">Andreas Rabe</a>).
+<p>You can conveniently look at the pixels&rsquo;s time series using the <a href="https://raster-data-plotting.readthedocs.io/en/latest/">Raster Data Plotting</a> plugin (© <a href="mailto:andreas.rabe@geo.hu-berlin.de">Andreas Rabe</a>).
 I am using red, green, and blue lines for the Brigthness, Greenness, and Wetness components, respectively, and decrease the symbol size a bit.</p>
 
 
@@ -939,9 +939,9 @@ I am using red, green, and blue lines for the Brigthness, Greenness, and Wetness
 </figure>
 
 <p><strong>Time Series Animation</strong></p>
-<p>Let's use the <a href="https://raster-timeseries-manager.readthedocs.io/en/latest/">Raster Timeseries Manager</a> plugin (© <a href="mailto:andreas.rabe@geo.hu-berlin.de">Andreas Rabe</a>) to generate a web- or presentation-ready animation.</p>
+<p>Let&rsquo;s use the <a href="https://raster-timeseries-manager.readthedocs.io/en/latest/">Raster Timeseries Manager</a> plugin (© <a href="mailto:andreas.rabe@geo.hu-berlin.de">Andreas Rabe</a>) to generate a web- or presentation-ready animation.</p>
 <blockquote>
-<p><strong><em>SETUP:</em></strong>  For preparing the animation, go to the plugin's <code>System</code> tab.
+<p><strong><em>SETUP:</em></strong>  For preparing the animation, go to the plugin&rsquo;s <code>System</code> tab.
 This needs to be done only once and will set up all necessary tools for saving the animation.
 For this, you need to install <a href="https://imagemagick.org/script/download.php">ImageMagick</a>, and then tell the plugin where the <code>imagemagick</code> and <code>ffmpeg</code> executables are located.</p>
 </blockquote>
@@ -998,7 +998,7 @@ Adjust the canvas size to your needs.</p>
 
 </figure>
 
-<p>That's it. Have fun exploring your 4D data.</p>
+<p>That&rsquo;s it. Have fun exploring your 4D data.</p>
 
     </div>
 

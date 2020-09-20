@@ -588,7 +588,7 @@
   
 
 
-<div id="chart-139782564" class="chart pb-3" style="max-width: 100%; margin: auto;"></div>
+<div id="chart-496812753" class="chart pb-3" style="max-width: 100%; margin: auto;"></div>
 <script>
   (function() {
     let a = setInterval( function() {
@@ -598,7 +598,7 @@
       clearInterval( a );
 
       Plotly.d3.json("/img/test.json", function(chart) {
-        Plotly.plot('chart-139782564', chart.data, chart.layout, {responsive: true});
+        Plotly.plot('chart-496812753', chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
@@ -612,7 +612,7 @@
   
 
 
-<div id="chart-423167598" class="chart pb-3" style="max-width: 100%; margin: auto;"></div>
+<div id="chart-693452178" class="chart pb-3" style="max-width: 100%; margin: auto;"></div>
 <script>
   (function() {
     let a = setInterval( function() {
@@ -622,7 +622,7 @@
       clearInterval( a );
 
       Plotly.d3.json("/img/network.json", function(chart) {
-        Plotly.plot('chart-423167598', chart.data, chart.layout, {responsive: true});
+        Plotly.plot('chart-693452178', chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
@@ -632,7 +632,7 @@
 <h2 id="background"><strong>Background</strong></h2>
 <p>During atmospheric correction, the effect of water vapor absorption can only be corrected if we know the amount of water vapor in the atmosphere.</p>
 <p>If you are using Sentinel-2 data only, you can stop reading. Sentinel-2 is equipped with a water vapor channel, and thus, water wapor amount can be estimated from the images.</p>
-<p>Landsat, however, doesn't have such a band. Therefore, we need to rely on external data, which needs to be precompiled into a water vapor database.</p>
+<p>Landsat, however, doesn&rsquo;t have such a band. Therefore, we need to rely on external data, which needs to be precompiled into a water vapor database.</p>
 <h2 id="water-vapor-database"><strong>Water Vapor Database</strong></h2>
 <p>The database holds water vapor values for the central coordinates of each WRS-2 frame. If available, day-specific values are used.</p>
 <p>The database consists of one table for each day (<code>WVP_YYYY-MM-DD.txt</code>)</p>

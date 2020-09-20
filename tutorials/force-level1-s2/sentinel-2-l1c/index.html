@@ -583,7 +583,7 @@
 <p>This tutorial explains how to use the FORCE Level 1 Archiving Suite (FORCE L1AS) to download, organize, and maintain a clean and consistent Sentinel-2 Level 1 data pool, as well as corresponding data queues needed for the Level 2 processing.</p>
 <h2 id="overview"><strong>Overview</strong></h2>
 <p>ESA provides an application programming interface (API) for data query and automatic download (see <a href="https://scihub.copernicus.eu/twiki/do/view/SciHubUserGuide/BatchScripting?redirectedfrom=SciHubUserGuide.8BatchScripting">here</a>). Based on some user-defined parameters (coordinates etc.) <strong>FORCE L1AS</strong> pulls a metadata report from the Copernicus API Hub. Each hit is compared
-with the local data holdings you already downloaded. If a new file is sitting on ESA's end, the missing image is downloaded. A file queue is generated and updated accordingly - which is the main input to the <strong>FORCE Level 2 Processing System</strong>.</p>
+with the local data holdings you already downloaded. If a new file is sitting on ESA&rsquo;s end, the missing image is downloaded. A file queue is generated and updated accordingly - which is the main input to the <strong>FORCE Level 2 Processing System</strong>.</p>
 
 
 
@@ -616,7 +616,7 @@ with the local data holdings you already downloaded. If a new file is sitting on
 </figure>
 
 <h2 id="setup"><strong>Setup</strong></h2>
-<p>Now, the first step is to get access to ESA's data and services. For that, you need an account. If you don't have one, register <a href="https://scihub.copernicus.eu/dhus/#/self-registration">here</a>. It's free.</p>
+<p>Now, the first step is to get access to ESA&rsquo;s data and services. For that, you need an account. If you don&rsquo;t have one, register <a href="https://scihub.copernicus.eu/dhus/#/self-registration">here</a>. It&rsquo;s free.</p>
 <p>Then, your credentials must be made available to <strong>FORCE L1AS</strong> to be able to request and receive ESA data. On your machine, your login credentials must be placed in a hidden file <code>.scihub</code> in your home directory. I advise to only give user reading rights to this file. The user name goes in the first line, the password in the second line. Please note that special characters might be problematic. Also note, if you generate this file from a Windows machine, the Windows EOL character will cause problems.</p>
 <h2 id="download-some-data"><strong>Download some data</strong></h2>
 <h3 id="instructions"><strong>Instructions</strong></h3>
@@ -654,8 +654,8 @@ with the local data holdings you already downloaded. If a new file is sitting on
     Second line: Password, special characters might be problematic
 </code></pre>
 <h3 id="dry-run"><strong>Dry run</strong></h3>
-<p>Please note that <strong>FORCE</strong> won't check that there is enough space on your hard disc. If you don't dare to download all data straight away, there is a dry run option implemented that only checks how much data would be downloaded with the parameters you provided. This is given by the optional <code>dry</code> keyword at the end of the command line. The following query asks for all data in July 2019 with a maximum cloud coverage of 50%. The region of interest here is a rather small area in Zambia's Northwestern Province, depicting a large copper mine in the Miombo forest.</p>
-<p>The single most frequent error here is the specification of the coordinates. If you don't receive any data for your study area, or end up somewhere else entirely, double check that the coordinates are given in the correct order.</p>
+<p>Please note that <strong>FORCE</strong> won&rsquo;t check that there is enough space on your hard disc. If you don&rsquo;t dare to download all data straight away, there is a dry run option implemented that only checks how much data would be downloaded with the parameters you provided. This is given by the optional <code>dry</code> keyword at the end of the command line. The following query asks for all data in July 2019 with a maximum cloud coverage of 50%. The region of interest here is a rather small area in Zambia&rsquo;s Northwestern Province, depicting a large copper mine in the Miombo forest.</p>
+<p>The single most frequent error here is the specification of the coordinates. If you don&rsquo;t receive any data for your study area, or end up somewhere else entirely, double check that the coordinates are given in the correct order.</p>
 <ul>
 <li>X = Longitude</li>
 <li>Y = Latitude</li>
@@ -667,7 +667,7 @@ with the local data holdings you already downloaded. If a new file is sitting on
 5.19094 GB data volume available
 </code></pre>
 <h3 id="download"><strong>Download</strong></h3>
-<p>The actual download is triggered by omitting the <code>dry</code> option. <strong>FORCE L1AS</strong> downloads all data that match the parameters provided - and which weren't downloaded before. Note that the program checks against the files on the disc (not the file queue). Each downloaded image is unzipped after the download. If both steps were successful, the image is appended to the file queue.</p>
+<p>The actual download is triggered by omitting the <code>dry</code> option. <strong>FORCE L1AS</strong> downloads all data that match the parameters provided - and which weren&rsquo;t downloaded before. Note that the program checks against the files on the disc (not the file queue). Each downloaded image is unzipped after the download. If both steps were successful, the image is appended to the file queue.</p>
 <p>Do not wonder if FORCE tells you that it has found exactly 100 S2A/B files. The ESA API Hub only allows to retrieve metadata for 100 products. Thus, FORCE iterates through the pages until no more image can be retrieved.</p>
 <p>Please note that download speed varies considerably..</p>
 <pre><code class="language-bash">force-level1-sentinel2 /data/Dagobah/S2L1C /data/Dagobah/S2L1C/zambia.txt &quot;25.43/-12.46,25.94/-12.46,25.94/-11.98,25.39/-11.99,25.43/-12.46&quot; 2019-07-01 2019-07-31 0 50
@@ -731,7 +731,7 @@ S2B_MSIL1C_20190725T081609_N0208_R121_T35LLG_20190725T120407.SAFE
 /data/Dagobah/S2L1C/T35LLG/S2B_MSIL1C_20190702T080619_N0207_R078_T35LLG_20190702T115117.SAFE QUEUED
 </code></pre>
 <h2 id="download-some-more-data"><strong>Download some more data</strong></h2>
-<p>Downloading more data is easy. You can use the same datapool, and the same file queue for this. Images are only downloaded if they weren't downloaded yet. Thus, you can e.g. change the boundingbox, time frame or cloud coverage, and only download data that was not covered by the previous run. In the following example, the Eastern X-Coordinates were increased by 1 degree.</p>
+<p>Downloading more data is easy. You can use the same datapool, and the same file queue for this. Images are only downloaded if they weren&rsquo;t downloaded yet. Thus, you can e.g. change the boundingbox, time frame or cloud coverage, and only download data that was not covered by the previous run. In the following example, the Eastern X-Coordinates were increased by 1 degree.</p>
 <pre><code class="language-bash">force-level1-sentinel2 /data/Dagobah/S2L1C /data/Dagobah/S2L1C/zambia.txt &quot;25.43/-12.46,26.94/-12.46,26.94/-11.98,25.39/-11.99,25.43/-12.46&quot; 2019-07-01 2019-07-31 0 50
 </code></pre>
 <pre><code>2020-02-15_15:43:57 - Found 26 S2A/B files.
@@ -817,12 +817,12 @@ S2B_MSIL1C_20190725T081609_N0208_R121_T35LMG_20190725T120407.SAFE
 0 3 * * * force-level1-sentinel2 /data/Dagobah/S2L1C /data/Dagobah/S2L1C/zambia.txt &quot;25.43/-12.46,26.94/-12.46,26.94/-11.98,25.39/-11.99,25.43/-12.46&quot; 2018-07-01 2018-07-31 0 50
 </code></pre>
 <h2 id="long-term-archive"><strong>Long Term Archive</strong></h2>
-<p>In September 2019, ESA has activated the Long Term Archive (LTA) to roll out old (and potentially infrequently used) data products from the online storage system to offline storage. For details, see <a href="https://scihub.copernicus.eu/userguide/LongTermArchive">here</a>. As of now (the following numbers might change in the future), the last year of data shall stay online, and is immediately ready for download. Offline data may be pulled from offline to online storage upon request. The data retrieval shall happen within 24h and the products shall stay online for 3 days. If they were not downloaded within this time period, they need to be pulled again. A user quota is implemented to prevent users from pulling the entire archive - unfortunately this quota is ridicously low, 1 request per hour per user&hellip; Let's all hope it doesn't stay this way :/</p>
+<p>In September 2019, ESA has activated the Long Term Archive (LTA) to roll out old (and potentially infrequently used) data products from the online storage system to offline storage. For details, see <a href="https://scihub.copernicus.eu/userguide/LongTermArchive">here</a>. As of now (the following numbers might change in the future), the last year of data shall stay online, and is immediately ready for download. Offline data may be pulled from offline to online storage upon request. The data retrieval shall happen within 24h and the products shall stay online for 3 days. If they were not downloaded within this time period, they need to be pulled again. A user quota is implemented to prevent users from pulling the entire archive - unfortunately this quota is ridicously low, 1 request per hour per user&hellip; Let&rsquo;s all hope it doesn&rsquo;t stay this way :/</p>
 <p><strong>FORCE &gt;= 3.0</strong> is able to handle LTA data. Previous <strong>FORCE</strong> versions crash when trying to download offline products.
 <strong>FORCE L1AS</strong> determines whether a product is online or offline.</p>
 <ul>
 <li>If online, the image is downloaded as described above.</li>
-<li>If offline, a pull request from offline to online storage is sent. ESA hasn't implemented any callback for this retrieval, thus <strong>FORCE L1AS</strong> will simply send pull requests for each requested offline image, probably download some available online images, and then exit. <strong>FORCE L1AS</strong> needs to be run again to retrieve the restored data. To this end, it comes in handy to set up a download scheduler as desribed above.</li>
+<li>If offline, a pull request from offline to online storage is sent. ESA hasn&rsquo;t implemented any callback for this retrieval, thus <strong>FORCE L1AS</strong> will simply send pull requests for each requested offline image, probably download some available online images, and then exit. <strong>FORCE L1AS</strong> needs to be run again to retrieve the restored data. To this end, it comes in handy to set up a download scheduler as desribed above.</li>
 </ul>
 <pre><code class="language-bash">force-level1-sentinel2 /data/Dagobah/S2L1C /data/Dagobah/S2L1C/zambia.txt &quot;25.43/-12.46,25.94/-12.46,25.94/-11.98,25.39/-11.99,25.43/-12.46&quot; 2018-07-01 2018-07-31 0 50
 </code></pre>

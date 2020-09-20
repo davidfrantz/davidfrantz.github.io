@@ -327,7 +327,7 @@ The same applies if we consider multiple sensors, e.g. two Landsat and two Senti
 And of course, nominal revisit != actual revisit.
 We cannot see through clouds (unless we are talking radar).
 Probably, you want to remove snow observations.
-There might have been some sensor or ground segment outages, or the data couldn&#39;t have been processed to our quality requirements (e.g. tier 2 data).
+There might have been some sensor or ground segment outages, or the data couldn&amp;rsquo;t have been processed to our quality requirements (e.g. tier 2 data).
 The sensor might not have looked on Earth as the satellite took a detour to avoid space debris etc. etc..&lt;/p&gt;
 &lt;p&gt;Interpolation might simply be used to close these gaps.
 It smoothes the time series, and thus effectively reduces noise.
@@ -373,7 +373,7 @@ A kernel is moved over the time series, and the observations are weighted accord
 This means that an observation in the middle of the kernel gets a higher weight.&lt;/p&gt;
 &lt;p&gt;Now, data density is usually variable, which means that we have seasons with higher data availability (e.g. in the summer) - and seasons with poor data availability.
 For good data situations, we would want to have a narrow Gaussian to more closely follow the actual time series.
-For bad data situations, however, a narrow kernel would result in many nodata values and wouldn&#39;t smooth the time series appropriately.&lt;/p&gt;
+For bad data situations, however, a narrow kernel would result in many nodata values and wouldn&amp;rsquo;t smooth the time series appropriately.&lt;/p&gt;
 &lt;p&gt;Therefore, we use multiple kernels of different widths.
 The estimates from those kernels are eventually aggregated using a weighted average, wherein the weights correspond to the data availability within each kernel.
 This gives preference to the kernel with better data coverage.&lt;/p&gt;
@@ -494,7 +494,7 @@ Note however: this method might also remove some “valid” data points, e.g. m
 This risk increases with decreasing data availability.&lt;/p&gt;
 &lt;p&gt;Following the outlier removal, there is an inliner restoration.
 If an observation (flagged as cloud, cloud shadow etc.) fits well into the time series trajectory, it will be restored.&lt;/p&gt;
-&lt;p&gt;For our purpose, using this option is fine, thus, let&#39;s keep the default values:&lt;/p&gt;
+&lt;p&gt;For our purpose, using this option is fine, thus, let&amp;rsquo;s keep the default values:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ABOVE_NOISE = 3
 BELOW_NOISE = 1
 &lt;/code&gt;&lt;/pre&gt;
@@ -639,10 +639,10 @@ computing pyramids for 4D-Tasseled-Cap-TSI.vrt
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;visualization&#34;&gt;&lt;strong&gt;Visualization&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Layer Styling&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Let&#39;s drag&#39;n&#39;drop the &lt;code&gt;4D-Tasseled-Cap-TSI.vrt&lt;/code&gt; into &lt;strong&gt;QGIS&lt;/strong&gt;, and visualize the Tasseled Cap components of the 1st timestamp as RGB composite (using the &lt;code&gt;Multiband color&lt;/code&gt; renderer), i.e. we put the first three bands into the red (Brightness), green (Greenness), and blue (Wetness) channels for intuitive color interpretation.
+&lt;p&gt;Let&amp;rsquo;s drag&amp;rsquo;n&amp;rsquo;drop the &lt;code&gt;4D-Tasseled-Cap-TSI.vrt&lt;/code&gt; into &lt;strong&gt;QGIS&lt;/strong&gt;, and visualize the Tasseled Cap components of the 1st timestamp as RGB composite (using the &lt;code&gt;Multiband color&lt;/code&gt; renderer), i.e. we put the first three bands into the red (Brightness), green (Greenness), and blue (Wetness) channels for intuitive color interpretation.
 The chosen stretch will later be applied to the animation as well.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Time Series Plots&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;You can conveniently look at the pixels&#39;s time series using the &lt;a href=&#34;https://raster-data-plotting.readthedocs.io/en/latest/&#34;&gt;Raster Data Plotting&lt;/a&gt; plugin (© &lt;a href=&#34;mailto:andreas.rabe@geo.hu-berlin.de&#34;&gt;Andreas Rabe&lt;/a&gt;).
+&lt;p&gt;You can conveniently look at the pixels&amp;rsquo;s time series using the &lt;a href=&#34;https://raster-data-plotting.readthedocs.io/en/latest/&#34;&gt;Raster Data Plotting&lt;/a&gt; plugin (© &lt;a href=&#34;mailto:andreas.rabe@geo.hu-berlin.de&#34;&gt;Andreas Rabe&lt;/a&gt;).
 I am using red, green, and blue lines for the Brigthness, Greenness, and Wetness components, respectively, and decrease the symbol size a bit.&lt;/p&gt;
 
 
@@ -676,9 +676,9 @@ I am using red, green, and blue lines for the Brigthness, Greenness, and Wetness
 &lt;/figure&gt;
 
 &lt;p&gt;&lt;strong&gt;Time Series Animation&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Let&#39;s use the &lt;a href=&#34;https://raster-timeseries-manager.readthedocs.io/en/latest/&#34;&gt;Raster Timeseries Manager&lt;/a&gt; plugin (© &lt;a href=&#34;mailto:andreas.rabe@geo.hu-berlin.de&#34;&gt;Andreas Rabe&lt;/a&gt;) to generate a web- or presentation-ready animation.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s use the &lt;a href=&#34;https://raster-timeseries-manager.readthedocs.io/en/latest/&#34;&gt;Raster Timeseries Manager&lt;/a&gt; plugin (© &lt;a href=&#34;mailto:andreas.rabe@geo.hu-berlin.de&#34;&gt;Andreas Rabe&lt;/a&gt;) to generate a web- or presentation-ready animation.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;SETUP:&lt;/em&gt;&lt;/strong&gt;  For preparing the animation, go to the plugin&#39;s &lt;code&gt;System&lt;/code&gt; tab.
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;SETUP:&lt;/em&gt;&lt;/strong&gt;  For preparing the animation, go to the plugin&amp;rsquo;s &lt;code&gt;System&lt;/code&gt; tab.
 This needs to be done only once and will set up all necessary tools for saving the animation.
 For this, you need to install &lt;a href=&#34;https://imagemagick.org/script/download.php&#34;&gt;ImageMagick&lt;/a&gt;, and then tell the plugin where the &lt;code&gt;imagemagick&lt;/code&gt; and &lt;code&gt;ffmpeg&lt;/code&gt; executables are located.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -735,7 +735,7 @@ Adjust the canvas size to your needs.&lt;/p&gt;
 
 &lt;/figure&gt;
 
-&lt;p&gt;That&#39;s it. Have fun exploring your 4D data.&lt;/p&gt;
+&lt;p&gt;That&amp;rsquo;s it. Have fun exploring your 4D data.&lt;/p&gt;
 </description>
     </item>
     
@@ -807,7 +807,7 @@ Adjust the canvas size to your needs.&lt;/p&gt;
 &lt;p&gt;Analysis Ready Data are satellite data that have been processed to a minimum set of requirements and organized into a form that allows immediate analysis with a minimum of additional user effort and interoperability both through time and with other datasets (&lt;a href=&#34;http://ceos.org/ard&#34;&gt;CEOS&lt;/a&gt;).&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Simply put, ARD are readily usable for any application without much further processing. In my opinion, such data need to be well corrected for atmospheric and other effects, have undergone a very good and aggressive cloud screening, are accompanied by pixel-based quality indicators (cloud masks but also other criteria), and are provided in a regular non-overlapping grid system without any redundancy in a single coordinate system (at least on the continental scale) in the form of data cubes.&lt;/p&gt;
-&lt;p&gt;Just as a note: Although ARD are a huge step forward for increasing scientific and operational uptake from broader user groups, ARD do not represent the ultimate state of Analysis-Readiness. Thus, FORCE additionally provides means to generate highly Analysis Ready Data (hARD) and even highly Analysis Ready Data plus (hARD+), of which the latter can be directly ingested, analyzed, and interpreted in a GIS without ANY further processing. However, the scope of this tutorial is on plain ARD (don&#39;t get me wrong, ARD are great!).&lt;/p&gt;
+&lt;p&gt;Just as a note: Although ARD are a huge step forward for increasing scientific and operational uptake from broader user groups, ARD do not represent the ultimate state of Analysis-Readiness. Thus, FORCE additionally provides means to generate highly Analysis Ready Data (hARD) and even highly Analysis Ready Data plus (hARD+), of which the latter can be directly ingested, analyzed, and interpreted in a GIS without ANY further processing. However, the scope of this tutorial is on plain ARD (don&amp;rsquo;t get me wrong, ARD are great!).&lt;/p&gt;
 &lt;h2 id=&#34;force-level-2-processing-system&#34;&gt;&lt;strong&gt;FORCE Level 2 Processing System&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;The &lt;strong&gt;FORCE Level 2 Processing System&lt;/strong&gt; is capable of generating such ARD.&lt;/p&gt;
 &lt;p&gt;In principle, the same algorithm is applied to all supported sensors, although specific processing options are triggered or are only available for some sensors. Essentially, L2PS converts each Level 1 image to ARD specification. This includes three main processing steps:&lt;/p&gt;
@@ -899,11 +899,11 @@ FILE_QUEUE = NULL
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;It is a simple text file. Lines beginning with &lt;code&gt;#&lt;/code&gt; are comments. All parameters are given in tag and value notation (&lt;code&gt;TAG = VALUE&lt;/code&gt;). The file can be edited with any text editor. However, make sure that you are using Unix End-of-Line &lt;code&gt;\n&lt;/code&gt;. MOST errors are because of parameter files with Windows End-of-Line &lt;code&gt;\r\n&lt;/code&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;parameterization&#34;&gt;&lt;strong&gt;Parameterization&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;Let&#39;s start to parameterize L2PS. Open the file in the text editor of your choice, e.g.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s start to parameterize L2PS. Open the file in the text editor of your choice, e.g.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;vi /data/force/param/l2ps.prm
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;1-input--output&#34;&gt;&lt;strong&gt;1) Input / Output&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;The main input is a file queue that holds the full filepaths to all ingested images. All images that are enqueued (processing flag is &lt;code&gt;QUEUED&lt;/code&gt;) will be processed, all other are ignored. After processing, the flag will be set to &lt;code&gt;DONE&lt;/code&gt;. The &lt;a href=&#34;https://davidfrantz.github.io/tutorials/force-level1-s2/sentinel-2-l1c/&#34;&gt;Sentinel-2 Level 1C tutorial&lt;/a&gt; explains how to use the FORCE Level 1 Archiving Suite (FORCE L1AS) to download, organize, and maintain a clean and consistent Sentinel-2 Level 1 data pool, as well as corresponding data queues needed for the Level 2 processing. There isn&#39;t a tutorial for Landsat yet, but it works similarly. Let&#39;s assume, we already have downloaded some images, the file queue is set like this:&lt;/p&gt;
+&lt;p&gt;The main input is a file queue that holds the full filepaths to all ingested images. All images that are enqueued (processing flag is &lt;code&gt;QUEUED&lt;/code&gt;) will be processed, all other are ignored. After processing, the flag will be set to &lt;code&gt;DONE&lt;/code&gt;. The &lt;a href=&#34;https://davidfrantz.github.io/tutorials/force-level1-s2/sentinel-2-l1c/&#34;&gt;Sentinel-2 Level 1C tutorial&lt;/a&gt; explains how to use the FORCE Level 1 Archiving Suite (FORCE L1AS) to download, organize, and maintain a clean and consistent Sentinel-2 Level 1 data pool, as well as corresponding data queues needed for the Level 2 processing. There isn&amp;rsquo;t a tutorial for Landsat yet, but it works similarly. Let&amp;rsquo;s assume, we already have downloaded some images, the file queue is set like this:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;FILE_QUEUE = /data/force/level1/queue.txt
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Next, we set the directories for output, logfiles and temporary data. The temp directory is mostly used for temporarily unpacking zip/tar.gz containers.&lt;/p&gt;
@@ -912,28 +912,28 @@ DIR_LOG = /data/force/log
 DIR_TEMP = /data/force/temp
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;2-digital-elevation-model&#34;&gt;&lt;strong&gt;2) Digital Elevation Model&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;A Digital Elevation model is used to improve cloud and cloud shadow detection, atmospheric correction and to perform the topographic correction. The &lt;a href=&#34;https://davidfrantz.github.io/tutorials/force-dem/dem/&#34;&gt;DEM tutorial&lt;/a&gt; explains how to properly prepare a Digital Elevation Model (DEM). Let&#39;s assume, we already have prepared the DEM, it is set like this. Make sure to set the nodata value correctly:&lt;/p&gt;
+&lt;p&gt;A Digital Elevation model is used to improve cloud and cloud shadow detection, atmospheric correction and to perform the topographic correction. The &lt;a href=&#34;https://davidfrantz.github.io/tutorials/force-dem/dem/&#34;&gt;DEM tutorial&lt;/a&gt; explains how to properly prepare a Digital Elevation Model (DEM). Let&amp;rsquo;s assume, we already have prepared the DEM, it is set like this. Make sure to set the nodata value correctly:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;FILE_DEM = /data/force/misc/dem/srtm.vrt
 DEM_NODATA = -32767
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;3-datacube-parameters&#34;&gt;&lt;strong&gt;3) Datacube parameters&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;The datacube parameters, e.g. resolution, projection, tile size, block size, grid origin etc. are under full user control. As data cubing is an essential concept of FORCE, I highly recommend to read the &lt;a href=&#34;https://davidfrantz.github.io/tutorials/force-datacube/datacube/&#34;&gt;Datacube tutorial&lt;/a&gt;, which explains what a datacube is, how it is parameterized, how you can find a POI, how to visualize the tiling grid, and how to conveniently display cubed data.&lt;/p&gt;
-&lt;p&gt;Our parameter file already has some working defaults. You likely want to adjust them to your needs, but for starters, let&#39;s take the default values.&lt;/p&gt;
+&lt;p&gt;Our parameter file already has some working defaults. You likely want to adjust them to your needs, but for starters, let&amp;rsquo;s take the default values.&lt;/p&gt;
 &lt;h3 id=&#34;4-radiometric-correction&#34;&gt;&lt;strong&gt;4) Radiometric correction&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;The default parameter file already has all radiometric corrections enabled, and this is the setup I commonly use for generating ARD. This includes atmospheric correction with multiple scattering effects, image-based AOD estimation, topographic correction, adjacency effect correction, and nadir BRDF correction. The only thing that needs to be changed (and only if processing Landsat data) is the parameterization of the water vapor correction. Please see the &lt;a href=&#34;https://davidfrantz.github.io/tutorials/force-dem/dem/&#34;&gt;Water Vapor Database tutorial&lt;/a&gt; for instructions on how to prepare/download the Water Vapor Database. The directory that contains this database needs to be like this:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;DIR_WVPLUT = /data/force/misc/wvdb
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;5-cloud-detection&#34;&gt;&lt;strong&gt;5) Cloud detection&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;The default parameter file already has meaningful values for the cloud correction. I usually don&#39;t tweak the Fmask parameters. You can probably change the maximum cloud cover parameters to your liking. The &lt;code&gt;MAX_CLOUD_COVER_FRAME&lt;/code&gt; parameter cancels the processing of images that exceed the given threshold. The processing will be canceled right after cloud detection and thus saves quite some processing time. In my opinion, heavily clouded images are most often of little use, and even if cloud detection flags some pixels as &amp;ldquo;clear&amp;rdquo;, they are usually somewhat contaminated, e.g. in transition zones from clear-sky to cloud.. Therefore, I commonly do not go up to 100%. The &lt;code&gt;MAX_CLOUD_COVER_TILE&lt;/code&gt; parameter is similar, but it works on a per tile basis. It suppresses the output for chips (tiled image) that exceed the given threshold.&lt;/p&gt;
+&lt;p&gt;The default parameter file already has meaningful values for the cloud correction. I usually don&amp;rsquo;t tweak the Fmask parameters. You can probably change the maximum cloud cover parameters to your liking. The &lt;code&gt;MAX_CLOUD_COVER_FRAME&lt;/code&gt; parameter cancels the processing of images that exceed the given threshold. The processing will be canceled right after cloud detection and thus saves quite some processing time. In my opinion, heavily clouded images are most often of little use, and even if cloud detection flags some pixels as &amp;ldquo;clear&amp;rdquo;, they are usually somewhat contaminated, e.g. in transition zones from clear-sky to cloud.. Therefore, I commonly do not go up to 100%. The &lt;code&gt;MAX_CLOUD_COVER_TILE&lt;/code&gt; parameter is similar, but it works on a per tile basis. It suppresses the output for chips (tiled image) that exceed the given threshold.&lt;/p&gt;
 &lt;h3 id=&#34;6-resolution-merge&#34;&gt;&lt;strong&gt;6) Resolution merge&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;This parameter defines the method used for improving the spatial resolution of Sentinel-2’s 20m bands to 10m. It defaults to the &lt;a href=&#34;https://ieeexplore.ieee.org/document/7452606&#34;&gt;ImproPhe code&lt;/a&gt;, which is a data fusion option with both decent performance and quality. Let&#39;s keep this method, but feel free to try the other options.&lt;/p&gt;
+&lt;p&gt;This parameter defines the method used for improving the spatial resolution of Sentinel-2’s 20m bands to 10m. It defaults to the &lt;a href=&#34;https://ieeexplore.ieee.org/document/7452606&#34;&gt;ImproPhe code&lt;/a&gt;, which is a data fusion option with both decent performance and quality. Let&amp;rsquo;s keep this method, but feel free to try the other options.&lt;/p&gt;
 &lt;h3 id=&#34;7-co-registration&#34;&gt;&lt;strong&gt;7) Co-Registration&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;Since v. 3.0, FORCE is able to perform a co-registration of Sentinel-2 images with Landsat time series. For starters, we will not use this option. A separate tutorial is planned asap that will explain how to do this.&lt;/p&gt;
 &lt;h3 id=&#34;8-parallel-processing&#34;&gt;&lt;strong&gt;8) Parallel Processing&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;FORCE L2PS uses a nested parallelization strategy. The main parallelization level is multiprocessing: individual images are processed simultaneously (the box in the workflow figure). Each process can additionally use multithreading, which means that each image can be additionally processed parallely. The multiplication of both shouldn&#39;t exceed the number of threads your system supports.&lt;/p&gt;
-&lt;p&gt;I recommend to use as many processes, and as few threads as possible. However, a mild mix may be beneficial, e.g. 2 threads per process. If processing only a few (or one) image, increase the multithreading ratio accordingly. This can speed up the work significantly. If RAM is too small, inncrease the multithreading ratio accordingly. If there isn&#39;t enough RAM to support all processes, some images will fail due to insufficient memory.&lt;/p&gt;
+&lt;p&gt;FORCE L2PS uses a nested parallelization strategy. The main parallelization level is multiprocessing: individual images are processed simultaneously (the box in the workflow figure). Each process can additionally use multithreading, which means that each image can be additionally processed parallely. The multiplication of both shouldn&amp;rsquo;t exceed the number of threads your system supports.&lt;/p&gt;
+&lt;p&gt;I recommend to use as many processes, and as few threads as possible. However, a mild mix may be beneficial, e.g. 2 threads per process. If processing only a few (or one) image, increase the multithreading ratio accordingly. This can speed up the work significantly. If RAM is too small, inncrease the multithreading ratio accordingly. If there isn&amp;rsquo;t enough RAM to support all processes, some images will fail due to insufficient memory.&lt;/p&gt;
 &lt;p&gt;To prevent an I/O jam at startup (by reading / extracting a lot of data simultaneously), a delay (in seconds) might be necessary: a new process waits for some seconds before starting. The necessary delay (or none) is dependent on your system’s architecture (I/O speed etc), on sensor to be processed, and whether packed archives or uncompressed images are given as input.&lt;/p&gt;
-&lt;p&gt;Please note that I cannot recommend useful default settings. This is extremely dependent on your rig&#39;s setup (# of CPUs, RAM, I/O speed, parallel disc access etc.) and on what exactly you are doing (e.g. Sentinel-2 has higher ressource requirements compared to Landsat, are the input images extracted or still packed in zip/tar.gz containers, enabling/disabling certain processing options have an effect, too).&lt;/p&gt;
+&lt;p&gt;Please note that I cannot recommend useful default settings. This is extremely dependent on your rig&amp;rsquo;s setup (# of CPUs, RAM, I/O speed, parallel disc access etc.) and on what exactly you are doing (e.g. Sentinel-2 has higher ressource requirements compared to Landsat, are the input images extracted or still packed in zip/tar.gz containers, enabling/disabling certain processing options have an effect, too).&lt;/p&gt;
 &lt;p&gt;Please have a look at these two setups (click to enlarge). The plots illustrate how the work (of processing the same 8 images) is being spread to CPUs and threads, how the delay works, and how the processes consume RAM (highly idealized - actually, the memory footprint varies across runtime).&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -1012,7 +1012,7 @@ DELAY = 5
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;9-output-options&#34;&gt;&lt;strong&gt;9) Output options&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;The default output options are already my usual setup for ARD generation. The output files will be stored as compressed GeoTiff images with internal blocks for partial access. Note that metadata are written to the FORCE domain, thus they only show up if you look into all metadata domains, e.g.&lt;/p&gt;
-&lt;p&gt;The Bottom-of-Atmosphere reflectance product and the Quality Assurance Information are written by default - and they can&#39;t be disabled. I typically generate additional quicklooks (&lt;code&gt;OUTPUT_OVV&lt;/code&gt;). If you want to generate pixel based composites in the next step, you should additionally output the &lt;code&gt;OUTPUT_DST&lt;/code&gt;, &lt;code&gt;OUTPUT_VZN&lt;/code&gt;, and &lt;code&gt;OUTPUT_HOT&lt;/code&gt; products. The &lt;code&gt;OUTPUT_AOD&lt;/code&gt; and &lt;code&gt;OUTPUT_WVP&lt;/code&gt; products are not used by any higher level submodule - they are only useful for validation purposes.&lt;/p&gt;
+&lt;p&gt;The Bottom-of-Atmosphere reflectance product and the Quality Assurance Information are written by default - and they can&amp;rsquo;t be disabled. I typically generate additional quicklooks (&lt;code&gt;OUTPUT_OVV&lt;/code&gt;). If you want to generate pixel based composites in the next step, you should additionally output the &lt;code&gt;OUTPUT_DST&lt;/code&gt;, &lt;code&gt;OUTPUT_VZN&lt;/code&gt;, and &lt;code&gt;OUTPUT_HOT&lt;/code&gt; products. The &lt;code&gt;OUTPUT_AOD&lt;/code&gt; and &lt;code&gt;OUTPUT_WVP&lt;/code&gt; products are not used by any higher level submodule - they are only useful for validation purposes.&lt;/p&gt;
 &lt;h2 id=&#34;processing&#34;&gt;&lt;strong&gt;Processing&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;Once the parameter file is finished, processing is pretty straight forward. Simply feed the parameter file to &lt;code&gt;force-level2&lt;/code&gt;. A progress bar keeps you updated about the ETA, the number of completed, running and waiting processes.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;force-level2 /data/force/param/l2ps.prm
@@ -1247,7 +1247,7 @@ computing pyramids for vienna.vrt
 &lt;p&gt;As of now, &lt;strong&gt;FORCE&lt;/strong&gt; does not come with a handy tool to generate masks from a raster image with continuous values (this is on my to-do list though). However, you can follow this recipe to accomplish this.&lt;/p&gt;
 &lt;p&gt;In the example given below, our input image is a multiband continuous fields dataset, which gives the percentages of built-up land (urban), high vegetation (trees), and low vegetation (grass, agriculture). Point 1) may be skipped if the data are already in datacube format, which is the case in this example.&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;If the data are not already in the datacube format, use &lt;code&gt;force-cube&lt;/code&gt; to import the data (see the usage above). Use a raster resampling option to trigger the raster import, e.g. &lt;code&gt;cubic&lt;/code&gt; (bc it&#39;s all about cubes, eh?).&lt;/li&gt;
+&lt;li&gt;If the data are not already in the datacube format, use &lt;code&gt;force-cube&lt;/code&gt; to import the data (see the usage above). Use a raster resampling option to trigger the raster import, e.g. &lt;code&gt;cubic&lt;/code&gt; (bc it&amp;rsquo;s all about cubes, eh?).&lt;/li&gt;
 &lt;li&gt;Go to the parent directory of the cubed images (this is important for the next point), and generate a list with the filenames:&lt;/li&gt;
 &lt;/ol&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd /data/Jakku/germany-LC/pred
@@ -1356,7 +1356,7 @@ computing pyramids for forest-mask.vrt
 &lt;p&gt;This tutorial explains how to use the FORCE Level 1 Archiving Suite (FORCE L1AS) to download, organize, and maintain a clean and consistent Sentinel-2 Level 1 data pool, as well as corresponding data queues needed for the Level 2 processing.&lt;/p&gt;
 &lt;h2 id=&#34;overview&#34;&gt;&lt;strong&gt;Overview&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;ESA provides an application programming interface (API) for data query and automatic download (see &lt;a href=&#34;https://scihub.copernicus.eu/twiki/do/view/SciHubUserGuide/BatchScripting?redirectedfrom=SciHubUserGuide.8BatchScripting&#34;&gt;here&lt;/a&gt;). Based on some user-defined parameters (coordinates etc.) &lt;strong&gt;FORCE L1AS&lt;/strong&gt; pulls a metadata report from the Copernicus API Hub. Each hit is compared
-with the local data holdings you already downloaded. If a new file is sitting on ESA&#39;s end, the missing image is downloaded. A file queue is generated and updated accordingly - which is the main input to the &lt;strong&gt;FORCE Level 2 Processing System&lt;/strong&gt;.&lt;/p&gt;
+with the local data holdings you already downloaded. If a new file is sitting on ESA&amp;rsquo;s end, the missing image is downloaded. A file queue is generated and updated accordingly - which is the main input to the &lt;strong&gt;FORCE Level 2 Processing System&lt;/strong&gt;.&lt;/p&gt;
 
 
 
@@ -1389,7 +1389,7 @@ with the local data holdings you already downloaded. If a new file is sitting on
 &lt;/figure&gt;
 
 &lt;h2 id=&#34;setup&#34;&gt;&lt;strong&gt;Setup&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;Now, the first step is to get access to ESA&#39;s data and services. For that, you need an account. If you don&#39;t have one, register &lt;a href=&#34;https://scihub.copernicus.eu/dhus/#/self-registration&#34;&gt;here&lt;/a&gt;. It&#39;s free.&lt;/p&gt;
+&lt;p&gt;Now, the first step is to get access to ESA&amp;rsquo;s data and services. For that, you need an account. If you don&amp;rsquo;t have one, register &lt;a href=&#34;https://scihub.copernicus.eu/dhus/#/self-registration&#34;&gt;here&lt;/a&gt;. It&amp;rsquo;s free.&lt;/p&gt;
 &lt;p&gt;Then, your credentials must be made available to &lt;strong&gt;FORCE L1AS&lt;/strong&gt; to be able to request and receive ESA data. On your machine, your login credentials must be placed in a hidden file &lt;code&gt;.scihub&lt;/code&gt; in your home directory. I advise to only give user reading rights to this file. The user name goes in the first line, the password in the second line. Please note that special characters might be problematic. Also note, if you generate this file from a Windows machine, the Windows EOL character will cause problems.&lt;/p&gt;
 &lt;h2 id=&#34;download-some-data&#34;&gt;&lt;strong&gt;Download some data&lt;/strong&gt;&lt;/h2&gt;
 &lt;h3 id=&#34;instructions&#34;&gt;&lt;strong&gt;Instructions&lt;/strong&gt;&lt;/h3&gt;
@@ -1427,8 +1427,8 @@ with the local data holdings you already downloaded. If a new file is sitting on
     Second line: Password, special characters might be problematic
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;dry-run&#34;&gt;&lt;strong&gt;Dry run&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;Please note that &lt;strong&gt;FORCE&lt;/strong&gt; won&#39;t check that there is enough space on your hard disc. If you don&#39;t dare to download all data straight away, there is a dry run option implemented that only checks how much data would be downloaded with the parameters you provided. This is given by the optional &lt;code&gt;dry&lt;/code&gt; keyword at the end of the command line. The following query asks for all data in July 2019 with a maximum cloud coverage of 50%. The region of interest here is a rather small area in Zambia&#39;s Northwestern Province, depicting a large copper mine in the Miombo forest.&lt;/p&gt;
-&lt;p&gt;The single most frequent error here is the specification of the coordinates. If you don&#39;t receive any data for your study area, or end up somewhere else entirely, double check that the coordinates are given in the correct order.&lt;/p&gt;
+&lt;p&gt;Please note that &lt;strong&gt;FORCE&lt;/strong&gt; won&amp;rsquo;t check that there is enough space on your hard disc. If you don&amp;rsquo;t dare to download all data straight away, there is a dry run option implemented that only checks how much data would be downloaded with the parameters you provided. This is given by the optional &lt;code&gt;dry&lt;/code&gt; keyword at the end of the command line. The following query asks for all data in July 2019 with a maximum cloud coverage of 50%. The region of interest here is a rather small area in Zambia&amp;rsquo;s Northwestern Province, depicting a large copper mine in the Miombo forest.&lt;/p&gt;
+&lt;p&gt;The single most frequent error here is the specification of the coordinates. If you don&amp;rsquo;t receive any data for your study area, or end up somewhere else entirely, double check that the coordinates are given in the correct order.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;X = Longitude&lt;/li&gt;
 &lt;li&gt;Y = Latitude&lt;/li&gt;
@@ -1440,7 +1440,7 @@ with the local data holdings you already downloaded. If a new file is sitting on
 5.19094 GB data volume available
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;download&#34;&gt;&lt;strong&gt;Download&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;The actual download is triggered by omitting the &lt;code&gt;dry&lt;/code&gt; option. &lt;strong&gt;FORCE L1AS&lt;/strong&gt; downloads all data that match the parameters provided - and which weren&#39;t downloaded before. Note that the program checks against the files on the disc (not the file queue). Each downloaded image is unzipped after the download. If both steps were successful, the image is appended to the file queue.&lt;/p&gt;
+&lt;p&gt;The actual download is triggered by omitting the &lt;code&gt;dry&lt;/code&gt; option. &lt;strong&gt;FORCE L1AS&lt;/strong&gt; downloads all data that match the parameters provided - and which weren&amp;rsquo;t downloaded before. Note that the program checks against the files on the disc (not the file queue). Each downloaded image is unzipped after the download. If both steps were successful, the image is appended to the file queue.&lt;/p&gt;
 &lt;p&gt;Do not wonder if FORCE tells you that it has found exactly 100 S2A/B files. The ESA API Hub only allows to retrieve metadata for 100 products. Thus, FORCE iterates through the pages until no more image can be retrieved.&lt;/p&gt;
 &lt;p&gt;Please note that download speed varies considerably..&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;force-level1-sentinel2 /data/Dagobah/S2L1C /data/Dagobah/S2L1C/zambia.txt &amp;quot;25.43/-12.46,25.94/-12.46,25.94/-11.98,25.39/-11.99,25.43/-12.46&amp;quot; 2019-07-01 2019-07-31 0 50
@@ -1504,7 +1504,7 @@ S2B_MSIL1C_20190725T081609_N0208_R121_T35LLG_20190725T120407.SAFE
 /data/Dagobah/S2L1C/T35LLG/S2B_MSIL1C_20190702T080619_N0207_R078_T35LLG_20190702T115117.SAFE QUEUED
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;download-some-more-data&#34;&gt;&lt;strong&gt;Download some more data&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;Downloading more data is easy. You can use the same datapool, and the same file queue for this. Images are only downloaded if they weren&#39;t downloaded yet. Thus, you can e.g. change the boundingbox, time frame or cloud coverage, and only download data that was not covered by the previous run. In the following example, the Eastern X-Coordinates were increased by 1 degree.&lt;/p&gt;
+&lt;p&gt;Downloading more data is easy. You can use the same datapool, and the same file queue for this. Images are only downloaded if they weren&amp;rsquo;t downloaded yet. Thus, you can e.g. change the boundingbox, time frame or cloud coverage, and only download data that was not covered by the previous run. In the following example, the Eastern X-Coordinates were increased by 1 degree.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;force-level1-sentinel2 /data/Dagobah/S2L1C /data/Dagobah/S2L1C/zambia.txt &amp;quot;25.43/-12.46,26.94/-12.46,26.94/-11.98,25.39/-11.99,25.43/-12.46&amp;quot; 2019-07-01 2019-07-31 0 50
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;2020-02-15_15:43:57 - Found 26 S2A/B files.
@@ -1590,12 +1590,12 @@ S2B_MSIL1C_20190725T081609_N0208_R121_T35LMG_20190725T120407.SAFE
 0 3 * * * force-level1-sentinel2 /data/Dagobah/S2L1C /data/Dagobah/S2L1C/zambia.txt &amp;quot;25.43/-12.46,26.94/-12.46,26.94/-11.98,25.39/-11.99,25.43/-12.46&amp;quot; 2018-07-01 2018-07-31 0 50
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;long-term-archive&#34;&gt;&lt;strong&gt;Long Term Archive&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;In September 2019, ESA has activated the Long Term Archive (LTA) to roll out old (and potentially infrequently used) data products from the online storage system to offline storage. For details, see &lt;a href=&#34;https://scihub.copernicus.eu/userguide/LongTermArchive&#34;&gt;here&lt;/a&gt;. As of now (the following numbers might change in the future), the last year of data shall stay online, and is immediately ready for download. Offline data may be pulled from offline to online storage upon request. The data retrieval shall happen within 24h and the products shall stay online for 3 days. If they were not downloaded within this time period, they need to be pulled again. A user quota is implemented to prevent users from pulling the entire archive - unfortunately this quota is ridicously low, 1 request per hour per user&amp;hellip; Let&#39;s all hope it doesn&#39;t stay this way :/&lt;/p&gt;
+&lt;p&gt;In September 2019, ESA has activated the Long Term Archive (LTA) to roll out old (and potentially infrequently used) data products from the online storage system to offline storage. For details, see &lt;a href=&#34;https://scihub.copernicus.eu/userguide/LongTermArchive&#34;&gt;here&lt;/a&gt;. As of now (the following numbers might change in the future), the last year of data shall stay online, and is immediately ready for download. Offline data may be pulled from offline to online storage upon request. The data retrieval shall happen within 24h and the products shall stay online for 3 days. If they were not downloaded within this time period, they need to be pulled again. A user quota is implemented to prevent users from pulling the entire archive - unfortunately this quota is ridicously low, 1 request per hour per user&amp;hellip; Let&amp;rsquo;s all hope it doesn&amp;rsquo;t stay this way :/&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;FORCE &amp;gt;= 3.0&lt;/strong&gt; is able to handle LTA data. Previous &lt;strong&gt;FORCE&lt;/strong&gt; versions crash when trying to download offline products.
 &lt;strong&gt;FORCE L1AS&lt;/strong&gt; determines whether a product is online or offline.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;If online, the image is downloaded as described above.&lt;/li&gt;
-&lt;li&gt;If offline, a pull request from offline to online storage is sent. ESA hasn&#39;t implemented any callback for this retrieval, thus &lt;strong&gt;FORCE L1AS&lt;/strong&gt; will simply send pull requests for each requested offline image, probably download some available online images, and then exit. &lt;strong&gt;FORCE L1AS&lt;/strong&gt; needs to be run again to retrieve the restored data. To this end, it comes in handy to set up a download scheduler as desribed above.&lt;/li&gt;
+&lt;li&gt;If offline, a pull request from offline to online storage is sent. ESA hasn&amp;rsquo;t implemented any callback for this retrieval, thus &lt;strong&gt;FORCE L1AS&lt;/strong&gt; will simply send pull requests for each requested offline image, probably download some available online images, and then exit. &lt;strong&gt;FORCE L1AS&lt;/strong&gt; needs to be run again to retrieve the restored data. To this end, it comes in handy to set up a download scheduler as desribed above.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;force-level1-sentinel2 /data/Dagobah/S2L1C /data/Dagobah/S2L1C/zambia.txt &amp;quot;25.43/-12.46,25.94/-12.46,25.94/-11.98,25.39/-11.99,25.43/-12.46&amp;quot; 2018-07-01 2018-07-31 0 50
 &lt;/code&gt;&lt;/pre&gt;
@@ -1638,7 +1638,7 @@ S2A_MSIL1C_20180702T080611_N0206_R078_T35LLG_20180702T115230.SAFE: Pulling from 
 &lt;p&gt;There are little requirements on the data format:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;The unit must be meters.&lt;/li&gt;
-&lt;li&gt;The Nodata value shouldn&#39;t be 0, which is a valid elevation.&lt;/li&gt;
+&lt;li&gt;The Nodata value shouldn&amp;rsquo;t be 0, which is a valid elevation.&lt;/li&gt;
 &lt;li&gt;The DEM must cover the complete image(s) to be processed.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Thus, a mosaic that covers your complete study area needs to be prepared. The DEM is warped and cropped to the projection and extent of the Level 1 image, which is processed with &lt;strong&gt;FORCE L2PS&lt;/strong&gt;. This is done on-the-fly. Therefore, data type, data format, projection, extent etc. can be chosen freely - as long as GDAL is able to handle it (GDAL can handle pretty much anything).&lt;/p&gt;
@@ -2033,230 +2033,230 @@ Currently &lt;strong&gt;FORCE&lt;/strong&gt; implements a 16bit QAI layer with 1
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th align=&#34;left&#34;&gt;Bit No.&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;Parameter name&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;Bit comb.&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;Integer&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;State&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Bit No.&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Parameter name&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Bit comb.&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Integer&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;State&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Valid data&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;valid&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Valid data&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;valid&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;no data&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;no data&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;1–2&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Cloud state&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;00&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;clear&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1–2&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Cloud state&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;00&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;clear&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;01&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;less confident cloud (i.e., buffered cloud 300 m)&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;01&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;less confident cloud (i.e., buffered cloud 300 m)&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;10&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;2&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;confident, opaque cloud&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;10&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;2&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;confident, opaque cloud&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;11&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;3&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;cirrus&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;11&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;3&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;cirrus&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;3&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Cloud shadow flag&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;no&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;3&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Cloud shadow flag&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;no&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;yes&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;4&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Snow flag&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;no&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;4&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Snow flag&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;no&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;yes&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;5&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Water flag&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;no&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;5&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Water flag&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;no&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;yes&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;6–7&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Aerosol state&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;00&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;estimated (best quality)&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;6–7&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Aerosol state&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;00&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;estimated (best quality)&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;01&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;interpolated (mid quality)&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;01&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;interpolated (mid quality)&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;10&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;2&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;high (aerosol optical depth &amp;gt; 0.6, use with caution)&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;10&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;2&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;high (aerosol optical depth &amp;gt; 0.6, use with caution)&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;11&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;3&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;fill (global fallback, low quality)&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;11&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;3&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;fill (global fallback, low quality)&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;8&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Subzero flag&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;no&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;8&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Subzero flag&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;no&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;yes (use with caution)&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;yes (use with caution)&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;9&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Saturation flag&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;no&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;9&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Saturation flag&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;no&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;yes (use with caution)&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;yes (use with caution)&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;10&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;High sun zenith flag&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;no&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;10&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;High sun zenith flag&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;no&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;yes (sun elevation &amp;lt; 15°, use with caution)&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;yes (sun elevation &amp;lt; 15°, use with caution)&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;11–12&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Illumination state&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;00&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;good (incidence angle &amp;lt; 55°, best quality for top. correction)&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;11–12&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Illumination state&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;00&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;good (incidence angle &amp;lt; 55°, best quality for top. correction)&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;01&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;medium (incidence angle 55°–80°, good quality for top. correction)&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;01&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;medium (incidence angle 55°–80°, good quality for top. correction)&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;10&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;2&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;poor (incidence angle &amp;gt; 80°, low quality for top. correction)&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;10&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;2&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;poor (incidence angle &amp;gt; 80°, low quality for top. correction)&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;11&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;3&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;shadow (incidence angle &amp;gt; 90°, no top. correction applied)&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;11&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;3&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;shadow (incidence angle &amp;gt; 90°, no top. correction applied)&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;13&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Slope flag&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;no (cosine correction applied)&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;13&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Slope flag&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;no (cosine correction applied)&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;yes (enhanced C-correction applied)&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;yes (enhanced C-correction applied)&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;14&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Water vapor flag&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;measured (best quality, only Sentinel-2)&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;14&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Water vapor flag&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;measured (best quality, only Sentinel-2)&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;fill (scene average, only Sentinel-2)&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;fill (scene average, only Sentinel-2)&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;15&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Empty&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;TBD&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;15&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Empty&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;TBD&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -2477,7 +2477,7 @@ interpolated. If there is no valid AOD estimation for the complete image, a fill
   
 
 
-&lt;div id=&#34;chart-273198456&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-496812753&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -2487,7 +2487,7 @@ interpolated. If there is no valid AOD estimation for the complete image, a fill
       clearInterval( a );
 
       Plotly.d3.json(&#34;/img/test.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-273198456&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-496812753&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
@@ -2501,7 +2501,7 @@ interpolated. If there is no valid AOD estimation for the complete image, a fill
   
 
 
-&lt;div id=&#34;chart-831956247&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-693452178&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -2511,7 +2511,7 @@ interpolated. If there is no valid AOD estimation for the complete image, a fill
       clearInterval( a );
 
       Plotly.d3.json(&#34;/img/network.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-831956247&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-693452178&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
@@ -2521,7 +2521,7 @@ interpolated. If there is no valid AOD estimation for the complete image, a fill
 &lt;h2 id=&#34;background&#34;&gt;&lt;strong&gt;Background&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;During atmospheric correction, the effect of water vapor absorption can only be corrected if we know the amount of water vapor in the atmosphere.&lt;/p&gt;
 &lt;p&gt;If you are using Sentinel-2 data only, you can stop reading. Sentinel-2 is equipped with a water vapor channel, and thus, water wapor amount can be estimated from the images.&lt;/p&gt;
-&lt;p&gt;Landsat, however, doesn&#39;t have such a band. Therefore, we need to rely on external data, which needs to be precompiled into a water vapor database.&lt;/p&gt;
+&lt;p&gt;Landsat, however, doesn&amp;rsquo;t have such a band. Therefore, we need to rely on external data, which needs to be precompiled into a water vapor database.&lt;/p&gt;
 &lt;h2 id=&#34;water-vapor-database&#34;&gt;&lt;strong&gt;Water Vapor Database&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;The database holds water vapor values for the central coordinates of each WRS-2 frame. If available, day-specific values are used.&lt;/p&gt;
 &lt;p&gt;The database consists of one table for each day (&lt;code&gt;WVP_YYYY-MM-DD.txt&lt;/code&gt;)&lt;/p&gt;
