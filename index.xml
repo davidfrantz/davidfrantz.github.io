@@ -13,7 +13,7 @@
     </image>
     
     <item>
-      <title>Evaluation of machine learning algorithms for forest stand species mapping using Sentinel-2 imagery and environmental data in the Polish Carpathians [accepted]</title>
+      <title>Evaluation of machine learning algorithms for forest stand species mapping using Sentinel-2 imagery and environmental data in the Polish Carpathians</title>
       <link>https://davidfrantz.github.io/publication/grabska-2020/</link>
       <pubDate>Tue, 15 Sep 2020 00:00:00 +0000</pubDate>
       <guid>https://davidfrantz.github.io/publication/grabska-2020/</guid>
@@ -2477,7 +2477,7 @@ interpolated. If there is no valid AOD estimation for the complete image, a fill
   
 
 
-&lt;div id=&#34;chart-847923615&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-418756932&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -2487,7 +2487,7 @@ interpolated. If there is no valid AOD estimation for the complete image, a fill
       clearInterval( a );
 
       Plotly.d3.json(&#34;/img/test.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-847923615&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-418756932&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
@@ -2501,7 +2501,7 @@ interpolated. If there is no valid AOD estimation for the complete image, a fill
   
 
 
-&lt;div id=&#34;chart-369724158&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-218954736&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -2511,7 +2511,7 @@ interpolated. If there is no valid AOD estimation for the complete image, a fill
       clearInterval( a );
 
       Plotly.d3.json(&#34;/img/network.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-369724158&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-218954736&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
