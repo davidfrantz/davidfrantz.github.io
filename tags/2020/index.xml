@@ -5,12 +5,21 @@
     <link>https://davidfrantz.github.io/tags/2020/</link>
       <atom:link href="https://davidfrantz.github.io/tags/2020/index.xml" rel="self" type="application/rss+xml" />
     <description>2020</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Wed, 09 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Mon, 05 Oct 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://davidfrantz.github.io/img/icon-192.png</url>
       <title>2020</title>
       <link>https://davidfrantz.github.io/tags/2020/</link>
     </image>
+    
+    <item>
+      <title>Building height map for Germany</title>
+      <link>https://davidfrantz.github.io/data/frantz-2020/</link>
+      <pubDate>Mon, 05 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/data/frantz-2020/</guid>
+      <description>&lt;p&gt;Supplement to: Frantz, D. et al. (upcoming): National-scale mapping of building height using Sentinel-1 and Sentinel-2 time series&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>FORCE Tutorial: Spectral Temporal Metrics</title>
@@ -1072,7 +1081,7 @@ Band 10 Block=3000x300 Type=Int16, ColorInterp=Undefined
     Wavelength=2.202
     Wavelength_unit=micrometers
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;ard-now-what&#34;&gt;&lt;strong&gt;ARD, now what?&lt;/strong&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;ard-now-what&#34;&gt;ARD, now what?&lt;/h2&gt;
 &lt;p&gt;FORCE provides a lot of functionality to further process the generated ARD into hARD or hARD+ products, e.g. using pixel-based compositing or time series analyses.&lt;/p&gt;
 &lt;p&gt;Please see the &lt;a href=&#34;https://force-eo.readthedocs.io/en/latest/components/higher-level/index.html&#34;&gt;Higher Level processing options&lt;/a&gt; in the documentation. Some more tutorials are planned, which deal with all these options.&lt;/p&gt;
 </description>
