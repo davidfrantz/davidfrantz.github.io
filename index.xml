@@ -22,6 +22,15 @@
     </item>
     
     <item>
+      <title>Land cover fraction map of Austria at 10m spatial resolution based on Sentinel-1 and Sentinel-2 spectral temporal metrics</title>
+      <link>https://davidfrantz.github.io/data/schug-2020b/</link>
+      <pubDate>Sun, 04 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/data/schug-2020b/</guid>
+      <description>&lt;p&gt;Supplement to: Schug, F. et al. (2020): Mapping urban-rural gradients of settlements and vegetation at national scale using Sentinel-2 spectral-temporal metrics and regression-based unmixing with synthetic training data. Remote Sensing of Environment, 246, 111810, &lt;a href=&#34;https://doi.org/10.1016/j.rse.2020.111810&#34;&gt;https://doi.org/10.1016/j.rse.2020.111810&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Evaluation of machine learning algorithms for forest stand species mapping using Sentinel-2 imagery and environmental data in the Polish Carpathians</title>
       <link>https://davidfrantz.github.io/publication/grabska-2020/</link>
       <pubDate>Tue, 15 Sep 2020 00:00:00 +0000</pubDate>
@@ -750,9 +759,9 @@ Adjust the canvas size to your needs.&lt;/p&gt;
     
     <item>
       <title>Land cover fraction map of Germany at 10m spatial resolution based on Sentinel-1 and Sentinel-2 spectral temporal metrics</title>
-      <link>https://davidfrantz.github.io/data/schug-2020/</link>
+      <link>https://davidfrantz.github.io/data/schug-2020a/</link>
       <pubDate>Sat, 01 Aug 2020 00:00:00 +0000</pubDate>
-      <guid>https://davidfrantz.github.io/data/schug-2020/</guid>
+      <guid>https://davidfrantz.github.io/data/schug-2020a/</guid>
       <description>&lt;p&gt;Supplement to: Schug, F. et al. (2020): Mapping urban-rural gradients of settlements and vegetation at national scale using Sentinel-2 spectral-temporal metrics and regression-based unmixing with synthetic training data. Remote Sensing of Environment, 246, 111810, &lt;a href=&#34;https://doi.org/10.1016/j.rse.2020.111810&#34;&gt;https://doi.org/10.1016/j.rse.2020.111810&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
@@ -2486,7 +2495,7 @@ interpolated. If there is no valid AOD estimation for the complete image, a fill
   
 
 
-&lt;div id=&#34;chart-945821637&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-725391468&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -2496,7 +2505,7 @@ interpolated. If there is no valid AOD estimation for the complete image, a fill
       clearInterval( a );
 
       Plotly.d3.json(&#34;/img/test.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-945821637&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-725391468&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
@@ -2510,7 +2519,7 @@ interpolated. If there is no valid AOD estimation for the complete image, a fill
   
 
 
-&lt;div id=&#34;chart-136725984&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-425817963&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -2520,7 +2529,7 @@ interpolated. If there is no valid AOD estimation for the complete image, a fill
       clearInterval( a );
 
       Plotly.d3.json(&#34;/img/network.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-136725984&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-425817963&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();

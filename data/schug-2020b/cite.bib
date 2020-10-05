@@ -1,0 +1,21 @@
+@misc{schug2020data,
+ author={Franz {Schug}, David {Frantz}, Akpona {Okujeni}, Sebastian {van der Linden}, Patrick {Hostert}},
+ title={{Land cover fraction map of Austria at 10m spatial resolution based on Sentinel-1 and Sentinel-2 spectral temporal metrics}},
+ year={2020},
+ doi={10.1594/PANGAEA.923037},
+ url={https://doi.pangaea.de/10.1594/PANGAEA.923037},
+ note={Schug, F. et al. (2020): Mapping urban-rural gradients of settlements and vegetation at national scale using Sentinel-2 spectral-temporal metrics and regression-based unmixing with synthetic training data. Remote Sensing of Environment, 246, 111810, https://doi.org/10.1016/j.rse.2020.111810},
+ abstract={The increasing impact of humans on land and ongoing global population growth requires an improved understanding of land cover (LC) processes in general and of those related to settlements in particular. The heterogeneity of settlements and landscapes as well as the importance of not only mapping, but also characterizing anthropogenic and landscape structures suggests using a sub-pixel mapping approach for analysing related LC from space.
+This map has been created using a regression-based unmixing approach for mapping built-up surfaces and infrastructure, woody vegetation and non-woody vegetation for all of Austria at 10 m spatial resolution. Spectral-temporal metrics from all Sentinel-1 and Sentinel-2 observation in 2018 have been used to create synthetically mixed training data for regression. An elevation threshold of 1350m has been applied above which built-up surfaces and infrastructures were masked out.
+The mapping workflow has been established in the corresponding publication. This dataset is an enhanced dataset that uses an alternative set of spectral-temporal metrics for land cover modeling, including:
+- 25th, 50th and 75th quantile of Sentinel-2 reflectance
+- Average Sentinel-1 VH polarized backscatter
+- 90th quantile and standard deviation of Sentinel-2 Tasseled Cap Greenness
+This enhanced set makes use of Sentinel-1 imagery, which reduces confusion of built-up features and seasonal soil-covered surfaces. Sentinel-2 Tasseled Cap Greenness is a more robust indicator for vegetation in temperate regions than the NDVI, which was used in the corresponding publication.
+The file is of GeoTiff format and contains three bands:
+Band 1 - Fraction of built-up surfaces and infrastructure
+Band 2 - Fraction of woody vegetation
+Band 3 - Fraction of non-woody vegetation},
+ type={data set},
+ publisher={PANGAEA}
+}
