@@ -5,12 +5,20 @@
     <link>https://davidfrantz.github.io/</link>
       <atom:link href="https://davidfrantz.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>DAVID FRANTZ</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Mon, 05 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Fri, 09 Oct 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://davidfrantz.github.io/img/icon-192.png</url>
       <title>DAVID FRANTZ</title>
       <link>https://davidfrantz.github.io/</link>
     </image>
+    
+    <item>
+      <title>National-scale mapping of building height using Sentinel-1 and Sentinel-2 time series [accepted]</title>
+      <link>https://davidfrantz.github.io/publication/frantz-2021/</link>
+      <pubDate>Fri, 09 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/frantz-2021/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Building height map of Germany</title>
@@ -2495,7 +2503,7 @@ interpolated. If there is no valid AOD estimation for the complete image, a fill
   
 
 
-&lt;div id=&#34;chart-391768254&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-283916457&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -2505,7 +2513,7 @@ interpolated. If there is no valid AOD estimation for the complete image, a fill
       clearInterval( a );
 
       Plotly.d3.json(&#34;/img/test.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-391768254&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-283916457&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
@@ -2519,7 +2527,7 @@ interpolated. If there is no valid AOD estimation for the complete image, a fill
   
 
 
-&lt;div id=&#34;chart-916528347&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-825437961&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -2529,7 +2537,7 @@ interpolated. If there is no valid AOD estimation for the complete image, a fill
       clearInterval( a );
 
       Plotly.d3.json(&#34;/img/network.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-916528347&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-825437961&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>franz Schug | DAVID FRANTZ</title>
-    <link>https://davidfrantz.github.io/authors/franz-schug/</link>
-      <atom:link href="https://davidfrantz.github.io/authors/franz-schug/index.xml" rel="self" type="application/rss+xml" />
-    <description>franz Schug</description>
+    <title>Wolfgang Wagner | DAVID FRANTZ</title>
+    <link>https://davidfrantz.github.io/authors/wolfgang-wagner/</link>
+      <atom:link href="https://davidfrantz.github.io/authors/wolfgang-wagner/index.xml" rel="self" type="application/rss+xml" />
+    <description>Wolfgang Wagner</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Fri, 09 Oct 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://davidfrantz.github.io/img/icon-192.png</url>
-      <title>franz Schug</title>
-      <link>https://davidfrantz.github.io/authors/franz-schug/</link>
+      <title>Wolfgang Wagner</title>
+      <link>https://davidfrantz.github.io/authors/wolfgang-wagner/</link>
     </image>
     
     <item>
@@ -17,14 +17,6 @@
       <link>https://davidfrantz.github.io/publication/frantz-2021/</link>
       <pubDate>Fri, 09 Oct 2020 00:00:00 +0000</pubDate>
       <guid>https://davidfrantz.github.io/publication/frantz-2021/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mapping urban-rural gradients of settlements and vegetation at national scale using Sentinel-2 spectral-temporal metrics and regression-based unmixing with synthetic training data</title>
-      <link>https://davidfrantz.github.io/publication/schug-2020/</link>
-      <pubDate>Mon, 11 May 2020 00:00:00 +0000</pubDate>
-      <guid>https://davidfrantz.github.io/publication/schug-2020/</guid>
       <description></description>
     </item>
     

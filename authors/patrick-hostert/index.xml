@@ -5,12 +5,20 @@
     <link>https://davidfrantz.github.io/authors/patrick-hostert/</link>
       <atom:link href="https://davidfrantz.github.io/authors/patrick-hostert/index.xml" rel="self" type="application/rss+xml" />
     <description>Patrick Hostert</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Mon, 11 May 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Fri, 09 Oct 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://davidfrantz.github.io/img/icon-192.png</url>
       <title>Patrick Hostert</title>
       <link>https://davidfrantz.github.io/authors/patrick-hostert/</link>
     </image>
+    
+    <item>
+      <title>National-scale mapping of building height using Sentinel-1 and Sentinel-2 time series [accepted]</title>
+      <link>https://davidfrantz.github.io/publication/frantz-2021/</link>
+      <pubDate>Fri, 09 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/frantz-2021/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Mapping urban-rural gradients of settlements and vegetation at national scale using Sentinel-2 spectral-temporal metrics and regression-based unmixing with synthetic training data</title>

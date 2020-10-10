@@ -5,12 +5,20 @@
     <link>https://davidfrantz.github.io/publication_types/2/</link>
       <atom:link href="https://davidfrantz.github.io/publication_types/2/index.xml" rel="self" type="application/rss+xml" />
     <description>2</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Tue, 15 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Fri, 09 Oct 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://davidfrantz.github.io/img/icon-192.png</url>
       <title>2</title>
       <link>https://davidfrantz.github.io/publication_types/2/</link>
     </image>
+    
+    <item>
+      <title>National-scale mapping of building height using Sentinel-1 and Sentinel-2 time series [accepted]</title>
+      <link>https://davidfrantz.github.io/publication/frantz-2021/</link>
+      <pubDate>Fri, 09 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/frantz-2021/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Evaluation of machine learning algorithms for forest stand species mapping using Sentinel-2 imagery and environmental data in the Polish Carpathians</title>

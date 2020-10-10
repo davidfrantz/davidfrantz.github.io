@@ -27,7 +27,7 @@
   
 
 
-&lt;div id=&#34;chart-391768254&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-283916457&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -37,7 +37,7 @@
       clearInterval( a );
 
       Plotly.d3.json(&#34;/img/test.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-391768254&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-283916457&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
@@ -51,7 +51,7 @@
   
 
 
-&lt;div id=&#34;chart-916528347&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-825437961&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -61,7 +61,7 @@
       clearInterval( a );
 
       Plotly.d3.json(&#34;/img/network.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-916528347&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-825437961&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
