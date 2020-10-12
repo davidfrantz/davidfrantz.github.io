@@ -569,6 +569,41 @@
 
 
 
+<div class="btn-links mb-3">
+  
+  <a class="btn btn-outline-primary my-1" href="https://force-eo.readthedocs.io/en/latest/howto/stm.html" target="_blank" rel="noopener">Go to Project Site</a>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
 
   
 </div>
@@ -578,289 +613,7 @@
   <div class="article-container">
 
     <div class="article-style">
-      <p><em>This tutorial uses FORCE v. 3.5</em></p>
-<h2 id="learning-objective"><strong>Learning Objective</strong></h2>
-<p>This tutorial explains what Spectral Temporal Metrics are, and how to generate them using the Time Series Analysis (TSA) submodule of the <strong>FORCE Higher Level Processing system (HLPS)</strong>.</p>
-<h2 id="what-are-spectral-temporal-metrics"><strong>What are Spectral Temporal Metrics?</strong></h2>
-<p>There are also other names around, which describe the same concept.
-However, regardless of how you name it, Spectral Temporal Metrics (or simply STMs) are band-wise descriptive statistics, which summarize reflectance (or an index derived thereof) within a defined time period.
-This can be the annual mean, standard deviation or median.
-Before calculating the statistics, the data is quality filtered, e.g. clouds are removed.</p>
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-<figure>
-
-
-  <a data-fancybox="" href="/img/tutorial-stm-example.png" data-caption="STM concept © Stefan Ernst">
-<img src="/img/tutorial-stm-example.png" alt="" ></a>
-
-
-  
-  
-  <figcaption>
-    STM concept © Stefan Ernst
-  </figcaption>
-
-
-</figure>
-
-<p>It is important to note that STMs are statistical aggregations - and not composites as in <em>“we select the full spectrum for the optimal observation”</em>.
-Thus, some care should be taken when dealing with these kinds of metrics: an STM spectrum cannot be interpreted in the classic remote-sensing-textbook sense.
-As an example, computing the NDVI from the 25% quantile of red and near infrared reflectance may yield unexpected results as they are not originating from the same acquisition date…
-Funny things may happen when you do.
-To emphasize this distinction, this is why we generally do not term them composites - but STMs (<em>this is debatable, I know</em>).</p>
-<p>Anyway, STMs are powerful, yet simple (<em>simple is good!</em>) metrics that are often used as features for Machine Learning algorithms, both for classification and regression problems.
-Due to their robustness (as compared to more advanced metrics) and their spatial completeness, they simplify the extrapolation/mapping of a response variable (qualitative or quantitative, e.g. classification labels or forest biomass) across very large areas.</p>
-<h2 id="parameterfile"><strong>Parameterfile</strong></h2>
-<p>STMs are available within the <a href="https://force-eo.readthedocs.io/en/latest/components/higher-level/tsa/index.html">Time Series Analysis (TSA)</a> submodule of the <a href="https://force-eo.readthedocs.io/en/latest/components/higher-level/index.html">FORCE Higher Level Processing system (HLPS)</a>.
-You can use <code>force-parameter</code> to generate an empty parameterfile.</p>
-<p>To familiarize yourself with the TSA submodule, I suggest taking a detour to the <a href="https://davidfrantz.github.io/tutorials/force-tsi/tsi/">interpolation tutorial</a> before advancing.</p>
-<p><strong>Temporal extent</strong></p>
-<p>The temporal extent defines the time period, which is used for aggregating the Level 2 observations into STMs.
-Broader windows generally result in cleaner metrics, although at the expense of seasonal information.
-It is hard to give a suggestion here, as this is a complex decision, which depends on sensors used, data availability, environmental conditions, cloud occurence, phenology, what you want to do with the data etc.
-To demonstrate, we are generating annual STMs for entire 2018:</p>
-<p><code>TIME_RANGE = 2018-01-01 2018-12-31</code></p>
-<p><strong>Sensors</strong></p>
-<p>FORCE HLPS allows you to easily combine data from different sensors - provided that we only use mutually available bands.
-For this tutorial, we are using data from Landsat 8, Sentinel-2A and Sentinel-2B.
-We are setting the output resolution to 30m.
-For Landsat, this is the native resolution.
-For the 10m Sentinel-2, we degrade the resolution using an approximated Point Spread Function (Gaussian lowpass with FWHM = analysis resolution), which approximates the acquisition of data at lower spatial resolution.</p>
-<pre><code class="language-bash">SENSORS = LND08 SEN2A SEN2B
-RESOLUTION = 30
-REDUCE_PSF = TRUE
-</code></pre>
-<p><strong>Bands / Indices</strong></p>
-<p>We will produce STMs for some spectral bands, as well as some indices:</p>
-<p><code>INDEX = RED NIR SWIR1 NDVI NDBI MNDWI</code></p>
-<p><strong>Outlier detection</strong></p>
-<p>If you see cloud remnants in your STMs, you might want to experiment with the outlier detection option.
-For now, lets disable it with:</p>
-<pre><code class="language-bash">ABOVE_NOISE = 0
-BELOW_NOISE = 0
-</code></pre>
-<p><strong>Interpolation</strong></p>
-<p>Before temporally aggregating the L2 observations, we can interpolate the time series. Try this out! But for now, let’s go without:</p>
-<p><code>INTERPOLATE = NONE</code></p>
-<p><strong>STMs</strong></p>
-<p>Now, we define the statistics for producing the STMs.
-You can specify a list with all statistics at once.
-Currently available are</p>
-<table>
-<thead>
-<tr>
-<th>ID</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>AVG</td>
-<td>Average</td>
-</tr>
-<tr>
-<td>STD</td>
-<td>Standard deviation</td>
-</tr>
-<tr>
-<td>MIN</td>
-<td>Minimum</td>
-</tr>
-<tr>
-<td>MAX</td>
-<td>Maximum</td>
-</tr>
-<tr>
-<td>RNG</td>
-<td>Range</td>
-</tr>
-<tr>
-<td>QXX</td>
-<td>Quantiles, replace XX with any 2-digit number, e.g. Q50 for the median. Multiple quantiles can be given</td>
-</tr>
-<tr>
-<td>IQR</td>
-<td>Inter-quartile range</td>
-</tr>
-<tr>
-<td>SKW</td>
-<td>Skewness</td>
-</tr>
-<tr>
-<td>KRT</td>
-<td>Kurtosis</td>
-</tr>
-<tr>
-<td>NUM</td>
-<td>Number of observations (after outlier detection and interpolation)</td>
-</tr>
-</tbody>
-</table>
-<p>Let’s go with these metrics for now:</p>
-<pre><code class="language-bash">STM = Q10 Q25 Q50 Q75 Q90 AVG STD
-OUTPUT_STM = TRUE
-</code></pre>
-<p><strong>Explode Output?</strong></p>
-<p>By default, HLPS will produce multi-band files for each spectral band/index, i.e. you will get one file for each index, which will have as many bands as there are STMs.
-If you rather prefer single-band images, i.e. one file for each index and each STM, use</p>
-<p><code>OUTPUT_EXPLODE = TRUE</code></p>
-<p><strong>Other parameters</strong></p>
-<p>The other parameters are not relevant for generating STMs. However, please note that you can generate STMs AND use the other options at the same time, e.g. Trend Analysis, Land Surface Phenology, etc. This saves time as data is only read once.</p>
-<p><strong>Processing</strong></p>
-<p>Processing is straightforward. Simply use:</p>
-<pre><code class="language-bash">force-higher-level /data/europe/stm/stm.prm
-</code></pre>
-<pre><code>number of processing units: 280
- (active tiles: 28, chunks per tile: 10)
-________________________________________
-Progress:                        100.00%
-Time for I/C/O:           087%/008%/004%
-ETA:             00y 00m 00d 00h 00m 00s
-
-________________________________________
-Real time:       00y 00m 00d 00h 19m 05s
-Virtual time:    00y 00m 00d 00h 21m 35s
-Saved time:      00y 00m 00d 00h 02m 30s
-
-________________________________________
-Virtual I-time:  00y 00m 00d 00h 18m 53s
-Virtual C-time:  00y 00m 00d 00h 01m 47s
-Virtual O-time:  00y 00m 00d 00h 00m 55s
-
-________________________________________
-I-bound time:    00y 00m 00d 00h 17m 10s
-C-bound time:    00y 00m 00d 00h 00m 07s
-O-bound time:    00y 00m 00d 00h 00m 03s
-</code></pre>
-<p>After this, we generate a mosaic.
-With <code>OUTPUT_EXPLODE = TRUE</code>, you get one image for each requested index and statistical aggregation, i.e. 42 images in our case:</p>
-<pre><code class="language-bash">force-mosaic /data/europe/stm
-</code></pre>
-<pre><code>mosaicking 42 products:
-1 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_AVG.tif
-2 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q10.tif
-3 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q25.tif
-4 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q50.tif
-...
-40 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q75.tif
-41 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q90.tif
-42 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_STD.tif
-
-mosaicking 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_AVG.tif
-26 chips found.
-
-mosaicking 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q25.tif
-26 chips found.
-
-...
-
-mosaicking 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_AVG.tif
-26 chips found.
-</code></pre>
-<h2 id="visualization"><strong>Visualization</strong></h2>
-<p>Visualizing an RGB color composite in QGIS, wherein the 3 bands come from different physical files, does not work out of the box..
-Thus, we need to put the required bands into one file. Luckily, a virtual data format suffices.
-This example here stacks the 50% quantiles of the reflectance bands, as well as the 90% quantiles of the indices.
-For fast visualization, we are computing pyramids.</p>
-<pre><code class="language-bash">cd /data/europe/stm/mosaic
-force-stack *RED_STM_Q50.vrt *NIR_STM_Q50.vrt *SW1_STM_Q50.vrt stack-bands-STM_Q50.vrt
-force-stack *NDB_STM_Q90.vrt *NDV_STM_Q90.vrt *MNW_STM_Q90.vrt stack-indices-STM_Q90.vrt
-ls *.vrt | parallel force-pyramid {}
-</code></pre>
-<pre><code>file 1:
-  /data/europe/stm/mosaic
-  2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q50.vrt
-  9000 4000 1
-file 2:
-  /data/europe/stm/mosaic
-  2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q50.vrt
-  9000 4000 1
-file 3:
-  /data/europe/stm/mosaic
-  2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q50.vrt
-  9000 4000 1
-
-Same number of bands detected. Stacking by band.
-
-Band 0001: 2018-2018_001-365_HL_TSA_LNDLG_RED_STM_Q50.vrt band 1
-Band 0002: 2018-2018_001-365_HL_TSA_LNDLG_NIR_STM_Q50.vrt band 1
-Band 0003: 2018-2018_001-365_HL_TSA_LNDLG_SW1_STM_Q50.vrt band 1
-
-file 1:
-  /data/europe/stm/mosaic
-  2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q90.vrt
-  9000 4000 1
-file 2:
-  /data/europe/stm/mosaic
-  2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q90.vrt
-  9000 4000 1
-file 3:
-  /data/europe/stm/mosaic
-  2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q90.vrt
-  9000 4000 1
-
-Same number of bands detected. Stacking by band.
-
-Band 0001: 2018-2018_001-365_HL_TSA_LNDLG_NDB_STM_Q90.vrt band 1
-Band 0002: 2018-2018_001-365_HL_TSA_LNDLG_NDV_STM_Q90.vrt band 1
-Band 0003: 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q90.vrt band 1
-
-computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q10.vrt
-0...10...20...30...40...50...60...70...80...90...100 - done.
-computing pyramids for 2018-2018_001-365_HL_TSA_LNDLG_MNW_STM_Q25.vrt
-0...10...20...30...40...50...60...70...80...90...100 - done.
-...
-computing pyramids for stack-bands-STM_Q50.vrt
-0...10...20...30...40...50...60...70...80...90...100 - done.
-computing pyramids for stack-indices-STM_Q90.vrt
-0...10...20...30...40...50...60...70...80...90...100 - done.
-</code></pre>
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-<figure>
-
-
-  <a data-fancybox="" href="/img/tutorial-stm-qgis.jpg" data-caption="RGB composite of STMs - Top: Q50 reflectance - Bottom: Q90 Indices">
-<img src="/img/tutorial-stm-qgis.jpg" alt="" ></a>
-
-
-  
-  
-  <figcaption>
-    RGB composite of STMs - Top: Q50 reflectance - Bottom: Q90 Indices
-  </figcaption>
-
-
-</figure>
-
-
+      
     </div>
 
     

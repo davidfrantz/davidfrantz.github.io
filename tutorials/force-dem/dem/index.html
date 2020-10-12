@@ -569,6 +569,41 @@
 
 
 
+<div class="btn-links mb-3">
+  
+  <a class="btn btn-outline-primary my-1" href="https://force-eo.readthedocs.io/en/latest/howto/dem.html" target="_blank" rel="noopener">Go to Project Site</a>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
 
   
 </div>
@@ -578,78 +613,7 @@
   <div class="article-container">
 
     <div class="article-style">
-      <p><em>This tutorial uses FORCE v. 3.0</em></p>
-<h2 id="learning-objective"><strong>Learning Objective</strong></h2>
-<p>This tutorial will show how to prepare a Digital Elevation Model (DEM) for the <strong>FORCE Level 2 Processing System (FORCE L2PS)</strong>.</p>
-<h2 id="background"><strong>Background</strong></h2>
-<p><strong>FORCE L2PS</strong> uses a DEM for</p>
-<ul>
-<li>enhanced cloud and cloud shadow detection,</li>
-<li>atmospheric correction, and to</li>
-<li>perform the topographic correction.</li>
-</ul>
-<p>In the cloud shadow detection, the DEM is primarily used to distinguish cloud shadows from water and topographic shadows. In the atmospheric correction, the DEM is used to scale the optical depths with altitude. The topographic correction is of course relying on the DEM. In principle, <strong>FORCE L2PS</strong> can be used without a DEM (FILE_DEM = NULL). In this case, the surface is assumed to be flat at z = 0m a.s.l. The topographic correction, however, can only be used if a DEM is given (surprise).</p>
-<p>In any case, it is strongly advised to use a DEM. Plus, it is not complicated to acquire it, free options are available. You probably already have a DEM for your study area anyway.</p>
-<h2 id="data-format"><strong>Data format</strong></h2>
-<p>There are little requirements on the data format:</p>
-<ul>
-<li>The unit must be meters.</li>
-<li>The Nodata value shouldn&rsquo;t be 0, which is a valid elevation.</li>
-<li>The DEM must cover the complete image(s) to be processed.</li>
-</ul>
-<p>Thus, a mosaic that covers your complete study area needs to be prepared. The DEM is warped and cropped to the projection and extent of the Level 1 image, which is processed with <strong>FORCE L2PS</strong>. This is done on-the-fly. Therefore, data type, data format, projection, extent etc. can be chosen freely - as long as GDAL is able to handle it (GDAL can handle pretty much anything).</p>
-<p>Please note, that pixels with nodata values in the DEM will have nodata values in the Level 2 products, too. Thus, make sure your DEM covers the complete area of interest.</p>
-<h2 id="which-dem"><strong>Which DEM?</strong></h2>
-<p>The DEM should match the resolution of the Level 1 image data as closely as possible. If possible, it is advised to use a finer resolution. However, as it is hard to acquire high spatial resolution DEMs, especially for larger areas, lower resolution works too. Often, we use the 30m SRTM DEM or 30m ASTER DEM, or a combination thereof, e.g. SRTM filled with ASTER (SRTM is a bit better, but there are holes in mountainous regions, and coverage is only 60°N-60°S).</p>
-<p>The SRTM DEM can be obtained from <a href="https://earthexplorer.usgs.gov/">EarthExplorer</a>. The ASTER DEM can be obtained from <a href="https://search.earthdata.nasa.gov/search/">EarthData</a> or <a href="https://ssl.jspacesystems.or.jp/ersdac/GDEM/E/">Japan Space Systems</a>. Both are free of charge.</p>
-<h2 id="prepare-the-mosaic"><strong>Prepare the mosaic</strong></h2>
-<p>The following steps illustrate how to build a virtual mosaic from SRTM data. Generally, DEM data come in tiles (datacube style), e.g. each SRTM tile covers 1°. The <a href="gdal.org/drivers/raster/vrt.html">GDAL Virtual Format</a> allows to mosaick data without producing a physical representation, i.e. the virtual mosaic only holds links to the original tiled data, plus some rules on how to combine them into the mosaic.</p>
-<p>Assuming you have downloaded some SRTM tiles, we first prepare a text file that holds all the filepaths:</p>
-<pre><code class="language-bash">find /data/Dagobah/global/dem/srtm -name '*.tif' &gt; /data/Earth/global/dem/srtm.txt
-cat /data/Dagobah/global/dem/srtm.txt
-</code></pre>
-<pre><code>/data/Dagobah/global/dem/srtm/n35_e027_1arc_v3.tif
-/data/Dagobah/global/dem/srtm/n35_e026_1arc_v3.tif
-/data/Dagobah/global/dem/srtm/n37_e026_1arc_v3.tif
-/data/Dagobah/global/dem/srtm/n36_e025_1arc_v3.tif
-/data/Dagobah/global/dem/srtm/n37_e027_1arc_v3.tif
-/data/Dagobah/global/dem/srtm/n37_e025_1arc_v3.tif
-/data/Dagobah/global/dem/srtm/n36_e024_1arc_v3.tif
-/data/Dagobah/global/dem/srtm/n35_e023_1arc_v3.tif
-/data/Dagobah/global/dem/srtm/n37_e024_1arc_v3.tif
-/data/Dagobah/global/dem/srtm/n36_e026_1arc_v3.tif
-/data/Dagobah/global/dem/srtm/n37_e023_1arc_v3.tif
-/data/Dagobah/global/dem/srtm/n35_e024_1arc_v3.tif
-/data/Dagobah/global/dem/srtm/n35_e025_1arc_v3.tif
-/data/Dagobah/global/dem/srtm/n36_e023_1arc_v3.tif
-/data/Dagobah/global/dem/srtm/n36_e027_1arc_v3.tif
-</code></pre>
-<p>Then, we use the <code>gdalbuildvrt</code> command to generate the virtual mosaic.</p>
-<pre><code class="language-bash">gdalbuildvrt -input_file_list /data/Dagobah/global/dem/srtm.txt /data/Earth/global/dem/srtm.vrt
-</code></pre>
-<pre><code>0...10...20...30...40...50...60...70...80...90...100 - done.
-</code></pre>
-<p>The VRT file is a simple xml file:</p>
-<pre><code class="language-bash">head -n 14 /data/Dagobah/global/dem/srtm.vrt
-</code></pre>
-<pre><code>&lt;VRTDataset rasterXSize=&quot;18001&quot; rasterYSize=&quot;10801&quot;&gt;
-  &lt;SRS&gt;GEOGCS[&quot;WGS 84&quot;,DATUM[&quot;WGS_1984&quot;,SPHEROID[&quot;WGS 84&quot;,6378137,298.257223563,AUTHORITY[&quot;EPSG&quot;,&quot;7030&quot;]],AUTHORITY[&quot;EPSG&quot;,&quot;6326&quot;]],PRIMEM[&quot;Greenwich&quot;,0],UNIT[&quot;degree&quot;,0.0174532925199433],AUTHORITY[&quot;EPSG&quot;,&quot;4326&quot;]]&lt;/SRS&gt;
-  &lt;GeoTransform&gt;  2.2999861111111112e+01,  2.7777777777777794e-04,  0.0000000000000000e+00,  3.8000138888888891e+01,  0.0000000000000000e+00, -2.7777777777777794e-04&lt;/GeoTransform&gt;
-  &lt;VRTRasterBand dataType=&quot;Int16&quot; band=&quot;1&quot;&gt;
-    &lt;NoDataValue&gt;-32767&lt;/NoDataValue&gt;
-    &lt;ColorInterp&gt;Gray&lt;/ColorInterp&gt;
-    &lt;ComplexSource&gt;
-      &lt;SourceFilename relativeToVRT=&quot;1&quot;&gt;srtm/n35_e027_1arc_v3.tif&lt;/SourceFilename&gt;
-      &lt;SourceBand&gt;1&lt;/SourceBand&gt;
-      &lt;SourceProperties RasterXSize=&quot;3601&quot; RasterYSize=&quot;3601&quot; DataType=&quot;Int16&quot; BlockXSize=&quot;3601&quot; BlockYSize=&quot;1&quot; /&gt;
-      &lt;SrcRect xOff=&quot;0&quot; yOff=&quot;0&quot; xSize=&quot;3601&quot; ySize=&quot;3601&quot; /&gt;
-      &lt;DstRect xOff=&quot;14400&quot; yOff=&quot;7200&quot; xSize=&quot;3601&quot; ySize=&quot;3601&quot; /&gt;
-      &lt;NODATA&gt;-32767&lt;/NODATA&gt;
-    &lt;/ComplexSource&gt;
-</code></pre>
-<p>Any software that is based on GDAL is able to read this file, e.g. QGIS - and <strong>FORCE</strong>. The filepath of this file needs to given in the <strong>FORCE L2PS</strong> parameter file:</p>
-<p><code>FILE_DEM = /data/Dagobah/global/dem/srtm.vrt</code></p>
-
+      
     </div>
 
     
