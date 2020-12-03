@@ -5,12 +5,23 @@
     <link>https://davidfrantz.github.io/presentation/</link>
       <atom:link href="https://davidfrantz.github.io/presentation/index.xml" rel="self" type="application/rss+xml" />
     <description>Presentations</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Mon, 04 May 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2020 David Frantz</copyright><lastBuildDate>Thu, 05 Nov 2020 16:10:00 +0000</lastBuildDate>
     <image>
       <url>https://davidfrantz.github.io/img/icon-192.png</url>
       <title>Presentations</title>
       <link>https://davidfrantz.github.io/presentation/</link>
     </image>
+    
+    <item>
+      <title>FORCE – Landsat &#43; Sentinel-2 ARD and Beyond</title>
+      <link>https://davidfrantz.github.io/presentation/frantz-2020/</link>
+      <pubDate>Thu, 05 Nov 2020 16:10:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/frantz-2020/</guid>
+      <description>&lt;p&gt;David Frantz&lt;/p&gt;
+&lt;p&gt;ARD20 Satellite Data Interoperability Workshop, 2-6 November 2020, Online&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Using multi-temporal Sentinel-2 data to predict chemical properties of the organic surface layer of forest soils</title>
