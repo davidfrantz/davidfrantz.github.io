@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Bringfried Pflug | DAVID FRANTZ</title>
-    <link>https://davidfrantz.github.io/authors/bringfried-pflug/</link>
-      <atom:link href="https://davidfrantz.github.io/authors/bringfried-pflug/index.xml" rel="self" type="application/rss+xml" />
-    <description>Bringfried Pflug</description>
+    <title>Rudolf Richter | DAVID FRANTZ</title>
+    <link>https://davidfrantz.github.io/authors/rudolf-richter/</link>
+      <atom:link href="https://davidfrantz.github.io/authors/rudolf-richter/index.xml" rel="self" type="application/rss+xml" />
+    <description>Rudolf Richter</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2021 David Frantz</copyright><lastBuildDate>Mon, 04 Jan 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://davidfrantz.github.io/img/icon-192.png</url>
-      <title>Bringfried Pflug</title>
-      <link>https://davidfrantz.github.io/authors/bringfried-pflug/</link>
+      <title>Rudolf Richter</title>
+      <link>https://davidfrantz.github.io/authors/rudolf-richter/</link>
     </image>
     
     <item>
@@ -17,14 +17,6 @@
       <link>https://davidfrantz.github.io/publication/zekoll-2021/</link>
       <pubDate>Mon, 04 Jan 2021 00:00:00 +0000</pubDate>
       <guid>https://davidfrantz.github.io/publication/zekoll-2021/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Atmospheric Correction Inter-Comparison Exercise</title>
-      <link>https://davidfrantz.github.io/publication/doxani-2018/</link>
-      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
-      <guid>https://davidfrantz.github.io/publication/doxani-2018/</guid>
       <description></description>
     </item>
     
