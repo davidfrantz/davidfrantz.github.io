@@ -5,12 +5,29 @@
     <link>https://davidfrantz.github.io/data/</link>
       <atom:link href="https://davidfrantz.github.io/data/index.xml" rel="self" type="application/rss+xml" />
     <description>Presentations</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2021 David Frantz</copyright><lastBuildDate>Mon, 05 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2021 David Frantz</copyright><lastBuildDate>Tue, 26 Jan 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://davidfrantz.github.io/img/icon-192.png</url>
       <title>Presentations</title>
       <link>https://davidfrantz.github.io/data/</link>
     </image>
+    
+    <item>
+      <title>Water vapor database for atmospheric correction of Landsat imagery</title>
+      <link>https://davidfrantz.github.io/data/frantz-2021/</link>
+      <pubDate>Tue, 26 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/data/frantz-2021/</guid>
+      <description>&lt;p&gt;Supplement to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Frantz, David; Stellmes, Marion; Hostert, Patrick (2019): A Global MODIS Water Vapor Database for the Operational Atmospheric Correction of Historic and Recent Landsat Imagery. Remote Sensing 11, 257, &lt;a href=&#34;https://doi.org/10.3390/rs11030257&#34;&gt;https://doi.org/10.3390/rs11030257&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Frantz, David; Röder, Achim; Stellmes, Marion; Hill, Joachim (2016): An operational radiometric Landsat preprocessing framework for large-area time series applications. IEEE Transactions on Geoscience and Remote Sensing, 54(7), 3928-3943, &lt;a href=&#34;https://doi.org/10.1109/TGRS.2016.2530856&#34;&gt;https://doi.org/10.1109/TGRS.2016.2530856&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Building height map of Germany</title>
