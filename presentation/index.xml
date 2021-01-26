@@ -5,12 +5,23 @@
     <link>https://davidfrantz.github.io/presentation/</link>
       <atom:link href="https://davidfrantz.github.io/presentation/index.xml" rel="self" type="application/rss+xml" />
     <description>Presentations</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2021 David Frantz</copyright><lastBuildDate>Thu, 05 Nov 2020 16:10:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2021 David Frantz</copyright><lastBuildDate>Tue, 26 Jan 2021 12:15:00 +0000</lastBuildDate>
     <image>
       <url>https://davidfrantz.github.io/img/icon-192.png</url>
       <title>Presentations</title>
       <link>https://davidfrantz.github.io/presentation/</link>
     </image>
+    
+    <item>
+      <title>FORCE – Analysis Ready Data and Beyond</title>
+      <link>https://davidfrantz.github.io/presentation/frantz-2021/</link>
+      <pubDate>Tue, 26 Jan 2021 12:15:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/frantz-2021/</guid>
+      <description>&lt;p&gt;David Frantz&lt;/p&gt;
+&lt;p&gt;Geoinformatikforum, Institut für Geoinformatik, Westfälische Wilhelms-Universität Münster, 26 January 2021, Online&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>FORCE – Landsat &#43; Sentinel-2 ARD and Beyond</title>

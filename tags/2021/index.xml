@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2021 | DAVID FRANTZ</title>
+    <link>https://davidfrantz.github.io/tags/2021/</link>
+      <atom:link href="https://davidfrantz.github.io/tags/2021/index.xml" rel="self" type="application/rss+xml" />
+    <description>2021</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2021 David Frantz</copyright><lastBuildDate>Tue, 26 Jan 2021 12:15:00 +0000</lastBuildDate>
+    <image>
+      <url>https://davidfrantz.github.io/img/icon-192.png</url>
+      <title>2021</title>
+      <link>https://davidfrantz.github.io/tags/2021/</link>
+    </image>
+    
+    <item>
+      <title>FORCE – Analysis Ready Data and Beyond</title>
+      <link>https://davidfrantz.github.io/presentation/frantz-2021/</link>
+      <pubDate>Tue, 26 Jan 2021 12:15:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/frantz-2021/</guid>
+      <description>&lt;p&gt;David Frantz&lt;/p&gt;
+&lt;p&gt;Geoinformatikforum, Institut für Geoinformatik, Westfälische Wilhelms-Universität Münster, 26 January 2021, Online&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
