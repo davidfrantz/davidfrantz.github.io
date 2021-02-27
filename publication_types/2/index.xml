@@ -5,12 +5,20 @@
     <link>https://davidfrantz.github.io/publication_types/2/</link>
       <atom:link href="https://davidfrantz.github.io/publication_types/2/index.xml" rel="self" type="application/rss+xml" />
     <description>2</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2021 David Frantz</copyright><lastBuildDate>Mon, 04 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2021 David Frantz</copyright><lastBuildDate>Wed, 24 Feb 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://davidfrantz.github.io/img/icon-192.png</url>
       <title>2</title>
       <link>https://davidfrantz.github.io/publication_types/2/</link>
     </image>
+    
+    <item>
+      <title>High-Resolution Maps of Material Stocks in Buildings and Infrastructures in Austria and Germany</title>
+      <link>https://davidfrantz.github.io/publication/haberl-2021/</link>
+      <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/haberl-2021/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Comparison of Masking Algorithms for Sentinel-2 Imagery</title>
