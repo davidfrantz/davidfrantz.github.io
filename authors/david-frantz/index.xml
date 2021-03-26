@@ -5,12 +5,20 @@
     <link>https://davidfrantz.github.io/authors/david-frantz/</link>
       <atom:link href="https://davidfrantz.github.io/authors/david-frantz/index.xml" rel="self" type="application/rss+xml" />
     <description>David Frantz</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2021 David Frantz</copyright><lastBuildDate>Wed, 24 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2021 David Frantz</copyright><lastBuildDate>Fri, 26 Mar 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://davidfrantz.github.io/img/icon-192.png</url>
       <title>David Frantz</title>
       <link>https://davidfrantz.github.io/authors/david-frantz/</link>
     </image>
+    
+    <item>
+      <title>Operational Coregistration of the Sentinel-2A/B Image Archive Using Multitemporal Landsat Spectral Averages</title>
+      <link>https://davidfrantz.github.io/publication/rufin-2021/</link>
+      <pubDate>Fri, 26 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/rufin-2021/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>High-Resolution Maps of Material Stocks in Buildings and Infrastructures in Austria and Germany</title>
@@ -57,14 +65,6 @@
       <link>https://davidfrantz.github.io/publication/schug-2020/</link>
       <pubDate>Mon, 11 May 2020 00:00:00 +0000</pubDate>
       <guid>https://davidfrantz.github.io/publication/schug-2020/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Operational Coregistration of the Sentinel-2A/B Image Archive Using Multitemporal Landsat Spectral Averages</title>
-      <link>https://davidfrantz.github.io/publication/rufin-2020/</link>
-      <pubDate>Mon, 06 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>https://davidfrantz.github.io/publication/rufin-2020/</guid>
       <description></description>
     </item>
     
