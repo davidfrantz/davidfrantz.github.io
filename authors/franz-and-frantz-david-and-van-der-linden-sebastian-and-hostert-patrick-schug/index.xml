@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Franz AND Frantz, David AND van der Linden, Sebastian AND Hostert, Patrick Schug | DAVID FRANTZ</title>
+    <link>https://davidfrantz.github.io/authors/franz-and-frantz-david-and-van-der-linden-sebastian-and-hostert-patrick-schug/</link>
+      <atom:link href="https://davidfrantz.github.io/authors/franz-and-frantz-david-and-van-der-linden-sebastian-and-hostert-patrick-schug/index.xml" rel="self" type="application/rss+xml" />
+    <description>Franz AND Frantz, David AND van der Linden, Sebastian AND Hostert, Patrick Schug</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2021 David Frantz</copyright><lastBuildDate>Mon, 01 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://davidfrantz.github.io/img/icon-192.png</url>
+      <title>Franz AND Frantz, David AND van der Linden, Sebastian AND Hostert, Patrick Schug</title>
+      <link>https://davidfrantz.github.io/authors/franz-and-frantz-david-and-van-der-linden-sebastian-and-hostert-patrick-schug/</link>
+    </image>
+    
+    <item>
+      <title>Gridded population mapping for Germany based on building density, height and type from Earth Observation data using census disaggregation and bottom-up estimates</title>
+      <link>https://davidfrantz.github.io/publication/schug-2021/</link>
+      <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/schug-2021/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
