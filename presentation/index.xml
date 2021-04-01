@@ -5,12 +5,23 @@
     <link>https://davidfrantz.github.io/presentation/</link>
       <atom:link href="https://davidfrantz.github.io/presentation/index.xml" rel="self" type="application/rss+xml" />
     <description>Presentations</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2021 David Frantz</copyright><lastBuildDate>Tue, 26 Jan 2021 12:15:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2021 David Frantz</copyright><lastBuildDate>Thu, 01 Apr 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://davidfrantz.github.io/img/icon-192.png</url>
       <title>Presentations</title>
       <link>https://davidfrantz.github.io/presentation/</link>
     </image>
+    
+    <item>
+      <title>Mapping Settlement And Vegetation Continuous Fields At National Scale In A Temperate Environment Using Sentinel-2</title>
+      <link>https://davidfrantz.github.io/presentation/schug-2021/</link>
+      <pubDate>Thu, 01 Apr 2021 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/schug-2021/</guid>
+      <description>&lt;p&gt;Franz Schug, David Frantz, Akpona Okujeni, Sebastian van der Linden, Patrick Hostert&lt;/p&gt;
+&lt;p&gt;EARSeL Joint Workshop 2021 - EO for sustainable cities and communities, 30 March - 1 April, Online&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>FORCE – Analysis Ready Data and Beyond</title>
