@@ -24,6 +24,17 @@
     </item>
     
     <item>
+      <title>Mowing detection based on Sentinel-1 and Sentinel-2 data</title>
+      <link>https://davidfrantz.github.io/presentation/schwieder-2020b/</link>
+      <pubDate>Tue, 20 Oct 2020 12:15:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/schwieder-2020b/</guid>
+      <description>&lt;p&gt;Marcel Schwieder, Maximilian Wesemeyer, David Frantz, David Loibl, Kira Pfoch, Patrick Hostert&lt;/p&gt;
+&lt;p&gt;Innovation Days 2020, 20-21 October 2020, Federal Office for Agriculture and Food (Online)&lt;/p&gt;
+&lt;p&gt;poster presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Building height map of Germany</title>
       <link>https://davidfrantz.github.io/data/frantz-2020/</link>
       <pubDate>Mon, 05 Oct 2020 00:00:00 +0000</pubDate>
@@ -96,9 +107,9 @@
     
     <item>
       <title>Abschätzung der Grünlandnutzungsintensität aus integrierten Sentinel-1 und Sentinel-2 Zeitreihen</title>
-      <link>https://davidfrantz.github.io/presentation/schwieder-2020/</link>
+      <link>https://davidfrantz.github.io/presentation/schwieder-2020a/</link>
       <pubDate>Wed, 04 Mar 2020 00:00:00 +0000</pubDate>
-      <guid>https://davidfrantz.github.io/presentation/schwieder-2020/</guid>
+      <guid>https://davidfrantz.github.io/presentation/schwieder-2020a/</guid>
       <description>&lt;p&gt;Marcel Schwieder, David Frantz, David Loibl, Kira Pfoch, Patrick Hostert&lt;/p&gt;
 &lt;ol start=&#34;40&#34;&gt;
 &lt;li&gt;Wissenschaftlich-Technische Jahrestagung der DGPF, 4-6 March 2020, Stuttgart, Germany&lt;/li&gt;
