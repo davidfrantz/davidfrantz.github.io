@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>upcoming | DAVID FRANTZ</title>
+    <link>https://davidfrantz.github.io/tags/upcoming/</link>
+      <atom:link href="https://davidfrantz.github.io/tags/upcoming/index.xml" rel="self" type="application/rss+xml" />
+    <description>upcoming</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2021 David Frantz</copyright><lastBuildDate>Thu, 29 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://davidfrantz.github.io/img/icon-192.png</url>
+      <title>upcoming</title>
+      <link>https://davidfrantz.github.io/tags/upcoming/</link>
+    </image>
+    
+    <item>
+      <title>FORCE - from large-scale EO data to information. An overview of functionality and applications</title>
+      <link>https://davidfrantz.github.io/presentation/frantz-2021d/</link>
+      <pubDate>Thu, 29 Apr 2021 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/frantz-2021d/</guid>
+      <description>&lt;p&gt;David Frantz&lt;/p&gt;
+&lt;p&gt;Remote Sensing Lecture Day, Eidgenössischen Forschungsanstalt für Wald, Schnee und Landschaft (WSL), 2 June 2021, Online&lt;/p&gt;
+&lt;p&gt;presentation (+demonstration?)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The weight of nations - high resolution material stock mapping on national scales</title>
+      <link>https://davidfrantz.github.io/presentation/frantz-2021b/</link>
+      <pubDate>Thu, 29 Apr 2021 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/frantz-2021b/</guid>
+      <description>&lt;p&gt;David Frantz et al.&lt;/p&gt;
+&lt;p&gt;EODC Forum 2021, 8-10 June 2021, Vienna, Austria (Online)&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The weight of nations - national-scale material stock maps based on Sentinel-1&#43;2, OSM, and material intensity factors</title>
+      <link>https://davidfrantz.github.io/presentation/frantz-2021c/</link>
+      <pubDate>Thu, 29 Apr 2021 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/frantz-2021c/</guid>
+      <description>&lt;p&gt;David Frantz et al.&lt;/p&gt;
+&lt;p&gt;Jahrestagung AK Fernerkundung. Fernerkundung für die Welt von morgen: Herausforderungen und Lösungsansätze für eine nachhaltige Entwicklung, 8 October 2021, Online&lt;/p&gt;
+&lt;p&gt;keynote presentation&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
