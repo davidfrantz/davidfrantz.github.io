@@ -5,12 +5,23 @@
     <link>https://davidfrantz.github.io/</link>
       <atom:link href="https://davidfrantz.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>DAVID FRANTZ</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2021 David Frantz</copyright><lastBuildDate>Thu, 29 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2021 David Frantz</copyright><lastBuildDate>Thu, 27 May 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://davidfrantz.github.io/img/icon-192.png</url>
       <title>DAVID FRANTZ</title>
       <link>https://davidfrantz.github.io/</link>
     </image>
+    
+    <item>
+      <title>Why using High-Resolution Earth Observation imagery for National-Scale Bottom-Up Estimation of Material Stocks?</title>
+      <link>https://davidfrantz.github.io/presentation/schug-2021b/</link>
+      <pubDate>Thu, 27 May 2021 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/schug-2021b/</guid>
+      <description>&lt;p&gt;Franz Schug, David Frantz, Dominik Wiedenhofer, Helmut Haberl, Patrick Hostert&lt;/p&gt;
+&lt;p&gt;International Industrial Ecology Day 2021, 21 June, Online&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>FORCE - from large-scale EO data to information. An overview of functionality and applications</title>
@@ -39,7 +50,7 @@
       <link>https://davidfrantz.github.io/presentation/frantz-2021c/</link>
       <pubDate>Thu, 29 Apr 2021 00:00:00 +0000</pubDate>
       <guid>https://davidfrantz.github.io/presentation/frantz-2021c/</guid>
-      <description>&lt;p&gt;David Frantz et al.&lt;/p&gt;
+      <description>&lt;p&gt;David Frantz, Franz Schug, Dominik Wiedenhofer, Doris Virág, André Baumgart, Sebastian van der Linden, Helmut Haberl, Patrick Hostert&lt;/p&gt;
 &lt;p&gt;Jahrestagung AK Fernerkundung. Fernerkundung für die Welt von morgen: Herausforderungen und Lösungsansätze für eine nachhaltige Entwicklung, 8 October 2021, Online&lt;/p&gt;
 &lt;p&gt;keynote presentation&lt;/p&gt;
 </description>
