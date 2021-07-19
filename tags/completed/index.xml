@@ -5,12 +5,20 @@
     <link>https://davidfrantz.github.io/tags/completed/</link>
       <atom:link href="https://davidfrantz.github.io/tags/completed/index.xml" rel="self" type="application/rss+xml" />
     <description>completed</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2021 David Frantz</copyright><lastBuildDate>Wed, 01 Nov 2017 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2021 David Frantz</copyright><lastBuildDate>Mon, 01 Jan 2018 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://davidfrantz.github.io/img/icon-192.png</url>
       <title>completed</title>
       <link>https://davidfrantz.github.io/tags/completed/</link>
     </image>
+    
+    <item>
+      <title>SattGrün</title>
+      <link>https://davidfrantz.github.io/project/sattgruen/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/project/sattgruen/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>FORCE NRT</title>
