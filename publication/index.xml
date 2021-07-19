@@ -5,12 +5,20 @@
     <link>https://davidfrantz.github.io/publication/</link>
       <atom:link href="https://davidfrantz.github.io/publication/index.xml" rel="self" type="application/rss+xml" />
     <description>Publications</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2021 David Frantz</copyright><lastBuildDate>Fri, 26 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2021 David Frantz</copyright><lastBuildDate>Thu, 08 Jul 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://davidfrantz.github.io/img/icon-192.png</url>
       <title>Publications</title>
       <link>https://davidfrantz.github.io/publication/</link>
     </image>
+    
+    <item>
+      <title>Multi-season unmixing of vegetation class fractions across diverse Californian ecoregions using simulated spaceborne imaging spectroscopy data.</title>
+      <link>https://davidfrantz.github.io/publication/okujeni-2021/</link>
+      <pubDate>Thu, 08 Jul 2021 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/okujeni-2021/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Operational Coregistration of the Sentinel-2A/B Image Archive Using Multitemporal Landsat Spectral Averages</title>

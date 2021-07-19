@@ -2,8 +2,47 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://davidfrantz.github.io/publication_types/2/</loc>
+    <lastmod>2021-07-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/authors/akpona-okujeni/</loc>
+    <lastmod>2021-07-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/authors/</loc>
+    <lastmod>2021-07-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/authors/clemens-janicke/</loc>
+    <lastmod>2021-07-08T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://davidfrantz.github.io/</loc>
-    <lastmod>2021-05-27T00:00:00+00:00</lastmod>
+    <lastmod>2021-07-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/authors/david-frantz/</loc>
+    <lastmod>2021-07-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/authors/karl-segl/</loc>
+    <lastmod>2021-07-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/authors/matthew-clark/</loc>
+    <lastmod>2021-07-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/publication/okujeni-2021/</loc>
+    <lastmod>2021-07-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/authors/patrick-hostert/</loc>
+    <lastmod>2021-07-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/publication_types/</loc>
+    <lastmod>2021-07-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/publication/</loc>
+    <lastmod>2021-07-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/authors/sam-cooper/</loc>
+    <lastmod>2021-07-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/authors/sebastian-van-der-linden/</loc>
+    <lastmod>2021-07-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/presentation/</loc>
     <lastmod>2021-05-27T00:00:00+00:00</lastmod>
@@ -32,40 +71,19 @@
     <loc>https://davidfrantz.github.io/presentation/schug-2021/</loc>
     <lastmod>2021-04-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidfrantz.github.io/publication_types/2/</loc>
-    <lastmod>2021-03-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://davidfrantz.github.io/authors/</loc>
-    <lastmod>2021-03-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://davidfrantz.github.io/authors/david-frantz/</loc>
-    <lastmod>2021-03-26T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://davidfrantz.github.io/authors/lin-yan/</loc>
     <lastmod>2021-03-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/publication/rufin-2021/</loc>
     <lastmod>2021-03-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidfrantz.github.io/authors/patrick-hostert/</loc>
-    <lastmod>2021-03-26T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://davidfrantz.github.io/authors/philippe-rufin/</loc>
-    <lastmod>2021-03-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://davidfrantz.github.io/publication_types/</loc>
-    <lastmod>2021-03-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://davidfrantz.github.io/publication/</loc>
     <lastmod>2021-03-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/authors/franz-schug/</loc>
     <lastmod>2021-03-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/publication/schug-2021/</loc>
-    <lastmod>2021-03-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://davidfrantz.github.io/authors/sebastian-van-der-linden/</loc>
     <lastmod>2021-03-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/presentation/wiedenhofer-2020/</loc>
@@ -148,9 +166,6 @@
   </url><url>
     <loc>https://davidfrantz.github.io/authors/viktoria-zekoll/</loc>
     <lastmod>2021-01-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://davidfrantz.github.io/authors/akpona-okujeni/</loc>
-    <lastmod>2021-01-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/authors/claudio-navacchi/</loc>
     <lastmod>2021-01-01T00:00:00+00:00</lastmod>
@@ -288,9 +303,6 @@
     <lastmod>2020-04-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/authors/daniel-scheffler/</loc>
-    <lastmod>2020-03-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://davidfrantz.github.io/authors/karl-segl/</loc>
     <lastmod>2020-03-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/publication/scheffler-2020/</loc>

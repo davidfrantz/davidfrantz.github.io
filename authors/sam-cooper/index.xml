@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Karl Segl | DAVID FRANTZ</title>
-    <link>https://davidfrantz.github.io/authors/karl-segl/</link>
-      <atom:link href="https://davidfrantz.github.io/authors/karl-segl/index.xml" rel="self" type="application/rss+xml" />
-    <description>Karl Segl</description>
+    <title>Sam Cooper | DAVID FRANTZ</title>
+    <link>https://davidfrantz.github.io/authors/sam-cooper/</link>
+      <atom:link href="https://davidfrantz.github.io/authors/sam-cooper/index.xml" rel="self" type="application/rss+xml" />
+    <description>Sam Cooper</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2021 David Frantz</copyright><lastBuildDate>Thu, 08 Jul 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://davidfrantz.github.io/img/icon-192.png</url>
-      <title>Karl Segl</title>
-      <link>https://davidfrantz.github.io/authors/karl-segl/</link>
+      <title>Sam Cooper</title>
+      <link>https://davidfrantz.github.io/authors/sam-cooper/</link>
     </image>
     
     <item>
@@ -17,14 +17,6 @@
       <link>https://davidfrantz.github.io/publication/okujeni-2021/</link>
       <pubDate>Thu, 08 Jul 2021 00:00:00 +0000</pubDate>
       <guid>https://davidfrantz.github.io/publication/okujeni-2021/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Spectral harmonization and red edge prediction of Landsat-8 to Sentinel-2 using land cover optimized multivariate regressors</title>
-      <link>https://davidfrantz.github.io/publication/scheffler-2020/</link>
-      <pubDate>Thu, 12 Mar 2020 00:00:00 +0000</pubDate>
-      <guid>https://davidfrantz.github.io/publication/scheffler-2020/</guid>
       <description></description>
     </item>
     
