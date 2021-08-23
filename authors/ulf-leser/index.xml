@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ulf Leser | DAVID FRANTZ</title>
+    <link>https://davidfrantz.github.io/authors/ulf-leser/</link>
+      <atom:link href="https://davidfrantz.github.io/authors/ulf-leser/index.xml" rel="self" type="application/rss+xml" />
+    <description>Ulf Leser</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2021 David Frantz</copyright><lastBuildDate>Fri, 20 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://davidfrantz.github.io/img/icon-192.png</url>
+      <title>Ulf Leser</title>
+      <link>https://davidfrantz.github.io/authors/ulf-leser/</link>
+    </image>
+    
+    <item>
+      <title>FORCE on Nextflow: Scalable Analysis of Earth Observation data on Commodity Clusters</title>
+      <link>https://davidfrantz.github.io/publication/lehmann_2021/</link>
+      <pubDate>Fri, 20 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/lehmann_2021/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
