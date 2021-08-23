@@ -5,12 +5,23 @@
     <link>https://davidfrantz.github.io/presentation/</link>
       <atom:link href="https://davidfrantz.github.io/presentation/index.xml" rel="self" type="application/rss+xml" />
     <description>Presentations</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2021 David Frantz</copyright><lastBuildDate>Thu, 27 May 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2021 David Frantz</copyright><lastBuildDate>Fri, 20 Aug 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://davidfrantz.github.io/img/icon-192.png</url>
       <title>Presentations</title>
       <link>https://davidfrantz.github.io/presentation/</link>
     </image>
+    
+    <item>
+      <title>FORCE on Nextflow: Scalable Analysis of Earth Observation data on Commodity Clusters</title>
+      <link>https://davidfrantz.github.io/presentation/lehmann-2021/</link>
+      <pubDate>Fri, 20 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/lehmann-2021/</guid>
+      <description>&lt;p&gt;Fabian Lehmann, David Frantz, Sören Becker, Ulf Leser, Patrick Hostert&lt;/p&gt;
+&lt;p&gt;1st workshop on Complex Data Challenges in Earth Observation (CDCEO) 2021, 1 November, Online&lt;/p&gt;
+&lt;p&gt;poster presentation&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Why using High-Resolution Earth Observation imagery for National-Scale Bottom-Up Estimation of Material Stocks?</title>

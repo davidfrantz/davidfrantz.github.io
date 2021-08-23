@@ -5,12 +5,23 @@
     <link>https://davidfrantz.github.io/tags/2021/</link>
       <atom:link href="https://davidfrantz.github.io/tags/2021/index.xml" rel="self" type="application/rss+xml" />
     <description>2021</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2021 David Frantz</copyright><lastBuildDate>Thu, 29 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2021 David Frantz</copyright><lastBuildDate>Thu, 27 May 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://davidfrantz.github.io/img/icon-192.png</url>
       <title>2021</title>
       <link>https://davidfrantz.github.io/tags/2021/</link>
     </image>
+    
+    <item>
+      <title>Why using High-Resolution Earth Observation imagery for National-Scale Bottom-Up Estimation of Material Stocks?</title>
+      <link>https://davidfrantz.github.io/presentation/schug-2021b/</link>
+      <pubDate>Thu, 27 May 2021 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/schug-2021b/</guid>
+      <description>&lt;p&gt;Franz Schug, David Frantz, Dominik Wiedenhofer, Doris Virág, André Baumgart, Helmut Haberl, Patrick Hostert&lt;/p&gt;
+&lt;p&gt;International Industrial Ecology Day 2021, 21 June, Online&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>FORCE - from large-scale EO data to information. An overview of functionality and applications</title>
