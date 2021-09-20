@@ -2,13 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://davidfrantz.github.io/</loc>
+    <lastmod>2021-09-17T14:37:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/presentation/wiedenhofer-2021/</loc>
+    <lastmod>2021-09-17T14:37:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/presentation/</loc>
+    <lastmod>2021-09-17T14:37:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/tags/submitted/</loc>
+    <lastmod>2021-09-17T14:37:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/tags/</loc>
+    <lastmod>2021-09-17T14:37:00+00:00</lastmod>
+  </url><url>
     <loc>https://davidfrantz.github.io/publication_types/2/</loc>
     <lastmod>2021-08-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/authors/</loc>
-    <lastmod>2021-08-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://davidfrantz.github.io/</loc>
     <lastmod>2021-08-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/authors/david-frantz/</loc>
@@ -26,9 +38,6 @@
     <loc>https://davidfrantz.github.io/authors/patrick-hostert/</loc>
     <lastmod>2021-08-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidfrantz.github.io/presentation/</loc>
-    <lastmod>2021-08-20T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://davidfrantz.github.io/publication_types/</loc>
     <lastmod>2021-08-20T00:00:00+00:00</lastmod>
   </url><url>
@@ -36,9 +45,6 @@
     <lastmod>2021-08-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/authors/soren-becker/</loc>
-    <lastmod>2021-08-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://davidfrantz.github.io/tags/</loc>
     <lastmod>2021-08-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/authors/ulf-leser/</loc>
@@ -102,12 +108,6 @@
     <lastmod>2021-03-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/presentation/wiedenhofer-2020/</loc>
-    <lastmod>2021-02-25T12:15:00+00:00</lastmod>
-  </url><url>
-    <loc>https://davidfrantz.github.io/presentation/wiedenhofer-2021/</loc>
-    <lastmod>2021-02-25T12:15:00+00:00</lastmod>
-  </url><url>
-    <loc>https://davidfrantz.github.io/tags/submitted/</loc>
     <lastmod>2021-02-25T12:15:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/presentation/frantz-2021e/</loc>

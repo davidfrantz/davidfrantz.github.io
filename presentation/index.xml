@@ -5,12 +5,23 @@
     <link>https://davidfrantz.github.io/presentation/</link>
       <atom:link href="https://davidfrantz.github.io/presentation/index.xml" rel="self" type="application/rss+xml" />
     <description>Presentations</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2021 David Frantz</copyright><lastBuildDate>Fri, 20 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2021 David Frantz</copyright><lastBuildDate>Fri, 17 Sep 2021 14:37:00 +0000</lastBuildDate>
     <image>
       <url>https://davidfrantz.github.io/img/icon-192.png</url>
       <title>Presentations</title>
       <link>https://davidfrantz.github.io/presentation/</link>
     </image>
+    
+    <item>
+      <title>Mapping socio-economic material stocks of buildings and infrastructure for entire countries from Earth-Observation data at high-resolution</title>
+      <link>https://davidfrantz.github.io/presentation/wiedenhofer-2021/</link>
+      <pubDate>Fri, 17 Sep 2021 14:37:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/wiedenhofer-2021/</guid>
+      <description>&lt;p&gt;Dominik Wiedenhofer, Franz Schug, David Frantz, Doris Virág, André Baumgart, Sebastian van der Linden, Patrick Hostert, Helmut Haberl&lt;/p&gt;
+&lt;p&gt;Sustainable Built Environment - D-A-CH Conference, September 2022, Berlin, German&lt;/p&gt;
+&lt;p&gt;abstract submitted&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>FORCE on Nextflow: Scalable Analysis of Earth Observation data on Commodity Clusters</title>
@@ -86,17 +97,6 @@
       <description>&lt;p&gt;Dominik Wiedenhofer, Doris Virág, Franz Schug, David Frantz, Sebastian van der Linden, Patrick Hostert, Helmut Haberl&lt;/p&gt;
 &lt;p&gt;EcoBalance 2020, 25 Februrary - 5 March 2021, Sendai, Japan (Online)&lt;/p&gt;
 &lt;p&gt;oral presentation&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Mapping socio-economic material stocks of buildings and infrastructure for entire countries from Earth-Observation data at high-resolution</title>
-      <link>https://davidfrantz.github.io/presentation/wiedenhofer-2021/</link>
-      <pubDate>Thu, 25 Feb 2021 12:15:00 +0000</pubDate>
-      <guid>https://davidfrantz.github.io/presentation/wiedenhofer-2021/</guid>
-      <description>&lt;p&gt;Dominik Wiedenhofer, Franz Schug, David Frantz, Doris Virág, André Baumgart, Sebastian van der Linden, Patrick Hostert, Helmut Haberl&lt;/p&gt;
-&lt;p&gt;Sustainable Built Environment - D-A-CH Conference, September 2022, Berlin, German&lt;/p&gt;
-&lt;p&gt;abstract submitted&lt;/p&gt;
 </description>
     </item>
     
