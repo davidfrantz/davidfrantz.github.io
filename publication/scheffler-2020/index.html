@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.3">
+  <meta name="generator" content="Source Themes Academic 4.7.0">
 
   
 
@@ -44,6 +44,9 @@
 
   
   
+
+  
+  
   
   
     
@@ -68,6 +71,118 @@
 
     
 
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+
+      
+      
+
+      
     
 
   
@@ -95,11 +210,12 @@
   
 
   <link rel="manifest" href="/index.webmanifest">
-  <link rel="icon" type="image/png" href="/img/icon-32.png">
-  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+  <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_3.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_3.png">
 
   <link rel="canonical" href="https://davidfrantz.github.io/publication/scheffler-2020/">
 
+  
   
   
   
@@ -113,8 +229,8 @@
   <meta property="og:site_name" content="DAVID FRANTZ">
   <meta property="og:url" content="https://davidfrantz.github.io/publication/scheffler-2020/">
   <meta property="og:title" content="Spectral harmonization and red edge prediction of Landsat-8 to Sentinel-2 using land cover optimized multivariate regressors | DAVID FRANTZ">
-  <meta property="og:description" content="Multi-sensor remote sensing applications consistently gain importance, boosted by a growing number of freely available earth observation data, increasing computing capacity, and increasingly complex algorithms that need as temporally dense data as possible. Using data provided by different sensors can greatly improve the temporal resolution of time series, fill data gaps and thus improve the quality of land cover monitoring applications. However, multi-sensor approaches are often adversely affected by different spectral characteristics of the sensing instruments, leading to inconsistencies in downstream products. Spectral harmonization, i.e., the transformation of one sensor into the spectral domain of another sensor, may reduce these inconsistencies. It simplifies workflows, increases the reliability of subsequently derived multi-sensor products and may also enable the generation of new products that are not possible with the initial spectral definition. In this paper, we compare the effect of multivariate spectral harmonization techniques on the inter-sensor reflectance consistency and derived products such as spectral indices or land cover classifications. We simulated surface reflectance data of Landsat-8 and Sentinel-2A from airborne hyperspectral data to eliminate any sources of error originating from unequal acquisition geometries, illumination or atmospheric state. We evaluate different methods based on linear, quadratic and random forest regression as well as linear interpolation, and predict not only matching but also unilaterally missing bands (red edge). We additionally consider material-dependent spectral characteristics in the harmonization process by using separate transformation functions for spectral clusters of the input dataset. Our results suggest that spectral harmonization is useful to improve multi-sensor consistency of remote sensing data and subsequently derived products, especially if multiple transformation functions are incorporated. There is a strong dependency between harmonization performance and the similarity of source and target sensor&#39;s spectral characteristics. For spectrally transforming Landsat-8 to Sentinel-2A, we achieved the lowest radiometric inter-sensor deviations with 50 spectral clusters and linear regression. Based on simulated data, deviations are below 1.7% reflectance within the red edge spectral region and below 0.3% reflectance for the remaining bands (RMSE). Regarding spectral indices, our results show a reduction of inter-sensor deviation (vegetation pixels only) to 38% of the initial error for NDVI (Normalized Difference Vegetation Index) and to 43% for EVI (Enhanced Vegetation Index). Furthermore, we computed the REIP (Red Edge Inflection Point) with an accuracy of 3.1 nm from Sentinel-2 adapted Landsat-8 data. An exemplary multispectral classification use case revealed an increasing inter-sensor consistency of classification results from 92.3% to 97.3% mean error. Applied to time series of real Landsat-8 and Sentinel-2 data, we observed similar trends, albeit intermingled with non-sensor-induced inconsistencies."><meta property="og:image" content="https://davidfrantz.github.io/img/icon-192.png">
-  <meta property="twitter:image" content="https://davidfrantz.github.io/img/icon-192.png"><meta property="og:locale" content="en-us">
+  <meta property="og:description" content="Multi-sensor remote sensing applications consistently gain importance, boosted by a growing number of freely available earth observation data, increasing computing capacity, and increasingly complex algorithms that need as temporally dense data as possible. Using data provided by different sensors can greatly improve the temporal resolution of time series, fill data gaps and thus improve the quality of land cover monitoring applications. However, multi-sensor approaches are often adversely affected by different spectral characteristics of the sensing instruments, leading to inconsistencies in downstream products. Spectral harmonization, i.e., the transformation of one sensor into the spectral domain of another sensor, may reduce these inconsistencies. It simplifies workflows, increases the reliability of subsequently derived multi-sensor products and may also enable the generation of new products that are not possible with the initial spectral definition. In this paper, we compare the effect of multivariate spectral harmonization techniques on the inter-sensor reflectance consistency and derived products such as spectral indices or land cover classifications. We simulated surface reflectance data of Landsat-8 and Sentinel-2A from airborne hyperspectral data to eliminate any sources of error originating from unequal acquisition geometries, illumination or atmospheric state. We evaluate different methods based on linear, quadratic and random forest regression as well as linear interpolation, and predict not only matching but also unilaterally missing bands (red edge). We additionally consider material-dependent spectral characteristics in the harmonization process by using separate transformation functions for spectral clusters of the input dataset. Our results suggest that spectral harmonization is useful to improve multi-sensor consistency of remote sensing data and subsequently derived products, especially if multiple transformation functions are incorporated. There is a strong dependency between harmonization performance and the similarity of source and target sensor&#39;s spectral characteristics. For spectrally transforming Landsat-8 to Sentinel-2A, we achieved the lowest radiometric inter-sensor deviations with 50 spectral clusters and linear regression. Based on simulated data, deviations are below 1.7% reflectance within the red edge spectral region and below 0.3% reflectance for the remaining bands (RMSE). Regarding spectral indices, our results show a reduction of inter-sensor deviation (vegetation pixels only) to 38% of the initial error for NDVI (Normalized Difference Vegetation Index) and to 43% for EVI (Enhanced Vegetation Index). Furthermore, we computed the REIP (Red Edge Inflection Point) with an accuracy of 3.1 nm from Sentinel-2 adapted Landsat-8 data. An exemplary multispectral classification use case revealed an increasing inter-sensor consistency of classification results from 92.3% to 97.3% mean error. Applied to time series of real Landsat-8 and Sentinel-2 data, we observed similar trends, albeit intermingled with non-sensor-induced inconsistencies."><meta property="og:image" content="https://davidfrantz.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png">
+  <meta property="twitter:image" content="https://davidfrantz.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png"><meta property="og:locale" content="en-us">
   
     
       <meta property="article:published_time" content="2020-03-12T00:00:00&#43;00:00">
@@ -160,7 +276,7 @@
     "name": "DAVID FRANTZ",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://davidfrantz.github.io/img/icon-512.png"
+      "url": "img/https://davidfrantz.github.io/"
     }
   },
   "description": "Multi-sensor remote sensing applications consistently gain importance, boosted by a growing number of freely available earth observation data, increasing computing capacity, and increasingly complex algorithms that need as temporally dense data as possible. Using data provided by different sensors can greatly improve the temporal resolution of time series, fill data gaps and thus improve the quality of land cover monitoring applications. However, multi-sensor approaches are often adversely affected by different spectral characteristics of the sensing instruments, leading to inconsistencies in downstream products. Spectral harmonization, i.e., the transformation of one sensor into the spectral domain of another sensor, may reduce these inconsistencies. It simplifies workflows, increases the reliability of subsequently derived multi-sensor products and may also enable the generation of new products that are not possible with the initial spectral definition. In this paper, we compare the effect of multivariate spectral harmonization techniques on the inter-sensor reflectance consistency and derived products such as spectral indices or land cover classifications. We simulated surface reflectance data of Landsat-8 and Sentinel-2A from airborne hyperspectral data to eliminate any sources of error originating from unequal acquisition geometries, illumination or atmospheric state. We evaluate different methods based on linear, quadratic and random forest regression as well as linear interpolation, and predict not only matching but also unilaterally missing bands (red edge). We additionally consider material-dependent spectral characteristics in the harmonization process by using separate transformation functions for spectral clusters of the input dataset. Our results suggest that spectral harmonization is useful to improve multi-sensor consistency of remote sensing data and subsequently derived products, especially if multiple transformation functions are incorporated. There is a strong dependency between harmonization performance and the similarity of source and target sensor's spectral characteristics. For spectrally transforming Landsat-8 to Sentinel-2A, we achieved the lowest radiometric inter-sensor deviations with 50 spectral clusters and linear regression. Based on simulated data, deviations are below 1.7% reflectance within the red edge spectral region and below 0.3% reflectance for the remaining bands (RMSE). Regarding spectral indices, our results show a reduction of inter-sensor deviation (vegetation pixels only) to 38% of the initial error for NDVI (Normalized Difference Vegetation Index) and to 43% for EVI (Enhanced Vegetation Index). Furthermore, we computed the REIP (Red Edge Inflection Point) with an accuracy of 3.1 nm from Sentinel-2 adapted Landsat-8 data. An exemplary multispectral classification use case revealed an increasing inter-sensor consistency of classification results from 92.3% to 97.3% mean error. Applied to time series of real Landsat-8 and Sentinel-2 data, we observed similar trends, albeit intermingled with non-sensor-induced inconsistencies."
@@ -224,6 +340,7 @@
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
+    
     
     <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">DAVID FRANTZ</a>
@@ -856,9 +973,6 @@
 
     
     
-
-    
-    
     
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
@@ -875,8 +989,6 @@
         
       
 
-      
-      
     
 
     
@@ -937,9 +1049,6 @@
 
     
     
-
-    
-    
     
     
     
@@ -952,7 +1061,7 @@
     
     
     
-    <script src="/js/academic.min.ad3fa4a5d654806a06481ef620849c1b.js"></script>
+    <script src="/js/academic.min.409b0d00283f74c9777416d6d91420f4.js"></script>
 
     
 

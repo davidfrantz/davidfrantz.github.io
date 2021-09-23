@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.3">
+  <meta name="generator" content="Source Themes Academic 4.7.0">
 
   
 
@@ -44,6 +44,9 @@
 
   
   
+
+  
+  
   
   
     
@@ -68,6 +71,118 @@
 
     
 
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+
+      
+      
+
+      
     
 
   
@@ -95,11 +210,12 @@
   
 
   <link rel="manifest" href="/index.webmanifest">
-  <link rel="icon" type="image/png" href="/img/icon-32.png">
-  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+  <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_3.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_3.png">
 
   <link rel="canonical" href="https://davidfrantz.github.io/publication/lehmann_2021/">
 
+  
   
   
   
@@ -113,8 +229,8 @@
   <meta property="og:site_name" content="DAVID FRANTZ">
   <meta property="og:url" content="https://davidfrantz.github.io/publication/lehmann_2021/">
   <meta property="og:title" content="FORCE on Nextflow: Scalable Analysis of Earth Observation data on Commodity Clusters | DAVID FRANTZ">
-  <meta property="og:description" content="Modern Earth Observation (EO) often analyses hundreds of gigabytes of data from thousands of satellite images. This data usually is processed with hand-made scripts combining several tools implementing the various steps within such an analysis. In such a setting, a fair amount of geographers’ work goes into optimization, tuning and, parallelization. Development becomes even more complicated when compute clusters become necessary, introducing issues like scheduling, remote data access, and generally a greatly increased infrastructure complexity. Furthermore, tailor-made systems are often optimized to one specific system and cannot easily be adapted to other infrastructures. Data Analysis Workflow engines promise to relieve the workflow developer from finding custom solutions to these issues and thereby improve scalability, reproducibility, and reusability of workflows while reducing development cost at the infrastructure side. On the other hand, they require the workflow to be programmed in a particular language, to obey certain principles of distributed processing, and to properly configure and tune the execution stack, which puts additional burden to data scientists. Here, we study this trade-off using a concrete EO workflow for long-term vegetation dynamics in the Mediterranean. The original workflow was programmed with FORCE, a custom-made framework for assembling and executing EO workflows on stand-alone servers. We ported it to the scientific workflow system Nextflow, which is capable of seamlessly orchestrating workflows over a large variety of infrastructures. We discuss the pitfalls we faced while porting the workflow, advantages and disadvantages of such an approach, and compare in detail the efficiency of both implementations on various infrastructures. We quantify the overhead in execution time incurred by the workflow engine and give hints on how to deal with heterogeneous tasks. Overall, our Nextflow implementation shows promising behavior in terms of reusability and scalability, though this does not apply to all workflow stages."><meta property="og:image" content="https://davidfrantz.github.io/img/icon-192.png">
-  <meta property="twitter:image" content="https://davidfrantz.github.io/img/icon-192.png"><meta property="og:locale" content="en-us">
+  <meta property="og:description" content="Modern Earth Observation (EO) often analyses hundreds of gigabytes of data from thousands of satellite images. This data usually is processed with hand-made scripts combining several tools implementing the various steps within such an analysis. In such a setting, a fair amount of geographers’ work goes into optimization, tuning and, parallelization. Development becomes even more complicated when compute clusters become necessary, introducing issues like scheduling, remote data access, and generally a greatly increased infrastructure complexity. Furthermore, tailor-made systems are often optimized to one specific system and cannot easily be adapted to other infrastructures. Data Analysis Workflow engines promise to relieve the workflow developer from finding custom solutions to these issues and thereby improve scalability, reproducibility, and reusability of workflows while reducing development cost at the infrastructure side. On the other hand, they require the workflow to be programmed in a particular language, to obey certain principles of distributed processing, and to properly configure and tune the execution stack, which puts additional burden to data scientists. Here, we study this trade-off using a concrete EO workflow for long-term vegetation dynamics in the Mediterranean. The original workflow was programmed with FORCE, a custom-made framework for assembling and executing EO workflows on stand-alone servers. We ported it to the scientific workflow system Nextflow, which is capable of seamlessly orchestrating workflows over a large variety of infrastructures. We discuss the pitfalls we faced while porting the workflow, advantages and disadvantages of such an approach, and compare in detail the efficiency of both implementations on various infrastructures. We quantify the overhead in execution time incurred by the workflow engine and give hints on how to deal with heterogeneous tasks. Overall, our Nextflow implementation shows promising behavior in terms of reusability and scalability, though this does not apply to all workflow stages."><meta property="og:image" content="https://davidfrantz.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png">
+  <meta property="twitter:image" content="https://davidfrantz.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png"><meta property="og:locale" content="en-us">
   
     
       <meta property="article:published_time" content="2021-08-20T18:22:00&#43;00:00">
@@ -160,7 +276,7 @@
     "name": "DAVID FRANTZ",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://davidfrantz.github.io/img/icon-512.png"
+      "url": "img/https://davidfrantz.github.io/"
     }
   },
   "description": "Modern Earth Observation (EO) often analyses hundreds of gigabytes of data from thousands of satellite images. This data usually is processed with hand-made scripts combining several tools implementing the various steps within such an analysis. In such a setting, a fair amount of geographers’ work goes into optimization, tuning and, parallelization. Development becomes even more complicated when compute clusters become necessary, introducing issues like scheduling, remote data access, and generally a greatly increased infrastructure complexity. Furthermore, tailor-made systems are often optimized to one specific system and cannot easily be adapted to other infrastructures. Data Analysis Workflow engines promise to relieve the workflow developer from finding custom solutions to these issues and thereby improve scalability, reproducibility, and reusability of workflows while reducing development cost at the infrastructure side. On the other hand, they require the workflow to be programmed in a particular language, to obey certain principles of distributed processing, and to properly configure and tune the execution stack, which puts additional burden to data scientists. Here, we study this trade-off using a concrete EO workflow for long-term vegetation dynamics in the Mediterranean. The original workflow was programmed with FORCE, a custom-made framework for assembling and executing EO workflows on stand-alone servers. We ported it to the scientific workflow system Nextflow, which is capable of seamlessly orchestrating workflows over a large variety of infrastructures. We discuss the pitfalls we faced while porting the workflow, advantages and disadvantages of such an approach, and compare in detail the efficiency of both implementations on various infrastructures. We quantify the overhead in execution time incurred by the workflow engine and give hints on how to deal with heterogeneous tasks. Overall, our Nextflow implementation shows promising behavior in terms of reusability and scalability, though this does not apply to all workflow stages."
@@ -224,6 +340,7 @@
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
+    
     
     <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">DAVID FRANTZ</a>
@@ -551,7 +668,7 @@
 
 
   
-  <span><a href="/authors/fabian-lehmann/">Fabian Lehmann</a></span>, <span><a href="/authors/david-frantz/">David Frantz</a></span>, <span><a href="/authors/soren-becker/">Sören Becker</a></span>, <span><a href="/authors/ulf-leser/">Ulf Leser</a></span>, <span><a href="/authors/patrick-hostert/">Patrick Hostert</a></span>
+  <span><a href="/authors/fabian-lehmann/">Fabian Lehmann</a></span>, <span><a href="/authors/david-frantz/">David Frantz</a></span>, <span>Sören Becker</span>, <span><a href="/authors/ulf-leser/">Ulf Leser</a></span>, <span><a href="/authors/patrick-hostert/">Patrick Hostert</a></span>
 
   </div>
   
@@ -798,9 +915,6 @@
 
     
     
-
-    
-    
     
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
@@ -817,8 +931,6 @@
         
       
 
-      
-      
     
 
     
@@ -879,9 +991,6 @@
 
     
     
-
-    
-    
     
     
     
@@ -894,7 +1003,7 @@
     
     
     
-    <script src="/js/academic.min.ad3fa4a5d654806a06481ef620849c1b.js"></script>
+    <script src="/js/academic.min.409b0d00283f74c9777416d6d91420f4.js"></script>
 
     
 
