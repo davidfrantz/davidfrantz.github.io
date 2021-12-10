@@ -2,8 +2,47 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://davidfrantz.github.io/publication_types/2/</loc>
+    <lastmod>2021-11-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/authors/</loc>
+    <lastmod>2021-11-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/authors/claas-nendel/</loc>
+    <lastmod>2021-11-25T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://davidfrantz.github.io/</loc>
-    <lastmod>2021-09-17T14:37:00+00:00</lastmod>
+    <lastmod>2021-11-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/authors/david-frantz/</loc>
+    <lastmod>2021-11-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/authors/jurgen-pickert/</loc>
+    <lastmod>2021-11-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/authors/kira-pfoch/</loc>
+    <lastmod>2021-11-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/publication/schwieder-2022/</loc>
+    <lastmod>2021-11-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/authors/marcel-schwieder/</loc>
+    <lastmod>2021-11-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/authors/maximilian-wesemeyer/</loc>
+    <lastmod>2021-11-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/authors/patrick-hostert/</loc>
+    <lastmod>2021-11-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/publication_types/</loc>
+    <lastmod>2021-11-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/publication/</loc>
+    <lastmod>2021-11-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/authors/stefan-erasmi/</loc>
+    <lastmod>2021-11-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/presentation/wiedenhofer-2021/</loc>
     <lastmod>2021-09-17T14:37:00+00:00</lastmod>
@@ -17,15 +56,6 @@
     <loc>https://davidfrantz.github.io/tags/</loc>
     <lastmod>2021-09-17T14:37:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidfrantz.github.io/publication_types/2/</loc>
-    <lastmod>2021-08-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://davidfrantz.github.io/authors/</loc>
-    <lastmod>2021-08-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://davidfrantz.github.io/authors/david-frantz/</loc>
-    <lastmod>2021-08-20T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://davidfrantz.github.io/authors/fabian-lehmann/</loc>
     <lastmod>2021-08-20T00:00:00+00:00</lastmod>
   </url><url>
@@ -33,15 +63,6 @@
     <lastmod>2021-08-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/publication/lehmann_2021/</loc>
-    <lastmod>2021-08-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://davidfrantz.github.io/authors/patrick-hostert/</loc>
-    <lastmod>2021-08-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://davidfrantz.github.io/publication_types/</loc>
-    <lastmod>2021-08-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://davidfrantz.github.io/publication/</loc>
     <lastmod>2021-08-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/authors/soren-becker/</loc>
