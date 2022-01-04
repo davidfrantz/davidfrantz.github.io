@@ -1,0 +1,16 @@
+@inproceedings{lehmannFORCENextflowScalable2021,
+  title = {{{FORCE}} on {{Nextflow}}: {{Scalable Analysis}} of {{Earth Observation}} Data on {{Commodity Clusters}}},
+  booktitle = {Proceedings of the {{CIKM}} 2021 {{Workshops}}},
+  author = {Lehmann, Fabian and Frantz, David and Becker, Sören and Leser, Ulf and Hostert, Patrick},
+  editor = {Cong, Gao and Ramanath, Maya},
+  date = {2021-11-01},
+  series = {{{CEUR}} Workshop Proceedings},
+  volume = {3052},
+  publisher = {{CEUR-WS.org}},
+  location = {{Gold Coast, Queensland, Australia}},
+  issn = {1613-0073},
+  url = {http://ceur-ws.org/Vol-3052/short12.pdf},
+  abstract = {Modern Earth Observation (EO) often analyses hundreds of gigabytes of data from thousands of satellite images. This data usually is processed with hand-made scripts combining several tools implementing the various steps within such an analysis. A fair amount of geographers' work goes into optimization, tuning, and parallelization in such a setting. Development becomes even more complicated when compute clusters become necessary, introducing issues like scheduling, remote data access, and generally a greatly increased infrastructure complexity. Furthermore, tailor-made systems are often optimized to one specific system and cannot easily be adapted to other infrastructures. Data Analysis Workflow engines promise to relieve the workflow developer from finding custom solutions to these issues and thereby improve scalability, reproducibility, and reusability of workflows while reducing development cost at the infrastructure side. On the other hand, they require the workflow to be programmed in a particular language, to obey certain principles of distributed processing, and to properly configure and tune the execution stack, which puts additional burden to data scientists. Here, we study this trade-off using a concrete EO workflow for long-term vegetation dynamics in the Mediterranean. The original workflow was programmed with FORCE, a custom-made framework for assembling and executing EO workflows on stand-alone servers. We ported it to the scientific workflow system Nextflow, which is capable of seamlessly orchestrating workflows over a large variety of infrastructures. We discuss the pitfalls we faced while porting the workflow, advantages and disadvantages of such an approach, and compare in detail the efficiency of both implementations on various infrastructures. We quantify the overhead in execution time incurred by the workflow engine and give hints on how to deal with heterogeneous tasks. Overall, our Nextflow implementation shows promising behavior in terms of reusability and scalability, though this does not apply to all workflow stages.},
+  eventtitle = {1st {{Int}}. {{Workshop}} on {{Complex Data Challenges}} in {{Earth Observation}}},
+  langid = {english}
+}
