@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Carsten Brockmann | DAVID FRANTZ</title>
+    <link>https://davidfrantz.github.io/authors/carsten-brockmann/</link>
+      <atom:link href="https://davidfrantz.github.io/authors/carsten-brockmann/index.xml" rel="self" type="application/rss+xml" />
+    <description>Carsten Brockmann</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2022 David Frantz</copyright><lastBuildDate>Tue, 22 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://davidfrantz.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <title>Carsten Brockmann</title>
+      <link>https://davidfrantz.github.io/authors/carsten-brockmann/</link>
+    </image>
+    
+    <item>
+      <title>Cloud Mask Intercomparison eXercise (CMIX): An evaluation of cloud masking algorithms for Landsat 8 and Sentinel-2</title>
+      <link>https://davidfrantz.github.io/publication/skakun-2022/</link>
+      <pubDate>Tue, 22 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/skakun-2022/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

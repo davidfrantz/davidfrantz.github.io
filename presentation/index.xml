@@ -5,12 +5,123 @@
     <link>https://davidfrantz.github.io/presentation/</link>
       <atom:link href="https://davidfrantz.github.io/presentation/index.xml" rel="self" type="application/rss+xml" />
     <description>Presentations</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2022 David Frantz</copyright><lastBuildDate>Fri, 17 Sep 2021 14:37:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2022 David Frantz</copyright><lastBuildDate>Wed, 23 Mar 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://davidfrantz.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>Presentations</title>
       <link>https://davidfrantz.github.io/presentation/</link>
     </image>
+    
+    <item>
+      <title>ACIX II – Land: the second implementation of the Atmospheric Correction Inter-comparison eXercise over Land</title>
+      <link>https://davidfrantz.github.io/presentation/doxani-2022/</link>
+      <pubDate>Wed, 23 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/doxani-2022/</guid>
+      <description>&lt;p&gt;Georgia Doxani, Eric F. Vermote, Sergii Skakun, Jean-Claude Roger, Ferran Gascon, Alan Collison, Liesbeth Dekeukelaere, David Frantz, Olivier Hagolle, Minsu Kim, Pavel Litvinov, Jérôme Louis, Fabio Pacifici, Bringfried Pflug, Hervé Poilvé, Didier Ramon, Feng Yin&lt;/p&gt;
+&lt;p&gt;Living Planet Symposium, Bonn, 23-27 May 2022&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>CMIX: Cloud Mask Intercomparison eXercise</title>
+      <link>https://davidfrantz.github.io/presentation/skakun-2022/</link>
+      <pubDate>Wed, 23 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/skakun-2022/</guid>
+      <description>&lt;p&gt;Sergii Skakun, Jan Wevers, Carsten Brockmann, Georgia Doxani, Matej Aleksandrov, Matej Batič, David Frantz, Ferran Gascon Roca, Luis Gómez-Chova, Olivier Hagolle, Dan López-Puigdollers, Jérôme Louis, Matic Lubej, Gonzalo Mateo-García, Julien Osman, Devis Peressutti, Bringfried Pflug, Jernej Puc, Rudolf Richter, Jean-Claude Roger, Pat Scaramuzza, Eric Vermote, Nejc Vesel, Anže Zupanc, Lojze Žust&lt;/p&gt;
+&lt;p&gt;Living Planet Symposium, Bonn, 23-27 May 2022&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Copernicus enabling national monitoring across land systems</title>
+      <link>https://davidfrantz.github.io/presentation/hostert-2022/</link>
+      <pubDate>Wed, 23 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/hostert-2022/</guid>
+      <description>&lt;p&gt;Patrick Hostert, Lukas Blickensdörfer, Stefan Erasmi, David Frantz, Helmut Haberl, Claas Nendel, Dirk Pflugmacher, Franz Schug, Marcel Schwieder, Dominik Wiedenhöfer&lt;/p&gt;
+&lt;p&gt;Living Planet Symposium, Bonn, 23-27 May 2022&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>High-resolution mapping of 33 years of material stock and population growth in Germany using Earth Observation data</title>
+      <link>https://davidfrantz.github.io/presentation/schug-2022/</link>
+      <pubDate>Wed, 23 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/schug-2022/</guid>
+      <description>&lt;p&gt;Franz Schug, David Frantz, Dominik Wiedenhofer, Helmut Haberl, Doris Virág, Sebastian van der Linden, Patrick Hostert&lt;/p&gt;
+&lt;p&gt;Living Planet Symposium, Bonn, 23-27 May 2022&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Landsat based analyses of major land use and cover transformations after Spain’s accession to the EU</title>
+      <link>https://davidfrantz.github.io/presentation/stellmes-2022/</link>
+      <pubDate>Wed, 23 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/stellmes-2022/</guid>
+      <description>&lt;p&gt;Marion Stellmes, Achim Röder, Ruth Sonnenschein, David Frantz&lt;/p&gt;
+&lt;p&gt;Living Planet Symposium, Bonn, 23-27 May 2022&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Mapping Luxembourg’s soils with Sentinel-2</title>
+      <link>https://davidfrantz.github.io/presentation/krein-2022/</link>
+      <pubDate>Wed, 23 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/krein-2022/</guid>
+      <description>&lt;p&gt;Andreas Krein, Max Gerhards, Henning Buddenbaum, Thomas Udelhoven, David Frantz&lt;/p&gt;
+&lt;p&gt;Living Planet Symposium, Bonn, 23-27 May 2022&lt;/p&gt;
+&lt;p&gt;poster presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Multi-annual forest fraction mapping over northern Germany using Sentinel-2 spectral temporal metrics</title>
+      <link>https://davidfrantz.github.io/presentation/pham-2022/</link>
+      <pubDate>Wed, 23 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/pham-2022/</guid>
+      <description>&lt;p&gt;Dong Pham, Fabian Thiel, Franz Schug, David Frantz, Sebastian van der Linden&lt;/p&gt;
+&lt;p&gt;Living Planet Symposium, Bonn, 23-27 May 2022&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>National-scale mapping of building height using Sentinel-1 and Sentinel-2 time series</title>
+      <link>https://davidfrantz.github.io/presentation/frantz-2022b/</link>
+      <pubDate>Wed, 23 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/frantz-2022b/</guid>
+      <description>&lt;p&gt;David Frantz, Franz Schug, Patrick Hostert&lt;/p&gt;
+&lt;p&gt;Living Planet Symposium, Bonn, 23-27 May 2022&lt;/p&gt;
+&lt;p&gt;poster presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Offline! Visualization and labeling of multi-sensor time series in the field: the EO Time Series Viewer</title>
+      <link>https://davidfrantz.github.io/presentation/jakimow-2022/</link>
+      <pubDate>Wed, 23 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/jakimow-2022/</guid>
+      <description>&lt;p&gt;Benjamin Jakimow, Sebastian van der Linden, Fabian Thiel, David Frantz, Patrick Hostert&lt;/p&gt;
+&lt;p&gt;Living Planet Symposium, Bonn, 23-27 May 2022&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The FORCE DataCube on CODE-DE</title>
+      <link>https://davidfrantz.github.io/presentation/frantz-2022a/</link>
+      <pubDate>Wed, 23 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/frantz-2022a/</guid>
+      <description>&lt;p&gt;David Frantz&lt;/p&gt;
+&lt;p&gt;Copernicus Workshop, Landesbetrieb Landesvermessung und Geobasisinformation des LGLN, Hannover
+, 23 March 2022, Online&lt;/p&gt;
+&lt;p&gt;invited presentation&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Mapping socio-economic material stocks of buildings and infrastructure for entire countries from Earth-Observation data at high-resolution</title>

@@ -5,7 +5,7 @@
     <link>https://davidfrantz.github.io/tags/upcoming/</link>
       <atom:link href="https://davidfrantz.github.io/tags/upcoming/index.xml" rel="self" type="application/rss+xml" />
     <description>upcoming</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2022 David Frantz</copyright><lastBuildDate>Fri, 20 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2022 David Frantz</copyright><lastBuildDate>Wed, 23 Mar 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://davidfrantz.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>upcoming</title>
@@ -13,24 +13,35 @@
     </image>
     
     <item>
-      <title>FORCE on Nextflow: Scalable Analysis of Earth Observation data on Commodity Clusters</title>
-      <link>https://davidfrantz.github.io/presentation/lehmann-2021/</link>
-      <pubDate>Fri, 20 Aug 2021 00:00:00 +0000</pubDate>
-      <guid>https://davidfrantz.github.io/presentation/lehmann-2021/</guid>
-      <description>&lt;p&gt;Fabian Lehmann, David Frantz, Sören Becker, Ulf Leser, Patrick Hostert&lt;/p&gt;
-&lt;p&gt;1st workshop on Complex Data Challenges in Earth Observation (CDCEO) 2021, 1 November, Online&lt;/p&gt;
-&lt;p&gt;poster presentation&lt;/p&gt;
+      <title>CMIX: Cloud Mask Intercomparison eXercise</title>
+      <link>https://davidfrantz.github.io/presentation/skakun-2022/</link>
+      <pubDate>Wed, 23 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/skakun-2022/</guid>
+      <description>&lt;p&gt;Sergii Skakun, Jan Wevers, Carsten Brockmann, Georgia Doxani, Matej Aleksandrov, Matej Batič, David Frantz, Ferran Gascon Roca, Luis Gómez-Chova, Olivier Hagolle, Dan López-Puigdollers, Jérôme Louis, Matic Lubej, Gonzalo Mateo-García, Julien Osman, Devis Peressutti, Bringfried Pflug, Jernej Puc, Rudolf Richter, Jean-Claude Roger, Pat Scaramuzza, Eric Vermote, Nejc Vesel, Anže Zupanc, Lojze Žust&lt;/p&gt;
+&lt;p&gt;Living Planet Symposium, Bonn, 23-27 May 2022&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>The weight of nations - national-scale material stock maps based on Sentinel-1&#43;2, OSM, and material intensity factors</title>
-      <link>https://davidfrantz.github.io/presentation/frantz-2021c/</link>
-      <pubDate>Thu, 29 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>https://davidfrantz.github.io/presentation/frantz-2021c/</guid>
-      <description>&lt;p&gt;David Frantz, Franz Schug, Dominik Wiedenhofer, Doris Virág, André Baumgart, Sebastian van der Linden, Helmut Haberl, Patrick Hostert&lt;/p&gt;
-&lt;p&gt;Jahrestagung AK Fernerkundung. Fernerkundung für die Welt von morgen: Herausforderungen und Lösungsansätze für eine nachhaltige Entwicklung, 8 October 2021, Online&lt;/p&gt;
-&lt;p&gt;keynote presentation&lt;/p&gt;
+      <title>Copernicus enabling national monitoring across land systems</title>
+      <link>https://davidfrantz.github.io/presentation/hostert-2022/</link>
+      <pubDate>Wed, 23 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/hostert-2022/</guid>
+      <description>&lt;p&gt;Patrick Hostert, Lukas Blickensdörfer, Stefan Erasmi, David Frantz, Helmut Haberl, Claas Nendel, Dirk Pflugmacher, Franz Schug, Marcel Schwieder, Dominik Wiedenhöfer&lt;/p&gt;
+&lt;p&gt;Living Planet Symposium, Bonn, 23-27 May 2022&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>National-scale mapping of building height using Sentinel-1 and Sentinel-2 time series</title>
+      <link>https://davidfrantz.github.io/presentation/frantz-2022b/</link>
+      <pubDate>Wed, 23 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/frantz-2022b/</guid>
+      <description>&lt;p&gt;David Frantz, Franz Schug, Patrick Hostert&lt;/p&gt;
+&lt;p&gt;Living Planet Symposium, Bonn, 23-27 May 2022&lt;/p&gt;
+&lt;p&gt;poster presentation&lt;/p&gt;
 </description>
     </item>
     
