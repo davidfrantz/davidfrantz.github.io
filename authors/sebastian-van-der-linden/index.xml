@@ -5,12 +5,20 @@
     <link>https://davidfrantz.github.io/authors/sebastian-van-der-linden/</link>
       <atom:link href="https://davidfrantz.github.io/authors/sebastian-van-der-linden/index.xml" rel="self" type="application/rss+xml" />
     <description>Sebastian van der Linden</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2022 David Frantz</copyright><lastBuildDate>Thu, 08 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2022 David Frantz</copyright><lastBuildDate>Wed, 26 Jan 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://davidfrantz.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>Sebastian van der Linden</title>
       <link>https://davidfrantz.github.io/authors/sebastian-van-der-linden/</link>
     </image>
+    
+    <item>
+      <title>Revisiting the past: Replicability of a historic long-term vegetation dynamics assessment in the era of big data analytics</title>
+      <link>https://davidfrantz.github.io/publication/frantz-2022a/</link>
+      <pubDate>Wed, 26 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/frantz-2022a/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Multi-season unmixing of vegetation class fractions across diverse Californian ecoregions using simulated spaceborne imaging spectroscopy data.</title>
@@ -33,14 +41,6 @@
       <link>https://davidfrantz.github.io/publication/haberl-2021/</link>
       <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
       <guid>https://davidfrantz.github.io/publication/haberl-2021/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Revisiting the past: Replicability of a historic long-term vegetation dynamics assessment in the era of big data analytics</title>
-      <link>https://davidfrantz.github.io/publication/frantz-2022a/</link>
-      <pubDate>Tue, 26 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>https://davidfrantz.github.io/publication/frantz-2022a/</guid>
       <description></description>
     </item>
     
