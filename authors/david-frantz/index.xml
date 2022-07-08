@@ -5,12 +5,20 @@
     <link>https://davidfrantz.github.io/authors/david-frantz/</link>
       <atom:link href="https://davidfrantz.github.io/authors/david-frantz/index.xml" rel="self" type="application/rss+xml" />
     <description>David Frantz</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2022 David Frantz</copyright><lastBuildDate>Tue, 22 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2022 David Frantz</copyright><lastBuildDate>Wed, 01 Jun 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://davidfrantz.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>David Frantz</title>
       <link>https://davidfrantz.github.io/authors/david-frantz/</link>
     </image>
+    
+    <item>
+      <title>Sub-pixel building area mapping based on synthetic training data and regression-based unmixing using Sentinel-1 and -2 data</title>
+      <link>https://davidfrantz.github.io/publication/schug-2022/</link>
+      <pubDate>Wed, 01 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/schug-2022/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Cloud Mask Intercomparison eXercise (CMIX): An evaluation of cloud masking algorithms for Landsat 8 and Sentinel-2</title>
