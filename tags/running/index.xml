@@ -5,7 +5,7 @@
     <link>https://davidfrantz.github.io/tags/running/</link>
       <atom:link href="https://davidfrantz.github.io/tags/running/index.xml" rel="self" type="application/rss+xml" />
     <description>running</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2022 David Frantz</copyright><lastBuildDate>Wed, 15 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2022 David Frantz</copyright><lastBuildDate>Tue, 01 Mar 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://davidfrantz.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>running</title>
@@ -13,18 +13,34 @@
     </image>
     
     <item>
-      <title>FONDA</title>
-      <link>https://davidfrantz.github.io/project/fonda/</link>
-      <pubDate>Wed, 15 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>https://davidfrantz.github.io/project/fonda/</guid>
+      <title>BLACKMAP II</title>
+      <link>https://davidfrantz.github.io/project/blackmap_ii/</link>
+      <pubDate>Tue, 01 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/project/blackmap_ii/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>MAT_STOCKS</title>
-      <link>https://davidfrantz.github.io/project/mat_stocks/</link>
-      <pubDate>Thu, 15 Nov 2018 00:00:00 +0000</pubDate>
-      <guid>https://davidfrantz.github.io/project/mat_stocks/</guid>
+      <title>LuxSoil2022</title>
+      <link>https://davidfrantz.github.io/project/luxsoil/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/project/luxsoil/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>FORCE data cube on CODE-DE</title>
+      <link>https://davidfrantz.github.io/project/code-de/</link>
+      <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/project/code-de/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ableitung landwirtschaftlicher Vegetationsbedeckungskarten aus Sentinel-2 Satellitenbildaufnahmen</title>
+      <link>https://davidfrantz.github.io/project/bosch/</link>
+      <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/project/bosch/</guid>
       <description></description>
     </item>
     

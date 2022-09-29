@@ -172,6 +172,14 @@
     </item>
     
     <item>
+      <title>BLACKMAP II</title>
+      <link>https://davidfrantz.github.io/project/blackmap_ii/</link>
+      <pubDate>Tue, 01 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/project/blackmap_ii/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Integrated topographic corrections improve forest mapping using Landsat imagery</title>
       <link>https://davidfrantz.github.io/publication/yin-2022/</link>
       <pubDate>Thu, 17 Feb 2022 00:00:00 +0000</pubDate>
@@ -188,6 +196,14 @@
     </item>
     
     <item>
+      <title>LuxSoil2022</title>
+      <link>https://davidfrantz.github.io/project/luxsoil/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/project/luxsoil/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Mapping grassland mowing events across Germany based on combined Sentinel-2 and Landsat 8 time series</title>
       <link>https://davidfrantz.github.io/publication/schwieder-2022/</link>
       <pubDate>Thu, 25 Nov 2021 00:00:00 +0000</pubDate>
@@ -200,6 +216,22 @@
       <link>https://davidfrantz.github.io/publication/lehmann_2021/</link>
       <pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate>
       <guid>https://davidfrantz.github.io/publication/lehmann_2021/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>BLACKMAP I</title>
+      <link>https://davidfrantz.github.io/project/blackmap_i/</link>
+      <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/project/blackmap_i/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>FORCE data cube on CODE-DE</title>
+      <link>https://davidfrantz.github.io/project/code-de/</link>
+      <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/project/code-de/</guid>
       <description></description>
     </item>
     
@@ -995,6 +1027,14 @@ link: &lt;a href=&#34;https://twitter.com/d__frantz&#34;&gt;https://twitter.com/
 &lt;p&gt;38th Annual EARSeL Symposium, 9-12 July 2018, Chania, Greece&lt;/p&gt;
 &lt;p&gt;oral presentation&lt;/p&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>Ableitung landwirtschaftlicher Vegetationsbedeckungskarten aus Sentinel-2 Satellitenbildaufnahmen</title>
+      <link>https://davidfrantz.github.io/project/bosch/</link>
+      <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/project/bosch/</guid>
+      <description></description>
     </item>
     
     <item>
