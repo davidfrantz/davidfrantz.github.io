@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://davidfrantz.github.io/tags/2022/</loc>
+    <lastmod>2022-09-27T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://davidfrantz.github.io/</loc>
     <lastmod>2022-09-27T00:00:00+00:00</lastmod>
   </url><url>
@@ -12,9 +15,6 @@
     <lastmod>2022-09-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/tags/</loc>
-    <lastmod>2022-09-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://davidfrantz.github.io/tags/upcoming/</loc>
     <lastmod>2022-09-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/presentation/frantz-2022d/</loc>
@@ -46,9 +46,6 @@
   </url><url>
     <loc>https://davidfrantz.github.io/publication/schug-2022/</loc>
     <lastmod>2022-06-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://davidfrantz.github.io/tags/2022/</loc>
-    <lastmod>2022-04-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/presentation/frantz-2022e/</loc>
     <lastmod>2022-04-28T00:00:00+00:00</lastmod>
