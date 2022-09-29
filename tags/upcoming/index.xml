@@ -5,7 +5,7 @@
     <link>https://davidfrantz.github.io/tags/upcoming/</link>
       <atom:link href="https://davidfrantz.github.io/tags/upcoming/index.xml" rel="self" type="application/rss+xml" />
     <description>upcoming</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2022 David Frantz</copyright><lastBuildDate>Wed, 23 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2022 David Frantz</copyright><lastBuildDate>Tue, 27 Sep 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://davidfrantz.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>upcoming</title>
@@ -13,24 +13,24 @@
     </image>
     
     <item>
-      <title>CMIX: Cloud Mask Intercomparison eXercise</title>
-      <link>https://davidfrantz.github.io/presentation/skakun-2022/</link>
-      <pubDate>Wed, 23 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>https://davidfrantz.github.io/presentation/skakun-2022/</guid>
-      <description>&lt;p&gt;Sergii Skakun, Jan Wevers, Carsten Brockmann, Georgia Doxani, Matej Aleksandrov, Matej Batič, David Frantz, Ferran Gascon Roca, Luis Gómez-Chova, Olivier Hagolle, Dan López-Puigdollers, Jérôme Louis, Matic Lubej, Gonzalo Mateo-García, Julien Osman, Devis Peressutti, Bringfried Pflug, Jernej Puc, Rudolf Richter, Jean-Claude Roger, Pat Scaramuzza, Eric Vermote, Nejc Vesel, Anže Zupanc, Lojze Žust&lt;/p&gt;
-&lt;p&gt;Living Planet Symposium, Bonn, 23-27 May 2022&lt;/p&gt;
-&lt;p&gt;oral presentation&lt;/p&gt;
+      <title>Processing of satellite data - Standardization</title>
+      <link>https://davidfrantz.github.io/presentation/frantz-2022c/</link>
+      <pubDate>Tue, 27 Sep 2022 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/frantz-2022c/</guid>
+      <description>&lt;p&gt;David Frantz&lt;/p&gt;
+&lt;p&gt;Tree Species Project Workshop, Göttingen, Germany, 27-28 September 2022&lt;/p&gt;
+&lt;p&gt;Invited presentation&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>Copernicus enabling national monitoring across land systems</title>
-      <link>https://davidfrantz.github.io/presentation/hostert-2022/</link>
-      <pubDate>Wed, 23 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>https://davidfrantz.github.io/presentation/hostert-2022/</guid>
-      <description>&lt;p&gt;Patrick Hostert, Lukas Blickensdörfer, Stefan Erasmi, David Frantz, Helmut Haberl, Claas Nendel, Dirk Pflugmacher, Franz Schug, Marcel Schwieder, Dominik Wiedenhöfer&lt;/p&gt;
-&lt;p&gt;Living Planet Symposium, Bonn, 23-27 May 2022&lt;/p&gt;
-&lt;p&gt;oral presentation&lt;/p&gt;
+      <title>The workflow perspective in remote sensing - scaling RS workflows</title>
+      <link>https://davidfrantz.github.io/presentation/frantz-2022d/</link>
+      <pubDate>Mon, 26 Sep 2022 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/frantz-2022d/</guid>
+      <description>&lt;p&gt;David Frantz&lt;/p&gt;
+&lt;p&gt;Interdisciplinary Workshop on Workflows for Large-Scale Remote Sensing Data Analyses, Berlin, Germany, 26 September 2022&lt;/p&gt;
+&lt;p&gt;Invited presentation&lt;/p&gt;
 </description>
     </item>
     
