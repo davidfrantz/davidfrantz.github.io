@@ -5,7 +5,7 @@
     <link>https://davidfrantz.github.io/authors/david-frantz/</link>
       <atom:link href="https://davidfrantz.github.io/authors/david-frantz/index.xml" rel="self" type="application/rss+xml" />
     <description>David Frantz</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2022 David Frantz</copyright><lastBuildDate>Wed, 01 Jun 2022 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2022 David Frantz</copyright><lastBuildDate>Tue, 25 Oct 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://davidfrantz.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>David Frantz</title>
@@ -13,10 +13,18 @@
     </image>
     
     <item>
+      <title>High-resolution mapping of 33 years of material stock and population growth in Germany using Earth Observation data</title>
+      <link>https://davidfrantz.github.io/publication/schug-2022b/</link>
+      <pubDate>Tue, 25 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/schug-2022b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Sub-pixel building area mapping based on synthetic training data and regression-based unmixing using Sentinel-1 and -2 data</title>
-      <link>https://davidfrantz.github.io/publication/schug-2022/</link>
+      <link>https://davidfrantz.github.io/publication/schug-2022a/</link>
       <pubDate>Wed, 01 Jun 2022 00:00:00 +0000</pubDate>
-      <guid>https://davidfrantz.github.io/publication/schug-2022/</guid>
+      <guid>https://davidfrantz.github.io/publication/schug-2022a/</guid>
       <description></description>
     </item>
     
