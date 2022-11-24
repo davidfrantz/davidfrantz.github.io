@@ -3,16 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://davidfrantz.github.io/publication_types/2/</loc>
-    <lastmod>2022-10-25T00:00:00+00:00</lastmod>
+    <lastmod>2022-11-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/authors/</loc>
-    <lastmod>2022-10-25T00:00:00+00:00</lastmod>
+    <lastmod>2022-11-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/authors/daniel-scheffler/</loc>
+    <lastmod>2022-11-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/</loc>
-    <lastmod>2022-10-25T00:00:00+00:00</lastmod>
+    <lastmod>2022-11-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/authors/david-frantz/</loc>
-    <lastmod>2022-10-25T00:00:00+00:00</lastmod>
+    <lastmod>2022-11-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/publication/scheffler-2022/</loc>
+    <lastmod>2022-11-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/publication_types/</loc>
+    <lastmod>2022-11-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/publication/</loc>
+    <lastmod>2022-11-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/authors/dominik-wiedenhofer/</loc>
     <lastmod>2022-10-25T00:00:00+00:00</lastmod>
@@ -30,12 +42,6 @@
     <lastmod>2022-10-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/authors/patrick-hostert/</loc>
-    <lastmod>2022-10-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://davidfrantz.github.io/publication_types/</loc>
-    <lastmod>2022-10-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://davidfrantz.github.io/publication/</loc>
     <lastmod>2022-10-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/authors/sebastian-van-der-linden/</loc>
@@ -481,9 +487,6 @@
   </url><url>
     <loc>https://davidfrantz.github.io/tags/lower-level/</loc>
     <lastmod>2020-04-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://davidfrantz.github.io/authors/daniel-scheffler/</loc>
-    <lastmod>2020-03-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/publication/scheffler-2020/</loc>
     <lastmod>2020-03-12T00:00:00+00:00</lastmod>
