@@ -2,6 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://davidfrantz.github.io/tags/2022/</loc>
+    <lastmod>2022-11-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/</loc>
+    <lastmod>2022-11-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/data/schug-2022d/</loc>
+    <lastmod>2022-11-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/data/</loc>
+    <lastmod>2022-11-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/tags/</loc>
+    <lastmod>2022-11-28T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://davidfrantz.github.io/publication_types/2/</loc>
     <lastmod>2022-11-24T00:00:00+00:00</lastmod>
   </url><url>
@@ -9,9 +24,6 @@
     <lastmod>2022-11-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/authors/daniel-scheffler/</loc>
-    <lastmod>2022-11-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://davidfrantz.github.io/</loc>
     <lastmod>2022-11-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/authors/david-frantz/</loc>
@@ -47,8 +59,8 @@
     <loc>https://davidfrantz.github.io/authors/sebastian-van-der-linden/</loc>
     <lastmod>2022-10-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidfrantz.github.io/tags/2022/</loc>
-    <lastmod>2022-09-27T00:00:00+00:00</lastmod>
+    <loc>https://davidfrantz.github.io/data/schug-2022c/</loc>
+    <lastmod>2022-10-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/presentation/</loc>
     <lastmod>2022-09-27T00:00:00+00:00</lastmod>
@@ -56,11 +68,44 @@
     <loc>https://davidfrantz.github.io/presentation/frantz-2022c/</loc>
     <lastmod>2022-09-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidfrantz.github.io/tags/</loc>
-    <lastmod>2022-09-27T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://davidfrantz.github.io/presentation/frantz-2022d/</loc>
     <lastmod>2022-09-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/data/baumgart-2022/</loc>
+    <lastmod>2022-09-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/data/frantz-2022a/</loc>
+    <lastmod>2022-09-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/data/schug-2022b/</loc>
+    <lastmod>2022-07-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/data/frantz-2022b/</loc>
+    <lastmod>2022-07-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/data/frantz-2022d/</loc>
+    <lastmod>2022-07-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/data/frantz-2022e/</loc>
+    <lastmod>2022-07-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/data/frantz-2022c/</loc>
+    <lastmod>2022-07-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/data/frantz-2022f/</loc>
+    <lastmod>2022-07-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/data/frantz-2022g/</loc>
+    <lastmod>2022-07-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/data/frantz-2022h/</loc>
+    <lastmod>2022-07-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/data/frantz-2022i/</loc>
+    <lastmod>2022-07-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/data/schug-2022a/</loc>
+    <lastmod>2022-06-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/authors/akpona-okujeni/</loc>
     <lastmod>2022-06-01T00:00:00+00:00</lastmod>
@@ -302,6 +347,12 @@
     <loc>https://davidfrantz.github.io/publication/rufin-2021/</loc>
     <lastmod>2021-03-26T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://davidfrantz.github.io/data/schug-2021b/</loc>
+    <lastmod>2021-03-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/data/schug-2021a/</loc>
+    <lastmod>2021-03-12T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://davidfrantz.github.io/publication/schug-2021/</loc>
     <lastmod>2021-03-01T00:00:00+00:00</lastmod>
   </url><url>
@@ -345,9 +396,6 @@
     <lastmod>2021-02-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/data/haberl-2021a/</loc>
-    <lastmod>2021-02-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://davidfrantz.github.io/data/</loc>
     <lastmod>2021-02-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/data/haberl-2021b/</loc>

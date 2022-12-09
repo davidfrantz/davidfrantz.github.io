@@ -5,12 +5,172 @@
     <link>https://davidfrantz.github.io/data/</link>
       <atom:link href="https://davidfrantz.github.io/data/index.xml" rel="self" type="application/rss+xml" />
     <description>Presentations</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2022 David Frantz</copyright><lastBuildDate>Thu, 11 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2022 David Frantz</copyright><lastBuildDate>Mon, 28 Nov 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://davidfrantz.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>Presentations</title>
       <link>https://davidfrantz.github.io/data/</link>
     </image>
+    
+    <item>
+      <title>High-resolution maps of material stock, population and employment in Austria from 1985 to 2018 - Supplementary Material</title>
+      <link>https://davidfrantz.github.io/data/schug-2022d/</link>
+      <pubDate>Mon, 28 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/data/schug-2022d/</guid>
+      <description>&lt;p&gt;Extended application of:&lt;/p&gt;
+&lt;p&gt;Schug, F., Frantz, D., Wiedenhofer, D., Virág, D., Haberl, H., van der Linden, S., Hostert, P. (in rev.): High-resolution mapping of 33 years of material stock and population growth in Germany. Journal of Industrial Ecology&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>High-resolution maps of material stock, population and employment in Austria from 1985 to 2018</title>
+      <link>https://davidfrantz.github.io/data/schug-2022c/</link>
+      <pubDate>Thu, 13 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/data/schug-2022c/</guid>
+      <description>&lt;p&gt;Extended application of:&lt;/p&gt;
+&lt;p&gt;Schug, F., Frantz, D., Wiedenhofer, D., Virág, D., Haberl, H., van der Linden, S., Hostert, P. (in rev.): High-resolution mapping of 33 years of material stock and population growth in Germany. Journal of Industrial Ecology&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Material factors for buildings, roads and rail-based infrastructure in CONUS</title>
+      <link>https://davidfrantz.github.io/data/baumgart-2022/</link>
+      <pubDate>Mon, 12 Sep 2022 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/data/baumgart-2022/</guid>
+      <description>&lt;p&gt;Supplement to:&lt;/p&gt;
+&lt;p&gt;D. Frantz, F. Schug, D. Wiedenhofer, A. Baumgart, D. Virág, S. Cooper, C. Gomez-Medina, F. Lehmann, T. Udelhoven, S. van der Linden, P. Hostert, H. Haberl. Weighing the US Economy: Map of Built Structures Unveils Patterns in Human-Dominated Landscapes. In prep&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Three-dimensional building and mobility infrastructure of the CONUS</title>
+      <link>https://davidfrantz.github.io/data/frantz-2022a/</link>
+      <pubDate>Fri, 02 Sep 2022 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/data/frantz-2022a/</guid>
+      <description>&lt;p&gt;Supplement to:&lt;/p&gt;
+&lt;p&gt;D. Frantz, F. Schug, D. Wiedenhofer, A. Baumgart, D. Virág, S. Cooper, C. Gomez-Medina, F. Lehmann, T. Udelhoven, S. van der Linden, P. Hostert, H. Haberl. Weighing the US Economy: Map of Built Structures Unveils Patterns in Human-Dominated Landscapes. In prep&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>High-resolution maps of material stock and population in Germany from 1985 to 2018</title>
+      <link>https://davidfrantz.github.io/data/schug-2022b/</link>
+      <pubDate>Tue, 26 Jul 2022 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/data/schug-2022b/</guid>
+      <description>&lt;p&gt;Supplement to:&lt;/p&gt;
+&lt;p&gt;Schug, F., Frantz, D., Wiedenhofer, D., Virág, D., Haberl, H., van der Linden, S., Hostert, P. (in rev.): High-resolution mapping of 33 years of material stock and population growth in Germany. Journal of Industrial Ecology&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Material stock map of CONUS</title>
+      <link>https://davidfrantz.github.io/data/frantz-2022b/</link>
+      <pubDate>Fri, 22 Jul 2022 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/data/frantz-2022b/</guid>
+      <description>&lt;p&gt;Supplement to:&lt;/p&gt;
+&lt;p&gt;D. Frantz, F. Schug, D. Wiedenhofer, A. Baumgart, D. Virág, S. Cooper, C. Gomez-Medina, F. Lehmann, T. Udelhoven, S. van der Linden, P. Hostert, H. Haberl. Weighing the US Economy: Map of Built Structures Unveils Patterns in Human-Dominated Landscapes. In prep&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Material stock map of CONUS - Great Plains</title>
+      <link>https://davidfrantz.github.io/data/frantz-2022d/</link>
+      <pubDate>Fri, 22 Jul 2022 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/data/frantz-2022d/</guid>
+      <description>&lt;p&gt;Supplement to:&lt;/p&gt;
+&lt;p&gt;D. Frantz, F. Schug, D. Wiedenhofer, A. Baumgart, D. Virág, S. Cooper, C. Gomez-Medina, F. Lehmann, T. Udelhoven, S. van der Linden, P. Hostert, H. Haberl. Weighing the US Economy: Map of Built Structures Unveils Patterns in Human-Dominated Landscapes. In prep&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Material stock map of CONUS - Mid West</title>
+      <link>https://davidfrantz.github.io/data/frantz-2022e/</link>
+      <pubDate>Fri, 22 Jul 2022 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/data/frantz-2022e/</guid>
+      <description>&lt;p&gt;Supplement to:&lt;/p&gt;
+&lt;p&gt;D. Frantz, F. Schug, D. Wiedenhofer, A. Baumgart, D. Virág, S. Cooper, C. Gomez-Medina, F. Lehmann, T. Udelhoven, S. van der Linden, P. Hostert, H. Haberl. Weighing the US Economy: Map of Built Structures Unveils Patterns in Human-Dominated Landscapes. In prep&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Material stock map of CONUS - North East</title>
+      <link>https://davidfrantz.github.io/data/frantz-2022c/</link>
+      <pubDate>Fri, 22 Jul 2022 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/data/frantz-2022c/</guid>
+      <description>&lt;p&gt;Supplement to:&lt;/p&gt;
+&lt;p&gt;D. Frantz, F. Schug, D. Wiedenhofer, A. Baumgart, D. Virág, S. Cooper, C. Gomez-Medina, F. Lehmann, T. Udelhoven, S. van der Linden, P. Hostert, H. Haberl. Weighing the US Economy: Map of Built Structures Unveils Patterns in Human-Dominated Landscapes. In prep&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Material stock map of CONUS - Rocky Mountains</title>
+      <link>https://davidfrantz.github.io/data/frantz-2022f/</link>
+      <pubDate>Fri, 22 Jul 2022 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/data/frantz-2022f/</guid>
+      <description>&lt;p&gt;Supplement to:&lt;/p&gt;
+&lt;p&gt;D. Frantz, F. Schug, D. Wiedenhofer, A. Baumgart, D. Virág, S. Cooper, C. Gomez-Medina, F. Lehmann, T. Udelhoven, S. van der Linden, P. Hostert, H. Haberl. Weighing the US Economy: Map of Built Structures Unveils Patterns in Human-Dominated Landscapes. In prep&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Material stock map of CONUS - South</title>
+      <link>https://davidfrantz.github.io/data/frantz-2022g/</link>
+      <pubDate>Fri, 22 Jul 2022 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/data/frantz-2022g/</guid>
+      <description>&lt;p&gt;Supplement to:&lt;/p&gt;
+&lt;p&gt;D. Frantz, F. Schug, D. Wiedenhofer, A. Baumgart, D. Virág, S. Cooper, C. Gomez-Medina, F. Lehmann, T. Udelhoven, S. van der Linden, P. Hostert, H. Haberl. Weighing the US Economy: Map of Built Structures Unveils Patterns in Human-Dominated Landscapes. In prep&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Material stock map of CONUS - South West</title>
+      <link>https://davidfrantz.github.io/data/frantz-2022h/</link>
+      <pubDate>Fri, 22 Jul 2022 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/data/frantz-2022h/</guid>
+      <description>&lt;p&gt;Supplement to:&lt;/p&gt;
+&lt;p&gt;D. Frantz, F. Schug, D. Wiedenhofer, A. Baumgart, D. Virág, S. Cooper, C. Gomez-Medina, F. Lehmann, T. Udelhoven, S. van der Linden, P. Hostert, H. Haberl. Weighing the US Economy: Map of Built Structures Unveils Patterns in Human-Dominated Landscapes. In prep&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Material stock map of CONUS - West Coast</title>
+      <link>https://davidfrantz.github.io/data/frantz-2022i/</link>
+      <pubDate>Fri, 22 Jul 2022 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/data/frantz-2022i/</guid>
+      <description>&lt;p&gt;Supplement to:&lt;/p&gt;
+&lt;p&gt;D. Frantz, F. Schug, D. Wiedenhofer, A. Baumgart, D. Virág, S. Cooper, C. Gomez-Medina, F. Lehmann, T. Udelhoven, S. van der Linden, P. Hostert, H. Haberl. Weighing the US Economy: Map of Built Structures Unveils Patterns in Human-Dominated Landscapes. In prep&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Building fraction map of Germany (Sentinel-1/-2 based, 10m and 100m resolution)</title>
+      <link>https://davidfrantz.github.io/data/schug-2022a/</link>
+      <pubDate>Fri, 10 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/data/schug-2022a/</guid>
+      <description>&lt;p&gt;Supplement to:&lt;/p&gt;
+&lt;p&gt;Schug, F.; Frantz, D.; Okujeni, A.; Hostert, P. (2022). Sub-pixel building area mapping based on synthetic training data and regression-based unmixing using Sentinel-1 and -2 data. Remote Sensing Letters. DOI: 10.1080/2150704X.2022.2088253&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Building types map of Germany</title>
+      <link>https://davidfrantz.github.io/data/schug-2021b/</link>
+      <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/data/schug-2021b/</guid>
+      <description>&lt;p&gt;Supplement to:&lt;/p&gt;
+&lt;p&gt;Schug, F., Frantz, D., van der Linden, S., &amp;amp; Hostert, P. (2021). Gridded population mapping for Germany based on building density, height and type from Earth Observation data using census disaggregation and bottom-up estimates. PLOS ONE. DOI: 10.1371/journal.pone.0249044&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Gridded population maps of Germany from disaggregated census data and bottom-up estimates</title>
+      <link>https://davidfrantz.github.io/data/schug-2021a/</link>
+      <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/data/schug-2021a/</guid>
+      <description>&lt;p&gt;Supplement to:&lt;/p&gt;
+&lt;p&gt;Franz Schug, David Frantz, Sebastian van der Linden, Patrick Hostert (2021): Gridded population mapping for Germany based on building density, height and type from Earth Observation data using census disaggregation and bottom-up estimates, PLoS ONE 16(3): e0249044. &lt;a href=&#34;https://doi.org/10.1371/journal.pone.0249044&#34;&gt;https://doi.org/10.1371/journal.pone.0249044&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Material stock map of Germany</title>
