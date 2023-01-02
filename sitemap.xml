@@ -2,10 +2,79 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://davidfrantz.github.io/tags/2022/</loc>
-    <lastmod>2022-11-28T00:00:00+00:00</lastmod>
+    <loc>https://davidfrantz.github.io/publication_types/2/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/authors/alan-collison/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/publication/doxani-2023/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/authors/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/authors/bringfried-pflug/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/authors/camille-desjardins/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/authors/david-frantz/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/authors/didier-ramon/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/authors/eric-f.-vermote/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/authors/fabio-pacifici/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/authors/feng-yin/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/authors/ferran-gascon/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/authors/georgia-doxani/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/authors/herve-poilve/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/authors/jean-claude-roger/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/authors/jerome-louis/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/authors/liesbeth-de-keukelaere/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/authors/minsu-kim/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/authors/olivier-hagolle/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/publication_types/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/publication/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/authors/rudolf-richter/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/authors/sergii-skakun/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/tags/2022/</loc>
     <lastmod>2022-11-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/data/schug-2022d/</loc>
@@ -17,25 +86,10 @@
     <loc>https://davidfrantz.github.io/tags/</loc>
     <lastmod>2022-11-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidfrantz.github.io/publication_types/2/</loc>
-    <lastmod>2022-11-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://davidfrantz.github.io/authors/</loc>
-    <lastmod>2022-11-24T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://davidfrantz.github.io/authors/daniel-scheffler/</loc>
     <lastmod>2022-11-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidfrantz.github.io/authors/david-frantz/</loc>
-    <lastmod>2022-11-24T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://davidfrantz.github.io/publication/scheffler-2022/</loc>
-    <lastmod>2022-11-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://davidfrantz.github.io/publication_types/</loc>
-    <lastmod>2022-11-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://davidfrantz.github.io/publication/</loc>
     <lastmod>2022-11-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/authors/dominik-wiedenhofer/</loc>
@@ -149,9 +203,6 @@
     <loc>https://davidfrantz.github.io/authors/anze-zupanc/</loc>
     <lastmod>2022-03-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidfrantz.github.io/authors/bringfried-pflug/</loc>
-    <lastmod>2022-03-22T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://davidfrantz.github.io/authors/carsten-brockmann/</loc>
     <lastmod>2022-03-22T00:00:00+00:00</lastmod>
   </url><url>
@@ -167,28 +218,16 @@
     <loc>https://davidfrantz.github.io/authors/eric-vermote/</loc>
     <lastmod>2022-03-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidfrantz.github.io/authors/ferran-gascon/</loc>
-    <lastmod>2022-03-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://davidfrantz.github.io/authors/georgia-doxani/</loc>
-    <lastmod>2022-03-22T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://davidfrantz.github.io/authors/gonzalo-mateo-garcia/</loc>
     <lastmod>2022-03-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/authors/jan-wevers/</loc>
     <lastmod>2022-03-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidfrantz.github.io/authors/jean-claude-roger/</loc>
-    <lastmod>2022-03-22T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://davidfrantz.github.io/authors/jernej-puc/</loc>
     <lastmod>2022-03-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/authors/julien-osman/</loc>
-    <lastmod>2022-03-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://davidfrantz.github.io/authors/jerome-louis/</loc>
     <lastmod>2022-03-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/authors/lojze-zust/</loc>
@@ -209,16 +248,7 @@
     <loc>https://davidfrantz.github.io/authors/nejc-vesel/</loc>
     <lastmod>2022-03-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidfrantz.github.io/authors/olivier-hagolle/</loc>
-    <lastmod>2022-03-22T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://davidfrantz.github.io/authors/pat-scaramuzza/</loc>
-    <lastmod>2022-03-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://davidfrantz.github.io/authors/rudolf-richter/</loc>
-    <lastmod>2022-03-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://davidfrantz.github.io/authors/sergii-skakun/</loc>
     <lastmod>2022-03-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/project/blackmap_ii/</loc>

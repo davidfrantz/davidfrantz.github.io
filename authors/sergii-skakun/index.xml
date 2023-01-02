@@ -5,12 +5,20 @@
     <link>https://davidfrantz.github.io/authors/sergii-skakun/</link>
       <atom:link href="https://davidfrantz.github.io/authors/sergii-skakun/index.xml" rel="self" type="application/rss+xml" />
     <description>Sergii Skakun</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2022 David Frantz</copyright><lastBuildDate>Tue, 22 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2023 David Frantz</copyright><lastBuildDate>Sun, 01 Jan 2023 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://davidfrantz.github.io/images/icon_hu975a20141edb3751b7f1e227ac2fbe79_88309_512x512_fill_lanczos_center_3.png</url>
       <title>Sergii Skakun</title>
       <link>https://davidfrantz.github.io/authors/sergii-skakun/</link>
     </image>
+    
+    <item>
+      <title>Atmospheric Correction Inter-comparison eXercise, ACIX-II Land: An assessment of atmospheric correction processors for Landsat 8 and Sentinel-2 over land</title>
+      <link>https://davidfrantz.github.io/publication/doxani-2023/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/doxani-2023/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Cloud Mask Intercomparison eXercise (CMIX): An evaluation of cloud masking algorithms for Landsat 8 and Sentinel-2</title>
