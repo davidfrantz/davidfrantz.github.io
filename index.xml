@@ -5,12 +5,76 @@
     <link>https://davidfrantz.github.io/</link>
       <atom:link href="https://davidfrantz.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>DAVID FRANTZ</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2023 David Frantz</copyright><lastBuildDate>Sun, 01 Jan 2023 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2023 David Frantz</copyright><lastBuildDate>Fri, 06 Jan 2023 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://davidfrantz.github.io/images/icon_hu975a20141edb3751b7f1e227ac2fbe79_88309_512x512_fill_lanczos_center_3.png</url>
       <title>DAVID FRANTZ</title>
       <link>https://davidfrantz.github.io/</link>
     </image>
+    
+    <item>
+      <title>Building Height, Germany</title>
+      <link>https://davidfrantz.github.io/webviewer/building_height_deu/</link>
+      <pubDate>Fri, 06 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/webviewer/building_height_deu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Land Cover Fractions, Austria/Germany</title>
+      <link>https://davidfrantz.github.io/webviewer/land_cover_fractions_deu_aut/</link>
+      <pubDate>Fri, 06 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/webviewer/land_cover_fractions_deu_aut/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Material Stocks, Austria/Germany</title>
+      <link>https://davidfrantz.github.io/webviewer/material_stocks_deu_aut/</link>
+      <pubDate>Fri, 06 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/webviewer/material_stocks_deu_aut/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Material Stocks, USA</title>
+      <link>https://davidfrantz.github.io/webviewer/material_stocks_usa/</link>
+      <pubDate>Fri, 06 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/webviewer/material_stocks_usa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mowing Events</title>
+      <link>https://davidfrantz.github.io/webviewer/mowing_events_deu/</link>
+      <pubDate>Fri, 06 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/webviewer/mowing_events_deu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Population, Germany</title>
+      <link>https://davidfrantz.github.io/webviewer/population_deu/</link>
+      <pubDate>Fri, 06 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/webviewer/population_deu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Turkey - Cropping Practices</title>
+      <link>https://davidfrantz.github.io/webviewer/cropping_practices_tur/</link>
+      <pubDate>Fri, 06 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/webviewer/cropping_practices_tur/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vegetation Dynamics, Crete</title>
+      <link>https://davidfrantz.github.io/webviewer/vegetation_dynamics_cre/</link>
+      <pubDate>Fri, 06 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/webviewer/vegetation_dynamics_cre/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Atmospheric Correction Inter-comparison eXercise, ACIX-II Land: An assessment of atmospheric correction processors for Landsat 8 and Sentinel-2 over land</title>

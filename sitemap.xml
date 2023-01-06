@@ -2,6 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://davidfrantz.github.io/webviewer/building_height_deu/</loc>
+    <lastmod>2023-01-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/</loc>
+    <lastmod>2023-01-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/webviewer/land_cover_fractions_deu_aut/</loc>
+    <lastmod>2023-01-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/webviewer/material_stocks_deu_aut/</loc>
+    <lastmod>2023-01-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/webviewer/material_stocks_usa/</loc>
+    <lastmod>2023-01-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/webviewer/mowing_events_deu/</loc>
+    <lastmod>2023-01-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/tags/ows/</loc>
+    <lastmod>2023-01-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/webviewer/population_deu/</loc>
+    <lastmod>2023-01-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/tags/</loc>
+    <lastmod>2023-01-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/webviewer/cropping_practices_tur/</loc>
+    <lastmod>2023-01-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/webviewer/vegetation_dynamics_cre/</loc>
+    <lastmod>2023-01-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/webviewer/</loc>
+    <lastmod>2023-01-06T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://davidfrantz.github.io/publication_types/2/</loc>
     <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
@@ -18,9 +54,6 @@
     <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/authors/camille-desjardins/</loc>
-    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://davidfrantz.github.io/</loc>
     <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/authors/david-frantz/</loc>
@@ -81,9 +114,6 @@
     <lastmod>2022-11-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/data/</loc>
-    <lastmod>2022-11-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://davidfrantz.github.io/tags/</loc>
     <lastmod>2022-11-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/authors/daniel-scheffler/</loc>
@@ -1147,7 +1177,5 @@
     <loc>https://davidfrantz.github.io/tags/c/c&#43;&#43;/</loc>
   </url><url>
     <loc>https://davidfrantz.github.io/categories/</loc>
-  </url><url>
-    <loc>https://davidfrantz.github.io/webviewer/</loc>
   </url>
 </urlset>
