@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Webviewer | DAVID FRANTZ</title>
+    <link>https://davidfrantz.github.io/webviewer/</link>
+      <atom:link href="https://davidfrantz.github.io/webviewer/index.xml" rel="self" type="application/rss+xml" />
+    <description>Webviewer</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2023 David Frantz</copyright>
+    <image>
+      <url>https://davidfrantz.github.io/images/icon_hu975a20141edb3751b7f1e227ac2fbe79_88309_512x512_fill_lanczos_center_3.png</url>
+      <title>Webviewer</title>
+      <link>https://davidfrantz.github.io/webviewer/</link>
+    </image>
+    
+  </channel>
+</rss>
