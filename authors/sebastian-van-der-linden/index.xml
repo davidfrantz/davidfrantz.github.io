@@ -5,12 +5,20 @@
     <link>https://davidfrantz.github.io/authors/sebastian-van-der-linden/</link>
       <atom:link href="https://davidfrantz.github.io/authors/sebastian-van-der-linden/index.xml" rel="self" type="application/rss+xml" />
     <description>Sebastian van der Linden</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2023 David Frantz</copyright><lastBuildDate>Tue, 25 Oct 2022 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2023 David Frantz</copyright><lastBuildDate>Mon, 20 Feb 2023 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://davidfrantz.github.io/images/icon_hu975a20141edb3751b7f1e227ac2fbe79_88309_512x512_fill_lanczos_center_3.png</url>
       <title>Sebastian van der Linden</title>
       <link>https://davidfrantz.github.io/authors/sebastian-van-der-linden/</link>
     </image>
+    
+    <item>
+      <title>High-resolution data and maps of material stock, population, and employment in Austria from 1985 to 2018</title>
+      <link>https://davidfrantz.github.io/publication/schug-2023/</link>
+      <pubDate>Mon, 20 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/publication/schug-2023/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>High-resolution mapping of 33 years of material stock and population growth in Germany using Earth Observation data</title>

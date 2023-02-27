@@ -2,8 +2,56 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://davidfrantz.github.io/presentation/frantz-2023/</loc>
+    <lastmod>2023-02-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/</loc>
+    <lastmod>2023-02-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/presentation/</loc>
+    <lastmod>2023-02-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/tags/</loc>
+    <lastmod>2023-02-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/tags/upcoming/</loc>
+    <lastmod>2023-02-27T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://davidfrantz.github.io/publication_types/2/</loc>
-    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+    <lastmod>2023-02-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/authors/</loc>
+    <lastmod>2023-02-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/authors/david-frantz/</loc>
+    <lastmod>2023-02-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/authors/dominik-wiedenhofer/</loc>
+    <lastmod>2023-02-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/authors/doris-virag/</loc>
+    <lastmod>2023-02-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/authors/franz-schug/</loc>
+    <lastmod>2023-02-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/authors/helmut-haberl/</loc>
+    <lastmod>2023-02-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/publication/schug-2023/</loc>
+    <lastmod>2023-02-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/authors/patrick-hostert/</loc>
+    <lastmod>2023-02-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/publication_types/</loc>
+    <lastmod>2023-02-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/publication/</loc>
+    <lastmod>2023-02-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://davidfrantz.github.io/authors/sebastian-van-der-linden/</loc>
+    <lastmod>2023-02-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/authors/alan-collison/</loc>
     <lastmod>2023-01-01T00:00:00+00:00</lastmod>
@@ -11,19 +59,10 @@
     <loc>https://davidfrantz.github.io/publication/doxani-2023/</loc>
     <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidfrantz.github.io/authors/</loc>
-    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://davidfrantz.github.io/authors/bringfried-pflug/</loc>
     <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/authors/camille-desjardins/</loc>
-    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://davidfrantz.github.io/</loc>
-    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://davidfrantz.github.io/authors/david-frantz/</loc>
     <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/authors/didier-ramon/</loc>
@@ -71,19 +110,10 @@
     <loc>https://davidfrantz.github.io/tags/ows/</loc>
     <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidfrantz.github.io/publication_types/</loc>
-    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://davidfrantz.github.io/publication/</loc>
-    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://davidfrantz.github.io/authors/rudolf-richter/</loc>
     <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/authors/sergii-skakun/</loc>
-    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://davidfrantz.github.io/tags/</loc>
     <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/tags/usa/</loc>
@@ -107,32 +137,11 @@
     <loc>https://davidfrantz.github.io/publication/scheffler-2022/</loc>
     <lastmod>2022-11-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://davidfrantz.github.io/authors/dominik-wiedenhofer/</loc>
-    <lastmod>2022-10-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://davidfrantz.github.io/authors/doris-virag/</loc>
-    <lastmod>2022-10-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://davidfrantz.github.io/authors/franz-schug/</loc>
-    <lastmod>2022-10-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://davidfrantz.github.io/authors/helmut-haberl/</loc>
-    <lastmod>2022-10-25T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://davidfrantz.github.io/publication/schug-2022b/</loc>
-    <lastmod>2022-10-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://davidfrantz.github.io/authors/patrick-hostert/</loc>
-    <lastmod>2022-10-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://davidfrantz.github.io/authors/sebastian-van-der-linden/</loc>
     <lastmod>2022-10-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/data/schug-2022c/</loc>
     <lastmod>2022-10-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://davidfrantz.github.io/presentation/</loc>
-    <lastmod>2022-09-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://davidfrantz.github.io/presentation/frantz-2022c/</loc>
     <lastmod>2022-09-27T00:00:00+00:00</lastmod>
