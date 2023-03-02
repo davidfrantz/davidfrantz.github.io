@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2023 | DAVID FRANTZ</title>
+    <link>https://davidfrantz.github.io/tags/2023/</link>
+      <atom:link href="https://davidfrantz.github.io/tags/2023/index.xml" rel="self" type="application/rss+xml" />
+    <description>2023</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2023 David Frantz</copyright><lastBuildDate>Tue, 17 Jan 2023 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://davidfrantz.github.io/images/icon_hu975a20141edb3751b7f1e227ac2fbe79_88309_512x512_fill_lanczos_center_3.png</url>
+      <title>2023</title>
+      <link>https://davidfrantz.github.io/tags/2023/</link>
+    </image>
+    
+    <item>
+      <title>Die kontinuierliche Bereitstellung von Waldstruktur- und Waldzustandsinformationen auf der  Basis von Sentinel-Daten</title>
+      <link>https://davidfrantz.github.io/presentation/hill_2023/</link>
+      <pubDate>Tue, 17 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/hill_2023/</guid>
+      <description>&lt;p&gt;Joachim Hill, Henning Buddenbaum, Andreas Hill, David Frantz&lt;/p&gt;
+&lt;p&gt;Copernicus Netzwerkbüro Wald, Online, 23-27 May 2022&lt;/p&gt;
+&lt;p&gt;oral presentation&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
