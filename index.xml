@@ -5,7 +5,7 @@
     <link>https://davidfrantz.github.io/</link>
       <atom:link href="https://davidfrantz.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>DAVID FRANTZ</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2023 David Frantz</copyright><lastBuildDate>Thu, 16 Mar 2023 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2023 David Frantz</copyright><lastBuildDate>Tue, 28 Mar 2023 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://davidfrantz.github.io/images/icon_hu975a20141edb3751b7f1e227ac2fbe79_88309_512x512_fill_lanczos_center_3.png</url>
       <title>DAVID FRANTZ</title>
@@ -13,10 +13,23 @@
     </image>
     
     <item>
+      <title>National-scale information extraction using harmonized Landsat and Sentinel-2 data cubes with FORCE</title>
+      <link>https://davidfrantz.github.io/presentation/frantz-2023b/</link>
+      <pubDate>Tue, 28 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://davidfrantz.github.io/presentation/frantz-2023b/</guid>
+      <description>&lt;p&gt;David Frantz, &amp;hellip;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Symposium zur angewandten Satellitenerdbeobachtung, Bonn, 26-28 June 2023&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;poster presentation&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Analysis Ready Fernerkundungsdaten erzeugen mit FORCE</title>
-      <link>https://davidfrantz.github.io/presentation/frantz-2023/</link>
+      <link>https://davidfrantz.github.io/presentation/frantz-2023a/</link>
       <pubDate>Thu, 16 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>https://davidfrantz.github.io/presentation/frantz-2023/</guid>
+      <guid>https://davidfrantz.github.io/presentation/frantz-2023a/</guid>
       <description>&lt;p&gt;David Frantz, Stefan Ernst, Benjamin Jakimow, Patrick Hostert&lt;/p&gt;
 &lt;p&gt;FOSSGIS, Berlin, 16 March 2023&lt;/p&gt;
 &lt;p&gt;oral presentation&lt;/p&gt;
